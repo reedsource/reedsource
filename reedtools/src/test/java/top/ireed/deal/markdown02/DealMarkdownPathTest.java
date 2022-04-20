@@ -1,0 +1,65 @@
+/*
+ * FileName: DealMarkdownPathTest
+ * Author:   reedsource
+ */
+package top.ireed.deal.markdown02;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+/**
+ * 功能简述:
+ * 〈
+ * 将一个目录下的java项目
+ * 解析后 导入到MindMaster中 形成导图的工具
+ * <p>
+ * 主要用来熟悉项目
+ * <p>
+ * 后续有进一步解析可能
+ * 〉
+ *
+ * @author reedsource
+ * @version 1.0.0
+ * date 2021-03-21 12:30
+ * reedsource@189.cn
+ */
+public class DealMarkdownPathTest {
+
+	/*
+	思路
+	1 循环遍历目录 得到目录下全部文件属性的list
+	2 循环处理 解析为md格式的字符串
+	2.1 6层以内 解析为标题样式  另外如果没有内容 考虑将src/DealMarkdownPathTest/java/cn..缩进到标题
+	2.2 6层以后 全部缩进到无序列表中 无序列表规则 第一层- 内容  第二层开始 两个空格一层
+	2.3 将数据解析到字符串 并写入到txt中
+	* */
+	public static void main(String[] args) throws IOException {
+		//要遍历的路径
+		String path = "D:\\top\\topcollect\\hutool";
+
+		//写入的文件
+		File f = new File("D:\\hutool20210404");
+
+		//要屏蔽的路径list  以根目录向后相对路径
+		ArrayList<String> shieldingPathList = new ArrayList<>(16);
+		shieldingPathList.add(".git");
+		shieldingPathList.add(".gitee");
+		shieldingPathList.add(".github");
+		shieldingPathList.add(".idea");
+		shieldingPathList.add(".gitignore");
+
+		//要屏蔽的文件的后缀名称list 只判断后缀
+		ArrayList<String> shieldingSuffixList = new ArrayList<>(16);
+		shieldingSuffixList.add(".mvn");
+		shieldingSuffixList.add(".iml");
+
+		//要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
+		ArrayList<String> shieldingNameList = new ArrayList<>(16);
+		shieldingNameList.add("target");
+		shieldingNameList.add(".mvn");
+
+		//接收核心解析   返回的数据
+		DealMarkdownPathDocument.toMd(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList, true, f);
+	}
+}
