@@ -8,6 +8,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import top.ireed.model.Model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * 功能简述:
@@ -22,6 +25,12 @@ public class DealObjectTest {
 
 	@Test
 	public void test() {
+		Map<String, Object> hashMap = new HashMap<>();
+		hashMap.put("key","key");
+		hashMap.put("value","value");
+		hashMap.put("date","20220202");
+		DealLog.log(DealObject.transMapBean(hashMap,Model.class));
+
 		Model model = new Model("10000","key的值","value的值","","super的值");
 		//通过本方法可以获取继承的父类的数据
 		Assert.assertEquals("super的值", DealObject.getSuperMember(model, "suS"));

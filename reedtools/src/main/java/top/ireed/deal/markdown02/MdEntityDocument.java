@@ -101,18 +101,4 @@ public class MdEntityDocument {
 		this.parse = parse;
 	}
 
-	@Override
-	public String toString() {
-		return "MdEntityDocument{" +
-				"mdPath=" + mdPath +
-				", isDirectory=" + isDirectory +
-				", level=" + getLevel(0) +
-				", name='" + getName() + '\'' +
-				", suffix='" + getSuffix() + '\'' +
-				", title='" + title + '\'' +
-				", list='" + list + '\'' +
-				", parse='" + parse + '\'' +
-				'}';
-	}
-
 }

@@ -79,7 +79,7 @@ public class DealDate {
 	 * @param endDate   结束时间
 	 * @param dateMsg   错误信息
 	 */
-	private DealDate(Date beginDate, Date endDate, String dateMsg) {
+	public DealDate(Date beginDate, Date endDate, String dateMsg) {
 		this.beginDate = beginDate;
 		this.endDate = endDate;
 		this.dateMsg = dateMsg;

@@ -83,17 +83,4 @@ public class MdEntity {
 		this.text = text;
 	}
 
-	@Override
-	public String toString() {
-		return "MdEntity{" +
-				"mdPath=" + mdPath +
-				", isDirectory=" + isDirectory +
-				", level=" + getLevel(0) +
-				", name='" + getName() + '\'' +
-				", suffix='" + getSuffix() + '\'' +
-				", title='" + title + '\'' +
-				", text='" + text + '\'' +
-				'}';
-	}
-
 }

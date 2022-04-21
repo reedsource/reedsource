@@ -194,4 +194,13 @@ public class DealDateTest {
 		long endTime = System.currentTimeMillis();
 		DealLog.log("以毫秒为单位程序运行时间： " + (endTime - startTime) + "ms");
 	}
+
+	@Test
+	public void test() throws TopException {
+		DealDate dealDate = new DealDate("2021-02-02","2022-02-02");
+		dealDate=new DealDate(new Date(),new Date(),"信息");
+		dealDate=new DealDate("信息");
+
+		Assert.assertNotNull(DealDate.getMm());
+	}
 }
