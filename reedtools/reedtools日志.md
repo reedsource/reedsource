@@ -8,12 +8,7 @@
 - 2021年1月20日 修改打印类
   当参数为空时 默认打印换行
 - 2022年4月20日 重启
-  - 优化并提交
-
-
-
-
-
+  - 优化重构核心工具框架 FoundSqlite
 
 ## 二 不可添加注入及原因
 
@@ -50,10 +45,26 @@
 - 保存常量类
 - 保存异常类
 
+### 4. found 创建实现工具类
+- 用于创建一系列操作的工具类
+- 已经实现
+    - FoundSqlite 全自研开发专注sqlite数据库的对象关系映射框架 对标hibernate
+
 ## 四 代码质量规则
 
 - 因为本工具可能被其它项目使用,按照最严格创建使用
 - 严格符合sonar扫描
 - 严格符合阿里规约扫描
-- 注释比例必须大于等于50%
 - 测试案例全覆盖
+
+## 工具使用
+在maven中选择install打包,工具类reedtools将会自动编译到maven仓库repository\top\ireed\reedtools\1.0.0目录下
+
+pom中maven引用方式
+```xml
+<dependency>
+    <groupId>top.ireed</groupId>
+    <artifactId>reedtools</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
