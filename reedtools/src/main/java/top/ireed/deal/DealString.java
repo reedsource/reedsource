@@ -6,6 +6,8 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import static top.ireed.general.TopConstant.UTF8;
+
 
 /**
  * 字符串处理工具类
@@ -13,9 +15,6 @@ import java.util.Locale;
  * @author ireed
  */
 public class DealString {
-
-	public DealString() {
-	}
 
 	/**
 	 * 删除字符串首尾空格,判断字符串是否为空
@@ -33,91 +32,6 @@ public class DealString {
 
 
 	/**
-	 * 转换编码，GBK转换为ISO-8859-1
-	 *
-	 * @param gbkString 要转换的GBK字符串
-	 * @return ISO-8859-1字符串
-	 */
-	public static String gbkConvertIso(String gbkString) {
-		String returnString = deleteEmptyString(gbkString);
-		try {
-			byte[] ascii = returnString.getBytes("GBK");
-			returnString = new String(ascii, "ISO-8859-1");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return returnString;
-	}
-
-	/**
-	 * 转换编码，ISO-8859-1转换为GBK
-	 *
-	 * @param isoString 要转换的ISO-8859-1字符串
-	 * @return GBK字符串
-	 */
-	public static String isoConvertGbk(String isoString) {
-		String returnString = deleteEmptyString(isoString);
-		try {
-			byte[] ascii = returnString.getBytes("ISO-8859-1");
-			returnString = new String(ascii, "GBK");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return returnString;
-	}
-
-
-	/**
-	 * 转换编码，GBK转换为big5
-	 *
-	 * @param gbkString 要转换的gbk字符串
-	 * @return big5
-	 */
-	public static String gbkConvertBig5(String gbkString) {
-		String returnString = deleteEmptyString(gbkString);
-		try {
-			byte[] ascii = returnString.getBytes("GBK");
-			returnString = new String(ascii, "big5");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return returnString;
-	}
-
-	/**
-	 * 转换编码 ISO-8859-1到GB2312
-	 *
-	 * @param isoString 要转换的iso字符串
-	 * @return GB2312
-	 */
-	public static String iso88591ConvertGb2312(String isoString) {
-		String returnString;
-		try {
-			returnString = new String(isoString.getBytes("ISO-8859-1"), "GB2312");
-		} catch (UnsupportedEncodingException ex) {
-			returnString = ex.toString();
-		}
-		return returnString;
-	}
-
-	/**
-	 * 转换编码 GB2312到ISO-8859-1
-	 *
-	 * @param gb2312String gb2312字符串
-	 * @return ISO-8859-1
-	 */
-	public static String gb2312ConvertIso88591(String gb2312String) {
-		String returnString = "";
-		try {
-			returnString = new String(gb2312String.getBytes("GB2312"), "ISO-8859-1");
-		} catch (UnsupportedEncodingException ex) {
-			ex.printStackTrace();
-		}
-		return returnString;
-	}
-
-
-	/**
 	 * 转换编码
 	 *
 	 * @param strString 要转换的字符串
@@ -131,7 +45,7 @@ public class DealString {
 			byte[] ascii = returnString.getBytes(srcCode);
 			returnString = new String(ascii, destCode);
 		} catch (Exception e) {
-			e.printStackTrace();
+			DealLog.log("转换编码异常");
 		}
 		return returnString;
 	}
@@ -165,25 +79,25 @@ public class DealString {
 	 */
 	public static String replaceHtmlErrorString(String htmlString) {
 		//创建字符串缓冲区
-		StringBuffer returnString = new StringBuffer(htmlString.length());
+		StringBuilder  returnString = new StringBuilder (htmlString.length());
 		char ch;
 		for (int i = 0; i < htmlString.length(); i++) {
 			ch = htmlString.charAt(i);
 			switch (ch) {
 				case '<':
-					returnString = returnString.append("&lt");
+					returnString.append("&lt");
 					break;
 				case '>':
-					returnString = returnString.append("&gt");
+					returnString.append("&gt");
 					break;
 				case ' ':
-					returnString = returnString.append("&nbsp");
+					returnString.append("&nbsp");
 					break;
 				case '\\':
-					returnString = returnString.append("&acute");
+					returnString.append("&acute");
 					break;
 				default:
-					returnString = returnString.append(ch);
+					returnString.append(ch);
 					break;
 			}
 		}
@@ -236,7 +150,7 @@ public class DealString {
 	 * @param num 数值
 	 * @return 格式化后的数值文本
 	 */
-	private static String formatString(int num) {
+	public static String formatString(int num) {
 		DecimalFormat decimalFormat = new DecimalFormat("###,###.0000");
 		return decimalFormat.format(num);
 	}
@@ -261,7 +175,7 @@ public class DealString {
 
 				byte[] b = new byte[0];
 				try {
-					b = Character.toString(c).getBytes("UTF-8");
+					b = Character.toString(c).getBytes(UTF8);
 				} catch (Exception ex) {
 					DealLog.log("转换到url编码错误");
 				}
@@ -324,7 +238,7 @@ public class DealString {
 			code[1] = (byte) (Integer.parseInt(utf8String.substring(4, 6), 16) - 256);
 			code[2] = (byte) (Integer.parseInt(utf8String.substring(7, 9), 16) - 256);
 			try {
-				result = new String(code, "UTF-8");
+				result = new String(code, UTF8);
 			} catch (UnsupportedEncodingException ex) {
 				result = null;
 			}
@@ -348,7 +262,7 @@ public class DealString {
 
 		//判断首文本是否符合
 		if (text.startsWith(startString)) {
-			for (int i = 0, p = 0; p != -1; i++) {
+			for (int p = 0; p != -1; ) {
 				p = text.indexOf("%", p);
 				if (p != -1) {
 					p++;
@@ -475,7 +389,7 @@ public class DealString {
 			int a = Integer.parseInt(str);
 			int yu;
 			int z;
-			StringBuffer s = new StringBuffer();
+			StringBuilder s = new StringBuilder();
 			do {
 				z = a / 62;
 				yu = a % 62;
@@ -518,7 +432,7 @@ public class DealString {
 
 
 		String str = "<a href=\"http://www.baidu.com\">百度一下</a>";
-		DealLog.log(DealString.utf8UrlCheck(str.getBytes("utf-8")));
+		DealLog.log(DealString.utf8UrlCheck(str.getBytes(UTF8)));
 		DealLog.log(DealString.utf8UrlCheck(str.getBytes("gbk")));
 
 		DealLog.log("开始数值字符压缩测试------------------------------------------------");

@@ -21,7 +21,7 @@ import java.util.*;
 
 /**
  * 功能简述:
- * 〈sqlite工具类 3.0〉
+ * 〈sqlite工具类 1.0〉
  * 工具默认全约定模式 保留sql语句能力
  * <p>
  * 引入hutool处理
@@ -660,7 +660,7 @@ public class FoundSqlite {
 	 * @return 分页数据
 	 */
 	@SuppressWarnings("unchecked")
-	public <T>PageData<T> getPage(Object page) throws TopException {
+	public <T> PageData<T> getPage(Object page) throws TopException {
 		if (!pattern) {
 			throw new TopException(ERR);
 		}
@@ -694,7 +694,7 @@ public class FoundSqlite {
 		}
 
 		//数据查询结果list
-		pageData.setList((List<T>)get(pageData.getObject().getClass(), a.toString(), true));
+		pageData.setList((List<T>) get(pageData.getObject().getClass(), a.toString(), true));
 		pageData.setSql(a.toString());
 		return pageData;
 	}
@@ -726,13 +726,15 @@ public class FoundSqlite {
 			throw new TopException(ERR);
 		}
 		List<T> list = get(getTableName(o.getClass()), o);
-		if (list.size() == 1) {
-			return list.get(0);
-		} else if (list.size() == 0) {
-			throw new TopException("异常 查询数据结果为空");
-		} else {
-			throw new TopException("异常 查询数据数量超过1");
+		if (list != null) {
+			if (list.size() == 1) {
+				return list.get(0);
+			} else if (list.size() == 0) {
+				throw new TopException("异常 查询数据结果为空");
+			}
+			throw new TopException("异常 查询出多条数据");
 		}
+		throw new TopException("异常 查询数据失败");
 	}
 
 
@@ -746,7 +748,7 @@ public class FoundSqlite {
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> List<T> get(String tableName, Object o) throws TopException {
-		return (List<T> ) get(o.getClass(), getSqliteStr(false, tableName, o, null), true);
+		return (List<T>) get(o.getClass(), getSqliteStr(false, tableName, o, null), true);
 	}
 
 	/**

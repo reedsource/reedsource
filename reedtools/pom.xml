@@ -20,7 +20,7 @@
 		<junit.version>4.13</junit.version><!--junit测试工具类-->
 		<jackson.version>2.11.0</jackson.version><!--jackson-->
 		<sqlite.version>3.21.0.1</sqlite.version><!--sqlite-->
-		<log4j.version>2.3</log4j.version><!--log4j依赖-->
+		<log4j.version>2.17.2</log4j.version><!--log4j依赖-->
 		<com.aliyun.core>4.3.2</com.aliyun.core><!--阿里云核心-->
 		<com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
 	</properties>
@@ -107,6 +107,20 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 				<version>2.1</version>
+			</plugin>
+			<!--jacoco插件 sonar单元测试-->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

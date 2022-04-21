@@ -5,6 +5,7 @@
 package top.ireed.deal.parse.java;
 
 import org.junit.Test;
+import top.ireed.general.TopException;
 
 import java.io.File;
 
@@ -19,7 +20,7 @@ import java.io.File;
  */
 public class ParseJavaStructureTest {
 	@Test
-	public void Test() {
+	public void Test() throws TopException {
 		System.out.println(ParseJavaStructure.javaParse(new File("D:\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\deal\\parse\\java\\ParseJavaStructureCase.java")));
 	}
 

@@ -8,6 +8,8 @@ import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 
+import static top.ireed.general.TopConstant.ZKH;
+
 /**
  * 功能简述:
  * 〈获取实体类getSet方法打印〉
@@ -48,7 +50,7 @@ public class DealGetSet {
 			try {
 				PropertyDescriptor pd = new PropertyDescriptor(field.getName(), clazz);
 				txt = String.valueOf(pd.getWriteMethod());
-				txt = txt.substring(0, txt.indexOf("(") + 1);
+				txt = txt.substring(0, txt.indexOf(ZKH) + 1);
 				String str=name + txt.substring(DealString.inverted(txt, '.', 1)) + ");";
 				DealLog.log(str);
 			} catch (IntrospectionException e) {

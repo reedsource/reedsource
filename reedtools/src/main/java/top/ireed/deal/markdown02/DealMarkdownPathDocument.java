@@ -131,7 +131,6 @@ public class DealMarkdownPathDocument {
 			DealLog.log(file, "完成");
 		} catch (IOException e) {
 			DealLog.log(file, "写入到文件异常");
-			e.printStackTrace();
 		}
 
 	}

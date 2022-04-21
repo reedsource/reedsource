@@ -8,6 +8,7 @@ import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HTMLFilter;
 import top.ireed.deal.DealLog;
+import top.ireed.general.TopException;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -23,13 +24,7 @@ import java.util.List;
  * reedsource@189.cn
  */
 public class ParseJavaStructure {
-	public static void main(String[] args) {
-
-		System.out.println(javaParse(new File("D:\\top\\topcode\\java\\frame\\mybatis\\mybatis-routing-dada\\src\\main\\java\\top\\ireed\\config\\DynamicDataRoutingRegister.java")));
-
-	}
-
-	public static String javaParse(File path) {
+	public static String javaParse(File path) throws TopException {
 		StringBuilder sb = new StringBuilder();
 		//返回的符合规则的文件markdown字符串
 		StringBuilder parseString = new StringBuilder();
@@ -77,8 +72,7 @@ public class ParseJavaStructure {
 			}
 
 		} catch (IOException e) {
-
-			e.printStackTrace();
+			throw new TopException("解析java文件异常", e);
 		}
 
 		//html文本转译

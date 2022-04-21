@@ -23,6 +23,7 @@ public class TopConstant {
 	public static final boolean FALSE = false;
 	public static final String SUCCESS = "SUCCESS";
 	public static final String FAIL = "FAIL";
+	public static final String UTF8 = "UTF-8";
 
 	/****************************返回信息部分*************************/
 	/**
@@ -63,6 +64,11 @@ public class TopConstant {
 	 * 审核未通过
 	 */
 	public static final String STATE_REJECT = "REJECT";
+
+	/****************************特殊符号部分*************************/
+
+	public static final String ZKH = "(";
+
 	/****************************时间部分*************************/
 	/**
 	 * 毫秒
