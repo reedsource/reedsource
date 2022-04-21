@@ -19,6 +19,8 @@ import java.sql.*;
 import java.util.Date;
 import java.util.*;
 
+import static top.ireed.general.TopConstant.F_X_Z;
+
 /**
  * 功能简述:
  * 〈sqlite工具类 1.0〉
@@ -57,6 +59,9 @@ public class FoundSqlite {
 	 */
 	private static final String SQLITE_LOG_SUM = "select count(1) from FoundSqliteLog";
 	private static final String ERR = "非约定模式,无法使用本方式";
+	public static final String AND = " AND ";
+	public static final String WHERE = " WHERE ";
+	public static final String WHERE1 = " WHERE ";
 
 	/**
 	 * sqlite关键字,当建表表名为这些字段时,会出现异常
@@ -120,11 +125,9 @@ public class FoundSqlite {
 
 		//1.3 判断初始化工具日志表
 		//如果系统数据表数据条数小于0 表不存在 尝试添加
-		if (getSum(SQLITE_LOG_SUM, false) < 0) {
+		if (getSum(SQLITE_LOG_SUM, false) < 0 && set(CREATE_FOUND_SQLITE_LOG, "") == 0) {
 			//建表语句正确无返回 表创建完成 连接已经正常
-			if (set(CREATE_FOUND_SQLITE_LOG, "") == 0) {
-				insertLog("数据库初始化", "创建日志表");
-			}
+			insertLog("数据库初始化", "创建日志表");
 		}
 		DealLog.log("数据库连接成功", sqliteDataUrl);
 		insertLog("连接", sqliteDataUrl, "成功");
@@ -360,7 +363,7 @@ public class FoundSqlite {
 		}
 		//3. 组装主体语句
 		//1.1添加  "INSERT INTO tableName (key,value) VALUES('数据1','mm1')"
-		return "INSERT INTO " + tableName + "(" + b.toString() + ") VALUES(" + c.toString() + ")";
+		return "INSERT INTO " + tableName + F_X_Z + b.toString() + ") VALUES(" + c.toString() + ")";
 	}
 
 	/**
@@ -451,7 +454,7 @@ public class FoundSqlite {
 				//拼接 key = 'value' , key = 'value' 数据
 				//如果添加过有数据字段
 				if (si) {
-					c.append(" AND ");
+					c.append(AND);
 				}
 				c.append(field.getName()).append(" = '").append(m).append("' ");
 				si = true;
@@ -463,7 +466,7 @@ public class FoundSqlite {
 		//删除数据
 		if (delete) {
 			if (StrUtil.isNotBlank(c)) {
-				a.append("DELETE FROM ").append(tableName).append(" WHERE ").append(c.toString());
+				a.append("DELETE FROM ").append(tableName).append(WHERE).append(c.toString());
 			} else {
 				throw new TopException("删除语句条件不存在", o);
 			}
@@ -471,7 +474,7 @@ public class FoundSqlite {
 			a.append("SELECT * FROM ").append(tableName);
 			//添加过有效查询字段
 			if (si) {
-				a.append(" WHERE ");
+				a.append(WHERE);
 			}
 			a.append(c.toString());
 		}
@@ -490,13 +493,13 @@ public class FoundSqlite {
 			for (PageTime pageTime : list) {
 				String name = pageTime.getDateName();
 				if (pageTime.getBeginDate() != null) {
-					a.append(si ? " AND " + name + " >= '" : " WHERE " + name + " >= '").append(DealDate.getSqliteDate(pageTime.getBeginDate())).append("'");
+					a.append(si ? AND + name + " >= '" : WHERE + name + " >= '").append(DealDate.getSqliteDate(pageTime.getBeginDate())).append("'");
 					//已经添加数据
 					si = true;
 				}
 
 				if (pageTime.getEndDate() != null) {
-					a.append(si ? " AND " + name + " < '" : " WHERE " + name + " < '").append(DealDate.getSqliteDate(pageTime.getEndDate())).append("'");
+					a.append(si ? AND + name + " < '" : WHERE + name + " < '").append(DealDate.getSqliteDate(pageTime.getEndDate())).append("'");
 
 				}
 			}
@@ -516,7 +519,7 @@ public class FoundSqlite {
 	private String assemble(Object object, String tableName, String keyName, boolean increase) {
 		//判断主键属性 拼接建表语句
 		StringBuilder xx = new StringBuilder();
-		xx.append("CREATE TABLE IF NOT EXISTS ").append(tableName).append("(").append(keyName);
+		xx.append("CREATE TABLE IF NOT EXISTS ").append(tableName).append(F_X_Z).append(keyName);
 		//判断是否需要自增字段
 		xx.append(increase ? " integer PRIMARY KEY autoincrement" : " text PRIMARY KEY");
 		//组合后续属性
@@ -729,7 +732,7 @@ public class FoundSqlite {
 		if (list != null) {
 			if (list.size() == 1) {
 				return list.get(0);
-			} else if (list.size() == 0) {
+			} else if (list.isEmpty()) {
 				throw new TopException("异常 查询数据结果为空");
 			}
 			throw new TopException("异常 查询出多条数据");

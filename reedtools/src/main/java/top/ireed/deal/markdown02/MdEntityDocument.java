@@ -23,12 +23,6 @@ public class MdEntityDocument {
 	private File mdPath;
 	/*路径是文件夹*/
 	private boolean isDirectory;
-	/*目录的等级*/
-	private int level;
-	/*提取出的只保留文件名的字符串*/
-	private String name;
-	/*文件后缀*/
-	private String suffix;
 	/*处理完成的标题数据*/
 	private String title;
 	/*归属的子实体*/
@@ -77,8 +71,6 @@ public class MdEntityDocument {
 
 	public String getSuffix() {
 		return FileNameUtil.getSuffix(mdPath);
-		//截取路径的文件后缀
-		//return mdPath.toString().substring(mdPath.toString().lastIndexOf("."));
 	}
 
 	public String getTitle() {

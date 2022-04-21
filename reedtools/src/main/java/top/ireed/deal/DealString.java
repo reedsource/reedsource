@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import static top.ireed.general.TopConstant.F_B;
 import static top.ireed.general.TopConstant.UTF8;
 
 
@@ -185,7 +186,7 @@ public class DealString {
 					if (k < 0) {
 						k += 256;
 					}
-					returnString.append("%").append(Integer.toHexString(k).toUpperCase());
+					returnString.append(F_B).append(Integer.toHexString(k).toUpperCase());
 				}
 			}
 		}
@@ -263,7 +264,7 @@ public class DealString {
 		//判断首文本是否符合
 		if (text.startsWith(startString)) {
 			for (int p = 0; p != -1; ) {
-				p = text.indexOf("%", p);
+				p = text.indexOf(F_B, p);
 				if (p != -1) {
 					p++;
 				}

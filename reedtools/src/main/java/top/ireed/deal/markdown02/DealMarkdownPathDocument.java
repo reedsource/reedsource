@@ -196,7 +196,7 @@ public class DealMarkdownPathDocument {
 				stringBuilder.append(mdEntityDocument.getTitle());
 				stringBuilder.append("\r\n");
 				//如果内容不为空
-				if (mdEntityDocument.getList().size() > 0) {
+				if (!mdEntityDocument.getList().isEmpty()) {
 					for (MdEntityDocument entityDocument : mdEntityDocument.getList()) {
 						//处理解析文本
 						stringBuilder.append(entityDocument.getName());

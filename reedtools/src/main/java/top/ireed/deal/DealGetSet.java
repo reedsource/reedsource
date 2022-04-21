@@ -8,7 +8,8 @@ import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 
-import static top.ireed.general.TopConstant.ZKH;
+import static top.ireed.general.TopConstant.F_F;
+import static top.ireed.general.TopConstant.F_X_Z;
 
 /**
  * 功能简述:
@@ -39,7 +40,7 @@ public class DealGetSet {
 			try {
 				PropertyDescriptor pd = new PropertyDescriptor(field.getName(), clazz);
 				txt = String.valueOf(pd.getReadMethod());
-				String str=name + txt.substring(DealString.inverted(txt, '.', 1)) + ";";
+				String str=name + txt.substring(DealString.inverted(txt, '.', 1)) + F_F;
 				DealLog.log(str);
 			} catch (IntrospectionException e) {
 				DealLog.log("获取set全部方法异常");
@@ -50,7 +51,7 @@ public class DealGetSet {
 			try {
 				PropertyDescriptor pd = new PropertyDescriptor(field.getName(), clazz);
 				txt = String.valueOf(pd.getWriteMethod());
-				txt = txt.substring(0, txt.indexOf(ZKH) + 1);
+				txt = txt.substring(0, txt.indexOf(F_X_Z) + 1);
 				String str=name + txt.substring(DealString.inverted(txt, '.', 1)) + ");";
 				DealLog.log(str);
 			} catch (IntrospectionException e) {

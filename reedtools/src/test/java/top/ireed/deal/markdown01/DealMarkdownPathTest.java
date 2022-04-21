@@ -5,12 +5,11 @@
 package top.ireed.deal.markdown01;
 
 import cn.hutool.core.io.IoUtil;
+import org.junit.Assert;
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -40,8 +39,8 @@ public class DealMarkdownPathTest {
 	2.3 将数据解析到字符串 并写入到txt中
 	* */
 
-
-	public static void main(String[] args) throws IOException {
+	@Test
+	public void test() throws IOException {
 		//要遍历的路径
 		String path = "D:\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\deal\\parse";
 
@@ -81,6 +80,7 @@ public class DealMarkdownPathTest {
 
 		// 关闭输出流,释放系统资源
 		fop.close();
+		Assert.assertTrue(true);
 	}
 
 

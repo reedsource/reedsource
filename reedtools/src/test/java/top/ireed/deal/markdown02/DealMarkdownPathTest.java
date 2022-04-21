@@ -4,6 +4,9 @@
  */
 package top.ireed.deal.markdown02;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,7 +37,8 @@ public class DealMarkdownPathTest {
 	2.2 6层以后 全部缩进到无序列表中 无序列表规则 第一层- 内容  第二层开始 两个空格一层
 	2.3 将数据解析到字符串 并写入到txt中
 	* */
-	public static void main(String[] args) throws IOException {
+	@Test
+	public void test() {
 		//要遍历的路径
 		String path = "D:\\top\\topcollect\\hutool";
 
@@ -61,5 +65,7 @@ public class DealMarkdownPathTest {
 
 		//接收核心解析   返回的数据
 		DealMarkdownPathDocument.toMd(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList, true, f);
+
+		Assert.assertTrue(true);
 	}
 }

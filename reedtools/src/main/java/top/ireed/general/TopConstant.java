@@ -65,10 +65,6 @@ public class TopConstant {
 	 */
 	public static final String STATE_REJECT = "REJECT";
 
-	/****************************特殊符号部分*************************/
-
-	public static final String ZKH = "(";
-
 	/****************************时间部分*************************/
 	/**
 	 * 毫秒
@@ -130,6 +126,12 @@ public class TopConstant {
 	/****************************符号部分*************************/
 	public static final String F_W = "?";
 	public static final String F_L = "&";
+	public static final String F_B = "%";
+	public static final String F_F = ";";
+	public static final String F_X_Z = "(";
+	public static final String F_X_Y = ")";
+	public static final String F_D_Z = "{";
+	public static final String F_D_Y = "}";
 
 	/****************************数值部分*************************/
 	public static final int INT0 = 0;

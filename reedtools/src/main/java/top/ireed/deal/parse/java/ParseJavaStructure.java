@@ -14,6 +14,8 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import static top.ireed.general.TopConstant.*;
+
 /**
  * 功能简述:
  * 〈解析java文件〉
@@ -24,6 +26,9 @@ import java.util.List;
  * reedsource@189.cn
  */
 public class ParseJavaStructure {
+
+	public static final String STR = "    - ";
+
 	public static String javaParse(File path) throws TopException {
 		StringBuilder sb = new StringBuilder();
 		//返回的符合规则的文件markdown字符串
@@ -45,7 +50,7 @@ public class ParseJavaStructure {
 
 			//1 文件方法解析
 			// 获取第一个{前的所有内容 本部分只有一个 可以解析出对类文件的说明
-			String headStr = str.substring(0, str.indexOf("{"));
+			String headStr = str.substring(0, str.indexOf(F_D_Z));
 			//将文件名称及注释解析加入
 			parseString.append(headParse(headStr));
 
@@ -54,7 +59,7 @@ public class ParseJavaStructure {
 			// 截取身体部分
 			// 截取包含第一个{与最后一个}的全部内容
 			// 符合通用的正则查找
-			String bodyStr = str.substring(str.indexOf("{"), str.lastIndexOf("}"));
+			String bodyStr = str.substring(str.indexOf(F_D_Z), str.lastIndexOf(F_D_Y));
 			//2.1 获取全部符合 } 到  ) { 中文格式的文本组
 			//方法的结构必然会有的格式
 			//解析的结果包含前后的 }方法文本信息{
@@ -99,8 +104,8 @@ public class ParseJavaStructure {
 
 		//1 初始处理 去除干扰信息
 		//1.1 只保留文本中最后一个;到结尾的文本 去除定义的包含{的枚举 字典 别名等结构  带来的干扰
-		if (methodStr.lastIndexOf(";") > 0) {
-			methodStr = methodStr.substring(methodStr.lastIndexOf(";") + 1).trim();
+		if (methodStr.lastIndexOf(F_F) > 0) {
+			methodStr = methodStr.substring(methodStr.lastIndexOf(F_F) + 1).trim();
 		}
 		//1.2 去除首尾的}{号
 		methodStr = methodStr.substring(1, methodStr.length() - 1).trim();
@@ -110,7 +115,7 @@ public class ParseJavaStructure {
 		//2 获取方法部分信息
 
 		//转换为方法的字符串行数组
-		String methodArray[] = methodStr.split("\r\n");
+		String[] methodArray = methodStr.split("\r\n");
 
 		//2.1 取最后一行字符串 即方法名称相关信息
 		//public static String getName(String filePath, String filePath1)
@@ -118,10 +123,10 @@ public class ParseJavaStructure {
 		String st = methodArray[methodArray.length - 1].trim();
 		//2.2 方法名称属性部分字符串  取(前的部分
 		//+2.3 方法名称行必然包含(
-		if (!st.contains("(")) {
+		if (!st.contains(F_X_Z)) {
 			return "";
 		}
-		String methodHead = st.substring(0, st.indexOf("("));
+		String methodHead = st.substring(0, st.indexOf(F_X_Z));
 		//2.3 去除非方法文本  类似方法结构的文本干扰
 		//方法的(前一个字符必然不为" " 其它逻辑必为" "
 		if (" ".equals(methodHead.substring(methodHead.length() - 1))) {
@@ -138,14 +143,14 @@ public class ParseJavaStructure {
 		methodMark.append("\r\n");
 
 		// 2.5 获取方法的注释
-		methodMark.append(getMethodsAnnotation("    - ", methodStr));
+		methodMark.append(getMethodsAnnotation(STR, methodStr));
 
 		//2,6 获取返回信息
 		methodMark.append(getReturnStr(methodArray));
 
 		//3 解析处理参数部分
 		//3.1 方法的参数部分  取{}中间的部分
-		String methodBody = st.substring(st.indexOf("(") + 1, st.indexOf(")"));
+		String methodBody = st.substring(st.indexOf(F_X_Z) + 1, st.indexOf(")"));
 		//参数不是无参数结构的空字符串
 		if (StrUtil.isNotBlank(methodBody)) {
 			//3.2 方法参数数组
@@ -174,7 +179,7 @@ public class ParseJavaStructure {
 			if (intIndex != -1 && intIndex + 7 < s1.length()) {
 				//定义返回的结果文本
 				StringBuilder methodMark = new StringBuilder();
-				methodMark.append("    - ");
+				methodMark.append(STR);
 				methodMark.append(s1.substring(intIndex).trim());
 				methodMark.append("\r\n");
 				return methodMark.toString();
@@ -236,7 +241,7 @@ public class ParseJavaStructure {
 	private static String headParse(String methodStr) {
 		StringBuilder methodMark = new StringBuilder();
 		//转换为字符串行数组
-		String headStrArray[] = methodStr.split("\r\n");
+		String[] headStrArray = methodStr.split("\r\n");
 		//1 提取主方法信息
 		//取最后一行字符串  为文件主方法
 		String st = headStrArray[headStrArray.length - 1].trim();
@@ -310,7 +315,7 @@ public class ParseJavaStructure {
 		StringBuilder methodBodyString = new StringBuilder();
 
 		//参数信息必然是在文件名后的三级
-		methodBodyString.append("    - ");
+		methodBodyString.append(STR);
 		methodBodyString.append(methodBody);
 		methodBodyString.append("\r\n");
 
