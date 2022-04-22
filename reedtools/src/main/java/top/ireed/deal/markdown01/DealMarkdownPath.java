@@ -9,6 +9,7 @@ import cn.hutool.core.util.StrUtil;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -30,13 +31,13 @@ public class DealMarkdownPath {
 	static String pathStr;
 
 	//当前屏蔽相对根目录的相对路径列表
-	private static ArrayList<String> shieldingPathLists = new ArrayList<>(16);
+	private static List<String> shieldingPathLists = new ArrayList<>(16);
 
 	//要屏蔽的文件的后缀名称list 只判断后缀
-	private static ArrayList<String> shieldingSuffixLists = new ArrayList<>(16);
+	private static List<String> shieldingSuffixLists = new ArrayList<>(16);
 
 	//要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
-	private static ArrayList<String> shieldingNameLists = new ArrayList<>(16);
+	private static List<String> shieldingNameLists = new ArrayList<>(16);
 
 
 	//保存全部目录下文件数据
@@ -48,6 +49,9 @@ public class DealMarkdownPath {
 	private static int[] maxArray = new int[30];
 
 
+	private DealMarkdownPath() {
+	}
+
 	/**
 	 * 将保存全部数据的list处理为符合规则的md格式文本
 	 *
@@ -57,7 +61,7 @@ public class DealMarkdownPath {
 	 * @param shieldingNameList   要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
 	 * @return 返回String
 	 */
-	public static String core(File file, ArrayList<String> shieldingPathList, ArrayList<String> shieldingSuffixList, ArrayList<String> shieldingNameList) {
+	public static String core(File file, List<String> shieldingPathList, List<String> shieldingSuffixList, List<String> shieldingNameList) {
 		shieldingPathLists = shieldingPathList;
 		shieldingSuffixLists = shieldingSuffixList;
 		shieldingNameLists = shieldingNameList;
@@ -100,11 +104,6 @@ public class DealMarkdownPath {
 				}
 			}
 		}
-
-		//
-
-
-		//ParsingTools.Parsing();
 
 		//将计算完成的数据集合 整合到返回的String中
 		StringBuilder stringBuilder = new StringBuilder();

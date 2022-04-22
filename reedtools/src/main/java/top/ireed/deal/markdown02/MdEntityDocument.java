@@ -8,6 +8,7 @@ import cn.hutool.core.io.file.FileNameUtil;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 功能简述:
@@ -26,7 +27,7 @@ public class MdEntityDocument {
 	/*处理完成的标题数据*/
 	private String title;
 	/*归属的子实体*/
-	private ArrayList<MdEntityDocument> list;
+	private List<MdEntityDocument> list;
 	/*解析为无序列表的文本格式*/
 	private String parse;
 
@@ -81,7 +82,7 @@ public class MdEntityDocument {
 		this.title = title;
 	}
 
-	public ArrayList<MdEntityDocument> getList() {
+	public List<MdEntityDocument> getList() {
 		if (list == null) {
 			return new ArrayList<>();
 		}
@@ -89,7 +90,7 @@ public class MdEntityDocument {
 		return list;
 	}
 
-	public void setList(ArrayList<MdEntityDocument> list) {
+	public void setList(List<MdEntityDocument> list) {
 		this.list = list;
 	}
 

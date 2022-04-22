@@ -23,8 +23,6 @@ public class TopConstant {
 	public static final boolean FALSE = false;
 	public static final String SUCCESS = "SUCCESS";
 	public static final String FAIL = "FAIL";
-	public static final String UTF8 = "UTF-8";
-
 	/****************************返回信息部分*************************/
 	/**
 	 * 返回错误信息

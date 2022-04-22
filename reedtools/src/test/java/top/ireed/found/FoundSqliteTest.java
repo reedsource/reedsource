@@ -13,7 +13,9 @@ import top.ireed.entity.PageTime;
 import top.ireed.general.TopException;
 import top.ireed.model.Model;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,7 +49,7 @@ public class FoundSqliteTest {
 		DealLog.log("数据表数量", foundSqlite.getSum("select count(1) FROM sqlite_sequence"));
 
 		// 5. 更新数据
-		DealLog.log(foundSqlite.update(tableName, "id", new Model("2", "更新后的key", "更新后的value","2022-2-2")));
+		DealLog.log(foundSqlite.update(tableName, "id", new Model("2", "更新后的key", "更新后的value", DealDate.getDate("2022-2-2"))));
 		// 6. 查看更新效果
 		// 查询数据结果list
 		List<Model> list1 = foundSqlite.get(Model.class, "SELECT * FROM " + tableName);
@@ -70,32 +72,32 @@ public class FoundSqliteTest {
 		// 3. 约定 表数据插入方式
 		//初始化时会执行的操作
 		if (m) {
-			DealLog.log(fSqlite.insert(new Model("方法key1", "方法value","2022-02-02")));
+			DealLog.log(fSqlite.insert(new Model("方法key1", "方法value",DealDate.getDate("2022-2-2"))));
 		}
 
-		fSqlite.insert(new Model("方法key2", "方法value","2022-02-02"));
-		fSqlite.insert(new Model("方法key3", "方法value","2022-02-02"));
-		fSqlite.insert(new Model("方法key4", "方法value","2022-02-02"));
-		fSqlite.insert(new Model("方法key5", "方法value","2022-02-02"));
-		fSqlite.insert(new Model("方法key6", "方法value","2022-02-02"));
-		fSqlite.insert(new Model("方法key7", "方法value","2022-02-02"));
+		fSqlite.insert(new Model("方法key2", "方法value",DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key3", "方法value",DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key4", "方法value",DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key5", "方法value",DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key6", "方法value",DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key7", "方法value",DealDate.getDate("2022-2-2")));
 
 		//表存在的情况 插入数据
 		if (fSqlite.foundTable(new Model())) {
-			fSqlite.insert(new Model("方法key4", "方法value","2022-02-02"));
+			fSqlite.insert(new Model("方法key4", "方法value",DealDate.getDate("2022-2-2")));
 		}
 
 		//物理删除一条数据
 		DealLog.log("删除数据", fSqlite.delete(new Model("3")));
 
 		// 4. 约定 更新数据
-		DealLog.log(fSqlite.update(new Model("2", "更新后的key", "更新后的value","2022-02-02")));
+		DealLog.log(fSqlite.update(new Model("2", "更新后的key", "更新后的value",DealDate.getDate("2022-2-2"))));
 
 		// 5. 约定 查询数据
 		// 5.1 无序
 		List<Model> fList = fSqlite.get(new Model("方法key6", "方法value"));
 		if (fList != null) {
-			for (Object o : fList) {
+			for (Model o : fList) {
 				DealLog.log("遍历", o.toString());
 			}
 		}

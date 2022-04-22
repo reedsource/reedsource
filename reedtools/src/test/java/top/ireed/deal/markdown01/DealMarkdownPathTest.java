@@ -11,6 +11,7 @@ import top.ireed.deal.DealLog;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 功能简述:
@@ -42,28 +43,28 @@ public class DealMarkdownPathTest {
 	@Test
 	public void test() throws IOException {
 		//要遍历的路径
-		String path = "D:\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\deal\\parse";
+		String path = "D:\\codes\\reedsource\\reedtools\\";
 
 		//要屏蔽的路径list  以根目录向后相对路径
-		ArrayList<String> shieldingPathList = new ArrayList<>(16);
+		List<String> shieldingPathList = new ArrayList<>(16);
 		shieldingPathList.add(".git");
 		shieldingPathList.add(".idea");
 		shieldingPathList.add(".gitignore");
 
 		//要屏蔽的文件的后缀名称list 只判断后缀
-		ArrayList<String> shieldingSuffixList = new ArrayList<>(16);
+		List<String> shieldingSuffixList = new ArrayList<>(16);
 		shieldingSuffixList.add(".mvn");
 		shieldingSuffixList.add(".iml");
 
 		//要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
-		ArrayList<String> shieldingNameList = new ArrayList<>(16);
+		List<String> shieldingNameList = new ArrayList<>(16);
 		shieldingNameList.add("target");
 
 		//接收核心解析   返回的数据
 		String coreString = DealMarkdownPath.core(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList);
 		DealLog.log(coreString);
 
-		File f = new File("D:\\top\\b.txt");
+		File f = new File("D:\\cache\\b.md");
 
 		// 先得到文件的上级目录，并创建上级目录，在创建文件
 		if (!f.exists()) {

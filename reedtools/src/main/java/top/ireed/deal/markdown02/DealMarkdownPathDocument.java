@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -32,13 +33,13 @@ public class DealMarkdownPathDocument {
 	static String pathStr;
 
 	//当前屏蔽相对根目录的相对路径列表
-	private static ArrayList<String> shieldingPathLists = new ArrayList<>(16);
+	private static List<String> shieldingPathLists = new ArrayList<>(16);
 
 	//要屏蔽的文件的后缀名称list 只判断后缀
-	private static ArrayList<String> shieldingSuffixLists = new ArrayList<>(16);
+	private static List<String> shieldingSuffixLists = new ArrayList<>(16);
 
 	//要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
-	private static ArrayList<String> shieldingNameLists = new ArrayList<>(16);
+	private static List<String> shieldingNameLists = new ArrayList<>(16);
 
 
 	//保存全部目录下文件数据
@@ -54,6 +55,8 @@ public class DealMarkdownPathDocument {
 	 */
 	static int fileSum;
 
+	private DealMarkdownPathDocument() {
+	}
 
 	/**
 	 * 将保存全部数据的list处理为符合规则的md格式文本
@@ -66,7 +69,7 @@ public class DealMarkdownPathDocument {
 	 * @param toFile              生成的md文件的目录
 	 * @return 返回String
 	 */
-	public static void toMd(File file, ArrayList<String> shieldingPathList, ArrayList<String> shieldingSuffixList, ArrayList<String> shieldingNameList, boolean son, File toFile) {
+	public static void toMd(File file, List<String> shieldingPathList, List<String> shieldingSuffixList, List<String> shieldingNameList, boolean son, File toFile) {
 		shieldingPathLists = shieldingPathList;
 		shieldingSuffixLists = shieldingSuffixList;
 		shieldingNameLists = shieldingNameList;
@@ -88,7 +91,7 @@ public class DealMarkdownPathDocument {
 							}
 						}
 						if (!isShielding) {
-							toMd(new File(toFile.getPath() + "\\" + f.getName() + ".md"), core(f, shieldingPathList, shieldingSuffixList, shieldingNameList));
+							toMd(new File(toFile.getPath() + "\\" + f.getName() + ".md"), core(f));
 							//清空全局数据
 							list.clear();
 						}
@@ -97,7 +100,7 @@ public class DealMarkdownPathDocument {
 			}
 
 		} else {
-			toMd(new File(toFile.getPath() + "\\" + file.getName() + ".md"), core(file, shieldingPathList, shieldingSuffixList, shieldingNameList));
+			toMd(new File(toFile.getPath() + "\\" + file.getName() + ".md"), core(file));
 		}
 	}
 
@@ -140,12 +143,9 @@ public class DealMarkdownPathDocument {
 	 * 将保存全部数据的list处理为符合规则的md格式文本
 	 *
 	 * @param file                目标路径
-	 * @param shieldingPathList   要屏蔽的路径list  以根目录向后相对路径
-	 * @param shieldingSuffixList 要屏蔽的文件的后缀名称list 只判断后缀
-	 * @param shieldingNameList   要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
 	 * @return 返回String
 	 */
-	private static String core(File file, ArrayList<String> shieldingPathList, ArrayList<String> shieldingSuffixList, ArrayList<String> shieldingNameList) {
+	private static String core(File file) {
 
 		//获取需要遍历的根目录的层级  在后面的所有子目录减去层级
 		fileSum = file.getPath().split("\\\\").length;
@@ -181,7 +181,7 @@ public class DealMarkdownPathDocument {
 				is = maxArray[list.get(i).getLevel(fileSum) - 1];
 				//将行数据写入到行所属的父级行的 文本中
 
-				ArrayList<MdEntityDocument> mdEntityDocumentArrayList = list.get(is).getList();
+				List<MdEntityDocument> mdEntityDocumentArrayList = list.get(is).getList();
 				mdEntityDocumentArrayList.add(list.get(i));
 				list.get(is).setList(mdEntityDocumentArrayList);
 			}
@@ -331,7 +331,7 @@ public class DealMarkdownPathDocument {
 						try {
 							mdEntityDocument.setParse(ParseJavaStructure.javaParse(mdEntityDocument.getMdPath()));
 						} catch (Exception e) {
-							//DealLog.log(mdEntityDocument.getMdPath(), e);
+							DealLog.log(mdEntityDocument.getMdPath(), e);
 						}
 					}
 					list.add(mdEntityDocument);

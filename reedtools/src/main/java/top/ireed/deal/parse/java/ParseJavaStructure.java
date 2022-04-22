@@ -29,6 +29,9 @@ public class ParseJavaStructure {
 
 	public static final String STR = "    - ";
 
+	private ParseJavaStructure() {
+	}
+
 	public static String javaParse(File path) throws TopException {
 		StringBuilder sb = new StringBuilder();
 		//返回的符合规则的文件markdown字符串
@@ -62,7 +65,7 @@ public class ParseJavaStructure {
 			String bodyStr = str.substring(str.indexOf(F_D_Z), str.lastIndexOf(F_D_Y));
 			//2.1 获取全部符合 } 到  ) { 中文格式的文本组
 			//方法的结构必然会有的格式
-			//解析的结果包含前后的 }方法文本信息{
+			//解析的结果包含前后的 右大括号方法文本信息 左大括号
 			//初始方法文本组结构
 			List<String> bodyList = ReUtil.findAll("\\}(.*?)\\) \\{", bodyStr, 0);
 
@@ -93,14 +96,14 @@ public class ParseJavaStructure {
 	 */
 	private static String methodParse(String methodStr) {
 		//到目前 全部解析为符合 以下格式的集合
-		//  }/**
+		//  \\/**
 		//  * 公开方法返回文件名注释
 		//  *
 		//  * @param filePath 公开方法返回文件名文件
 		//  * @return 公开方法返回文件名文件名
 		//  * @since 公开版本4.1.13
 		//  */
-		//  public static String getName(String filePath) {
+		//  public static String getName(String filePath)
 
 		//1 初始处理 去除干扰信息
 		//1.1 只保留文本中最后一个;到结尾的文本 去除定义的包含{的枚举 字典 别名等结构  带来的干扰
@@ -150,7 +153,7 @@ public class ParseJavaStructure {
 
 		//3 解析处理参数部分
 		//3.1 方法的参数部分  取{}中间的部分
-		String methodBody = st.substring(st.indexOf(F_X_Z) + 1, st.indexOf(")"));
+		String methodBody = st.substring(st.indexOf(F_X_Z) + 1, st.indexOf(F_X_Y));
 		//参数不是无参数结构的空字符串
 		if (StrUtil.isNotBlank(methodBody)) {
 			//3.2 方法参数数组
@@ -279,12 +282,8 @@ public class ParseJavaStructure {
 				s = s.trim();
 				//排除空行
 
-				//排除开头为@
-				if (StrUtil.isBlank(s) || "@".equals(s.substring(0, 1))) {
-					continue;
-				}
-				//排除开头为/\r\n
-				if (s.length() > 3 && "/\r\n".equals(s.substring(0, 3))) {
+				//排除开头为@  //排除开头为/\r\n
+				if ((StrUtil.isBlank(s) || "@".equals(s.substring(0, 1))) || (s.length() > 3 && "/\r\n".equals(s.substring(0, 3))) ) {
 					continue;
 				}
 
@@ -296,45 +295,4 @@ public class ParseJavaStructure {
 		return methodMark.toString();
 
 	}
-
-
-	/**
-	 * 获取符合规则的方法参数 + 参数注释  的文本
-	 *
-	 * @param methodBody  参数名称
-	 * @param methodArray 方法全部文本数组
-	 * @return 文本
-	 */
-	private static String methodHeadNote(String methodBody, String[] methodArray) {
-		//参数名称数组 空格划分
-		String[] methodBodyArray = methodBody.split(" ");
-		//参数的名称
-		String methodBodyArrayName = methodBodyArray[methodBodyArray.length - 1];
-
-		//返回的字符串
-		StringBuilder methodBodyString = new StringBuilder();
-
-		//参数信息必然是在文件名后的三级
-		methodBodyString.append(STR);
-		methodBodyString.append(methodBody);
-		methodBodyString.append("\r\n");
-
-		for (String s : methodArray) {
-			//在文本数组中寻找参数名称
-			int intIndex = s.indexOf(methodBodyArrayName);
-			//如果参数名称存在
-			if (intIndex > 0) {
-				//参数注释 本处取行文本后面的部分
-				//参数注释 必然是在文件名后的四级
-				methodBodyString.append("      - ");
-				methodBodyString.append(s.substring(intIndex + methodBodyArrayName.length() + 1));
-				methodBodyString.append("\r\n");
-				break;
-			}
-		}
-
-		return methodBodyString.toString();
-	}
-
-
 }

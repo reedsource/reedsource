@@ -6,6 +6,7 @@ package top.ireed.found;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
+import org.apache.http.client.utils.DateUtils;
 import top.ireed.deal.DealDate;
 import top.ireed.deal.DealLog;
 import top.ireed.deal.DealObject;
@@ -19,6 +20,7 @@ import java.sql.*;
 import java.util.Date;
 import java.util.*;
 
+import static top.ireed.general.TopConstant.F_X_Y;
 import static top.ireed.general.TopConstant.F_X_Z;
 
 /**
@@ -327,7 +329,7 @@ public class FoundSqlite {
 	 * @param o         实体数据
 	 * @return 数据
 	 */
-	private String getInsertSqliteStr(String tableName, Object o) throws TopException {
+	private String getInsertSqliteStr(String tableName, Object o) {
 		//1.表名 不考虑库操作
 		tableName = getTableName(o, tableName);
 		//2.实体数据
@@ -353,7 +355,7 @@ public class FoundSqlite {
 				b.append(field.getName());
 				c.append("'");
 				if (field.getType().isAssignableFrom(Date.class)) {
-					c.append(DealDate.getSqliteDate(DealDate.getDate(m)));
+					c.append(DealDate.getSqliteDate(DateUtils.parseDate(m)));
 				} else {
 					c.append(m);
 				}
@@ -363,7 +365,7 @@ public class FoundSqlite {
 		}
 		//3. 组装主体语句
 		//1.1添加  "INSERT INTO tableName (key,value) VALUES('数据1','mm1')"
-		return "INSERT INTO " + tableName + F_X_Z + b.toString() + ") VALUES(" + c.toString() + ")";
+		return "INSERT INTO " + tableName + F_X_Z + b.toString() + ") VALUES(" + c.toString() + F_X_Y;
 	}
 
 	/**
@@ -529,7 +531,7 @@ public class FoundSqlite {
 				xx.append(",").append(field.getName()).append(" text");
 			}
 		}
-		xx.append(")");
+		xx.append(F_X_Y);
 		return xx.toString();
 	}
 
@@ -557,7 +559,7 @@ public class FoundSqlite {
 	 * @param object    包含数据的实体类
 	 * @return 添加条数
 	 */
-	public int insert(String tableName, Object object) throws TopException {
+	public int insert(String tableName, Object object) {
 		//执行添加语句
 		return set(getInsertSqliteStr(tableName, object), "添加");
 	}

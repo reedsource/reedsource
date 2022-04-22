@@ -2,12 +2,12 @@ package top.ireed.deal;
 
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
 import static top.ireed.general.TopConstant.F_B;
-import static top.ireed.general.TopConstant.UTF8;
 
 
 /**
@@ -176,7 +176,7 @@ public class DealString {
 
 				byte[] b = new byte[0];
 				try {
-					b = Character.toString(c).getBytes(UTF8);
+					b = Character.toString(c).getBytes(StandardCharsets.UTF_8);
 				} catch (Exception ex) {
 					DealLog.log("转换到url编码错误");
 				}
@@ -238,11 +238,7 @@ public class DealString {
 			code[0] = (byte) (Integer.parseInt(utf8String.substring(1, 3), 16) - 256);
 			code[1] = (byte) (Integer.parseInt(utf8String.substring(4, 6), 16) - 256);
 			code[2] = (byte) (Integer.parseInt(utf8String.substring(7, 9), 16) - 256);
-			try {
-				result = new String(code, UTF8);
-			} catch (UnsupportedEncodingException ex) {
-				result = null;
-			}
+			result = new String(code, StandardCharsets.UTF_8);
 		} else {
 			result = utf8String;
 		}
@@ -433,7 +429,7 @@ public class DealString {
 
 
 		String str = "<a href=\"http://www.baidu.com\">百度一下</a>";
-		DealLog.log(DealString.utf8UrlCheck(str.getBytes(UTF8)));
+		DealLog.log(DealString.utf8UrlCheck(str.getBytes(StandardCharsets.UTF_8)));
 		DealLog.log(DealString.utf8UrlCheck(str.getBytes("gbk")));
 
 		DealLog.log("开始数值字符压缩测试------------------------------------------------");

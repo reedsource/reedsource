@@ -10,6 +10,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 功能简述:
@@ -40,13 +41,13 @@ public class DealMarkdownPathTest {
 	@Test
 	public void test() {
 		//要遍历的路径
-		String path = "D:\\top\\topcollect\\hutool";
+		String path = "D:\\codes\\reedsource\\reedtools\\";
 
 		//写入的文件
-		File f = new File("D:\\hutool20210404");
+		File f = new File("D:\\cache\\reedtools");
 
 		//要屏蔽的路径list  以根目录向后相对路径
-		ArrayList<String> shieldingPathList = new ArrayList<>(16);
+		List<String> shieldingPathList = new ArrayList<>(16);
 		shieldingPathList.add(".git");
 		shieldingPathList.add(".gitee");
 		shieldingPathList.add(".github");
@@ -54,12 +55,12 @@ public class DealMarkdownPathTest {
 		shieldingPathList.add(".gitignore");
 
 		//要屏蔽的文件的后缀名称list 只判断后缀
-		ArrayList<String> shieldingSuffixList = new ArrayList<>(16);
+		List<String> shieldingSuffixList = new ArrayList<>(16);
 		shieldingSuffixList.add(".mvn");
 		shieldingSuffixList.add(".iml");
 
 		//要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
-		ArrayList<String> shieldingNameList = new ArrayList<>(16);
+		List<String> shieldingNameList = new ArrayList<>(16);
 		shieldingNameList.add("target");
 		shieldingNameList.add(".mvn");
 

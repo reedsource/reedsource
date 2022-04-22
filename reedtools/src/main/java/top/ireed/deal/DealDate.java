@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 
 import static java.util.Calendar.*;
 import static top.ireed.general.TopConstant.*;
@@ -146,7 +145,7 @@ public class DealDate {
 	 * 都为空 且开启时间间隔 返回间隔天数时间
 	 * 开始时间大于结束时间 返回含错误文本的数据信息
 	 *
-	 * @param request       请求数据
+	 * @param request          请求数据
 	 * @param change           是否需要默认增减时间
 	 * @param beginDateUndergo 开始时间增减 前正负后 当天为 0
 	 * @param endDateUndergo   结束时间增减 前正负后 当次为 0
@@ -186,8 +185,8 @@ public class DealDate {
 
 			//开始或结束时间都为空 返回00:00:00时间 返回当日结束 59:59:59
 		} else if (change) {
-			beginDate = getChangeDateDay(DealDate.getChangeDate(new Date(), 2, beginDateUndergo),0);
-			endDate = getChangeDateDay(DealDate.getChangeDate(new Date(), 2, endDateUndergo),1);
+			beginDate = getChangeDateDay(DealDate.getChangeDate(new Date(), 2, beginDateUndergo), 0);
+			endDate = getChangeDateDay(DealDate.getChangeDate(new Date(), 2, endDateUndergo), 1);
 		}
 
 		//开始时间大于结束时间,报异常
@@ -412,21 +411,21 @@ public class DealDate {
 	 * @return 时间对象
 	 */
 	public static Date getDate(String dateString) throws TopException {
-		if (dateString.matches("^\\d{4}-\\d{1,2}$")) {
-			return getDate(dateString, YYYY_MM);
-		} else if (dateString.matches("^\\d{4}-\\d{1,2}-\\d{1,2}$")) {
+		try {
 			return getDate(dateString, YYYY_MM_DD);
-		} else if (dateString.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}$")) {
-			return getDate(dateString, YYYY_MM_DD_HH_MM);
-		} else if (dateString.matches("^\\d{4}-\\d{1,2}-\\d{1,2} {1}\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
-			return getDate(dateString, YYYY_MM_DD_HH_MM_SS);
-		} else {
-			//英文格式字符串
+		} catch (TopException e) {
 			try {
-				SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd hh:mm:ss zzz yyyy", Locale.US);
-				return format.parse(dateString);
-			} catch (ParseException e) {
-				throw new TopException("时间字符串或时间格式异常", dateString);
+				return getDate(dateString, YYYY_MM_DD_HH_MM_SS);
+			} catch (TopException e1) {
+				try {
+					return getDate(dateString, YYYY_MM_DD_HH_MM);
+				} catch (TopException e2) {
+					try {
+						return getDate(dateString, YYYY_MM);
+					} catch (TopException e3) {
+						throw new TopException("时间字符串或时间格式异常", dateString);
+					}
+				}
 			}
 		}
 	}

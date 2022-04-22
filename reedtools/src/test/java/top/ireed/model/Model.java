@@ -4,6 +4,8 @@
  */
 package top.ireed.model;
 
+import java.util.Date;
+
 /**
  * 测试实体类
  */
@@ -12,27 +14,27 @@ public class Model extends DataBase{
 	private String id;
 	private String key;
 	private String value;
-	private String date;
+	private Date date;
 
 
 
 	public Model() {
 	}
 
-	public Model(String key, String value, String date) {
+	public Model(String key, String value, Date date) {
 		this.key = key;
 		this.value = value;
 		this.date = date;
 	}
 
-	public Model(String id, String key, String value, String date) {
+	public Model(String id, String key, String value, Date date) {
 		this.id = id;
 		this.key = key;
 		this.value = value;
 		this.date = date;
 	}
 
-	public Model(String id, String key, String value, String date, String suS) {
+	public Model(String id, String key, String value, Date date, String suS) {
 		this.id = id;
 		this.key = key;
 		this.value = value;
@@ -73,11 +75,11 @@ public class Model extends DataBase{
 		this.value = value;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
