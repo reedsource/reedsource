@@ -32,9 +32,9 @@ public class DealJackson {
 	/**
 	 * 对象转json
 	 *
-	 * @param objects
+	 * @param objects objects
 	 * @return json
-	 * @throws JsonProcessingException 异常
+	 * @throws TopException 异常
 	 */
 	public static String getJson(Object objects) throws TopException {
 		try {
@@ -50,7 +50,7 @@ public class DealJackson {
 	 * @param t class
 	 * @param <T> 泛型class
 	 * @return object
-	 * @throws JsonProcessingException 异常
+	 * @throws TopException 异常
 	 */
 	public static <T> T toObject(String str, Class<T> t) throws TopException {
 		try {
@@ -64,9 +64,9 @@ public class DealJackson {
 	/**
 	 * json转Map
 	 *
-	 * @param str
+	 * @param str json字符串
 	 * @return json
-	 * @throws JsonProcessingException 异常
+	 * @throws TopException 异常
 	 */
 	public static Map toMap(String str) throws TopException {
 		try {
@@ -82,15 +82,15 @@ public class DealJackson {
 	 * @param str json
 	 * @param t class
 	 * @param <T> 泛型 class
-	 * @return
-	 * @throws JsonProcessingException 异常
+	 * @return List
+	 * @throws TopException 异常
 	 */
 	public static <T> List<T> toList(String str, Class<T> t) throws TopException {
 		//返回 List<T>
 		List<T> p = new ArrayList<>();
 		//list默认值为linkHashMap  有序的实体集合 实际就是实体
 		//本处调用方法将字符串转化为List<linkHashMap>
-		List<T> persons = null;
+		List<T> persons;
 		try {
 			persons = mapper.readValue(str, new TypeReference<List<T>>() {
 			});

@@ -201,6 +201,11 @@ public class DealDateTest {
 		dealDate=new DealDate(new Date(),new Date(),"信息");
 		dealDate=new DealDate("信息");
 
+		dealDate.setBeginDate(new Date());
+		dealDate.setEndDate(new Date());
+		DealLog.log(dealDate.getDateMsg());
+		dealDate.setDateMsg("");
+
 		Assert.assertNotNull(DealDate.getMm());
 	}
 }

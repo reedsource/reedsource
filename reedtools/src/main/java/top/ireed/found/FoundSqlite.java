@@ -63,7 +63,6 @@ public class FoundSqlite {
 	private static final String ERR = "非约定模式,无法使用本方式";
 	public static final String AND = " AND ";
 	public static final String WHERE = " WHERE ";
-	public static final String WHERE1 = " WHERE ";
 
 	/**
 	 * sqlite关键字,当建表表名为这些字段时,会出现异常

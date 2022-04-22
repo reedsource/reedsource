@@ -23,7 +23,7 @@ import java.io.File;
 public class ParseJavaStructureTest {
 	@Test
 	public void Test() throws TopException {
-		DealLog.log(ParseJavaStructure.javaParse(new File("D:\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\deal\\parse\\java\\ParseJavaStructureCase.java")));
+		DealLog.log(ParseJavaStructure.javaParse(new File("D:\\codes\\reedsource\\reedtools\\src\\main\\java\\top\\ireed\\found\\FoundSqlite.java")));
 		Assert.assertTrue(true);
 	}
 

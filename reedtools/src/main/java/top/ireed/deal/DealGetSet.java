@@ -30,7 +30,7 @@ public class DealGetSet {
 	 */
 	public static void getMethod(Object obj, String name) {
 		//获得实体类名
-		Class<? extends Object> clazz = obj.getClass();
+		Class<?> clazz = obj.getClass();
 		//获得属性
 		Field[] fields = obj.getClass().getDeclaredFields();
 		//获得Object对象中的所有方法

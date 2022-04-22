@@ -21,7 +21,7 @@ public class DealFile {
 	}
 
 	/**
-	 *  根据目录字符串创建目录
+	 * 根据目录字符串创建目录
 	 *
 	 * @param fileString 目录字符串
 	 * @return 创建目录结果
@@ -31,7 +31,7 @@ public class DealFile {
 			File baFile = new File(fileString);
 			//目录不存在创建
 			if (!baFile.exists()) {
-				baFile.mkdirs();
+				return baFile.mkdirs();
 			}
 			return true;
 		} catch (Exception e) {
@@ -40,7 +40,7 @@ public class DealFile {
 	}
 
 	/**
-	 *  根据目录对象创建目录
+	 * 根据目录对象创建目录
 	 *
 	 * @param file 目录对象
 	 * @return 创建目录结果
@@ -49,7 +49,7 @@ public class DealFile {
 		try {
 			//目录不存在创建
 			if (!file.exists()) {
-				file.mkdirs();
+				return file.mkdirs();
 			}
 			return true;
 		} catch (Exception e) {
