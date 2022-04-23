@@ -22,7 +22,7 @@ import static top.ireed.general.TopConstant.*;
  * reedsource@189.cn
  */
 public class DealDateTest {
-	private Date date = DealDate.getDate("2020-09-10 12:10:10 100", YYYY_MM_DD_HH_MM_SS_SSS);
+	private final Date date = DealDate.getDate("2020-09-10 12:10:10 100", YYYY_MM_DD_HH_MM_SS_SSS);
 
 	public DealDateTest() throws TopException {
 	}
@@ -117,13 +117,13 @@ public class DealDateTest {
 	@Test
 	public void get17Time() {
 		//获取yyyyMMddHHmmssSSS的17位的截止毫秒的时间
-		Assert.assertTrue(!DealDate.get17Time().isEmpty());
+		Assert.assertFalse(DealDate.get17Time().isEmpty());
 	}
 
 	@Test
 	public void get8Time() {
 		//获取yyyyMMdd的8位的截止毫秒的时间
-		Assert.assertTrue(!DealDate.get8Time().isEmpty());
+		Assert.assertFalse(DealDate.get8Time().isEmpty());
 	}
 
 	@Test
@@ -198,11 +198,10 @@ public class DealDateTest {
 	@Test
 	public void test() throws TopException {
 		DealDate dealDate = new DealDate("2021-02-02","2022-02-02");
-		dealDate=new DealDate(new Date(),new Date(),"信息");
-		dealDate=new DealDate("信息");
-
 		dealDate.setBeginDate(new Date());
+		dealDate=new DealDate(new Date(),new Date(),"信息");
 		dealDate.setEndDate(new Date());
+		dealDate=new DealDate("信息");
 		DealLog.log(dealDate.getDateMsg());
 		dealDate.setDateMsg("");
 

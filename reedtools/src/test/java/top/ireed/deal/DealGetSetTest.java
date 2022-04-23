@@ -9,8 +9,8 @@ import top.ireed.model.Model;
  * 〈${DESCRIPTION}〉
  *
  * @author reedsource
- * @create 2020/11/17 11:10
- * @mailbox reedsource@189.cn
+ * create 2020/11/17 11:10
+ * mailbox reedsource@189.cn
  */
 public class DealGetSetTest {
 

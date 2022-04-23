@@ -68,8 +68,8 @@ public class DealMarkdownPathTest {
 
 		// 先得到文件的上级目录，并创建上级目录，在创建文件
 		if (!f.exists()) {
-			f.getParentFile().mkdir();
-			f.createNewFile();
+			DealLog.log(f.getParentFile().mkdir());
+			DealLog.log(f.createNewFile());
 		}
 
 		// 构建FileOutputStream对象,文件不存在会自动新建--------------------------------

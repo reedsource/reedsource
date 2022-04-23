@@ -1,9 +1,7 @@
 package top.ireed.deal;
 
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
-import top.ireed.model.Model;
 
 /**
  * 功能简述:
@@ -13,7 +11,7 @@ import top.ireed.model.Model;
  * date 2022/4/21 18:02
  * mail reedsource@189.cn
  */
-public class DealStringTest extends TestCase {
+public class DealStringTest {
 
 	@Test
 	public void test() {
