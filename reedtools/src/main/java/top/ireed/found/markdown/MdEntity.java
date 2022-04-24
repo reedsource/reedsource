@@ -2,7 +2,7 @@
  * FileName: MdEntityDocument
  * Author:   reedsource
  */
-package top.ireed.deal.markdown02;
+package top.ireed.found.markdown;
 
 import cn.hutool.core.io.file.FileNameUtil;
 
@@ -19,23 +19,34 @@ import java.util.List;
  * date 2021-03-21 21:33
  * reedsource@189.cn
  */
-public class MdEntityDocument {
+public class MdEntity {
 	/*路径原数据*/
 	private File mdPath;
 	/*路径是文件夹*/
 	private boolean isDirectory;
 	/*处理完成的标题数据*/
 	private String title;
-	/*归属的子实体*/
-	private List<MdEntityDocument> list;
-	/*解析为无序列表的文本格式*/
-	private String parse;
+	/**
+	 * 当前路径与项目根目录层数的绝对值  默认创建文件为标题 为1 认为是根目录
+	 */
+	private int level;
 
-	public MdEntityDocument() {
+	/*归属的子实体*/
+	private List<MdEntity> list;
+	/*解析为无序列表的文本格式*/
+	private String unorderedListMsg;
+
+	public MdEntity() {
 	}
 
-	public MdEntityDocument(File mdPath, boolean isDirectory) {
+	/**
+	 * @param mdPath 当前目录
+	 * @param level 当前路径与项目根目录层数的绝对值  默认创建文件为标题 为1 认为是根目录
+	 * @param isDirectory 是否是目录
+	 */
+	public MdEntity(File mdPath,int level, boolean isDirectory) {
 		this.mdPath = mdPath;
+		this.level = level;
 		this.isDirectory = isDirectory;
 	}
 
@@ -55,19 +66,12 @@ public class MdEntityDocument {
 		return isDirectory;
 	}
 
-	/**
-	 * @param pathSum 初始时 目录层级别 本处专用
-	 * @return 减去初始层级之后的值
-	 */
-	public int getLevel(int pathSum) {
-		//通过\\获取数组 取数组的成员数量 判定层级
-		//减去初始遍历的根目录的层级
-		return mdPath.getPath().split("\\\\").length - pathSum + 1;
+	public int getLevel() {
+		return level;
 	}
 
-	public String getName() {
-		//获取文件名，不带扩展后缀
-		return mdPath.getName();
+	public void setLevel(int level) {
+		this.level = level;
 	}
 
 	public String getSuffix() {
@@ -82,24 +86,23 @@ public class MdEntityDocument {
 		this.title = title;
 	}
 
-	public List<MdEntityDocument> getList() {
+	public List<MdEntity> getList() {
 		if (list == null) {
 			return new ArrayList<>();
 		}
-
 		return list;
 	}
 
-	public void setList(List<MdEntityDocument> list) {
+	public void setList(List<MdEntity> list) {
 		this.list = list;
 	}
 
-	public String getParse() {
-		return parse;
+	public String getUnorderedListMsg() {
+		return unorderedListMsg;
 	}
 
-	public void setParse(String parse) {
-		this.parse = parse;
+	public void setUnorderedListMsg(String unorderedListMsg) {
+		this.unorderedListMsg = unorderedListMsg;
 	}
 
 }

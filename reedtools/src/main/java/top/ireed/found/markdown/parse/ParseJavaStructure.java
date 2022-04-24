@@ -2,7 +2,7 @@
  * FileName: ParseJavaStructure
  * Author:   reedsource
  */
-package top.ireed.deal.parse.java;
+package top.ireed.found.markdown.parse;
 
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;

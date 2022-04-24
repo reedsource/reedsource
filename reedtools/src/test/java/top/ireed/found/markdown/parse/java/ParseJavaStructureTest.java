@@ -2,11 +2,12 @@
  * FileName: ParseJavaStructureTest
  * Author:   reedsource
  */
-package top.ireed.deal.parse.java;
+package top.ireed.found.markdown.parse.java;
 
 import org.junit.Assert;
 import org.junit.Test;
 import top.ireed.deal.DealLog;
+import top.ireed.found.markdown.parse.ParseJavaStructure;
 import top.ireed.general.TopException;
 
 import java.io.File;

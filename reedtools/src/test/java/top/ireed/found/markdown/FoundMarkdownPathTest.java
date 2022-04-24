@@ -2,10 +2,12 @@
  * FileName: DealMarkdownPathTest
  * Author:   reedsource
  */
-package top.ireed.deal.markdown02;
+package top.ireed.found.markdown;
 
 import org.junit.Assert;
 import org.junit.Test;
+import top.ireed.deal.DealLog;
+import top.ireed.general.TopException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ import java.util.List;
  * date 2021-03-21 12:30
  * reedsource@189.cn
  */
-public class DealMarkdownPathTest {
+public class FoundMarkdownPathTest {
 
 	/*
 	思路
@@ -38,7 +40,7 @@ public class DealMarkdownPathTest {
 	2.3 将数据解析到字符串 并写入到txt中
 	* */
 	@Test
-	public void test() {
+	public void test() throws TopException {
 		//要遍历的路径
 		String path = "D:\\codes\\reedsource\\reedtools\\";
 
@@ -52,6 +54,7 @@ public class DealMarkdownPathTest {
 		shieldingPathList.add(".github");
 		shieldingPathList.add(".idea");
 		shieldingPathList.add(".gitignore");
+		shieldingPathList.add("target");
 
 		//要屏蔽的文件的后缀名称list 只判断后缀
 		List<String> shieldingSuffixList = new ArrayList<>(16);
@@ -63,8 +66,13 @@ public class DealMarkdownPathTest {
 		shieldingNameList.add("target");
 		shieldingNameList.add(".mvn");
 
+		//需要解析的文件后缀列表
+		List<String> parseSuffixList = new ArrayList<>(16);
+		parseSuffixList.add("java");
+
 		//接收核心解析   返回的数据
-		DealMarkdownPathDocument.toMd(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList, true, f);
+		FoundMarkdown foundMarkdown = new FoundMarkdown();
+		foundMarkdown.toMd(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList, true,  parseSuffixList, f);
 
 		Assert.assertTrue(true);
 	}
