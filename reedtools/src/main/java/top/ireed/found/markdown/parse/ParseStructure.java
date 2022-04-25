@@ -24,6 +24,9 @@ import java.util.List;
  */
 public class ParseStructure {
 
+	private ParseStructure() {
+	}
+
 	//当前解析器支持java
 	public static final String JAVA = "java";
 

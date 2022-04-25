@@ -109,14 +109,62 @@ public class FoundMarkdown {
 		//注意 本处调用时 根目录会写入list 故层级为1
 		tree(file, 1, shieldingPathList, shieldingSuffixList, shieldingNameList, parseSuffixList);
 
+		//md排序
+		mdSort();
+
+		//将计算完成的数据集合 整合到返回的String中
+		StringBuilder stringBuilder = new StringBuilder();
+		for (MdEntity mdEntity : list) {
+			stringBuilder.append(mdLine(mdEntity));
+		}
+
+		return stringBuilder.toString();
+	}
+
+	/**
+	 * md行数据组装
+	 *
+	 * @param mdEntity md行数据
+	 * @return md行数据组装
+	 */
+	private static String mdLine (MdEntity mdEntity){
+		StringBuilder stringBuilder = new StringBuilder();
+		//如果标题不为空
+		if (StrUtil.isNotBlank(mdEntity.getTitle())) {
+			stringBuilder.append(mdEntity.getTitle());
+			stringBuilder.append("\r\n");
+			//如果内容不为空
+			if (!mdEntity.getList().isEmpty()) {
+				for (MdEntity entityDocument : mdEntity.getList()) {
+					//处理解析文本
+					stringBuilder.append(entityDocument.getMdPath().getName());
+					stringBuilder.append("\r\n");
+					if (StrUtil.isNotBlank(entityDocument.getUnorderedListMsg())) {
+						stringBuilder.append(mdParsePrefix(entityDocument.getLevel(), entityDocument.getUnorderedListMsg()));
+						stringBuilder.append("\r\n");
+					}
+				}
+			}
+			if (StrUtil.isNotBlank(mdEntity.getUnorderedListMsg())) {
+				stringBuilder.append(mdParsePrefix(mdEntity.getLevel(), mdEntity.getUnorderedListMsg()));
+				stringBuilder.append("\r\n");
+			}
+		}
+		return stringBuilder.toString();
+	}
+
+
+	/**
+	 * md排序
+	 * <p>
+	 * 1 先将文件树按照md的格式生成符合规则的 标题+内容  结构
+	 * 2 但是此时内容是换行符格式的文本 是便于组合为md文件的 如果进一步解析文件 将会是阻碍
+	 * 思路
+	 * 方案一 在写入到行文本时 对数据进行可解析辨别处理
+	 */
+	private static void mdSort() {
 		//当前行所属的上级级别
-		int is = 0;
-
-		//1 先将文件树按照md的格式生成符合规则的 标题+内容  结构
-		//2 但是此时内容是换行符格式的文本 是便于组合为md文件的 如果进一步解析文件 将会是阻碍
-		//思路
-		//方案一 在写入到行文本时 对数据进行可解析辨别处理
-
+		int is;
 
 		//md级别 将文件树按照md格式排序
 		for (int i = 0; i < list.size(); i++) {
@@ -139,34 +187,6 @@ public class FoundMarkdown {
 				list.get(is).setList(mdEntityArrayList);
 			}
 		}
-
-		//将计算完成的数据集合 整合到返回的String中
-		StringBuilder stringBuilder = new StringBuilder();
-		for (MdEntity mdEntity : list) {
-			//如果标题不为空
-			if (StrUtil.isNotBlank(mdEntity.getTitle())) {
-				stringBuilder.append(mdEntity.getTitle());
-				stringBuilder.append("\r\n");
-				//如果内容不为空
-				if (!mdEntity.getList().isEmpty()) {
-					for (MdEntity entityDocument : mdEntity.getList()) {
-						//处理解析文本
-						stringBuilder.append(entityDocument.getMdPath().getName());
-						stringBuilder.append("\r\n");
-						if (StrUtil.isNotBlank(entityDocument.getUnorderedListMsg())) {
-							stringBuilder.append(mdParsePrefix(entityDocument.getLevel(), entityDocument.getUnorderedListMsg()));
-							stringBuilder.append("\r\n");
-						}
-					}
-				}
-				if (StrUtil.isNotBlank(mdEntity.getUnorderedListMsg())) {
-					stringBuilder.append(mdParsePrefix(mdEntity.getLevel(), mdEntity.getUnorderedListMsg()));
-					stringBuilder.append("\r\n");
-				}
-			}
-		}
-
-		return stringBuilder.toString();
 	}
 
 	/**
@@ -242,7 +262,6 @@ public class FoundMarkdown {
 	 * @param shieldingPathList   要屏蔽的路径list  以根目录向后相对路径
 	 * @param shieldingSuffixList 要屏蔽的文件的后缀名称list 只判断后缀
 	 * @param shieldingNameList   要屏蔽的文件名称list   注意 会屏蔽全部符合名称的文件
-	 * @param isParse             是否做文件解析
 	 * @param parseSuffixList     文件类型解析列表
 	 */
 	public static void tree(File file

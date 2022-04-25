@@ -4,8 +4,7 @@
  */
 package top.ireed.entity;
 
-import cn.hutool.core.util.StrUtil;
-
+import cn.hutool.core.text.CharSequenceUtil;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -104,11 +103,11 @@ public class PageData<T> {
 		String pageNoStr = request.getParameter("pageNo");
 		//获取请求中的每页显示数量
 		String pageSizeStr = request.getParameter("pageSize");
-		if (StrUtil.isNotBlank(pageNoStr)) {
-			this.pageNo = Integer.valueOf(pageNoStr);
+		if (CharSequenceUtil.isNotBlank(pageNoStr)) {
+			this.pageNo = Integer.parseInt(pageNoStr);
 		}
-		if (StrUtil.isNotBlank(pageSizeStr)) {
-			this.pageSize = Integer.valueOf(pageSizeStr);
+		if (CharSequenceUtil.isNotBlank(pageSizeStr)) {
+			this.pageSize = Integer.parseInt(pageSizeStr);
 		}
 		//分页查询对象
 		this.object = object;
@@ -117,7 +116,7 @@ public class PageData<T> {
 	/**
 	 * 当前分页查询查询第几页
 	 *
-	 * @return
+	 * @return 页
 	 */
 	public int getPageNo() {
 		return pageNo;
@@ -138,7 +137,7 @@ public class PageData<T> {
 	/**
 	 * 当前分页查询的开始条数
 	 *
-	 * @return
+	 * @return 条
 	 */
 	public int getLimitBegin() {
 		//第一页从0开始

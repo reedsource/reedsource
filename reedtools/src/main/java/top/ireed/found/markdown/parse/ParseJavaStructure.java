@@ -4,10 +4,9 @@
  */
 package top.ireed.found.markdown.parse;
 
+import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.ReUtil;
-import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HTMLFilter;
-import top.ireed.deal.DealLog;
 import top.ireed.general.TopException;
 
 import java.io.*;
@@ -72,11 +71,7 @@ public class ParseJavaStructure {
 			//2.2 解析
 			for (String title : bodyList) {
 				//解析方法文本 加入结果
-				try {
-					parseString.append(methodParse(title));
-				} catch (Exception e) {
-					DealLog.log(path, e);
-				}
+				parseString.append(methodParse(title));
 			}
 
 		} catch (IOException e) {
@@ -155,7 +150,7 @@ public class ParseJavaStructure {
 		//3.1 方法的参数部分  取{}中间的部分
 		String methodBody = st.substring(st.indexOf(F_X_Z) + 1, st.indexOf(F_X_Y));
 		//参数不是无参数结构的空字符串
-		if (StrUtil.isNotBlank(methodBody)) {
+		if (CharSequenceUtil.isNotBlank(methodBody)) {
 			//3.2 方法参数数组
 			String[] methodBodyArray = methodBody.split(", ");
 			//3.3 如果有参数
@@ -181,11 +176,7 @@ public class ParseJavaStructure {
 			int intIndex = s1.indexOf("@return");
 			if (intIndex != -1 && intIndex + 7 < s1.length()) {
 				//定义返回的结果文本
-				StringBuilder methodMark = new StringBuilder();
-				methodMark.append(STR);
-				methodMark.append(s1.substring(intIndex).trim());
-				methodMark.append("\r\n");
-				return methodMark.toString();
+				return STR + s1.substring(intIndex).trim() + "\r\n";
 			}
 		}
 		return "";
@@ -283,7 +274,7 @@ public class ParseJavaStructure {
 				//排除空行
 
 				//排除开头为@  //排除开头为/\r\n
-				if ((StrUtil.isBlank(s) || "@".equals(s.substring(0, 1))) || (s.length() > 3 && "/\r\n".equals(s.substring(0, 3))) ) {
+				if ((CharSequenceUtil.isBlank(s) || "@".equals(s.substring(0, 1))) || (s.length() > 3 && "/\r\n".equals(s.substring(0, 3))) ) {
 					continue;
 				}
 

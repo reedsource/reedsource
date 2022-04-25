@@ -122,7 +122,6 @@ public class FoundSqliteTest {
 			}
 		}
 
-
 		//分页查询数据   从第二条之后 查询3条数据
 		List<PageTime> list = new ArrayList<>();
 		list.add(new PageTime("date", DealDate.getDate("2020-01-01"),DealDate.getDate("2022-04-05")));

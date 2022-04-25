@@ -5,7 +5,7 @@
 package top.ireed.found;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.text.CharSequenceUtil;
 import org.apache.http.client.utils.DateUtils;
 import top.ireed.deal.DealDate;
 import top.ireed.deal.DealLog;
@@ -236,7 +236,7 @@ public class FoundSqlite {
 	 * @return 校验路径是否正常
 	 */
 	private boolean mkdirFile() {
-		File baFile = new File(new File(StrUtil.replaceIgnoreCase(sqliteDataUrl, "jdbc:sqLite:", "")).getParent());
+		File baFile = new File(new File(CharSequenceUtil.replaceIgnoreCase(sqliteDataUrl, "jdbc:sqLite:", "")).getParent());
 		//判断是否存在
 		if (!baFile.exists()) {
 			//不存在尝试创建
@@ -417,23 +417,60 @@ public class FoundSqlite {
 		return "UPDATE " + tableName + " SET " + c.toString() + "WHERE " + keyName + " = " + key;
 	}
 
-
 	/**
 	 * 查询语句组装
 	 *
+	 * @param delete    是否是删除语句
 	 * @param tableName 表名 不考虑库操作
 	 * @param o         实体数据
+	 * @param list      时间查询条件
 	 * @return 语句
+	 * @throws TopException 异常
 	 */
 	private String getSqliteStr(boolean delete, String tableName, Object o, List<PageTime> list) throws TopException {
 		//1.表名 不考虑库操作
 		tableName = getTableName(o, tableName);
+
 		//2.实体数据
-		// 尾数据类型 key = 'value' ,/AND key = 'value'
+		String entitySqlMsg = entitySqlMsg(o, list);
+
+		//3. 组装主体语句
+		StringBuilder a = new StringBuilder();
+
+		//删除数据
+		if (delete) {
+			if (CharSequenceUtil.isNotBlank(entitySqlMsg)) {
+				a.append("DELETE FROM ").append(tableName).append(WHERE).append(entitySqlMsg);
+			} else {
+				throw new TopException("删除语句条件不存在", o);
+			}
+		} else {
+			a.append("SELECT * FROM ").append(tableName);
+			//添加过有效查询字段
+			a.append(WHERE);
+			a.append("1 = 1");
+			a.append(entitySqlMsg);
+		}
+		//时间条件
+		return orDateStr(a, list);
+	}
+
+
+	/**
+	 * 实体sql数据组装器
+	 *
+	 * 格式 AND key = 'value' AND key2 = 'value2'
+	 *
+	 * 使用时 如果是查询 需要添加前置条件 1 = 1
+	 *
+	 * @param o    实体
+	 * @param list 时间条件
+	 * @return 实体sql
+	 */
+	private String entitySqlMsg(Object o, List<PageTime> list) {
 		StringBuilder c = new StringBuilder();
 		Field[] fields = o.getClass().getDeclaredFields();
-		//是否添加过有效字段标记 初始false 当第一次添加有用数据字段后,后续在前面添加,分隔
-		boolean si = false;
+
 		for (Field field : fields) {
 			//将实体数据全部转化为字符串类型
 			String m = DealObject.getMember(o, field.getName());
@@ -442,7 +479,7 @@ public class FoundSqlite {
 
 			//默认不是查询条件
 			boolean notTime = true;
-			//排除查询条件
+			//排除查询条件 时间类条件 交给专门的时间条件拼接器处理
 			if (list != null) {
 				for (PageTime pageTime : list) {
 					if (pageTime.getDateName().equals(field.getName())) {
@@ -454,58 +491,32 @@ public class FoundSqlite {
 			if (!Objects.equals(m, "") && notTime) {
 				//拼接 key = 'value' , key = 'value' 数据
 				//如果添加过有数据字段
-				if (si) {
-					c.append(AND);
-				}
-				c.append(field.getName()).append(" = '").append(m).append("' ");
-				si = true;
+				c.append(AND).append(field.getName()).append(" = '").append(m).append("' ");
 			}
 		}
-		//3. 组装主体语句
-		StringBuilder a = new StringBuilder();
-
-		//删除数据
-		if (delete) {
-			if (StrUtil.isNotBlank(c)) {
-				a.append("DELETE FROM ").append(tableName).append(WHERE).append(c.toString());
-			} else {
-				throw new TopException("删除语句条件不存在", o);
-			}
-		} else {
-			a.append("SELECT * FROM ").append(tableName);
-			//添加过有效查询字段
-			if (si) {
-				a.append(WHERE);
-			}
-			a.append(c.toString());
-		}
-		//时间条件
-		return orDateStr(a, list, si).toString();
+		return c.toString();
 	}
 
 	/**
 	 * @param a    组装主体语句
 	 * @param list 查询多条件时间
-	 * @param si   是否添加过有效字段标记
 	 * @return 语句
 	 */
-	private StringBuilder orDateStr(StringBuilder a, List<PageTime> list, boolean si) {
-		if (list != null) {
-			for (PageTime pageTime : list) {
-				String name = pageTime.getDateName();
-				if (pageTime.getBeginDate() != null) {
-					a.append(si ? AND + name + " >= '" : WHERE + name + " >= '").append(DealDate.getSqliteDate(pageTime.getBeginDate())).append("'");
-					//已经添加数据
-					si = true;
-				}
+	private String orDateStr(StringBuilder a, List<PageTime> list) {
+		if (list == null) {
+			return a.toString();
+		}
+		for (PageTime pageTime : list) {
+			String name = pageTime.getDateName();
+			if (pageTime.getBeginDate() != null) {
+				a.append(AND).append(name).append(" >= '").append(DealDate.getSqliteDate(pageTime.getBeginDate())).append("'");
+			}
 
-				if (pageTime.getEndDate() != null) {
-					a.append(si ? AND + name + " < '" : WHERE + name + " < '").append(DealDate.getSqliteDate(pageTime.getEndDate())).append("'");
-
-				}
+			if (pageTime.getEndDate() != null) {
+				a.append(AND).append(name).append(" < '").append(DealDate.getSqliteDate(pageTime.getEndDate())).append("'");
 			}
 		}
-		return a;
+		return a.toString();
 	}
 
 
