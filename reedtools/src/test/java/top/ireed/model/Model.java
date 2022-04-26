@@ -9,13 +9,12 @@ import java.util.Date;
 /**
  * 测试实体类
  */
-public class Model extends DataBase{
+public class Model extends DataBase {
 
 	private String id;
 	private String key;
 	private String value;
 	private Date date;
-
 
 
 	public Model() {

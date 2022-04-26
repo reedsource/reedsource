@@ -54,7 +54,7 @@ public class DealLog {
 	 * @param o object对象
 	 */
 	public static void log(Object m, Object o) {
-		log(String.valueOf(m),o);
+		log(String.valueOf(m), o);
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class DealLog {
 	 * @param o object对象  组
 	 */
 	public static void log(Object m, Object... o) {
-		log(String.valueOf(m),o);
+		log(String.valueOf(m), o);
 	}
 
 

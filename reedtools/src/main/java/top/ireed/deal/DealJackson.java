@@ -40,14 +40,15 @@ public class DealJackson {
 		try {
 			return mapper.writeValueAsString(objects);
 		} catch (JsonProcessingException e) {
-			throw new TopException("对象转json异常",e);
+			throw new TopException("对象转json异常", e);
 		}
 	}
 
 	/**
-	 *  json转object
+	 * json转object
+	 *
 	 * @param str json
-	 * @param t class
+	 * @param t   class
 	 * @param <T> 泛型class
 	 * @return object
 	 * @throws TopException 异常
@@ -56,7 +57,7 @@ public class DealJackson {
 		try {
 			return mapper.readValue(str, t);
 		} catch (JsonProcessingException e) {
-			throw new TopException("json转object异常",e);
+			throw new TopException("json转object异常", e);
 		}
 	}
 
@@ -72,15 +73,16 @@ public class DealJackson {
 		try {
 			return mapper.readValue(str, Map.class);
 		} catch (JsonProcessingException e) {
-			throw new TopException("json转Map异常",e);
+			throw new TopException("json转Map异常", e);
 		}
 	}
 
 
 	/**
-	 *  json转List
+	 * json转List
+	 *
 	 * @param str json
-	 * @param t class
+	 * @param t   class
 	 * @param <T> 泛型 class
 	 * @return List
 	 * @throws TopException 异常
@@ -95,7 +97,7 @@ public class DealJackson {
 			persons = mapper.readValue(str, new TypeReference<List<T>>() {
 			});
 		} catch (JsonProcessingException e) {
-			throw new TopException("json转List异常",e);
+			throw new TopException("json转List异常", e);
 		}
 		//将List<linkHashMap> 转换为 List<T>
 		for (T person : persons) {

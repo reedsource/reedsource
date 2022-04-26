@@ -20,11 +20,11 @@ public class DealFileTest {
 
 	@Test
 	public void getFile() {
-		Assert.assertTrue(DealFile.getFile(D_CACHE_PATH + "path1.txt"));
+		Assert.assertTrue(DealFile.newFile(D_CACHE_PATH + "path1.txt"));
 	}
 
 	@Test
 	public void getFile1() {
-		Assert.assertTrue(DealFile.getFile(new File(D_CACHE_PATH + "path2.txt")));
+		Assert.assertTrue(DealFile.newFile(new File(D_CACHE_PATH + "path2.txt")));
 	}
 }

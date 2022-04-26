@@ -17,7 +17,7 @@ public class DealGetSetTest {
 	@Test
 	public void getMethod1() {
 		Model model = new Model();
-		DealGetSet.getMethod(model,"sa");
+		DealGetSet.getMethod(model, "sa");
 		Assert.assertTrue(true);
 	}
 }

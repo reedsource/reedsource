@@ -70,26 +70,26 @@ public class FoundSqliteTest {
 		// 3. 约定 表数据插入方式
 		//初始化时会执行的操作
 		if (m) {
-			DealLog.log(fSqlite.insert(new Model("方法key1", "方法value",DealDate.getDate("2022-2-2"))));
+			DealLog.log(fSqlite.insert(new Model("方法key1", "方法value", DealDate.getDate("2022-2-2"))));
 		}
 
-		fSqlite.insert(new Model("方法key2", "方法value",DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key3", "方法value",DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key4", "方法value",DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key5", "方法value",DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key6", "方法value",DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key7", "方法value",DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key2", "方法value", DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key3", "方法value", DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key4", "方法value", DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key5", "方法value", DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key6", "方法value", DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key7", "方法value", DealDate.getDate("2022-2-2")));
 
 		//表存在的情况 插入数据
 		if (fSqlite.foundTable(new Model())) {
-			fSqlite.insert(new Model("方法key4", "方法value",DealDate.getDate("2022-2-2")));
+			fSqlite.insert(new Model("方法key4", "方法value", DealDate.getDate("2022-2-2")));
 		}
 
 		//物理删除一条数据
 		DealLog.log("删除数据", fSqlite.delete(new Model("3")));
 
 		// 4. 约定 更新数据
-		DealLog.log(fSqlite.update(new Model("2", "更新后的key", "更新后的value",DealDate.getDate("2022-2-2"))));
+		DealLog.log(fSqlite.update(new Model("2", "更新后的key", "更新后的value", DealDate.getDate("2022-2-2"))));
 
 		// 5. 约定 查询数据
 		// 5.1 无序
@@ -124,7 +124,7 @@ public class FoundSqliteTest {
 
 		//分页查询数据   从第二条之后 查询3条数据
 		List<PageTime> list = new ArrayList<>();
-		list.add(new PageTime("date", DealDate.getDate("2020-01-01"),DealDate.getDate("2022-04-05")));
+		list.add(new PageTime("date", DealDate.getDate("2020-01-01"), DealDate.getDate("2022-04-05")));
 
 		PageData pageData = new PageData(3, 2, new Model(), "id", list);
 		pageData = fSqlite.getPage(pageData);

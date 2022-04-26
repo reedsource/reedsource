@@ -274,7 +274,7 @@ public class ParseJavaStructure {
 				//排除空行
 
 				//排除开头为@  //排除开头为/\r\n
-				if ((CharSequenceUtil.isBlank(s) || "@".equals(s.substring(0, 1))) || (s.length() > 3 && "/\r\n".equals(s.substring(0, 3))) ) {
+				if ((CharSequenceUtil.isBlank(s) || "@".equals(s.substring(0, 1))) || (s.length() > 3 && "/\r\n".equals(s.substring(0, 3)))) {
 					continue;
 				}
 

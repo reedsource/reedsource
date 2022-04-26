@@ -5,16 +5,12 @@
 package top.ireed.found.markdown;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
-import top.ireed.deal.DealLog;
+import top.ireed.deal.DealIo;
 import top.ireed.found.markdown.parse.ParseStructure;
 import top.ireed.general.TopException;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -41,7 +37,7 @@ public class FoundMarkdown {
 	 * 保留当前文件层级父级索引的索引值
 	 * 最大支持层级
 	 */
-	private static int[] maxArray = new int[30];
+	private static final int[] maxArray = new int[30];
 
 	/**
 	 * 将保存全部数据的list处理为符合规则的md格式文本
@@ -78,13 +74,13 @@ public class FoundMarkdown {
 						continue;
 					}
 					//根目录下的每个 子文件/文件夹 单独 解析
-					mdToFile(new File(toFile.getPath(), f.getName() + ".md"), core(f, shieldingPathList, shieldingSuffixList, shieldingNameList, parseSuffixList));
+					DealIo.toFileIo(new File(toFile.getPath(), f.getName() + ".md"), core(f, shieldingPathList, shieldingSuffixList, shieldingNameList, parseSuffixList));
 					//清空全局数据
 					list.clear();
 				}
 			}
 		} else {
-			mdToFile(new File(toFile.getPath(), file.getName() + ".md"), core(file, shieldingPathList, shieldingSuffixList, shieldingNameList, parseSuffixList));
+			DealIo.toFileIo(new File(toFile.getPath(), file.getName() + ".md"), core(file, shieldingPathList, shieldingSuffixList, shieldingNameList, parseSuffixList));
 		}
 	}
 
@@ -127,7 +123,7 @@ public class FoundMarkdown {
 	 * @param mdEntity md行数据
 	 * @return md行数据组装
 	 */
-	private static String mdLine (MdEntity mdEntity){
+	private static String mdLine(MdEntity mdEntity) {
 		StringBuilder stringBuilder = new StringBuilder();
 		//如果标题不为空
 		if (StrUtil.isNotBlank(mdEntity.getTitle())) {
@@ -308,37 +304,4 @@ public class FoundMarkdown {
 	}
 
 
-	/**
-	 * 将字符串写入到文件中
-	 *
-	 * @param file 生成文件的路径
-	 * @param str  文件的字符串
-	 */
-	public void mdToFile(File file, String str) {
-		try {
-			// 先得到文件的上级目录，并创建上级目录，在创建文件
-			if (!file.exists()) {
-				file.getParentFile().mkdir();
-				boolean newFile = file.createNewFile();
-				if (!newFile) {
-					DealLog.log(file, "写入到文件创建失败");
-					return;
-				}
-			}
-
-			// 构建FileOutputStream对象,文件不存在会自动新建--------------------------------
-			FileOutputStream fop = new FileOutputStream(file);
-			OutputStreamWriter outputStreamWriter = IoUtil.getUtf8Writer(fop);
-			outputStreamWriter.write(str);
-			// 关闭写入流,同时会把缓冲区内容写入文件,所以上面的注释掉
-			outputStreamWriter.close();
-
-			// 关闭输出流,释放系统资源
-			fop.close();
-			DealLog.log(file, "完成");
-		} catch (IOException e) {
-			DealLog.log(file, "写入到文件异常");
-		}
-
-	}
 }

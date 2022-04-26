@@ -25,7 +25,7 @@ public class DealFile {
 	 * @param fileString 目录字符串
 	 * @return 创建目录结果
 	 */
-	public static Boolean getFile(String fileString) {
+	public static Boolean newFile(String fileString) {
 		try {
 			File baFile = new File(fileString);
 			//目录不存在创建
@@ -44,7 +44,7 @@ public class DealFile {
 	 * @param file 目录对象
 	 * @return 创建目录结果
 	 */
-	public static Boolean getFile(File file) {
+	public static Boolean newFile(File file) {
 		try {
 			//目录不存在创建
 			if (!file.exists()) {

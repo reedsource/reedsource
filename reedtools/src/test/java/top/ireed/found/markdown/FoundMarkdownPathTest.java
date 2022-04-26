@@ -72,7 +72,7 @@ public class FoundMarkdownPathTest {
 
 		//接收核心解析   返回的数据
 		FoundMarkdown foundMarkdown = new FoundMarkdown();
-		foundMarkdown.toMd(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList, true,  parseSuffixList, f);
+		foundMarkdown.toMd(new File(path), shieldingPathList, shieldingSuffixList, shieldingNameList, true, parseSuffixList, f);
 
 		Assert.assertTrue(true);
 	}

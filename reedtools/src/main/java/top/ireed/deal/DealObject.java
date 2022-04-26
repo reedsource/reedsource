@@ -103,7 +103,7 @@ public class DealObject {
 				}
 			}
 		} catch (Exception e) {
-			DealLog.log("更新bean数据异常" , t, map, e);
+			DealLog.log("更新bean数据异常", t, map, e);
 		}
 		return t;
 	}

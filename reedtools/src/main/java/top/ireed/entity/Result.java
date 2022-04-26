@@ -44,7 +44,7 @@ public class Result<T> {
 	 *
 	 * @param errCode 返回码
 	 * @param data    数据
-	 * @param msg  返回信息
+	 * @param msg     返回信息
 	 */
 	public Result(int errCode, T data, String msg) {
 		this.code = errCode;
@@ -162,7 +162,8 @@ public class Result<T> {
 	}
 
 	/**
-	 *  超时信息
+	 * 超时信息
+	 *
 	 * @param <E> 类
 	 * @return 返回实体
 	 */

@@ -5,6 +5,7 @@
 package top.ireed.entity;
 
 import cn.hutool.core.text.CharSequenceUtil;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -82,12 +83,12 @@ public class PageData<T> {
 	}
 
 	/**
-	 * @param pageNo   当前页码
-	 * @param pageSize 每页数据条数
-	 * @param object   查询的数据
-	 * @param orderName   排序字段
+	 * @param pageNo    当前页码
+	 * @param pageSize  每页数据条数
+	 * @param object    查询的数据
+	 * @param orderName 排序字段
 	 */
-	public PageData(int pageNo, int pageSize, Object object,String orderName,List<PageTime> timeList) {
+	public PageData(int pageNo, int pageSize, Object object, String orderName, List<PageTime> timeList) {
 		this.pageNo = pageNo;
 		this.pageSize = pageSize;
 		this.object = object;

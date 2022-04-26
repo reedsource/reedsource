@@ -197,11 +197,11 @@ public class DealDateTest {
 
 	@Test
 	public void test() throws TopException {
-		DealDate dealDate = new DealDate("2021-02-02","2022-02-02");
+		DealDate dealDate = new DealDate("2021-02-02", "2022-02-02");
 		dealDate.setBeginDate(new Date());
-		dealDate=new DealDate(new Date(),new Date(),"信息");
+		dealDate = new DealDate(new Date(), new Date(), "信息");
 		dealDate.setEndDate(new Date());
-		dealDate=new DealDate("信息");
+		dealDate = new DealDate("信息");
 		DealLog.log(dealDate.getDateMsg());
 		dealDate.setDateMsg("");
 

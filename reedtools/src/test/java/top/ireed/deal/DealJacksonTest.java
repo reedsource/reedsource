@@ -69,7 +69,7 @@ public class DealJacksonTest {
 	 */
 	@Test
 	public void toMap() throws TopException {
-		Map<Object,Object> modelMap = DealJackson.toMap(MAPS);
+		Map<Object, Object> modelMap = DealJackson.toMap(MAPS);
 		//遍历map
 		for (Object stringModelEntry : modelMap.entrySet()) {
 			DealLog.log(stringModelEntry);

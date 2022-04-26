@@ -40,7 +40,7 @@ public class DealGetSet {
 			try {
 				PropertyDescriptor pd = new PropertyDescriptor(field.getName(), clazz);
 				txt = String.valueOf(pd.getReadMethod());
-				String str=name + txt.substring(DealString.inverted(txt, '.', 1)) + F_F;
+				String str = name + txt.substring(DealString.inverted(txt, '.', 1)) + F_F;
 				DealLog.log(str);
 			} catch (IntrospectionException e) {
 				DealLog.log("获取set全部方法异常");
@@ -52,7 +52,7 @@ public class DealGetSet {
 				PropertyDescriptor pd = new PropertyDescriptor(field.getName(), clazz);
 				txt = String.valueOf(pd.getWriteMethod());
 				txt = txt.substring(0, txt.indexOf(F_X_Z) + 1);
-				String str=name + txt.substring(DealString.inverted(txt, '.', 1)) + ");";
+				String str = name + txt.substring(DealString.inverted(txt, '.', 1)) + ");";
 				DealLog.log(str);
 			} catch (IntrospectionException e) {
 				DealLog.log("获取get全部方法异常");

@@ -40,11 +40,11 @@ public class MdEntity {
 	}
 
 	/**
-	 * @param mdPath 当前目录
-	 * @param level 当前路径与项目根目录层数的绝对值  默认创建文件为标题 为1 认为是根目录
+	 * @param mdPath      当前目录
+	 * @param level       当前路径与项目根目录层数的绝对值  默认创建文件为标题 为1 认为是根目录
 	 * @param isDirectory 是否是目录
 	 */
-	public MdEntity(File mdPath,int level, boolean isDirectory) {
+	public MdEntity(File mdPath, int level, boolean isDirectory) {
 		this.mdPath = mdPath;
 		this.level = level;
 		this.isDirectory = isDirectory;

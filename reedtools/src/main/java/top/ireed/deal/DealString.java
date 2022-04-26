@@ -59,7 +59,7 @@ public class DealString {
 	 */
 	public static String replaceHtmlErrorString(String htmlString) {
 		//创建字符串缓冲区
-		StringBuilder  returnString = new StringBuilder (htmlString.length());
+		StringBuilder returnString = new StringBuilder(htmlString.length());
 		char ch;
 		for (int i = 0; i < htmlString.length(); i++) {
 			ch = htmlString.charAt(i);
@@ -141,8 +141,8 @@ public class DealString {
 	 * 倒找字符出现的位置
 	 *
 	 * @param str 字符串
-	 * @param ch 查找的字符
-	 * @param n 倒数第n次出现的位置
+	 * @param ch  查找的字符
+	 * @param n   倒数第n次出现的位置
 	 * @return 正数位置
 	 */
 	public static int inverted(String str, char ch, int n) {

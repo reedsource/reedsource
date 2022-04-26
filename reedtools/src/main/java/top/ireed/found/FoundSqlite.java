@@ -458,9 +458,9 @@ public class FoundSqlite {
 
 	/**
 	 * 实体sql数据组装器
-	 *
+	 * <p>
 	 * 格式 AND key = 'value' AND key2 = 'value2'
-	 *
+	 * <p>
 	 * 使用时 如果是查询 需要添加前置条件 1 = 1
 	 *
 	 * @param o    实体
