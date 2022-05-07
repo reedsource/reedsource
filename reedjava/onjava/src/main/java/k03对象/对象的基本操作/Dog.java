@@ -2,7 +2,7 @@
  * FileName: Dog
  * Author:   reedbook
  */
-package k03对象;
+package k03对象.对象的基本操作;
 
 import top.ireed.deal.DealLog;
 

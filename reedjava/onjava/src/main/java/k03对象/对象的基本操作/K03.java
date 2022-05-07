@@ -2,7 +2,7 @@
  * FileName: K8001Test
  * Author:   reedbook
  */
-package k03对象;
+package k03对象.对象的基本操作;
 
 import top.ireed.deal.DealLog;
 
@@ -22,7 +22,7 @@ public class K03 {
 
 		DealLog.log(dog);
 		//未重写toString()方法时 将会直接打印类地址
-		//k03对象.Dog@223191a6
+		//k03对象.对象的基本操作.Dog@223191a6
 
 		//使用构造函数创建有初始值的对象
 		dog = new Dog("tommy");
