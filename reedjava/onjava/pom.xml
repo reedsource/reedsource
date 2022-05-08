@@ -10,6 +10,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>onjava</artifactId>
 	<packaging>pom</packaging>
-	<description>结合OnJava中文版基础卷和进阶卷  对 Java 的核心语法变化, Java 的高级特性、并发、设计模式等相关进阶知识，对一些和开发密切相关的底层操作（如 I/O 系统、底层并发、数据压缩等）进行深入探究</description>
+	<description>结合OnJava中文版基础卷和进阶卷 对 Java 的核心语法变化, Java 的高级特性、并发、设计模式等相关进阶知识，对一些和开发密切相关的底层操作（如 I/O
+		系统、底层并发、数据压缩等）进行深入探究
+	</description>
 
 </project>

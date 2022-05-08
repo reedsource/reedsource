@@ -23,7 +23,7 @@ public class HelloWorld {
 	 */
 	public static void main(String[] args) {
 		// 打印 Hello World
-        //本处实际为标准打印 符合sonar规范 修改为调用工具类
+		//本处实际为标准打印 符合sonar规范 修改为调用工具类
 		DealLog.log("Hello World");
 	}
 }

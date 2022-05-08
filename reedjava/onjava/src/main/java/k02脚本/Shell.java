@@ -37,7 +37,7 @@ public class Shell {
 		DealLog.log("历史命令", "history");
 		DealLog.log("历史命令win", "F7");
 
-		DealLog.log("解压命令","unzip");
+		DealLog.log("解压命令", "unzip");
 	}
 
 }

@@ -16,9 +16,9 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class JavaVariable {
-	public void method(){
+	public void method() {
 		// 局部变量
-		int i =0;
+		int i = 0;
 		//局部变量声明在方法、构造方法或者语句块中；
 		//局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；
 		//访问修饰符不能用于局部变量；
@@ -40,22 +40,25 @@ public class JavaVariable {
 	//实例变量对于类中的方法、构造方法或者语句块是可见的。一般情况下应该把实例变量设为私有。通过使用访问修饰符可以使实例变量对子类可见；
 	//实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。变量的值可以在声明时指定，也可以在构造方法中指定；
 	//实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名：ObejectReference.VariableName
-	String str="hello world";
+	String str = "hello world";
 	// 这个实例变量对子类可见
 	public String name;
 	// 私有变量，仅在该类可见
 	private double salary;
+
 	//在构造器中对name赋值
-	public JavaVariable(String empName){
+	public JavaVariable(String empName) {
 		name = empName;
 	}
+
 	//设定salary的值
-	public void setSalary(double empSal){
+	public void setSalary(double empSal) {
 		salary = empSal;
 	}
+
 	// 打印信息
-	public void printEmp(){
-		DealLog.log("名字 : " + name );
+	public void printEmp() {
+		DealLog.log("名字 : " + name);
 		DealLog.log("薪水 : " + salary);
 	}
 
@@ -72,7 +75,7 @@ public class JavaVariable {
 	//静态变量可以通过：ClassName.VariableName的方式访问。
 	//类变量被声明为public static final类型时，类变量名称一般建议使用大写字母。
 	// 如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。
-	static int allClicks=0;
+	static int allClicks = 0;
 
 	//salary是静态的私有变量
 	private static double sala;
@@ -106,7 +109,7 @@ public class JavaVariable {
 
 		// 类变量（静态变量）---------------------------------------
 		sala = 10000;
-		DealLog.log(DEPARTMENT+"平均工资:"+sala);
+		DealLog.log(DEPARTMENT + "平均工资:" + sala);
 
 		//如果其他类想要访问该变量，可以这样访问：JavaVariable.DEPARTMENT
 	}
