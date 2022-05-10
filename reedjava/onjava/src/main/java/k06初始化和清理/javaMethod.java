@@ -1,6 +1,6 @@
 /*
  * FileName: javaMethod
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k06初始化和清理;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java方法,继承,传递参数,重载,构造方法〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

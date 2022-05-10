@@ -1,6 +1,6 @@
 /*
  * FileName: JavaMain
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k01实现案例;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java启动main方法时附带数据   使用控制台java 运行时 附带数据进入主main方法〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/6 22:52
  * reedsource@189.cn

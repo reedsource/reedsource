@@ -1,6 +1,6 @@
 /*
  * FileName: javaVisit
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k07访问控制;
 
@@ -8,7 +8,7 @@ package k07访问控制;
  * 功能简述:
  * 〈java访问范围修饰〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

@@ -1,6 +1,6 @@
 /*
  * FileName: JavaScannerHasNext
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k14流.控制台输入;
 
@@ -14,7 +14,7 @@ import java.util.Scanner;
  * hasNextInt() 整数类型数据
  * hasNextFloat() 小数类型的数据
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

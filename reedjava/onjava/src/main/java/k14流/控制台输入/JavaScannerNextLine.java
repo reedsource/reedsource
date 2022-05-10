@@ -1,6 +1,6 @@
 /*
  * FileName: JavaScannerNextLine
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k14流.控制台输入;
 
@@ -15,7 +15,7 @@ import java.util.Scanner;
  * 1、以Enter为结束符,也就是说 nextLine()方法返回的是输入回车之前的所有字符。
  * 2、nextLine()可以获得空白。
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

@@ -1,6 +1,6 @@
 /*
  * FileName: javaDealingsCase
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k05控制流.for循环;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java循环案例〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

@@ -1,6 +1,6 @@
 /*
  * FileName: javaMath
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.包装类.数学运算Math;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java基本数学运算〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

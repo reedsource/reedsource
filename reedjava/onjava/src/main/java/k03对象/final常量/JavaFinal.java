@@ -1,6 +1,6 @@
 /*
  * FileName: JavaFinal
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.final常量;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java常量〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/7 14:06
  * reedsource@189.cn

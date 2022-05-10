@@ -1,6 +1,6 @@
 /*
  * FileName: javaInherit
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k09多态.继承;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈继承是java面向对象编程技术的一块基石，因为它允许创建分等级层次的类〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

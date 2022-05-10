@@ -1,6 +1,6 @@
 /*
  * FileName: javaDate
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.包装类.日期时间.Date;
 
@@ -17,7 +17,7 @@ import java.util.Locale;
  * 功能简述:
  * 〈java时间类学习〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

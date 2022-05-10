@@ -1,6 +1,6 @@
 /*
  * FileName: javaAnomaly
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k15异常;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java异常〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

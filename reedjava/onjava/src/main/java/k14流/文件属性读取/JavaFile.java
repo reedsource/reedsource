@@ -1,6 +1,6 @@
 /*
  * FileName: JavaFile
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k14流.文件属性读取;
 
@@ -15,7 +15,7 @@ import java.io.IOException;
  * 功能简述:
  * 〈File类属性解析〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

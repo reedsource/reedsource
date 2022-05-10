@@ -1,6 +1,6 @@
 /*
  * FileName: JavaScannerNext
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k14流.控制台输入;
 
@@ -17,7 +17,7 @@ import java.util.Scanner;
  * 3、只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。
  * next() 不能得到带有空格的字符串。
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/9 22:57
  * reedsource@189.cn

@@ -1,6 +1,6 @@
 /*
  * FileName: K8001Test
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.对象的基本操作;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈实现对象实体创建调用〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/6 22:56
  * reedsource@189.cn

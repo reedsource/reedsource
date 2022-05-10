@@ -1,6 +1,6 @@
 /*
  * FileName: javaStringCase
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.包装类.String包装类.String组合案例;
 
@@ -10,7 +10,7 @@ import org.junit.Assert;
  * 功能简述:
  * 〈string使用案例〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

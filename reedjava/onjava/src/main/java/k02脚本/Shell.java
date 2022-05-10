@@ -1,6 +1,6 @@
 /*
  * FileName: Shell
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k02脚本;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈java开发中常用的shell命令〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/6 22:56
  * reedsource@189.cn

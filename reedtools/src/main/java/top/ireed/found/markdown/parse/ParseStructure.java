@@ -1,6 +1,6 @@
 /*
  * FileName: ParseStructure
- * Author:   reedbook
+ * Author:   reedsource
  */
 package top.ireed.found.markdown.parse;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * <p>
  * 〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/4/24 10:56
  * reedsource@189.cn

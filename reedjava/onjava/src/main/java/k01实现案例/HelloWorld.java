@@ -1,6 +1,6 @@
 /*
  * FileName: HelloWorld
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k01实现案例;
 
@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * 功能简述:
  * 〈基本java程序〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/6 22:52
  * reedsource@189.cn

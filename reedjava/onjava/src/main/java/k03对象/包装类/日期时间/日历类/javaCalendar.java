@@ -1,6 +1,6 @@
 /*
  * FileName: javaCalendar
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.包装类.日期时间.日历类;
 
@@ -13,7 +13,7 @@ import java.util.GregorianCalendar;
  * 功能简述:
  * 〈java日历类,Date的替代品〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

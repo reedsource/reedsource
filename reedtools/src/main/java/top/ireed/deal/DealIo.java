@@ -1,6 +1,6 @@
 /*
  * FileName: DealIo
- * Author:   reedbook
+ * Author:   reedsource
  */
 package top.ireed.deal;
 
@@ -15,10 +15,10 @@ import java.io.OutputStreamWriter;
  * 功能简述:
  * 〈IO工具类〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/4/26 23:21
- * reedbook@189.cn
+ * reedsource@189.cn
  */
 public class DealIo {
 	/**

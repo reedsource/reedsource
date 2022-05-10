@@ -1,6 +1,6 @@
 /*
  * FileName: JavaTurn
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.转义字符;
 
@@ -8,7 +8,7 @@ package k03对象.转义字符;
  * 功能简述:
  * 〈Java转义字符〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/7 14:06
  * reedsource@189.cn

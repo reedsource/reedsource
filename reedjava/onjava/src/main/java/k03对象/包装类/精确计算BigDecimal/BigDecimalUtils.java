@@ -1,6 +1,6 @@
 /*
  * FileName: ArithmeticUtils
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k03对象.包装类.精确计算BigDecimal;
 
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * 功能简述:
  * 〈常用方法及案例〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn

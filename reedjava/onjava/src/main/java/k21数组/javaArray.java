@@ -1,6 +1,6 @@
 /*
  * FileName: javaArray
- * Author:   reedbook
+ * Author:   reedsource
  */
 package k21数组;
 
@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 功能简述:
  * 〈java数组〉
  *
- * @author reedbook
+ * @author reedsource
  * @version 1.0.0
  * date 2022/5/8 20:57
  * reedsource@189.cn
