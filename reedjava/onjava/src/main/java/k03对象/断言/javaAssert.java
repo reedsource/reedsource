@@ -9,10 +9,11 @@ import top.ireed.deal.DealLog;
 /**
  * 功能简述:
  * 〈java断言〉
- *  idea启动断言 VM虚拟机选项栏里输入 -enableassertions 或者 -ea
+ * idea启动断言 VM虚拟机选项栏里输入 -enableassertions 或者 -ea
+ * <p>
+ * 断言只适用复杂的调式过程。
+ * 断言一般用于程序执行结构的判断，千万不要让断言处理业务流程。
  *
- *  断言只适用复杂的调式过程。
- *  断言一般用于程序执行结构的判断，千万不要让断言处理业务流程。
  * @author reedsource
  * @version 1.0.0
  * date 2022/5/11 22:48

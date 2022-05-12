@@ -26,7 +26,8 @@ public class ListStreamTest {
 
 	/**
 	 * Lists.newArrayList()
-	 * @return  list集合对象
+	 *
+	 * @return list集合对象
 	 */
 	private static List<Model> getList() {
 		List<Model> list = new ArrayList<>();

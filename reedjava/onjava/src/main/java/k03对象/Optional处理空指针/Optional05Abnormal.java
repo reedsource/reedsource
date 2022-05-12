@@ -28,6 +28,6 @@ public class Optional05Abnormal {
 	public void whenThrowException_thenOk() {
 		User user = null;
 		User result = Optional.ofNullable(user)
-				.orElseThrow( () -> new IllegalArgumentException());
+				.orElseThrow(() -> new IllegalArgumentException());
 	}
 }

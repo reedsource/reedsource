@@ -40,7 +40,6 @@ javadoc 工具软件识别以下标签：
 }
 
 
-
 //文件头部添加：
 
 /*
@@ -63,6 +62,11 @@ javadoc 工具软件识别以下标签：
  * @author <a href="mail to: *******@******.com" rel="nofollow">作者</a>
  * @CreateDate: ${date} ${time}</p>
  * @update: [序号][日期YYYY-MM-DD] [更改人姓名][变更描述]
+ * <p>
+ * 获取  ${bare_field_name}
+ * <p>
+ * 设置   ${bare_field_name}
+ * (${param})${field}
  */
 
 

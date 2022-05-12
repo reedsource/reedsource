@@ -17,12 +17,13 @@ import top.ireed.deal.DealLog;
  */
 public class Test {
 	public static void main(String[] args) {
-		int a=10;
-		int b=10;
+		int a = 10;
+		int b = 10;
 		method(a, b);
-		DealLog.log("a***"+a);
-		DealLog.log("b***"+b);
+		DealLog.log("a***" + a);
+		DealLog.log("b***" + b);
 	}
+
 	private static void method(int a, int b) {
 		DealLog.log("a=100");
 		DealLog.log("b=200");

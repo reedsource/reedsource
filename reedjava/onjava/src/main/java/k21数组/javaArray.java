@@ -4,8 +4,12 @@
  */
 package k21数组;
 
+import org.junit.Assert;
+import org.junit.Test;
 import top.ireed.deal.DealLog;
+import top.ireed.general.TopConstant;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -22,6 +26,48 @@ public class javaArray {
 		c0();
 		c1();
 		c2();
+	}
+	/**
+	 * 创建数组
+	 */
+	@Test
+	public void javaArrayTest() {
+		//动态初始化
+		int[] arr = new int[5];
+		//数组元素的默认初始化
+		Assert.assertEquals(0, arr[1]);
+		//静态初始化
+		int[] arr1 = {11, 12, 13, 14, 15};
+		for (int i = 0; i < TopConstant.INT5; i++) {
+			arr[i] = i;
+			DealLog.log(arr[i]);
+			DealLog.log(arr1[i]);
+		}
+		Assert.assertEquals(5, arr.length);
+
+		/**声明二维数组：有两行，列数待定，数组结构 = { { }, { } }
+		 静态初始化可用于不规则二维数组的初始化*/
+		String[][] strings = {{"E1", "E2"}, {"E1", "E2", "E3"}};
+		Assert.assertEquals(2, strings.length);
+		Assert.assertEquals(3, strings[1].length);
+		Assert.assertEquals("E3", strings[1][2]);
+	}
+
+	@Test
+	public void javaArrayTest1() {
+		//打印数组
+		int[] intArray = {1, 2, 3, 4, 5};
+		String intArrayString = Arrays.toString(intArray);
+		Assert.assertEquals("[I@ed9d034", Arrays.toString(intArray));
+		Assert.assertEquals("[1, 2, 3, 4, 5]", intArrayString);
+
+		//从数组创建一个ArrayList
+		String[] stringArray = {"a", "b", "c", "d", "e"};
+		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(stringArray));
+		Assert.assertEquals("[a, b, c, d, e]", arrayList.toString());
+
+		//检查数组是否包含某一个值
+		Assert.assertTrue(Arrays.asList(stringArray).contains("a"));
 	}
 
 	/**

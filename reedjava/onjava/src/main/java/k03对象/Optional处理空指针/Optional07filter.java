@@ -22,10 +22,10 @@ import static junit.framework.TestCase.assertTrue;
 public class Optional07filter {
 
 	/**
-	 *  参数过滤filter
-	 *
-	 *  根据基本的电子邮箱验证来决定接受或拒绝 User(用户) 的示例
-	 *  如果通过过滤器测试，result 对象会包含非空值
+	 * 参数过滤filter
+	 * <p>
+	 * 根据基本的电子邮箱验证来决定接受或拒绝 User(用户) 的示例
+	 * 如果通过过滤器测试，result 对象会包含非空值
 	 */
 	@Test
 	public void whenFilter_thenOk() {

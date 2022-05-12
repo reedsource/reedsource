@@ -48,6 +48,6 @@ public class Optional03GetValue {
 
 		//验证方法2  该方法除了执行检查，还接受一个Consumer(消费者) 参数，
 		//如果对象不是空的，就对执行传入的 Lambda 表达式
-		opt.ifPresent( u -> assertEquals(user.getEmail(), u.getEmail()));
+		opt.ifPresent(u -> assertEquals(user.getEmail(), u.getEmail()));
 	}
 }

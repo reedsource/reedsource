@@ -25,7 +25,6 @@ public class Optional04ReturnValue {
 	/**
 	 * orElse()，它的工作方式非常直接，如果有值则返回该值，否则返回传递给它的参数值
 	 * 这里 user 对象是空的，所以返回了作为默认值的 user2。
-	 *
 	 */
 	@Test
 	public void whenEmptyValue_thenReturnDefault() {

@@ -18,7 +18,7 @@ import top.ireed.deal.DealLog;
 public class java8lambdaAttention {
 	private final static String SALUTATION = "你好! ";
 
-	public static void main(String args[]){
+	public static void main(String args[]) {
 		// lambda 表达式只能引用标记了 final 的外层局部变量，
 		// 这就是说不能在 lambda 内部修改定义在域外的局部变量，否则会编译错误。
 		GreetingService greetService1 = message -> DealLog.log(SALUTATION + message);

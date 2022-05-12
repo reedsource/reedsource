@@ -9,7 +9,7 @@ import top.ireed.deal.DealLog;
 /**
  * 功能简述:
  * 〈java可以被执行的注释,注释相关的技术
- *  java会先执行编译Unicode编码
+ * java会先执行编译Unicode编码
  * 〉
  *
  * @author reedsource

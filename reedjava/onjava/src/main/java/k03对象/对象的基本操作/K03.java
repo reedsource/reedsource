@@ -34,5 +34,11 @@ public class K03 {
 		/*你也可以像下面这样访问成员变量 */
 		//也可以
 		DealLog.log("变量值 : ", dog.getDogAge());
+
+		/**
+		 * 错误写法
+		 * Dog dog = null;
+		 * dog.setDogAge(111);
+		 * */
 	}
 }

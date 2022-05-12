@@ -17,7 +17,7 @@ import java.util.Optional;
  */
 public class User {
 	private String email;
-	private String name ;
+	private String name;
 
 	/**
 	 * 添加了一个方法，用来返回 Optional

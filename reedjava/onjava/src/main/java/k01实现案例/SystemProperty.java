@@ -63,7 +63,7 @@ public class SystemProperty {
 		String packName = SystemProperty.class.getPackage().getName();
 		DealLog.log("反射 当前class文件路径及名称:" + packName);
 
-		DealLog.log("替换点后的当前class文件路径及名称: "+packName.replaceAll("\\.", "/"));
+		DealLog.log("替换点后的当前class文件路径及名称: " + packName.replaceAll("\\.", "/"));
 
 		DealLog.log(System.getProperty("user.dir") + "/" + (SystemProperty.class.getPackage().getName()).replaceAll("\\.", "/") + "/");
 	}

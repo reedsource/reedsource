@@ -9,9 +9,10 @@ import top.ireed.deal.DealLog;
 /**
  * 功能简述:
  * 〈多线程打印奇数和偶数〉
- *
+ * <p>
  * wait()方法调用时，会释放线程获得的锁，wait()方法返回后，线程又会重新试图获得锁
  * notify()唤醒一个正在this.wait()等待锁的线程
+ *
  * @author reedsource
  * @version 1.0.0
  * date 2022/5/11 22:48

@@ -39,7 +39,6 @@ public class Optional02Found {
 		Optional<User> opt = Optional.of(userInfo);
 
 
-
 		//当对象为空时  NullPointerException
 		try {
 			User userInfo1 = null;
