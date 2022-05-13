@@ -4,6 +4,7 @@
  */
 package k03对象.包装类.日期时间.Date;
 
+import org.junit.Test;
 import top.ireed.deal.DealDate;
 import top.ireed.deal.DealLog;
 import top.ireed.general.TopException;
@@ -24,16 +25,6 @@ import java.util.Locale;
  */
 public class javaDate {
 
-	public static void main(String[] args) throws TopException {
-		c0();
-		c1();
-		c2();
-		c3();
-		c4();
-		c5();
-		c6();
-	}
-
 	/**
 	 * 获取当前日期时间
 	 * <p>
@@ -49,7 +40,8 @@ public class javaDate {
 	 * 9	void setTime(long time)         用自1970年1月1日00:00:00 GMT以后time毫秒数设置时间和日期。
 	 * 10	String toString( )              把此 Date 对象转换为以下形式的 String： dow mon dd hh:mm:ss zzz yyyy 其中： dow 是一周中的某一天 (Sun, Mon, Tue, Wed, Thu, Fri, Sat)。
 	 */
-	private static void c0() {
+	@Test
+	public void c0() {
 		// 初始化 Date 对象
 		Date date = new Date();
 		// 使用 toString() 函数显示日期时间
@@ -62,7 +54,8 @@ public class javaDate {
 	 * 日期比较
 	 * 比较两个时间的大小
 	 */
-	private static void c1() throws TopException {
+	@Test
+	public void c1() throws TopException {
 		Date date = DealDate.getDate("2019-2-20");
 		Date date1 = DealDate.getDate("2019-2-18");
 		//方法1 使用 getTime() 方法获取两个日期（自1970年1月1日经历的毫秒数值），然后比较这两个值
@@ -103,7 +96,8 @@ public class javaDate {
 	 * '	文字定界符	                Delimiter
 	 * "	单引号	                    `
 	 */
-	private static void c2() {
+	@Test
+	public void c2() {
 		Date dNow = new Date();
 		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
@@ -122,7 +116,8 @@ public class javaDate {
 	 * T  "HH:MM:SS"格式（24时制）       14:28:16
 	 * R  "HH:MM"格式（24时制）          14:28
 	 */
-	private static void c3() {
+	@Test
+	public void c3() {
 		// 初始化 Date 对象
 		Date date = new Date();
 
@@ -212,7 +207,8 @@ public class javaDate {
 	 * SimpleDateFormat 类有一些附加的方法，特别是parse()，
 	 * 它试图按照给定的SimpleDateFormat 对象的格式化存储来解析字符串。
 	 */
-	private static void c4() {
+	@Test
+	public void c4() {
 		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
 		String input = "1818-11-11";
 
@@ -234,7 +230,8 @@ public class javaDate {
 	 * <p>
 	 * java程序通过线程休眠,使执行时间增加
 	 */
-	private static void c5() {
+	@Test
+	public void c5() {
 		try {
 			DealLog.log(new Date() + "\n");
 			// 休眠3秒
@@ -254,7 +251,8 @@ public class javaDate {
 	 * <p>
 	 * java程序通过线程休眠,使执行时间增加
 	 */
-	private static void c6() {
+	@Test
+	public void c6() {
 		try {
 			long start = System.currentTimeMillis();
 			DealLog.log(new Date() + "\n");
