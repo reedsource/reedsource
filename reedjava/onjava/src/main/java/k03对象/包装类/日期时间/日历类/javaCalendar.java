@@ -4,6 +4,7 @@
  */
 package k03对象.包装类.日期时间.日历类;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 import java.util.Calendar;
@@ -19,10 +20,7 @@ import java.util.GregorianCalendar;
  * reedsource@189.cn
  */
 public class javaCalendar {
-	public static void main(String[] args) {
-		c0();
-		c1();
-	}
+
 
 	/**
 	 * 创建一个指定日期的Calendar对象
@@ -37,7 +35,8 @@ public class javaCalendar {
 	 * Calendar.SECOND	    秒
 	 * Calendar.DAY_OF_WEEK	星期几
 	 */
-	private static void c0() {
+	@Test
+	public void c0() {
 		//创建一个代表2009年6月12日的Calendar对象
 		Calendar c1 = Calendar.getInstance();
 		c1.set(2009, 6 - 1, 12);
@@ -160,7 +159,8 @@ public class javaCalendar {
 	 * 27	String toString()
 	 * 返回代表日历的字符串。
 	 */
-	private static void c1() {
+	@Test
+	public void c1() {
 		String months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
 		int year;
