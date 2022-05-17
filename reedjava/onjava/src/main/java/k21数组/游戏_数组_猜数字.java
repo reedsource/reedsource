@@ -17,8 +17,7 @@ import java.util.Scanner;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class guessCase {
-	private static Scanner scan;
+public class 游戏_数组_猜数字 {
 
 	// 主方法
 	public static void main(String[] args) {
@@ -32,7 +31,7 @@ public class guessCase {
 		}
 
 
-		scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 		char[] chs = generate();
 		DealLog.log(chs);
 		int count = 0; // 猜错的次数
@@ -67,7 +66,7 @@ public class guessCase {
 			int index;
 			do {
 				index = (int) (Math.random() * letters.length);
-			} while (flags[index] == true);
+			} while (flags[index]);
 			chs[i] = letters[index];
 			flags[index] = true;
 		}
