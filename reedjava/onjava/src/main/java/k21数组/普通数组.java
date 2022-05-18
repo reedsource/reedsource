@@ -7,11 +7,6 @@ package k21数组;
 import org.junit.Assert;
 import org.junit.Test;
 import top.ireed.deal.DealLog;
-import top.ireed.general.TopConstant;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * 功能简述:

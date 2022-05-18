@@ -1,9 +1,10 @@
 /*
- * FileName: javaGenericity
+ * FileName: 有界类型参数泛型
  * Author:   reedsource
  */
 package k20泛型;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 /**
@@ -34,10 +35,11 @@ import top.ireed.deal.DealLog;
  * 类型参数能被用来声明返回值类型，并且能作为泛型方法得到的实际参数类型的占位符。
  * 泛型方法体的声明和其他方法一样。注意类型参数只能代表引用型类型，不能是原始类型（像int,double,char的等）。
  */
-public class javaGenericity {
+public class 有界类型参数泛型 {
 
 
-	public static void main(String args[]) {
+	@Test
+	public void 有界类型参数泛型_Test(){
 		// 创建不同类型数组： Integer, Double 和 Character
 		Integer[] intArray = {1, 2, 3, 4, 5};
 		Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
@@ -92,10 +94,10 @@ public class javaGenericity {
 	/**
 	 * 比较三个值并返回最大值
 	 *
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param <T>
+	 * @param x 参数1
+	 * @param y 参数2
+	 * @param z 参数3
+	 * @param <T> 结果
 	 * @return 有界的类型参数:
 	 * <p>
 	 * 可能有时候，你会想限制那些被允许传递到一个类型参数的类型种类范围。例如，一个操作数字的方法可能只希望接受Number或者Number子类的实例。
