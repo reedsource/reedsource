@@ -1,26 +1,33 @@
 /*
- * FileName: javaPattern
+ * FileName: 正则匹配
  * Author:   reedsource
  */
 package k18字符串.正则表达式;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * 功能简述:
- * 〈正则表达式〉
+ * 〈〉
  *
  * @author reedsource
  * @version 1.0.0
- * date 2022/5/8 20:57
+ * date 2022/5/19 13:09
  * reedsource@189.cn
  */
-public class javaPattern {
-	public static void main(String[] args) {
-
+public class 正则匹配 {
+	/**
+	 * PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误
+	 * 1	public String getDescription()  获取错误的描述。
+	 * 2	public int getIndex()           获取错误的索引。
+	 * 3	public String getPattern()      获取错误的正则表达式模式。
+	 * 4	public String getMessage()      返回多行字符串，包含语法错误及其索引的描述、错误的正则表达式模式和模式中错误索引的可视化指示。
+	 */
+	@Test
+	public void 正则匹配_Test() {
 		//查找字符串中是否包了子串
 		DealLog.log(c0("I am reed.top", ".*.top*"));
 
@@ -33,18 +40,6 @@ public class javaPattern {
 		//? 设置括号内的选项是可选的
 		//\. 匹配 "."
 		DealLog.log(c0("1.5", "^\\d+(\\.\\d+)?"));
-
-		DealLog.log();
-
-		c1();
-		DealLog.log();
-		c2();
-		DealLog.log();
-		c3();
-		DealLog.log();
-		c4();
-		DealLog.log();
-		c5();
 	}
 
 	/**
@@ -116,196 +111,4 @@ public class javaPattern {
 		return Pattern.matches(pattern, content);
 	}
 
-
-	/**
-	 * 捕获组  多个字符当一个单独单元进行正则处理
-	 * <p>
-	 * 索引方法提供了有用的索引值，精确表明输入字符串中在哪能找到匹配：
-	 * 1	public int start()
-	 * 返回以前匹配的初始索引。
-	 * 2	public int start(int group)
-	 * 返回在以前的匹配操作期间，由给定组所捕获的子序列的初始索引
-	 * 3	public int end()
-	 * 返回最后匹配字符之后的偏移量。
-	 * 4	public int end(int group)
-	 * 返回在以前的匹配操作期间，由给定组所捕获子序列的最后字符之后的偏移量。
-	 * <p>
-	 * 研究方法用来检查输入字符串并返回一个布尔值，表示是否找到该模式：
-	 * 序号	方法及说明
-	 * 1	public boolean lookingAt()
-	 * 尝试将从区域开头开始的输入序列与该模式匹配。
-	 * 2	public boolean find()
-	 * 尝试查找与该模式匹配的输入序列的下一个子序列。
-	 * 3	public boolean find(int start）
-	 * 重置此匹配器，然后尝试查找匹配该模式、从指定索引开始的输入序列的下一个子序列。
-	 * 4	public boolean matches()
-	 * 尝试将整个区域与模式匹配。
-	 * <p>
-	 * 替换方法是替换输入字符串里文本的方法：
-	 * 1	public Matcher appendReplacement(StringBuffer sb, String replacement)
-	 * 实现非终端添加和替换步骤。
-	 * 2	public StringBuffer appendTail(StringBuffer sb)
-	 * 实现终端添加和替换步骤。
-	 * 3	public String replaceAll(String replacement)
-	 * 替换模式与给定替换字符串相匹配的输入序列的每个子序列。
-	 * 4	public String replaceFirst(String replacement)
-	 * 替换模式与给定替换字符串匹配的输入序列的第一个子序列。
-	 * 5	public static String quoteReplacement(String s)
-	 * 返回指定字符串的字面替换字符串。
-	 * 这个方法返回一个字符串，就像传递给Matcher类的appendReplacement 方法一个字面字符串一样工作。
-	 */
-	private static void c1() {
-		// 按指定模式在字符串查找
-		String line = "This order was placed for QT3000! OK?";
-		String pattern = "(\\D*)(\\d+)(.*)";
-
-		// 创建 Pattern 对象
-		Pattern r = Pattern.compile(pattern);
-
-		// 现在创建 matcher 对象
-		// Matcher 对象是对输入字符串进行解释和匹配操作的引擎。
-		// 与Pattern 类一样，Matcher 也没有公共构造方法。
-		// 你需要调用 Pattern 对象的 matcher 方法来获得一个 Matcher 对象。
-		// 可以通过调用 matcher 对象的 groupCount 方法来查看表达式有多少个分组。
-		// groupCount 方法返回一个 int 值，表示matcher对象当前有多个捕获组。
-
-		// 该组不包括在 groupCount 的返回值中
-		Matcher m = r.matcher(line);
-		if (m.find()) {
-			// 还有一个特殊的组（group(0)），它总是代表整个表达式。
-			DealLog.log("发现值: " + m.group(0));
-			DealLog.log("发现值: " + m.group(1));
-			DealLog.log("发现值: " + m.group(2));
-			DealLog.log("发现值: " + m.group(3));
-		} else {
-			DealLog.log("没有找到");
-		}
-	}
-
-
-	/**
-	 * start 和 end 方法
-	 * <p>
-	 * 对单词 "cat" 出现在输入字符串中出现次数进行计数的例子
-	 */
-	private static void c2() {
-		String REGEX = "\\bcat\\b";
-		String INPUT = "cat cat cat cattie cat";
-
-		Pattern p = Pattern.compile(REGEX);
-		Matcher m = p.matcher(INPUT); // 获取 matcher 对象
-		int count = 0;
-
-		while (m.find()) {
-			count++;
-			DealLog.log("Match number " + count);
-			DealLog.log("start(): " + m.start());
-			DealLog.log("end(): " + m.end());
-		}
-
-		//Match number 1
-		//start(): 0
-		//end(): 3
-		//Match number 2
-		//start(): 4
-		//end(): 7
-		//Match number 3
-		//start(): 8
-		//end(): 11
-		//Match number 4
-		//start(): 19
-		//end(): 22
-
-		//可以看到这个例子是使用单词边界，以确保字母 "c" "a" "t" 并非仅是一个较长的词的子串。
-		//它也提供了一些关于输入字符串中匹配发生位置的有用信息。
-		//Start 方法返回在以前的匹配操作期间，由给定组所捕获的子序列的初始索引，end 方法最后一个匹配字符的索引加 1。
-	}
-
-	/**
-	 * matches 和 lookingAt 方法
-	 * <p>
-	 * matches 和 lookingAt 方法都用来尝试匹配一个输入序列模式。
-	 * 它们的不同是 matches 要求整个序列都匹配，而lookingAt 不要求。
-	 * lookingAt 方法虽然不需要整句都匹配，但是需要从第一个字符开始匹配。
-	 * 这两个方法经常在输入字符串的开始使用。
-	 */
-	private static void c3() {
-		final String REGEX = "foo";
-		final String INPUT = "fooooooooooooooooo";
-		final String INPUT2 = "ooooofoooooooooooo";
-		Pattern pattern;
-		Matcher matcher;
-		Matcher matcher2;
-
-		pattern = Pattern.compile(REGEX);
-		matcher = pattern.matcher(INPUT);
-		matcher2 = pattern.matcher(INPUT2);
-
-		DealLog.log("Current REGEX is: " + REGEX);
-		DealLog.log("Current INPUT is: " + INPUT);
-		DealLog.log("Current INPUT2 is: " + INPUT2);
-
-
-		DealLog.log("lookingAt(): " + matcher.lookingAt());
-		DealLog.log("matches(): " + matcher.matches());
-		DealLog.log("lookingAt(): " + matcher2.lookingAt());
-
-		//Current REGEX is: foo
-		//Current INPUT is: fooooooooooooooooo
-		//Current INPUT2 is: ooooofoooooooooooo
-		//lookingAt(): true
-		//matches(): false
-		//lookingAt(): false
-	}
-
-	/**
-	 * replaceFirst 和 replaceAll 方法
-	 * <p>
-	 * replaceFirst 和 replaceAll 方法用来替换匹配正则表达式的文本。
-	 * 不同的是，replaceFirst 替换首次匹配，replaceAll 替换所有匹配。
-	 */
-	private static void c4() {
-		String REGEX = "dog";
-		String INPUT = "The dog says meow. " + "All dogs say meow.";
-		String REPLACE = "cat";
-
-		Pattern p = Pattern.compile(REGEX);
-		// get a matcher object
-		Matcher m = p.matcher(INPUT);
-		INPUT = m.replaceAll(REPLACE);
-		DealLog.log(INPUT);
-
-		//The cat says meow. All cats say meow.
-	}
-
-
-	/**
-	 * appendReplacement 和 appendTail 方法
-	 * <p>
-	 * Matcher 类也提供了appendReplacement 和 appendTail 方法用于文本替换：
-	 */
-	private static void c5() {
-		String REGEX = "a*b";
-		String INPUT = "aabfooaabfooabfoobkkk";
-		String REPLACE = "-";
-
-		Pattern p = Pattern.compile(REGEX);
-		// 获取 matcher 对象
-		Matcher m = p.matcher(INPUT);
-		StringBuffer sb = new StringBuffer();
-		while (m.find()) {
-			m.appendReplacement(sb, REPLACE);
-		}
-		m.appendTail(sb);
-		DealLog.log(sb.toString());
-
-		//-foo-foo-foo-kkk
-	}
-
-
-	//PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误
-	//1	public String getDescription()  获取错误的描述。
-	//2	public int getIndex()           获取错误的索引。
-	//3	public String getPattern()      获取错误的正则表达式模式。
-	//4	public String getMessage()      返回多行字符串，包含语法错误及其索引的描述、错误的正则表达式模式和模式中错误索引的可视化指示。
 }
