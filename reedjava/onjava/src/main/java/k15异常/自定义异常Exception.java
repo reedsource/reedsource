@@ -1,5 +1,5 @@
 /*
- * FileName: InsufficientFundsException
+ * FileName: 自定义异常Exception
  * Author:   reedsource
  */
 package k15异常;
@@ -15,11 +15,11 @@ package k15异常;
  * <p>
  * 自定义异常类，继承Exception类
  */
-public class InsufficientFundsException extends Exception {
+public class 自定义异常Exception extends Exception {
 	//此处的amount用来储存当出现异常（取出钱多于余额时）所缺乏的钱
 	private double amount;
 
-	public InsufficientFundsException(double amount) {
+	public 自定义异常Exception(double amount) {
 		this.amount = amount;
 	}
 

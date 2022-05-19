@@ -1,5 +1,5 @@
 /*
- * FileName: CheckingAccount
+ * FileName: 自定义异常实体
  * Author:   reedsource
  */
 package k15异常;
@@ -13,12 +13,12 @@ package k15异常;
  * date 2022/5/9 22:57
  * reedsource@189.cn
  */
-public class CheckingAccount {
+public class 自定义异常实体 {
 	//balance为余额，number为卡号
 	private double balance;
 	private int number;
 
-	public CheckingAccount(int number) {
+	public 自定义异常实体(int number) {
 		this.number = number;
 	}
 
@@ -28,13 +28,12 @@ public class CheckingAccount {
 	}
 
 	//方法：取钱
-	public void withdraw(double amount) throws
-			InsufficientFundsException {
+	public void withdraw(double amount) throws 自定义异常Exception {
 		if (amount <= balance) {
 			balance -= amount;
 		} else {
 			double needs = amount - balance;
-			throw new InsufficientFundsException(needs);
+			throw new 自定义异常Exception(needs);
 		}
 	}
 

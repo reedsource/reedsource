@@ -1,9 +1,10 @@
 /*
- * FileName: javaAnomaly
+ * FileName: 异常实现
  * Author:   reedsource
  */
 package k15异常;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 /**
@@ -15,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/9 22:57
  * reedsource@189.cn
  */
-public class javaAnomaly {
+public class 异常实现 {
 
 	/*
 	检查性异常：最具代表的检查性异常是用户错误或问题引起的异常，这是程序员无法预见的。
@@ -29,7 +30,8 @@ public class javaAnomaly {
 
 	标准运行时异常类的子类是最常见的异常类。由于 java.lang 包是默认加载到所有的 Java 程序的，所以大部分从运行时异常类继承而来的异常都可以直接使用。
 	*/
-	public static void main(String[] args) {
+	@Test
+	public void _Test() {
 		try {
 			// 程序代码
 			int a[] = new int[2];
@@ -40,8 +42,6 @@ public class javaAnomaly {
 		}
 
 		//异常  :java.lang.ArrayIndexOutOfBoundsException: 3
-
-
 
 		/*
 		try{
@@ -61,7 +61,6 @@ public class javaAnomaly {
 		如果不匹配，它会被传递给第二个 catch 块。
 		如此，直到异常被捕获或者通过所有的 catch 块。
 		*/
-
 	}
 
 /*
@@ -121,13 +120,13 @@ public class className
 
 一个方法可以声明抛出多个异常，多个异常之间用逗号隔开。
 
-例如，下面的方法声明抛出 RemoteException 和 InsufficientFundsException：
+例如，下面的方法声明抛出 RemoteException 和 自定义异常Exception：
 
 import java.io.*;
 public class className
 {
    public void withdraw(double amount) throws RemoteException,
-                              InsufficientFundsException
+                              自定义异常Exception
    {
        // Method implementation
    }
@@ -172,7 +171,7 @@ class MyException extends Exception{
 }
 只继承Exception 类来创建的异常类是检查性异常类。
 
-下面的 InsufficientFundsException 类是用户定义的异常类，它继承自 Exception。
+下面的 自定义异常Exception 类是用户定义的异常类，它继承自 Exception。
 
 一个异常类和其它任何类一样，包含有变量和方法。
 
