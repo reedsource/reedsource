@@ -1,5 +1,5 @@
 /*
- * FileName: JavaScannerNextLine
+ * FileName: 控制台输入取回车前ScannerNextLine
  * Author:   reedsource
  */
 package k14流.控制台输入;
@@ -20,15 +20,15 @@ import java.util.Scanner;
  * date 2022/5/9 22:57
  * reedsource@189.cn
  */
-public class JavaScannerNextLine {
+public class 控制台输入取回车前ScannerNextLine {
 	public static void main(String[] args) {
-		c1();
+		控制台输入ScannerNextLine_Test();
 	}
 
 	/**
 	 * 使用 nextLine 方法：
 	 */
-	private static void c1() {
+	private static void 控制台输入ScannerNextLine_Test() {
 		// 从键盘接收数据
 		Scanner scan = new Scanner(System.in);
 

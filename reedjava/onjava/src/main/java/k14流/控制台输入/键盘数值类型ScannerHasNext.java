@@ -1,11 +1,13 @@
 /*
- * FileName: JavaScannerHasNext
+ * FileName: 键盘数值类型ScannerHasNext
  * Author:   reedsource
  */
 package k14流.控制台输入;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -19,15 +21,15 @@ import java.util.Scanner;
  * date 2022/5/9 22:57
  * reedsource@189.cn
  */
-public class JavaScannerHasNext {
-	public static void main(String[] args) {
-		c2();
-	}
+public class 键盘数值类型ScannerHasNext {
 
+	public static void main(String[] args) throws IOException {
+		键盘数值类型ScannerHasNext_Test();
+	}
 	/**
 	 * 输入 int 或 float 类型的数据
 	 */
-	private static void c2() {
+	public static void 键盘数值类型ScannerHasNext_Test() {
 		Scanner scan = new Scanner(System.in);
 		// 从键盘接收数据
 		int i = 0;

@@ -1,9 +1,10 @@
 /*
- * FileName: JavaBufferedReader
+ * FileName: 控制台输入控制结束BufferedReader
  * Author:   reedsource
  */
 package k14流.控制台输入;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 import java.io.BufferedReader;
@@ -19,15 +20,11 @@ import java.io.InputStreamReader;
  * date 2022/5/9 22:57
  * reedsource@189.cn
  */
-public class JavaBufferedReader {
-	public static void main(String[] args) {
-		try {
-			c0();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+public class 控制台输入控制结束BufferedReader {
 
+	public static void main(String[] args) throws IOException {
+		控制台输入BufferedReader_Test();
+	}
 	/**
 	 * 从控制台读取多字符输入
 	 * <p>
@@ -37,7 +34,8 @@ public class JavaBufferedReader {
 	 *
 	 * @throws IOException 异常
 	 */
-	private static void c0() throws IOException {
+
+	public static void 控制台输入BufferedReader_Test() throws IOException {
 		char c;
 		// 使用 System.in 创建 BufferedReader
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

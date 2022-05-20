@@ -1,11 +1,13 @@
 /*
- * FileName: JavaScannerNext
+ * FileName: 控制台输入取空格前ScannerNext
  * Author:   reedsource
  */
 package k14流.控制台输入;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -22,15 +24,15 @@ import java.util.Scanner;
  * date 2022/5/9 22:57
  * reedsource@189.cn
  */
-public class JavaScannerNext {
-	public static void main(String[] args) {
-		c0();
-	}
+public class 控制台输入取空格前ScannerNext {
 
+	public static void main(String[] args) throws IOException {
+		控制台输入ScannerNext_Test();
+	}
 	/**
 	 * 使用 next 方法：
 	 */
-	private static void c0() {
+	public static void 控制台输入ScannerNext_Test() {
 		Scanner scan = new Scanner(System.in);
 		// 从键盘接收数据
 
