@@ -12,5 +12,5 @@ public enum 颜色枚举 {
 	/**
 	 * RED 红色
 	 */
-	RED, GREEN, BLANK, YELLOW
+	RED, GREEN, YELLOW
 }
