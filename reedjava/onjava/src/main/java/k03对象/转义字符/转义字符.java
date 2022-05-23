@@ -1,5 +1,5 @@
 /*
- * FileName: JavaTurn
+ * FileName: 转义字符
  * Author:   reedsource
  */
 package k03对象.转义字符;
@@ -13,7 +13,7 @@ package k03对象.转义字符;
  * date 2022/5/7 14:06
  * reedsource@189.cn
  */
-public class JavaTurn {
+public class 转义字符 {
 /*
 \n	换行 (0x0a)
 \r	回车 (0x0d)
