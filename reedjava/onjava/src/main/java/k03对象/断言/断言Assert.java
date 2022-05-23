@@ -1,9 +1,10 @@
 /*
- * FileName: javaAssert
+ * FileName: 断言Assert
  * Author:   reedsource
  */
 package k03对象.断言;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 /**
@@ -19,8 +20,9 @@ import top.ireed.deal.DealLog;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class javaAssert {
-	public static void main(String args[]) {
+public class 断言Assert {
+	@Test
+	public void 断言Assert_Test(){
 		boolean isOpen = false;
 
 		// 如果开启了断言，会将isOpen的值改为true
