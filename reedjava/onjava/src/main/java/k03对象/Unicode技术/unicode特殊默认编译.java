@@ -1,9 +1,10 @@
 /*
- * FileName: JavaUnicode
+ * FileName: unicode特殊默认编译
  * Author:   reedsource
  */
 package k03对象.Unicode技术;
 
+import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 /**
@@ -17,30 +18,21 @@ import top.ireed.deal.DealLog;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class JavaUnicode {
-	public static void main(String[] args) {
-		a();
-		b();
-	}
-
+public class unicode特殊默认编译 {
 	/**
 	 * \u000d Unicode换行符
 	 * jvm编译器会编译Unicode字符
 	 */
-	public static void a() {
+	@Test
+	public void unicode特殊默认编译_Test(){
 		String a = "我是目标输出";
 		//\u000d a = "我不是目标输出";
 		DealLog.log(a);
-	}
 
-	public static void b() {
-		boolean m = false;
-		//\u000d m=c(m);
-		DealLog.log(m);
+		//\u000d a=c(a);
+		DealLog.log(a);
 	}
-
-	public static boolean c(boolean m) {
-		m = true;
-		return m;
+	public static String c(String m) {
+		return "我是异常的目标输入";
 	}
 }
