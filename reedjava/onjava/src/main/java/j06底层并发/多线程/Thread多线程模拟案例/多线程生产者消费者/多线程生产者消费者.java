@@ -1,5 +1,5 @@
 /*
- * FileName: ThreadCase05ProducerOrConsumer
+ * FileName: 多线程生产者消费者
  * Author:   reedsource
  */
 package j06底层并发.多线程.Thread多线程模拟案例.多线程生产者消费者;
@@ -20,27 +20,27 @@ import static top.ireed.general.TopConstant.INT30;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class ThreadCase05ProducerOrConsumer {
+public class 多线程生产者消费者 {
 	public static void main(String[] args) {
 		//创建仓库
-		Warehouse warehouse = new Warehouse();
+		仓库 仓库 = new 仓库();
 		//生产者
-		Producer producer = new Producer(warehouse);
+		生产者 生产者 = new 生产者(仓库);
 		//消费者
-		Consumer consumer = new Consumer(warehouse);
+		消费者 消费者 = new 消费者(仓库);
 
-		producer.setName("生产者");
-		consumer.setName("消费者");
+		生产者.setName("生产者");
+		消费者.setName("消费者");
 
-		producer.start();
-		consumer.start();
+		生产者.start();
+		消费者.start();
 	}
 }
 
 /**
  * 仓库类
  */
-class Warehouse {
+class 仓库 {
 	/**
 	 * 仓库产品
 	 */
@@ -98,10 +98,10 @@ class Warehouse {
 /**
  * 生产者类
  */
-class Producer extends Thread {
-	private Warehouse storage;
+class 生产者 extends Thread {
+	private 仓库 storage;
 
-	Producer(Warehouse storage) {
+	生产者(仓库 storage) {
 		super();
 		this.storage = storage;
 	}
@@ -118,13 +118,13 @@ class Producer extends Thread {
 /**
  * 消费者类
  */
-class Consumer extends Thread {
+class 消费者 extends Thread {
 	/**
 	 * 仓库
 	 */
-	private Warehouse storage;
+	private 仓库 storage;
 
-	Consumer(Warehouse storage) {
+	消费者(仓库 storage) {
 		super();
 		this.storage = storage;
 	}

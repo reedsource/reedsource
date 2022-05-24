@@ -1,5 +1,5 @@
 /*
- * FileName: ThreadCase06Task
+ * FileName: 多线程定时任务
  * Author:   reedsource
  */
 package j06底层并发.多线程.Thread多线程模拟案例.多线程定时任务;
@@ -23,11 +23,11 @@ import java.util.concurrent.TimeUnit;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class ThreadCase06Task {
+public class 多线程定时任务 {
 	@Test
 	public void scheduleThreadPool() {
 		ScheduledExecutorService pool = Executors.newScheduledThreadPool(5);
-		Task t1 = new Task();
+		定时任务 t1 = new 定时任务();
 		//立即执行t1，3s后任务结束，再等待2s（间隔时间-消耗时间），如果有空余线程时，再次执行该任务
 		pool.scheduleAtFixedRate(t1, 0, 5, TimeUnit.SECONDS);
 	}
@@ -36,7 +36,7 @@ public class ThreadCase06Task {
 /**
  * 定时任务
  */
-class Task implements Runnable {
+class 定时任务 implements Runnable {
 
 	@Override
 	public void run() {

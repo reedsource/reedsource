@@ -1,5 +1,5 @@
 /*
- * FileName: ThreadCase03ticket
+ * FileName: 多线程卖票
  * Author:   reedsource
  */
 package j06底层并发.多线程.Thread多线程模拟案例.多线程卖票;
@@ -18,26 +18,23 @@ import static top.ireed.general.TopConstant.INT40;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class ThreadCase03ticket {
+public class 多线程卖票 {
+
 	public static void main(String[] args) {
-		Ticket ticket = new Ticket();
+		卖一张票 卖一张票 = new 卖一张票();
 
 		for (int x = 1; x <= INT3; x++) {
-			new Thread(new Runnable() {
-				@Override
-				public void run() {
-					// 打印40张票
-					for (int i = 1; i <= INT40; i++) {
-						DealLog.log(Thread.currentThread().getName() + "-->" + ticket);
-					}
+			new Thread(() -> {
+				// 打印40张票
+				for (int i = 1; i <= INT40; i++) {
+					DealLog.log(Thread.currentThread().getName() + "-->" + 卖一张票);
 				}
 			}, "卖票").start();
 		}
 	}
-
 }
 
-class Ticket {
+class 卖一张票 {
 	/**
 	 * 座号
 	 */

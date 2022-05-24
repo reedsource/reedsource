@@ -1,5 +1,5 @@
 /*
- * FileName: ThreadCase04OddOrEven
+ * FileName: 线程打印奇数和偶数
  * Author:   reedsource
  */
 package j06底层并发.多线程.Thread多线程模拟案例.线程打印奇数和偶数;
@@ -18,26 +18,20 @@ import top.ireed.deal.DealLog;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class ThreadCase04OddOrEven {
+public class 线程打印奇数和偶数 {
 	public static void main(String[] args) {
-		PrintNum printNum = new PrintNum();
+		打印数 打印数 = new 打印数();
 
 		//创建一个线程,打印奇数
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= 100; i++) {
-					printNum.printOdd();
-				}
+		new Thread(() -> {
+			for (int i = 1; i <= 100; i++) {
+				打印数.printOdd();
 			}
 		}).start();
 		//创建一个线程,打印偶数
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= 100; i++) {
-					printNum.printEven();
-				}
+		new Thread(() -> {
+			for (int i = 1; i <= 100; i++) {
+				打印数.printEven();
 			}
 		}).start();
 	}
@@ -46,7 +40,7 @@ public class ThreadCase04OddOrEven {
 /**
  * 打印数类
  */
-class PrintNum {
+class 打印数 {
 
 	/**
 	 * 当前计数

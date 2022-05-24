@@ -41,13 +41,6 @@ public class javaString {
 				" %d, 字符串变量的值为 " +
 
 				"is %s", a, b, c);
-
-		String fs;
-		fs = String.format("浮点型变量的值为 " +
-				"%f, 整型变量的值为 " +
-				" %d, 字符串变量的值为 " +
-				" %s", a, b, c);
-
 	}
 
 	/*
