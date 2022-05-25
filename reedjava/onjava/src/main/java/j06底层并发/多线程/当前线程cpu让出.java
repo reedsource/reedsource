@@ -1,5 +1,5 @@
 /*
- * FileName: Thread11Yield
+ * FileName: 当前线程cpu让出
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -17,7 +17,7 @@ import static top.ireed.general.TopConstant.INT200;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread11Yield {
+public class 当前线程cpu让出 {
 	public static void main(String[] args) {
 		Thread t1 = new Thread(new Runnable() {
 			@Override

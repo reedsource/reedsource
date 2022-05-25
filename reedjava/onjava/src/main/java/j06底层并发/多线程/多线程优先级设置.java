@@ -1,5 +1,5 @@
 /*
- * FileName: Thread05Priority
+ * FileName: 多线程优先级设置
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -22,7 +22,7 @@ import static top.ireed.general.TopConstant.INT200;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread05Priority {
+public class 多线程优先级设置 {
 	public static void main(String[] args) {
 		Thread t1 = new Thread(new Runnable() {
 			@Override

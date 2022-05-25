@@ -1,5 +1,5 @@
 /*
- * FileName: Thread03FoundRunnable
+ * FileName: 创建线程实现Runnable接口
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -18,7 +18,7 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread03FoundRunnable {
+public class 创建线程实现Runnable接口 {
 	public static void main(String[] args) {
 		//3) 创建线程对象
 		Prime target = new Prime();

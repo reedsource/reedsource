@@ -1,5 +1,5 @@
 /*
- * FileName: Thread04FoundRests
+ * FileName: 创建线程实现内部类
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -18,7 +18,7 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread04FoundRests {
+public class 创建线程实现内部类 {
 	public static void main(String[] args) {
 		// 1) Thread的匿名内部类
 		Thread t1 = new Thread() {

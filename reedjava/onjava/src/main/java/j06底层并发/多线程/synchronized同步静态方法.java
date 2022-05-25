@@ -1,5 +1,5 @@
 /*
- * FileName: Thread14Synchronized3
+ * FileName: synchronized同步静态方法
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -17,20 +17,20 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread14Synchronized3 {
+public class synchronized同步静态方法 {
 	public static void main(String[] args) {
 
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				Thread14Synchronized3.m1();
+				synchronized同步静态方法.m1();
 			}
 		}).start();
 
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				Thread14Synchronized3.m2();
+				synchronized同步静态方法.m2();
 			}
 		}).start();
 	}
@@ -41,7 +41,7 @@ public class Thread14Synchronized3 {
 	private static void m1() {
 		//每个类都有一个class属性, 它是当前类的运行时类对象
 		//可以简单的理解为把Thread14Synchronized3的字节码作为锁对象, 有人也称它为类锁
-		synchronized (Thread14Synchronized3.class) {
+		synchronized (synchronized同步静态方法.class) {
 			for (int i = 1; i <= INT100; i++) {
 				DealLog.log(Thread.currentThread().getName() + "-->" + i);
 			}
@@ -49,7 +49,7 @@ public class Thread14Synchronized3 {
 	}
 
 	/**
-	 * 使用synchronized修饰静态方法,表示整个方法体都进行了同步, 默认的锁对象是当前类的运行时类对象 ,Thread14Synchronized3.class
+	 * 使用synchronized修饰静态方法,表示整个方法体都进行了同步, 默认的锁对象是当前类的运行时类对象 ,synchronized同步静态方法.class
 	 */
 	private synchronized static void m2() {
 		for (int i = 1; i <= INT100; i++) {

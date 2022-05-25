@@ -1,5 +1,5 @@
 /*
- * FileName: Thread08State
+ * FileName: 线程当前状态
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -26,7 +26,7 @@ import static top.ireed.general.TopConstant.INT500;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread08State {
+public class 线程当前状态 {
 	public static void main(String[] args) {
 
 		Thread t0 = new Thread(new Runnable() {

@@ -1,5 +1,5 @@
 /*
- * FileName: Thread07Interrupted
+ * FileName: 线程中断方式及效果
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -19,7 +19,7 @@ import static top.ireed.general.TopConstant.INT200;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread07Interrupted {
+public class 线程中断方式及效果 {
 	public static void main(String[] args) {
 		Thread t1 = new Thread(new Runnable() {
 			@Override

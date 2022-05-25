@@ -1,5 +1,5 @@
 /*
- * FileName: Thread09Daemon
+ * FileName: 守护线程
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -20,7 +20,7 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread09Daemon {
+public class 守护线程 {
 	public static void main(String[] args) {
 		//用户线程
 		Thread t1 = new Thread(new Runnable() {

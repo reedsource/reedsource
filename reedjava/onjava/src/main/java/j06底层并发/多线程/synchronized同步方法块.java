@@ -1,5 +1,5 @@
 /*
- * FileName: Thread13Synchronized2
+ * FileName: synchronized同步方法块
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -19,9 +19,9 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread13Synchronized2 {
+public class synchronized同步方法块 {
 	public static void main(String[] args) {
-		Thread13Synchronized2 obj = new Thread13Synchronized2();
+		synchronized同步方法块 obj = new synchronized同步方法块();
 
 		new Thread(new Runnable() {
 			@Override

@@ -1,5 +1,5 @@
 /*
- * FileName: Thread12Synchronized1
+ * FileName: synchronized同步锁
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -30,7 +30,7 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread12Synchronized1 extends Thread {
+public class synchronized同步锁 extends Thread {
 	public static void main(String[] args) {
 		Synchronized aSynchronized = new Synchronized();
 		//一个线程调用m1()

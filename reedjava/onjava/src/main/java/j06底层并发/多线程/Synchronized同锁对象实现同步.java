@@ -1,5 +1,5 @@
 /*
- * FileName: Thread15Synchronized4
+ * FileName: Synchronized同锁对象实现同步
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -19,7 +19,7 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread15Synchronized4 {
+public class Synchronized同锁对象实现同步 {
 	public static void main(String[] args) {
 		MyPrintM mPrint1 = new MyPrintM();
 		//一个线程调用m1()

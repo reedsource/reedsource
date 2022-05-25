@@ -1,5 +1,5 @@
 /*
- * FileName: Thread06Interrupt
+ * FileName: 线程睡眠与线程睡眠中断
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -17,7 +17,7 @@ import static top.ireed.general.TopConstant.INT200;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread06Interrupt {
+public class 线程睡眠与线程睡眠中断 {
 	public static void main(String[] args) {
 		Thread t1 = new Thread(new Runnable() {
 			@Override

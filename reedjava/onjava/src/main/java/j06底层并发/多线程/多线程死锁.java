@@ -1,5 +1,5 @@
 /*
- * FileName: Thread16Deadlock
+ * FileName: 多线程死锁
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -18,7 +18,7 @@ import static top.ireed.general.TopConstant.S_B;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread16Deadlock {
+public class 多线程死锁 {
 	public static void main(String[] args) {
 		Thread t1 = new DeadlockThread();
 		t1.setName(S_A);

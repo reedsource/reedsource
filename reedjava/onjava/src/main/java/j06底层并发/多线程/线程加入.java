@@ -1,5 +1,5 @@
 /*
- * FileName: Thread10Join
+ * FileName: 线程加入
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -19,7 +19,7 @@ import static top.ireed.general.TopConstant.*;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread10Join {
+public class 线程加入 {
 
 	public static void main(String[] args) throws InterruptedException {
 		Thread t1 = new Thread(new Runnable() {

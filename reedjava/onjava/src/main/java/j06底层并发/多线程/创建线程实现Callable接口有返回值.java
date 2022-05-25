@@ -1,5 +1,5 @@
 /*
- * FileName: Thread04FoundCallable
+ * FileName: 创建线程实现Callable接口有返回值
  * Author:   reedsource
  */
 package j06底层并发.多线程;
@@ -23,7 +23,7 @@ import static top.ireed.general.TopConstant.INT100;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Thread04FoundCallable {
+public class 创建线程实现Callable接口有返回值 {
 
 	public static void main(String[] args) {
 		//3)实例化任务，传递参数
