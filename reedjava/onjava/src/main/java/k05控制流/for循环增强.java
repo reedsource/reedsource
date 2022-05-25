@@ -1,8 +1,8 @@
 /*
- * FileName: d3
+ * FileName: for循环增强
  * Author:   reedsource
  */
-package k05控制流.for循环增强;
+package k05控制流;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class d3 {
+public class for循环增强 {
 	/**
 	 * Java 增强 for 循环
 	 * <p>

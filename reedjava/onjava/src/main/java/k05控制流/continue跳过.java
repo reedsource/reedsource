@@ -1,8 +1,8 @@
 /*
- * FileName: d5
+ * FileName: continue跳过
  * Author:   reedsource
  */
-package k05控制流.continue跳过;
+package k05控制流;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class d5 {
+public class continue跳过 {
 	/**
 	 * continue 跳过关键字
 	 * <p>

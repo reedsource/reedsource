@@ -1,8 +1,8 @@
 /*
- * FileName: javaConditionCase
+ * FileName: forIf小案例
  * Author:   reedsource
  */
-package k05控制流.if条件;
+package k05控制流;
 
 import top.ireed.deal.DealLog;
 
@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaConditionCase {
+public class forIf小案例 {
 	public static void main(String[] args) {
 		c0(9);
 		c1(9);

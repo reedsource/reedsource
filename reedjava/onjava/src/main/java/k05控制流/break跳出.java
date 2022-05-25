@@ -1,8 +1,8 @@
 /*
- * FileName: d4
+ * FileName: break跳出
  * Author:   reedsource
  */
-package k05控制流.break跳出;
+package k05控制流;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class d4 {
+public class break跳出 {
 	/**
 	 * break 跳出关键字
 	 * <p>

@@ -1,8 +1,8 @@
 /*
- * FileName: d2
+ * FileName: for循环
  * Author:   reedsource
  */
-package k05控制流.for循环;
+package k05控制流;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class d2 {
+public class for循环 {
 	/**
 	 * for循环
 	 * <p>

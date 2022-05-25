@@ -1,8 +1,8 @@
 /*
- * FileName: javaDealingsCase
+ * FileName: for循环小案例
  * Author:   reedsource
  */
-package k05控制流.for循环;
+package k05控制流;
 
 import top.ireed.deal.DealLog;
 
@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaDealingsCase {
+public class for循环小案例 {
 	public static void main(String[] args) {
 		c0();
 		c1();

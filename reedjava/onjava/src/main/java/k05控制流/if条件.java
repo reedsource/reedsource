@@ -1,8 +1,8 @@
 /*
- * FileName: javaCondition
+ * FileName: if条件
  * Author:   reedsource
  */
-package k05控制流.if条件;
+package k05控制流;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaCondition {
+public class if条件 {
 
 	/**
 	 * if...else

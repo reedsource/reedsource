@@ -1,8 +1,8 @@
 /*
- * FileName: javaBranch
+ * FileName: switch分支
  * Author:   reedsource
  */
-package k05控制流.switch分支;
+package k05控制流;
 
 import top.ireed.deal.DealLog;
 
@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaBranch {
+public class switch分支 {
 	public static void main(String[] args) {
 		c0();
 	}
