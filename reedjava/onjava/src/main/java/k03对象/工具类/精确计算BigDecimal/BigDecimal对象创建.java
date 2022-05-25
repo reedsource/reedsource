@@ -1,8 +1,8 @@
 /*
- * FileName: BigDecimal01Found
+ * FileName: BigDecimal对象创建
  * Author:   reedsource
  */
-package k03对象.包装类.精确计算BigDecimal.BigDecimal对象创建;
+package k03对象.工具类.精确计算BigDecimal;
 
 import top.ireed.deal.DealLog;
 
@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class BigDecimal01Found {
+public class BigDecimal对象创建 {
 	public static void main(String[] args) {
 		int a = 1;
 		DealLog.log("创建一个具有参数所指定整数值的对象 " + new BigDecimal(a));

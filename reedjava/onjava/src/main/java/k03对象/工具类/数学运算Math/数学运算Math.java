@@ -1,8 +1,8 @@
 /*
- * FileName: javaMath
+ * FileName: 数学运算Math
  * Author:   reedsource
  */
-package k03对象.包装类.数学运算Math;
+package k03对象.工具类.数学运算Math;
 
 import top.ireed.deal.DealLog;
 
@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaMath {
+public class 数学运算Math {
 	public static void main(String[] args) {
 		DealLog.log("90 度的正弦值：" + Math.sin(Math.PI / 2));
 		DealLog.log("0度的余弦值：" + Math.cos(0));

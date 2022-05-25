@@ -2,7 +2,7 @@
  * FileName: ArithmeticUtils
  * Author:   reedsource
  */
-package k03对象.包装类.精确计算BigDecimal;
+package k03对象.工具类.精确计算BigDecimal;
 
 import java.math.BigDecimal;
 

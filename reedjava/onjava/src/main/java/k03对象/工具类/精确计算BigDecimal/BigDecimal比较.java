@@ -1,8 +1,8 @@
 /*
- * FileName: BigDecimal03Compare
+ * FileName: BigDecimal比较
  * Author:   reedsource
  */
-package k03对象.包装类.精确计算BigDecimal.BigDecimal比较;
+package k03对象.工具类.精确计算BigDecimal;
 
 import top.ireed.deal.DealLog;
 
@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class BigDecimal03Compare {
+public class BigDecimal比较 {
 	public static void main(String[] args) {
 		BigDecimal a = new BigDecimal("100");
 		BigDecimal b = new BigDecimal("200");

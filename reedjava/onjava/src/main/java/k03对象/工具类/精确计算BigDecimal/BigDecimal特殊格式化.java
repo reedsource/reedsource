@@ -1,8 +1,8 @@
 /*
- * FileName: BigDecimal04Format
+ * FileName: BigDecimal特殊格式化
  * Author:   reedsource
  */
-package k03对象.包装类.精确计算BigDecimal.BigDecimal特殊格式化;
+package k03对象.工具类.精确计算BigDecimal;
 
 import top.ireed.deal.DealLog;
 
@@ -19,7 +19,7 @@ import java.text.NumberFormat;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class BigDecimal04Format {
+public class BigDecimal特殊格式化 {
 	public static void main(String[] args) {
 
 		//建立货币格式化引用

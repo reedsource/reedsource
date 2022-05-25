@@ -1,8 +1,8 @@
 /*
- * FileName: javaDate
+ * FileName: 时间Date
  * Author:   reedsource
  */
-package k03对象.包装类.日期时间.Date;
+package k03对象.工具类.日期时间;
 
 import org.junit.Test;
 import top.ireed.deal.DealDate;
@@ -23,7 +23,7 @@ import java.util.Locale;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaDate {
+public class 时间Date {
 
 	/**
 	 * 获取当前日期时间

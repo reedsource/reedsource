@@ -1,8 +1,8 @@
 /*
- * FileName: BigDecimal02Common
+ * FileName: BigDecimal加减乘除
  * Author:   reedsource
  */
-package k03对象.包装类.精确计算BigDecimal.BigDecimal加减乘除;
+package k03对象.工具类.精确计算BigDecimal;
 
 import top.ireed.deal.DealLog;
 
@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class BigDecimal02Common {
+public class BigDecimal加减乘除 {
 	public static void main(String[] args) {
 		BigDecimal a = new BigDecimal("100");
 		BigDecimal b = new BigDecimal("200");
