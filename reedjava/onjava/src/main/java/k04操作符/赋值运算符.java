@@ -1,8 +1,8 @@
 /*
- * FileName: javaOperation
+ * FileName: 赋值运算符
  * Author:   reedsource
  */
-package k04操作符.赋值运算符;
+package k04操作符;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaOperation {
+public class 赋值运算符 {
 	/**
 	 * 赋值运算符
 	 * <p>

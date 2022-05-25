@@ -1,8 +1,8 @@
 /*
- * FileName: javaOperation
+ * FileName: 运算符优先级
  * Author:   reedsource
  */
-package k04操作符.instanceof对象对比运算符;
+package k04操作符;
 
 /**
  * 功能简述:
@@ -13,7 +13,7 @@ package k04操作符.instanceof对象对比运算符;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaOperation {
+public class instanceof对象对比运算符 {
 
 	/**
 	 * instanceof 运算符

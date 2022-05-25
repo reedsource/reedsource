@@ -1,8 +1,8 @@
 /*
- * FileName: javaOperation
+ * FileName: 运算符优先级
  * Author:   reedsource
  */
-package k04操作符.Java运算符优先级;
+package k04操作符;
 
 /**
  * 功能简述:
@@ -13,7 +13,7 @@ package k04操作符.Java运算符优先级;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class javaOperation {
+public class 运算符优先级 {
 
 	/**
 	 * Java运算符优先级
@@ -30,11 +30,11 @@ public class javaOperation {
 	 * 移位 	    >> >>>  << 	            左到右
 	 * 关系 	    >> = << = 	            左到右
 	 * 相等 	    ==  !=	                左到右
-	 * 按位与	    ＆	                    左到右
+	 * 按位与	    ＆	                左到右
 	 * 按位异或	^	                    左到右
-	 * 按位或	    |	                    左到右
-	 * 逻辑与	    &&	                    左到右
-	 * 逻辑或	    | |	                    左到右
+	 * 按位或	    |	                左到右
+	 * 逻辑与	    &&	                左到右
+	 * 逻辑或	    | |	                左到右
 	 * 条件	    ？：	                    从右到左
 	 * 赋值	    = + = - = * = / =％= >> = << =＆= ^ = | =	从右到左
 	 * 逗号	    ，	                    左到右
