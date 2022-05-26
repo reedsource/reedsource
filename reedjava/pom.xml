@@ -33,7 +33,7 @@
 		<junit.version>4.13.2</junit.version><!--junit测试工具类-->
 		<jsp.version>2.3.1</jsp.version><!--jsp依赖-->
 		<jsp.jstl.version>1.2</jsp.jstl.version><!--jsp jstl依赖-->
-		<jsp.taglibs.version>1.2.3</jsp.taglibs.version><!--jsp taglibs依赖-->
+		<jsp.taglibs.version>1.2.5</jsp.taglibs.version><!--jsp taglibs依赖-->
 		<jackson.version>2.11.0</jackson.version><!--jackson-->
 		<mybatis.version>2.0.0</mybatis.version><!--mybatis-->
 		<lombok.version>1.18.10</lombok.version><!--lombok-->
@@ -99,11 +99,14 @@
 			<version>${jsp.jstl.version}</version>
 		</dependency>
 		<!--JSP 标签库集合-->
+		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
 		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
+			<groupId>org.apache.taglibs</groupId>
+			<artifactId>taglibs-standard-impl</artifactId>
 			<version>${jsp.taglibs.version}</version>
+			<scope>runtime</scope>
 		</dependency>
+
 		<!--log4j2依赖-->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
