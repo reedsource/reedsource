@@ -1,8 +1,8 @@
 /*
- * FileName: Test
+ * FileName: 退出虚拟机exit
  * Author:   reedsource
  */
-package k06初始化和清理.退出虚拟机;
+package k06初始化和清理;
 
 import top.ireed.deal.DealLog;
 
@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Test {
+public class 退出虚拟机exit {
 	public static void main(String[] args) {
 		int a = 10;
 		int b = 10;
