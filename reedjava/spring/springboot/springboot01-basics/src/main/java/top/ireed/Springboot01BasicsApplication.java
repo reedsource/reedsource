@@ -1,4 +1,4 @@
-package top.ireed.springboot01basics;
+package top.ireed;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

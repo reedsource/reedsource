@@ -15,6 +15,7 @@
 	<!--子模块-->
 	<modules>
 		<module>springboot01-basics</module>
+		<module>springboot02-configMvc</module>
 	</modules>
 
 	<properties>
@@ -24,7 +25,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- 配置文件自动映射 -->
+		<!-- 配置文件自动映射 SpringBoot配置注释处理器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>

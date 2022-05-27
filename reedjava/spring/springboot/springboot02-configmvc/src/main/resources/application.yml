@@ -1,0 +1,5 @@
+# 和application.properties的效果相同,只是变更了文件的格式
+server:
+  port: 80
+  servlet:
+    context-path: /springboot

@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package top.ireed.springboot01basics.controller;
+package top.ireed.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
