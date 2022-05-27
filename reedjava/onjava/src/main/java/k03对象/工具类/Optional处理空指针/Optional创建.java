@@ -1,8 +1,8 @@
 /*
- * FileName: Optional02Found
+ * FileName: Optional创建
  * Author:   reedsource
  */
-package k03对象.Optional处理空指针;
+package k03对象.工具类.Optional处理空指针;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -18,7 +18,7 @@ import java.util.Optional;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Optional02Found {
+public class Optional创建 {
 	/**
 	 * 反案例 报异常 NoSuchElementException  没有这样的元素例外
 	 */

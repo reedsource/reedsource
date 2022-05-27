@@ -1,8 +1,8 @@
 /*
- * FileName: Optional07filter
+ * FileName: Optional过滤器filter
  * Author:   reedsource
  */
-package k03对象.Optional处理空指针;
+package k03对象.工具类.Optional处理空指针;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ import static junit.framework.TestCase.assertTrue;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Optional07filter {
+public class Optional过滤器filter {
 
 	/**
 	 * 参数过滤filter
@@ -31,7 +31,7 @@ public class Optional07filter {
 	public void whenFilter_thenOk() {
 		User user = new User("anna@gmail.com", "1234");
 		//过滤 是否包含 @
-		Optional<User> result = Optional.ofNullable(user)
+		Optional<User> result = Optional.of(user)
 				.filter(u -> u.getEmail() != null && u.getEmail().contains("@"));
 
 		assertTrue(result.isPresent());

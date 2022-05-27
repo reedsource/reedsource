@@ -1,8 +1,8 @@
 /*
- * FileName: Optional04ReturnValue
+ * FileName: Optional判空条件返回
  * Author:   reedsource
  */
-package k03对象.Optional处理空指针;
+package k03对象.工具类.Optional处理空指针;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;
@@ -20,14 +20,14 @@ import static org.junit.Assert.assertEquals;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Optional04ReturnValue {
+public class Optional判空条件返回 {
 
 	/**
 	 * orElse()，它的工作方式非常直接，如果有值则返回该值，否则返回传递给它的参数值
 	 * 这里 user 对象是空的，所以返回了作为默认值的 user2。
 	 */
 	@Test
-	public void whenEmptyValue_thenReturnDefault() {
+	public void 判空返回类似ifElse() {
 		User user = null;
 		User user2 = new User("anna@gmail.com", "1234");
 		User user3 = new User("aaa", "bbb");
@@ -53,7 +53,7 @@ public class Optional04ReturnValue {
 	orElseGet 当有值时 不会再执行函数中的方法了
 	*/
 	@Test
-	public void givenPresentValue_whenCompare_thenOk() {
+	public void 判空true执行函数返回() {
 		User user = new User("john@gmail.com", "1234");
 		DealLog.log("orElse");
 		User result = Optional.ofNullable(user).orElse(createNewUser());

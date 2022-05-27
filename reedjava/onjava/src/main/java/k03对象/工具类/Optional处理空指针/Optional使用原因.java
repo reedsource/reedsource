@@ -1,8 +1,10 @@
 /*
- * FileName: Optional01Cause
+ * FileName: Optional使用原因
  * Author:   reedsource
  */
-package k03对象.Optional处理空指针;
+package k03对象.工具类.Optional处理空指针;
+
+import org.junit.Test;
 
 /**
  * 功能简述:
@@ -14,8 +16,10 @@ package k03对象.Optional处理空指针;
  * date 2022/5/11 22:48
  * reedsource@189.cn
  */
-public class Optional01Cause {
+public class Optional使用原因 {
 
+	@Test
+	public void Optional使用原因_Test(){
 	/* 伪代码
 	当我们获取一个实体的子属性时,可能需要不断的判空处理 很容易就变得冗长，难以维护
 
@@ -52,5 +56,8 @@ public class Optional01Cause {
 			.flatMap(User::getAddress)
 			.flatMap(Address::getCountry)
 			.map(Country::getIsocode)
-			.orElse("default");*/
+			.orElse("default");
+	*/
+	}
+
 }
