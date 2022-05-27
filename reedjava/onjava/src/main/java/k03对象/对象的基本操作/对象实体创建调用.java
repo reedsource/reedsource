@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/6 22:56
  * reedsource@189.cn
  */
-public class K03 {
+public class 对象实体创建调用 {
 	public static void main(String[] args) {
 		// 下面的语句将创建一个对象
 		Dog dog = new Dog();
