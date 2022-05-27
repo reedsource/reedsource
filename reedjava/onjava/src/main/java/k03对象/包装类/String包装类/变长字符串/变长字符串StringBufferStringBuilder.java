@@ -1,5 +1,5 @@
 /*
- * FileName: javaStringBufferStringBuilder
+ * FileName: 变长字符串StringBufferStringBuilder
  * Author:   reedsource
  */
 package k03对象.包装类.String包装类.变长字符串;
@@ -17,26 +17,21 @@ import top.ireed.deal.DealLog;
  * <p>
  * 在一般情况下使用StringBuilder,开销较低
  */
-public class javaStringBufferStringBuilder {
+public class 变长字符串StringBufferStringBuilder {
 	public static void main(String[] args) {
 		StringBuffer sBuffer = new StringBuffer("网站：");
-		sBuffer.append("top");
 		sBuffer.append(".ireed");
-		sBuffer.append(".com");
+		sBuffer.append(".top");
 		DealLog.log(sBuffer);
-
 
 		//StringBuilder用法相同
 	}
-
 /*
-*
 1	public StringBuffer append(String s)    将指定的字符串追加到此字符序列。
 2	public StringBuffer reverse()           将此字符序列用其反转形式取代。
 3	public delete(int start, int end)       移除此序列的子字符串中的字符。
 4	public insert(int offset, int i)        将 int 参数的字符串表示形式插入此序列中。
 5	replace(int start, int end, String str) 使用给定 String 中的字符替换此序列的子字符串中的字符。
-
 
 1	int capacity()                                  返回当前容量。
 2	char charAt(int index)                          返回此序列中指定索引处的 char 值。
@@ -54,11 +49,4 @@ public class javaStringBufferStringBuilder {
 14	String substring(int start, int end)            返回一个新的 String，它包含此序列当前所包含的字符子序列。
 15	String toString()                               返回此序列中数据的字符串表示形式。
 * */
-
-
-	/*
-	 *
-
-
-	 */
 }
