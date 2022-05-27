@@ -26,6 +26,7 @@ public class 键盘数值类型ScannerHasNext {
 	public static void main(String[] args) throws IOException {
 		键盘数值类型ScannerHasNext_Test();
 	}
+
 	/**
 	 * 输入 int 或 float 类型的数据
 	 */

@@ -10,7 +10,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/21 23:34
  * mail reedsource@189.cn
  */
-public enum 枚举接口基类实现枚举 implements 枚举接口基类{
+public enum 枚举接口基类实现枚举 implements 枚举接口基类 {
 	/**
 	 * 颜色
 	 */

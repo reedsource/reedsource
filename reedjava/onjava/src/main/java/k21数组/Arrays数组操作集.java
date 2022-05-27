@@ -71,16 +71,16 @@ public class Arrays数组操作集 {
 
 		// 将数组的第2和第3个元素赋值为8
 		Arrays.fill(array, 2, 4, 8);
-		DealLog.log("将数组的第2和第3个元素赋值为8：Arrays.fill(array, 2, 4, 8)：",Arrays.toString(array));
+		DealLog.log("将数组的第2和第3个元素赋值为8：Arrays.fill(array, 2, 4, 8)：", Arrays.toString(array));
 
 		int[] array1 = {7, 8, 3, 2, 12, 6, 3, 5, 4};
 		// 对数组的第2个到第6个进行排序进行排序
 		Arrays.sort(array1, 2, 7);
-		DealLog.log("对数组的第2个到第6个元素进行排序进行排序：Arrays.sort(array,2,7)：",Arrays.toString(array));
+		DealLog.log("对数组的第2个到第6个元素进行排序进行排序：Arrays.sort(array,2,7)：", Arrays.toString(array));
 
 		// 对整个数组进行排序
 		Arrays.sort(array1);
-		DealLog.log("对整个数组进行排序：Arrays.sort(array1)：",Arrays.toString(array));
+		DealLog.log("对整个数组进行排序：Arrays.sort(array1)：", Arrays.toString(array));
 
 		// 比较数组元素是否相等
 		DealLog.log("比较数组元素是否相等:Arrays.equals(array, array1):" + "\n" + Arrays.equals(array, array1));

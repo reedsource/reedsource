@@ -27,7 +27,7 @@ public class 正则替换字符串replaceFirst和replaceAll {
 	 * 不同的是，replaceFirst 替换首次匹配，replaceAll 替换所有匹配。
 	 */
 	@Test
-	public void 正则替换字符串replaceFirst和replaceAll_Test(){
+	public void 正则替换字符串replaceFirst和replaceAll_Test() {
 		String REGEX = "dog";
 		String INPUT = "The dog says meow. " + "All dogs say meow.";
 		String REPLACE = "cat";
@@ -39,7 +39,6 @@ public class 正则替换字符串replaceFirst和replaceAll {
 		DealLog.log(INPUT);
 
 		//The cat says meow. All cats say meow.
-
 
 
 	}

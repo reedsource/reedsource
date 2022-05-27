@@ -67,6 +67,11 @@ javadoc 工具软件识别以下标签：
  * <p>
  * 设置   ${bare_field_name}
  * (${param})${field}
+ * <p>
+ * 获取  ${bare_field_name}
+ * <p>
+ * 设置   ${bare_field_name}
+ * (${param})${field}
  */
 
 

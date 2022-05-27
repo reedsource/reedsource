@@ -19,7 +19,7 @@ import org.junit.Test;
 public class Optional使用原因 {
 
 	@Test
-	public void Optional使用原因_Test(){
+	public void Optional使用原因_Test() {
 	/* 伪代码
 	当我们获取一个实体的子属性时,可能需要不断的判空处理 很容易就变得冗长，难以维护
 

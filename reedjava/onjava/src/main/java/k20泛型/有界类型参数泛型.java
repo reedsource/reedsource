@@ -39,7 +39,7 @@ public class 有界类型参数泛型 {
 
 
 	@Test
-	public void 有界类型参数泛型_Test(){
+	public void 有界类型参数泛型_Test() {
 		// 创建不同类型数组： Integer, Double 和 Character
 		Integer[] intArray = {1, 2, 3, 4, 5};
 		Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
@@ -94,9 +94,9 @@ public class 有界类型参数泛型 {
 	/**
 	 * 比较三个值并返回最大值
 	 *
-	 * @param x 参数1
-	 * @param y 参数2
-	 * @param z 参数3
+	 * @param x   参数1
+	 * @param y   参数2
+	 * @param z   参数3
 	 * @param <T> 结果
 	 * @return 有界的类型参数:
 	 * <p>

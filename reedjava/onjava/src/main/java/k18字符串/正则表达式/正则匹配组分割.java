@@ -58,7 +58,7 @@ public class 正则匹配组分割 {
 	 * 这个方法返回一个字符串，就像传递给Matcher类的appendReplacement 方法一个字面字符串一样工作。
 	 */
 	@Test
-	public void 正则匹配组分割_Test(){
+	public void 正则匹配组分割_Test() {
 		// 按指定模式在字符串查找
 		String line = "This order was placed for QT3000! OK?";
 		//非数字-数字-其他 匹配

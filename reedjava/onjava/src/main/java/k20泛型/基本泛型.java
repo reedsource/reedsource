@@ -25,8 +25,9 @@ public class 基本泛型<T> {
 	public T get() {
 		return t;
 	}
+
 	@Test
-	public void 基本泛型_Test(){
+	public void 基本泛型_Test() {
 		基本泛型<Integer> 基本泛型 = new 基本泛型<>();
 		基本泛型<String> 基本泛型1 = new 基本泛型<>();
 

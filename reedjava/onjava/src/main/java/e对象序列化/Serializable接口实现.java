@@ -9,7 +9,6 @@ import top.ireed.deal.DealLog;
 import java.io.Serializable;
 
 /**
- *
  * public final Object readObject() throws IOException,
  * ClassNotFoundException
  * 该方法从流中取出下一个对象，并将对象反序列化。它的返回值为Object，因此，你需要将它转换成合适的数据类型。
@@ -27,14 +26,14 @@ import java.io.Serializable;
  * <p>
  * public final void writeObject(Object x) throws IOException
  * 上面的方法序列化一个对象，并将它发送到输出流。相似的 ObjectInputStream 类包含如下反序列化一个对象的方法：
- *
+ * <p>
  * 这里要注意以下要点：
- *
+ * <p>
  * readObject() 方法中的 try/catch代码块尝试捕获 ClassNotFoundException 异常。
  * 对于 JVM 可以反序列化对象，它必须是能够找到字节码的类。
  * 如果JVM在反序列化对象的过程中找不到该类，则抛出一个 ClassNotFoundException 异常。
  * 注意，readObject() 方法的返回值被转化成 Serializable接口实现 引用。
- *
+ * <p>
  * 当对象被序列化时，属性 SSN 的值为 111222333，但是因为该属性是短暂的，该值没有被发送到输出流。
  * 所以反序列化后 Serializable接口实现 对象的 SSN 属性为 0。
  *

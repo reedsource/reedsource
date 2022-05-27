@@ -22,7 +22,7 @@ import top.ireed.deal.DealLog;
  */
 public class 断言Assert {
 	@Test
-	public void 断言Assert_Test(){
+	public void 断言Assert_Test() {
 		boolean isOpen = false;
 
 		// 如果开启了断言，会将isOpen的值改为true

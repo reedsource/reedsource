@@ -25,6 +25,7 @@ public class 控制台输入控制结束BufferedReader {
 	public static void main(String[] args) throws IOException {
 		控制台输入BufferedReader_Test();
 	}
+
 	/**
 	 * 从控制台读取多字符输入
 	 * <p>

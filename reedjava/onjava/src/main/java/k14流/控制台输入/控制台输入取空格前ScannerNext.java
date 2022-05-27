@@ -29,6 +29,7 @@ public class 控制台输入取空格前ScannerNext {
 	public static void main(String[] args) throws IOException {
 		控制台输入ScannerNext_Test();
 	}
+
 	/**
 	 * 使用 next 方法：
 	 */
