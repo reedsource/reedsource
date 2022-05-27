@@ -1,14 +1,14 @@
 /*
- * FileName: javaAbstraction
+ * FileName: 抽象类说明
  * Author:   reedsource
  */
-package k03对象.抽象类;
+package k03对象.实例化抽象类;
 
 import top.ireed.deal.DealLog;
 
 /**
  * 功能简述:
- * 〈抽象类〉
+ * 〈抽象类说明〉
  *
  * @author reedsource
  * @version 1.0.0
@@ -21,12 +21,12 @@ import top.ireed.deal.DealLog;
  * 由于抽象类不能实例化对象，所以抽象类必须被继承，才能被使用。也是因为这个原因，通常在设计阶段决定要不要设计抽象类。
  * 父类包含了子类集合的常见的方法，但是由于父类本身是抽象的，所以不能使用这些方法。
  */
-public class javaAbstraction {
+public class 抽象类说明 {
 	public static void main(String[] args) {
 		/* 以下是不允许的，会引发错误 */
-		//Employee e = new Employee("George W.", "Houston, TX", 43);
+		//抽象基类 e = new 抽象基类("George W.", "Houston, TX", 43);
 
-		DealLog.log("\n Call mailCheck using Employee reference--");
+		DealLog.log("\n Call mailCheck using 抽象基类 reference--");
 		//e.mailCheck();
 	}
 }
@@ -37,7 +37,7 @@ public class javaAbstraction {
 Abstract 关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。
 抽象方法没有定义，方法名后面直接跟一个分号，而不是花括号。
 
-public abstract class Employee
+public abstract class 抽象基类
 {
    private String name;
    private String address;
@@ -58,7 +58,7 @@ public abstract class Employee
 
 如果Salary类继承了Employee类，那么它必须实现computePay()方法：
 
-public class Salary extends Employee
+public class 继承抽象基类 extends 抽象基类
 {
 	private double salary; // Annual salary
 
