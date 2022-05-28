@@ -10,7 +10,7 @@
 	<!-- 指定连接数据库的JDBC驱动包所在位置，指定到你本机的完整路径 -->
 	<classPathEntry
 			location="D:\tools\codetools\object\apache-maven-3.3.9\repository\org\xerial\sqlite-jdbc\3.21.0.1\sqlite-jdbc-3.21.0.1.jar"/>
-		<!--location="D:\tools\codetools\object\apache-maven-3.3.9\repository\com\ibm\db2\jcc\db2jcc4\4.9.78\db2jcc4-4.9.78.jar"/>-->
+	<!--location="D:\tools\codetools\object\apache-maven-3.3.9\repository\com\ibm\db2\jcc\db2jcc4\4.9.78\db2jcc4-4.9.78.jar"/>-->
 
 
 	<!-- 配置table表信息内容体，targetRuntime指定采用MyBatis3的版本 -->

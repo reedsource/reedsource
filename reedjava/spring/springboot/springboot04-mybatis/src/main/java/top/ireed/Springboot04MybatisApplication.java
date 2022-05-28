@@ -9,7 +9,6 @@ import top.ireed.init.DataInit;
 
 /**
  * 开启事务支持
- *
  */
 @EnableTransactionManagement
 @SpringBootApplication

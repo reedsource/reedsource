@@ -28,7 +28,7 @@ public class DataInit {
 		FoundSqlite foundSqlite = new FoundSqlite("jdbc:sqLite:D:\\cache\\data\\myBatisData.db");
 
 		//删除表
-		foundSqlite.set("DELETE FROM OneTableTop","删除表");
+		foundSqlite.set("DELETE FROM OneTableTop", "删除表");
 
 		// 2. 初始化一个数据库
 		foundSqlite.init(new OneTable());

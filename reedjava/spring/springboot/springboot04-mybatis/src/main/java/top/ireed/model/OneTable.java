@@ -20,7 +20,8 @@ public class OneTable {
 	 */
 	private String age;
 
-	public OneTable(){}
+	public OneTable() {
+	}
 
 	public OneTable(String name, String age) {
 		this.name = name;

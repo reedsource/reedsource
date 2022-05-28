@@ -1,14 +1,14 @@
 # springboot01-basics基本结构及构建
 
-## 一    springboot基础构建依赖
+## 一 springboot基础构建依赖
+
 ### 1.SpringBoot项目的默认依赖
+
 1. Spring Boot 的父级依赖spring-boot-starter-parent配置之后，当前的项目就是Spring Boot项目；
 
 2. spring-boot-starter-parent是一个特殊的starter依赖，它用来提供相关的Maven默认依赖，使用它之后，常用的jar包依赖可以省去version配置；
 
 3. Spring Boot提供了哪些默认jar包的依赖，可查看该父级依赖的pom文件；
-
-
 
 ```xml
 <parent>
@@ -18,6 +18,7 @@
     <relativePath/>
 </parent>
 ```
+
 4. 如果不想使用某个默认的依赖版本，可以通过pom.xml文件的属性配置覆盖各个依赖项，比如覆盖Spring版本：
 
 ```xml
@@ -25,8 +26,6 @@
     <spring.version>5.0.0.RELEASE</spring.version>
 </properties>
 ```
-
-
 
 5.springboot默认pom文件
 
@@ -109,10 +108,6 @@
 	</build>
 </project>
 ```
-
-
-
-
 
 ### 2.SpringBoot项目基本文件注解结构
 

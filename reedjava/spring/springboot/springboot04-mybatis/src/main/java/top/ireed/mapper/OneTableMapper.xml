@@ -7,8 +7,9 @@
 		<result column="age" jdbcType="VARCHAR" property="age"/>
 	</resultMap>
 	<sql id="Base_Column_List">
-    id, name, age
-  </sql>
+		id
+		, name, age
+	</sql>
 	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List"/>
@@ -37,15 +38,14 @@
 	</select>
 
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from oneTableTop
-    where id = #{id,jdbcType=VARCHAR}
-  </delete>
+		delete
+		from oneTableTop
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
 	<insert id="insert" parameterType="top.ireed.model.OneTable">
-    insert into oneTableTop (id, name, age
-      )
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}
-      )
-  </insert>
+		insert into oneTableTop (id, name, age)
+		values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR})
+	</insert>
 	<insert id="insertSelective" parameterType="top.ireed.model.OneTable">
 		insert into oneTableTop
 		<trim prefix="(" suffix=")" suffixOverrides=",">
@@ -84,9 +84,9 @@
 		where id = #{id,jdbcType=VARCHAR}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="top.ireed.model.OneTable">
-    update oneTableTop
-    set name = #{name,jdbcType=VARCHAR},
-      age = #{age,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
+		update oneTableTop
+		set name = #{name,jdbcType=VARCHAR},
+		    age  = #{age,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
 </mapper>

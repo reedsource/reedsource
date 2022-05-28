@@ -110,7 +110,7 @@ public class JspAjaxController {
 	}
 
 	/**
-	 * @return 发送数据到其它jsp界面,并将jsp界面内容全部返回到当前
+	 * @return 发送数据到其它jsp界面, 并将jsp界面内容全部返回到当前
 	 */
 	@GetMapping("/data")
 	public String data(HttpServletRequest request) {

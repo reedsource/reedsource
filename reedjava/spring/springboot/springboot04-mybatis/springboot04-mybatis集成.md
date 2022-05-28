@@ -1,6 +1,6 @@
 # springboot04-mybatis集成
 
-## 一	集成MyBatis的步骤
+## 一 集成MyBatis的步骤
 
 ### 1.在pom.xml中配置相关jar依赖；
 
@@ -18,6 +18,7 @@
     <artifactId>mysql-connector-java</artifactId>
 </dependency>
 ```
+
 ### 2.配置文件中添加数据库数据源信息
 
 - yml格式配置
@@ -30,6 +31,7 @@ spring:
     driver-class-name: org.sqlite.JDBC
     url: jdbc:sqlite:D:/top/topcache/data/myBatisData.db?date_string_format=yyyy-MM-dd HH:mm:ss
 ```
+
 - properties格式配置
 
 ```properties
@@ -38,8 +40,6 @@ spring.datasource.password=123456
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=?useUnicode=true&characterEncoding=utf8&useSSL=false
 ```
-
-
 
 ### 3.<a id="pom3">pom文件编译设置</a>
 
@@ -97,7 +97,7 @@ spring.datasource.url=?useUnicode=true&characterEncoding=utf8&useSSL=false
 
 或者在运行的主类上添加 @MapperScan("top.ireed.mapper") 注解包扫描
 
-## 二	Spring Boot集成事务
+## 二 Spring Boot集成事务
 
 ### 1.集成事务实现
 
@@ -127,7 +127,7 @@ spring.datasource.url=?useUnicode=true&characterEncoding=utf8&useSSL=false
 
 在@Transactional注解中如果不配置rollbackFor属性,那么事物只会在遇到RuntimeException的时候才会回滚,加上rollbackFor=Exception.class,可以让事物在遇到非运行时异常时也回滚
 
-## 三	自动生成插件集成
+## 三 自动生成插件集成
 
 ### 1.引入GeneratorMapper.xml 文件
 
