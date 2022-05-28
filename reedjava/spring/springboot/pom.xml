@@ -17,6 +17,7 @@
 		<module>springboot01-basics</module>
 		<module>springboot02-configMvc</module>
 		<module>springboot03-jsp</module>
+		<module>springboot04-mybatis</module>
 	</modules>
 
 	<properties>

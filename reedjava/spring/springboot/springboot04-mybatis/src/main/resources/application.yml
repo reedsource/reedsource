@@ -1,0 +1,64 @@
+#常用配置方式演示  使用本配置时,需要注释application.properties
+#注意 新添加配置需要注意缩进
+server:
+  #端口号,一般需要设置在最前面
+  port: 80
+  servlet:
+    #项目名，如果不设定，默认是 /
+    context-path: /
+
+spring:
+  datasource:
+    username:
+    password:
+    driver-class-name: @jdbc.driver@
+    url: @jdbc.url@
+    #实体扫描，多个package用逗号或者分号分隔
+    #mapper-locations: classpath:top/mapper/*.xml
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  thymeleaf:
+    #开发阶段，建议关闭thymeleaf的缓存
+    cache: false
+    #去掉thymeleaf的严格的模板校验
+    mode: LEGACYHTML5
+    #设置编码
+    encoding: utf-8
+
+  redis:
+    # Redis服务器地址
+    host: @redis.host@
+    # Redis服务器连接端口
+    port: @redis.port@
+    # Redis服务器连接密码（默认为空）
+    password: @redis.password@
+    # 连接池最大连接数（使用负值表示没有限制）
+    jedis:
+      pool:
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池中的最小空闲连接
+        min-idle: 0
+
+
+# 配置打印sql  logging必须在顶级
+
+# 方案一
+# 本方式打印log 只包含sql 参数 返回数量
+# 如果需要也打印查询结果 将 DEBUG 修改为 TRACE
+#logging:
+#  level:
+#    top.ireed.mapper: DEBUG
+
+# 方案二
+# spring boot集成mybatis的方式打印sql 打印的sql是拼装好的sql 即将查询参数组合到mybatis中的sql
+# 会打印sql运行结果
+mybatis:
+  configuration:
+    # log-impl指定的值为org.apache.ibatis.logging.Log接口的某个实现类
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

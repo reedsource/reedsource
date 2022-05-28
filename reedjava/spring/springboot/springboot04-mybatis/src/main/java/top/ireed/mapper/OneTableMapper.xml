@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.ireed.mapper.OneTableMapper">
+	<resultMap id="BaseResultMap" type="top.ireed.model.OneTable">
+		<id column="id" jdbcType="VARCHAR" property="id"/>
+		<result column="name" jdbcType="VARCHAR" property="name"/>
+		<result column="age" jdbcType="VARCHAR" property="age"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+    id, name, age
+  </sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from oneTableTop
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<!--查询全部数据-->
+	<select id="all" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from oneTableTop
+	</select>
+	<!--多条件查询数据 动态组合in-->
+	<!--动态in 注意使用$ 否者字符串将会被解析为一个整体 无法查询到正确数据-->
+	<!--模糊查询名称-->
+	<!--普通查询-->
+	<select id="inAll" resultType="top.ireed.model.OneTable">
+		select
+		<include refid="Base_Column_List"/>
+		from oneTableTop o
+		<where>
+			<if test="typeIn != null and typeIn !=''">and o.id in (${typeIn})</if>
+			<if test="name != null and name !=''">and o.name like '%'||#{name,jdbcType=VARCHAR}||'%'</if>
+			<if test="age != null and age !=''">and o.age = #{age,jdbcType=VARCHAR}</if>
+		</where>
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oneTableTop
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+	<insert id="insert" parameterType="top.ireed.model.OneTable">
+    insert into oneTableTop (id, name, age
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}
+      )
+  </insert>
+	<insert id="insertSelective" parameterType="top.ireed.model.OneTable">
+		insert into oneTableTop
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="age != null">
+				age,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="age != null">
+				#{age,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="top.ireed.model.OneTable">
+		update oneTableTop
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="age != null">
+				age = #{age,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="top.ireed.model.OneTable">
+    update oneTableTop
+    set name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

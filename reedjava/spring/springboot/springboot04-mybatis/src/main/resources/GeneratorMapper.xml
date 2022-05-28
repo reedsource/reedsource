@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--mybatis生成插件-->
+
+<generatorConfiguration>
+
+	<!-- 指定连接数据库的JDBC驱动包所在位置，指定到你本机的完整路径 -->
+	<classPathEntry
+			location="D:\tools\codetools\object\apache-maven-3.3.9\repository\org\xerial\sqlite-jdbc\3.21.0.1\sqlite-jdbc-3.21.0.1.jar"/>
+		<!--location="D:\tools\codetools\object\apache-maven-3.3.9\repository\com\ibm\db2\jcc\db2jcc4\4.9.78\db2jcc4-4.9.78.jar"/>-->
+
+
+	<!-- 配置table表信息内容体，targetRuntime指定采用MyBatis3的版本 -->
+	<context id="tables" targetRuntime="MyBatis3">
+
+		<commentGenerator>
+			<!-- 抑制生成注释，由于生成的注释都是英文的，可以不让它生成 -->
+			<!--<property name="suppressAllComments" value="false" />-->
+			<property name="suppressAllComments" value="true"/>
+			<!-- 将数据库中表的字段描述信息添加到注释 本处建议先生成实体类,另存后然后将其他删除,再次生成无注释的版本-->
+			<property name="addRemarkComments" value="true"/>
+			<!-- 注释里不添加日期 -->
+			<property name="suppressDate" value="true"/>
+		</commentGenerator>
+
+		<!-- 配置数据库连接信息 -->
+		<!--mysql配置-->
+		<!--<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+						connectionURL="jdbc:mysql://192.168.200.7:3306/ry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8"
+						userId=""
+						password="">
+		</jdbcConnection>-->
+
+		<!--sqlite配置  案例绝对路径和相对路径-->
+		<!--<jdbcConnection driverClass="org.sqlite.JDBC"
+				        connectionURL="jdbc:sqlite:D:\top\topcache\data\myBatisData.db?date_string_format=yyyy-MM-dd HH:mm:ss"
+				        connectionURL="jdbc:sqlite::resource:top/topcache/data/myBatisData.db?date_string_format=yyyy-MM-dd HH:mm:ss"
+				        userId=""
+				        password="">
+		</jdbcConnection>-->
+
+		<!--db2配置-->
+		<jdbcConnection driverClass="com.ibm.db2.jcc.DB2Driver"
+		                connectionURL="jdbc:db2://47.92.64.83:50000/trade:currentSchema=DZSD;"
+		                userId="db2inst1"
+		                password="BctTestDB2">
+		</jdbcConnection>
+
+		<!-- 生成model类，targetPackage指定model类的包名， targetProject指定生成的model放在eclipse的哪个工程下面-->
+		<javaModelGenerator targetPackage="top.ireed" targetProject="src/main/java">
+			<property name="enableSubPackages" value="false"/>
+			<property name="trimStrings" value="false"/>
+		</javaModelGenerator>
+
+		<!-- 生成MyBatis的Mapper.xml文件，targetPackage指定mapper.xml文件的包名， targetProject指定生成的mapper.xml放在eclipse的哪个工程下面 -->
+		<sqlMapGenerator targetPackage="top.ireed" targetProject="src/main/java">
+			<property name="enableSubPackages" value="false"/>
+		</sqlMapGenerator>
+
+		<!-- 生成MyBatis的Mapper接口类文件,targetPackage指定Mapper接口类的包名， targetProject指定生成的Mapper接口放在eclipse的哪个工程下面 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="top.ireed" targetProject="src/main/java">
+			<property name="enableSubPackages" value="false"/>
+		</javaClientGenerator>
+
+		<!-- 数据库表名及对应的Java模型类名 -->
+
+		<table tableName="BANK_CORE3_OFFICE_REMOVAL"
+		       domainObjectName="Core3OfficeRemoval"
+		       enableCountByExample="false"
+		       enableUpdateByExample="false"
+		       enableDeleteByExample="false"
+		       enableSelectByExample="false"
+		       selectByExampleQueryId="false"/>
+	</context>
+
+</generatorConfiguration>
