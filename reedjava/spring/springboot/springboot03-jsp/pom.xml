@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>top.ireed</groupId>
+		<artifactId>springboot</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>springboot03-jsp</artifactId>
+	<version>1.0.0</version>
+	<name>springboot03-jsp</name>
+	<description>springboot整合jsp实践</description>
+
+	<dependencies>
+		<!--引入Spring Boot内嵌的Tomcat对JSP的解析包-->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!-- servlet依赖的jar包start -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<!-- 添加jsp和xml文件的编译 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+			<!--自定义设置扫描的jsp文件路径,不推荐这样做-->
+			<resource>
+				<directory>src/main/webapp</directory>
+				<!--自定义编译路径-->
+				<targetPath>META-INF/resources</targetPath>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>
