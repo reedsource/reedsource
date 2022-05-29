@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>top.ireed</groupId>
+		<artifactId>springboot</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<!--表示将要编译为jar包-->
+	<packaging>war</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>springboot07-jarwar</artifactId>
+	<version>1.0.0</version>
+	<name>springboot07-jarWar</name>
+	<description>springboot打jar war包的区别及使用</description>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+
+	<!--Spring Boot war编译依赖-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${war.version}</version>
+				<configuration>
+					<!--屏蔽web.xml-->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

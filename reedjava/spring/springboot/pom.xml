@@ -20,6 +20,7 @@
 		<module>springboot04-mybatis</module>
 		<module>springboot05-restfull-api</module>
 		<module>springboot06-init</module>
+		<module>springboot07-jarWar</module>
 	</modules>
 
 	<properties>
