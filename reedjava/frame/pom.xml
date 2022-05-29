@@ -14,5 +14,6 @@
 
 	<modules>
 		<module>netty</module>
+		<module>shiro</module>
 	</modules>
 </project>
