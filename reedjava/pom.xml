@@ -16,6 +16,7 @@
 	<modules>
 		<module>onjava</module>
 		<module>spring</module>
+		<module>frame</module>
 	</modules>
 	<!--名称-->
 	<name>reedjava</name>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+    <title>WebSocket客户端</title>
+    <script type="text/javascript">
+        //公共连接对象
+        let ws;
+        //连接状态
+        let lian = 0;
+
+        function Socket() {
+            //判断浏览器是否支持WebSocket
+            if ("WebSocket" in window) {
+                //alert("您的浏览器支持 !");
+
+                //获取连接信息url
+                const WebSocketId = document.getElementById("WebSocketId").value;
+                // 打开一个 web socket
+
+                if (lian === 0) {
+                    //开启连接
+                    ws = new WebSocket(WebSocketId);
+                    document.getElementById('WebSocketValue').value = '断开服务器';
+                    lian = 1;
+                } else {
+                    //关闭连接
+                    ws.close();
+                    document.getElementById('WebSocketValue').value = '连接服务器';
+                    lian = 0;
+                }
+            } else {
+                // 浏览器不支持 WebSocket
+                alert("您的浏览器不支持 WebSocket!");
+            }
+
+            //收到信息事件
+            ws.onmessage = function (evt) {
+                const received_msg = evt.data;
+                //写到
+                document.getElementById("responseContent").value += "收到   " + received_msg + "\n";
+            };
+
+            //注册close事件，否则close方法不会生效
+            ws.onclose = function () {
+                // 关闭 WEBSOCKET
+                document.getElementById('WebSocketValue').value = '连接服务器';
+                lian = 0;
+                alert("连接已关闭...");
+            };
+        }
+
+        // 信息发送
+        function WebSocketSend() {
+            // Web Socket 已连接上，使用 send() 方法发送数据
+            const data = document.getElementById("message").value;
+            document.getElementById("responseContent").value += "发送   " + data + "\n";
+            ws.send(data);
+        }
+    </script>
+</head>
+<body>
+<form onSubmit="return false;">
+    <label for="message"></label><label for="WebSocketId"></label><input type="text" id="WebSocketId"
+                                                                         value="ws://localhost:16807/echo">
+    <input type="button" id="WebSocketValue" value="连接服务器" onClick="Socket();">
+    <!--分割线-->
+    <hr style="color: red"/>
+    <h2>客户端接收的应答消息</h2>
+    <label for="responseContent"></label><textarea id="responseContent" style="width:1024px; height:300px"></textarea>
+    <!--分割线-->
+    <hr style="color: red"/>
+    <label for="message"></label><input type="text" id="message" value="">
+    <input type="button" value="发送webSocket请求消息" onClick="WebSocketSend();">
+</form>
+</body>
+</html>
