@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 /**
  * 功能简述:
  * 〈springboot自定义注解〉
- *
+ * <p>
  * ElementType的取值包含以下几种：
  * TYPE:类，接口或者枚举
  * FIELD:域，包含枚举常量
@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
  * LOCAL_VARIABLE:局部变量
  * ANNOTATION_TYPE:注解类型
  * PACKAGE:包
- *
+ * <p>
  * Retention
  * SOURCE 编译器处理完Annotation后不存储在class中
  * CLASS 编译器把Annotation存储在class中，这是默认值

@@ -36,52 +36,44 @@ javadoc 工具软件识别以下标签：
 @throws	和 @exception标签一样.	The @throws tag has the same meaning as the @exception tag.
 {@value}	显示常量的值，该常量必须是static属性。	Displays the value of a constant, which must be a static field.
 @version	指定类的版本	@version info
-*/
-}
-
 
 //文件头部添加：
 
-/*
- * <p>项目名称: ${project_name} </p>
- * <p>文件名称: ${file_name} </p>
- * <p>描述: [类型描述] </p>
- * <p>创建时间: ${date} </p>
- * <p>公司信息: ************公司 *********部</p>
- * @author <a href="mail to: *******@******.com" rel="nofollow">作者</a>
- * @version v1.0
- * @update [序号][日期YYYY-MM-DD] [更改人姓名][变更描述]
- */
+* <p>项目名称: ${project_name} </p>
+* <p>文件名称: ${file_name} </p>
+* <p>描述: [类型描述] </p>
+* <p>创建时间: ${date} </p>
+* <p>公司信息: ************公司 *********部</p>
+* @author <a href="mail to: *******@******.com" rel="nofollow">作者</a>
+* @version v1.0
+* @update [序号][日期YYYY-MM-DD] [更改人姓名][变更描述]
 
 //方法：
-/**
- * @Title：${enclosing_method}
- * @Description: [功能描述]
- * @Param: ${tags}
- * @Return: ${return_type}
- * @author <a href="mail to: *******@******.com" rel="nofollow">作者</a>
- * @CreateDate: ${date} ${time}</p>
- * @update: [序号][日期YYYY-MM-DD] [更改人姓名][变更描述]
- * <p>
- * 获取  ${bare_field_name}
- * <p>
- * 设置   ${bare_field_name}
- * (${param})${field}
- * <p>
- * 获取  ${bare_field_name}
- * <p>
- * 设置   ${bare_field_name}
- * (${param})${field}
- */
 
+* @Title：${enclosing_method}
+* @Description: [功能描述]
+* @Param: ${tags}
+* @Return: ${return_type}
+* @author <a href="mail to: *******@******.com" rel="nofollow">作者</a>
+* @CreateDate: ${date} ${time}</p>
+* @update: [序号][日期YYYY-MM-DD] [更改人姓名][变更描述]
+* <p>
+* 获取  ${bare_field_name}
+* <p>
+* 设置   ${bare_field_name}
+* (${param})${field}
 
 //getter 和 setter
 
-/**
- * 获取  ${bare_field_name}
+获取  ${bare_field_name}
+
+设置   ${bare_field_name}
+(${param})${field}
  */
-/**
- * 设置   ${bare_field_name}
- * (${param})${field}
- */
+}
+
+
+
+
+
 

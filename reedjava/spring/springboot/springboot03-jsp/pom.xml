@@ -23,6 +23,26 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
+		<!-- jsp依赖jar包start -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${jsp.version}</version>
+		</dependency>
+		<!--JSP 标准标签库-->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jsp.jstl.version}</version>
+		</dependency>
+		<!--JSP 标签库集合-->
+		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+		<dependency>
+			<groupId>org.apache.taglibs</groupId>
+			<artifactId>taglibs-standard-impl</artifactId>
+			<version>${jsp.taglibs.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

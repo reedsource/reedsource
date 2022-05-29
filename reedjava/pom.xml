@@ -68,12 +68,7 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 		</dependency>
-		<!-- jsp依赖jar包start -->
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>${jsp.version}</version>
-		</dependency>
+
 		<!--jackson -->
 		<!--定义了底层的streaming API和实现了Json特性 -->
 		<dependency>
@@ -92,32 +87,6 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
-		</dependency>
-		<!--JSP 标准标签库-->
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>${jsp.jstl.version}</version>
-		</dependency>
-		<!--JSP 标签库集合-->
-		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
-		<dependency>
-			<groupId>org.apache.taglibs</groupId>
-			<artifactId>taglibs-standard-impl</artifactId>
-			<version>${jsp.taglibs.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<!--log4j2依赖 普通项目需要引入以下两个包-->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
 
