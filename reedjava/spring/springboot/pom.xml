@@ -21,6 +21,7 @@
 		<module>springboot05-restfull-api</module>
 		<module>springboot06-init</module>
 		<module>springboot07-jarWar</module>
+		<module>springboot08-springSession-redis</module>
 	</modules>
 
 	<properties>
