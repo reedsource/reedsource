@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--声明组件扫描器
+	   根据base-package的值到contorller包， 把这个包中的类创建出对象。
+	   能创建出MyController类的对象，类中有方法 doSome, 映射请求 some.do
+	 -->
+	<context:component-scan base-package="top.ireed.controller"/>
+	<!--声明视图解析器：处理视图的InternalResourceViewResolver:内部资源视图解析器，表示jsp的-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!--前缀：表示视图文件的路径-->
+		<property name="prefix" value="/"/>
+		<!--后缀：表示视图文件扩展名-->
+		<property name="suffix" value=".jsp"/>
+	</bean>
+
+	<!--异常拦截器-->
+	<bean id="handlerExceptionResolver" class="top.ireed.exception.FirstExceptionHandler"/>
+</beans>
