@@ -22,6 +22,7 @@
 		<module>springboot06-init</module>
 		<module>springboot07-jarWar</module>
 		<module>springboot08-springSession-redis</module>
+		<module>springboot09-filter-Listener</module>
 	</modules>
 
 	<properties>
