@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--界面引入即可使用thymeleaf-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${name}">name</p>
+姓名:<span th:text="${user.name}"></span><br>
+地址:<span th:text="${user.address}"></span><br>
+年龄:<span th:text="${user.getAge()}"></span><br><br>
+
+<div th:object="${user}">
+    姓名:<span th:text="*{name}"></span><br>
+    地址:<span th:text="*{address}"></span><br>
+    年龄:<span th:text="*{getAge()}"></span><br>
+</div>
+
+<!--第一个/表示项目的根路径 推荐 -->
+<a th:href="@{'http://localhost/boot/user/'}">绝对路径</a><br>
+<a th:href="@{'boot/user/'}">相对当前页面</a><br>
+
+<br>======================常见属性开始==========================<br>
+<!-- 如果if 中的表达式为true 则将这个标签以及标签的内容显示出出来，否则连同整个标签都不会显示-->
+if如果 unless除非 标签<br>
+<span th:if="${user.age>20}">
+        大于20岁
+</span><br><br>
+<!-- 如果unless 中的表达式为false 则将这个标签以及标签的内容显示出出来，否则连同整个标签都不会显示-->
+<span th:unless="${user.sex==1}">男</span>
+<span th:unless="${user.sex==2}">女</span>
+<br>
+循环遍历标签
+<br>
+<table>
+    <tr>
+        <td>序号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>地址</td>
+        <td>性别</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="user2:${userList}">
+        <td th:text="${user2Stat.count}">序号</td>
+        <td th:text="${user2.name}">姓名</td>
+        <td th:text="${user2.age}">年龄</td>
+        <td th:text="${user2.address}">地址</td>
+        <td th:if="${user2.sex==1}">男</td>
+        <td th:if="${user2.sex==2}">女</td>
+        <td>删除 修改</td>
+    </tr>
+</table>
+<br>
+userMap Map集合
+<br>
+<table>
+    <tr>
+        <td>序号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>地址</td>
+        <td>性别</td>
+        <td>操作</td>
+    </tr>
+
+    <!--因此迭代时当前元素 user2 不是User对象
+        而是Map集合中存放数据的哪个Node对象，
+        因此我们需要使用 user2.key获取这个Node对应key值
+        使用 user2.value获取这个Node对应value值 这个值才是我们存到Map中的User对象
+    -->
+    <tr th:each="user2:${userMap}">
+        <td th:text="${user2Stat.count}">序号</td>
+        <td th:text="${user2.value.name}">姓名</td>
+        <td th:text="${user2.value.age}">年龄</td>
+        <td th:text="${user2.value.address}">地址</td>
+        <td th:if="${user2.value.sex==1}">男</td>
+        <td th:if="${user2.value.sex==2}">女</td>
+        <td>删除 修改</td>
+    </tr>
+</table>
+<br>
+<br>
+<!-- switch case
+    当子标签中的某个case的值与swithc中获取的数据相同，则进入到这个case将标签与标签的内容显示出来
+    如果所有的case都没有匹配则进入到case="*” 所对应的标签
+-->
+switch 如果等于标签<br>
+<span th:switch="${number}">
+        <a th:case="1">星期一</a>
+        <a th:case="2">星期二</a>
+        <a th:case="3">星期三</a>
+        <a th:case="4">星期四</a>
+        <a th:case="5">星期五</a>
+        <a th:case="6">星期六</a>
+        <a th:case="7">星期日</a>
+        <a th:case="*">数据错误</a>
+    </span>
+<br>
+<br>
+
+<form th:action="@{/updateUser}">
+
+    <label>
+        姓名:
+        <input name="" th:value="${user.name}"/>
+    </label>
+    <br>
+    <label>
+        年龄:
+        <input th:value="${user.age}"/>
+    </label>
+    <br>
+    <label>
+        地址:
+        <input th:value="${user.address}"/>
+    </label>
+    <br>
+    性别:
+    <span th:if="${user.sex==1}">
+        <label>
+            男<input type="radio" value="1" checked>
+            女<input type="radio" value="2">
+        </label>
+    </span>
+    <span th:if="${user.sex==2}">
+        <label>
+            男<input type="radio" value="1">
+            女<input type="radio" value="2" checked>
+        </label>
+    </span>
+    <br>
+    <input type="submit" value="修改"> <br>
+</form>
+<br><br><br><br><br>
+<!--内联 th:inline 在页面直接显示数据可以省略th:inline
+    然后使用获取数据直接显示到页面
+ -->
+<span>
+    姓名:[[${user.name}]]<br>
+    地址:[[${user.address}]]<br>
+</span>
+<!--在SpringBoot2.x以后在js中也可不使用th:inline 但是在取值的时候需要添加"" -->
+<script type="text/javascript">
+    alert("[[${user.name}]]")
+</script>
+<script th:inline="javascript" type="text/javascript">
+    alert([[${user.name}]])
+</script>
+
+======================字面量or字符串拼接开始==========================<br>
+<!-- 字符串自面量
+    可以使用+ 进行拼接
+    但是如果需要使用动态数据和一个静态字面拼接这个字面量必须使用''括起来
+ -->
+<a th:href="@{'deleteUser?id='+${user.sex}+'&age='+${user.age}}">拼接静态字面+动态数据发送请求删除</a><br>
+<!--使用 ||  完成字符串的拼接 可以实现字符串与动态数据混排的效果 -->
+<a th:href="@{|deleteUser?id=${user.sex}&age=${user.age}|}">使用 ||完成字符串的拼接发送请求删除</a><br>
+
+======================三元运算符号开始==========================<br>
+<span th:text="${user.sex==1?'男':'女'}"></span><br>
+
+<label>
+    性别:
+    男<input type="radio" name="sex" th:attr="checked=${user.sex==1?true:false}">
+    女<input type="radio" name="sex" th:attr="checked=${user.sex==2?true:false}">
+</label>
+<br>
+<br>
+
+======================基本对象表达式开始=========================<br>
+web应用信息
+<br>
+<span th:text="${#servletContext}"></span>
+将html字符串转化为html
+<span th:utext="${StringData}"></span>
+<br>
+<br>
+======================功能对象表达式开始=========================<br>
+<!-- 根据当前系统的语言环境进行日期格式化 -->
+<span th:text="${#dates.format(nowDate)}"></span><br>
+<!-- 自定义一个格式 格式化日期 -->
+<span th:text="${#dates.format(nowDate,'yyyy-MM-dd hh:mm:ss')}"></span><br>
+<span th:text="${nowDate}"></span><br>
+
+<span th:text="${#strings.substring(#strings.substring(domainName,#strings.indexOf(domainName,'.')+1),0,#strings.indexOf(#strings.substring(domainName,#strings.indexOf(domainName,'.')+1),'.'))}"></span><br>
+======================功能对象表达式结束==========================<br>
+</body>
+</html>
