@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--设置log4j2的自身log级别为warn-->
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<!--Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，
+    当设置成trace时，你会看到log4j2内部各种详细输出-->
+<!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身，设置间隔秒数-->
+<configuration status="off" monitorInterval="1800">
+	<!--定义了一些属性,主要是为了后面引用起来方便-->
+	<properties>
+		<!--默认项目根目录下-->
+		<property name="LOG_FILE">cache/log</property>
+		<property name="FILE_NAME">log</property>
+	</properties>
+
+	<!--先定义所有的appender-->
+	<appenders>
+		<!--公共 输出控制台的配置-->
+		<console name="Console" target="SYSTEM_OUT">
+			<!--&lt;!&ndash;输出到控制台的日志级别&ndash;&gt;-->
+			<!--<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>-->
+			<!--输出日志的格式-->
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+		</console>
+
+		<!--公共 记录info全部数据 表示以文件方式记录-->
+		<RollingRandomAccessFile name="topLog_info"
+		                         fileName="${LOG_FILE}/${FILE_NAME}_info.log"
+		                         filePattern="${LOG_FILE}/$${date:yyyy-MM}/${FILE_NAME}_info-%d{yyyy-MM-dd}-%i.log.gz">
+			<!--fileName:生成文件的名称
+				filePattern:文件格式
+							filePattern与SizeBasedTriggeringPolicy（表示单个文件最大多少容量）结合在一起，非常有用，
+							以这段配置为例，当单个文件达到10M后，会自动将以前的内容，
+							先创建类似 2014-09（年-月）的目录，然后按 "xxx-年-月-日-序号"命名，打成压缩包。-->
+			<PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+			<Filters>
+				<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+				<ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
+				<ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+			</Filters>
+			<!--策略-->
+			<Policies>
+				<!-- 每天生成一个日志文件 -->
+				<!--interval：integer类型，指定两次封存动作之间的时间间隔。
+							  单位:以日志的命名精度来确定单位，比如yyyy-MM-dd-HH 单位为小时，yyyy-MM-dd-HH-mm 单位为分钟
+					modulate：boolean型，说明是否对封存时间进行调制。
+							  若modulate=true，则封存时间将以0点为边界进行偏移计算。比如，modulate=true，interval=4hours，
+							  那么假设上次封存日志的时间为03:00，则下次封存日志的时间为04:00，之后的封存时间依次为08:00，12:00，16:00-->
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<!-- 每到10M生成一个日志文件 -->
+				<SizeBasedTriggeringPolicy size="20M"/>
+			</Policies>
+			<!--最大保存文件数：表示压缩包，最多保留20个。如果不做配置，默认是7，这个7指的是上面i的最大值，超过了就会覆盖之前的-->
+			<DefaultRolloverStrategy max="300"/>
+		</RollingRandomAccessFile>
+
+
+		<!--公共 记录warn全部数据 表示以文件方式记录-->
+		<RollingRandomAccessFile name="topLog_warn"
+		                         fileName="${LOG_FILE}/${FILE_NAME}_warn.log"
+		                         filePattern="${LOG_FILE}/$${date:yyyy-MM}/${FILE_NAME}_warn-%d{yyyy-MM-dd}-%i.log.gz">
+			<!--fileName:生成文件的名称
+				filePattern:文件格式
+							filePattern与SizeBasedTriggeringPolicy（表示单个文件最大多少容量）结合在一起，非常有用，
+							以这段配置为例，当单个文件达到10M后，会自动将以前的内容，
+							先创建类似 2014-09（年-月）的目录，然后按 "xxx-年-月-日-序号"命名，打成压缩包。-->
+			<PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+			<Filters>
+				<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+				<ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+				<ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+			</Filters>
+			<!--策略-->
+			<Policies>
+				<!-- 每天生成一个日志文件 -->
+				<!--interval：integer类型，指定两次封存动作之间的时间间隔。
+							  单位:以日志的命名精度来确定单位，比如yyyy-MM-dd-HH 单位为小时，yyyy-MM-dd-HH-mm 单位为分钟
+					modulate：boolean型，说明是否对封存时间进行调制。
+							  若modulate=true，则封存时间将以0点为边界进行偏移计算。比如，modulate=true，interval=4hours，
+							  那么假设上次封存日志的时间为03:00，则下次封存日志的时间为04:00，之后的封存时间依次为08:00，12:00，16:00-->
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<!-- 每到10M生成一个日志文件 -->
+				<SizeBasedTriggeringPolicy size="20M"/>
+			</Policies>
+			<!--最大保存文件数：表示压缩包，最多保留20个。如果不做配置，默认是7，这个7指的是上面i的最大值，超过了就会覆盖之前的-->
+			<DefaultRolloverStrategy max="300"/>
+		</RollingRandomAccessFile>
+
+
+		<!--公共 记录error全部数据 表示以文件方式记录-->
+		<RollingRandomAccessFile name="topLog_error"
+		                         fileName="${LOG_FILE}/${FILE_NAME}_error.log"
+		                         filePattern="${LOG_FILE}/$${date:yyyy-MM}/${FILE_NAME}_error-%d{yyyy-MM-dd}-%i.log.gz">
+			<!--fileName:生成文件的名称
+				filePattern:文件格式
+							filePattern与SizeBasedTriggeringPolicy（表示单个文件最大多少容量）结合在一起，非常有用，
+							以这段配置为例，当单个文件达到10M后，会自动将以前的内容，
+							先创建类似 2014-09（年-月）的目录，然后按 "xxx-年-月-日-序号"命名，打成压缩包。-->
+			<PatternLayout pattern="[log4j2-demo] %-d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] %c:%L - %m%n"/>
+			<Filters>
+				<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+				<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+			</Filters>
+			<!--策略-->
+			<Policies>
+				<!-- 每天生成一个日志文件 -->
+				<!--interval：integer类型，指定两次封存动作之间的时间间隔。
+							  单位:以日志的命名精度来确定单位，比如yyyy-MM-dd-HH 单位为小时，yyyy-MM-dd-HH-mm 单位为分钟
+					modulate：boolean型，说明是否对封存时间进行调制。
+							  若modulate=true，则封存时间将以0点为边界进行偏移计算。比如，modulate=true，interval=4hours，
+							  那么假设上次封存日志的时间为03:00，则下次封存日志的时间为04:00，之后的封存时间依次为08:00，12:00，16:00-->
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<!-- 每到10M生成一个日志文件 -->
+				<SizeBasedTriggeringPolicy size="20M"/>
+			</Policies>
+			<!--最大保存文件数：表示压缩包，最多保留20个。如果不做配置，默认是7，这个7指的是上面i的最大值，超过了就会覆盖之前的-->
+			<DefaultRolloverStrategy max="300"/>
+		</RollingRandomAccessFile>
+
+		<!-- 信息记录 只记录INFO 每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+		<RollingFile name="top_info_xx" fileName="${LOG_FILE}/top_info_xx.log"
+		             filePattern="${LOG_FILE}/logs/$${date:yyyy-MM}/top_info_xx-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+				<ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
+				<ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+			</Filters>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100M"/>
+			</Policies>
+		</RollingFile>
+		<!-- 信息记录 只记录warn 每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+		<RollingFile name="top_warn_xx" fileName="${LOG_FILE}/top_warn_xx.log"
+		             filePattern="${LOG_FILE}/logs/$${date:yyyy-MM}/top_warn_xx-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+				<ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+				<ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+			</Filters>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100M"/>
+			</Policies>
+		</RollingFile>
+		<!-- 信息记录 只记录error 每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+		<RollingFile name="top_error_xx" fileName="${LOG_FILE}/top_error_xx.log"
+		             filePattern="${LOG_FILE}/logs/$${date:yyyy-MM}/top_error_xx-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+				<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+			</Filters>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100M"/>
+			</Policies>
+		</RollingFile>
+	</appenders>
+
+	<!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+	<loggers>
+		<!--过滤掉spring和hibernate的一些无用的debug信息-->
+		<logger name="org.springframework" level="INFO"/>
+		<logger name="org.mybatis" level="INFO"/>
+
+		<!--屏蔽hibernate INFO信息-->
+		<logger name="org.hibernate" level="WARN"/>
+
+		<!--指定组时打印配置,本处打印的日志不会在未指定重复打印-->
+		<logger name="top_xx" additivity="false">
+			<level value="INFO"/>
+			<!--=========================生产注释==========================-->
+			<appender-ref ref="Console"/>
+			<appender-ref ref="top_info_xx"/>
+			<appender-ref ref="top_warn_xx"/>
+			<appender-ref ref="top_error_xx"/>
+		</logger>
+
+		<!--未指定打印组时打印配置-->
+		<root level="INFO">
+			<appender-ref ref="Console"/>
+			<appender-ref ref="topLog_info"/>
+			<appender-ref ref="topLog_warn"/>
+			<appender-ref ref="topLog_error"/>
+		</root>
+	</loggers>
+</configuration>

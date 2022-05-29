@@ -24,6 +24,7 @@
 		<module>springboot08-springSession-redis</module>
 		<module>springboot09-filter-Listener</module>
 		<module>springboot10-thymeleaf</module>
+		<module>springboot11-log4j2</module>
 	</modules>
 
 	<properties>
