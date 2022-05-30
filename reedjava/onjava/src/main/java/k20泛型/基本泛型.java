@@ -5,6 +5,7 @@
 package k20泛型;
 
 import org.junit.Test;
+import top.ireed.deal.DealLog;
 
 /**
  * 功能简述:
@@ -34,8 +35,8 @@ public class 基本泛型<T> {
 		基本泛型.add(10);
 		基本泛型1.add("菜鸟教程");
 
-		System.out.printf("整型值为 :%d\n\n", 基本泛型.get());
-		System.out.printf("字符串为 :%s\n", 基本泛型1.get());
+		DealLog.log("整型值为 :", 基本泛型.get());
+		DealLog.log("字符串为 :", 基本泛型1.get());
 
 		//整型值为 :10
 		//字符串为 :菜鸟教程

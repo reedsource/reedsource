@@ -5,6 +5,7 @@
 package k14流.流文件读取;
 
 import org.junit.Test;
+import top.ireed.deal.DealLog;
 
 import java.io.*;
 
@@ -35,7 +36,7 @@ public class JavaFileInputStream {
 			//当读取的内容不是-1,即没有到 件末尾就继续读取
 			while (data != -1) {
 				//转换为字符打印到屏幕上
-				System.out.println((char) data);
+				DealLog.log((char) data);
 				//读取下 个字节
 				data = fis.read();
 			}

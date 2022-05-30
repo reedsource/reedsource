@@ -63,12 +63,10 @@ public class 有界类型参数泛型 {
 		//字符型数组元素为:
 		//H E L L O
 
-
 		DealLog.log();
-
-		System.out.printf("%d, %d 和 %d 中最大的数为 %d\n\n", 3, 4, 5, c1(3, 4, 5));
-		System.out.printf("%.1f, %.1f 和 %.1f 中最大的数为 %.1f\n\n", 6.6, 8.8, 7.7, c1(6.6, 8.8, 7.7));
-		System.out.printf("%s, %s 和 %s 中最大的数为 %s\n", "pear", "apple", "orange", c1("pear", "apple", "orange"));
+		DealLog.log(6.6, 8.8, 7.7, "中最大的数为", c1(6.6, 8.8, 7.7));
+		DealLog.log(3, 4, 5, "中最大的数为", c1(6.6, 8.8, 7.7));
+		DealLog.log("pear", "apple", "orange", "中最大的数为", c1("pear", "apple", "orange"));
 
 		//3, 4 和 5 中最大的数为 5
 		//6.6, 8.8 和 7.7 中最大的数为 8.8

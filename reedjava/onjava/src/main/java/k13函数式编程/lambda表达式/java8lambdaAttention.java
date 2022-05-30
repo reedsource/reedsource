@@ -27,13 +27,13 @@ public class java8lambdaAttention {
 		DealLog.log("============================================");
 		//在 lambda 表达式中访问外层的局部变量
 		final int num = 1;
-		Converter<Integer, String> s = (param) -> System.out.println((param + num));
+		Converter<Integer, String> s = (param) -> DealLog.log((param + num));
 		s.convert(2);  // 输出结果为 3
 
 		DealLog.log("============================================");
 		//lambda 表达式的局部变量可以不用声明为 final，但是必须不可被后面的代码修改（即隐性的具有 final 的语义）
 		int num1 = 1;
-		Converter<Integer, String> m = (param) -> System.out.println((param + num1));
+		Converter<Integer, String> m = (param) -> DealLog.log((param + num1));
 		m.convert(2);
 		//本处如果尝试修改  将编译错误
 		//报错信息：Local variable num defined in an enclosing scope must be final or effectively
