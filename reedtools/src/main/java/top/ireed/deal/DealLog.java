@@ -41,6 +41,19 @@ public class DealLog {
 	}
 
 	/**
+	 * 空格间隔组合
+	 *
+	 * @param o object对象  组
+	 */
+	public static void log(Object... o) {
+		StringBuilder a = new StringBuilder();
+		for (Object o1 : o) {
+			a.append(o1.toString()).append(" ");
+		}
+		logger.info(a.toString());
+	}
+
+	/**
 	 * @param m   字符串
 	 * @param msg 字符串
 	 */
@@ -62,18 +75,8 @@ public class DealLog {
 	 * @param o object对象
 	 */
 	public static void log(String m, Object o) {
-		String f = m + " --> " + o.toString();
-		logger.info(f);
+		logger.info(m + " --> " + o.toString());
 	}
-
-	/**
-	 * @param m object对象
-	 * @param o object对象  组
-	 */
-	public static void log(Object m, Object... o) {
-		log(String.valueOf(m), o);
-	}
-
 
 	/**
 	 * @param m 字符串
@@ -86,10 +89,8 @@ public class DealLog {
 			a.append("\r\n --> ");
 			a.append(o1.toString());
 		}
-		String log = a.toString();
-		logger.info(log);
+		logger.info(a.toString());
 	}
-
 
 	/**
 	 * @param o 对象
