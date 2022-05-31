@@ -17,7 +17,7 @@ import static top.ireed.netty06room.NettyConfig.workGroup;
  */
 class SocketServer {
 
-	private int port;
+	private final int port;
 
 	SocketServer(int port) {
 		this.port = port;

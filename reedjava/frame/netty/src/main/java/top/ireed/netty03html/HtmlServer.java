@@ -25,7 +25,7 @@ import java.net.UnknownHostException;
  */
 class HtmlServer {
 
-	private int port;
+	private final int port;
 
 	HtmlServer(int port) {
 		this.port = port;

@@ -37,16 +37,16 @@ class HttpFileServer {
 	/**
 	 * 服务端口
 	 */
-	private int port;
+	private final int port;
 
 	/**
 	 * 共享的文件路径
 	 */
-	private String path;
+	private final String path;
 	/**
 	 * 是否共享中文目录
 	 */
-	private Boolean cn;
+	private final Boolean cn;
 
 	HttpFileServer(int port, String path, Boolean cn) {
 		this.port = port;

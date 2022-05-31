@@ -67,7 +67,7 @@ public class InitiativeServerHandler extends ChannelInboundHandlerAdapter {
 
 
 		// 监听器出站事件
-		/**	f.addListener(new ChannelFutureListener() {
+		/*	f.addListener(new ChannelFutureListener() {
 		// 创建一个匿名的ChannelFutureListener 类用来在操作完成时关闭 Channel
 			@Override
 			public void operationComplete(ChannelFuture future) {
@@ -81,7 +81,7 @@ public class InitiativeServerHandler extends ChannelInboundHandlerAdapter {
 		//出站成功 连接关闭
 		f.addListener(future ->
 						DealLog.log("时间服务数据返回成功,本处关闭通道将忽略 忽略通道id ", uid)
-				/**ctx.close();*/
+		/*ctx.close();*/
 		);
 	}
 
@@ -119,8 +119,6 @@ public class InitiativeServerHandler extends ChannelInboundHandlerAdapter {
 		ctx.write(msg);
 		//冲刷消息
 		ctx.flush();
-		// 上面两个方法等同于  writeAndFlush出现消息粘连问题 弃用
-		/** ctx.writeAndFlush(msg);*/
 	}
 
 	/**

@@ -25,7 +25,7 @@ import static top.ireed.netty06room.NettyConfig.*;
  */
 class WebSocketServer {
 
-	private int port;
+	private final int port;
 
 	WebSocketServer(int port) {
 		this.port = port;

@@ -15,7 +15,7 @@ import top.ireed.deal.DealLog;
  */
 public class EchoServer {
 
-	private int port;
+	private final int port;
 
 	EchoServer(int port) {
 		this.port = port;

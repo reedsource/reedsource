@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Task implements Runnable {
 
-	private int time;
+	private final int time;
 
 	Task(int time) {
 		this.time = time;

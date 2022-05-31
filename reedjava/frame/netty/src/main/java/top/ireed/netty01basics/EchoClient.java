@@ -18,8 +18,8 @@ import java.nio.ByteBuffer;
 
 final class EchoClient {
 
-	private String host;
-	private int port;
+	private final String host;
+	private final int port;
 
 	EchoClient(String host, int port) {
 		this.host = host;

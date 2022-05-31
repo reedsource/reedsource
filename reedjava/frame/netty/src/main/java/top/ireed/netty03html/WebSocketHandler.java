@@ -24,7 +24,7 @@ import static top.ireed.netty03html.NettyConfig.*;
  */
 public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 
-	private WebSocketServerHandshaker handshaker;
+	private WebSocketServerHandshaker handshakes;
 
 
 	/**
@@ -83,7 +83,7 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 	private void handlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame frame) {
 		// 判断是否是关闭webSocket的指令
 		if (frame instanceof CloseWebSocketFrame) {
-			handshaker.close(ctx.channel(), (CloseWebSocketFrame) frame.retain());
+			handshakes.close(ctx.channel(), (CloseWebSocketFrame) frame.retain());
 		}
 
 		// 判断是否是ping消息
@@ -105,7 +105,7 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 		// 群发，服务向每个连接上来的客户群发消息
 		NettyConfig.group.writeAndFlush(tws);
 		// 返回【谁发的发给谁】
-		/** ctx.channel().writeAndFlush(tws);*/
+		/* ctx.channel().writeAndFlush(tws);*/
 	}
 
 	/**
@@ -119,12 +119,12 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 		}
 
 		WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(NettyConfig.getWebSocketUrl(), null, false);
-		handshaker = wsFactory.newHandshaker(req);
-		if (handshaker == null) {
+		handshakes = wsFactory.newHandshaker(req);
+		if (handshakes == null) {
 			// 将错误信息返回
 			WebSocketServerHandshakerFactory.sendUnsupportedVersionResponse(ctx.channel());
 		} else {
-			handshaker.handshake(ctx.channel(), req);
+			handshakes.handshake(ctx.channel(), req);
 		}
 	}
 

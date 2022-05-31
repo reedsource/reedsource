@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  */
 public class InitiativeServer {
 
-	private int port;
+	private final int port;
 
 	InitiativeServer(int port) {
 		this.port = port;

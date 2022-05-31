@@ -4,6 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
+import io.netty.util.ReferenceCountUtil;
 import top.ireed.deal.DealLog;
 
 //ChannelInboundHandlerAdapter实现自ChannelInboundHandler
@@ -22,29 +23,29 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg)  {
 
-		// 将接收到信息按字节打印到控制台
+
 		// ByteBuf是一个引用计数对象实现ReferenceCounted，他就是在有对象引用的时候计数+1，无的时候计数-1，当为0对象释放内存
-		/**	ByteBuf in = (ByteBuf) msg;
+		// 转为ByteBuf类型
+		ByteBuf buf = (ByteBuf) msg;
+
+		// 将接收到信息按字节打印到控制台
 		try {
-			while (in.isReadable()) {
-				System.out.print((char) in.readByte());
+			while (buf.isReadable()) {
+				System.out.print((char) buf.readByte());
 				System.out.flush();
 			}
 		} finally {
 			// 丢弃收到的数据
 			ReferenceCountUtil.release(msg);
-		}*/
+		}
 
-		// 转为ByteBuf类型
-		ByteBuf buf = (ByteBuf) msg;
 		// 转为字符串
 		String m = buf.toString(CharsetUtil.UTF_8);
 		DealLog.log(ctx.channel().remoteAddress()+" : "+m);
-		//写消息
+		//写消息 两个方法等同于 ctx.writeAndFlush(msg)
 		ctx.write(msg);
 		//冲刷消息
 		ctx.flush();
-		/**上面两个方法等同于 ctx.writeAndFlush(msg);*/
 	}
 
 	/**
