@@ -91,7 +91,7 @@ public class JavaVariable {
 		// 声明并初始化 z
 		byte z = 22;
 		// 声明并初始化字符串 s
-		String s = "runoob";
+		String s = "ireed";
 		// 声明了双精度浮点型变量 pi
 		double pi = 3.14159;
 		// 声明变量 x 的值是字符 'x'。
@@ -103,7 +103,7 @@ public class JavaVariable {
 
 
 		// 实例变量-----------------------------------------
-		JavaVariable empOne = new JavaVariable("RUNOOB");
+		JavaVariable empOne = new JavaVariable("ireed");
 		empOne.setSalary(1000);
 		empOne.printEmp();
 

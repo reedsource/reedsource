@@ -59,7 +59,7 @@ public class TestController {
 		session.setAttribute("userSession", user4.toString());
 
 		model.addAttribute("nowDate", new Date());
-		model.addAttribute("domainName", "www.ireed.com");
+		model.addAttribute("domainName", "www.ireed.top");
 
 		model.addAttribute("StringData", "<span style=\"color: red\">我是红色的html文本</span>");
 		//注意 本处只有pom引入thymeleaf才可以使用CTRL+跳转

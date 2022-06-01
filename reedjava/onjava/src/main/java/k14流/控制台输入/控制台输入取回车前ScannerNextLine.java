@@ -42,7 +42,7 @@ public class 控制台输入取回车前ScannerNextLine {
 		scan.close();
 
 		//nextLine方式接收：
-		//runoob com
-		//输入的数据为：runoob com
+		//ireed com
+		//输入的数据为：ireed com
 	}
 }
