@@ -1,0 +1,30 @@
+-- 3.在一个字段上面可以同时有多个约束,例如:非空切唯一,保证数据不能为空并且不能重复
+
+DROP TABLE IF EXISTS STUS;
+
+CREATE TABLE STUS
+(
+    ID    INT(4),
+    SNAME CHAR(4),
+    AGE   INT(2),
+    TEL   BIGINT(11) NOT NULL,
+    CONSTRAINT TEL_UNI UNIQUE (TEL)
+);
+
+
+-- 插入测试数据
+INSERT INTO STUS
+VALUES (1, "张1", 21, 18974210001); -- 成功
+INSERT INTO STUS
+VALUES (2, "张1", 22, 18974210002); -- 成功
+INSERT INTO STUS
+VALUES (3, "张1", 21, 18974210003); -- 成功
+INSERT INTO STUS
+VALUES (4, "张4", 21, 18974210003); -- 失败,TEL重复
+INSERT INTO STUS
+VALUES (5, "张5", 25, NULL);
+-- 失败,TEL不能为null
+
+-- 查询数据
+SELECT *
+FROM STUS;
