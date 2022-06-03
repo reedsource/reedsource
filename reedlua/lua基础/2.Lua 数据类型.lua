@@ -1,12 +1,4 @@
 #!/usr/local/bin/lua
-print(type("Hello world"))      --> string
-print(type(10.4 * 3))             --> number
-print(type(print))                  --> function
-print(type(type))                   --> function
-print(type(true))               --> boolean
-print(type(nil))                --> nil
-print(type(type(X)))                --> string
-
 print("================================nil空========================================")
 print("nil 类型表示一种没有任何有效值，它只有一个值 -- nil，例如打印一个没有赋值的变量，便会输出一个 nil 值")
 print(type(a))
@@ -90,7 +82,7 @@ print("在 Lua 里，table 的创建是通过\"构造表达式\"来完成，最�
 -- 创建一个空的 table
 local tbl1 = {}
 -- 直接初始表
-local tbl2 = {"apple", "pear", "orange", "grape"}
+local tbl2 = { "apple", "pear", "orange", "grape" }
 
 print("Lua 中的表（table）其实是一个\"关联数组\"（associative arrays），数组的索引可以是数字或者是字符串")
 a = {}
@@ -118,6 +110,7 @@ print(a3["key"])
 print(a3["none"])
 
 print("================================function函数========================================")
+print("注意 lua是脚本语言 遵循从上而下的加载顺序,需要调用的函数需要在调用点前面")
 print("在 Lua 中，函数是被看作是\"第一类值（First-Class Value）\"，函数可以存在变量里:")
 function factorial1(n)
     if n == 0 then
