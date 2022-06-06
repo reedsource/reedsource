@@ -78,7 +78,7 @@ end
 print("案例 循环数组 days")
 days = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }
 for i, v in ipairs(days) do
-    print(i + " " + v)
+    print(i,v)
 end
 
 print("\r\n====================-repeat...until	重复执行循环，直到 指定的条件为真时为止-====================")
@@ -113,45 +113,45 @@ end
 --i 的值为：	9
 --i 的值为：	10
 print("\r\n====================-goto 语句	将程序的控制点转移到一个标签处-====================")
+print("goto是lua5.2以后加入的新特性")
 print("Lua 语言中的 goto 语句允许将控制流程无条件地转到被标记的语句处")
-print("2022年6月5日 idea无法识别::::语法 原因未知")
---local a = 1
---::label::
---print("--- goto label ---")
---
---a = a+1
---if a < 3 then
---    goto label   -- a 小于 3 的时候跳转到标签 label
---end
+local a = 1
+::label::
+print("--- goto label ---")
+
+a = a+1
+if a < 3 then
+    goto label   -- a 小于 3 的时候跳转到标签 label
+end
 
 -- --- goto label ---
 print("从输出结果可以看出，多输出了一次 --- goto label ---")
 
 print("以下实例演示了可以在 label 中设置多个语句：")
---i = 0
---:: s1 ::
---do
---    print(i)
---    i = i + 1
---end
---if i > 3 then
---    os.exit()   -- i 大于 3 时退出
---end
---goto s1
+i = 0
+:: s1 ::
+do
+    print(i)
+    i = i + 1
+end
+if i > 3 then
+    os.exit()   -- i 大于 3 时退出
+end
+goto s1
 --0
 --1
 --2
 --3
 print(" goto，我们可以实现 continue 的功能")
---for i = 1, 3 do
---    if i <= 2 then
---        print(i, "yes continue")
---        goto continue
---    end
---    print(i, " no continue")
---    :: continue ::
---    print([[i'm end]])
---end
+for i = 1, 3 do
+    if i <= 2 then
+        print(i, "yes continue")
+        goto continue
+    end
+    print(i, " no continue")
+    :: continue ::
+    print([[i'm end]])
+end
 --1   yes continue
 --i'm end
 --2   yes continue
