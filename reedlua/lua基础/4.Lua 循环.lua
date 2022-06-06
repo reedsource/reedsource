@@ -78,7 +78,7 @@ end
 print("案例 循环数组 days")
 days = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }
 for i, v in ipairs(days) do
-    print(i,v)
+    print(i, v)
 end
 
 print("\r\n====================-repeat...until	重复执行循环，直到 指定的条件为真时为止-====================")
@@ -116,10 +116,10 @@ print("\r\n====================-goto 语句	将程序的控制点转移到一个
 print("goto是lua5.2以后加入的新特性")
 print("Lua 语言中的 goto 语句允许将控制流程无条件地转到被标记的语句处")
 local a = 1
-::label::
+:: label ::
 print("--- goto label ---")
 
-a = a+1
+a = a + 1
 if a < 3 then
     goto label   -- a 小于 3 的时候跳转到标签 label
 end
