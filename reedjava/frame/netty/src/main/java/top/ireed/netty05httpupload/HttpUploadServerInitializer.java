@@ -13,27 +13,27 @@ import io.netty.handler.ssl.SslContext;
  */
 public class HttpUploadServerInitializer extends ChannelInitializer<SocketChannel> {
 
-    private final SslContext sslCtx;
+	private final SslContext sslCtx;
 
-    HttpUploadServerInitializer(SslContext sslCtx) {
-        this.sslCtx = sslCtx;
-    }
+	HttpUploadServerInitializer(SslContext sslCtx) {
+		this.sslCtx = sslCtx;
+	}
 
-    @Override
-    public void initChannel(SocketChannel ch) {
+	@Override
+	public void initChannel(SocketChannel ch) {
 
-        ChannelPipeline pipeline = ch.pipeline();
+		ChannelPipeline pipeline = ch.pipeline();
 
-        if (sslCtx != null) {
-            pipeline.addLast(sslCtx.newHandler(ch.alloc()));
-        }
-        pipeline.addLast(new HttpRequestDecoder());
-        pipeline.addLast(new HttpResponseEncoder());
+		if (sslCtx != null) {
+			pipeline.addLast(sslCtx.newHandler(ch.alloc()));
+		}
+		pipeline.addLast(new HttpRequestDecoder());
+		pipeline.addLast(new HttpResponseEncoder());
 
-        // 如果不希望自动压缩内容，请删除下面的行
-        pipeline.addLast(new HttpContentCompressor());
+		// 如果不希望自动压缩内容，请删除下面的行
+		pipeline.addLast(new HttpContentCompressor());
 
-        // pipeline.addLast("http-aggregator",new HttpObjectAggregator(65536));// 目的是将多个消息转换为单一的request或者response对象
-        pipeline.addLast(new HttpUploadServerHandler());
-    }
+		// pipeline.addLast("http-aggregator",new HttpObjectAggregator(65536));// 目的是将多个消息转换为单一的request或者response对象
+		pipeline.addLast(new HttpUploadServerHandler());
+	}
 }

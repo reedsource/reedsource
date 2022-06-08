@@ -15,7 +15,8 @@ import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
 import top.ireed.deal.DealLog;
 
-import static top.ireed.netty06room.NettyConfig.*;
+import static top.ireed.netty06room.NettyConfig.T200;
+import static top.ireed.netty06room.NettyConfig.UPGRADE;
 
 /**
  * 接受/处理/响应客户端webSocket请求的核心业务处理类
@@ -36,7 +37,7 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
 		//将id记录到公共id记录map中
-		ChannelMap.addTimeServerChannel(ctx.channel().id().asLongText(),"WebSocket", ctx.channel());
+		ChannelMap.addTimeServerChannel(ctx.channel().id().asLongText(), "WebSocket", ctx.channel());
 		DealLog.log("客户端与服务端连接开启 id" + ctx.channel().id().asLongText());
 	}
 
@@ -62,7 +63,7 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 	 */
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-		DealLog.log("异常",cause);
+		DealLog.log("异常", cause);
 		ChannelMap.removeTimeServerChannel(ctx.channel().id().asLongText());
 		DealLog.log("客户端与服务端异常断开 id" + ctx.channel().id().asLongText());
 		ctx.close();
@@ -105,7 +106,7 @@ public class WebSocketHandler extends ChannelInboundHandlerAdapter {
 
 		// 返回应答
 		String request = ((TextWebSocketFrame) frame).text();
-		DealLog.log("服务端收到客户端的消息===" , request);
+		DealLog.log("服务端收到客户端的消息===", request);
 
 		// 群发，服务向每个连接上来的客户群发消息
 		ChannelMap.writeAndFlush(request);

@@ -21,10 +21,8 @@ FROM (SELECT AVG(月薪) AVG月薪 FROM 员工表 GROUP BY 部门编号) DS;
 SELECT 部门编号, AVG(月薪) AVG月薪
 FROM 员工表
 GROUP BY 部门编号
-HAVING AVG月薪 = (
-    SELECT MAX(DS.AVG月薪) 最高薪水
-    FROM (SELECT AVG(月薪) AVG月薪 FROM 员工表 GROUP BY 部门编号) DS
-)
+HAVING AVG月薪 = (SELECT MAX(DS.AVG月薪) 最高薪水
+                FROM (SELECT AVG(月薪) AVG月薪 FROM 员工表 GROUP BY 部门编号) DS)
 
 -- | 部门编号 | AVG月薪 |
 -- | :--- | :--- |

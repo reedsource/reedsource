@@ -4,7 +4,6 @@
  */
 package k14流.控制台输入;
 
-import org.junit.Test;
 import top.ireed.deal.DealLog;
 
 import java.io.BufferedReader;

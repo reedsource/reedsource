@@ -16,8 +16,7 @@ CREATE TABLE 员工表
     工作   VARCHAR(9),
     领导编号 INT(4),
     受雇日期 DATE DEFAULT NULL,
-    月薪   DOUBLE(7, 2
-) ,
+    月薪   DOUBLE(7, 2),
     津贴   DOUBLE(7, 2),
     部门编号 INT(2),
     primary key (员工编号)

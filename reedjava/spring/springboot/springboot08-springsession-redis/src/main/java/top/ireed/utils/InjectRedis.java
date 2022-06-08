@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 import top.ireed.deal.DealDate;
 import top.ireed.general.TopConstant;
 
-import static top.ireed.deal.DealDate.*;
-
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
+
+import static top.ireed.deal.DealDate.getDayEndDate;
 
 /**
  * Redis工具类

@@ -28,9 +28,9 @@ class NettyConfig {
 	/**
 	 * linux文件保存路径
 	 */
-	static final String LINUX_PATH ="";
+	static final String LINUX_PATH = "";
 
-	private static String nettyIp ="";
+	private static String nettyIp = "";
 
 	/**
 	 * 共享常量 启动时初始化

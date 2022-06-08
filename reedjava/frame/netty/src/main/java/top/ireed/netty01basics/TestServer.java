@@ -14,7 +14,7 @@ package top.ireed.netty01basics;
  * reedsource@189.cn
  */
 public class TestServer {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		int port = 16807;
 		new EchoServer(port).run();
 	}

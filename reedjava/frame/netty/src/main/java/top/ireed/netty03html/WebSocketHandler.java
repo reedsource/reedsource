@@ -15,7 +15,7 @@ import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
 import top.ireed.deal.DealLog;
 
-import static top.ireed.netty03html.NettyConfig.*;
+import static top.ireed.netty03html.NettyConfig.T200;
 
 /**
  * 接受/处理/响应客户端webSocket请求的核心业务处理类

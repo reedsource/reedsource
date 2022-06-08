@@ -25,15 +25,18 @@ public class MyController {
 	public static final String INDEX = "index";
 
 	/**
-	 *  主页
+	 * 主页
+	 *
 	 * @return 页面
 	 */
 	@GetMapping("index.do")
 	public String inde() {
 		return INDEX;
 	}
+
 	/**
 	 * 错误返回页面   这里的.do 配置 是在web.xml文件中配置
+	 *
 	 * @return 页面
 	 */
 	@GetMapping("error.do")
@@ -43,6 +46,7 @@ public class MyController {
 
 	/**
 	 * 登陆
+	 *
 	 * @param user 账户
 	 * @return 页面
 	 */
@@ -57,6 +61,7 @@ public class MyController {
 
 	/**
 	 * 注销
+	 *
 	 * @return 页面
 	 */
 	@GetMapping("logout.do")
@@ -68,31 +73,34 @@ public class MyController {
 	}
 
 	/**
-	 *  进入登陆页面
+	 * 进入登陆页面
+	 *
 	 * @return 页面
 	 */
 	@GetMapping("userLogin.do")
-	public String userLogin(){
+	public String userLogin() {
 		//提供用户信息查询
 		return "login";
 	}
 
 	/**
-	 *  查询账户  主要用户验证 用户进入界面权限拦截相关配置 shiro.ini [main] [urls] 配置
+	 * 查询账户  主要用户验证 用户进入界面权限拦截相关配置 shiro.ini [main] [urls] 配置
+	 *
 	 * @return 页面
 	 */
 	@GetMapping("userList.do")
-	public String userList(){
+	public String userList() {
 		//提供用户信息查询
 		return "userList";
 	}
 
 	/**
 	 * 标签学习相关界面
+	 *
 	 * @return 页面
 	 */
 	@GetMapping("shiro.do")
-	public String shiro(){
+	public String shiro() {
 		return "shiro";
 	}
 

@@ -12,7 +12,8 @@ import top.ireed.deal.DealLog;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import static top.ireed.netty06room.NettyConfig.*;
+import static top.ireed.netty06room.NettyConfig.bossGroup;
+import static top.ireed.netty06room.NettyConfig.workGroup;
 
 /**
  * 功能简述:

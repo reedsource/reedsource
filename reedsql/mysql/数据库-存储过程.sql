@@ -20,8 +20,7 @@ END;
 
 -- out表示参数的类型是out类型 ,num是参数名称,int是num参数的数据类型(注意,不能声明类新的长度)
 -- 这个过程的功能是:查询员工表的员工总数,并且返回查询结果
-CREATE
-    PROCEDURE PROC_1(out num int)
+CREATE PROCEDURE PROC_1(out num int)
 
 BEGIN
 -- 把查询语句的结果赋值给num这个out类型的参数
@@ -42,8 +41,7 @@ SELECT @num;
 -- 再声明一个存储过程
 -- num1,num2没有声明输入/输出类型,默认的就是in类型
 -- 过程的功能:返回num1 + num2的结果
-CREATE
-    PROCEDURE PROC_ADD(num1 int, num2 int, out res int)
+CREATE PROCEDURE PROC_ADD(num1 int, num2 int, out res int)
 BEGIN
     -- 在过程中不需要用return 返回结果,out类型的参数会自动把结果带回给调用者
     set

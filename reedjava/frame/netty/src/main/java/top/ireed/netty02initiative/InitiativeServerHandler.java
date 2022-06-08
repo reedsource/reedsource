@@ -2,7 +2,10 @@ package top.ireed.netty02initiative;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.*;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 import top.ireed.deal.DealLog;
 
@@ -81,7 +84,7 @@ public class InitiativeServerHandler extends ChannelInboundHandlerAdapter {
 		//出站成功 连接关闭
 		f.addListener(future ->
 						DealLog.log("时间服务数据返回成功,本处关闭通道将忽略 忽略通道id ", uid)
-		/*ctx.close();*/
+				/*ctx.close();*/
 		);
 	}
 

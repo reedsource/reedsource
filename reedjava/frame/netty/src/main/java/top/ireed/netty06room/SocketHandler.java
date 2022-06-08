@@ -70,7 +70,7 @@ public class SocketHandler extends ChannelInboundHandlerAdapter {
 		ByteBuf buf = (ByteBuf) msg;
 		// 转为字符串
 		String m = buf.toString(CharsetUtil.UTF_8);
-		DealLog.log("socket收到",ctx.channel().remoteAddress() + " : " + m);
+		DealLog.log("socket收到", ctx.channel().remoteAddress() + " : " + m);
 		ChannelMap.writeAndFlush(m);
 
 		//写消息
@@ -120,7 +120,7 @@ public class SocketHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 		// 当出现异常就关闭连接
-		DealLog.log("异常",cause);
+		DealLog.log("异常", cause);
 		ChannelMap.removeTimeServerChannel(ctx.channel().id().asLongText());
 		DealLog.log("客户端与服务端异常断开 id", ctx.channel().id().asLongText());
 		ctx.close();

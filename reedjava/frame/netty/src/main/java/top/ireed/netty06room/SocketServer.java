@@ -46,13 +46,13 @@ class SocketServer {
 					//是否启用心跳保活机制。两个小时
 					.childOption(ChannelOption.SO_KEEPALIVE, true);
 			ChannelFuture f = b.bind(port).sync();
-			DealLog.log("DiscardServer已启动，端口：" , port);
+			DealLog.log("DiscardServer已启动，端口：", port);
 			//sync()会同步等待连接操作结果，用户线程将在此wait()，直到连接操作完成之后，线程被notify(),用户代码继续执行
 			//closeFuture()当Channel关闭时返回一个ChannelFuture,用于链路检测
 			//作用是产生一个wait()事件，保证main线程存活，否则main线程直接结束
 			f.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
-			DealLog.log("异常",e);
+			DealLog.log("异常", e);
 			Thread.currentThread().interrupt();
 		} finally {
 			//资源优雅释放

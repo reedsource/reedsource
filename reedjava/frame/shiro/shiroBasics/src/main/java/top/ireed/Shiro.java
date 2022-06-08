@@ -21,7 +21,7 @@ import top.ireed.deal.DealLog;
  * @version 1.0.0
  * date 2022/5/29 22:24
  * reedsource@189.cn
- *
+ * <p>
  * //过期方案
  * //1.创建一个工厂对象，加载shiro.ini文件内容
  * Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");

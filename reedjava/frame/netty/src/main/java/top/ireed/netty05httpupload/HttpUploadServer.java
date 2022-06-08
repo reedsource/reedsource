@@ -58,8 +58,8 @@ final class HttpUploadServer {
 			NettyConfig.setNettyIp(ip);
 			DealLog.log("打开您的web浏览器并导航到 " + (SSL ? "https" : "http") + "://" + ip + ":" + PORT + UPLOAD_URL);
 			ch.closeFuture().sync();
-		} catch (CertificateException|SSLException|InterruptedException|UnknownHostException e ) {
-			DealLog.log("异常",e);
+		} catch (CertificateException | SSLException | InterruptedException | UnknownHostException e) {
+			DealLog.log("异常", e);
 			Thread.currentThread().interrupt();
 		} finally {
 			bossGroup.shutdownGracefully();

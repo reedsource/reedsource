@@ -21,7 +21,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	 * @param msg 消息
 	 */
 	@Override
-	public void channelRead(ChannelHandlerContext ctx, Object msg)  {
+	public void channelRead(ChannelHandlerContext ctx, Object msg) {
 
 
 		// ByteBuf是一个引用计数对象实现ReferenceCounted，他就是在有对象引用的时候计数+1，无的时候计数-1，当为0对象释放内存
@@ -41,7 +41,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
 		// 转为字符串
 		String m = buf.toString(CharsetUtil.UTF_8);
-		DealLog.log(ctx.channel().remoteAddress()+" : "+m);
+		DealLog.log(ctx.channel().remoteAddress() + " : " + m);
 		//写消息 两个方法等同于 ctx.writeAndFlush(msg)
 		ctx.write(msg);
 		//冲刷消息
@@ -51,13 +51,13 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	/**
 	 * 异常事件
 	 *
-	 * @param ctx 对象
+	 * @param ctx   对象
 	 * @param cause 处理
 	 */
 	@Override
-	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)  {
+	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 		// 当出现异常就关闭连接
-		DealLog.log("异常",cause);
+		DealLog.log("异常", cause);
 		ctx.close();
 	}
 
@@ -70,17 +70,17 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 		// channel失效处理,客户端下线或者强制退出等任何情况都触发这个方法
-		DealLog.log("关闭一个链接",ctx.name());
+		DealLog.log("关闭一个链接", ctx.name());
 		super.channelInactive(ctx);
 	}
 
 	/**
 	 * 连接事件
 	 *
-	 * @param ctx  对象
+	 * @param ctx 对象
 	 */
 	@Override
-	public void channelActive(ChannelHandlerContext ctx)  {
+	public void channelActive(ChannelHandlerContext ctx) {
 		ctx.fireChannelActive();
 		DealLog.log("开启一个链接");
 	}

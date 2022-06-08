@@ -6,7 +6,6 @@ package top.ireed.found.markdown;
 
 import org.junit.Assert;
 import org.junit.Test;
-import top.ireed.deal.DealLog;
 import top.ireed.general.TopException;
 
 import java.io.File;

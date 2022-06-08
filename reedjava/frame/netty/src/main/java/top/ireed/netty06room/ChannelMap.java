@@ -43,7 +43,7 @@ class ChannelMap {
 		nettyModel.setType(type);
 		nettyModel.setC(sc);
 		channelSumMap.put(id, nettyModel);
-		DealLog.log("连接对象数量增加 当前为 : " , channelSumMap.size());
+		DealLog.log("连接对象数量增加 当前为 : ", channelSumMap.size());
 	}
 
 	/**
