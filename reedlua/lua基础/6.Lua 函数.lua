@@ -62,6 +62,7 @@ function average(...)
     local arg = { ... }    --> arg 为一个表，局部变量
     for i, v in ipairs(arg) do
         result = result + v
+        print(i)
     end
     print("总共传入 " .. #arg .. " 个数")
     return result / #arg
@@ -75,6 +76,7 @@ function average(...)
     local arg = { ... }
     for i, v in ipairs(arg) do
         result = result + v
+        print(i)
     end
     print("总共传入 " .. select("#", ...) .. " 个数")
     return result / select("#", ...)

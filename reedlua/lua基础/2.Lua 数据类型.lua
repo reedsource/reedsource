@@ -83,6 +83,7 @@ print("在 Lua 里，table 的创建是通过\"构造表达式\"来完成，最�
 local tbl1 = {}
 -- 直接初始表
 local tbl2 = { "apple", "pear", "orange", "grape" }
+print(tbl1, tbl2)
 
 print("Lua 中的表（table）其实是一个\"关联数组\"（associative arrays），数组的索引可以是数字或者是字符串")
 a = {}
@@ -97,7 +98,7 @@ end
 print("不同于其他语言的数组把 0 作为数组的初始索引，在 Lua 里表的默认初始索引一般以 1 开始")
 local tbl = { "apple", "pear", "orange", "grape" }
 for key, val in pairs(tbl) do
-    print("Key", key)
+    print("Key", key, val)
 end
 
 print("table 不会固定长度大小，有新数据添加时 table 长度会自动增长，没初始的 table 都是 nil。")
