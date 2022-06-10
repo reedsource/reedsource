@@ -24,17 +24,17 @@ import java.io.ObjectOutputStream;
 class 序列化对象 {
 	public static void main(String[] args) {
 		Serializable接口实现 e = new Serializable接口实现();
-		e.name = "Reyan Ali";
-		e.address = "Phokka Kuan, Ambehta Peer";
+		e.name = "名称";
+		e.address = " 属性";
 		e.SSN = 11122333;
 		e.number = 101;
+		e.mailCheck();
 		try {
-			FileOutputStream fileOut = new FileOutputStream("/tmp/employee.ser");
+			FileOutputStream fileOut = new FileOutputStream("/cache/io/io测试数据.txt");
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			out.writeObject(e);
 			out.close();
 			fileOut.close();
-			System.out.printf("Serialized data is saved in /tmp/employee.ser");
 		} catch (IOException i) {
 			i.printStackTrace();
 		}

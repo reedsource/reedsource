@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
 
 /**
  * 反序列化对象
- * 面的 反序列化对象 程序实例了反序列化，/tmp/employee.ser 存储了 Serializable接口实现 对象。
+ * 面的 反序列化对象 程序实例了反序列化，/cache/io/io测试数据.txt 存储了 Serializable接口实现 对象。
  * 反序列化对象.java 文件代码
  *
  * @author reedsource
@@ -24,7 +24,7 @@ class 反序列化对象 {
 	public static void main(String[] args) {
 		Serializable接口实现 e = null;
 		try {
-			FileInputStream fileIn = new FileInputStream("/tmp/employee.ser");
+			FileInputStream fileIn = new FileInputStream("/cache/io/io测试数据.txt");
 			ObjectInputStream in = new ObjectInputStream(fileIn);
 			e = (Serializable接口实现) in.readObject();
 			in.close();

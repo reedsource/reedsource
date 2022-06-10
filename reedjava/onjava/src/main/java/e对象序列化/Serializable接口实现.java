@@ -49,7 +49,7 @@ class Serializable接口实现 implements Serializable {
 	public int number;
 
 	public void mailCheck() {
-		DealLog.log("Mailing a check to " + name + " " + address);
+		DealLog.log("信息数据" + name + " " + address);
 	}
 
 	//请注意，一个类的对象要想序列化成功，必须满足两个条件：
