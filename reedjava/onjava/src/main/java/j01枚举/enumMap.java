@@ -1,5 +1,5 @@
 /*
- * FileName: EnumMap
+ * FileName: enumMap
  * Author:   reedsource
  */
 package j01枚举;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/21 23:51
  * reedsource@189.cn
  */
-public class EnumMap {
+public class enumMap {
 	/**
 	 * 演示EnumMap的使用，
 	 * EnumMap跟HashMap的使用差不多，只不过key要是枚举类型

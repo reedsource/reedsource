@@ -1,5 +1,5 @@
 /*
- * FileName: EnumSet
+ * FileName: enumSet
  * Author:   reedsource
  */
 package j01枚举;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/21 23:52
  * reedsource@189.cn
  */
-public class EnumSet {
+public class enumSet {
 	/**
 	 * 演示EnumSet如何使用，EnumSet是一个抽象类，获取一个类型的枚举类型内容
 	 */
