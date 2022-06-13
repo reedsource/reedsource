@@ -2,7 +2,7 @@
  * FileName: BigDecimal特殊格式化
  * Author:   reedsource
  */
-package k03对象.工具类.精确计算BigDecimal;
+package k03对象.工具类.高精度浮点BigDecimal与整数BigInteger;
 
 import top.ireed.deal.DealLog;
 
