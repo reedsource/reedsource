@@ -4,6 +4,9 @@
  */
 package k04操作符;
 
+import org.junit.Test;
+import top.ireed.deal.DealLog;
+
 /**
  * 功能简述:
  * 〈java运算符〉
@@ -39,7 +42,12 @@ public class 运算符优先级 {
 	 * 赋值	    = + = - = * = / =％= >> = << =＆= ^ = | =	从右到左
 	 * 逗号	    ，	                    左到右
 	 */
-	void o9() {
-
+	@Test
+	public void o1() {
+		int x = 1, y = 2, z = 3;
+		int a = x + y - 2/2 + z;           // [1]
+		int b = x + (y - 2)/(2 + z);       // [2]
+		DealLog.log("a = " + a);
+		DealLog.log("b = " + b);
 	}
 }
