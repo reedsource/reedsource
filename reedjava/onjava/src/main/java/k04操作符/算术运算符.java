@@ -34,27 +34,69 @@ public class 算术运算符 {
 		int b = 20;
 		int c = 25;
 		int d = 25;
+		DealLog.log(a, b, c, d);
 		DealLog.log("a + b = " + (a + b));
 		DealLog.log("a - b = " + (a - b));
 		DealLog.log("a * b = " + (a * b));
 		DealLog.log("b / a = " + (b / a));
 		DealLog.log("b % a = " + (b % a));
 		DealLog.log("c % a = " + (c % a));
+		DealLog.log("c % a = " + (c % a));
+		DealLog.log("c %= a = " + (c %= a));
+
+
 		DealLog.log("a++   = " + (a++));
 		DealLog.log("a--   = " + (a--));
+		DealLog.log("++a   = " + (++a));
+		DealLog.log("--a   = " + (--a));
 		// 查看  d++ 与 ++d 的不同
 		DealLog.log("d++   = " + (d++));
 		DealLog.log("++d   = " + (++d));
 
+
+		// 单精度浮点数测试 float /double:
+		float v = 3.14f;
+		float w = 1.34f;
+		DealLog.log(v, w);
+		DealLog.log("v : " + v);
+		DealLog.log("w : " + w);
+		DealLog.log("v + w : " + (v + w));
+		DealLog.log("v - w : " + (v - w));
+		DealLog.log("v * w : " + v * w);
+		DealLog.log("v / w : " + v / w);
+
+
+		// 适用于 byte, short, int, long, and double:
+		DealLog.log("v += w : " + (v += w));
+		DealLog.log("v -= w : " + (v -= w));
+		DealLog.log("v *= w : " + (v *= w));
+		DealLog.log("v /= w : " + (v /= w));
+
+		//10 20 25 25
 		//a + b = 30
 		//a - b = -10
 		//a * b = 200
 		//b / a = 2
 		//b % a = 0
 		//c % a = 5
+		//c % a = 5
+		//c %= a = 5
 		//a++   = 10
 		//a--   = 11
+		//++a   = 11
+		//--a   = 10
 		//d++   = 25
 		//++d   = 27
+		//3.14 --> 1.34
+		//v : 3.14
+		//w : 1.34
+		//v + w : 4.48
+		//v - w : 1.8000001
+		//v * w : 4.2076
+		//v / w : 2.3432837
+		//v += w : 4.48
+		//v -= w : 3.1399999
+		//v *= w : 4.2076
+		//v /= w : 3.14
 	}
 }
