@@ -34,69 +34,54 @@ public class DealLog {
 	}
 
 	/**
-	 * @param msg 字符串
-	 */
-	public static void log(String msg) {
-		logger.info(msg);
-	}
-
-	/**
-	 * 空格间隔组合
+	 * Object打印
+	 * <p>
+	 * 单元素 直接打印
+	 * 多元素 空格间隔组合打印
 	 *
 	 * @param o object对象  组
 	 */
 	public static void log(Object... o) {
 		StringBuilder a = new StringBuilder();
-		for (Object o1 : o) {
-			a.append(o1.toString()).append(" ");
+		for (int i = 0; i < o.length; i++) {
+			if (i == 0) {
+				a.append(o[i].toString());
+			} else {
+				a.append(" ").append(o[i].toString());
+			}
 		}
 		logger.info(a.toString());
 	}
 
 	/**
-	 * @param m   字符串
-	 * @param msg 字符串
-	 */
-	public static void log(String m, String msg) {
-		String f = m + " --> " + msg;
-		logger.info(f);
-	}
-
-	/**
+	 * 指向
+	 * a --> b
+	 *
 	 * @param m object对象
-	 * @param o object对象
+	 * @param n object对象
 	 */
-	public static void log(Object m, Object o) {
-		log(String.valueOf(m), o);
+	public static void logTo(Object m, Object n) {
+		logger.info(m.toString() + " --> " + n.toString());
 	}
 
 	/**
-	 * @param m 字符串
-	 * @param o object对象
-	 */
-	public static void log(String m, Object o) {
-		logger.info(m + " --> " + o.toString());
-	}
-
-	/**
+	 * 指向 多个
+	 * a
+	 * --> b
+	 * --> c
+	 * --> d
+	 *
 	 * @param m 字符串
 	 * @param o object对象  组
 	 */
-	public static void log(String m, Object... o) {
+	public static void logToAll(Object m, Object... o) {
 		StringBuilder a = new StringBuilder();
-		a.append(m);
+		a.append(m.toString());
 		for (Object o1 : o) {
-			a.append("\r\n --> ");
+			a.append("\r\n  --> ");
 			a.append(o1.toString());
 		}
 		logger.info(a.toString());
-	}
-
-	/**
-	 * @param o 对象
-	 */
-	public static void log(Object o) {
-		logger.info(o);
 	}
 
 	/**

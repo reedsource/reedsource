@@ -19,17 +19,11 @@ public class DealLogTest {
 	public void log() {
 		DealLog.log();
 		DealLog.log("测试打印");
-		DealLog.log(new Model("6", "key"), new Model("7", "key"));
 		DealLog.log(new Model("6", "key"), new Model("7", "key"), new Model("8", "key"));
-		DealLog.log("测试打印", new Model("6", "key"), new Model("7", "key"));
 
-		//无意义,主要避免sonar测试类断言需求判断
-		Assert.assertTrue(true);
-	}
+		DealLog.logTo(new Model("6", "key"), new Model("7", "key"));
 
-	@Test
-	public void log1() {
-		DealLog.log("测试", "测试打印");
+		DealLog.logToAll("测试打印logToAll", new Model("6", "key"), new Model("7", "key"));
 
 		//无意义,主要避免sonar测试类断言需求判断
 		Assert.assertTrue(true);
