@@ -45,8 +45,8 @@ public class 运算符优先级 {
 	@Test
 	public void o1() {
 		int x = 1, y = 2, z = 3;
-		int a = x + y - 2/2 + z;           // [1]
-		int b = x + (y - 2)/(2 + z);       // [2]
+		int a = x + y - 2 / 2 + z;           // [1]
+		int b = x + (y - 2) / (2 + z);       // [2]
 		DealLog.log("a = " + a);
 		DealLog.log("b = " + b);
 	}

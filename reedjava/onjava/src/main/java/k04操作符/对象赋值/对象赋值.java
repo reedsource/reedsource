@@ -31,10 +31,10 @@ public class 对象赋值 {
 		DealLog.log("3: t1.level: " + t1.level +
 				", t2.level: " + t2.level);
 
-        //两个变量都是对Tank的引用
-        //1: t1.level: 9, t2.level: 47
-        //2: t1.level: 47, t2.level: 47
-        //3: t1.level: 27, t2.level: 27
+		//两个变量都是对Tank的引用
+		//1: t1.level: 9, t2.level: 47
+		//2: t1.level: 47, t2.level: 47
+		//3: t1.level: 27, t2.level: 27
 	}
 
 }

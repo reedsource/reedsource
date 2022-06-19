@@ -21,7 +21,7 @@ import top.ireed.deal.DealLog;
  * 为了解决这个问题，Java 语言为每一个内置数据类型提供了对应的包装类
  * 这种由编译器特别支持的包装称为装箱，所以当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。
  * 相似的，编译器也可以把一个对象拆箱为内置类型。Number 类属于 java.lang 包
- *
+ * <p>
  * 包装类都建议使用.valueOf()方式创建
  */
 public class javaInteger {

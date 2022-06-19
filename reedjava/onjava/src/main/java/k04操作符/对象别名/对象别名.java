@@ -16,22 +16,23 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class 对象别名 {
-    static void f(Letter y) {
-        y.c = 'z';
-    }
+	static void f(Letter y) {
+		y.c = 'z';
+	}
 
-    @Test
-    public void 对象别名_Test(){
-        Letter x = new Letter();
-        x.c = 'a';
-        DealLog.log("1: x.c: " + x.c);
-        f(x);
-        DealLog.log("2: x.c: " + x.c);
+	@Test
+	public void 对象别名_Test() {
+		Letter x = new Letter();
+		x.c = 'a';
+		DealLog.log("1: x.c: " + x.c);
+		f(x);
+		DealLog.log("2: x.c: " + x.c);
 
-        //1: x.c: a
-        //2: x.c: z
-    }
+		//1: x.c: a
+		//2: x.c: z
+	}
 }
+
 class Letter {
-    char c;
+	char c;
 }
