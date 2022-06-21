@@ -1,5 +1,5 @@
 /*
- * FileName: 条件三元运算符
+ * FileName: 三元运算符
  * Author:   reedsource
  */
 package k04操作符;
@@ -16,7 +16,7 @@ import top.ireed.deal.DealLog;
  * date 2022/5/8 20:57
  * reedsource@189.cn
  */
-public class 条件三元运算符 {
+public class 三元运算符 {
 
 	/**
 	 * 条件运算符（?:）
