@@ -33,10 +33,20 @@ public class break跳出 {
 				break;
 			}
 			DealLog.log(x);
-			DealLog.log("\n");
 		}
+		DealLog.log();
 
 		//10
 		//20
+
+		//无限循环
+		int x = 0;
+		while (true) {
+			DealLog.log(x);
+			if (x > 5) {
+				break;
+			}
+			x++;
+		}
 	}
 }
