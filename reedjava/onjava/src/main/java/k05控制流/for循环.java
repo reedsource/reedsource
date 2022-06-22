@@ -37,7 +37,12 @@ public class for循环 {
 	public void d2() {
 		for (int x = 10; x < 20; x = x + 1) {
 			DealLog.log("value of x : " + x);
-			DealLog.log("\n");
+		}
+		DealLog.log();
+		//for的变量部分可以放到方法里面
+		for (int x = 10; x < 20; ) {
+			DealLog.log("value of x : " + x);
+			++x;
 		}
 
 		//value of x : 10
