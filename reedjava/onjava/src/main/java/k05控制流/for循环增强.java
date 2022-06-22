@@ -40,7 +40,7 @@ public class for循环增强 {
 			DealLog.log(x);
 			DealLog.log(",");
 		}
-		DealLog.log("\n");
+
 		String[] names = {"James", "Larry", "Tom", "Lacy"};
 		for (String name : names) {
 			DealLog.log(name);
