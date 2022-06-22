@@ -33,7 +33,6 @@ public class continue跳过 {
 				continue;
 			}
 			DealLog.log(x);
-			DealLog.log("\n");
 		}
 
 		//10
