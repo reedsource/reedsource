@@ -39,7 +39,6 @@ public class doWhile循环 {
 		do {
 			DealLog.log("value of x : " + x);
 			x++;
-			DealLog.log("\n");
 		} while (x < 20);
 
 		//value of x : 10
