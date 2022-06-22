@@ -61,6 +61,7 @@ public class switch分支 {
 	private static void c0() {
 		char grade = 'C';
 
+		//case支持 int char String
 		switch (grade) {
 			case 'A':
 				DealLog.log("优秀");
