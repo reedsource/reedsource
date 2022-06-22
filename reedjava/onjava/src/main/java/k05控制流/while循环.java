@@ -32,7 +32,6 @@ public class while循环 {
 		while (x < 20) {
 			DealLog.log("value of x : " + x);
 			x++;
-			DealLog.log("\n");
 		}
 
 		//value of x : 10
