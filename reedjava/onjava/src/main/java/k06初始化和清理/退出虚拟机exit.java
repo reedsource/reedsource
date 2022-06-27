@@ -20,20 +20,19 @@ public class 退出虚拟机exit {
 		int a = 10;
 		int b = 10;
 		method(a, b);
-		DealLog.log("a***" + a);
-		DealLog.log("b***" + b);
+		DealLog.log("此消息想要打印,实际因为虚拟机被关闭,不会被打印 ");
+		DealLog.log("a" + a);
+		DealLog.log("b" + b);
+		//a 10
+		//b 10
 	}
 
 	private static void method(int a, int b) {
-		DealLog.log("a=100");
-		DealLog.log("b=200");
+		DealLog.log("a", a);
+		DealLog.log("b", b);
+		//退出虚拟机
 		System.exit(1);
 	}
-
-
-//	a=100
-//	b=200
-
 
 /*
 这个方法是用来结束当前正在运行中的java虚拟机。如何status是非零参数，那么表示是非正常退出。
