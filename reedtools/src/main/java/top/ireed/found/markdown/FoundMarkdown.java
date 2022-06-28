@@ -202,7 +202,7 @@ public class FoundMarkdown {
 
 			String[] parseArray = parse.split("\r\n");
 			for (String s1 : parseArray) {
-				stringBuilder1.append(stringBuilder.toString());
+				stringBuilder1.append(stringBuilder);
 				stringBuilder1.append(s1);
 				stringBuilder1.append("\r\n");
 			}

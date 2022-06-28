@@ -604,8 +604,7 @@ public class DealDate {
 	 * @return 时间间隔
 	 */
 	public static int interval(Date date1, Date date2) {
-		float intervalSum = ((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
 		//向上取整
-		return (int) Math.ceil(intervalSum);
+		return (int) Math.ceil((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
 	}
 }
