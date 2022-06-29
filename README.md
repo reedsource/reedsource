@@ -43,8 +43,11 @@
 
 - **reedlua**
     - lua相关学习
-- **reedbat**
-    - win下bat学习
+
+---
+
+- **reedscript**
+    - win下脚本script学习
 
 ## 三 代码要求
 

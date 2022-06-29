@@ -10,6 +10,7 @@
 	<artifactId>reedtools</artifactId>
 	<!--包版本-->
 	<version>1.0.0</version>
+	<description>reedtools 封装java工具集</description>
 
 	<!--版本内容集-->
 	<properties>

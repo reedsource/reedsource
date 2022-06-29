@@ -21,7 +21,7 @@
 	<!--名称-->
 	<name>reedjava</name>
 	<!--项目描述-->
-	<description>reedjava maven主体版本管理</description>
+	<description>reedjava java学习maven主体版本管理</description>
 
 	<properties>
 		<maven.compiler.source>8</maven.compiler.source>
