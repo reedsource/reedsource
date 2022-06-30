@@ -26,6 +26,9 @@ import java.util.List;
  * reedsource@189.cn
  */
 public class FoundSqliteTest {
+
+	private final String dateString = "2022-02-02";
+
 	@Test
 	public void test() throws TopException {
 		//===普通模式测试====================================================================
@@ -47,7 +50,8 @@ public class FoundSqliteTest {
 		DealLog.log("数据表数量", foundSqlite.getSum("select count(1) FROM sqlite_sequence"));
 
 		// 5. 更新数据
-		DealLog.log(foundSqlite.update(tableName, "id", new Model("2", "更新后的key", "更新后的value", DealDate.getDate("2022-2-2"))));
+
+		DealLog.log(foundSqlite.update(tableName, "id", new Model("2", "更新后的key", "更新后的value", DealDate.getDate(dateString))));
 		// 6. 查看更新效果
 		// 查询数据结果list
 		List<Model> list1 = foundSqlite.get(Model.class, "SELECT * FROM " + tableName);
@@ -57,9 +61,18 @@ public class FoundSqliteTest {
 			}
 		}
 
+		//清空表
+		foundSqlite.set("DELETE FROM sqliteTable", "清空");
+
+		//删除表
+		foundSqlite.set("DROP TABLE sqliteTable", "删除表");
+
+
 		//===约定模式测试====================================================================
 
-		DealLog.log("=======封装约定增删改查实现===========");
+		DealLog.log();
+		DealLog.log();
+		DealLog.log("====================================封装约定增删改查实现====================================");
 		// 1. 约定 连接一个数据库
 		FoundSqlite fSqlite = new FoundSqlite("jdbc:sqLite:D:\\cache\\data\\DealSqliteTest1.db");
 
@@ -70,26 +83,26 @@ public class FoundSqliteTest {
 		// 3. 约定 表数据插入方式
 		//初始化时会执行的操作
 		if (m) {
-			DealLog.log(fSqlite.insert(new Model("方法key1", "方法value", DealDate.getDate("2022-2-2"))));
+			DealLog.log(fSqlite.insert(new Model("方法key1", "方法value", DealDate.getDate(dateString))));
 		}
 
-		fSqlite.insert(new Model("方法key2", "方法value", DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key3", "方法value", DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key4", "方法value", DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key5", "方法value", DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key6", "方法value", DealDate.getDate("2022-2-2")));
-		fSqlite.insert(new Model("方法key7", "方法value", DealDate.getDate("2022-2-2")));
+		fSqlite.insert(new Model("方法key2", "方法value", DealDate.getDate(dateString)));
+		fSqlite.insert(new Model("方法key3", "方法value", DealDate.getDate(dateString)));
+		fSqlite.insert(new Model("方法key4", "方法value", DealDate.getDate(dateString)));
+		fSqlite.insert(new Model("方法key5", "方法value", DealDate.getDate(dateString)));
+		fSqlite.insert(new Model("方法key6", "方法value", DealDate.getDate(dateString)));
+		fSqlite.insert(new Model("方法key7", "方法value", DealDate.getDate(dateString)));
 
 		//表存在的情况 插入数据
 		if (fSqlite.foundTable(new Model())) {
-			fSqlite.insert(new Model("方法key4", "方法value", DealDate.getDate("2022-2-2")));
+			fSqlite.insert(new Model("方法key4", "方法value", DealDate.getDate(dateString)));
 		}
 
 		//物理删除一条数据
 		DealLog.log("删除数据", fSqlite.delete(new Model("3")));
 
 		// 4. 约定 更新数据
-		DealLog.log(fSqlite.update(new Model("2", "更新后的key", "更新后的value", DealDate.getDate("2022-2-2"))));
+		DealLog.log(fSqlite.update(new Model("2", "更新后的key", "更新后的value", DealDate.getDate(dateString))));
 
 		// 5. 约定 查询数据
 		// 5.1 无序
@@ -103,7 +116,7 @@ public class FoundSqliteTest {
 		try {
 			DealLog.log(fSqlite.getOne(new Model("2")).toString());
 		} catch (TopException e) {
-			DealLog.log("package情况下可能的异常打包异常");
+			DealLog.log("package情况下可能的异常打包异常", e);
 		}
 
 		// 6. 约定 查询数据 条数
@@ -141,10 +154,10 @@ public class FoundSqliteTest {
 		//foundSqlite.update(new Model("2", "更新后的key", "更新后的value"));
 
 		//清空表
-		fSqlite.set("DELETE FROM ModelTop", "清空");
+//		fSqlite.set("DELETE FROM ModelTop", "清空");
 
 		//删除表
-		fSqlite.set("DROP TABLE ModelTop", "删除表");
+//		fSqlite.set("DROP TABLE ModelTop", "删除表");
 
 		//5. 手动关闭连接
 		fSqlite.close();

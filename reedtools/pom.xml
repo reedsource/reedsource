@@ -17,10 +17,10 @@
 		<java.version>1.8</java.version><!--JDK版本-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!--项目编码-->
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding><!--编译编码-->
-		<hutool.version>5.6.1</hutool.version><!--hutool工具集-->
+		<hutool.version>5.8.3</hutool.version><!--hutool工具集-->
 		<junit.version>4.13.2</junit.version><!--junit测试工具类-->
-		<jackson.version>2.11.0</jackson.version><!--jackson-->
-		<sqlite.version>3.21.0.1</sqlite.version><!--sqlite-->
+		<jackson.version>2.13.3</jackson.version><!--jackson-->
+		<sqlite.version>3.36.0.3</sqlite.version><!--sqlite-->
 		<log4j.version>2.17.2</log4j.version><!--log4j依赖-->
 		<com.aliyun.core>4.3.2</com.aliyun.core><!--阿里云核心-->
 		<com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
@@ -76,17 +76,6 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.aliyun</groupId>
-			<artifactId>aliyun-java-sdk-core</artifactId>
-			<version>${com.aliyun.core}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.aliyun</groupId>
-			<artifactId>aliyun-java-sdk-alidns</artifactId>
-			<version>${com.aliyun.alidns}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>

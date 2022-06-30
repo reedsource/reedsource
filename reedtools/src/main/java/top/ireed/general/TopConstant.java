@@ -114,6 +114,11 @@ public class TopConstant {
 	public static final String YYYYMMDD = "yyyyMMdd";
 	public static final String YYYYMMDDHHMMSSSSS = "yyyyMMddHHmmssSSS";
 
+	/*
+	 * 英文时间格式化
+	 * */
+	public static final String EEEMMMDD = "EEE MMM dd hh:mm:ss zzz yyyy";
+
 	/****************************字符串部分*************************/
 	public static final String S_A = "a";
 	public static final String S_B = "b";

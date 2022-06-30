@@ -6,7 +6,6 @@ package top.ireed.found;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.text.CharSequenceUtil;
-import org.apache.http.client.utils.DateUtils;
 import top.ireed.deal.DealDate;
 import top.ireed.deal.DealLog;
 import top.ireed.deal.DealObject;
@@ -62,12 +61,18 @@ public class FoundSqlite {
 	private static final String SQLITE_LOG_SUM = "select count(1) from FoundSqliteLog";
 	private static final String ERR = "非约定模式,无法使用本方式";
 	public static final String AND = " AND ";
-	public static final String WHERE = " WHERE ";
+	public static final String WHERE = " WHERE 1 = 1";
 
 	/**
-	 * sqlite关键字,当建表表名为这些字段时,会出现异常
+	 * 黑名单 sqlite关键字,当建表表名为这些字段时,会出现异常
 	 */
 	private final String[] sqliteFinalArray = {"order"};
+
+	/**
+	 * 黑名单 测试等其它异常字段
+	 * $jacocoData 单元测试时的特殊字段,用于测试单元测试时统计代码覆盖率 package时会出现
+	 */
+	private final String[] fieldFinalArray = {"$jacocoData"};
 
 	/**
 	 * sqlData url
@@ -161,7 +166,7 @@ public class FoundSqlite {
 	public boolean init(String tableName, Object object, String keyName, boolean increase) {
 
 		//2 .判断表存在
-		//2.1 将表名转化为全小写后 表名白名单校验
+		//2.1 将表名转化为全小写后 表名黑名单校验
 		if (Arrays.asList(sqliteFinalArray).contains(tableName.toLowerCase())) {
 			DealLog.log(tableName, "表名称为sqlite关键字,无法用于建表表名");
 			return false;
@@ -328,7 +333,7 @@ public class FoundSqlite {
 	 * @param o         实体数据
 	 * @return 数据
 	 */
-	private String getInsertSqliteStr(String tableName, Object o) {
+	private String getInsertSqliteStr(String tableName, Object o) throws TopException {
 		//1.表名 不考虑库操作
 		tableName = getTableName(o, tableName);
 		//2.实体数据
@@ -340,6 +345,11 @@ public class FoundSqlite {
 		//是否添加过有效字段标记 初始false 当第一次添加有用数据字段后,后续在前面添加,分隔
 		boolean si = false;
 		for (Field field : fields) {
+			// 字段黑名单排除
+			if (Arrays.asList(fieldFinalArray).contains(field.getName())) {
+				DealLog.log(tableName, field.getName(), "字段名称为预期外关键字,无法用于sql组装", c);
+				continue;
+			}
 			//将实体数据全部转化为字符串类型
 			String m = DealObject.getMember(o, field.getName());
 			//查询的数据不为空且不为null
@@ -354,7 +364,7 @@ public class FoundSqlite {
 				b.append(field.getName());
 				c.append("'");
 				if (field.getType().isAssignableFrom(Date.class)) {
-					c.append(DealDate.getSqliteDate(DateUtils.parseDate(m)));
+					c.append(DealDate.getSqliteDate(m));
 				} else {
 					c.append(m);
 				}
@@ -364,7 +374,7 @@ public class FoundSqlite {
 		}
 		//3. 组装主体语句
 		//1.1添加  "INSERT INTO tableName (key,value) VALUES('数据1','mm1')"
-		return "INSERT INTO " + tableName + F_X_Z + b.toString() + ") VALUES(" + c.toString() + F_X_Y;
+		return "INSERT INTO " + tableName + F_X_Z + b + ") VALUES(" + c + F_X_Y;
 	}
 
 	/**
@@ -387,6 +397,11 @@ public class FoundSqlite {
 		//是否添加过有效字段标记 初始false 当第一次添加有用数据字段后,后续在前面添加,分隔
 		boolean si = false;
 		for (Field field : fields) {
+			// 字段黑名单排除
+			if (Arrays.asList(fieldFinalArray).contains(field.getName())) {
+				DealLog.log(tableName, field.getName(), "字段名称为预期外关键字,无法用于sql组装", c);
+				continue;
+			}
 			//将实体数据全部转化为字符串类型
 			String m = DealObject.getMember(o, field.getName());
 			//查询的数据不为空且不为null
@@ -402,7 +417,14 @@ public class FoundSqlite {
 					if (si) {
 						c.append(" , ");
 					}
-					c.append(field.getName()).append(" = '").append(m).append("' ");
+					c.append(field.getName()).append(" = '");
+					//时间格式转换
+					if (field.getType().isAssignableFrom(Date.class)) {
+						c.append(DealDate.getSqliteDate(m));
+					} else {
+						c.append(m);
+					}
+					c.append("' ");
 					si = true;
 				}
 			}
@@ -414,7 +436,7 @@ public class FoundSqlite {
 			throw new TopException("主键" + keyName + "在" + o, "不存在");
 		}
 		//时间条件
-		return "UPDATE " + tableName + " SET " + c.toString() + "WHERE " + keyName + " = " + key;
+		return "UPDATE " + tableName + " SET " + c + "WHERE " + keyName + " = " + key;
 	}
 
 	/**
@@ -448,7 +470,6 @@ public class FoundSqlite {
 			a.append("SELECT * FROM ").append(tableName);
 			//添加过有效查询字段
 			a.append(WHERE);
-			a.append("1 = 1");
 			a.append(entitySqlMsg);
 		}
 		//时间条件
@@ -459,9 +480,7 @@ public class FoundSqlite {
 	/**
 	 * 实体sql数据组装器
 	 * <p>
-	 * 格式 AND key = 'value' AND key2 = 'value2'
-	 * <p>
-	 * 使用时 如果是查询 需要添加前置条件 1 = 1
+	 * 格式 key = 'value' AND key2 = 'value2'
 	 *
 	 * @param o    实体
 	 * @param list 时间条件
@@ -472,6 +491,12 @@ public class FoundSqlite {
 		Field[] fields = o.getClass().getDeclaredFields();
 
 		for (Field field : fields) {
+			// 字段黑名单排除
+			if (Arrays.asList(fieldFinalArray).contains(field.getName())) {
+				DealLog.log(o, field.getName(), "字段名称为预期外关键字,无法用于sql组装", c);
+				continue;
+			}
+
 			//将实体数据全部转化为字符串类型
 			String m = DealObject.getMember(o, field.getName());
 			//查询的数据不为空且不为null
@@ -491,7 +516,7 @@ public class FoundSqlite {
 			if (!Objects.equals(m, "") && notTime) {
 				//拼接 key = 'value' , key = 'value' 数据
 				//如果添加过有数据字段
-				c.append(AND).append(field.getName()).append(" = '").append(m).append("' ");
+				c.append(AND).append(field.getName()).append(" = '").append(m).append("'");
 			}
 		}
 		return c.toString();
@@ -537,6 +562,11 @@ public class FoundSqlite {
 		//组合后续属性
 		Field[] fields = object.getClass().getDeclaredFields();
 		for (Field field : fields) {
+			// 字段黑名单排除
+			if (Arrays.asList(fieldFinalArray).contains(field.getName())) {
+				DealLog.log(tableName, field.getName(), "字段名称为预期外关键字,无法用于sql组装", xx);
+				continue;
+			}
 			if (!field.getName().equals(keyName)) {
 				xx.append(",").append(field.getName()).append(" text");
 			}
@@ -569,7 +599,7 @@ public class FoundSqlite {
 	 * @param object    包含数据的实体类
 	 * @return 添加条数
 	 */
-	public int insert(String tableName, Object object) {
+	public int insert(String tableName, Object object) throws TopException {
 		//执行添加语句
 		return set(getInsertSqliteStr(tableName, object), "添加");
 	}
@@ -791,6 +821,7 @@ public class FoundSqlite {
 	 * @return 查询结果list集合 查询结果以map保存 可强转处理为实体类
 	 */
 	public <T> List<T> get(Class<T> t, String getSql, Boolean log) {
+		DealLog.log("SqlLite查询类语句", getSql);
 		List<T> list = new ArrayList<>();
 		try (Statement statement = conn.createStatement(); ResultSet resultSet = statement.executeQuery(getSql)) {
 			//获得结果集结构信息,元数据
