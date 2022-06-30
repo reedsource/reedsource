@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 import static java.util.Calendar.*;
 import static top.ireed.general.TopConstant.*;
@@ -211,6 +212,16 @@ public class DealDate {
 		return cal.get(YEAR);
 	}
 
+
+	/**
+	 * 格式化并 将一个时间格式字符串格式化为sqlite数据库支持的时间文本
+	 *
+	 * @return 时间文本
+	 */
+	public static String getSqliteDate(String dateString) throws TopException {
+		return getSqliteDate(getDate(dateString));
+	}
+
 	/**
 	 * 格式化并 返回一个sqlite数据库支持的时间文本
 	 *
@@ -226,7 +237,7 @@ public class DealDate {
 	 * @return 时间文本
 	 */
 	public static String getSqliteDate() {
-		return getSqliteDate(null);
+		return getSqliteDate(new Date());
 	}
 
 	/**
@@ -391,21 +402,38 @@ public class DealDate {
 
 	/**
 	 * 根据时间字符串转化为时间对象
+	 * YYYY_MM_DD_HH_MM_SS
+	 * YYYY_MM_DD_HH_MM
+	 * YYYY_MM_DD
+	 * YYYY_MM
+	 * 英文时间
 	 *
 	 * @param dateString 时间字符串 格式 yyyy-MM-dd HH:mm:ss SSS 后面的时分秒都可以简化
 	 * @return 时间对象
 	 */
 	public static Date getDate(String dateString, String dateFormatString) throws TopException {
+		//默认转换中文时间
 		SimpleDateFormat formatter = new SimpleDateFormat(dateFormatString);
 		try {
 			return formatter.parse(dateString);
 		} catch (ParseException e) {
-			throw new TopException("时间字符串或时间格式异常");
+			//尝试转换英文时间
+			SimpleDateFormat formatterEn = new SimpleDateFormat(dateFormatString, Locale.ENGLISH);
+			try {
+				return formatterEn.parse(dateString);
+			} catch (ParseException e1) {
+				throw new TopException("时间字符串或时间格式异常");
+			}
 		}
 	}
 
 	/**
 	 * 根据标准时间字符串转化为时间对象
+	 * YYYY_MM_DD_HH_MM_SS
+	 * YYYY_MM_DD_HH_MM
+	 * YYYY_MM_DD
+	 * YYYY_MM
+	 * 英文时间
 	 *
 	 * @param dateString 时间字符串 格式 yyyy-MM-dd HH:mm:ss后面的时分秒都可以简化
 	 * @return 时间对象
@@ -423,7 +451,12 @@ public class DealDate {
 					try {
 						return getDate(dateString, YYYY_MM);
 					} catch (TopException e3) {
-						throw new TopException("时间字符串或时间格式异常", dateString);
+						//尝试转换英文格式字符串
+						try {
+							return getDate(dateString, EEEMMMDD);
+						} catch (TopException e4) {
+							throw new TopException("时间字符串或时间格式异常", dateString);
+						}
 					}
 				}
 			}
