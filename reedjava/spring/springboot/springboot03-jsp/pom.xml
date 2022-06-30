@@ -17,6 +17,7 @@
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>10.0.20</version>
 		</dependency>
 		<!-- servlet依赖的jar包start -->
 		<dependency>

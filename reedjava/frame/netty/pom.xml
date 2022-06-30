@@ -20,7 +20,9 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.3.0</version>
 				<configuration>
 					<!--打包结果末尾包含assembly id-->
 					<appendAssemblyId>true</appendAssemblyId>
@@ -38,10 +40,6 @@
 						<id>make-assembly</id>
 						<!-- 绑定到package生命周期 -->
 						<phase>package</phase>
-						<goals>
-							<!-- 只运行一次 -->
-							<goal>assembly</goal>
-						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -53,7 +51,7 @@
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.1.49.Final</version>
+			<version>4.1.77.Final</version>
 		</dependency>
 	</dependencies>
 </project>
