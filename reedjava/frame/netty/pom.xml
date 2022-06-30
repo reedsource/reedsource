@@ -22,7 +22,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.3.0</version>
+				<version>${plugins.version}</version>
 				<configuration>
 					<!--打包结果末尾包含assembly id-->
 					<appendAssemblyId>true</appendAssemblyId>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.1.77.Final</version>
+			<version>${netty.version}</version>
 		</dependency>
 	</dependencies>
 </project>

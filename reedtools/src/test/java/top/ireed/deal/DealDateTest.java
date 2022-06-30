@@ -186,6 +186,9 @@ public class DealDateTest {
 		DealDate dealDate = DealDate.getDateDayBeginEnd("2020-09-10 00:00:00", "2020-09-10 00:00:00", true, 2, 3);
 		Assert.assertEquals("2020-09-10 00:00:00.000", DealDate.getSqliteDate(dealDate.getBeginDate()));
 
+		DealDate dealDate2 = DealDate.getDateDayBeginEnd(DealDate.getDate("2020-09-10 00:00:00"), DealDate.getDate("2020-09-10 00:00:00"), true, 2, 3);
+		Assert.assertEquals("2020-09-10 00:00:00.000", DealDate.getSqliteDate(dealDate2.getBeginDate()));
+
 		DealDate dealDate1 = DealDate.getDateDayBeginEnd("", "", true, 2, 3);
 		DealLog.log("今天2天后的开始时间", DealDate.getSqliteDate(dealDate1.getBeginDate()));
 		DealLog.log("今天3天后的开始时间", DealDate.getSqliteDate(dealDate1.getEndDate()));
