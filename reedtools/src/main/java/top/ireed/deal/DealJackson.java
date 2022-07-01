@@ -69,12 +69,9 @@ public class DealJackson {
 	 * @return json
 	 * @throws TopException 异常
 	 */
-	public static Map toMap(String str) throws TopException {
-		try {
-			return mapper.readValue(str, Map.class);
-		} catch (JsonProcessingException e) {
-			throw new TopException("json转Map异常", e);
-		}
+	@SuppressWarnings("unchecked")
+	public static Map<Object, Object> toMap(String str) throws TopException {
+		return toObject(str, Map.class);
 	}
 
 
