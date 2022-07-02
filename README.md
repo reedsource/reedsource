@@ -49,7 +49,6 @@
 - **reedscript**
     - win下脚本script学习
     - 子模块 bat
-    - 子模块 vbs
 
 ## 三 代码要求
 
