@@ -60,8 +60,8 @@ public class FoundSqlite {
 	 */
 	private static final String SQLITE_LOG_SUM = "select count(1) from FoundSqliteLog";
 	private static final String ERR = "非约定模式,无法使用本方式";
-	public static final String AND = " AND ";
-	public static final String WHERE = " WHERE 1 = 1";
+	private static final String AND = " AND ";
+	private static final String WHERE = " WHERE 1 = 1";
 
 	/**
 	 * 黑名单 sqlite关键字,当建表表名为这些字段时,会出现异常
