@@ -60,4 +60,4 @@ rebel.xml
 
 ######################################################################
 # 项目账号数据屏蔽
-!*/data/reed.json
+reedtools/src/test/java/top/ireed/data/reed.json

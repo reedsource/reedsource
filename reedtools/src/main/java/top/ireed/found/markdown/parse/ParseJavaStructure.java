@@ -9,8 +9,12 @@ import cn.hutool.core.util.ReUtil;
 import cn.hutool.http.HTMLFilter;
 import top.ireed.general.TopException;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.List;
 
 import static top.ireed.general.TopConstant.*;
@@ -38,7 +42,7 @@ public class ParseJavaStructure {
 
 		//读取文件的内容
 		try (BufferedReader bufferedReader = new BufferedReader(
-				new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8), 512 * 1024)
+				new InputStreamReader(Files.newInputStream(path.toPath()), StandardCharsets.UTF_8), 512 * 1024)
 		) {
 			String line;
 
