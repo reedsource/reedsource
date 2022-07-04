@@ -214,5 +214,22 @@ public class DealString {
 		}
 	}
 
+	/**
+	 * Object组转String
+	 *
+	 * @param o object组
+	 * @return object组组合成的String
+	 */
+	public static String objectToString(Object... o) {
+		StringBuilder a = new StringBuilder();
+		for (int i = 0; i < o.length; i++) {
+			if (i == 0) {
+				a.append(o[i].toString());
+			} else {
+				a.append(" ").append(o[i].toString());
+			}
+		}
+		return a.toString();
+	}
 }
 

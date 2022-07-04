@@ -154,10 +154,10 @@ public class FoundSqliteTest {
 		//foundSqlite.update(new Model("2", "更新后的key", "更新后的value"));
 
 		//清空表
-//		fSqlite.set("DELETE FROM ModelTop", "清空");
+		fSqlite.set("DELETE FROM ModelTop", "清空");
 
 		//删除表
-//		fSqlite.set("DROP TABLE ModelTop", "删除表");
+		fSqlite.set("DROP TABLE ModelTop", "删除表");
 
 		//5. 手动关闭连接
 		fSqlite.close();

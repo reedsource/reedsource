@@ -4,6 +4,8 @@
  */
 package top.ireed.general;
 
+import top.ireed.deal.DealString;
+
 /**
  * 功能简述:
  * 〈topException异常类〉
@@ -14,22 +16,13 @@ package top.ireed.general;
  * reedsource@189.cn
  */
 public class TopException extends Exception {
-	/**
-	 * 自定义抛出异常
-	 *
-	 * @param msg 异常信息
-	 */
-	public TopException(String msg) {
-		super(msg);
-	}
 
 	/**
 	 * 自定义抛出异常
 	 *
-	 * @param msg 异常信息
-	 * @param o   拦截的异常信息
+	 * @param o 拦截的异常信息 多个异常将空格划分
 	 */
-	public TopException(String msg, Object o) {
-		super(msg + o.toString());
+	public TopException(Object... o) {
+		super(DealString.objectToString(o));
 	}
 }

@@ -42,15 +42,7 @@ public class DealLog {
 	 * @param o object对象  组
 	 */
 	public static void log(Object... o) {
-		StringBuilder a = new StringBuilder();
-		for (int i = 0; i < o.length; i++) {
-			if (i == 0) {
-				a.append(o[i].toString());
-			} else {
-				a.append(" ").append(o[i].toString());
-			}
-		}
-		logger.info(a.toString());
+		logger.info(DealString.objectToString(o));
 	}
 
 	/**
