@@ -5,11 +5,11 @@
 package top.ireed.deal;
 
 import cn.hutool.core.io.IoUtil;
+import top.ireed.general.TopException;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 /**
  * 功能简述:
@@ -29,7 +29,7 @@ public class DealIo {
 	 * @param file 生成文件的路径
 	 * @param str  文件的字符串
 	 */
-	public static void toFileIo(File file, String str) {
+	public static void toFileIo(File file, String str) throws TopException {
 		try {
 			//文件不存在  且  创建文件父级目录 创建文件
 			if (!file.exists() && (!DealFile.newFile(file.getParentFile()) || !file.createNewFile())) {
@@ -48,8 +48,33 @@ public class DealIo {
 			fop.close();
 			DealLog.log(file, "完成");
 		} catch (IOException e) {
-			DealLog.log(file, "写入到文件异常");
+			throw new TopException("写入到文件异常", e);
 		}
-
 	}
+
+	/**
+	 * 读取文件内容到字符串
+	 *
+	 * @param path 文件路径
+	 * @return 文件字符串
+	 */
+	public static String getFileIo(File path) throws TopException {
+		StringBuilder sb = new StringBuilder();
+		//读取文件的内容
+		try (BufferedReader bufferedReader = new BufferedReader(
+				new InputStreamReader(Files.newInputStream(path.toPath()), StandardCharsets.UTF_8), 512 * 1024)
+		) {
+			String line;
+
+			while ((line = bufferedReader.readLine()) != null) {
+				sb.append(line);
+				sb.append("\r\n");
+			}
+
+			return sb.toString();
+		} catch (IOException e) {
+			throw new TopException("读取文件内容到字符串异常", e);
+		}
+	}
+
 }

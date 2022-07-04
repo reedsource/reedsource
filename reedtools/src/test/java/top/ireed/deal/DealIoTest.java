@@ -2,6 +2,7 @@ package top.ireed.deal;
 
 import junit.framework.TestCase;
 import org.junit.Assert;
+import top.ireed.general.TopException;
 
 import java.io.File;
 
@@ -15,7 +16,7 @@ import java.io.File;
  */
 public class DealIoTest extends TestCase {
 
-	public void testToFile() {
+	public void testToFile() throws TopException {
 		DealIo.toFileIo(new File("D:\\cache\\io\\io测试数据.txt"), "测试内容111");
 		Assert.assertTrue(true);
 	}
