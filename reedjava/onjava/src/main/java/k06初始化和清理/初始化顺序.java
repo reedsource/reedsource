@@ -30,7 +30,7 @@ class Window {
 }
 
 class House {
-	Window w1 = new Window("在构造器前"); // Before constructor
+	Window w1 = new Window("在构造器前");
 
 	House() {
 		DealLog.log("构造器进入");
@@ -43,6 +43,5 @@ class House {
 		DealLog.log("f()");
 	}
 
-	//尾部
 	Window w3 = new Window("在构造器尾"); // At end
 }
