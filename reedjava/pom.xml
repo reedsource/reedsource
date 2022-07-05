@@ -47,7 +47,7 @@
 		<com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
 		<plugins.version>3.3.0</plugins.version><!--maven-assembly-plugin-->
 		<netty.version>4.1.77.Final</netty.version><!--netty-->
-		<javatools.version>1.0.0</javatools.version><!--reedtools工具集-->
+		<reedtools.version>1.0.0</reedtools.version><!--reedtools工具集-->
 
 		<spring-boot.version>2.7.0</spring-boot.version><!--springboot依赖版本-->
 		<spring-webmvc.version>5.3.20</spring-webmvc.version><!--Spring Web MVC-->
@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>top.ireed</groupId>
 			<artifactId>reedtools</artifactId>
-			<version>${javatools.version}</version>
+			<version>${reedtools.version}</version>
 		</dependency>
 		<!--糊涂工具-->
 		<dependency>
