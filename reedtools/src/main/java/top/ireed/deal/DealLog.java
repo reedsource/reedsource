@@ -70,8 +70,7 @@ public class DealLog {
 		StringBuilder a = new StringBuilder();
 		a.append(m.toString());
 		for (Object o1 : o) {
-			a.append("\r\n  --> ");
-			a.append(o1.toString());
+			a.append("\r\n  --> ").append(o1.toString());
 		}
 		logger.info(a.toString());
 	}
@@ -79,22 +78,13 @@ public class DealLog {
 	/**
 	 * 抛出异常字符串
 	 *
-	 * @param msg 异常字符串
+	 * @param o 异常信息组 打印结果多个异常将空格划分
 	 */
-	public static void logException(String msg, Object o) {
+	public static void logException(Object... o) {
 		try {
-			throw new TopException(msg + o);
+			throw new TopException(o);
 		} catch (TopException e) {
 			logger.info(e);
 		}
-	}
-
-	/**
-	 * 抛出异常字符串
-	 *
-	 * @param o 异常
-	 */
-	public static void logException(Object o) {
-		logException(null, o);
 	}
 }

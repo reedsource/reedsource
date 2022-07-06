@@ -20,11 +20,9 @@ public class DealFileTest {
 
 	@Test
 	public void getFile() {
-		Assert.assertTrue(DealFile.newFile(D_CACHE_PATH + "path1.txt"));
-	}
-
-	@Test
-	public void getFile1() {
-		Assert.assertTrue(DealFile.newFile(new File(D_CACHE_PATH + "path2.txt")));
+		DealLog.log(DealFile.newFile(D_CACHE_PATH + "全部当目录创建.冗余"));
+		DealLog.log(DealFile.newFile(new File(D_CACHE_PATH + "全部当目录创建.冗余2")));
+		DealLog.log(DealFile.newParentFile(D_CACHE_PATH + "创建父级目录//只创建父级目录.冗余"));
+		Assert.assertTrue(DealFile.newParentFile(new File(D_CACHE_PATH + "创建父级目录2//只创建父级目录2.冗余2")));
 	}
 }

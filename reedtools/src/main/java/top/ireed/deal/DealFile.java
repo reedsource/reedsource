@@ -20,7 +20,7 @@ public class DealFile {
 	}
 
 	/**
-	 * 根据目录字符串创建目录
+	 * 根据目录字符串创建目录 只创建目录,不校验是否是文件名
 	 *
 	 * @param fileString 目录字符串
 	 * @return 创建目录结果
@@ -28,18 +28,14 @@ public class DealFile {
 	public static Boolean newFile(String fileString) {
 		try {
 			File baFile = new File(fileString);
-			//目录不存在创建
-			if (!baFile.exists()) {
-				return baFile.mkdirs();
-			}
-			return true;
+			return newFile(baFile);
 		} catch (Exception e) {
 			return false;
 		}
 	}
 
 	/**
-	 * 根据目录对象创建目录
+	 * 根据目录对象创建目录  只创建目录,不校验是否是文件名
 	 *
 	 * @param file 目录对象
 	 * @return 创建目录结果
@@ -54,5 +50,18 @@ public class DealFile {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	public static Boolean newParentFile(String fileString) {
+		try {
+			File baFile = new File(fileString);
+			return newParentFile(baFile);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public static Boolean newParentFile(File file) {
+		return newFile(file.getParentFile());
 	}
 }

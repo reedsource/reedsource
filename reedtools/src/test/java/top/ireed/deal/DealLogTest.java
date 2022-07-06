@@ -31,7 +31,7 @@ public class DealLogTest {
 
 	@Test
 	public void logException() {
-		DealLog.logException("异常字符串,打包出现这一句话是正常的");
+		DealLog.logException("异常字符串", "打包出现这一句话是正常的");
 		Assert.assertTrue(true);
 	}
 }
