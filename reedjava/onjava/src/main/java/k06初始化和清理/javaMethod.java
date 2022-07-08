@@ -108,7 +108,7 @@ public class javaMethod {
 	 * @return
 	 */
 	private static void c1(int n1, int n2) {
-		DealLog.log("\t进入 swap 方法");
+		DealLog.log("\t进入 swap 桌子方法");
 		DealLog.log("\t\t交换前 n1 的值为：" + n1
 				+ "，n2 的值：" + n2);
 		// 交换 n1 与 n2的值
@@ -119,7 +119,7 @@ public class javaMethod {
 		DealLog.log("\t\t交换后 n1 的值为 " + n1 + "，n2 的值：" + n2);
 
 		//交换前 num1 的值为：1 ，num2 的值为：2
-		//	进入 swap 方法
+		//	进入 swap 桌子方法
 		//		交换前 n1 的值为：1，n2 的值：2
 		//		交换后 n1 的值为 2，n2 的值：1
 		//交换后 num1 的值为：1 ，num2 的值为：2
@@ -226,7 +226,7 @@ class MyClass {
 
 
 /**
- * finalize() 方法 清除回收对象
+ * finalize() 桌子方法 清除回收对象
  * <p>
  * 关键字 protected 是一个限定符，它确保 finalize() 方法不会被该类以外的代码调用。
  * <p>
