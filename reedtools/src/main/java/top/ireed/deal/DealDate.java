@@ -4,7 +4,6 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import top.ireed.general.TopException;
 
-import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -137,23 +136,6 @@ public class DealDate {
 	 */
 	public static DealDate getDateDayBeginEnd(Date beginDate, Date endDate, boolean change, int beginDateUndergo, int endDateUndergo) throws TopException {
 		return getDateDayBeginEnd(formatDateString(beginDate), formatDateString(endDate), change, beginDateUndergo, endDateUndergo);
-	}
-
-	/**
-	 * 专用于开始时间和结束时间的处理校验
-	 * <p>
-	 * 如果开始时间和结束时间不为空 返回时间
-	 * 都为空 且开启时间间隔 返回间隔天数时间
-	 * 开始时间大于结束时间 返回含错误文本的数据信息
-	 *
-	 * @param request          请求数据
-	 * @param change           是否需要默认增减时间
-	 * @param beginDateUndergo 开始时间增减 前正负后 当天为 0
-	 * @param endDateUndergo   结束时间增减 前正负后 当次为 0
-	 * @return 实体
-	 */
-	public static DealDate getDateDayBeginEnd(HttpServletRequest request, boolean change, int beginDateUndergo, int endDateUndergo) throws TopException {
-		return getDateDayBeginEnd(request.getParameter("beginDate"), request.getParameter("endDate"), change, beginDateUndergo, endDateUndergo);
 	}
 
 	/**
