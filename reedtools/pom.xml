@@ -24,6 +24,9 @@
 		<log4j.version>2.17.2</log4j.version><!--log4j依赖-->
 		<com.aliyun.core>4.3.2</com.aliyun.core><!--阿里云核心-->
 		<com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
+		<servlet.api.version>4.0.1</servlet.api.version><!--servlet.api-->
+		<compiler.version>2.1</compiler.version><!--maven-compiler-plugin-->
+		<jacoco.version>0.7.8</jacoco.version><!--jacoco-maven-plugin-->
 	</properties>
 
 	<dependencies>
@@ -80,7 +83,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version>
+			<version>${servlet.api.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -96,13 +99,13 @@
 					<target>1.8</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
-				<version>2.1</version>
+				<version>${compiler.version}</version>
 			</plugin>
 			<!--jacoco插件 sonar单元测试-->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.8</version>
+				<version>${jacoco.version}</version>
 				<executions>
 					<execution>
 						<goals>
