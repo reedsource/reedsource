@@ -6,6 +6,7 @@ package top.ireed.deal;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import top.ireed.entity.RE;
 import top.ireed.general.TopException;
 
 /**
@@ -25,6 +26,16 @@ public class DealLog {
 	 * 替代打印到控制台的日志,和打印到控制台效果一致
 	 */
 	private static final Logger logger = LogManager.getLogger("SYSTEM_OUT");
+
+
+	/**
+	 * 开发重点标记
+	 * 使用本方法时,表示本处是一个重点关注点
+	 * 需要在调用位置同步添加javadoc同时添加日志
+	 */
+	public static void GO(RE... o) {
+		log(o);
+	}
 
 	/**
 	 * 换行

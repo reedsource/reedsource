@@ -2,6 +2,7 @@ package top.ireed.deal;
 
 import org.junit.Assert;
 import org.junit.Test;
+import top.ireed.entity.RE;
 import top.ireed.model.Model;
 
 /**
@@ -20,6 +21,7 @@ public class DealLogTest {
 		DealLog.log();
 		DealLog.log("测试打印");
 		DealLog.log(new Model("6", "key"), new Model("7", "key"), new Model("8", "key"));
+		DealLog.GO(new RE("6", "key"), new RE("7", "key"), new RE("8", "key"));
 
 		DealLog.logTo(new Model("6", "key"), new Model("7", "key"));
 
