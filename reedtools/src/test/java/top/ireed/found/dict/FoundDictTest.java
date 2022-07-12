@@ -22,8 +22,9 @@ public class FoundDictTest extends TestCase {
 
 	public void testDict() throws TopException {
 
-		//注意 需要先更新配置文件
-		Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\reed.json")));
+		//注意 需要先更新配置文件 配置文件模版见 src/test/java/top/ireed/data/reed.json
+		//配置文件位置可以自定义修改
+		Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\reed\\reed.json")));
 
 		FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString());
 		DealLog.log(foundDict.dict("reed"));
