@@ -112,7 +112,12 @@ end
 --debug.debug：提供一个Lua提示符，让用户来检查错误的原因
 --debug.traceback：根据调用桟来构建一个扩展的错误消息
 
-xpcall(function(i) print(i) error('error..') end, function() print(debug.traceback()) end, 33)
+xpcall(function(i)
+    print(i)
+    error('error..')
+end, function()
+    print(debug.traceback())
+end, 33)
 --33
 --stack traceback:
 --stdin:1: in function <stdin:1>
@@ -124,15 +129,15 @@ xpcall(function(i) print(i) error('error..') end, function() print(debug.traceba
 --false        nil
 
 function myFunction ()
-    n = n/nil
+    n = n / nil
 end
 
-function myErrorHandler(err )
-    print( "ERROR:", err )
+function myErrorHandler(err)
+    print("ERROR:", err)
 end
 
 status = xpcall(myFunction, myErrorHandler)
-print( status)
+print(status)
 --执行以上程序会出现如下错误：
 --
 --ERROR:    test2.lua:2: attempt to perform arithmetic on global 'n' (a nil value)

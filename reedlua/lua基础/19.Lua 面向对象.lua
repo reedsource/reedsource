@@ -23,27 +23,27 @@ Account.withdraw(100.00)
 
 --以下简单的类包含了三个属性： area, length 和 breadth，printArea方法用于打印计算结果
 -- 元类
-Rectangle = {area = 0, length = 0, breadth = 0}
+Rectangle = { area = 0, length = 0, breadth = 0 }
 
 -- 派生类的方法 new
-function Rectangle:new (o,length,breadth)
+function Rectangle:new (o, length, breadth)
     o = o or {}
     setmetatable(o, self)
     self.__index = self
     self.length = length or 0
     self.breadth = breadth or 0
-    self.area = length*breadth;
+    self.area = length * breadth;
     return o
 end
 
 -- 派生类的方法 printArea
 function Rectangle:printArea ()
-    print("矩形面积为 ",self.area)
+    print("矩形面积为 ", self.area)
 end
 
 --创建对象
 --创建对象是为类的实例分配内存的过程。每个类都有属于自己的内存并共享公共数据
-r = Rectangle:new(nil,10,20)
+r = Rectangle:new(nil, 10, 20)
 
 --访问属性
 --我们可以使用点号(.)来访问类的属
@@ -57,25 +57,25 @@ r:printArea()
 
 print("\r\n====================-完整实例-====================")
 -- 元类
-Shape = {area = 0}
+Shape = { area = 0 }
 
 -- 基础类方法 new
-function Shape:new (o,side)
+function Shape:new (o, side)
     o = o or {}
     setmetatable(o, self)
     self.__index = self
     side = side or 0
-    self.area = side*side;
+    self.area = side * side;
     return o
 end
 
 -- 基础类方法 printArea
 function Shape:printArea ()
-    print("面积为 ",self.area)
+    print("面积为 ", self.area)
 end
 
 -- 创建对象
-myshape = Shape:new(nil,10)
+myshape = Shape:new(nil, 10)
 
 myshape:printArea()
 
@@ -84,31 +84,30 @@ myshape:printArea()
 print("\r\n====================-Lua 继承-====================")
 --继承是指一个对象直接使用另一对象的属性和方法。可用于扩展基础类的属性和方法。
 -- Meta class
-Shape = {area = 0}
+Shape = { area = 0 }
 -- 基础类方法 new
-function Shape:new (o,side)
+function Shape:new (o, side)
     o = o or {}
     setmetatable(o, self)
     self.__index = self
     side = side or 0
-    self.area = side*side;
+    self.area = side * side;
     return o
 end
 -- 基础类方法 printArea
 function Shape:printArea ()
-    print("面积为 ",self.area)
+    print("面积为 ", self.area)
 end
 
 --接下来的实例，Square 对象继承了 Shape 类:
 Square = Shape:new()
 -- Derived class method new
-function Square:new (o,side)
-    o = o or Shape:new(o,side)
+function Square:new (o, side)
+    o = o or Shape:new(o, side)
     setmetatable(o, self)
     self.__index = self
     return o
 end
-
 
 print("\r\n====================-完整实例-====================")
 --以下实例我们继承了一个简单的类，来扩展派生类的方法，派生类中保留了继承类的成员变量和方法：
@@ -177,5 +176,5 @@ print("\r\n====================-函数重写-====================")
 --Lua 中我们可以重写基础类的函数，在派生类中定义自己的实现方式：
 -- 派生类方法 printArea
 function Square:printArea ()
-    print("正方形面积 ",self.area)
+    print("正方形面积 ", self.area)
 end
