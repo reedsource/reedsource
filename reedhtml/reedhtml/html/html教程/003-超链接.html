@@ -1,0 +1,56 @@
+<!--
+HTML是有规范的!HTML的规范是由W3C组织来制定的!
+W3C通过DTD文档来指定HTML的规范
+HTML规范的主要内容:html中那些标记,这些标记中有那些属性,属性值是什么
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<HEAD>
+    <TITLE> New Document </TITLE>
+</HEAD>
+
+<BODY>
+
+<!--
+<h2>标题标记,从<h1>~<h6> 字体越来越小
+-->
+<h2>使用超链接跳转到外部的地址</h2>
+
+<!--
+超连接是使用<a></a>标记
+href="https://www.baidu.com/"  点击超链接文字之后跳转的地址
+title="百度一下" 当我们把鼠标放到超链接文字上面的时候显示的提示信息
+target="_blank" 在新窗口中打开目标地址
+-->
+<a href="https://www.baidu.com/" title="百度一下">百度一下(在本窗口中打开目标地址)</a>
+
+<br>
+
+<a href="https://www.baidu.com/" title="百度一下" target="_blank">百度一下(在新窗口中打开目标地址)</a>
+
+
+<hr>
+
+<h4>使用超链接在一个网站内部的不同页面之间相互跳转</h4>
+<!--
+在一个网站中,定位其他的页面的方式有两种
+1. 一个点,表示当前路径,可以忽略 ;例如: href="./001-我的第一个网页.html"
+2. 两个点,表示上一级路径,不能忽略 ; 例如: src="../img/1.jpg"
+-->
+
+<a href="001-第一个网页.html">001-我的第一个网页.html</a>
+<br>
+<a href="001-第一个网页.html">001-我的第一个网页.html</a>
+
+<br>
+<a href="html2/002-我的第二个网页.html">访问002.html</a>
+<br>
+<a href="html2/002-我的第二个网页.html">访问002.html</a>
+
+<hr>
+<h3>把一个图片做成超链接</h3>
+
+<a href="004-显示图片.html" title="点击图片显示大图"><img src="img/img.jpg" alt=""></a>
+
+</BODY>
+</HTML>

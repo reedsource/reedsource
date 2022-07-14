@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>列表的使用</title>
+</head>
+
+<body>
+列表分为两类，一是无序列表，一是有序列表<br>
+1.无序列表: 项目各条列间并无顺序关系，纯粹只是利用条列来呈现资料而已，此种无序标签，在各条列前面均有一符号以示区隔。<br>
+2.有序条列: 各条列之间是有顺序的，比如从1、2、3…一直延伸下去<br>
+无序列表
+有序列表
+目录列表
+定义列表
+菜单列表
+定义列表的标记
+列表项目的标记
+<hr>
+无序列表&lt;ul&gt;标记的使用
+<br>
+<!--
+    <LI>的属性type有三个选项,这三个选项都必须小写:
+    disc    实心园
+    circle  空心园
+    square  小方块
+
+无序列表
+使用<ul>
+   </ul>
+-->
+
+<ul>
+    <li>中国
+        <ul>
+            <li type="square">北京</li>
+            <li type="square">天津</li>
+            <li type="disc">上海</li>
+            <li type="circle">重庆</li>
+        </ul>
+    </li>
+    <li type="square">美国</li>
+    <li>俄罗斯</li>
+    <li>小日本</li>
+</ul>
+
+<!--
+有序列表
+
+使用
+<ol type= "xxx">
+</ol>
+xxx可以是A,a,数值,罗马数值
+相当于统一的设置了type的属性
+有序列表不能单独的添加type,否则会异常
+-->
+
+<hr>
+有序列表&lt;OL&gt;标记的使用 <br>
+
+<ol type="A">
+    <li>中国
+        <ol type="a">
+            <li>北京</li>
+            <li>天津</li>
+            <li>上海</li>
+            <li>重庆</li>
+        </ol>
+    </li>
+    <li>美国</li>
+    <li>俄罗斯</li>
+    <li>小日本</li>
+</ol>
+
+<hr>
+
+<ol type="I">
+    <li>上天
+        <ol type="a">
+            <li>飞机</li>
+            <li>火箭</li>
+        </ol>
+    </li>
+    <li>下海</li>
+    <li>跑路</li>
+</ol>
+
+</body>
+</html>

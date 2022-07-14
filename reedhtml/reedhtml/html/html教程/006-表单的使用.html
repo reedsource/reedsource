@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>无标题文档</title>
+</head>
+
+<body>
+<div style="text-align: center;">
+    <h3>注册新用户</h3>
+    <hr>
+    <!--
+    ----------------------------------------------------------------------------------------------------------------
+    html的表单,一般就是含提交功能的 编辑框+按钮的组合
+    客户填写完表单后→提交→数据提交给服务器的java程序→数据库处理并返回数据→返回到服务器→发送给客户
+    浏览器会对中文数据进行加密
+
+    表单使用<form></form>标记
+    ----------------------------------------------------------------------------------------------------------------
+    表单标记中的两个重要的属性
+    行动  action="" 这个表单提交给服务器中的那个Java程序.只有Java程序(Servlet/JSP)才能获取到表单中的数据.这里我们暂时用一个html页面来替代
+    方式  method 表单提交的方式,有两种方式
+    1.get方式: 表单中的数据会被显示到地址栏中,提交数据的格式: url?name=admin&pwd=123&repwe=123....
+               使用get方式提表单的时候,表单的数据有大小的限制,一般限制在1KB（255个字节）以下
+               表单的文件名等的合计数量,并不是文件大小
+               也就是有长度限制
+            注意:我们上传文件的时候,上传给服务器的是文件名称(然后服务通过IO来读取这个文件)
+    2.post方式: 表单中的数据不会显示到地址栏中,会被隐藏起来;表单提交的数据没有大小的限制
+    -->
+
+    <!--演示接收表单数据界面-->
+    <form action="007-接收表单的页面.html" method="get">
+        <!--
+        在表单中通过一个个的表单元素来负责收集用户的数据,表单元素大部被是<input>标记
+        <input>标记中有个type属性,不同的type属性值代表不同的输入框类型,type属性的值是固定的
+        -->
+
+        <!--
+        type="text" 表示一个单行文本输入框
+        name="uname" 是这个表单元素的名称,如果表单元素没有name属性,这个数据是不会被提交给服务器的
+
+        value="请输入用户名" 输入框中显示的提示信息.用户在输入框中输入的数据也就是这个输入框的value属性
+        例如:用户在输入框中输入张三,则这个输入框的value值就是"张三"
+
+        表单中提交给服务器的最终就是标记的value属性 ,例如 uname="admin",也就是把admin这个值提交给服务器
+        注意:如果标记中的value是中文,浏览器在提交数据的时候会自动对中文数据进行编码处理
+
+
+
+        readonly 是一个单属性,表示这个输入框是只读的,不能编辑.但是输入框中的数据会被提交给服务器
+        disabled(失效的) 也是一个单属性.表示让这个标记失效并且不能编辑.这样的话,这个表单元素的数据是不会被提交到服务器的
+        -->
+
+        <label>
+            姓名
+            <input type="text" name="uname" value="请输入用户名">
+        </label> <br>
+        <!--
+        <input type="password"> 表示密码输入框
+        用户在密码框中输入的值就是这个密码框的value属性
+        -->
+        <label>
+            密码
+            <input type="password" name="pwd">
+        </label> <br>
+        <label>
+            确认密码
+            <input type="password" name="repwd">
+        </label> <br>
+
+
+        <!--
+        type="radio"单选框.
+        多个单选框的name属性必须要一致,这样的话才能多选一
+        单选框的value属性是中文的情况下,浏览器会自动进行编码处理
+        单选框的value属性是为了转送数据时,方便提取单选框的内容,写与不写,都不影响显示效果
+        checked="checked"表示这个选项被默认的选中
+        checked 是一个单属性,可以写成checked="checked",有可以写成checked="true",也可以直接写成checked
+        -->
+        <label>
+            性别
+            <input type="radio" name="sex" value="nan" checked>
+        </label> 男
+        <label>
+            &nbsp;
+            <input type="radio" name="sex" value="女">
+        </label> 女 <br>
+
+
+        <!--
+        checkbox : 复选框
+        <input type="checkbox"> 表示复选框
+        多个复选框的name属性必须要一致
+        -->
+        <label>
+            爱好
+            <input type="checkbox" name="aihao" value="yundong" checked="checked">
+        </label>运动
+        <label>
+            &nbsp;
+            <input type="checkbox" name="aihao" value="meishi" checked>
+        </label>美食
+        <label>
+            &nbsp;
+            <input type="checkbox" name="aihao" value="yinyue" checked>
+        </label>音乐
+        <label>
+            &nbsp;
+            <input type="checkbox" name="aihao" value="dushu">
+        </label>读书
+        <label>
+            &nbsp;
+            <input type="checkbox" name="aihao" value="lvyou">
+        </label>旅游
+        <br>
+
+
+        <!--
+        option  : 选择
+         <select name="xueli"> 下拉列表框
+         selected 也是一个单属性,表示这个选项被默认的选中,可以写成selected="selected",也可以写成selected="true"
+        -->
+        <label>
+            学历
+            <select name="xueli">
+                <option value="gaozhong">高中</option>
+                <option value="dazhuan">大专</option>
+                <option value="benke" selected>本科</option>
+                <option value="shuoshi">硕士</option>
+            </select>
+        </label>
+        <br>
+
+
+        <!---
+        <input type="file"> 文件上传框
+        文件上传框在不同的浏览器中显示效果是不同的
+        文件选择框本身是有一个 选择文件按钮 和 未选择任何文件  提示的
+        也可以添加自己想要的后缀
+        -->
+        上传照片 <input type="file" name="photo"><br>
+        <br>
+
+
+        <!--
+        <input type="hidden"> 隐藏文本域,用户在页面中是看不到这个输入框的,暗中向服务器发生数据
+        隐藏文本域可以当作全局变量使用
+        可以当cookie使用
+        特殊情况下的标记保存文本的作用
+
+        -->
+        秋波 <input type="hidden" name="qiubo" value="qiutiandebocai">
+        <br>
+
+
+        <!--
+        <textarea> 表示多行文本输入框
+        cols : 报表列数,同时也是宽度
+        rows : 报表行数,同时也是高度
+        cols="50"  50列
+        rows="5"   5行
+
+        超过的部分无法添加数据
+        会自动添加下拉框
+        -->
+        <label>
+            个人介绍
+            <textarea cols="50" rows="5" name="des">这家伙很懒,什么都没有留下</textarea>
+        </label>
+        <br>
+
+        <!--
+        点击提交按钮,表单会被提交到服务器(具体来是说是提交该服务器中的某个Java程序)
+        点击重置按钮,会清空表单中的信息,将表单恢复到初始状态
+
+        submit  : 提交
+        reset   : 重置
+        submit是button的一个特例，也是button的一种，它把提交这个动作自动集成了
+
+        如果组件没有name属性,是无法提交数据的
+
+        reset会重置form内部的所有表单元素,作用域是自己本身在的form中
+        -->
+
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </form>
+
+    <br>
+    <!--
+    <input type="button" value="我是一个按钮" onClick="alert('你点击我干嘛啊?')" disabled="disabled">
+    -->
+</div>
+</body>
+</html>

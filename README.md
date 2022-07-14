@@ -76,10 +76,6 @@
 - **reedcss**
     - css学习
 
----
-
-- **reedjsp**
-    - jsp学习
 
 ## 三 代码要求
 

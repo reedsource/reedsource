@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>无标题文档</title>
+</head>
+
+<body>
+<div style="text-align: center;">
+    <h3>注册新用户</h3>
+    <hr>
+
+
+    <form action="007-接收表单的页面.html" method="get">
+
+        <!--
+        表格使用<table>标记来实现
+        <table border="1">
+        border="1" 表示表格有边框, border="0"表示表格没有边框
+        -->
+        <table border="1">
+            <!--
+            <tr>表示一行
+            -->
+            <tr>
+                <!--
+                <td>表示一列
+                align="right" 列中的数据居右对齐
+                align="left"  列中的数据居左对齐
+                -->
+                <td align="right">姓名</td>
+                <td align="left">
+                    <label>
+                        <input type="text" name="uname" value="请输入用户名">
+                    </label></td>
+            </tr>
+            <tr>
+                <td align="right">密码</td>
+                <td align="left">
+                    <label>
+                        <input type="password" name="pwd">
+                    </label></td>
+            </tr>
+            <tr>
+                <td align="right">确认密码</td>
+                <td align="left">
+                    <label>
+                        <input type="password" name="repwd">
+                    </label></td>
+            </tr>
+            <tr>
+                <td align="right">性别</td>
+                <td align="left">
+                    <label>
+                        <input type="radio" name="sex" value="nan" checked>
+                        男
+                    </label>
+                    <label>
+                        <input type="radio" name="sex" value="女">
+                        女
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">爱好</td>
+                <td align="left">
+                    <label>
+                        <input type="checkbox" name="aihao" value="yundong" checked="checked">
+                        运动
+                    </label>
+                    <label>
+                        <input type="checkbox" name="aihao" value="meishi" checked>
+                        美食
+                    </label>
+                    <label>
+                        <input type="checkbox" name="aihao" value="yinyue" checked>
+                        音乐
+                    </label>
+                    <label>
+                        <input type="checkbox" name="aihao" value="dushu">
+                        读书
+                    </label>
+                    <label>
+                        <input type="checkbox" name="aihao" value="lvyou">
+                        旅游
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">学历</td>
+                <td align="left">
+                    <label>
+                        <select name="xueli">
+                            <option value="gaozhong">高中</option>
+                            <option value="dazhuan">大专</option>
+                            <option value="benke" selected>本科</option>
+                            <option value="shuoshi">硕士</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">上传照片</td>
+                <td align="left">
+                    <input type="file" name="photo"></td>
+            </tr>
+            <tr>
+                <td align="right">秋波</td>
+                <td align="left">
+                    <input type="hidden" name="qiubo" value="qiutiandebocai"></td>
+            </tr>
+            <tr>
+                <td align="right">个人介绍</td>
+                <td align="left">
+                    <label>
+                        <textarea cols="50" rows="5" name="des">这家伙很懒,什么都没有留下</textarea>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <!--
+                colspan="2" 把两列合并成一列
+                -->
+                <td align="center" colspan="2">
+                    <input type="submit" value="提交"><input type="reset" value="重置"></td>
+            </tr>
+
+        </table>
+    </form>
+
+
+    <hr>
+
+
+    <!--
+    <input type="button" value="我是一个按钮" onClick="alert('你点击我干嘛啊?')" disabled="disabled">
+    -->
+
+    <!--
+    colspan  :  栏宽
+    rowspan  :  行宽
+    -->
+    <table width="200" border="1">
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="4">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<br>
+
+</body>
+</html>

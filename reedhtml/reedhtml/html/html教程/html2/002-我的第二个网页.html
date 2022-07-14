@@ -1,0 +1,102 @@
+<!--
+html标记是由规范的,是由w3c组织维护的
+DOCTYPE 就是说明HTML的使用规范(HTML的具体规范是由DTD定义的)
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <!--
+    让浏览器按照UTF-8编码来解析这个html网页
+    -->
+    <meta charset="UTF-8" content="">
+    <title>无标题文档</title>
+</head>
+
+<body>
+
+段落标记的使用
+<br>
+
+<p> 由标签所标识的文字，代表同一个段落的文字。不同段落间的间距等于连续加了两个换行符，也就是要隔一行空白行，用以区别文字的不同段落
+</p>
+
+<p> 由标签所标识的文字，代表同一个段落的文字。不同段落间的间距等于连续加了两个换行符，也就是要隔一行空白行，用以区别文字的不同段落
+</p>
+
+<hr>
+原样显示标记 pre标记
+<br>
+
+
+<!--
+    pre表示原样输出,创建html文件时是什么格式显示,就以什么格式显示
+-->
+<span style="font-size: 172%; ">
+     <pre>
+          百日依山尽
+             黄河入海流
+                欲穷千里目
+                   功能上一层楼
+     </pre>
+
+    <hr>
+    <pre>
+      君不见黄河之水天上来
+            奔流到海不复回
+     君不见高堂明镜悲白发
+            朝如青丝暮成雪
+     </pre>
+    <hr>
+
+    <!--在 HTML 5 中，<center>标签被废弃,使用 CSS 语法居中代替 -->
+
+    <div style="text-align: center;">
+        居中显示标记center
+        <br>
+        故人西辞黄鹤楼, <br>
+        烟花三月下扬州。<br>
+        孤帆远影碧空尽，<br>
+        唯见长江天际流。<br>
+    </div>
+    <hr>
+        尝试默认显示格式为居左
+    <hr>
+
+    <!--
+       左括号转译添加 &lt
+       右括号转译添加 &gt
+    -->
+
+    我们想要在浏览器中显示&lt;font&gt;标记
+    <br>
+    在html&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页&nbsp;&nbsp;面&nbsp;&nbsp;&nbsp;中 需 要显示空格,需要使用&+nbsp符号,没有+号;
+
+</span>
+
+
+<hr>
+
+标题标记从&lt;h1&gt;~&lt;h6&gt;,字体越来越小
+
+<br>
+<h1>这是H1标题的效果</h1>
+<h2>这是H2标题的效果</h2>
+<h6>这是H6标题的效果</h6>
+
+<!--
+当调用上级目录文件或资源时,必须在前面添加..,不可省略
+-->
+<hr>
+<a href="../003-超链接.html">访问003.html</a>
+
+<br>
+<hr>
+<span style="color: #7fff00; font-size: x-large; ">
+我们在一个页面中也可以访问另外一个页面中的某个锚点 <br>
+</span>
+<hr>
+<a href="../003-超链接的使用补书签锚点.html#h3">003-超链接的使用补书签锚点.html</a>
+
+</body>
+</html>
