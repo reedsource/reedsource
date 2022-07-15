@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery绑定鼠标移进移出事件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // jQuery对象的ready()方法和window.onload功能是类似的,它们的区别:
+        // jQuery对象的ready()方法首先执行,window.onload后执行.
+        // 注意,这两个方法执行的时候,页面都已经加载完成
+        //        window.onload = function(){
+        //            alert("我是window.onload,你是第二眼看到我的");
+        //        }
+        //
+        //        jQuery(function(){
+        //            alert("我是jQuery()方式,你是第一眼看到我的!");
+        //        });
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $(function () {
+            // 为页面元素绑定事件，即对于指定页面元素，当某个事件发生后，执行指定动作,绑定时间的不同方式
+
+            // =========================================================================================================
+            //  方式1:
+            //            $("div").mouseover(function () {
+            //                alert("鼠标进入标记");
+            //            });
+
+            // =========================================================================================================
+            // 方式2:给标记绑定事件的时候可以调用jQuery对象上面的bind()方法
+            // bind(type, [data], fn)
+            //  type：事件类型，字符串类型，若要绑定多个事件，事件间使用空格分隔。jQuery 提
+            //    供可以绑定的事件有：blur, focus, focusin, focusout, load, resize, scroll, unload, click,
+            //    dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, change, select,
+            //    submit, keydown, keypress, keyup 等。
+            //  data：作为event.data 属性值传递给事件对象的额外数据对象。
+            //  fn：事件发生后所执行的动作，即处理函数。
+
+            const $div = $("div");
+            $div.bind("mouseover", function () {
+                $div.html("<span style='color: blue; '>鼠标进入标记</span>");
+            });
+
+            $div.bind("mouseout", function () {
+                $div.text("<span style='color: blue; '>鼠标退出标记</span>");
+            })
+        })
+
+    </script>
+
+    <style type="text/css">
+        div {
+            background: red;
+            width: 600px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<span style="color: blue; ">鼠标进入标记</span>
+<div></div>
+</body>
+</html>

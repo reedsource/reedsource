@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>001-JQuery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            background: red;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+
+
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中标识符的命名规则:第一个字符必须是字母,_或$;
+        // 如果我们以后使用的其他的JS类库,也是以$开头的.这样的话会和jQuery产生冲突
+        // 如何来避免冲突呢?
+        // 可以使用如下的方式避免冲突!
+
+        // ======================================================================================================
+        // 废除jQuery以前的使用方式(也就是使用$()的方式).如果在需要使用jQuery.就需要使用我们重新定义的w
+        const w = jQuery.noConflict();
+
+        // $()方式已经被废除了
+        //        $(function(){
+        //            alert("呵呵,你是看不到我的!");
+        //        })
+
+        // 如果在需要使用jQuery.就需要使用我们重新定义的w
+        w(function () {
+            alert("呵呵,又见面了!");
+        })
+
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

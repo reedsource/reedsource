@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery清空与删除操作</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        #one {
+            background: red;
+            width: 200px;
+            height: 200px;
+        }
+
+        #two {
+            background: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 清空节点操作,是指删除节点中的子节点及其当前节点的文本信息,使用的是jQuery对象上面的empty()方法
+            // 删除节点操作,是值删除该节点(包括该节点,该节点的文本,该节点的子节点),使用的是jQuery对象上面的remove()方法
+
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            const $div = $("#one");
+
+            //清空节点操作,是指删除节点中的子节点及其当前节点的文本信息,使用的是jQuery对象上面的empty()方法
+            $("#emptyBtn").click(function () {
+                $div.empty();
+            });
+
+            // 删除节点操作,是值删除该节点(包括该节点,该节点的文本,该节点的子节点),使用的是jQuery对象上面的remove()方法
+            $("#removeBtn").click(function () {
+                $div.remove();
+            });
+        })
+
+
+    </script>
+</head>
+<body>
+<input type="button" id="emptyBtn" value="清空first:empty()"/>
+<input type="button" id="removeBtn" value="删除first:remove()"/>
+<br><br>
+
+<div id="one">
+    first
+    <div id="two">second</div>
+</div>
+</body>
+</html>

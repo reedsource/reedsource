@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery层级选择器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            background: gray;
+        }
+    </style>
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 层次选择器,就是利用标记和标记之间的父子关系,兄弟关系选择相应的标记!
+            // 1.选择所有后代选择器,包括之间后代和间接后代,语法:$("A B")
+            // 2.直接后代选择器,但是不包括间接后代,语法:$("A>B");
+            // 3.下一个兄弟选择器,只选择下一个兄弟,不包括上一个兄弟和当前标记 ,语法:$("A+B")
+            // 4.剩余兄弟选择器,选择后面的所有兄弟标记,但是不包括当前标记和前面的标记,语法:$("A~B")
+            // 5.获取所有兄弟选择器,包括之前的兄弟和之后的兄弟,需要使用一个函数siblings()
+
+
+            // ============================================================================================
+            // 1.选择所有后代选择器,包括之间后代和间接后代,语法:$("A B")
+            $("#btn01").click(function () {
+                // 选择body中的所有div子标签
+                //$("body div").css("background","yellow");
+
+                // 获取div中的class为son的标记
+                $("div .son").css("background", "yellow");
+            });
+
+            // 2.直接后代选择器,但是不包括间接后代,语法:$("A>B");
+            $("#btn02").click(function () {
+                // 选择body下的直接div子标签
+                $("body > div").css("background", "yellow");
+            });
+
+            // 3.下一个兄弟选择器,只选择下一个兄弟,不包括上一个兄弟和当前标记 ,语法:$("A+B")
+            $("#btn03").click(function () {
+                // 选择id为one的下一个兄弟div
+                $("#one + div").css("background", "yellow");
+            });
+
+            // 4.剩余兄弟选择器,选择后面的所有兄弟标记,但是不包括当前标记和前面的标记,语法:$("A~B")
+            $("#btn04").click(function () {
+                // 选择id为two的所有后面的兄弟div
+                $("#two~div").css("background", "yellow");
+            });
+
+            // 5.获取所有兄弟选择器,包括之前的兄弟和之后的兄弟,需要使用一个函数siblings()
+            $("#btn05").click(function () {
+                // 选择id为two的所有兄弟div
+                $("#two").siblings("div").css("background", "yellow");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<!--定义被选择对象-->
+<div id="one">我是div01</div>
+<div id="two">我是div02</div>
+<div>
+    我是div03
+    <div class="son">我是div03的子div</div>
+    <div class="son">我是div03的子div</div>
+</div>
+
+<!--<div class="son">我是div03的子div</div>-->
+<!--<div class="son">我是div03的子div</div>-->
+
+<div>我是div04</div>
+<span>我是span标签</span>
+<br>
+<!--定义按钮-->
+<input type="button" id="btn01" value="选择body中的所有div子标签"/>
+<input type="button" id="btn02" value="选择body下的直接div子标签"/>
+<input type="button" id="btn03" value="选择id为one的下一个兄弟div"/>
+<input type="button" id="btn04" value="选择id为two的所有后面的兄弟div"/>
+<input type="button" id="btn05" value="选择id为two的所有兄弟div"/>
+</body>
+</html>

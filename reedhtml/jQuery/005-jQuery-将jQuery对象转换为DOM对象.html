@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>将jQuery对象转换为DOM对象</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 使用DOM方式给按钮添加点击事件
+        // 方式1:
+        //        window.onload = function(){
+        //            var btnObj = document.getElementById("myBtn");
+        //            btnObj.onclick = function(){
+        //                alert("按钮被点击了!");
+        //            }
+        //        }
+
+        // 方式2:
+        //        function test() {
+        //            var btnObj = document.getElementById("myBtn");
+        //            btnObj.onclick = function () {
+        //                alert("按钮被点击了!");
+        //            }
+        //        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 使用jQuery方式给按钮添加点击事件的处理句柄
+        $(function () {
+            //====================================================================================================
+            // 使用DOM方式给按钮添加点击事件
+            // var btnObj = document.getElementById("myBtn");
+            // btnObj.onclick = function () {
+            //    alert("按钮被点击了!");
+            // }
+
+            //====================================================================================================
+            // 使用jQuery方式给按钮添加点击事件的处理句柄
+
+            //----------------------------------------------------------------------------------------------------
+            // 获取DOM对象
+            const btnObj = document.getElementById("myBtn");
+            // 将DOM对象转换为jQuery对象
+            //var $btn = $(btnObj);
+            console.log(btnObj)
+
+            // 通过标记的id属性来获取jQuery对象!
+            const $btn = $("#myBtn");
+
+            //----------------------------------------------------------------------------------------------------
+            // 使用jQuery方式的时候和DOM方式的区别:
+            // DOM方式是onxxx ,而jQuery方式是xxx,没有on
+            $btn.click(function () {
+                //alert("按钮被点击了");
+
+                // 使用DOM方式获取文本框的值
+                // var  nameInput = document.getElementById("username");
+                //  alert("你输入的名字是(DOM方式):" + nameInput.value );
+
+                // 使用jQuery方式获取文本框的值
+                const $name = $("#username");// 通过标记的id属性来获取jQuery对象!
+                alert("你输入的名字是(jQuery方式):" + $name.val());
+
+                // jQuery的实质是一个数组,数组中的元素是一个个的DOM对象
+                // 可以使用数组下标方式或jQuery对象上面的get(index)方式取得数组中的元素
+                // var nameInput = $name[0];
+                const nameInput = $name.get(0);
+                alert("你输入的名字是(DOM方式):" + nameInput.value);
+            });
+        })
+    </script>
+
+</head>
+<!--
+onload="test()"
+-->
+<body>
+<label for="username">姓名：</label><input type="text" id="username" name="username"/>
+<input type="button" id="myBtn" value="提交"/>
+</body>
+</html>

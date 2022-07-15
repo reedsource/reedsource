@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>001-JQuery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        div {
+            background: red;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <!--
+    注意:在引入外部JS文件的时候,必须要有script的开始标记和结束标记
+    并且开始标记和结束标记之间不能有其他的JS代码
+    -->
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        // 获取document对象,并且将其转换为jQuery对象,然后调用jQuery对象上面的ready()方法
+        // ready()方法中指定了回调函数
+        // jQuery对象的ready()方法来页面加载完成之后会自动的调用
+        // 注意:编写代码的时候,括号永远都是成对出现的,
+        $(document).ready(function () {
+            alert("Hello,jQuery!");
+        })
+
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery过滤选择器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            background: gray;
+            width: 200px;
+            height: 100px;
+        }
+
+        .son {
+            background: cyan;
+            width: 180px;
+            height: 20px;
+        }
+    </style>
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 属性过滤选择器,通过对标记中的属性进行过滤,选择相应的标记
+            // 1.选择包含指定属性的元素,语法:$("A[属性]")
+            // 2.选择属性值为指定值的元素,语法:$("A[属性='属性值']")
+            // 3.选择属性值不等于指定值的元素,语法:$("A[属性!='属性值']")
+            // 4.选择属性值以指定值开头的元素,语法:$("A:[属性^='属性值']") ^字符的位置在键盘6的上半部分
+            // 5.选择属性值以指定值结尾的元素,语法:$("A:[属性$='属性值']")
+            // 6.选择属性值包含指定值的元素,语法:$("A[属性*='属性值']")
+            // 7.组合属性选择器,语法:$("A[][]")
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 1.选择包含指定属性的元素,语法:$("A[属性]")
+            $("#btn01").click(function () {
+                //选择包含title属性的div元素
+                $("div[title]").css("background", "blue");
+            });
+
+            // 2.选择属性值为指定值的元素,语法:$("A[属性='属性值']")
+            $("#btn02").click(function () {
+                // 选择title属性值为test的div元素
+                $("div[title='test']").css("background", "blue");
+
+                // 如果需要需要选择页面中的复选框 <input type='checkbox' name='aihao'>
+                //var $chekcbox = $("input[type='checkbox']")
+            });
+
+            // 3.选择属性值不等于指定值的元素,语法:$("A[属性!='属性值']")
+            $("#btn03").click(function () {
+                // 选择title属性值不为test的div元素,包括没有title属性的元素,也会被认为title!=test
+                $("div[title!='test']").css("background", "blue");
+            });
+
+            // 4.选择属性值以指定值开头的元素,语法:$("A:属性^='属性值'") ^字符的位置在键盘6的上半部分
+            $("#btn04").click(function () {
+                // 选择title属性以'te'开头的div元素
+                $("div[title^='te']").css("background", "blue");
+            });
+
+            // 5.选择属性值以指定值结尾的元素,语法:$("A:[属性$='属性值']")
+            $("#btn05").click(function () {
+                // 选择title属性以'st'结尾的div元素
+                $("div[title$='st']").css("background", "blue");
+            });
+
+            // 6.选择属性值包含指定值的元素,语法:$("A[属性*='属性值']")
+            $("#btn06").click(function () {
+                // 选择title属性包含'es'的div元素
+                $("div[title*='es']").css("background", "yellow");
+            });
+
+            // 7.组合属性选择器,语法:$("A[][]")
+            $("#btn07").click(function () {
+                // 选择title属性包含'es'的并且含有id属性的div元素
+                $("div[title*='es'][id]").css("background", "yellow");
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+<!--定义被选择对象-->
+<div id="one" title="test">zero</div>
+<div class="c02" title="myTest">one</div>
+<div>
+    two
+    <div id="three" class="son">three</div>
+    <div title="test" class="son">four</div>
+</div>
+<div title="testCase">five</div>
+<div></div>
+<span>我是span标签</span>
+<br><br>
+<!--定义按钮-->
+<input type="button" id="btn01" value="选择包含title属性的div元素"/>
+<input type="button" id="btn02" value="选择title属性值为test的div元素"/>
+<input type="button" id="btn03" value="选择title属性值不为test的div元素"/>
+<input type="button" id="btn04" value="选择title属性以'te'开头的div元素"/>
+<input type="button" id="btn05" value="选择title属性以'st'结尾的div元素"/>
+<input type="button" id="btn06" value="选择title属性包含'es'的div元素"/>
+<input type="button" id="btn07" value="选择title属性包含'es'的并且含有id属性的div元素"/>
+</body>
+</html>

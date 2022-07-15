@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery克隆节点</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        #one {
+            background: red;
+            width: 200px;
+            height: 200px;
+        }
+
+        #two {
+            background: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 克隆节点,也就是复制节点,使用的是jQueyr对象上面的clone()方法,返回新的节点对象
+            // clone()方法有两种使用形式,
+            // 1.clone()方法没有参数的时候,仅仅是克隆这个节点
+            // 2.clone(true),方法有参数的时候,不仅要克隆节点,而且还需要克隆节点的处理函数
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            $("#emptyBtn").click(function () {
+                $("div").empty();
+            });
+
+            // 1.clone()方法没有参数的时候,仅仅是克隆这个节点
+            $("#cloneBtn01").click(function () {
+                // 克隆two几点
+                const $obj = $("#two").clone();
+
+                // 把克隆出来的节点添加到one的下面.两个元素之间有父子关系
+                $("#one").append($obj);
+            });
+
+            // 2.clone(true),方法有参数的时候,不仅要克隆节点,而且还需要克隆节点的处理函数
+            $("#cloneBtn02").click(function () {
+                // 克隆emptyBtn这个节点并且克隆节点的处理函数
+                const $obj = $("#emptyBtn").clone(true);
+
+                // 把新的节点添加到cloneBtn02的后面,两个元素是同级的关系
+                $($obj).insertAfter("#cloneBtn02");
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<input type="button" id="emptyBtn" value="清空first"/>
+<input type="button" id="cloneBtn01" value="克隆second"/>
+<input type="button" id="cloneBtn02" value="克隆'清空first按钮'"/>
+<br><br>
+
+<div id="one">
+    first
+    <div id="two">second</div>
+</div>
+</body>
+</html>

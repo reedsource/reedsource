@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery失去焦点事件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 给文本框绑定失去焦点事件
+            $("input[type='text']").bind("blur", function () {
+                //  $(this)代表当前文本框对应的jQuery对象
+                alert("你输入的名字是:" + $("input[type='text']").val() + "-" + $(this).val());
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+姓名：<input type="text" name="username"/><br>
+密码：<input type="password" name="password"/><br>
+</body>
+</html>

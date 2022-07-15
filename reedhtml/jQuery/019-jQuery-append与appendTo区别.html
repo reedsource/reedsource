@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery中append与appendTo区别</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#append").click(function () {
+                // 在<p>的末尾追加<b>,最终<b>是<p>的子元素
+                $("p").append($("<b>这是新追加的内容</b>"))
+            });
+
+            $("#appendTo").click(function () {
+                // 把<b>追加到<p>后面,最终<b>是<p>的子元素
+                $("<b>这是新追加的内容</b>").appendTo($("p"));
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button id="append">在每个 p 元素的结尾添加内容append</button>
+<button id="appendTo">在每个 p 元素的结尾添加内容appendTo</button>
+</body>
+</html>

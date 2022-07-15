@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery动画效果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $div = $("div");
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 标记的显示和隐藏,调用jQuery对象上面的show()/hide()方法
+            $("#hideBtn").click(function () {
+                $div.hide(1000);
+            });
+
+            $("#showBtn").click(function () {
+                $div.show(1000);
+            });
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 控制标记逐渐显示/逐渐淡出,调用jQuery()对象上面的fadeIn()/fadeOut();
+            $("#fadeInBtn").click(function () {
+                $div.fadeIn(1000);
+            });
+
+            $("#fadeOutBtn").click(function () {
+                $div.fadeOut(1000);
+            });
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 控制标记向上滑动退回/向下滑动显示,要调用jQuery对象上面的slideUp()/slideDown()
+            $("#slideUpBtn").click(function () {
+                $div.slideUp(1000);
+            });
+
+            $("#slideDownBtn").click(function () {
+                $div.slideDown(1000);
+            });
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 自定义动画的使用,使用jQuery对象上面animate()函数，参数不同，其动画效果不同。但，动画要应用 的元素，
+            // 必须是可见的，即CSS 中不能是display 赋值为none
+            // animate( {key:value} )的参数为CSS 中的属性键值对。
+            $("#animateBtn01").click(function () {
+                $div.animate({"margin-left": 300});
+                $div.animate({"margin-top": 300});
+            });
+
+            $("#animateBtn02").click(function () {
+                $div.animate({"margin-left": 50}, 1000);
+
+            });
+
+            $("#animateBtn03").click(function () {
+                $div.animate({"margin-left": 300, "opacity": "hide"}, 1000);
+                $div.animate({"margin-top": 300, "opacity": "show"}, 1000);
+            });
+
+            $("#animateBtn04").click(function () {
+                $div.animate({"margin-left": 0});
+                $div.animate({"margin-top": 0});
+            });
+
+        })
+    </script>
+</head>
+<body>
+<!--定义测试对象-->
+<div></div>
+
+<br>
+
+<!--定义按钮-->
+<input type="button" id="hideBtn" value="隐藏"/>
+<input type="button" id="showBtn" value="显示"/>
+<br><br>
+<input type="button" id="fadeInBtn" value="渐显"/>
+<input type="button" id="fadeOutBtn" value="渐淡"/>
+<br><br>
+<input type="button" id="slideUpBtn" value="向上滑动退出"/>
+<input type="button" id="slideDownBtn" value="向下滑动显示"/>
+<br><br>
+<input type="button" id="animateBtn01" value="移动到指定位置"/>
+<input type="button" id="animateBtn04" value="返回初始位置"/>
+<input type="button" id="animateBtn02" value="在指定的时间移动到指定位置"/>
+<input type="button" id="animateBtn03" value="移动到指定位置过程中先隐藏后显示"/>
+
+</body>
+</html>

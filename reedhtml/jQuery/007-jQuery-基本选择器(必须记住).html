@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery基本选择器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            background: gray;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        // 所谓的jQuery选择符,就是获取jQuery对象的不同方式.jQuery中有九种选择符
+
+        $(function () {
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+            // 基本选择符
+            // 1.标识选择符,通过标记的id属性来获取jQuery对象,语法:$("#id值")
+            // 2.类选择符,通过标记的class属性来获取jQuery对象,语法:$(".class值")
+            // 3.标记选择符,通过标记名称来获取jQuery对象,语法:$("标记名称")
+            // 4.选择所有标记选择符,语法:$("*")
+            // 5.组合选择符,也就是同时选中多个标记,语法:$("A,B")
+
+            // background背景,本css函数自带的可选参数其中的一个,
+            // 改变符合条件的组件的背景颜色
+
+
+            // 1.标识选择符,通过标记的id属性来获取jQuery对象,语法:$("#id值")
+            $("#btn01").click(function () {
+                // 选择id为one的元素
+                const $obj = $("#one");
+                $obj.css("background", "red");
+            });
+
+            // 2.类选择符,通过标记的class属性来获取jQuery对象,语法:$(".class值")
+            $("#btn02").click(function () {
+                // 选择class为two的元素
+                $(".two").css("background", "yellow");
+            });
+
+            // 3.标记选择符,通过标记名称来获取jQuery对象,语法:$("标记名称")
+            $("#btn03").click(function () {
+                // 选择所有div元素
+                const $div = $("div");
+                alert("数组的长度:" + $div.length);
+                $div.css("background", "blue");
+
+            });
+
+            // 4.选择所有标记选择符,语法:$("*")
+            $("#btn04").click(function () {
+                // 选择所有元素
+                $("*").css("background", "yellow");
+            });
+
+            // 5.组合选择符,也就是同时选中多个标记,中间用,号分隔,语法:$("A,B")
+            $("#btn05").click(function () {
+                // 选择id为one与所有span元素
+                $("#one,span").css("background", "red");
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<!--定义被选择对象-->
+<div id="one" class="two"></div>
+<br>
+
+<div class="two"></div>
+<br>
+
+<div></div>
+<br>
+<span>我是span标签</span>
+<br>
+<!--定义按钮-->
+<input type="button" id="btn01" value="选择id为one的元素"/>
+<input type="button" id="btn02" value="选择class为two的元素"/>
+<input type="button" id="btn03" value="选择所有div元素"/>
+<input type="button" id="btn04" value="选择所有元素"/>
+<input type="button" id="btn05" value="选择id为one与所有span元素"/>
+</body>
+</html>

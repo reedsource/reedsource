@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>jQuery可见性过滤器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            background: red;
+            width: 200px;
+            height: 100px;;
+        }
+
+        .other {
+            background: cyan;
+            width: 180px;
+            height: 20px;
+            display: none;
+        }
+    </style>
+
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 设置标记是否可见有两种方式: (1).在css中是设置display :none; (2).隐藏文本域 <input type="hidden">
+            // 可见性过滤器,通过对标记是否可见的特性来选择相应的标记
+            // 1.选择所有可见的标记,$("A:visible");
+            // 2.选择所有不可见的元素,语法:$("A:hidden")
+            // 3.使用for循环对jQuery对象进行遍历
+            // 4.使用jQuery对象上面的each()方法遍历jQuery对象
+
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 1.选择所有可见的标记,$("A:visible");
+            $("#btn01").click(function () {
+                //选择所有可见div
+                const $div = $("div:visible");
+                $div.css("background", "yellow");
+                alert("数组的长度是:" + $div.length);
+            });
+
+            // 2.选择所有不可见的元素,语法:$("A:hidden")
+            $("#btn02").click(function () {
+                // 选择所有div中不可见的元素,并且让其显示出来
+                $("div:hidden").show(3000);
+
+            });
+
+            // 3.使用for循环对jQuery对象进行遍历
+            $("#btn03").click(function () {
+                // 选择所有隐藏域文本框并显示其value值(for遍历)
+                // jQuery对象中有多个元素,我们通过jQuery对象上面的length/size()取得数组的长度
+                // 通过jQuery对象上面的索引或get(index)方法取得jQuery对象中的DOM对象
+                const $input = $("input:hidden");
+                alert("数组的长度是:" + $input.length + "," + $input.size());
+
+                for (let i = 0; i < $input.size(); i++) {
+                    const domObj = $input[i];
+                    alert(domObj.value + "," + $(domObj).val());
+                }
+            });
+
+            // 4.使用jQuery对象上面的each()方法遍历jQuery对象
+            $("#btn04").click(function () {
+                // 选择所有隐藏域文本框并显示其value值(foreach()函数遍历)
+                const $input = $("input:hidden");
+
+                // 给jQuery对象上面的each()方法指定回调函数,回调函数需要两个参数
+                // index是数组的下标;domObj是jQuery数组中的DOM对象
+                $input.each(function (index, domObj) {
+                    alert("第" + index + "个value是:" + domObj.value);
+                });
+            });
+        })
+
+    </script>
+</head>
+<body>
+<!--定义被选择对象-->
+<!--定义隐藏域文本框-->
+<input type="hidden" value="v01"/>
+<input type="hidden" value="v02"/>
+<input type="hidden" value="v03"/>
+<!--定义块-->
+<div id="one">zero</div>
+<div id="two" class="c02">one</div>
+<div>
+    two
+    <div class="other">three</div>
+    <div id="son" class="other">four</div>
+</div>
+<div class="other">five</div>
+<div></div>
+<span>我是span标签</span>
+<br>
+<!--定义按钮-->
+<input type="button" id="btn01" value="选择所有可见div"/>
+<input type="button" id="btn02" value="选择所有div中不可见的元素"/>
+<input type="button" id="btn03" value="选择所有隐藏域文本框并显示其value值(for遍历)"/>
+<input type="button" id="btn04" value="选择所有隐藏域文本框并显示其value值(foreach()函数遍历)"/>
+</body>
+</html>

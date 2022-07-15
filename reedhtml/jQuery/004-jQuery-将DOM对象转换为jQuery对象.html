@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>将DOM对象转换为jQuery对象</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 获取DOM对象
+            const btnObj = document.getElementById("myBtn");
+
+            // 使用$(DOM对象)方式将DOM对象转换为jQuery对象
+            // 声明jQuery对象的时候以$开头
+            const $btn = $(btnObj);
+
+            // jQueryd对象上面的val()方法,等同于DOM对象中的value属性
+            alert("按钮的value是:" + $btn.val() + "-" + btnObj.value);
+
+            //==================================================================
+            // 注意:DOM对象和jQuery对象是互不兼容的,不能调用彼此的方法
+            //alert("按钮的value是:" + btnObj.val());
+            //alert("按钮的value是:" + $btn.value);
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="点击我" id="myBtn"/>
+</body>
+</html>
