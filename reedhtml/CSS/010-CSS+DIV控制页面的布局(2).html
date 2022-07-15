@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>无标题文档</title>
+    <style type="">
+        /*
+        
+        */
+        #div1 {
+            width: 600px;
+            height: 600px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 2px solid red;
+            position: relative;
+        }
+
+        #div2 {
+            width: 500px;
+            height: 500px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 2px solid blue
+        }
+
+        #div3 {
+            width: 400px;
+            height: 450px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 2px solid yellow
+        }
+
+        #box1 {
+            width: 200px;
+            height: 200px;
+            border: #000000;
+            background-color: #99FF66;
+        }
+
+        /*
+        标记的定位方式有两种,一是绝对定位,(position:absolute),二是相对定位(position:relative;)
+        position:absolute:绝对定位方式.在box2标记的所有父标记(直接父标记及其间接父标记)在div1中采用了定位方式(相对定位)
+        这时box2的参照物就是div1,也就是在哪个父标记中设置了相对定位方式,哪个父标记就是box2的参照物
+        top:150px ; left:270px; 与参照物div1的距离	
+        */
+        #box2 {
+            width: 160px;
+            height: 160px;
+            border: #0000CC solid 2px;
+            background-color: #990066;
+            position: absolute;
+            top: 150px;
+            left: 270px;
+        }
+
+        #box3 {
+            width: 200px;
+            height: 200px;
+            border: #000000;
+            background-color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+<div id="div1">
+    <div id="div2">
+        <div id="div3">
+            <div id="box1">box1</div>
+            <div id="box2">box2</div>
+            <div id="box3">box3</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

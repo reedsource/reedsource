@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>无标题文档</title>
+    <style type="">
+        /*
+         background-color:#00FFFF  控制标记的背景色
+         border:3px solid #FF0000 控制标记的边框 3个像素的宽度,实线边框,边框的颜色是红色 
+         标记与父标记之间的距离成为外边距,也就是margin
+         margin-left:200px; 标记的左外边距是200px
+         margin-top:200px;  标记的顶部外边距是200
+         标记与其子标记之间的距离称为内边距,也就是padding
+         padding-left:100px; 标记的左内边距100px; 
+         padding-top:50px;   标记的顶部内边距50px;
+        */
+        #div1 {
+            width: 500px;
+            height: 300px;
+            background-color: #00FFFF;
+            margin-left: 200px;
+            margin-top: 200px;
+            padding-left: 100px;
+            padding-top: 50px;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 150px;
+            background-color: #990066;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+<!--
+div标记是body的子标记,默认的显示位置是在浏览器的左上角
+-->
+
+<div id="div1">
+    <div id="div2">
+    </div>
+</div>
+</body>
+</html>

@@ -64,18 +64,11 @@
 ---
 
 - **reedhtml**
-    - html学习
-
----
-
-- **reedjs**
-    - js学习
-
----
-
-- **reedcss**
-    - css学习
-
+    - html相关学习
+    - 子模块 CSS
+    - 子模块 html
+    - 子模块 javaScript js学习
+    - 子模块 jQuery
 
 ## 三 代码要求
 
