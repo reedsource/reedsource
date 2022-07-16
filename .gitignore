@@ -24,6 +24,10 @@ target/
 *.iws
 *.iml
 *.ipr
+### exe ###
+*.exe
+*.dll
+*.sys
 
 ### MAVEN ###
 .mvn/
