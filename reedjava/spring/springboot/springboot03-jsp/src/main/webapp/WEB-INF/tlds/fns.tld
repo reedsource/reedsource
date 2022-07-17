@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+	<description>JSTL 1.1 functions library</description>
+	<display-name>JSTL functions sys</display-name>
+	<tlib-version>1.1</tlib-version>
+	<short-name>fns</short-name>
+	<uri>http://java.sun.com/jsp/jstl/functionss</uri>
+
+	<!--jsp:tld会映射到一个具体的类的方法，最后的效果就是你可以在页面上写个标签就可以把数据库的数据显示到页面中-->
+	<function>
+		<!--描述-->
+		<description>通过省名称获取省id</description>
+		<!--名称-->
+		<name>getProvinceId</name>
+		<!--方法路径-->
+		<function-class>top.ireed.cases.linkage.utils.LinkageUtil</function-class>
+		<!--方法参数-->
+		<function-signature>java.lang.String getProvinceId(java.lang.String)</function-signature>
+		<!--案例-->
+		<example>${fns:getProvinceId()}</example>
+	</function>
+	<function>
+		<!--描述-->
+		<description>通过市名称获取市id</description>
+		<!--名称-->
+		<name>getCityId</name>
+		<!--方法路径-->
+		<function-class>top.ireed.cases.linkage.utils.LinkageUtil</function-class>
+		<!--方法参数-->
+		<function-signature>java.lang.String getCityId(java.lang.String)</function-signature>
+		<!--案例-->
+		<example>${fns:getProvinceId()}</example>
+	</function>
+</taglib>
