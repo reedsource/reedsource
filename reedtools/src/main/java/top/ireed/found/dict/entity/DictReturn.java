@@ -1,6 +1,6 @@
 /*
  * FileName: DictReturn
- * Author:   ireedtop
+ * Author:   reedsource
  */
 package top.ireed.found.dict.entity;
 
