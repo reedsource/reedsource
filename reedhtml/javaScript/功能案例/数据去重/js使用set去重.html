@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        s1();
+
+        function s1() {
+            const arr = [3, 5, 2, 2, 5, 3, 5];
+            const uni = [...new Set(arr)]
+            console.log(uni)
+            //  3 5 2
+
+            console.log(unique(arr));
+        }
+
+        //自定义去重函数
+        function unique(arr) {
+            return Array.from(new Set(arr))
+        }
+
+        let a = new Set([1, 2, 3]);
+        let b = new Set([5, 2, 6]);
+
+        //并集
+        console.log(new Set([...a, ...b]));
+        //交集
+        let intersect = new Set([...a].filter(x => b.has(x)));
+        console.log(intersect);
+        //set{2，3}
+        //差集
+        let difference = new Set([...a].filter(x => !b.has(x)));
+        console.log(difference)
+        //Set{1）
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
