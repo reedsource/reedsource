@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        // 对文本框标记对象中输入的名字进行问候
+
+        function sayHello1(nameInputObj) {
+            alert("吃了吗您:" + nameInputObj.value);
+        }
+
+        function sayHello2(name) {
+            alert("吃了吗您?" + name);
+        }
+
+    </script>
+</head>
+<body>
+<form name="form1">
+    <input type="text" name="username" id="username"/> <br>
+    <!--
+    我们可以把JS代码嵌入到HTML标记中
+    -->
+    <input type="button" value="sayHello1" onclick="sayHello1( document.form1.username );"/>
+    <input type="button" value="sayHello2" onclick="sayHello2( document.form1.username.value );"/>
+</form>
+
+</body>
+</html>

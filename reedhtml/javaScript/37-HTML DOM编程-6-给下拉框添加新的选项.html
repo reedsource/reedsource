@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+
+        function getOption(selectObj) {
+            ///////////////////////////////////////////////////////////////////////////
+            // 获取下拉框中被选中的选项的value值
+            //alert("你选中的是:" + selectObj.value);
+
+            /////////////////////////////////////////////////////////////////////////
+            // 获取被选中的选项的value及其对应的文本信息
+            // DOM编程的套路:标记中有什么样的属性,对应的DOM对象上面就有什么样的属性.
+            // 标记中有什么样的子元素,对应的DOM对象上面就有什么样的属性
+            // 因为Select标记中有多个option子元素,多个option应该保存在一个数组中
+            // 所以:Select标记对应的DOM对象上面应该有一个数组的属性,保存着多个option
+            // Select标记对应的DOM对象上面有被选中的选项的索引,根据索引从数组中取出被选中的选项
+            var optionArr = selectObj.options;
+            var index = selectObj.selectedIndex;
+            var option = optionArr[index];
+
+
+            //.text可以直接获取选中值
+            alert("你选中的选项的value是:" + option.value + ",对应文本是:" + option.innerHTML + "-" + option.text);
+        }
+
+
+        //给下拉框添加新的选项
+        function addOption() {
+            // 获取文本框中输入的值
+            var str = document.getElementById("newvalue").value;
+            var arr = str.split(":");
+
+            // 获取Select标记对应的DOM对象
+            var selectObj = document.getElementById("xueli");
+
+            // 创建一个新的选项对象
+            var option = document.createElement("option");
+            option.text = arr[0];
+            option.value = arr[1];
+
+            // 把新创建的option添加到select中
+            selectObj.add(option, null);// 如果第二个参数是null，元素添加到选项数组的末尾。
+        }
+    </script>
+</head>
+<body>
+
+<input type="text" name="newvlaue" id="newvalue" title="数据的格式:本科:benke"> <input type="button" value="添加选项"
+                                                                                onclick="addOption()">
+
+<hr>
+
+请选择学历
+<!--
+onchange :输入标记的值被改变并且失去焦点事件的处理句柄
+-->
+<select id="xueli" onchange="getOption(this)">
+    <option value="gaozhong">高中</option>
+    <option value="dazhuan">大专</option>
+</select>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        function startTime() {
+            //  window.setInterval()每间隔1000毫秒就调用一次showTime()函数,要反复的调用
+            window.setInterval("showTime()", 1000);
+        }
+
+        function showTime() {
+            //创建当前时间点的日期对象,并且返回本地格式的日期对象
+            var date = new Date();
+            var divObj = document.getElementById("time");
+            divObj.innerHTML = date.toLocaleString();
+        }
+
+        //给window对象的onload事件处理句柄指定回调函数
+        //window对象的onload浏览器加载假面完成事件的处理句柄,和onload功能一样
+
+        window.onload = function () {
+            startTime();
+        }
+
+    </script>
+</head>
+<!--
+onload:浏览器加载页面完成事件的处理句柄
+页面加载完成之后自动开始计时
+-->
+<body onload="startTime()">
+
+<div id="time"></div>
+</body>
+</html>

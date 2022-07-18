@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中把非数值类型的数据自动的转化为数值类型有两种方式
+        // 1.使用Number()函数,可以将任何类型的数据转化为数值类型
+        // 2.使用parseInt()/parseFloat()只能将字符串类型的数据转换为数值类型
+
+        // ============================================================================================================
+        // 1.使用Number()函数,可以将任何类型的数据转化为数值类型
+        // Number()函数的转换规则:
+        //        	如果是Boolean值，true和false将分别被替换为1和0
+        //        	如果是数字值，只是简单的传入和返回
+        //        	如果是null值，返回0
+        //        	如果是undefined，返回NaN
+        //        	如果是字符串，遵循下列规则：
+        //        	如果字符串中只包含数字，则将其转换为十进制数值，即”1“会变成1，”123“会变成123，而”011“会变成11（前导的0被忽略）
+        //        	如果字符串中包含有效的浮点格式，如”1.1“，则将其转换为对应的浮点数（同样，也会忽略前导0）
+        //        	如果字符串中包含有效的十六进制格式，例如”0xf“，则将其转换为相同大小的十进制整数值
+        //        	如果字符串是空的，则将其转换为0
+        //        	如果字符串中包含除了上述格式之外的字符，则将其转换为NaN
+        println("true被Number()转换的结果:" + Number(true) + ",false被Number()转换的结果:" + Number(false));//1   0
+        println("10被Number()转换的结果:" + Number(10) + ",NaN被Number()转换的结果:" + Number(NaN));//10  NaN
+        println("null被Number()转换的结果:" + Number(null) + ",undefined被Number()转换的结果:" + Number(undefined));//0  NaN
+        println("'123'被Number()转换的结果:" + Number("123"));//123
+        println("'010'被Number()转换的结果:" + Number("010")); // Number()不能识别8进制数,前面的0被忽略,结果就是10
+        println("'10.36'被Number()转换的结果:" + Number("10.36"));//10
+        println("'0x10'被Number()转换的结果:" + Number("0x10")); // Number()可以识别16进制格式的字符串,结果被转为10进制数值,结果是16;
+        println("空字符串''被Number()转换的结果:" + Number("")); // 0
+        println("'Hello'被Number()转换的结果:" + Number("Hello")); // NaN
+        println("'100Hello'被Number()转换的结果:" + Number("100Hello")); // NaN
+
+
+        // ============================================================================================================
+        // 2.使用parseInt()/parseFloat()只能将字符串类型的数据转换为数值类型
+        // 使用Number()函数的时候规则忒麻烦了,所以在转换的时候更多的是使用parseInt()/parseFloat()进行转换
+        // 注意:Number()可以将任何类型的数据转化为数值类型,而parseInt()/parseFloat()只能将字符串类型的数据转换为数值类型
+        // parseInt()转换的结果是不带小数的,parseFloat()转换的结果是带小数的!
+        println("");
+        // ------------------------------------------------------------------------------------------------------------
+        // parseInt()函数在转换字符串时，更多的是看其是否符合数值模式。它会忽略字符串前面的空格，直至找到第一个非空格字符。
+        // 如果第一个字符串不是数字字符或者负号，parseInt()会返回NaN；也就是说，用parseInt()转换空字符串会返回NaN。
+        // 如果第一个字符是数字字符，praseInt()会继续解析第二个字符，直到解析完所有后续字符或者遇到了一个非数字字符。
+        // 例如，"1234blue"会被转换为1234，”22.5“会被转换为22，因为小数点并不是有效的数字字符。
+        println("'   H1000'被parseInt()转换的结果:" + parseInt("    H1000")); // NaN
+        println("'   -1000Hello'被parseInt()转换的结果:" + parseInt("    -1000Hello")); // -1000
+        println("'   1000Hello'被parseInt()转换的结果:" + parseInt("    1000Hello")); // 1000
+        println("'   1000.65'被parseInt()转换的结果:" + parseInt("    1000.65")); // 小数部分直接忽略 结果1000
+        println("");
+        //如果字符串中的第一个字符是数字字符，parseInt()也能够识别出各种整数格式（即十进制、十六进制）
+        println("'   10'被parseInt()转换的结果:" + parseInt("    10")); // 10进制格式的字符串被解析成10进制数 10
+        println("'   010'被parseInt()转换的结果:" + parseInt("    010")); // 不能识别8进制,前面的0被忽略 10
+        println("'   0x10'被parseInt()转换的结果:" + parseInt("    0x10")); // 16进制格式的字符串被解析成10进制数 16
+        println("");
+        // 同一个数值格式的字符串可以被当做不同的进制来解析,结果都是10进制数,也就是在parseInt()中传递两个参数
+        println("'10'被parseInt()当做二进制格式的字符来解析:" + parseInt("10", 2));  // 2
+        println("'10'被parseInt()当做二进制格式的字符来解析:" + parseInt("10", "2")); // 2
+        println("'10'被parseInt()当做八进制格式的字符来解析:" + parseInt("10", "8")); // 8
+        println("'10'被parseInt()当做十进制格式的字符来解析:" + parseInt("10", "10")); // 10
+        println("'10'被parseInt()当做十六进制格式的字符来解析:" + parseInt("10", "16")); // 16
+        println("");
+
+
+        // ------------------------------------------------------------------------------------------------------------
+        //与parseInt()函数类似，parseFloat()也是从第一个字符（位置0）开始解析每个字符。而且也是一直解析到字符串末尾，
+        // 或者解析到遇见一个无效的浮点数字字符为止。也就是说，字符串中的第一个小数点是有效的，而第二个小数点就是无效的了，
+        // 因此它后面的字符串将被忽略。例如，”22.34.5“将会被转换成22.34。
+        //　parseFloat()和parseInt()的第二个区别在于parseFloat始终都会忽略前导的零。
+        // 由于parseFloat()只能解析十进制值，因此它没有用第二个参数指定基数的用法。
+        println("'   22.34.56'被parseFloat()解析的结果:" + parseFloat("   22.34.56"));  //22.34
+        println("'   010'被parseFloat()解析的结果:" + parseFloat("   010"));// 0后面有有效的数值,0被忽略,结果是10
+        println("'   0Hello10'被parseFloat()解析的结果:" + parseFloat("   0Hello10"));// 0后面不是有效的数值,就解析出来0,结果就是0
+        println("'   0x10'被parseFloat()解析的结果:" + parseFloat("   0x10"));// 不能识别0x,就解析出来0,
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

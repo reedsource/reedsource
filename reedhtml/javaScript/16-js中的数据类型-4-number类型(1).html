@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+
+    <!--
+    总结 : JS中不区分整形和浮点型
+           JS中NaN(Not a Number)和Infinity(无穷大或溢出)都是number类型
+           NaN和任何的数值都不相等,包括和它自己
+
+
+    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中不区分整型和浮点型,都是number类型
+        // NaN和Infinity是两个特殊的number类型;NaN(Not a Number)和Infinity(无穷大或溢出)都是number类型
+        // 因为JS中不区分整型和浮点型,所以:10 / 4 = 2.5
+        var num1 = 10, num2 = 10.8, num3 = NaN, num4 = Infinity;
+        println("num1的类型是:" + typeof (num1) + ",num2的类型是:" + typeof num2);//num1的类型是:number,num2的类型是:number
+        println("num3的类型是:" + typeof (num3) + ",num4的类型是:" + typeof num4);//num3的类型是:number,num4的类型是:number
+        println("10/4=" + (10 / 4));//10/4=2.5
+        println("10/0.0=" + (10 / 0.0));//10/0.0=Infinity
+        Infinity;
+        println("Infinity === Infinity ? " + (Infinity === Infinity));//Infinity === Infinity ? true
+        println("0/0=" + (0 / 0));// NaN
+        println("0/0.0=" + (0 / 0.0)); // NaN
+        println("0.0/0=" + (0.0 / 0)); // NaN
+        // NaN和任何的数值都不相等,包括和它自己
+        println("NaN === NaN ? " + (NaN === NaN)); //NaN === NaN ? false
+
+
+        println("-------------------------------------------------------------");
+        println("");
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中有一个内置的isNaN()函数.该函数判断参数是否是一个NaN
+        // 该函数会尝试着将参数转化为一个数值,如果能够得到有效的数值,一个有效的数值当然不是NaN了,所以该函数返回false
+        // 如果转换的结果不是一个有效的数值(也就是一个NaN),则isNaN()函数返回true
+
+        //var str = "100";
+        var str = "Hello";
+        // 分析过程:,"100"可以被转换为有效的数值,结果是是100,所以isNaN()返回的是false
+        // 分析过程: "Hello"不能被转换为有效的数值,结果是NaN,所以isNaN()返回的是true
+        if (isNaN(str)) {
+            alert("不是有效的数值");
+        } else {
+            alert("是有效的数值");
+        }
+
+
+        println("-------------------------------------------------------------");
+
+        println("");
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /**
+         * 检测用户在输入框中输入的数据是否是有效的年龄
+         * @param age 用户在输入框输入的值,永远都是string类型
+         */
+        function checkAge(age) {
+            //alert(age + "的类型是:" + typeof  age);
+
+            // 获取span标记对象.在开始标记和结束标记之间的文本信息是标记对象的innerHTML属性
+            var spanObj = document.getElementById("info");
+
+            // 判断用户输入的数据是否是有效的数值格式
+            if (isNaN(age)) {
+
+                //对象.内部的HTML 赋值颜色和内容
+                spanObj.innerHTML = "<font color='red'>不是有效的数值</font>"
+            } else {
+                // age是一个字符串类型的数据,居然可以和数值类型进行有效的标记
+                // 说明:在JS中会自动的非数值类型的数据自动的转化为数值类型
+                // 那么在JS中是如何把非数值类型的数据自动的转化为数值类型的呢?参见下个案例
+                if (age >= 20 && age <= 30) {
+                    spanObj.innerHTML = "<font color='green'>是有效的年龄</font>"
+                } else {
+                    spanObj.innerHTML = "<font color='red'>不是有效的年龄</font>"
+                }
+            }
+        }
+
+        function clearValue() {
+            var spanObj = document.getElementById("info");
+            spanObj.innerHTML = "";
+            var spanObj = document.getElementById("info1");
+            spanObj.value = "";
+        }
+    </script>
+</head>
+<body>
+<!--
+onfocus 
+-->
+判断年龄是否有效(20~30)<input type="text" name="age" ID="info1" onfocus="clearValue()" onblur="checkAge(this.value)">
+
+<!--<span id="info1"><font color="red">提示信息</font> </span>-->
+<!--
+图层标记,不会单独的占用一行
+-->
+<span id="info"> </span>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

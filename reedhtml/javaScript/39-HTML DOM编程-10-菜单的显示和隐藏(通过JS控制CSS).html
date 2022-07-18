@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+
+    <!--
+    在html中使用内部式CSS
+    -->
+    <style type="text/css">
+        /*
+        div ul 环境选择符,只有ul标记出现在div标记中的时候,这种效果才有效
+        */
+        div ul {
+            list-style-type: none; /*列表前面不显示小圆点*/
+        }
+
+        /*
+        标识选择符,通过#xxx格式来指定,在html标记中通过id属性来使用标识选择符
+        */
+        #cityOfChina {
+            display: none; /*控制标记隐藏*/
+        }
+
+        /*
+        给id为china的标记的鼠标悬停状态制定显示效果
+        */
+        #china:hover {
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        //创建了一个变量
+        var isShow = false;
+
+        /**
+         * 显示或隐藏中国的城市
+         */
+        function showOrHideCityOfChian(divObj) {
+            //通过ID来获取需要改变的标记
+            var ulObj = document.getElementById("cityOfChina");
+            if (!isShow) {
+                ulObj.style.display = "block"; // 让标记显示
+
+                //每点击一次,转换一次变量的值
+                isShow = true;
+                divObj.title = "点击关闭中国的城市";
+            } else {
+                ulObj.style.display = "none"; // 让标记隐藏
+                isShow = false;
+                divObj.title = "点击打开中国的城市";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="div">
+    <ul>
+        <li>
+            <div id="china" title="点击打开中国的城市列表" onclick="showOrHideCityOfChian(this)">中国</div>
+            <!--
+            id="cityOfChina" 有两个作用
+            1.使用CSS中的标识选择符
+            2.在JS中通过id属性来获取标记对象
+            -->
+            <ul id="cityOfChina">
+                <li>北京</li>
+                <li>天津</li>
+                <li>上海</li>
+            </ul>
+        </li>
+        <li>美国</li>
+        <li>俄罗斯</li>
+    </ul>
+</div>
+
+<hr>
+<ul>
+    <li>中国
+        <ul>
+            <li>北京</li>
+            <li>天津</li>
+            <li>上海</li>
+        </ul>
+    </li>
+    <li>美国</li>
+    <li>俄罗斯</li>
+</ul>
+</body>
+</html>

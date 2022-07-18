@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+
+    <!--标题<title>中<script>的内容会出现在标题栏中,不会执行-->
+    <title>
+        <script>
+        alert("你能找到我吗?");
+        </script>
+    </title>
+    <!--
+    简体中文的window默认的编码格式是GBK
+
+    设置浏览器按照utf-8编码来解析html页面
+    charset : 字符集
+
+    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--
+    html中使用<script></script>标记来编写JS代码
+    <script>标记唯一不能出现在<title></title>标记之间
+    <script>的内容会出现在标题栏中,不会执行
+
+
+    <script>标记中type属性可有可无,如果有,属性值必须是"text/javascript"
+    浏览器以自上而下的加载HTML中的JS代码,加载到<head>之后,会自动执行其中的<script>
+
+    如果<script>在<head></head>中间,会先执行<script>的内容,页面为空白,执行完之后后显示<body></body>中间的内容
+
+    注意:上面是浏览器加载页面的标准方式.但是在不同的浏览器中效果是不同的!
+    -->
+
+    <script type="text/javascript">
+        window.alert("欢迎进入JavaScrit精彩的是世界");
+    </script>
+
+</head>
+<body>
+这是页面的初始内容!
+
+</body>
+</html>
+
+<script type="text/javascript">
+    alert("你看到我的时候,页面中已经有内容了!");
+</script>

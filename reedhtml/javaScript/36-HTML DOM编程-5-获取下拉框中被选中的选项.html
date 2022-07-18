@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        //获取下拉框中被选中的选项
+
+        function getOption(selectObj) {
+            //获取下拉框中被选中的选项的value值
+            //alert("你选中的是:" + selectObj.value);
+
+            // 获取被选中的选项的value及其对应的文本信息
+
+            // DOM编程的套路:标记中有什么样的属性,对应的DOM对象上面就有什么样的属性.
+            // 标记中有什么样的子元素,对应的DOM对象上面就有什么样的属性
+
+            // 因为Select标记中有多个option子元素,多个option应该保存在一个数组中
+            // 所以:Select标记对应的DOM对象上面应该有一个数组的属性,保存着多个option
+            // Select标记对应的DOM对象上面有被选中的选项的索引,根据索引从数组中取出被选中的选项
+
+            //创建数组接收下拉框的表项的全部成员
+            var optionArr = selectObj.options;
+            //获取下拉框的当先表项值下标
+            var index = selectObj.selectedIndex;
+            //根据下标取得表项内容
+            var option = optionArr[index];
+            alert("你选中的选项的value是:" + option.value + ",对应文本是:" + option.innerHTML);
+
+        }
+    </script>
+</head>
+<body>
+
+
+请选择学历
+<!--
+onchange :输入标记的值被改变并且失去焦点事件的处理句柄
+-->
+<select name="xueli" onchange="getOption(this)">
+    <option value="gaozhong">高中</option>
+    <option value="dazhuan">大专</option>
+    <option value="benke">本科</option>
+    <option value="shuoshi">硕士</option>
+</select>
+</body>
+</html>

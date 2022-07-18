@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        // 在JS中 [],表示数组,{}表示JSON对象
+
+        var per = {
+            name: "张三",
+            age: 43,
+            //aihao属性的属性值是一个数组,数组中的元素是字符串
+            aihao: ["抽烟", "喝酒", "烫头"]
+        };
+
+        // 访问per对象的爱好
+        var arr = per.aihao;
+        for (var i in arr) {
+            alert(arr[i]);
+        }
+
+        var grade = {
+            name: "Java就业班724",
+            stuCount: 78,
+            /*
+             stuList(学生列表) 属性的属性值是一个数组,数组中的元素是一个个的学生对象(用JSON格式创建)
+             */
+            stuList: [
+                {
+                    id: 1,
+                    name: "张1"
+                },
+                {
+                    id: 2,
+                    name: "张2"
+                },
+                {
+                    id: 3,
+                    name: "张3"
+                },
+                {
+                    id: 4,
+                    name: "张4"
+                }
+            ]
+        };
+
+        // 访问学生列表中的每个学生对象
+        var arr = grade.stuList;
+        for (var i = 0; i < arr.length; i++) {
+            println(arr[i].id + "," + arr[i].name);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

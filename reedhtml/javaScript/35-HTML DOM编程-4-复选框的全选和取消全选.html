@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        // 全选或取消全选
+        function checkAllOrCancelAll(checkboxObj) {
+            // 根据标记的name属性来获取标记对象,页面中多个标记的name属性是相同的
+            // 根据标记的name属性来获取DOM对象
+            // 所以getElementsByName("aihao")返回的是DOM对象数组
+
+            //创建变量,接收通过name获取的对象数组
+            var arr = document.getElementsByName("aihao");
+            //创建变量获取复选框的标记信息
+            var spanObj = document.getElementById("info");
+
+
+            // 遍历数组,让数组中的每个checkbox.checkd选中状态 = true
+            if (checkboxObj.checked) {
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i].checked = true;
+                }
+                //修改复选框的标记信息
+                spanObj.innerHTML = "取消全选";
+            } else {
+                // 遍历数组,让数组中的每个c`heckbox.checkd选中状态 = false
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i].checked = false;
+                }
+                //修改复选框的标记信息
+                spanObj.innerHTML = "全选";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<hr>
+<input type="checkbox" onclick="checkAllOrCancelAll(this)"><span id="info">全选</span>
+<hr>
+<input type="checkbox" name="aihao" value="yundong"> 运动 <br>
+<input type="checkbox" name="aihao" value="dushu"> 读书 <br>
+<input type="checkbox" name="aihao" value="lvyou"> 旅游 <br>
+<input type="checkbox" name="aihao" value="gouwu"> 购物 <br>
+<input type="checkbox" name="aihao" value="meishi"> 美食 <br>
+
+<br>
+<hr>
+<input type="checkbox" onclick="checkAllOrCancelAll(this)"><span id="info2">全选</span>
+<hr>
+<input type="checkbox" name="aihao2" value="nian"> 年 <br>
+<input type="checkbox" name="aihao2" value="yue"> 月 <br>
+<input type="checkbox" name="aihao2" value="ri"> 日 <br>
+<input type="checkbox" name="aihao2" value="shi"> 时 <br>
+<input type="checkbox" name="aihao2" value="fen"> 分 <br>
+<input type="checkbox" name="aihao2" value="miao"> 秒 <br>
+
+</body>
+</html>

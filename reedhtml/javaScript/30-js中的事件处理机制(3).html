@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function test() {
+            //  alert("你看到我的时候页面已经初始化完成了!");
+
+            // 我们是在body的onload的回调函数中执行下面的代码
+            // body的onload执行的时候,页面已经被加载完成了
+            var btnObj = document.getElementById("btn");
+            btnObj.onclick = function () {
+                var nameInput = document.getElementById("name");
+                alert("吃了吗您:" + nameInput.value);
+            }
+        }
+
+    </script>
+
+</head>
+<!--
+onload:浏览器加载页面完成事件的处理句柄
+-->
+<body onload="test()">
+<input type="text" name="name" id="name">
+<input type="button" id="btn" value="问候">
+</body>
+</html>
+

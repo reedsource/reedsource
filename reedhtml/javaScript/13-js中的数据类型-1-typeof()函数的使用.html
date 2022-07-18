@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中也是有数据类型的,JS中的数据类型和Java中的数据类型分类相同(这是ES262规范)
+        // 一.基本类型
+        //    1.数值型(number):JS中不区分整形和浮点型,都是number类型
+        //    2.字符串型(string),可以表示一个或多个字符,可以使用""也可以使用''
+        //    3.布尔型(boolean),只有两个有效的取值true/fasle,用在逻辑判断语句中
+        //    4.未定类型(undefined),当声明一个变量没有赋值,或者直接赋值为undefined,变量的类型就是undefined类型
+        // 二.引用类型
+        //    1.js中的引用类型和Java中的引用类型用法一致,通过new来创建对象,然后调用对象上面的属性和方法
+        //    2.函数也是一种引用类型
+
+        // 由于JS中变量的类型是不固定的,给变量的赋值不同,变量的类型就会发生改变
+        // 所以在JS中需要一种方式来随时检测变量的类型
+        // 可以使用typeof()函数来检测变量的类型,typeof()函数返回的结果是一个字符串型的结果,是如下几种情况之一:
+        //        	 "undefined"——如果这个值未定义；
+        //        	 "boolean"——如果这个值是布尔值；
+        //        	 "string"——如果这个值是字符串；
+        //        	 "number"——如果这个值是数值；
+        //        	 "object"——如果这个值是对象或null；
+        //        	 "function"——如果这个值是函数；
+        // typeof()函数有两种不同的用法
+        // 1.typeof (变量或函数)
+        // 2.typeof 变量或函数
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 声明不同类型的变量并且测试其类型
+        // 声明number类型的变量
+        //        var num1 = 10, num2 = 10.8, num3 = NaN, num4 = Infinity; // NaN(Not a Number)和Infinity(无穷大或溢出)都是number类型
+        //        //alert("num1的类型是:" + typeof (num1) + ",num2的类型是:" + typeof num2);
+        //        // document相当于html中的body,document.write()也就是向浏览器中输出内容,相当于写在<body>中的内容
+        //        //document.write("num1的类型是:" + typeof (num1) + ",num2的类型是:" + typeof num2 + "<br>");
+        //        //document.write("num3的类型是:" + typeof (num3) + ",num4的类型是:" + typeof num4 + "<br>");
+        //        // 调用我们自己在2.js中封装的println()函数
+        //        println("num1的类型是:" + typeof (num1) + ",num2的类型是:" + typeof num2);
+        //        println("num3的类型是:" + typeof (num3) + ",num4的类型是:" + typeof num4);
+        //
+        //        // 声明string类型的变量
+        //        var str1 = "Hello", str2 = 'World';
+        //        println("str1的类型是:" + typeof  str1 + ",str2的类型是:" + typeof (str2));
+        //
+        //        // 声明boolean型的变量
+        //        var b1 = true, b2 = false;
+        //        println("b1的类型是:" + typeof  b1 + ",b2的类型是:" + typeof (b2));
+        //
+        //        // 声明undefined类型的变量
+        //        var u1;
+        //        var u2 = undefined;
+        //        println("u1的类型是:" + typeof  u1 + ",u2的类型是:" + typeof (u2));
+        //
+        //
+        //        // 声明引用的变量
+        //        var date = new Date();
+        //
+        //        function Dept(deptno, dname, loc) {
+        //            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+        //            this.deptno = deptno; // 把参数赋值给类中的属性
+        //            this.dname = dname;
+        //            this.loc = loc;
+        //
+        //            // 在类中声明方法
+        //            this.getInfo = function () {
+        //                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+        //                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+        //            }
+        //        }
+        //        var dept = new Dept(10, "开发部", "北京");
+        //        println("date的类型是:" + typeof date);
+        //        println("dept的类型是:" + typeof dept);
+        //        var obj = null; // 在ES262中,null是引用类型类一个取值,也就是说,null也是object类型
+        //        println("obj的类型是:" + typeof obj);
+        //        println("Dept的类型是:" + typeof Dept)
+        //
+        //        // ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //        // 在ES6规范中,有提案把null当做一种单独的类型来使用.但是为了考虑和以前代码的兼容性,最终这个提案被放弃
+        //        var obj = null; // 在ES262中,null是引用类型类一个取值,也就是说,null也是object类型
+        //        println("obj的类型是:" + typeof obj);
+        //
+        //        // 在ES6中,新增了一种类型,symbol类型
+        //        var s1 = Symbol("Hello");
+        //        println("s1的类型是:" + typeof s1);
+
+
+        // 两个undefined用==相比是相同的
+        //        var u1;
+        //        var u2 = undefined;
+        //        println("u1 === u2 ? " + (u1 === u2));
+        //        println(u1 === typeof  u2);  // false ,因为typeof u2返回的是一个字符串,字符串的内容是"undefined"
+
+        //        var num1 = 10 ;
+        //        println("num1的类型是:" + typeof  num1);
+        //        num1 = true;
+        //        println("num1的类型是:" + typeof  num1);
+
+        //在ES262Z规范中,null是onject类型,但是在ES6中,有提案将null当作一个单独的类型
+        //但是考虑到和以前不兼容,这个提案被取消
+        // var obj = null;
+        // println("obj的类型是" + typeof obj);
+        //
+        // //在ES6中,新增了一种类型,就是symbol(符号)类型
+        // //
+        // var syml1 = Symbol("hello");
+        // println("sym的类型是:"+typeof syml1);
+        function add(i) {
+            var k = i + 10;
+            alert(k);
+        }
+
+        add(10);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

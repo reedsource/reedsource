@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        // 当点击编辑按钮的时候,让id=name的td标记的innerHTML属性改变成一个文本输入框框,
+        // 文本输入的value就是td中原来的内容
+        function edit() {
+            // 获取td标记对应的DOM对象
+            var tdObj = document.getElementById("name");
+            var name = tdObj.innerHTML; // 获取原来的名字
+            tdObj.innerHTML = "<input type='text' id='newname' value='" + name + "' style='background-color: darkgray' >";
+
+            // 执行页面逻辑控制
+            document.getElementById("btn1").disabled = true; // 让编辑按钮失效
+            document.getElementById("btn2").disabled = false; // 让保存按钮生效
+        }
+
+        // 点击保存按钮的时候,让id=name的td标记的td标记的innerHTML改变成一个文本
+        // 文本的内容就是输入框中输入的值
+        function save() {
+            // 获取td标记对应的DOM对象
+            var tdObj = document.getElementById("name");
+
+            // 获取文本框输入框中的名字
+            var newName = document.getElementById("newname").value;
+
+            // 让id=name的td标记的td标记的innerHTML改变成一个文本
+            tdObj.innerHTML = newName;
+
+            // 执行页面逻辑控制
+            document.getElementById("btn1").disabled = false; // 让编辑按钮生效
+            document.getElementById("btn2").disabled = true; // 让保存按钮式效
+        }
+
+    </script>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <td width="150">姓名</td>
+        <td>操作</td>
+
+    </tr>
+    <tr>
+        <td id="name">张三</td>
+        <td>
+            <input type="button" value="编辑" onclick="edit()" id="btn1">
+            <input type="button" value="保存" onclick="save()" id="btn2" disabled>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

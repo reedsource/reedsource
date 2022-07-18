@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+
+        // 在不同的系统中交互数据的不同方式
+        // 1.使用JSON来交互数据,这是轻量级的交互对象,是现在的主流方式
+        // 2.使用XML来交互数据,这是重量级的交互对象,解析XML复杂,已经不在使用
+        //   但是XML并没有退出历史,现在经常使用XML来做配置文件
+        /*
+         <empno>7369</empno>
+         <ename>smith</ename>
+         <job>软件工程师</job>
+         <mgr>7902</mgr>
+         */
+
+        // JSON可以创建轻量级的对象,简化自定义引用类型的使用过程,把第一步和第二步合二为一,
+        // 是一种轻量级的数据交互对象(在不同的系统之间传递数据)
+
+        // 例如下面的字符串的是从Java程序返回和客户端的,其内容就是一个有效的json对象格式的字符串
+        // 在客户端使用eval()函数解析字符串,即可取得json对象
+        var str = "var emp = {empno:7369,ename:'smith',job:'软件工程师',mgr:7902}";
+        eval(str);
+        alert(emp.empno + "," + emp.ename + "," + emp.job + "," + emp.mgr);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

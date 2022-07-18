@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // 在新窗口中要关闭老窗口.我们需要在新窗口中获取到老窗口的window对象
+        // 在新窗口中有一个内置的opener,就是老窗口的window对象
+        function closeOldWindow() {
+            opener.close();
+        }
+
+        function syanValue(inputObj) {
+            opener.document.oldform.oldname.value = inputObj.value;
+        }
+
+    </script>
+</head>
+<body>
+<h1>这是新窗口</h1>
+<hr>
+
+<input type="button" value="关闭老窗口" onclick="closeOldWindow()">
+
+<hr>
+
+<!--
+当新窗口中输入框数据改变的时候自动的将数据同步到老窗口
+-->
+
+<form name="newform">
+    <input type="text" name="newname" onchange="syanValue(this)">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // NaN,null,undefined三种数据的区别
+        // 三种数据的类型不同:
+        // NaN是数值类型; null是object类型,这是ES26规范; 在ES6规范中,有提案把null单做一种单独的类型 undefined就是未定义类型
+        var num = NaN;
+        var obj = null;
+        var u1 = undefined;
+        println("NaN的类型是:" + typeof (num));
+        println("null的类型是:" + typeof (obj));
+        println("undefined的类型是:" + typeof (u1));
+
+        // 两个null用==,===相比都是相同的
+        // 两个undefined,用==,===相比都是相同的
+        // null和undefined 用 === 相比是相同的,用===相比是不同
+        // NaN和任何的数据都不相等,包括和它自己
+        println("null === null ? " + (null === null));// true
+        println("null === null ? " + (null === null));// true
+        println("undefined === undefined ? " + (undefined === undefined));// true
+        println("undefined === undefined ? " + (undefined === undefined));// true
+        println("null === undefined ? " + (null === undefined));// true
+        println("null === undefined ? " + (null === undefined));// false
+
+        println("NaN === undefined ? " + (NaN === undefined));// false
+        println("NaN === null ? " + (NaN === null));// false
+        println("NaN === NaN ? " + (NaN === NaN));// false
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

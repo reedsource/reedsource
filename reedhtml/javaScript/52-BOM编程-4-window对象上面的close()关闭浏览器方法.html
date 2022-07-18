@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function closeWindow() {
+            // FF默认的是不让脚本关闭浏览器的,我们可以设置FF ,在地址栏中输入 about:config
+            // 找到 dom.允许脚本关闭窗口并且设置为true即可
+
+            var str = window.navigator.userAgent; // 获取浏览器信息
+            // 区分IE浏览器
+            //如果浏览器中出现
+            if (str.indexOf(".NET") >= 0) {
+                window.close();  // 关闭浏览器窗口
+            } else {
+                if (window.confirm("你真的要关闭浏览器吗?")) {
+                    window.close();  // 关闭浏览器窗口
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="关闭窗口" onclick="closeWindow()">
+</body>
+</html>

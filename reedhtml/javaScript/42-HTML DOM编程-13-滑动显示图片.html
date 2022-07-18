@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // window.setTimeout()和window.setInterval()的区别
+        // window.setTimeout()在指定事件之后调用指定的函数,就调用一次
+        // window.setInterval()每间隔一段时间就调用指定的函数,要反复调用多次
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 通过控制标记的失效/生效状态来避免页面中出现错误,这种方式称为页面逻辑控制,是页面编程中非常有效的方式
+
+        //变大事件
+        function showImg1() {
+            var imgObj = document.getElementById("img");
+            //如果图片未达到想要的尺寸,就调用图片变大事件实施
+            if (imgObj.width < 900) {
+                // 20毫秒之后去调用一次setImgWidth1()
+                // 在showImg1()中调用了setImgWidth1(),在setImgWidth1()中有调用了在showImg1(),实际上形成了一个循环
+                window.setTimeout("setImgWidth1()", 20);
+            } else {
+                //如果达到了图片的尺寸需求,就转换变大和变小标签可用状态
+
+                // 图片显示完成之后,让隐藏图片的按钮生效,让显示图片的按钮失效
+                document.getElementById("btn2").disabled = false;
+                document.getElementById("btn1").disabled = true;
+            }
+        }
+
+        //变大事件实施
+        function setImgWidth1() {
+            var imgObj = document.getElementById("img");
+            //将图片增加尺寸
+            imgObj.width += 3;
+            //再次调用变大事件,判断图片是否达到想要的尺寸
+            showImg1();
+        }
+
+
+        //缩小事件
+        function hideImg1() {
+            var imgObj = document.getElementById("img");
+            if (imgObj.width > 0) {
+                window.setTimeout("setImgWidth2()", 20);
+            } else {
+                // 图片隐藏完成之后,让隐藏图片的按钮失效,让显示图片的按钮生效
+                document.getElementById("btn2").disabled = true;
+                document.getElementById("btn1").disabled = false;
+            }
+
+        }
+
+        //缩小事件实施
+        function setImgWidth2() {
+            var imgObj = document.getElementById("img");
+            imgObj.width -= 3;
+            hideImg1();
+        }
+
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="显示图片" onclick="showImg1()" id="btn1">
+<input type="button" value="隐藏图片" onclick="hideImg1()" id="btn2" disabled>
+
+<hr>
+
+<img id="img" src="imgs/2.jpg" width="0">
+
+</body>
+</html>

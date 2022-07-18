@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        // 当用户点击按钮的时候,对用户输入的名字进行问候
+
+        // 页面中的标记具有什么属性,标记对象上面就有声明属性;标记上面有什么的操作,标记对象上面就有声明方法
+
+        // 例如 按钮标记上面有点击的操作,所以按钮标记对象上面就有click()方法
+
+        // JS编程的套路:获取到页面中的标记对象,然后调用标记对象上面的属性/方法
+        function sayHello() {
+            // ======================================================================================
+            // 1.根据标记的id属性来获取标记对象
+            // var nameInputObj = document.getElementById("username");
+
+            // =====================================================================================
+            // 2.根据标记的name属性来获取标记对象
+            //通过访问 类的属性的属性的...来访问子属性
+
+            //以下两种输出效果一致
+            var nameInputObj = document.form1.username;
+            alert("吃了吗您:" + nameInputObj.value);
+
+
+            var nameInputObj2 = document.form1.username.value;
+            alert("吃了吗您:" + nameInputObj2);
+        }
+    </script>
+</head>
+<body>
+<form name="form1">
+    <input type="text" name="username" id="username"/>
+    <!--
+    JS是基于事件的编程语言,在html标记发生特定的事件的时候,调用JS代码
+    如果JS代码比较多,可以把这些JS代码封装到一个函数中,这个函数就是所谓的回调函数
+    使用的格式: onxxxx = "函数名称()" ,有就是发生特定事件的时候,调用指定好的回调函数
+    -->
+    <input type="button" value="sayHello" onclick="sayHello();"/>
+</form>
+
+</body>
+</html>

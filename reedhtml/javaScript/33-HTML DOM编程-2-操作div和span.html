@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function test() {
+            var divObj = document.getElementById("div");
+            var spanObj = document.getElementById("span");
+
+            // 开始标记和结束标记之间的文本是标记的innerHTML属性/innerText属性
+            // innerHTML中出现的标记会被浏览器当做标记来执行 ;
+            // innerText中出现的属性会被浏览器当做文本来执行 ;
+            // 但是老版本的FF不支持innerText;Chorme和IE支持innerText
+            divObj.innerHTML = "<font color='red'>JS动态的设置的div中的文本</font>";
+            spanObj.innerText = "<font color='red'>JS动态的设置的span中的文本</font>";
+        }
+    </script>
+</head>
+<body>
+div和span都是一个图层标记,用来控制页面的布局.div和span的区别<br>
+div会单独的占用一行<br>
+span不会单独的占用一行<br>
+
+<hr>
+div标记的效果
+<div><font color="red">这是div中的内容</font></div>
+<br>
+span标记效果
+<span> &lt;font color='red'&gt;这是span标记中的内容&lt;/font&gt;</span>
+
+<hr>
+
+div标记效果
+<div id="div"></div>
+
+<br>
+span标记效果<span id="span"></span>
+
+<br>
+<input type="button" value="操作div和span标记" onclick="test()">
+
+</body>
+</html>

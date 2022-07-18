@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        function startTime() {
+            //  window.setInterval()每间隔1000毫秒就调用一次showTime()函数,要反复的调用
+            window.setInterval("showTime()", 1000);
+        }
+
+        function showTime() {
+            var date = new Date();
+            var divObj = document.getElementById("time");
+            divObj.innerHTML = date.toLocaleString();
+        }
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="显示时间" onclick="startTime()">
+<br>
+
+<div id="time"></div>
+</body>
+</html>

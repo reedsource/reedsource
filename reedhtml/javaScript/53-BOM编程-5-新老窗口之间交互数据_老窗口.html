@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        var newWindow; // 新窗口的window对象
+
+        // 在老窗口中打开新窗口
+        function openNewWindow() {
+            //在一个新的窗口中(或标签页中)打开新的地址
+            newWindow = window.open("0054-BOM编程-6-新老窗口之间交互数据_新窗口.html");
+        }
+
+        // 在老窗口中关闭新窗口,我们需要在老窗口中获取到新窗口的window对象
+        // 我们如何在老窗口中获取到新窗口的window对象呢?
+        // window.open()返回的就是新窗口的window对象
+        function closeNewWindow() {
+            newWindow.close();
+        }
+
+        function syanValue(inputObj) {
+            newWindow.document.newform.newname.value = inputObj.value;
+        }
+
+    </script>
+</head>
+<body>
+<h1>这是老窗口</h1>
+<hr>
+<input type="button" value="打开新窗口" onclick="openNewWindow()">
+<input type="button" value="关闭新窗口" onclick="closeNewWindow()">
+
+
+<hr>
+
+<!--
+当老窗口中输入框数据改变的时候自动的将数据同步到新窗口
+-->
+<form name="oldform">
+    <input type="text" name="oldname" onchange="syanValue(this)">
+</form>
+
+</body>
+</html>

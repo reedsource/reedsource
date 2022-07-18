@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>HTML页面中引入外部js文件方式</title>
+
+    <!---
+    在html中使用<script>标记来引入外部的JS文件时,
+    这个JS文件的<script>需要出现在<head></head>之间,使浏览器在加载主页面之前就先把外部的js代码加载好
+    注意:在引入外部JS文件的时候,必要要有<script>开始标记和</script>结束标记.
+    开始标记<body>和结束标记</body>之间不能出现JS代码,会看起来很奇怪
+    如果我们在引入外部JS文件的同时,还需要执行某些JS代码,可以再使用一对<script></script>标记即可
+    -->
+    <script src="js/1.js" type="text/javascript">
+        alert("你是看不到我的!");
+    </script>
+
+    <script type="text/javascript">
+        alert("呵呵,又见面了!");
+    </script>
+
+</head>
+
+<body>
+<div style="text-align: center;">
+    <h3>注册新用户</h3>
+    <hr>
+    <form action="00-接收表单的页面.html" method="get">
+
+        <table border="1">
+            <tr>
+
+                <td align="right">姓名</td>
+                <td align="left">
+                    <!--
+                    用户在输入标记中输入的值是标记的value属性,例如用户输入的是"张三",则标记的value属性就是"张三"
+                    为了在校验函数中获取到页面中的标记对象,给标记对象添加id属性,注意:标记的id属性是不能重复的
+                    -->
+                    <label for="uname"></label><input type="text" name="uname" id="uname" value="请输入用户名"
+                                                      onClick="clearValue()">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">密码</td>
+                <td align="left"><label for="pwd"></label><input type="password" name="pwd" id="pwd"></td>
+            </tr>
+            <tr>
+                <td align="right">确认密码</td>
+                <td align="left"><label for="repwd"></label><input type="password" name="repwd" id="repwd"></td>
+            </tr>
+            <tr>
+
+                <td align="center" colspan="2">
+                    <!--
+                    当我们点击提交按钮的时候,应该去检测表单中是否填写有效的数据提交按钮有一个点击事件,我们可以出现提交按钮点击事件的处理句柄
+                    所谓的处理句柄就是专门来处理标记事件的,格式onxxxx,例如onclick
+                    在处理句柄中指定校验函数.处理句柄中指定的函数也称为回调函数,也就是在发生事件的时候自动调用指定的函数
+                    例如:onClick="return checkForm()" 也就是提交按钮点击之后,自动去调用checkForm()函数
+                    onClick会根据校验函数返回的结果来提交或终止提交表单
+                    如果校验函数返回true,则提交表单,如果校验函数返回false,则终止提交表单
+                    -->
+                    <input type="submit" value="提交" onClick="return checkForm()">
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

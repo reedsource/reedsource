@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中的引用类型和Java中的引用类型是相同的,也就是把一组数据和相关的功能封装成一个整体,通过new来创建对象,然后调用
+        // 对象上门客的顺序和方法
+        // JS中有引用类型(也就是object类型) ;在JS中有内置的引用类型,例如Date,Object
+        // JS中也有继承机制和方法覆盖机制,和Java中一样,Object类是JS中所有类的共同基类
+        // 和Java中一样,我们输出一个对象的时候,会自动的调用对象上面的toString()方法
+        var obj = {};
+        println(obj);//[object Object]
+        println(obj.toString());//[object Object]
+
+        // 在JS中我们声明一个自定义的引用类型,该类的基类就是Object类,可以从Object类中继承属性和方法
+        function Dept(deptno, dname, loc) {
+            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        // dept对象的toString()就是从Object类中继承下来的.但是继承下来的toString()不适合Dept类的需要
+        // 可以在Dept类中对toString()进行覆盖
+        var dept = new Dept(10, "开发部", "北京");
+        println(dept);
+        println(dept.toString());
+
+        // dept对象从Object类中继承下来constructor属性,保存着用于创建当前对象的函数
+        // 也就是dept对象是使用哪个构造方法创建的!
+        println(dept.constructor);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function Dept(deptno, dname, loc) {
+            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        // Dept类从Object类中继承下来的prototype属性非常重要,Object类的子类可以使用prototype属性给类动态的扩展属性和方法
+        // 扩展的属性和方法对该类所有的对象都是有效的
+        var dept1 = new Dept(10, "开发部", "北京");
+        var dept2 = new Dept(20, "技术部", "北京");
+        println(dept1);
+        println(dept2);
+
+        // Dept类通过prototype属性动态的扩展属性和方法,新扩展的属性和方法对该类所有的对象都是有效的
+        // 给Dept类动态的扩展mgr的属性
+        Dept.prototype.mgr = null;
+
+        // 给Dept类动态的扩展getMgr()的方法
+        Dept.prototype.getMgr = function () {
+            return this.dname + "的经理是:" + this.mgr;
+        };
+
+        // 设置dept对象上面的mgr属性
+        dept1.mgr = "张三";
+        dept2.mgr = "李四";
+
+        println(dept1.getMgr());
+        println(dept2.getMgr());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

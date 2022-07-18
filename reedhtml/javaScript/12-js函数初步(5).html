@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // JS中有引用类型.引用类型的使用方式:通过new来创建对象,然后调用对象上面的属性和方法
+        // 在JS中有内置的引用类型,也可以使用自定义的引用类型
+        // var date = new Date(); // 内置的引用类型
+        // alert(date.toString());
+        //显示弹窗结果  Fri May 18 2018 11:37:18 GMT+0800 (中国标准时间)
+
+        // JS也可以使用自定义的引用类型,和Java中使用自定义引用类型的过程一样
+        // 1.声明一个类
+        // 2.通过new来创建对象
+        // 3.调用对象上面的属性和方法
+
+        // ======================================================================================================
+        // 在JS中声明类的时候,也是使用function,而不是使用class
+        // 下面的语句既是声明了类,又是声明了构造方法,还是声明了一个函数
+        function Dept(deptno, dname, loc) {
+            //在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.getInfo = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        //创建一个类,并赋值
+        var dept = new Dept(10, "开发部", "北京");
+
+        //输出对象的属性值
+        //alert(dept.deptno + "," + dept.dname + "," + dept.loc);
+        //显示输出  10,开发部,北京
+
+        //调用类的子方法
+        //alert(dept.getInfo());
+        //显示输出  Dept[deptno=10,dname=开发部,loc=北京]
+
+        // 创建之后改变对象上面的属性
+        //dept.dname = "研发部";
+        //dept.loc = "保定";
+        //alert(dept.deptno + "," + dept.dname + "," + dept.loc);
+        //显示输出   10,研发部,保定
+        //alert(dept.getInfo());
+        //显示输出   Dept[deptno=10,dname=研发部,loc=保定]
+
+
+        // ======================================================================================================
+        // 把Dept当做一个函数来执行
+        function Dept(deptno, dname, loc) {
+            alert('------------>会执行吗?');
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            this.getInfo = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            };
+            alert('------------>确实执行了!');
+        }
+
+        Dept(10, "开发部", "北京");
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

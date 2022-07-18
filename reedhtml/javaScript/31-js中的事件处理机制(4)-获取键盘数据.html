@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // 在JS中有一个内置的event对象,可以通过event对象的keyCode属性取得键盘值
+        // 但是老版本的FF不支持event对象
+        function getKeyBoard() {
+            var code = event.keyCode;
+            if (code === 13) {
+                alert("你按下了回车键");
+            } else if (code === 27) {
+                alert("你按下了ESC键");
+            }
+        }
+
+    </script>
+</head>
+<!--
+onkeydown: 键盘按下事件的处理句柄
+-->
+<body onkeydown="getKeyBoard()">
+
+</body>
+</html>

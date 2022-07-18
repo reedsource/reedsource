@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+
+    <!--
+        javaScript与java的区别:
+            不需要有方法的返回类型
+            java调用对象需要先有对象,javaScript使用的都是内置对象,不需要先创建
+    -->
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>无标题文档</title>
+    <script type="text/javascript">
+        // 当点击提交按钮的时候,执行表单校验
+
+        // 表单校验规则:
+        // 1.用户名,密码,确认密码不能为空
+        // 2.用户名,密码,确认密码的长度不能小于6位
+        // 3.密码,确认密码必须一致(使用!= 判断)
+        // 校验成功返回true,校验失败返回false
+        // 思路:获取页面中输入框标记对象,然后判断标记对象value属性是否有效
+        function checkForm() {
+            //document:文档
+            //element :元素,成分
+            //by      ;附近,当前,通过；被；依据；经由；在
+            //value   :内容,值
+
+            //建一个变量,通过文档ID来获得当前的属性
+
+            //还有getElementByName方法等
+
+            const nameInput = document.getElementById("uname");
+
+            // 页面标记有的属性,标记对象也拥有  例如:标记有value属性,标记对象上也有value属性
+            if (nameInput.value === "" || nameInput.value === "请输入用户名") {
+
+                // alert()弹出一个提示信息对话框,可以省略写为 alert("")
+                window.alert("用户名不能为空");
+
+                //获取焦点
+                nameInput.focus();
+
+                //校验失败,返回false
+                return false;
+            }
+            //输入框中的数据,类似于java中的String   也拥有 length的属性
+            else if (nameInput.value.length < 6) {
+                alert("用户名长度不能小于6位");
+
+                //姓名输入框获取焦点
+                nameInput.focus();
+                return false;
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 在下面继续检查密码和确认密码
+            const pwdInput = document.getElementById("pwd1");
+            if (pwdInput.value === "") {
+                alert("密码不能为空");
+                pwdInput.focus();
+                return false;
+            } else if (pwdInput.value.length < 6) {
+                alert("密码长度不能小于6位");
+                pwdInput.focus();
+                return false;
+            }
+
+            //密码已经判断了不为空和长度限制,确认密码只需要判断是否和密码相同
+            const repwdInput = document.getElementById("pwd2");
+            if (pwdInput.value !== repwdInput.value) {
+                alert("密码和确认秘密必须要一致");
+                repwdInput.focus();
+                return false;
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //如果可以运行到这里,表示前面的都没有做返回flase
+            //则返回true
+            return true;
+        }
+
+        // 清空输入框中的提示信息
+        function clearValue() {
+            const nameInput = document.getElementById("uname");
+            if (nameInput.value === "请输入用户名") {
+                nameInput.value = "";
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+<div style="text-align: center;">
+    <h3>注册新用户</h3>
+    <hr>
+    <!--
+        action : 行动.转到
+        method : 方法
+    -->
+    <form action="00-接收表单的页面.html" method="get">
+
+        <!--
+            table   : 表格
+            border  : 边界
+            表格到边界之间的距离
+        -->
+        <table border="1">
+            <tr>
+                <!--
+                    align : 排列
+                    right : 右边的,正确的
+                    left  : 左边的；左派的；剩下的
+                排列右对齐
+                -->
+                <td align="right">姓名</td>
+                <!--
+                排列左对齐
+                -->
+                <td align="left">
+                    <!--
+                    给名称的value编辑框添加ID属性,ID为 uname  ID名称不能重复
+                    type  : 类型
+                    清空input内容
+                    -->
+                    <label for="uname"></label><input type="text" name="uname" id="uname" value="请输入用户名"
+                                                      onClick="clearValue()">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">密码</td>
+                <td align="left"><label>
+                    <input type="password" name="pwd1">
+                </label></td>
+            </tr>
+            <tr>
+                <td align="right">确认密码</td>
+                <td align="left"><label>
+                    <input type="password" name="pwd2">
+                </label></td>
+            </tr>
+            <tr>
+
+                <td align="center" colspan="2">
+                    <!--
+                    点击按钮提交按钮事件(click)时,先检查数据是否有效
+                    方法:使用处理句柄  处理句柄是专门来处理标记事件的 格式 on+xxxx 例如 onclick
+                    处理句柄中可以指定校验函数,即回调函数
+                    发生事件时会自动调用指定的函数
+                    例如:onClick="return checkForm()" 提交按钮点击后,自动调用checkForm()函数
+                    onClick会根据校验函数返回结果来提交或终止提交表单
+                    如果返回的是true则提交表单,如果返回的是flase则终止提交
+                    -->
+                    <!--
+                    return  :返回
+                    check   :检查
+                    Form    :格式
+                    -->
+                    <input type="submit" value="提交" onClick="return checkForm()">
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

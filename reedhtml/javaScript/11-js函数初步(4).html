@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function checkName(inputObj) {
+            //传统的验证方式
+            // if(inputObj.value === "admin"){
+            //     alert("有效的用户名");
+            // }else{
+            //    alert("无效的用户名");
+            // }
+
+            if (inputObj.value === "admin") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!--
+当输入框标记失去焦点的时候,检测用户输入的名字是否有效
+onblur:输入标记失去焦点事件的处理句柄
+this 出现在<input>标记中,所以this就代表当前的输入框标记
+
+
+将this的标签,发送给checkName判断,三元弹窗输出结果
+-->
+<input type="text" name="name" onblur="alert(  checkName(this) ? '有效的用户名': '无效的用户名')">
+</body>
+</html>

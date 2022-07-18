@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // 回顾:在JS中使用自定义引用类型的过程
+        // 1.声明一个类
+        // 2.使用new来创建对象
+        // 3.调用对象上面的属性/方法
+        //        function User(id, name, password) {
+        //            this.id = id;
+        //            this.name = name;
+        //            this.password = password;
+        //        }
+        //        var user = new User(1, "admin", "123456");
+        //
+        //        // 访问对象属性/方法的不同方式
+        //        // (1)使用对象方式,也就是对象.xxx格式
+        //        alert(user.id + "," + user.name + "," + user.password);
+        //
+        //        // (2)使用with语句
+        //        with (user) {
+        //            alert(id + "," + name + "," + password);
+        //        }
+        //
+        //        // (3)使用[]格式
+        //        alert(user["id"] + "," + user["name"] + "," + user["password"]);
+
+
+        // JSON:JavaScript对象标记,可以创建轻量级(节省资源)的对象,可以简化自定义引用类型的使用过程
+        // 使用JSON格式,可以简化自定义引用类型的使用过程,把第一步和第二步合二为一
+        /*
+         JSON对象的语法  {
+         属性:属性值,
+         属性:属性值,
+         属性:属性值
+         }
+         最后一个属性后面没有逗号
+         属性值可以是基本类型,也可以是引用类型(数组和JSON对象都是引用类型)
+         */
+
+        // 下面的代码就创建了一个简单的JSON对象
+        var user = {
+            id: 1,
+            name: "admin",
+            password: "123456"
+        };
+
+        // (1)使用对象方式,也就是对象.xxx格式
+        alert(user.id + "," + user.name + "," + user.password);
+
+        // (2)使用with语句
+        with (user) {
+            alert(id + "," + name + "," + password);
+        }
+
+        // (3)使用[]格式,这种方式只能访问对象中的属性
+        alert(user["id"] + "," + user["name"] + "," + user["password"]);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

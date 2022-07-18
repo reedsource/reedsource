@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // 当点击按钮的时候,执行表单校验
+        // 表单校验的规则:
+        // 1.用户名,密码,确认密码不能为空
+        // 2.用户名,密码,确认密码的长度不能小于6位
+        // 3.密码,确认密码必须一致(可以使用 != 判断两个值是否不相等)
+        // 如果校验成功则调用表单DOM对象的submit()方法,如果校验失败则直接返回
+        // 校验标的思路:获取到页面中的输入框标记对象,然后判断标记对象的value属性是否有效
+        function submitForm() {
+            // 为了获取到页面中的标记对象,给标记对象添加id属性
+            var nameInput = document.getElementById("uname");
+
+            // 页面中的标记具有什么样的属性,则标记对象上面就有什么样的属性;例如标记中有个value属性,则标记对象上面也有个value属性
+            if (nameInput.value === "" || nameInput.value === "请输入用户名") {
+                window.alert("用户名不能为空"); // window.alert()弹出一个提示信息对话框
+                nameInput.focus(); // 让输入标记获取到焦点,便于用户输入数据
+                return; // 如果校验失败则返回
+            }
+            // 用户在输入框中输入的数据"张三",是一个类似于Java中String的数据,该数据上面有个length属性
+            else if (nameInput.value.length < 6) {
+                alert("用户名长度不能小于6为"); // window可以忽略
+                nameInput.focus(); // 让输入标记获取到焦点,便于用户输入数据
+                return;
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // 在下面继续检查密码和确认密码
+            var pwdInput = document.getElementById("pwd");
+            if (pwdInput.value === "") {
+                alert("密码不能为空");
+                pwdInput.focus();
+                return;
+            } else if (pwdInput.value.length < 6) {
+                alert("密码长度不能小于6位");
+                pwdInput.focus();
+                return;
+            }
+
+            var repwdInput = document.getElementById("repwd");
+            if (pwdInput.value != repwdInput.value) {
+                alert("密码和确认秘密必须要一致");
+                repwdInput.focus();
+                return;
+            }
+
+            // 如果校验成功,则调用表单DOM对象的submit()方法
+            // 我们可以使用不同的方式获取到表单标记对应的DOM对象
+
+            // ==============================================================
+            // 方式1:通过表单标记的id属性获取DOM对象
+            // var formObj = document.getElementById("regForm");
+
+            // ==============================================================
+            // 方式2:根据表单标记的name属性来获取DOM对象
+            // body中有个name=regForm的儿子,bodyd对应的是document对象
+            // var formObj = document.regForm;
+
+            // ==============================================================
+            // 方式3:在body中可以有多个表单,body对应的是document对象
+            // 所以document对象上面有一个forms的数组,这个数组的第0个元素就是我们的表单对象
+            var formObj = document.forms[0];
+
+            // 表单标记也是个DOM对象,我们可以动态的设置表单DOM对象上面的属性
+            formObj.method = "get";
+            formObj.action = "00-接收表单的页面.html";
+
+            formObj.submit();
+        }
+
+        // 清空输入框中的提示信息
+        function clearValue() {
+            var nameInput = document.getElementById("uname");
+            if (nameInput.value === "请输入用户名") {
+                nameInput.value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+<center>
+    <h3>注册新用户</h3>
+    <hr>
+
+    <!--
+    action="00-接收表单的页面.html" method="get"
+    -->
+    <form id="regForm" name="regForm">
+        <table border="1">
+            <tr>
+
+                <td align="right">姓名</td>
+                <td align="left">
+                    <!--
+                    用户在输入标记中输入的值是标记的value属性,例如用户输入的是"张三",则标记的value属性就是"张三"
+                    为了在校验函数中获取到页面中的标记对象,给标记对象添加id属性,注意:标记的id属性是不能重复的
+                    -->
+                    <input type="text" name="uname" id="uname" value="请输入用户名" onClick="clearValue()">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">密码</td>
+                <td align="left"><input type="password" name="pwd" id="pwd"></td>
+            </tr>
+            <tr>
+                <td align="right">确认密码</td>
+                <td align="left"><input type="password" name="repwd" id="repwd"></td>
+            </tr>
+            <tr>
+
+                <td align="center" colspan="2">
+                    <!--
+                    当一个普通的按钮被点击的时候,表单对象的submit事件不会被触发
+                    也就是说默认的情况下普通按钮是没有提交表单的功能的!
+
+                    // 页面中的任意一个标记都是一个DOM对象,页面的标记和DOM对象是相对应的
+                    // 标记中有什么样的属性,DOM对象上面就有什么样的属性
+                    // 标记中有什么样的子元素,DOM对象上就有什么样的属性
+                    // 标记中有什么样的操作,DOM对象上面就有什么样的方法;
+                    // 例如:表单标记有提交的操作,所以表单标记对应的DOM对象上面有submit()方法
+
+                    // 我们可以在普通按钮的点击事件中获取到表单对应的DOM对象,然后调用DOM对象上面的submit()方法
+                    -->
+                    <input type="button" value="提交" onclick="submitForm()">
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>

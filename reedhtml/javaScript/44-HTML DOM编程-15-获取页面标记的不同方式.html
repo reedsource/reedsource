@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // 使用不同的方式获取页面中的标记对象(也就是DOM对象)
+        function getElements1() {
+            // 方式1:通过标记的id属性来获取DOM对象,标记的id属性是不能重复的,所以获取到的是单个的DOM对象
+            var nameInput = document.getElementById("name");
+            alert("你输入的名字是:" + nameInput.value);
+
+        }
+
+        function getElements2() {
+            // 方式2:通过标记的name属性来获取DOM对象,页面中多个标记的name属性是相同的
+            // 所以获取到的是一个数组
+            var checkBoxArr = document.getElementsByName("aihao");
+            for (var i = 0; i < checkBoxArr.length; i++) {
+                if (checkBoxArr[i].checked) {
+                    alert("你选中的选项是:" + checkBoxArr[i].value);
+                }
+            }
+        }
+
+        function getElements3() {
+            // 方式3:通过标记的class属性来获取DOM对象,页面中多个标记的class顺序是相同的
+            // 所以获取到的是一个数组对象
+            var checkboxArr = document.getElementsByClassName("aihaos");
+            for (var i = 0; i < checkboxArr.length; i++) {
+                if (checkboxArr[i].checked) {
+                    alert("你选中的选项是:" + checkboxArr[i].value);
+                }
+            }
+        }
+
+        function getElements4() {
+            // 方式4:通过标记名称来获取标记.页面中多个标记的名称是相同的
+            // 所以获取到的是一个数组对象
+            var inputobjArr = document.getElementsByTagName("input");
+            alert("页面中input标记的个数是:" + inputobjArr.length);
+        }
+
+    </script>
+</head>
+<body>
+<!--
+页面中的html标记有几种不同的形式
+1.标记中有id属性.标记的id属性是不能重复的
+2.多个标记的name属性是相同的,例如页面中多个checkbox标记的name属性是相同的
+3.多个标记的class属性是相同的,例如页面中多个checkbox标记的class属性是相同的
+4.页面中有多个相同名称的标记,例如页面中有多个<input>标记
+-->
+
+<input type="text" name="name" id="name">
+<br><br>
+<input type="button" value="获取页面标记对象内容" onclick="getElements1()"><br>
+<br>
+
+<div>以下为有name属性的复选框组<br><br>
+    <input type="checkbox" name="aihao" value="yundong"> 运动 <br>
+    <input type="checkbox" name="aihao" value="dushu"> 读书 <br>
+    <input type="checkbox" name="aihao" value="lvyou"> 旅游 <br>
+    <input type="checkbox" name="aihao" value="gouwu"> 购物 <br>
+    <input type="checkbox" name="aihao" value="meishi"> 美食 <br>
+</div>
+<br>
+<div>以下为添加class属性的复选框组<br><br>
+    <input type="checkbox" name="aihao" class="aihaos" value="yundong"> 运动 <br>
+    <input type="checkbox" name="aihao" class="aihaos" value="dushu"> 读书 <br>
+    <input type="checkbox" name="aihao" class="aihaos" value="lvyou"> 旅游 <br>
+    <input type="checkbox" name="aihao" class="aihaos" value="gouwu"> 购物 <br>
+    <input type="checkbox" name="aihao" class="aihaos" value="meishi"> 美食 <br>
+
+    <br>
+
+    <input type="button" value="获取选中的选项(name方式)" onclick="getElements2()"><br><br>
+    <input type="button" value="获取选中的选项(cless方式)" onclick="getElements3()"><br><br>
+    <input type="button" value="获取页面中全部input标记的个数" onclick="getElements4()"><br><br>
+</div>
+</body>
+</html>

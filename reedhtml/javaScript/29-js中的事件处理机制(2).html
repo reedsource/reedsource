@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        // 获取页面中的按钮标记对象,然后给按钮标记对象指定回调函数
+        // 下面的方式是错误的!
+        // 浏览器按照自上而下的顺序加载页面,当加载head的时候,会自动执行head中的JS代码
+        // 但是这时body根本没有被加载,所以无法获取到按钮标记对象,也就无法给按钮标记对象注册时间
+        //        var btnObj = document.getElementById("btn");
+        //        btnObj.onclick = function () {
+        //            var nameInput = document.getElementById("name");
+        //            alert("吃了吗您:" + nameInput.value);
+        //        }
+
+    </script>
+
+</head>
+<body>
+<input type="text" name="name" id="name">
+<input type="button" id="btn" value="问候">
+</body>
+</html>
+
+<script type="text/javascript">
+    var btnObj = document.getElementById("btn");
+    btnObj.onclick = function () {
+        var nameInput = document.getElementById("name");
+        alert("吃了吗您:" + nameInput.value);
+    }
+</script>

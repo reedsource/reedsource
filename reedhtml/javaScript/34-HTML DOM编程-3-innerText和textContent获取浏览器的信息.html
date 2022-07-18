@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        function test() {
+            var divObj = document.getElementById("div");
+            var spanObj = document.getElementById("span");
+
+            // 开始标记和结束标记之间的文本是标记的innerHTML属性/innerText属性
+
+            // innerHTML中出现的标记会被浏览器当做标记来执行 ; // innerText中出现的属性会被浏览器当做文本来执行 ;
+
+            // JS中有一个和innerText功能相同的属性 textContent
+            // 老版本的FF不支持innerText;Chorme和IE支持innerText
+
+            // 老版本的FF支持textContent,但是老版本的Chorme和IE不支持textContent
+            // 但是现在的浏览器都是支持textContent
+            // divObj.textContent = "<font color='red'>JS动态的设置的div中的文本</font>";
+            // spanObj.textContent = "<font color='red'>JS动态的设置的span中的文本</font>";
+
+
+            // 现在的浏览器都是支持textContent,就不存在兼容的问题了
+            // 下面的代码模拟在早期的浏览器中,根据不同的浏览器,分别使用innerText或textContent,
+            // 这个题目的重点如何获取浏览器的信息
+
+            //window 窗口
+            //navigator  领航员
+            //userAgent  用户代理
+
+            var str = window.navigator.userAgent;  // 获取浏览器的信息
+
+            // 是FF浏览器
+            if (str.toLowerCase().indexOf("firefox") >= 0) {
+                divObj.textContent = "<font color='red'>JS动态的设置的div中的文本FF浏览器</font>";
+            } else {
+                divObj.innerText = "<font color='red'>JS动态的设置的div中的文本非FF</font>";
+            }
+        }
+    </script>
+</head>
+<body>
+div和span都是一个图层标记,用来控制页面的布局.div和span的区别<br>
+div会单独的占用一行<br>
+span不会单独的占用一行<br>
+<hr>
+
+div标记效果
+<div id="div"></div>
+
+<br>
+span标记效果<span id="span"></span>
+
+<br>
+<input type="button" value="操作div和span标记" onclick="test()">
+
+</body>
+</html>

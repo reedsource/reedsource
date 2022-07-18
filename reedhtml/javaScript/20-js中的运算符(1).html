@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <!--
+    总结:
+    JS在计算"10"*"20"的时候,会首先将"10","20"转换为数值类型,然后再进行乘法运算
+    JS乘法和除法都会先判断尝试将两边的字符转换为数值,如果转换失败,将会变为NaN
+    +法运算中,如果两边都是数值,就是正常加法计算,否者就是字符串拼接
+    ...
+
+
+    -->
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /**
+         * 返回两个参数相乘的乘积
+         * @param p1
+         * @param p2
+         */
+        function mul(p1, p2) {
+            return p1 * p2;
+        }
+
+        // Not a Number
+        // JS在计算"Hello"*2的时候,会首先将Hello转化为数值,但是Hello不能被转换为有效的数值,结果是NaN,NaN*2,结果还是NaN
+        var res = mul("Hello", 2);
+        //hello会转化为NaN,乘以2还是NaN
+        println("res=" + res);//NaN
+
+        // JS在计算"10"*"20"的时候,会首先将"10","20"转换为数值类型,然后再进行乘法运算
+        var res1 = mul("10", "20"); // 200
+        println("res1=" + res1);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 关于+运算符，只要+两边的算子都是数字则做加法运算，只要+两边的算子其中有一个是字符串类型则做字符串连接运算。
+
+        /**
+         * 返回两个参数相加的结果
+         * @param p1
+         * @param p2
+         */
+        function add(p1, p2) {
+            return p1 + p2;
+        }
+
+        // 只要+两边的算子都是数字则做加法运算
+        println(add(10, 20));//30
+        // 只要+两边的算子其中有一个是字符串类型则做字符串连接运算
+        println(add("Hello", 20));//hello20
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // === 的使用,相同与不同
+
+        // ===========================================================================================================
+        // JS中的 === 和Java中==相同的用法:
+        // 1.对于基本类型来说,是比较两个基本类型的值是否相等
+        var num1 = 10, num2 = 10;
+        println("num1 === num2 ? " + (num1 === num2));//true
+        var str1 = "Hello", str2 = "Hello";
+        println("str1 === str2 ? " + (str1 === str2));//true
+        println("undefined === undefined ? " + (undefined === undefined)); // true
+
+        // 2.对于引用类型说,比较的是两个引用的地址是否相同,也就是两个引用是否指向同一个对象
+        var obj1 = {};
+        var obj2 = {};
+        var obj3 = obj1; // 和Java中一样,引用类型在传递的时候传递的是地址
+        println("obj1 === obj2 ? " + (obj1 === obj2)); // false
+        println("obj1 === obj3 ? " + (obj1 === obj3)); // true
+
+        // ===========================================================================================================
+        // JS中的 === 和Java中 === 不同的用法
+        // 在Java中,不同类型的数据是不能比较的,例如的 10 和 "10"是不同的类型,不能比较
+
+        // 但是在JS中,当两个变量的类型不同的时候,JS会首先统一类型,然后再进行有效的比较
+        // 不同类型的数据在比较的时候,转换的规则如下:
+        // 1)一个数字与一个字符串，字符串转换成数字之后，进行比较。
+        // 2)true转换为1、false转换为0，进行比较。
+        var str = "100";
+        var num = 100;
+        if (str === num) {
+            println("Ok");
+        }
+
+        // 在JS中:undefined和null用 === 相比是相同的
+        println("null === undefined ? " + (null === undefined));// true
+
+
+        // ===的使用
+        // 使用===的时候,只有当两个变量的类型一致的时候,才会进行比较;如果两个变量的类型不同,则直接返回false
+        // 也就是说 ,===既要比较变量的类型,又要比较变量的值
+        var str = "100";
+        var num = 100;
+        println("'100' === 100 ? " + (str === num));  // true
+        println("'100' === 100 ? " + (str === num));// false
+        println("null === undefined ? " + (null === undefined)); // true
+        println("null === undefined ? " + (null === undefined)); // false
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // 逗号运算符的使用
+        var num1 = 10, num2 = 10.9, num3 = NaN;
+
+        // 第一个分号前面是多个初始化条件,不同的初始化条件用逗号分隔
+        // 第二个分号之后是迭代条件,多个迭代条件可以使用逗号分隔
+        for (var i = 0, j = 10, k = 100; i < 10; i++, j--, k++) {
+            println("i=" + i + ",j=" + j + ",k=" + k);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // delete运算符的使用
+        // 1.删除对象中的某个属性,但是不会影响其他的对象
+        // 2.删除数组中的某个元素,但是不会影响数组的长度和其他的数组元素
+        // 3.用在with语句中,删除对象的某个属性
+
+        // ============================================================================================================
+        // 1.删除对象中的某个属性,但是不会影响其他的对象
+        function Dept(deptno, dname, loc) {
+            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        var dept1 = new Dept(10, "开发部", "北京");
+        var dept2 = new Dept(20, "技术部", "北京");
+        println(dept1);
+        println(dept2);
+
+        // 删除dept1对象的loc属性,但是不会影响dept2对象
+        delete dept1.loc;
+
+        println(dept1);
+        println(dept2);
+
+
+        // ============================================================================================================
+        // 2.删除数组中的某个元素,但是不会影响数组的长度和其他的数组元素
+        var arr = [10, 20, 30, 40, 50, 60]; // 类似于Java中的静态初始化数组
+        println("数组的长度是:" + arr.length);
+
+        // 在JS中遍历数组的时候,可以使用普通的for循环.和Java中的用法是一致的
+        for (var i = 0; i < arr.length; i++) {
+            println("arr[" + i + "]=" + arr[i]);
+        }
+
+        println(("-------------------------------------"));
+
+        // 使用delete 删除数组中的某个元素,但是不会影响数组的长度和其他的数组元素
+        // 指定的数组元素别删除之后,该索引的数据默认的就是undefined
+        delete arr[1];
+        println("数组的长度是:" + arr.length);
+
+        // 在JS中遍历数组的时候,可以使用普通的for循环.和Java中的用法是一致的
+        for (var i = 0; i < arr.length; i++) {
+            println("arr[" + i + "]=" + arr[i]);
+        }
+
+        // ============================================================================================================
+        // 3.用在with语句中,删除对象的某个属性
+
+        // -----------------------------------------------------------------------------------------------------
+        // with语句可以简化对象的访问方式
+        function Dept(deptno, dname, loc) {
+            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        // --------------------------------------------------------------------------------------
+        // 调用对象上面的属性/方法的不同方式
+        var dept1 = new Dept(10, "开发部", "北京");
+
+        // 访问对象上面的属性/方法的不同方式
+        // 方式1:使用标准方式进行访问,也就是对象.xxx格式
+        println(dept1.deptno + "," + dept1.dname + "," + dept1.loc);
+        println(dept1.toString());
+        println("<hr>");
+
+        // 方式2:使用[]格式访问对象的属性
+        println(dept1["deptno"] + "," + dept1["dname"] + "," + dept1["loc"]);
+        println("<hr>");
+
+        // 方式3.使用with语句访问对象上面的属性/方法,就不需要对象.xxx格式了,对象可以忽略
+        with (dept1) {
+            println(deptno + "," + dname + "," + loc);
+            println(toString())
+        }
+
+        // --------------------------------------------------------------------------------------
+        var dept1 = new Dept(10, "开发部", "北京");
+        with (dept1) {
+            println(deptno + "," + dname + "," + loc);
+
+            delete loc; // 删除对象的loc属性
+            //println(deptno + "," + dname + "," + loc);
+
+            println(toString())
+        }
+
+
+        // new运算符,和Java中的用法是一样的,通过new来创建对象,然后调用对象上面的属性和方法
+
+        // ------------------------------------------------------------------------------------------------------------
+        // 在JS中和Java中一样,对象的某个属性的类型可以使用另外一种类型,例如:学生对象的add属性是另外定义的一个Address类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        /**
+         * 声明Car类型
+         * @param owner 汽车的所有者,是一个Person对象
+         * @param color
+         * @constructor
+         */
+        function Car(owner, color) {
+            this.owner = owner;
+            this.color = color;
+        }
+
+        // 创建对象
+        var per = new Person("张三", 23);
+        var car = new Car(per, "白色");
+
+        // 输出汽车所有者的名字
+        println(car.owner.name);
+
+        // ------------------------------------------------------------------------------------------------------------
+        // 在JS中,我们可以单独给某个对象添加属性和方法.但是不会影响其他的对象
+        function Dept(deptno, dname, loc) {
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        var dept1 = new Dept(10, "开发部", "北京");
+        var dept2 = new Dept(20, "销售部", "上海");
+        println(dept1);
+        println(dept2);
+
+        // 单独给dept1对象添加属性和方法,但是不会影响dept2对象
+        dept1.mgr = "张三";
+        dept1.getMgr = function () {
+            return this.dname + "的经理是:" + this.mgr;
+        };
+
+        println(dept1.getMgr());
+        println(dept2.getMgr());
+
+
+        // JS是一门动态的编程语言,动态体现在如下的方式:声明类,创建好对象之后,我们还可以执行如下的操作
+        // 1.动态的给类添加属性和方法,新添加的属性和方法对该类所有的对象都是有效的(通过prototype属性)
+        // 2.动态的给某个对象添加属性和方法,但是不会影响其他的对象
+        // 3.动态的删除某个对象的属性,但是不会影响其他的对象
+
+        // ------------------------------------------------------------------------------------------------------------
+        // 1.动态的给类添加属性和方法,新添加的属性和方法对该类所有的对象都是有效的(通过prototype属性)
+        function Dept(deptno, dname, loc) {
+            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        // Dept类从Object类中继承下来的prototype属性非常重要,Object类的子类可以使用prototype属性给类动态的扩展属性和方法
+        // 扩展的属性和方法对该类所有的对象都是有效的
+        var dept1 = new Dept(10, "开发部", "北京");
+        var dept2 = new Dept(20, "技术部", "北京");
+        println(dept1);
+        println(dept2);
+
+        // Dept类通过prototype属性动态的扩展属性和方法,新扩展的属性和方法对该类所有的对象都是有效的
+        // 给Dept类动态的扩展mgr的属性
+        Dept.prototype.mgr = null;
+
+        //给Dept类动态的扩展getMgr() 的方法
+        Dept.prototype.getMgr = function () {
+            return this.dname + "的经理是:" + this.mgr;
+        };
+
+        // 设置dept对象上面的mgr属性
+        dept1.mgr = "张三";
+        dept2.mgr = "李四";
+
+        println(dept1.getMgr());
+        println(dept2.getMgr());
+
+        // ------------------------------------------------------------------------------------------------------------
+        // 2.动态的给某个对象添加属性和方法,但是不会影响其他的对象
+        function Dept(deptno, dname, loc) {
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        var dept1 = new Dept(10, "开发部", "北京");
+        var dept2 = new Dept(20, "销售部", "上海");
+        println(dept1);
+        println(dept2);
+
+        // 单独给dept1对象添加属性和方法,但是不会影响dept2对象
+        dept1.mgr = "张三";
+        dept1.getMgr = function () {
+            return this.dname + "的经理是:" + this.mgr;
+        };
+
+        println(dept1.getMgr());
+        println(dept2.getMgr());
+
+        // ------------------------------------------------------------------------------------------------------------
+        // 3.动态的删除某个对象的属性,但是不会影响其他的对象
+        function Dept(deptno, dname, loc) {
+            // 在类中声明属性并且赋值;类中的属性不需要单独声明,用this.xxx格式标明即可
+            this.deptno = deptno; // 把参数赋值给类中的属性
+            this.dname = dname;
+            this.loc = loc;
+
+            // 在类中声明方法
+            this.toString = function () {
+                // 注意:在类的方法中访问类中的属性的时候,必须要使用this.xxx格式;this不能忽略!
+                return "Dept[deptno=" + this.deptno + ",dname=" + this.dname + ",loc=" + this.loc + "]";
+            }
+        }
+
+        var dept1 = new Dept(10, "开发部", "北京");
+        var dept2 = new Dept(20, "技术部", "北京");
+        println(dept1);
+        println(dept2);
+
+        // 删除dept1对象的loc属性,但是不会影响dept2对象
+        delete dept1.loc;
+
+        println(dept1);
+        println(dept2);
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // this 运算符的使用,有两种使用方式
+        // 1.出现在html标记中,代表当前的html标记对象
+        // 2.出现在JS代码的构造方法中,用来表示当前对象
+
+        /**
+         * 判断输入框标记中输入的值是否是有效的数值
+         * @param inputObj
+         * @param lowValue
+         * @param heiValue
+         */
+        function validate(inputObj, lowValue, heiValue) {
+            if (isNaN(inputObj.value)) {
+                alert("不是有效的数值格式");
+            } else {
+                if (inputObj.value >= lowValue && inputObj.value <= heiValue) {
+                    alert("有效的年龄");
+                } else {
+                    alert("无效的年龄");
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!--
+onChange :输入标记的值被改变并且失去焦点事件的处理句柄
+-->
+<input type="text" name="age" onChange="validate(this,10,20);"/>
+
+<hr>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会 <br>
+
+
+<hr>
+<!--
+href="#" 访问页面顶部默认的锚点
+-->
+<a href="#">回到顶部</a>
+<br>
+
+<a href="javascript:void(0)" onclick="alert('我被点击了!');">我是一个超链接,但是点击我不会跳转到其他的页面,我可以被当做按钮来使用!</a>
+
+<br>
+
+<a style="text-decoration: underline; color: blue; cursor: pointer" onclick="alert('我被点击了!');">我是一个超链接,但是点击我不会跳转到其他的页面,我可以被当做按钮来使用!</a>
+
+</body>
+</html>

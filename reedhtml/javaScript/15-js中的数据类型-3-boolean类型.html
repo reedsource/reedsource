@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+
+    <!--
+    Boolean()函数总结
+    true : 非空的字符串  非0的数值和Infinity  非空的对象
+    false: 空字符""      0和NaN               空对象null  未定义类型
+    -->
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/2.js"></script>
+    <script type="text/javascript">
+
+        // JS中boolean类型有两个有效的取值,true/false,用在逻辑判断语句中
+        //        var  b1 = true;
+        //        if(b1){
+        //            alert("ok");
+        //        }
+        //
+        //        h2等于假,非假即为真
+        //        var  b2= false;
+        //        if(!b2){
+        //            alert("Hello");
+        //        }
+
+
+        // 在Java中if语句的条件永远都是一个boolean型的表达式或变量
+        // 但是在JS中,if语句的条件可以是任何类型的表达式或变量,
+        // 使用Boolean()函数可以将非boolean类型的数据转换为boolean类型
+
+        // 在JS中会自动的把非boolean类型的数据转换为boolean类型
+        //        var str = "Hello";
+        //        if (str) {
+        //            alert("ok");
+        //        }
+
+        //        var str = "Hello";
+        //        var res = Boolean(str);
+        //        alert( "res的类型是:" + typeof  res + ",取值是:" + res);
+        //        if (res) {
+        //            alert("ok");
+        //        }
+
+        // Boolean()函数的转换规则:
+        // 1.对于字符串类型:非空的字符串被转换为true,空字符""被转化为false
+        // 2.对于数值类型:非0的数值和Infinity被转换为true;0和NaN被转化为false
+        // 3.对于未定义类型:被转化为false
+        // 4.对于引用类型:非空的对象被转化为true,null被转换为false
+        //        println("非空的字符串'Hello'被Boolean()转换的结果:" + Boolean("Hello")); // true
+        //        println("空字符串''被Boolean()转换的结果:" + Boolean("")); // false
+        //        println("<hr>");
+        //        println("100被Boolean()转换的结果:" + Boolean(100)); // true
+        //        println("Infinity被Boolean()转换的结果:" + Boolean(Infinity)); // true
+        //        println("0被Boolean()转换的结果:" + Boolean(0)); // false
+        //        println("NaN被Boolean()转换的结果:" + Boolean(NaN)); // NaN
+        //        println("<hr>");
+        //        println("undefined被Boolean()转换的结果:" + Boolean(undefined)); // false
+        //        println("<hr>");
+        //        var obj1 = new Object();
+        //        var obj2 = null;
+        //        println("非空的对象obj1被Boolean()转换的结果:" + Boolean(obj1)); // true
+        //        println("空对象null被Boolean()转换的结果:" + Boolean(obj2)); // false
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>直接嵌入到HTML标签中的方式</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+JS是一门基于事件的编程语言,
+是指在html标记发生特定的事件的时候,会执行指定的代码
+JS代码可以嵌入到HTML标记中,也就是标记的事件处理句柄中
+标记的事件处理句柄的格式 onxxxx= "js代码或函数"
+在事件处理句柄中指定的函数称为回调函数
+<input type="button" value="我是按钮,点击我啊" onclick='alert("你点击我干嘛啊?")'/>
+<button onclick='alert("你点击我干嘛啊?")'>我也是按钮,你也可以点击我!</button>
+</body>
+</html>

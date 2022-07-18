@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        /**
+         * 改变标记对象的字体的颜色,也就是通过JS来控制CSS
+         * @param tagObj
+         * @param color
+         */
+        function changeColor(tagObj, color) {
+            tagObj.style.color = color;
+        }
+
+    </script>
+</head>
+<body>
+<!--
+通过JS来控制css(控制内嵌式CSS)
+style="color: red"
+
+onmouseover:鼠标进入标记事件的处理句柄
+onmouseout:鼠标退出标记事件的处理句柄
+
+本处调用了两次函数,第一次鼠标进入事件,第二次鼠标退出事件
+-->
+<div id="div" onmouseover="changeColor(this,'red')" onmouseout="changeColor(this,'black')">鼠标经过的时候我的颜色和改变</div>
+</body>
+</html>

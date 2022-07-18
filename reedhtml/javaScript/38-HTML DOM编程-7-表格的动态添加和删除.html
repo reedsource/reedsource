@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        //思路
+        //1.获取表中的内容
+        //2.我们要向表格中添加行,表格对应的DOM对象上面的方法,有insertRow()方法,用于在表格的指定位置插入一行
+        //inserRow()需要一个索引index,若index等于表中的行数,则新行将被附加到表的末尾
+        //获取表格的总行数,表格有多行,表格中该行的数组rows[],数组的长度就是表格中的行数
+        //向行中插入列,列也是一个DOM对象,对象上的inserCell()方法,向行中插入列
+        //向插入的对象中插入列,需要先获取到插入对象的行对象,插入对象的时候,返回的就是新的行对象
+
+
+        //添加函数
+
+        function add() {
+            // 获取文本框中输入的值
+            var name = document.getElementById("name").value;
+
+            // 向表格中插入一行,我们需要先获取到表格对象(页面中的任何的一个标记都是一个DOM对象)
+            // 然后调用表格对象上面插入新行的方法.若 插入新行的索引等于表中的行数，则新行将被附加到表的末尾。
+            var tableObj = document.getElementById("table"); // 获取表格对象
+            var index = tableObj.rows.length; // 获取表格中的总行数
+            var tableRow = tableObj.insertRow(index);  // 向表格中插入新行,返回的就是新插入的行对象
+            var time = new Date().getTime(); // 获取时间戳,就是一个不重复的数值
+            tableRow.id = time;  // 用时间戳当做表格行对象的id值
+
+            // <tr>标记也是一个dom对象,获取到tr标记对象,并且插入列
+            // 向行中插入列,返回的就是新插入的列对象
+            //0表示第0列
+            //1表示第1列
+            var tableCell1 = tableRow.insertCell(0);
+            var tableCell2 = tableRow.insertCell(1);
+            //设置新添加的行的内容(innerHTML属性)
+            tableCell1.innerHTML = name;
+            //设置添加的删除按钮,内容为删除,onclick点击事件,会调用自写的deleteName删除函数,删除函数传入的属性是表格的行ID
+            tableCell2.innerHTML = "<input type='button' value='删除' onclick='deleteName(" + tableRow.id + ")'>"
+        }
+
+        /**
+         * 从表格中删除指定的行
+         * @param rowId 要删除行的id属性
+         */
+        //创建的删除函数
+        function deleteName(rowId) {
+            // 根据要删除的行id获取到行对象
+            //row 行
+            //index 索引
+
+            var tableRow = document.getElementById(rowId);
+            // 获取行对象在表格中的行索引
+            var index = tableRow.rowIndex;
+            //cells 单元格
+
+            // 获取要删除的名字,主要是为了删除提示
+            //行中有多列,所以行对象中有列对象的数组cells[]
+            var name = tableRow.cells[0].innerHTML;
+            //confirm 确认
+            // window.confirm()弹出一个yes/no的对话框,当用户点击确定按钮的时候,该方法返回true
+            if (window.confirm("你真的要删除 " + name + " 吗?")) {
+                var tableObj = document.getElementById("table"); // 获取表格对象
+                tableObj.deleteRow(index);
+            }
+        }
+
+        //回车键代码事件
+        function getKeyBoard() {
+            // 获取回车键,回车键键代码13
+            if (window.event.keyCode === 13) {
+                //alert("获取到回车键了");
+                //add();
+
+                // 页面中的任意一个标记都是一个DOM对象,页面的标记和DOM对象是相对应的
+                // 标记中有什么样的属性,DOM对象上面就有什么样的属性
+                // 标记中有什么样的子元素,DOM对象上就有什么样的属性
+                // 标记中有什么样的操作,DOM对象上面就有什么样的方法;
+                // 例如:按钮标记上有点击的操作,所有按钮标记对应的DOM对象上面就有click()方法
+
+
+                //添加按钮上有id属性,通过id的标记属性
+                var btnObj = document.getElementById("btn");
+                btnObj.click(); // 我们自己调用按钮的click()方法,就相当于点击了按钮
+            }
+        }
+
+
+    </script>
+</head>
+<!--
+down 向下
+key 键入
+
+以下为键入事件,键入事件时,调用键入事件
+-->
+<body onkeydown="getKeyBoard()">
+
+<input type="text" id="name"> <input type="button" id="btn" value="添加" onclick="add()">
+<hr>
+<table border="1" id="table">
+    <tr>
+        <td width="120">姓名</td>
+        <td width="120">操作</td>
+    </tr>
+    <!--<tr>-->
+    <!--<td>张三</td>-->
+    <!--<td><input type="button" value="删除"></td>-->
+    <!--</tr>-->
+</table>
+</body>
+</html>
