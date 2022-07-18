@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码demo</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+<label for="text"></label><textarea rows="10" cols="120" style="width: 1200px; height: 159px;" id="text">默认内容</textarea>
+<button onclick="makeCode()">文本转二维码</button>
+<label for="toMsg"></label><input id="toMsg" style="width: 500px"/>
+<br><br>
+<div style="height:310px;">
+    <div id="qrcode" style="width:300px; height:300px; display: inline-block"></div>
+    <div id="qrcode1" style="width:300px; height:300px; margin-left:10px;display: inline-block"></div>
+    <div id="qrcode2" style="width:300px; height:300px; margin-left:10px;display: inline-block"></div>
+    <div id="qrcode3" style="width:300px; height:300px; margin-left:10px;display: inline-block"></div>
+</div>
+
+<script type="text/javascript">
+    let qrcode;
+    let qrcode1;
+    let qrcode2;
+    let qrcode3;
+
+    function makeCode() {
+        //清除全部二维码
+        $('#qrcode').html("");
+        $('#qrcode1').html("");
+        $('#qrcode2').html("");
+        $('#qrcode3').html("");
+
+        qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 300,
+            height: 300
+        });
+        qrcode1 = new QRCode(document.getElementById("qrcode1"), {
+            width: 300,
+            height: 300
+        });
+        qrcode2 = new QRCode(document.getElementById("qrcode2"), {
+            width: 300,
+            height: 300
+        });
+        qrcode3 = new QRCode(document.getElementById("qrcode3"), {
+            width: 300,
+            height: 300
+        });
+
+        const elText = document.getElementById("text");
+        let tom = $("#toMsg");
+
+        tom.attr("value", "文本长度 " + elText.value.length);
+        if (!elText.value) {
+            alert("Input a text");
+            elText.focus();
+            return;
+        }
+        //单个二维码最长字符  汉字占用3个
+        const f = 1269;
+        //源文本
+        const str = elText.value;
+        //源文本字符长度
+        let strLength = 0;
+        //二维码
+        //第1结束位置
+        let strEnd1 = 0;
+        //第2结束位置
+        let strEnd2 = 0;
+        //第3结束位置
+        let strEnd3 = 0;
+
+        for (let i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) > 127 || str.charCodeAt(i) === 94) {
+                strLength += 3;
+            } else {
+                strLength++;
+            }
+
+            //第1结束位置
+            if (strEnd1 === 0 && strLength > f) {
+                strEnd1 = i;
+                console.log("第1二维码编码结束位置 " + strLength + "文本结束位置 " + strEnd1);
+            }
+
+            //第2结束位置
+            if (strEnd2 === 0 && strLength > f * 2) {
+                strEnd2 = i;
+                console.log("第2二维码编码结束位置 " + strLength + "文本结束位置 " + strEnd2);
+            }
+
+            //第3结束位置
+            if (strEnd3 === 0 && strLength > f * 3) {
+                strEnd3 = i;
+                console.log("第3二维码编码结束位置 " + strLength + "文本结束位置 " + strEnd3);
+            }
+        }
+
+        //超过最大编码长度限制
+        if ((strLength > f * 4)) {
+            tom.attr("value", document.getElementById("toMsg").value + "  字符超长,中英文总编码长度需要少于" + (f * 4) + "  当前 " + strLength);
+            return;
+        }
+
+        tom.attr("value", document.getElementById("toMsg").value + "  编码长度 " + strLength);
+
+        //生成第一二维码  如果结尾为0 说明低于1270 取文本全长度
+        qrcode.makeCode(str.substring(0, strEnd1 === 0 ? str.length : strEnd1));
+
+        //第2 1270
+        if (strLength > f) {
+            console.log(" strEnd1 " + strEnd1 + " 结束 " + (strEnd2 === 0 ? str.length : strEnd2));
+            qrcode1.makeCode(str.substring(strEnd1, strEnd2 === 0 ? str.length : strEnd2));
+        } else {
+            $("#qrcode1").attr("title", "");
+        }
+
+        //第3  2540
+        if (strLength > f * 2) {
+            console.log(" strEnd1 " + strEnd1 + " 结束 " + (strEnd3 === 0 ? str.length : strEnd3));
+            qrcode2.makeCode(str.substring(strEnd2, strEnd3 === 0 ? str.length : strEnd3));
+        } else {
+            $("#qrcode2").attr("title", "");
+        }
+        //4 3810
+        if (strLength > f * 3) {
+            console.log(" strEnd3 " + strEnd3 + " 结束 " + str.length);
+            qrcode3.makeCode(str.substring(strEnd3 + 1, str.length));
+        } else {
+            $("#qrcode3").attr("title", "");
+        }
+
+        tom.attr("value", document.getElementById("toMsg").value + "  →  完成");
+    }
+
+    makeCode();
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码demo</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+<label>完整文本内容</label>
+<button onclick="empty()">清空内容</button>
+<label for="select"></label><select id="select">
+    <option value="1">L &nbsp;&nbsp;&nbsp;7%容错率(2950 983 默认 识别率略底 )</option>
+    <option value="0">M 15%容错率(2328 776)</option>
+    <option value="3">Q 25%容错率(1660 553)</option>
+    <option value="2">H 30%容错率(1270 423 最高识别率)</option>
+</select>
+<label for="text"></label><br><textarea rows="10" cols="120" style="width: 600px; height: 60px;"
+                                        id="text"></textarea><br>
+<label>当前二维码数据内容</label>
+<label for="toText"></label><br><textarea rows="10" cols="120" style="width: 600px; height: 60px;"
+                                          id="toText"></textarea><br>
+<br>
+<button onclick="startMakeCode()">文本转二维码初始化</button>
+<label id="allMsg" style="color: #0000FF"></label>
+
+<br><br>
+<label for="sum">预计二维码总数量 </label><input id="sum" style="width: 60px"/> 当前编号 <label for="toMsg"> 当前编号 </label><input
+        id="toMsg" style="width: 60px" value="0">
+<button onclick="towMakeCode()">下一张</button>
+<label id="meMsg" style="color: #0000FF"></label>
+<br><br>
+<label id="auth" style="display: none;color: #0000FF">当前文本转换二维码已经全部完成</label>
+<div style="height:310px;">
+    <div id="qrcode" style="width:500px; height:510px; display: inline-block"></div>
+</div>
+44
+<script type="text/javascript">
+    //UTF-8 编码
+    //全局二维码等级
+    //等级 理论极限  容错率 实际极限 中文 标识
+    //L    2953       7%    2950     983   1  (默认)
+    //M    2331      15%    2328     776   0
+    //Q    1663      25%    1660     553   3
+    //H    1273      30%    1270     423   2
+    //全局二维码对象
+    let qrcode;
+    let correctLevel = parseInt($('#select').val());
+
+    //全局单个二维码最长字符 极限值
+    let f;
+
+    //全部内容文本
+    let elText;
+
+    //初始化
+    function startMakeCode() {
+        correctLevel = parseInt($("#select").val());
+        console.log(correctLevel);
+        //全局单个二维码最长字符 极限值
+        f = correctLevel === 0 ? 2328 : correctLevel === 3 ? 1660 : correctLevel === 2 ? 1270 : 2950;
+        console.log("二维码等级 " + correctLevel + " 最大值 " + f);
+        //获得全部文本
+        elText = document.getElementById("text").value;
+        //更新二维码总数
+        $("#sum").attr("value", elText.length = 0 ? 0 : Math.ceil(toUtf8Len(elText) / f));
+        //初始化计数
+        $("#toMsg").attr("value", 0);
+        //更新文档信息
+        $("#allMsg").html("当前文本字符长度共 " + elText.length + " 字符总数 " + toUtf8Len(elText));
+        //计算本次二维码文本
+        toStr(0);
+    }
+
+    //下一张计算
+    function towMakeCode() {
+        //获得当前已经生成的二维码的文本
+        const toText = document.getElementById("toText").value;
+        //根据已有二维码内容查询获取下一二维码初始位置
+        const sta = elText.indexOf(toText) + toText.length;
+        //计算本次二维码文本
+        toStr(sta);
+    }
+
+    //二维码文本计算更新
+    //本次二维码开始位置
+    function toStr(sta) {
+        console.log("二维码开始字符串位置-->" + sta);
+        //本次二维码的结束位置
+        let end = 0;
+        //本次二维码utf8长度计数
+        let toTextLength = 0;
+
+        //全部文本长度
+        const allLen = elText.length;
+
+        for (let i = sta; i < allLen; i++) {
+            if (elText.charCodeAt(i) > 127 || elText.charCodeAt(i) === 94) {
+                toTextLength += 3;
+            } else {
+                toTextLength++;
+            }
+
+            if (toTextLength > f) {
+                end = i;
+                break;
+            }
+        }
+        if (toTextLength <= f) {
+            end = allLen;
+        }
+        console.log("二维码结束字符串位置-->" + end);
+        const text = elText.substring(sta, end);
+        console.log("二维码内容-->\r\n\r\n" + text);
+        $('#meMsg').html("二维码字符长度 " + text.length);
+
+        //如果下一张计数大于总计数
+        if (parseInt(document.getElementById("toMsg").value) + 1 > parseInt(document.getElementById("sum").value)) {
+            //清空二维码字符串
+            $("#toText").attr("value", "");
+            //清空二维码
+            $("#qrcode").html("");
+            //清空计数
+            $("#toMsg").attr("value", 0);
+            //展示标识
+            document.getElementById("auth").style.display = "block";
+            $("#meMsg").html("");
+            return;
+        }
+        //隐藏标识
+        document.getElementById("auth").style.display = "none";
+        //二维码生成
+        makeCode(text);
+    }
+
+    //二维码生成
+    function makeCode(text) {
+        //更新当前二维码文本到二维码文本
+        $("#toText").attr("value", text);
+        $("#toMsg").attr("value", parseInt(document.getElementById("toMsg").value) + 1);
+
+        //清除全部二维码
+        $("#qrcode").html("");
+
+        //初始化二维码
+        qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 500,
+            height: 500,
+            correctLevel: correctLevel
+        });
+        //生成当前文本二维码
+        qrcode.makeCode(text);
+    }
+
+    //计算文本的utf8格式下的字符占用长度
+    function toUtf8Len(str) {
+        let strLength = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) > 127 || str.charCodeAt(i) === 94) {
+                strLength += 3;
+            } else {
+                strLength++;
+            }
+        }
+        return strLength;
+    }
+
+    //清空全部文本及二维码
+    function empty() {
+        $("#text").attr("value", "");
+        $("#toText").attr("value", "");
+        startMakeCode();
+    }
+
+    startMakeCode()
+</script>
+</body>
+</html>
