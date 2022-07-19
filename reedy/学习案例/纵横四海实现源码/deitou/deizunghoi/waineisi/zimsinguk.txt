@@ -1,0 +1,11 @@
+<font size=20><font color="black">威尼斯占星屋</font>
+<font size=20><a event="女巫">女巫</a></font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>西:</font><font size=20><a event="威尼斯码头">★码头</a></font>
+<font size=20>南:</font><font size=20><a event="威尼斯实验室">实验室</a></font> <font size=20>北:</font><font size=20><a event="威尼斯商店">商店</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">神奇的小屋一间！</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+<[威尼斯占星屋]><[\deitou\deizunghoi\waineisi\zimsinguk.txt]>

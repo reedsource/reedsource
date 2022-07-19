@@ -1,0 +1,11 @@
+<font size=20><font color="black">威尼斯南城门</font>
+<font size=20><a event="守卫">守卫</a></font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>西:</font><font size=20><a event="威尼斯草原">草原</a></font>
+<font size=20>南:</font><font size=20><a event="威尼斯牧场">牧场</a></font> <font size=20>北:</font><font size=20><a event="威尼斯教堂">教堂</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">城市的南门</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+<[威尼斯南城门]><[\deitou\deizunghoi\waineisi\naamsingmun.txt]>

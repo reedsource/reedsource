@@ -1,0 +1,10 @@
+<font size=20><font color="black">威尼斯住宅区</font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>东:</font><font size=20><a event="威尼斯古村落">古村落</a></font>
+<font size=20>南:</font><font size=20><a event="威尼斯沼泽">沼泽</a></font> <font size=20>北:</font><font size=20><a event="威尼斯后山">后山</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">当地居民的居住地</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+<[威尼斯住宅区]><[\deitou\deizunghoi\waineisi\zyuzaakkeoi.txt]>

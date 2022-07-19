@@ -1,0 +1,13 @@
+<font size=20><font color="black">威尼斯教堂</font>
+<font size=20><a event="神父">神父(免费治疗)</a></font>
+<font size=20><a event="证婚人">证婚人</a></font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>东:</font><font size=20><a event="威尼斯实验室">实验室</a></font>
+<font size=20>南:</font><font size=20><a event="威尼斯南城门">南城门</a></font> <font size=20>北:</font><font size=20><a event="威尼斯码头">★码头</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">神圣的地方，衣冠不整恕不</font>
+<font size=20><font color="black">接待……</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+<[威尼斯教堂]><[\deitou\deizunghoi\waineisi\gaautong.txt]>

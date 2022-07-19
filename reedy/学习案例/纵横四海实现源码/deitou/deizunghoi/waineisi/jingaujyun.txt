@@ -1,0 +1,10 @@
+<font size=20><font color="black">威尼斯研究院</font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>西:</font><font size=20><a event="威尼斯王宫">王宫</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">空气里弥漫着化学药剂的味道</font>
+<font size=20><font color="black">道...</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+<[威尼斯研究院]><[\deitou\deizunghoi\waineisi\jingaujyun.txt]>

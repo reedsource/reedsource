@@ -1,0 +1,12 @@
+<font size=20><font color="black">威尼斯农场</font>
+<font size=20><font color="black">你看到:</font>
+<font size=20><a event="怪">病鸡</a></font> <font size=20><a event="怪">病鸡</a></font> <font size=20><a event="怪">病鸡</a></font> <font size=20><a event="怪">病鸡</a></font> <font size=20><a event="怪">病鸡</a></font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>东:</font><font size=20><a event="威尼斯农场1">农场</a></font> <font size=20>北:</font><font size=20><a event="威尼斯北城门">北城门</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">这里最近有些不安宁....</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+<[威尼斯农场]><[\deitou\deizunghoi\waineisi\nungcoeng.txt]>
+<[[病鸡]]>

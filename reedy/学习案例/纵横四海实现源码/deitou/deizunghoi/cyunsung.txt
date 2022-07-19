@@ -1,0 +1,14 @@
+<font size=20><font color="black">传送: 选择您要去往的港口.</font>
+<font size=20><a event="威尼斯码头">威尼斯(10银)</a></font>
+<font size=20><a event="里斯本码头">里斯本(10银)</a></font>
+<font size=20><a event="亚历山大码头">亚历山大(10银)</a></font>
+<font size=20><a event="突尼斯码头">突尼斯(10银)</a></font>
+<font size=20><a event="马赛码头">马赛(10银)</a></font>
+<font size=20><a event="雅典码头">雅典(10银)</a></font>
+<font size=20><a event="伊斯坦堡码头">伊斯坦堡(10银)</a></font>
+<font size=20><a event="阿尔及尔码头">阿尔及尔(10银)</a></font>
+<font size=20><a event="拉古扎码头">拉古扎(10银)</a></font>
+<font size=20><a event="伊斯坦布尔码头">伊斯坦布尔(10银)</a></font>
+<font size=20><font color="black">点击选择其它地区:</font>
+<font size=17><font color="black">地中海</font> <font size=17><a event="北海">北海</a></font> <font size=17><a event="非洲">非洲</a></font> <font size=17><a event="东亚">东亚</a></font> <font size=17><a event="印度洋">印度洋</a></font>
+<font size=20><a event="返回游戏"><u>返回★码头</u></a></font>

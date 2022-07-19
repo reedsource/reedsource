@@ -1,0 +1,11 @@
+<font size=20><font color="black">威尼斯★码头</font>
+<font size=20><a event="地中海出航">出航</a></font>
+<font size=20><a event="地中海传送">传送</a></font>
+<font size=20><a event="威尼斯船老板">船老板</a></font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>东:</font><font size=20><a event="威尼斯占星屋">占星屋</a></font> <font size=20>西:</font><font size=20><a event="威尼斯市场">市场</a></font>
+<font size=20>南:</font><font size=20><a event="威尼斯教堂">教堂</a></font> <font size=20>南:</font><font size=20><a event="威尼斯广场">广场</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">这里人声鼎沸，热闹非凡！</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+<[威尼斯码头]><[\deitou\deizunghoi\waineisi\maatau.txt]>

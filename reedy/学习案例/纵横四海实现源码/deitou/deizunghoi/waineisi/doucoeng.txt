@@ -1,0 +1,13 @@
+<font size=20><font color="black">威尼斯赌场</font>
+<font size=20><a event="博彩">博彩MM</a></font>
+<font size=20><font color="black">请选择出口：</font>
+<font size=20>东:</font><font size=20><a event="威尼斯酒馆">酒馆</a></font>
+<font size=20>南:</font><font size=20><a event="威尼斯银行">银行</a></font> <font size=20>北:</font><font size=20><a event="威尼斯警察局">警察局</a></font>
+<font size=20><font color="black">【</font><font size=20><a event="威尼斯城内地图">城内地图</a></font><font size=20><font color="black">】</font>
+<font size=20><font color="black">这里MM的笑容迷人，兔女郎装扮很讨巧…</font>
+<font size=20><font color="black">装扮很讨巧…</font>
+<font size=20><a event="状态">状态</a></font> <font size=20><a event="物品">物品</a></font>
+
+
+
+<[威尼斯赌场]><[\deitou\deizunghoi\waineisi\doucoeng.txt]>

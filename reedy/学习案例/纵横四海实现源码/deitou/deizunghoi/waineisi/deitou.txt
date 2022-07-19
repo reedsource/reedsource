@@ -1,0 +1,9 @@
+<font size=20><font color="black">选择目的地:</font><font size=20><a event="返回游戏">返回</a></font>
+<font size=20><a event="威尼斯北城门">北城门</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯南城门">南城门</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯西城门">西城门</a></font>
+<font size=20><a event="威尼斯居民区">居民区</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯东城门">东城门</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯福利院">福利院</a></font>
+<font size=20><a event="威尼斯铁匠铺">铁匠铺</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯商店">商店</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯酒馆">酒馆</a></font>
+<font size=20><a event="威尼斯广场">广场</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯王宫">王宫</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯市场">市场</a></font>
+<font size=20><a event="威尼斯码头">★码头</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯银行">银行</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯赌场">赌场</a></font>
+<font size=20><a event="威尼斯花园">花园</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯教堂">教堂</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯占星屋">占星屋</a></font>
+<font size=20><a event="威尼斯珠宝店">珠宝店</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯警察局">警察局</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯爱情桥">爱情桥</a></font>
+<font size=20><a event="威尼斯住宅区">住宅区</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯研究院">研究院</a></font><font size=20><font color="black"> .</font><font size=20><a event="威尼斯商业街">商业街</a></font>

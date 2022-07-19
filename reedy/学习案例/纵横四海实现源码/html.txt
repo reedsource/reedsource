@@ -1,0 +1,43 @@
+字体大小
+<font size=16>大小显示</font>
+
+链接
+<a event="标识文本">显示文本</a>
+
+
+字体连接
+<font size=16><a event="标识文本">显示文本</a></font>
+
+图片
+<image=1>
+
+换行
+<br> 
+
+出口
+<font size=16>东:</font><font size=16><a event="威尼斯占星屋">占星屋</a></font>
+
+点
+<font size=16> . </font>
+
+问号
+<B><font size=16><font color="red">?</font> </font></B>
+
+感叹
+<B><font size=16><font color="red">！</font> </font></B>
+
+
+箭头
+<B><font size=16><font color="red">↑</font> </font></B>
+
+“<font size=20><font color=” ＋ #引号 ＋ “black” ＋ #引号 ＋ “>” ＋ 当前地点 ＋ “</font>”
+
+
+下划线
+<u>我是简CC</u>
+
+读配置
+读配置项 (取运行目录 () ＋ “/yanmat/yanmat.ini”, “人物”, “昵称”, )
+
+
+
