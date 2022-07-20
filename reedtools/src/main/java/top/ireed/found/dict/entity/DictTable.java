@@ -26,6 +26,18 @@ public class DictTable {
 	 */
 	private String toMsg;
 
+	public DictTable() {
+	}
+
+	public DictTable(String msg) {
+		this.msg = msg;
+	}
+
+	public DictTable(String msg, String toMsg) {
+		this.msg = msg;
+		this.toMsg = toMsg;
+	}
+
 	public String getId() {
 		return id;
 	}
