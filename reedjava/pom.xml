@@ -17,6 +17,7 @@
 		<module>onjava</module>
 		<module>spring</module>
 		<module>frame</module>
+		<module>toolkit</module>
 	</modules>
 	<!--名称-->
 	<name>reedjava</name>
@@ -47,6 +48,7 @@
 		<com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
 		<plugins.version>3.3.0</plugins.version><!--maven-assembly-plugin-->
 		<netty.version>4.1.77.Final</netty.version><!--netty-->
+		<guava.version>31.1-jre</guava.version><!--谷歌开源工具库 Guava-->
 		<reedtools.version>1.0.0</reedtools.version><!--reedtools工具集-->
 
 		<spring-boot.version>2.7.0</spring-boot.version><!--springboot依赖版本-->
@@ -92,6 +94,12 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		<!--谷歌开源工具库 Guava-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
 	</dependencies>
 
 	<!--编译设置-->
@@ -115,7 +123,7 @@
 		<repository>
 			<id>public</id>
 			<name>aliyun nexus</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<url>https://maven.aliyun.com/repository/public</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -127,7 +135,7 @@
 		<pluginRepository>
 			<id>public</id>
 			<name>aliyun nexus</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<url>https://maven.aliyun.com/repository/apache-snapshots/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
