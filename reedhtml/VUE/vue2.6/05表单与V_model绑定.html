@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+v-model.lazy 只有在回车或者onblur时改动
+v-model.number 只能输入数据
+v-model.trim 去除前后空格
+</pre>
+<div id="app">
+    输入变化 立即变化
+    <br/>
+    <input type="text" v-model="theValue">
+    {{theValue}}
+    <br/>
+    输入变化,回车变化
+    <br/>
+    <input type="text" v-model.lazy="myVal1">
+    {{myVal1}}
+    <br/>
+    只有输入数值才变化
+    <br/>
+    <input type="text" v-model.number="myVal2">
+    {{myVal2}}
+    <br/>
+    空格不变化
+    <br/>
+    <input type="text" v-model.trim="myVal3">
+    {{myVal3}}
+</div>
+<script>
+    const m = {
+        theValue: '我变右也变',
+        myVal1: 0,
+        myVal2: 0,
+        myVal3: ''
+    };
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {}
+    });
+</script>
+</body>
+</html>

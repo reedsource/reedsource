@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<!-- View -->
+<div id="app">
+
+</div>
+<script>
+    const m = {
+        word: 'Hello, World! I am Vue'
+    };
+
+    // 3. ViewModel
+    const vm = new Vue({
+        el: '#app', // 挂载点。
+        data: m, // 数据
+        // 方法
+        methods: {
+            show: function () {
+                //日志打印
+                console.log('Hello, I am here!');
+                this.word = 'Changed by Vue案例';
+            },
+            //方法方式2
+            show2(m) {
+                this.word = '你好,世界' + m;
+            },
+        }
+    });
+</script>
+</body>
+</html>

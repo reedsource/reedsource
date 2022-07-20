@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<pre>
+组件包含的知识点
+
+el: 挂载点
+data: 数据
+methods: 方法
+filters: 过滤器
+computed: 计算属性
+directives: 自定义指令
+watch: 监听
+[create, mount, update, destroy] x [before, ed] 八个生命周期
+
+1. 创建组件
+组件相当于可以把html模块化,设定子模块后,可以根据模块组合成新的模块
+
+组件的命名不是小驼峰的，用"-"串联的小写字母单词
+template中的标记必须再一个根标记下面，不可以多个并列
+    也就是按照以下案例,必须在一个div下面
+    不能有多个
+
+组件应该是一个类,
+
+组件的目标在于元素的复用,尽可能多组件的组合,而不是多组件的继承
+为什么要用组件?
+复用:从最基本的元素构建更复杂的且可复用的代码单元
+
+组合组件
+调用其它组件的组件
+根组件->层次组件->功能组件
+</pre>
+<div id="app">
+    <my-component></my-component>
+    <my-component></my-component>
+
+    <br>
+    <parent></parent>
+</div>
+<script>
+    //定义一个组件,可被重复引用
+    Vue.component('my-component', {
+        //`号之后,就可以换行而不需要\
+        template: `
+            <div>
+                <div>
+                    <h1>王校长的第一个组件</h1>
+                    <h2>王校长的另一个组件</h2>
+                </div>
+                <div>
+                    <h3>王校长的另一个组件</h3>
+                </div>
+            </div>`
+    });
+
+
+    //复合组件 组件被组件调用
+    Vue.component('parent', {
+        template: `
+                <div>
+                    <child-1></child-1>
+                    <child-second></child-second>
+                </div>
+            `
+    });
+
+    Vue.component('child-1', {
+        template: `
+            <h4>第一个孩子: {{word}}</h4>`,
+        // 在组件中使用的data,必须是函数
+        data: function () {
+            //javaScript中不强制;结尾,但认为;和回车都是结尾
+            //本处必须把{放在return后 否者返回 undefined
+            return {
+                word: 'hello World!'
+            };
+        }
+    });
+
+    Vue.component('child-second', {
+        template: `
+            <div>
+                <h2>第二个孩子!</h2>
+                <div v-for="item in array">{{item}}</div>
+            </div>`,
+        data: function () {
+            return {
+                array: ['abc', 'def', 'gh']
+            }
+        }
+    });
+
+
+    const m = {};
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {}
+    });
+</script>
+</body>
+</html>

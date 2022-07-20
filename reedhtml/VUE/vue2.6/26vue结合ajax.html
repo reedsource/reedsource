@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <style>
+        .base {
+            width: 320px;
+            height: 400px;
+            background-color: #ddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in list">{{item.name}}</li>
+    </ul>
+</div>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            list: []
+        },
+        mounted: function () {
+            // 发送ajax请求 先防问下是否能够获取
+            const url = 'http://localhost:63342/vue/vue2.6/26.json';
+            //http结果 代理模式
+            this.$http.get(url).then(function (data) {
+                console.log(data.body);
+                this.list = data.body;
+            })
+        }
+    });
+
+</script>
+</body>
+</html>

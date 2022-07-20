@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>直接操作DOM案例原理</title>
+</head>
+<body>
+<div id="app">
+    <input onclick="changeDirectly1()" type="button" value="按钮-原始方式">
+
+    <input onclick="changeDirectly2()" type="button" value="按钮-模版方式">
+
+    <input onclick="changeDirectly3()" type="button" value="按钮-分离方式">
+</div>
+<script id="tmp" type="text/x-wangxiaozhang">
+		<div>
+            <p>%word%</p>
+        </div> 
+
+
+</script>
+<script type="text/javascript">
+    //点击触发事件 全屏点击都生效
+    //addEventListener('click', changeDirectly1);
+
+    // 1. 直接操作DOM 动态添加一个DOM 原始方式
+    function changeDirectly1() {
+        const app = document.getElementById('app');
+        //创建对象标签
+        let div, p;
+        div = document.createElement('div');
+        p = document.createElement('p');
+        //p内容为
+        p.innerHTML = 'abc';
+        //在div中添加一个p标签
+        div.appendChild(p);
+        //在app下添加div标签
+        app.appendChild(div);
+    }
+
+
+    // 2. 模板方法
+    function changeDirectly2() {
+        const app = document.getElementById('app');
+        let html;
+        //正则内容
+        const htmlTmp = '<div><p>%word%</p></div>';
+        //替换
+        html = htmlTmp.replace(/%word%/g, 'abc');
+        //打印
+        console.log(html);
+        //把值赋予
+        app.innerHTML = html;
+    }
+
+
+    // 3. JS与HTML分离
+    //    第一步：把模板放到HTML中
+    //    第二步：渲染
+    //    第三步：模板hide起来
+    //vue加载方式
+    //1.将原始界面全部显示
+    //2.获取全部需要替换的内容
+    //3.内容替换
+    //4.添加东西
+    function changeDirectly3() {
+        const app = document.getElementById('app');
+        let html;
+        //
+        const htmlTmp = document.getElementById('tmp').innerHTML;
+        //替换
+        html = htmlTmp.replace(/%word%/g, 'abc');
+        console.log(html);
+
+        app.innerHTML = html;
+    }
+</script>
+</body>
+</html>

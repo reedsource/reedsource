@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+组件的生命周期
+    四个阶段 Create/Mount/Update/destroy
+    每一个阶段都有前和后
+        beforeCreate created 创建
+        beforeMount mounted 挂载DOM树
+        beforeUpdate updated 数据更新,逻辑判断
+        beforeDestroy destroyed 清理前和清理时
+</pre>
+<div id="app">
+    <!--控制显示-->
+    <input type="button" value="显示控制按钮" @click="beOrNotToBe">
+    <!--调用组件-->
+    <!--show控制 点击 显示控制按钮 只是隐藏 不会销毁-->
+    <my-component v-show="isShow"></my-component>
+    <!--if控制 点击 显示控制按钮  会销毁 重新创建-->
+    <my-component v-if="isShow"></my-component>
+</div>
+<script>
+    //创建一个组件
+    Vue.component('my-component', {
+        //数据显示组件
+        template: `
+                <div>
+                    <input type="button" @click="handleClick" value="数据添加按钮" />
+                    <h4>Hello {{count}}</h4>
+                </div>
+            `,
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        //方法 ++
+        methods: {
+            handleClick: function () {
+                this.count++;
+            }
+        },
+        //创建前调用
+        beforeCreate: function () {
+            console.log('创建前调用!');
+        },
+        //创建时调用
+        created: function () {
+            console.log('创建时调用!');
+        },
+        //挂载前调用
+        beforeMount: function () {
+            console.log('挂载前调用!');
+        },
+        //挂载时调用
+        mounted: function () {
+            console.log('挂载时调用!');
+        },
+        //更新前调用
+        beforeUpdate: function () {
+            console.log('更新前调用!');
+        },
+        //更新时调用
+        updated: function () {
+            console.log('更新时调用');
+        },
+        //清理前调用
+        beforeDestroy: function () {
+            console.log('清理前调用!');
+        },
+        //清理时调用
+        destroyed: function () {
+            console.log('清理时调用!');
+        }
+
+    });
+
+    const m = {
+        //存在
+        isShow: true
+    };
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            beOrNotToBe: function () {
+                this.isShow = !this.isShow;
+            }
+        }
+    });
+</script>
+</body>
+</html>

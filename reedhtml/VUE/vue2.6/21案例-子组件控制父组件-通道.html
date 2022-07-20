@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+通道方式共享数据
+    （通道），父组件中有两个变量，一个数组，一个是开关
+    子组件，可以控制开关，同时也可以向父组件的数组中添加一个数字
+</pre>
+<div id="app">
+    <parent></parent>
+</div>
+<script>
+    // 父组件
+    Vue.component('parent', {
+        //调用时创建通道
+        template: `
+                <div>
+                    <ul v-show="isSwitchOn">
+                        <li v-for="item in array">{{item}}</li>
+                    </ul>
+                    <child ref="mySon1" name="组件1"></child>
+                    <child ref="mySon2" name="组件2" ></child>
+                </div>
+            `,
+        data: function () {
+            return {
+                //显示变量
+                isSwitchOn: true,
+                //显示数据数组
+                array: [5, 10, 25, 50]
+            };
+        }
+    });
+
+    // 子组件
+    Vue.component('child', {
+        template: `
+                <div>
+                    <h4>{{name}}</h4>
+                    <input type="button" value="显示/不显示" @click="showOrNot" />
+                    <input type="button" value="添加" @click="addItem">
+                </div>
+            `,
+        props: ['name'],
+        methods: {
+            //控制父组件的显示变量
+            showOrNot: function () {
+                this.$parent.isSwitchOn = !this.$parent.isSwitchOn;
+            },
+            //给父组件的数组添加数据
+            addItem: function () {
+                this.$parent.array.push(this.name);
+            }
+        }
+    });
+
+    new Vue({
+        el: '#app'
+    });
+</script>
+</body>
+
+</html>

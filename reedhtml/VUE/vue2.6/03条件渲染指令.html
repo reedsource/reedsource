@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+			v-if指令条件渲染指令
+			它根据表达式的true/false来删除或添加元素
+			语法：
+			v-if="expression"
+			expression是一个返回bool值：
+			true：显示
+			false: 元素删除转换为注释,f12可以查看
+			
+			v-show指令条件渲染指令
+			它根据表达式的true/false来显示或隐藏元素
+			语法：
+			v-show="expression"
+			和v-if指令不同的， 使用v-show指令元素始终会在DOM上
+			通过修改style属性的显示与隐藏
+			true：display：block
+			false：display：none
+			
+			v-else指令条件渲染指令
+			指令必须跟一个v-if或v-show元素后
+			否则不能够被识别
+			
+		</pre>
+<div id="app">
+    <input type="button" value="显示" @click="show">
+    <!-- 判断指令 交给vue判断的标记 -->
+    <p v-if="showP">能够被控制显示还是不显示的p标签</p>
+</div>
+<div id="app1">
+    <input type="button" value="不显示" @click="show">
+    <p v-if="showP">1. 能够被控制显示还是不显示的p标签</p>
+    <p v-if="num1">2. 如果{{num1}}是0不显示</p>
+    <p v-if="num2">3. 如果{{num2}}是0不显示</p>
+    <!-- 判断 -->
+    <p v-if="num2 > 15">4. 如果{{num2}} > 15 显示</p>
+    <p v-if="num2 > 3">5. 如果{{num2}} > 3 显示</p>
+    <p v-if="str1">6. 如果'{{str1}}' 是空字符串 不显示</p>
+    <p v-if="str2">7. 如果'{{str2}}' 是空字符串 不显示</p>
+    <!-- 包含判断 -->
+    <p v-if="str2.indexOf('c') > 0">8. 含有有c，显示</p>
+    <p v-if="nan">9. NaN</p>
+    <p v-if="obj1">10. null</p>
+    <p v-if="obj2">11. undefined</p>
+
+    <p v-show="showP">12. 能够被控制显示还是不显示的p标签</p>
+
+    <!-- 分支 -->
+    <p v-if="showP">13. showP true, 函数显示</p>
+    <p v-else>13. showP false, 显示</p>
+
+    <p v-if="rTrue()">14. 函数返回true，也行</p>
+</div>
+
+<script type="text/javascript">
+    const m = {
+        showP: false
+    };
+    //控制方法
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            show: function () {
+                this.showP = true;
+            }
+        }
+    });
+
+    const n = {
+        showP: true,
+        num1: 0,
+        num2: 5,
+        str1: '',
+        str2: 'ab',
+        nan: NaN,
+        obj1: null,
+        obj2: undefined
+    };
+
+    const vm = new Vue({
+        el: '#app1',
+        data: n,
+        methods: {
+            show: function () {
+                this.showP = !this.showP;
+            },
+            rTrue: function () {
+                return true;
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <!-- 1. 引入router -->
+    <script src="js/vue-router.js"></script>
+    <style>
+        /*样式*/
+        .base {
+            width: 600px;
+            height: 400px;
+            background-color: #ddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<pre>
+路由就是设定URL与返回界面或者视图之间的关系
+    route-link 组件之间的跳转
+    路由配置    {path: '/路由/:参数1/:参数2', component: 组件名}
+    发送多参数  router-link :to="'/路由/' + 参数1 + '/' + 参数2"
+    别名: {path: '/login', component: myLogin, alias: '/logon'},
+        主要用于多级path 可以设置别名减少路径
+    重定向: {path: '/路径', redirect: '/重定向到的路径'},
+    别名和重定向：相同点: 都可以把另外一个路由指到同一路由上
+        不同点: 别名是一个真实存在的路由，重定向时不真实的
+    异常处理，如果是不正确的路由，抛一个404给你看
+</pre>
+
+<div id="app">
+    <!-- 2.在HTML中调用router组件。  给你提供的组件，不可改 -->
+    <router-view></router-view>
+</div>
+<script>
+    // 3. 组件定义 登陆页面
+    const myMain = Vue.component('my-main', {
+        template: `
+                <div class="base">
+                    <h1>用户名：{{userName}}</h1><h1>密码：{{password}}</h1>
+                    <router-link to="/login">去登录页</router-link>
+                    <br>
+                </div>
+            `,
+        data: function () {
+            return {
+                userName: '',
+                password: ''
+            };
+        },
+        methods: {},
+        mounted: function () {
+            console.log(this.$route.params);
+            this.userName = this.$route.params.userName;
+            this.password = this.$route.params.password;
+        }
+    });
+
+    // 4. 注册页面
+    // 注意 发送参数的方式
+    const myLogin = Vue.component('my-login', {
+        template: `
+                <div class="base">
+                    <tr >
+                        <td>
+                            &emsp;账号: <input type="text" v-model="userName" />
+                         </td>
+                        <td>
+                            &emsp;密码: <input type="text" v-model="password" />
+                        </td>
+                    </tr>
+                    <tr >
+                        <td>
+                            <router-link :to="'/main/' + userName + '/' + password">去主页</router-link>
+                        </td>
+                        <td>
+                            <router-link :to="'/man/' + userName + '/' + password">别名去主页</router-link>
+                        </td>
+                        <td>
+                            <router-link :to="'/mm/' + userName + '/' + password">重定向去主页</router-link>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr >
+                        <td>
+                            &emsp;URL:&nbsp;<input type="text" v-model="url" />
+                        </td>
+                        <td>
+                            &emsp;<router-link :to="'/'+url">乱输进入错误页</router-link>
+                        </td>
+                    </tr>
+                </div>
+            `,
+        data: function () {
+            return {
+                userName: '',
+                password: '',
+                url: ''
+            };
+        }
+    });
+
+    //错误页
+    const notFound = Vue.component('not-found', {
+        template: `
+                <div class="base">
+                    <h4> 404啦 错误页 </h4>
+                    <router-link to="login">返回登录页</router-link>
+                </div>
+            `
+    });
+
+    // 5. 配置路由词典
+    // {path:<Vue的路径，#号后面的, component: <组件实例>}
+    const myRoutes = [
+        {path: '', component: myLogin},
+        {path: '/login', component: myLogin},
+        //设定别名
+        {path: '/main/:userName/:password', component: myMain, alias: '/man/:userName/:password'},
+        //将重定向到
+        {path: '/mm/:userName/:password', redirect: '/main/:userName/:password'},
+        {path: '/main/:userName/:password', component: myMain},
+        //错误页
+        {path: '*', component: notFound}
+    ];
+
+    //定义一个路由器
+    const myRouter = new VueRouter({
+        routes: myRoutes
+    });
+
+    new Vue({
+        el: '#app',
+        //路由器
+        router: myRouter
+    });
+</script>
+</body>
+</html>

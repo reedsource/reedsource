@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+通道方式共享数据
+    父组件在调用子组件时,建立通道
+    this.$refs     父组件通道调用子组件数据
+    this.$parent.  子组件通道调用父组件数据
+</pre>
+<div id="app">
+    <parent></parent>
+</div>
+<script>
+    // 父组件
+    Vue.component('parent', {
+        //父组件调用子组件
+        //创建mySon通道 按键读取与子组件通道中的数据
+        template: `
+                <div>
+                    <child ref="mySon"></child>
+                    <input type="button" value="获得子组件信息" @click="getData">
+                </div>
+            `,
+        data: function () {
+            return {
+                parentStr: '我是父组件的信息!'
+            }
+        },
+        methods: {
+            getData: function () {
+                console.log('父组件的获得子组件信息：' + this.$refs.mySon.childStr);
+            }
+        }
+
+    });
+
+    // 子组件
+    Vue.component('child', {
+        template: `
+                <div></div>
+            `,
+        data: function () {
+            return {
+                childStr: '我是子组件信息!'
+            };
+        },
+        mounted: function () {
+            console.log('子组件的mounted获取父组件的信息：' + this.$parent.parentStr);
+        }
+    });
+
+    const vm = new Vue({el: '#app'});
+</script>
+</body>
+</html>

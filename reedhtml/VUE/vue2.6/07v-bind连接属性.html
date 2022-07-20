@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <style>
+        /* red */
+        .red {
+            width: 500px;
+            height: 500px;
+            background-color: #f00;
+
+
+        }
+
+        /* 边框 */
+        div.hasBorder {
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+<body>
+<!-- View -->
+<div id="app">
+    <!-- 1 因为本处在定义图片路径前，需要使用v-bind连接一个html属性 -->
+    <!-- <img v-bind:src="imgUrl"> -->
+    <!-- 2 简写 -->
+    <!-- <img :src="imgUrl"> -->
+    <!-- 3 v-bind控制class -->
+    <!-- 字符串方式控制 麻烦且原始-->
+    <div :class="divClassStr"></div>
+    <input type="button" value="3字符串添加边框" @click="func"/>
+
+    <!--4 数组添加方式-->
+    <div :class="divClassArray"></div>
+    <input type="button" value="4数组添加边框" @click="func4"/>
+
+    <!--5 控制class-->
+    <div :class="{red : isRed , hasBorder :isHasBorder}"></div>
+    <input type="button" value="5开关添加边框" @click="func5"/>
+
+
+    <!--6 v-bind控制style 字符串方式 不推荐-->
+    <div class="red" :style="borderStyle6Str"></div>
+    <input type="button" value="6开关添加边框" @click="func6"/>
+
+
+    <!--7 v-bind控制style JSON方式
+    在这里的-是非法字符,在需要-的地方,需要按照驼峰命名 自动解析为- -->
+    <div class="red"
+         :style="{borderWidth:borderWidth7Str,borderStyle:borderStyle7Str,borderColor:borderColor7Str}"></div>
+    <input type="button" value="7开关添加边框" @click="func7"/>
+</div>
+<script>
+    //定义图片路径
+    const m = {
+        imgUrl: './image/通用默认头像1.jpg',
+        //3 字符串变量
+        divClassStr: 'red',
+        //4 数组
+        divClassArray: ['red'],
+        //5 开关
+        isRed: true,
+        isHasBorder: true,
+        //6 字符串style
+        borderStyle6Str: '',
+
+        // 7的json style
+        borderWidth7Str: '',
+        borderStyle7Str: '',
+        borderColor7Str: '',
+    };
+
+    // 3. ViewModel
+    const vm = new Vue({
+        el: '#app', // 挂载点。
+        data: m, // 数据
+        methods: {
+            func: function () {
+                if (this.divClassStr.indexOf('hasBorder') < 0) {
+                    this.divClassStr = this.divClassStr + ' hasBorder';
+                }
+            },
+            func4: function () {
+                if (this.divClassArray.indexOf('hasBorder') < 0) {
+                    this.divClassArray.push('hasBorder');
+                }
+            },
+            //设定属性
+            func5: function () {
+                this.isRed = this.isRed ? false : true;
+                this.isHasBorder = this.isHasBorder ? false : true;
+            },
+
+            func6: function () {
+                if (this.borderStyle6Str.indexOf('border: 5px solid #000') < 0) {
+                    this.borderStyle6Str = this.borderStyle6Str + 'border: 5px solid #000';
+                }
+            },
+            func7: function () {
+                this.borderStyle7Str = 'solid';
+                this.borderWidth7Str = '5px';
+                this.borderColor7Str = '#000'
+            },
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+兄弟组件共享数据
+    可以使用通道
+    本处使用公共Vue对象
+    公共Vue对象.$emit 发出
+    公共Vue对象.$on 注册事件
+注意事件:
+    this指针概念
+    this只会指向当前类的上一级,如果是系统调用子类,
+    this指向的就是系统,而不是真正的this父类
+
+    可以在父类中将this指向变量,中转
+
+</pre>
+<div id="app">
+    <child-1></child-1>
+    <child-2></child-2>
+</div>
+<script>
+    // 1. 创建公共的Vue对象
+    const bridge = new Vue();
+
+    // 组件1
+    Vue.component('child-1', {
+        template: `
+                <div>
+                    <h4>msg: {{msg}}</h4>
+                    <input type="button" value="1->2" @click="sendData" />
+                </div>
+            `,
+        data: function () {
+            return {
+                msg: ''
+            }
+        },
+        methods: {
+            sendData: function () {
+                //emit发出
+                //在公共组件,发出数据 name=""
+                bridge.$emit('OneToTwoEvent', '你好,我是组件1');
+            }
+        },
+
+        mounted: function () {
+            const that = this;
+            //获取公共组件的 name  组件2到组件1的信息的变量
+            bridge.$on('TwoToOneEvent',
+                //创建回调函数 接收信息
+                function (msg) {
+                    console.log('收到来自2的：' + msg);
+                    that.msg = msg;
+                })
+        }
+    });
+
+    //组件2
+    Vue.component('child-2', {
+        template: `
+                <div>
+                    <h4>msg: {{msg}}</h4>
+                    <input type="button" value="2->1" @click="sendData" />
+                </div>
+            `,
+        data: function () {
+            return {
+                msg: ''
+            }
+        },
+        methods: {
+            sendData: function () {
+                bridge.$emit('TwoToOneEvent', '你好,我是组件2');
+            }
+        },
+        mounted: function () {
+            // 1. mounted被调用时，只是定义了回调函数，但是并没有运行
+            // 2. 当child-1来触发事件时，引擎来调用回到函数，此时初始化回调函数中的this指向调用的位置
+            //    注意：此时this并不指向child-2对象，所以，this.msg找不到
+            // 3. 用闭包。
+            //这里设置变量,指向组件
+            const that = this;
+            bridge.$on('OneToTwoEvent', function (msg) {
+                console.log('收到来自1的：' + msg);
+                //为组件赋值
+                that.msg = msg;
+            })
+        }
+    });
+
+    new Vue({el: '#app'});
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+1. 初始化时父组件向子组件传递数据
+2. 父组件在运行时更新传递给子组件的数据
+   父组件数据对象
+</pre>
+<div id="app">
+    <!--组件初始传入值 -->
+    <parent p2="我是初始传入的值"></parent>
+</div>
+<script>
+    //父组件 调用子组件 同时传入值
+    Vue.component('parent', {
+        template: `
+                <div>
+                    我变化,也会传入子组件
+                    <input type="text" v-model="parentValue2.prtP1" />
+                    <child :p1="parentValue2.prtP1" :p2="p2" :str="prtStr"></child>
+                </div>
+            `,
+        //传入界面参数
+        props: ['p2'],
+        //父组件 将参数传入子组件
+        data: function () {
+            return {
+                prtStr: '父传入数据',
+                //数据对象
+                parentValue2: {
+                    //对象子参数
+                    prtP1: '我是数据的数据'
+                }
+            }
+        }
+    });
+
+    //组件
+    Vue.component('child', {
+        //模版 p1 需要参数
+        template: `
+                <div>
+                    <p :id="p1">{{p1}} or {{p2}} or {{str}} </p>
+                </div>
+            `,
+        //传入多个参数
+        props: ['p1', 'p2', 'str'],
+        //监听组件内数据
+        methods: {},
+        mounted: function () {
+            console.log(this.p1, this.p2, this.str);
+        }
+    });
+
+    const m = {};
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {}
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+监听属性的值
+</pre>
+<div id="app">
+    <my-component></my-component>
+</div>
+<script>
+    // 1. 创建一个组件
+    // 2. myValue1, myValue2
+    Vue.component('my-component', {
+        data: function () {
+            return {
+                myValue1: 'abc',
+                myValue2: 123
+            }
+        },
+        //模版
+        template: `
+                <div>
+                    <input type="text" v-model="myValue1" />
+                    <input type="text" v-model="myValue2" />
+                    <p>{{myValue1}}</p>
+                    <p>{{myValue2}}</p>
+                </div>
+            `,
+        //监听观察
+        watch: {
+            myValue1: function () {
+                console.log('myValue1 被更新为 ' + this.myValue1);
+            },
+
+            myValue2: function () {
+                console.log('myValue2 被更新为 ' + this.myValue2);
+            }
+        }
+    });
+
+    const m = {};
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {}
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <style>
+        /*设置带v-cloak的默认不显示  主要用于非常慢的设备 处理完成之后显示*/
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <h4>{{price}}</h4>
+    <!--调用过滤器-->
+    <h4>{{price | myCurrency('前缀¥')}}</h4>
+    <h4>{{price | myCurrency('$')}}</h4>
+    <h4>{{word | changeWord(true)}}</h4>
+    <h4>{{word | changeWord(false)}}</h4>
+
+</div>
+<script>
+    const m = {
+        //价格
+        price: 3780,
+        word: 'iReedTop'
+    };
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {},
+        //过滤器
+        filters: {
+            //钱 格式化
+            //myInput 格式化的值
+            //arg 参数 前缀
+            myCurrency: function (myInput, arg) {
+                console.log(myInput, arg);
+                const priceTmp = myInput / 100.0;
+                return arg + ' ' + priceTmp;
+            },
+            //改变字符 格式化
+            //arg 参数 true大写 false小写
+            changeWord: function (myInput, arg) {
+                if (arg) {
+                    return myInput.toUpperCase();
+                } else {
+                    return myInput.toLowerCase();
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

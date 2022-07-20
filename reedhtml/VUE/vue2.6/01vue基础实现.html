@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1. 引入Vue.js -->
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<!-- View -->
+<div id="app">
+    <!-- 调用方法方式1 -->
+    <input type="button" value="按钮1" v-on:click="show"/>
+    <!-- 1. 用 @ 来代替 v-on -->
+    <!-- 2. 不传递参数时，可以省略括号 -->
+    <input type="button" value="按钮2" @click="show"/>
+    <!-- 调用 简写传参数方式-->
+    <input type="button" value="按钮3" @click="show2('月')"/>
+    <h3>{{word}}</h3>
+</div>
+<script>
+    // 2. Module 定义模型
+    const m = {
+        word: 'Hello, World! I am Vue'
+    };
+
+    // 3. ViewModel
+    const vm = new Vue({
+        // 挂载点。
+        el: '#app',
+        // 数据
+        data: m,
+        // 方法
+        methods: {
+            //方法方式1
+            show: function () {
+                //日志打印
+                console.log('Hello, I am here!');
+                this.word = 'Changed by Vue案例';
+            },
+            //方法方式2
+            show2(m) {
+                this.word = '你好,世界' + m;
+            },
+        }
+    });
+    document.write("你好啊");
+</script>
+</body>
+</html>

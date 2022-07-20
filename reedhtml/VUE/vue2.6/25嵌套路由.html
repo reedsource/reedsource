@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <!-- 1. 引入router -->
+    <script src="js/vue-router.js"></script>
+    <style>
+        .base {
+            width: 320px;
+            height: 400px;
+            background-color: #ddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<pre>
+主路由渲染
+    子路由会出现在子路由调用的router-view位置
+</pre>
+<div id="app">
+    <!--渲染主路由-->
+    <router-view></router-view>
+</div>
+<script>
+    const myMain = Vue.component('my-main', {
+        //
+        template: `
+                <div class="base">
+                    <h1>主页</h1>
+                    <router-link to="/sub1">sub1</router-link>
+                    <router-link to="/sub2">sub2</router-link>
+                    <router-view></router-view>
+                </div>
+            `
+    });
+
+    const mySub1 = Vue.component('my-main-1', {
+        template: `
+                <div class="base">
+                    <h1>附页 - 1</h1>
+                </div>
+            `
+    });
+
+    const mySub2 = Vue.component('my-main-2', {
+        template: `
+                <div class="base">
+                    <h1>附页 - 2</h1>
+                </div>
+            `
+    });
+
+    const myRoutes = [
+        {path: '', component: myMain},
+        //主路由
+        {
+            path: '/main', component: myMain,
+            //子路由 当在主路由的界面,调用子路由的请求,将会进入子路由
+            children: [
+                {path: '/sub1', component: mySub1},
+                {path: '/sub2', component: mySub2},
+            ]
+        }
+    ];
+
+    const myRouter = new VueRouter({
+        routes: myRoutes
+    });
+
+    new Vue({
+        el: '#app',
+        router: myRouter
+    });
+</script>
+</body>
+</html>

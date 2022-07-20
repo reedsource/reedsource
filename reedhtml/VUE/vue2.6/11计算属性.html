@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<div id="app">
+    反向输出字符串
+    <input type="text" v-model="m1">
+    方法1{{msg()}}&emsp; 方法2{{msg2}}
+</div>
+<script>
+    const m = {
+        m1: 'hello world!'
+    };
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            //方法方式
+            msg: function () {
+                return this.m1.split('').reverse().join('');
+            }
+        },
+        //计算属性 与方法类似 但外部认为是一个属性不是方法
+        computed: {
+            msg2: function () {
+                //分为数组
+                //反向
+                //合并装入
+                return this.m1.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+</body>
+</html>

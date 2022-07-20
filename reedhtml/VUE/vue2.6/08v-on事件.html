@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+    v-on:&lt;事件名&gt;
+    v-on:&lt;事件名&gt;= "&lt;functionName&gt;"
+    v-on:&lt;事件名&gt;= "&lt;functionName&gt;($event)"获得原生JS事件
+    .stop
+    .prevent
+    .13或者.enter  都是回车
+    .left或者.right或者.middle(2.2.0以上) 鼠标按键事件
+    .once 只生效一次的事件
+    .ctrl或.shift或.alt  按键生效
+</pre>
+
+<div id="app">
+    <!-- 普通冒泡 -->
+    <div @click="func($event)">
+        <input type="button" value="按钮1">
+        <input type="button" value="按钮2">
+        <input type="button" value="按钮3">
+    </div>
+    <br>
+    stop停止事件
+    <!-- 冒泡的stop
+    两个冒泡
+    控制冒泡到某一层后结束 添加.stop-->
+    <div @click="func2">
+        <div @click.stop="func($event)">
+            <input type="button" value="按钮1">
+            <input type="button" value="按钮2">
+            <input type="button" value="按钮3">
+        </div>
+    </div>
+    <br>
+    prevent阻止事件
+    <!--绑定click事件, .prevent使跳转停止-->
+    <a href="http://www.baidu.com" @click.prevent="func3">百度</a>
+
+    <br>
+    enter回车事件
+    <!--回车事件-->
+    <input type="text" @keyup.enter="func4"/>
+</div>
+<script>
+    const m = {
+        word: 'Hello, World! I am Vue'
+    };
+
+    // 3. ViewModel
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            func: function (event) {
+                console.log(event, event.target);
+                alert('底层冒泡中。。。');
+            },
+            func2: function (event) {
+                alert('中层冒泡中。。。');
+            },
+
+            func3: function () {
+                alert('去百度啦，不想让他去！');
+                // console.log('去百度啦，不想让他去！');
+            },
+
+            func4: function () {
+                console.log('按键了！');
+            }
+        }
+    });
+</script>
+</body>
+</html>

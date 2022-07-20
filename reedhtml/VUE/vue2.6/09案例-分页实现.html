@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+    <style>
+        /*选中颜色*/
+        .active {
+            color: red;
+        }
+
+        .page {
+            /*圆点去掉*/
+            list-style: none;
+        }
+
+        /*设置page的li格式*/
+        .page > li {
+            /*浮动*/
+            float: left;
+            /*填充*/
+            padding: 5px;
+            /*相隔*/
+            margin-right: 10px;
+            /*边框*/
+            border: 1px solid #ddd;
+            /*颜色*/
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul class="page">
+        <li>
+            <a @click="prev">上一页</a>
+        </li>
+        <!--循环-->
+        <li v-for="n in pageCount">
+            <!--将循环变量n循环-->
+            <!--循环的页面等于当前选中的情况 选中效果-->
+            <a :class="activeNumber==n?'active':''">{{n}}</a>
+        </li>
+        <li>
+            <a @click="next">下一页</a>
+        </li>
+    </ul>
+</div>
+<script>
+    const m = {
+        //循环的总数量
+        pageCount: 10,
+        //当前选中
+        activeNumber: 5
+    };
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            //上一页事件
+            prev: function () {
+                if (this.activeNumber > 1) {
+                    this.activeNumber--;
+                }
+            },
+            //下一页事件
+            next: function () {
+                if (this.activeNumber < 10) {
+                    this.activeNumber++;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

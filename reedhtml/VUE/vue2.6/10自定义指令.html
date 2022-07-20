@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- v-show="expression": true 显示，false隐藏 -->
+    自定义事件 大于0显示 否则隐藏
+    <!-- 自定义事件 v-change="expression": >0 显示，<=0隐藏 -->
+    <!--++事件-->
+    <input type="button" value="++" @click="countAdd">
+    <!----事件-->
+    <input type="button" value="--" @click="countDelete">
+    {{count}}
+    <h1 v-change="count">如果不++，你看不见我</h1>
+</div>
+<script>
+    const m = {
+        count: 0
+    };
+
+    const vm = new Vue({
+        el: '#app',
+        data: m,
+        methods: {
+            //++事件
+            countAdd: function () {
+                this.count++;
+            },
+            //--事件
+            countDelete: function () {
+                this.count--;
+            }
+        },
+
+        //自定义指令集合
+        directives: {
+            //自定义指令
+            change: {
+                //绑定调用 钩子 默认写法
+                //el是引用指令的代码
+                //bindings是参数集合
+                bind: function (el, bindings) {
+                    console.log('binding.....');
+                    console.log(el);
+                    console.log(bindings);
+                    if (bindings.value > 0) {
+                        //原生js显示
+                        el.setAttribute('style', 'display: block');
+                    } else {
+                        el.setAttribute('style', 'display: none');
+                    }
+                },
+                //变化调用 钩子 默认写法
+                update: function (el, bindings) {
+                    console.log('updating.....');
+                    console.log(el, bindings);
+                    if (bindings.value > 0) {
+                        el.setAttribute('style', 'display: block');
+                    } else {
+                        el.setAttribute('style', 'display: none');
+                    }
+                },
+                //解绑调用 钩子 默认写法
+                unbind: function (el, bindings) {
+
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

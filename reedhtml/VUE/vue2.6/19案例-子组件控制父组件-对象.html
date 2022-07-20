@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue2.6.12.js"></script>
+</head>
+<body>
+<pre>
+练习（事件响应方法）对象方式
+    父组件中有两个变量，一个数组，一个是开关
+    子组件，可以控制开关，同时也可以向父组件的数组中添加一个数字
+</pre>
+<div id="app">
+    <parent></parent>
+</div>
+
+<script>
+    // 父组件
+    // 父组件调用子组件时 传入控制变量
+    Vue.component('parent', {
+        template: `
+                <div>
+                    <ul v-show="params.isSwitchOn">
+                        <li v-for="item in params.array">{{item}}</li>
+                    </ul>
+                    <child :myParams="params" ></child>
+                </div>
+            `,
+        data: function () {
+            return {
+                params: {
+                    isSwitchOn: true,
+                    array: [5, 10, 25, 50]
+                }
+            };
+        },
+        methods: {}
+    });
+
+    // 子组件
+    Vue.component('child', {
+        template: `
+                <div>
+                    <input type="button" value="显示/不显示" @click="showOrNot" />
+                    <input type="button" value="添加" @click="addItem">
+                </div>
+            `,
+        methods: {
+            showOrNot: function () {
+                this.myParams.isSwitchOn = !this.myParams.isSwitchOn;
+            },
+            addItem: function () {
+                this.myParams.array.push(25);
+            }
+        },
+        //接收传入变量 命名为 myParams
+        props: ['myParams']
+    });
+
+    new Vue({el: '#app'});
+</script>
+</body>
+</html>
