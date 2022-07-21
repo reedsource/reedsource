@@ -26,7 +26,7 @@ public class FoundDictTest extends TestCase {
 		//配置文件位置可以自定义修改
 		Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\reed\\reed.json")));
 
-		FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString());
+		FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:D:\\cache\\data\\FoundDict.db");
 		DealLog.log(foundDict.dict("reed"));
 		Assert.assertEquals("芦苇", foundDict.dict("reed"));
 		Assert.assertEquals("芦苇", foundDict.dict("reed", "en", "zh"));

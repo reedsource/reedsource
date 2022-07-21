@@ -42,7 +42,8 @@ public class FoundDict {
 	/**
 	 * 本地缓存的数据库地址,当前为sqlite
 	 */
-	private final String dataFile;
+	private String dataFile = null;
+	private FoundSqlite foundSqlite = null;
 
 	/**
 	 * @param appId       百度翻译id
@@ -54,7 +55,6 @@ public class FoundDict {
 		}
 		this.appId = appId;
 		this.securityKey = securityKey;
-		this.dataFile = null;
 	}
 
 	/**
@@ -69,6 +69,15 @@ public class FoundDict {
 		this.appId = appId;
 		this.securityKey = securityKey;
 		this.dataFile = dataFile;
+
+		if (dataFile.isEmpty()) {
+			throw new TopException("本地缓存数据库地址  sqlite为空");
+		}
+		//创建时初始化数据库对象
+		//创建数据库对象
+		foundSqlite = new FoundSqlite(dataFile);
+		//初始化缓存词库
+		foundSqlite.init(new DictTable());
 	}
 
 	public String dict(String query) {
@@ -88,7 +97,7 @@ public class FoundDict {
 		try {
 			// 读取本地缓存 不同表示有缓存 返回缓存
 			String queryTo = opinion(query);
-			if (!Objects.equals(query, queryTo)) {
+			if (!queryTo.isEmpty()) {
 				return queryTo;
 			}
 			// 无缓存 调用翻译api
@@ -105,9 +114,7 @@ public class FoundDict {
 			//将翻译结果与需要翻译的文本做对比,如果不同 记录到缓存数据库
 			if (!Objects.equals(query, queryTo)) {
 				//本地缓存路径为空,不读取缓存
-				if (dataFile != null) {
-					//创建数据库对象
-					FoundSqlite foundSqlite = new FoundSqlite(dataFile);
+				if (foundSqlite != null) {
 					//写入数据库
 					foundSqlite.insert(new DictTable(query, queryTo));
 				}
@@ -127,15 +134,11 @@ public class FoundDict {
 	 * @param m 待处理文本
 	 * @return 翻译后文本
 	 */
-	private String opinion(String m) throws TopException {
+	private String opinion(String m) {
 		//本地缓存路径为空,不读取缓存
 		if (dataFile == null) {
 			return m;
 		}
-
-
-		//创建数据库对象
-		FoundSqlite foundSqlite = new FoundSqlite(dataFile);
 		//翻译数据类
 		DictTable dictTable = new DictTable(m);
 
@@ -158,8 +161,8 @@ public class FoundDict {
 		if (resultSet != null) {
 			m = resultSet.get(0).getToMsg();
 		} else {
-			//取得翻译结果
-			m = dict(m);
+			//返回空
+			m = "";
 		}
 		return m;
 	}

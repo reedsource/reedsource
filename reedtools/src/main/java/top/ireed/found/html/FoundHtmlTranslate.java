@@ -6,6 +6,7 @@ package top.ireed.found.html;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
+import top.ireed.deal.DealLog;
 import top.ireed.found.dict.FoundDict;
 import top.ireed.general.TopException;
 
@@ -38,13 +39,13 @@ public class FoundHtmlTranslate {
 		}
 		this.oFile = oFile;
 		this.backupFile = backupFile;
-		this.foundDict = foundDict;
+		FoundHtmlTranslate.foundDict = foundDict;
 	}
 
 	/**
 	 *
 	 */
-	public void dictHtml() throws TopException {
+	public void dictHtml() {
 		//获取开始时间
 		long startTime = System.currentTimeMillis();
 		System.out.println("===================html英文翻译中文工具启动===================");
@@ -78,10 +79,26 @@ public class FoundHtmlTranslate {
 		//文件不为空
 		if (!FileUtil.isEmpty(file)) {
 			//1 读取html文件夹 遍历文件 递归0层  并初步剔除其他类型文件a
-			List<File> list = FileUtil.loopFiles(file, 1, fileFilter);
+			List<File> list = FileUtil.loopFiles(file, -1, fileFilter);
 
 			System.out.println("html文件总数量 " + list.size());
 			int i = 1;
+
+			DealLog.log("开始复制非html文件");
+			//复制其它非过滤文件
+			List<File> list1 = FileUtil.loopFiles(file);
+			int sum = 0;
+			for (File f : list1) {
+				//跳过上面已经翻译的文件
+				if (FileUtil.getSuffix(f).equals("html") || FileUtil.getSuffix(f).equals("htm")) {
+					continue;
+				}
+				sum++;
+				//复制文件 目录不存在将创建
+				FileUtil.copy(f, new File(backupFile + f.toString().substring(oFile.length())), true);
+			}
+
+			DealLog.log("复制非html文件完成 共", sum, "个");
 
 			for (File f : list) {
 				long start0Time = System.currentTimeMillis();
@@ -93,12 +110,12 @@ public class FoundHtmlTranslate {
 				// 翻译前处理
 				String fileToString = allFront(fileString);
 				//翻译处理
-				fileToString = all(fileToString);
+//				fileToString = all(fileToString);
 				//翻译后处理
 				fileToString = allLater(fileToString);
 
-				//更新的文件名称 将文件保存到翻译目录
-				File s = new File(backupFile + "\\" + f.getName());
+				//更新的文件名称 将文件保存到翻译目录  保留原有目录结构
+				File s = new File(backupFile + f.toString().substring(oFile.length()));
 				//写入到文件
 				writeToString(s, fileToString);
 
@@ -108,6 +125,8 @@ public class FoundHtmlTranslate {
 				System.out.println("\t翻译完成 耗时：" + (endTime - start0Time) + "ms");
 				i++;
 			}
+
+
 		}
 		//获取结束时间
 		long endTime = System.currentTimeMillis();
