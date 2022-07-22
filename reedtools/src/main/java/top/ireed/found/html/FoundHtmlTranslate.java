@@ -6,11 +6,14 @@ package top.ireed.found.html;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
+import top.ireed.deal.DealContents;
+import top.ireed.deal.DealIo;
 import top.ireed.deal.DealLog;
 import top.ireed.found.dict.FoundDict;
 import top.ireed.general.TopException;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileFilter;
 import java.util.List;
 
 
@@ -45,7 +48,7 @@ public class FoundHtmlTranslate {
 	/**
 	 *
 	 */
-	public void dictHtml() {
+	public void dictHtml() throws TopException {
 		//获取开始时间
 		long startTime = System.currentTimeMillis();
 		System.out.println("===================html英文翻译中文工具启动===================");
@@ -62,13 +65,8 @@ public class FoundHtmlTranslate {
 			return;
 		}
 
-		File baFile = new File(backupFile);
-
-		//文件夹不存在 创建文件夹
-		if (!baFile.exists()) {
-			baFile.mkdirs();
-		}
-
+		//尝试创建翻译后指定目录
+		DealContents.newContents(backupFile, false);
 
 		//源文件路径
 		File file = new File(oFile);
@@ -104,20 +102,20 @@ public class FoundHtmlTranslate {
 				long start0Time = System.currentTimeMillis();
 				System.out.print(i + "\t开始翻译文件 " + f.getName() + "   ====> ");
 				//获取file中的html文件内容
-				String fileString = readToString(f);
+				String fileString = DealIo.getFileIo(f);
 				//获取目录查下全部文件,并翻译
 
 				// 翻译前处理
 				String fileToString = allFront(fileString);
 				//翻译处理
-//				fileToString = all(fileToString);
+				fileToString = all(fileToString);
 				//翻译后处理
 				fileToString = allLater(fileToString);
 
 				//更新的文件名称 将文件保存到翻译目录  保留原有目录结构
 				File s = new File(backupFile + f.toString().substring(oFile.length()));
 				//写入到文件
-				writeToString(s, fileToString);
+				DealIo.toFileIo(s, fileToString);
 
 				//获取结束时间
 				long endTime = System.currentTimeMillis();
@@ -277,50 +275,6 @@ public class FoundHtmlTranslate {
 		} else if (StrUtil.lastIndexOfIgnoreCase(m, "$") != -1) {
 			return false;
 		} else return StrUtil.lastIndexOfIgnoreCase(m, "div") == -1;
-	}
-
-	/**
-	 * 读取文件文本
-	 *
-	 * @param file 路径
-	 * @return 文件文本
-	 */
-	private static String readToString(File file) {
-		String encoding = "UTF-8";
-		long filelength = file.length();
-		byte[] filecontent = new byte[(int) filelength];
-		try {
-			FileInputStream in = new FileInputStream(file);
-			in.read(filecontent);
-			in.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
-			return new String(filecontent, encoding);
-		} catch (UnsupportedEncodingException e) {
-			System.err.println("操作系统不支持" + encoding);
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-
-	/**
-	 * 写文件
-	 *
-	 * @param file 路径
-	 * @param m    字符串
-	 */
-	private static void writeToString(File file, String m) {
-		FileOutputStream outputStream;
-		try {
-			outputStream = new FileOutputStream(file);
-			outputStream.write(m.getBytes());
-			outputStream.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**

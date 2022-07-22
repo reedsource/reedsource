@@ -32,7 +32,7 @@ public class DealIo {
 	public static void toFileIo(File file, String str) throws TopException {
 		try {
 			//文件不存在  且  创建文件父级目录成功 创建文件成功
-			if (!file.exists() && (!DealFile.newFile(file.getParentFile()) || !file.createNewFile())) {
+			if (!file.exists() && (!DealContents.newContents(file.getParentFile(), true) || !file.createNewFile())) {
 				DealLog.log(file, "写入到文件创建失败");
 				return;
 			}
@@ -48,7 +48,7 @@ public class DealIo {
 			fop.close();
 			DealLog.log(file, "完成");
 		} catch (IOException e) {
-			throw new TopException("写入到文件异常", e);
+			throw new TopException("写入到文件异常 路径", file, e);
 		}
 	}
 
