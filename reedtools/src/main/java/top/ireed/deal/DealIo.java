@@ -32,7 +32,7 @@ public class DealIo {
 	public static void toFileIo(File file, String str) throws TopException {
 		try {
 			//文件不存在  且  创建文件父级目录成功 创建文件成功
-			if (!file.exists() && (!DealContents.newContents(file.getParentFile(), true) || !file.createNewFile())) {
+			if (!file.exists() && (!DealContents.newContents(file) || !file.createNewFile())) {
 				DealLog.log(file, "写入到文件创建失败");
 				return;
 			}

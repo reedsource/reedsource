@@ -66,7 +66,7 @@ public class FoundHtmlTranslate {
 		}
 
 		//尝试创建翻译后指定目录
-		DealContents.newContents(backupFile, false);
+		DealContents.newContents(backupFile);
 
 		//源文件路径
 		File file = new File(oFile);
@@ -143,6 +143,7 @@ public class FoundHtmlTranslate {
 	private static String allFront(String src) {
 		src = StrUtil.replaceIgnoreCase(src, "<!--", "$**$");
 		src = StrUtil.replaceIgnoreCase(src, "-->", "$*$");
+		src = StrUtil.replaceIgnoreCase(src, "\r\n", "$***$");
 		return src;
 	}
 
@@ -155,6 +156,7 @@ public class FoundHtmlTranslate {
 	private static String allLater(String src) {
 		src = StrUtil.replaceIgnoreCase(src, "$*$", "-->");
 		src = StrUtil.replaceIgnoreCase(src, "$**$", "<!--");
+		src = StrUtil.replaceIgnoreCase(src, "$***$", "\r\n");
 		return src;
 	}
 
@@ -206,8 +208,6 @@ public class FoundHtmlTranslate {
 				//1.处理前数据统计================================================
 				//取中间的字符数
 				c = z - y - 1;
-				//1.1 统计源文本中换行符次数
-				int sum_r = getCount("\r\n", m);
 
 				//2.翻译前文本处理================================================
 				//去除\r\n
@@ -224,14 +224,11 @@ public class FoundHtmlTranslate {
 				//第一时间记录翻译的标准结果
 				//需要翻译返回翻译结果 否则返回原文本
 				String k = exclude(m) ? foundDict.dict(m) : m;
-				//翻译结果处理文本
-				StringBuilder n = new StringBuilder(k);
+
 
 				//4.翻译后文本处理===============================================
-				//4.回车 换行符恢复补全
-				for (int j = 0; j < sum_r; j++) {
-					n.append("\r");
-				}
+				//翻译结果处理文本
+				StringBuilder n = new StringBuilder(k);
 
 				//翻译后的文本长度
 				int num = n.length();
@@ -275,29 +272,6 @@ public class FoundHtmlTranslate {
 		} else if (StrUtil.lastIndexOfIgnoreCase(m, "$") != -1) {
 			return false;
 		} else return StrUtil.lastIndexOfIgnoreCase(m, "div") == -1;
-	}
-
-	/**
-	 * 返回字符串在另一个字符串中出现的次数
-	 *
-	 * @param target 需要查询的字符串
-	 * @param str    被查询字符串
-	 * @return int indexOf(String str):返回的是str在字符串中第一次出现的位置
-	 */
-	public static int getCount(String target, String str) {
-		// 定义计数器
-		int count = 0;
-		// 定义角标
-		int index;
-
-		while ((index = str.indexOf(target)) != -1) {
-			// sp("str"+str);
-			// 截取未被查找到目标字符串的子串
-			str = str.substring(index + target.length());
-			count++;
-		}
-
-		return count;
 	}
 }
 

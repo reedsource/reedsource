@@ -23,7 +23,7 @@ public class FoundHtmlTranslateTest extends TestCase {
 		//文件路径
 		String file = "D:\\cache\\html\\";
 		//翻译后的文件路径
-		String backupFile = "D:\\cache\\html\\Translate\\";
+		String backupFile = "D:\\cache\\html2\\";
 
 		//配置文件位置可以自定义修改
 		Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\reed\\reed.json")));
