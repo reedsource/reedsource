@@ -17,6 +17,7 @@
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>${tomcat.jasper.version}</version>
 		</dependency>
 		<!-- servlet依赖的jar包start -->
 		<dependency>
@@ -32,6 +33,7 @@
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jsp-api</artifactId>
+			<version>${tomcat.jasper.version}</version>
 		</dependency>
 		<!--JSP 标准标签库-->
 		<dependency>
