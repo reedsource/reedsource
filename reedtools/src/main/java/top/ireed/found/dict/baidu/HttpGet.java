@@ -1,5 +1,7 @@
 package top.ireed.found.dict.baidu;
 
+import top.ireed.deal.DealLog;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -25,8 +27,6 @@ class HttpGet {
 
 			String sendUrl = getUrlWithQueryString(host, params);
 
-			// System.out.println("URL:" + sendUrl);
-
 			URL uri = new URL(sendUrl); // 创建URL对象
 			HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
 			if (conn instanceof HttpsURLConnection) {
@@ -37,7 +37,7 @@ class HttpGet {
 			conn.setRequestMethod(GET);
 			int statusCode = conn.getResponseCode();
 			if (statusCode != HttpURLConnection.HTTP_OK) {
-				System.out.println("Http错误码：" + statusCode);
+				DealLog.log("Http错误码：", statusCode);
 			}
 
 			// 读取服务器的数据

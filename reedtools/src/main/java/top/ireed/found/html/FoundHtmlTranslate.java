@@ -51,17 +51,17 @@ public class FoundHtmlTranslate {
 	public void dictHtml() throws TopException {
 		//获取开始时间
 		long startTime = System.currentTimeMillis();
-		System.out.println("===================html英文翻译中文工具启动===================");
-		System.out.println("===翻译后的文件目录只包含html文件,请手动复制入依赖的相关文件====");
-		System.out.println("=============================================================");
-		System.out.println("===文件目录" + oFile);
-		System.out.println("===文件翻译结果目录" + backupFile);
+		DealLog.log("===================html英文翻译中文工具启动===================");
+		DealLog.log("===翻译后的文件目录只包含html文件,请手动复制入依赖的相关文件====");
+		DealLog.log("=============================================================");
+		DealLog.log("===文件目录" + oFile);
+		DealLog.log("===文件翻译结果目录" + backupFile);
 		if (oFile.isEmpty()) {
-			System.out.println("html文件所在路径" + oFile + "异常,清检查");
+			DealLog.log("html文件所在路径" + oFile + "异常,清检查");
 			return;
 		}
 		if (backupFile.isEmpty()) {
-			System.out.println("html文件翻译后指定路径" + backupFile + "异常,清检查");
+			DealLog.log("html文件翻译后指定路径" + backupFile + "异常,清检查");
 			return;
 		}
 
@@ -79,7 +79,7 @@ public class FoundHtmlTranslate {
 			//1 读取html文件夹 遍历文件 递归0层  并初步剔除其他类型文件a
 			List<File> list = FileUtil.loopFiles(file, -1, fileFilter);
 
-			System.out.println("html文件总数量 " + list.size());
+			DealLog.log("html文件总数量 " + list.size());
 			int i = 1;
 
 			DealLog.log("开始复制非html文件");
@@ -120,7 +120,7 @@ public class FoundHtmlTranslate {
 				//获取结束时间
 				long endTime = System.currentTimeMillis();
 				//输出程序运行时间
-				System.out.println("\t翻译完成 耗时：" + (endTime - start0Time) + "ms");
+				DealLog.log("\t翻译完成 耗时：" + (endTime - start0Time) + "ms");
 				i++;
 			}
 
@@ -129,8 +129,8 @@ public class FoundHtmlTranslate {
 		//获取结束时间
 		long endTime = System.currentTimeMillis();
 		//输出程序运行时间
-		System.out.println("程序运行时间：" + (endTime - startTime) + "ms");
-		System.out.println("===================文档处理翻译完成,谢谢使用==================");
+		DealLog.log("程序运行时间：" + (endTime - startTime) + "ms");
+		DealLog.log("===================文档处理翻译完成,谢谢使用==================");
 	}
 
 
@@ -192,7 +192,7 @@ public class FoundHtmlTranslate {
 			}
 			//html异常
 			if (z < y) {
-				System.out.println("异常  " + z + "  " + y + " " + src.substring(z, y));
+				DealLog.log("异常", z, y, src.substring(z, y));
 				break;
 			}
 
