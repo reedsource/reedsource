@@ -4,6 +4,7 @@
 package k06初始化和清理;
 
 import top.ireed.deal.DealLog;
+import top.ireed.entity.RE;
 
 /**
  * 功能简述:
@@ -19,6 +20,10 @@ public class 静态数据初始化 {
 	static 柜橱 柜橱 = new 柜橱();
 
 	public static void main(String[] args) {
+
+		//TODO
+		DealLog.GO(new RE("2022年7月23日", "程序的默认加载顺序,重点重复学习"));
+
 		DealLog.log("main方法 new 柜橱()");
 		new 柜橱();
 		DealLog.log("main方法 new 柜橱()");
