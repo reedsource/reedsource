@@ -34,6 +34,8 @@ public class 普通数组 {
 		//静态初始化
 		int[] arr1 = {11, 12, 13, 14, 15};
 		String[] a = {"1", "2", "3", "4"};
+		int[] intArray2 = new int[]{1, 2, 3, 4, 5};
+		DealLog.log(intArray2);
 
 		//数组的初始化默认值
 		//数组元素的默认初始化
