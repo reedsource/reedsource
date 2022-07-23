@@ -38,15 +38,9 @@ public class DealLog {
 	}
 
 	/**
-	 * 换行
-	 */
-	public static void log() {
-		logger.info("\r\n");
-	}
-
-	/**
 	 * Object打印
 	 * <p>
+	 * 无元素 换行
 	 * 单元素 直接打印
 	 * 多元素 空格间隔组合打印
 	 *

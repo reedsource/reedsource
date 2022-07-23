@@ -18,6 +18,8 @@ public class DealLogTest {
 
 	@Test
 	public void log() {
+		DealLog.log("========");
+		DealLog.log();
 		DealLog.log();
 		DealLog.log("测试打印");
 		DealLog.log(new Model("6", "key"), new Model("7", "key"), new Model("8", "key"));
