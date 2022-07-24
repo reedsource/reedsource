@@ -19,6 +19,20 @@ import top.ireed.deal.DealLog;
 public class 枚举实现 {
 	private 颜色枚举 颜色枚举1 = 颜色枚举.RED;
 
+
+	/**
+	 * 探索枚举类中 默认包含toString方法
+	 */
+	@Test
+	public void 颜色枚举() {
+		颜色枚举 y = 颜色枚举.RED;
+		DealLog.log(y);
+		//GREEN
+
+		//能打印本身代表枚举类本身默认的添加了toString方法
+	}
+
+
 	/**
 	 * 增强可读性
 	 */
