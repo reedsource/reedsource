@@ -13,7 +13,7 @@
 <body>
 
 <%--如果为空显示---%>
-<jsp:useBean id="msg" scope="request" />
+<jsp:useBean id="msg" scope="request"/>
 <c:if test="${empty msg or msg == '' }">为空显示</c:if>
 <c:if test="${not empty msg and msg != '' }">不为空显示</c:if>
 

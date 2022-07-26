@@ -86,7 +86,7 @@
 	<update id="updateByPrimaryKey" parameterType="top.ireed.model.OneTable">
 		update oneTableTop
 		set name = #{name,jdbcType=VARCHAR},
-		    age  = #{age,jdbcType=VARCHAR}
+		age = #{age,jdbcType=VARCHAR}
 		where id = #{id,jdbcType=VARCHAR}
 	</update>
 </mapper>
