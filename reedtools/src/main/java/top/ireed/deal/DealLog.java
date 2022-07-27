@@ -34,7 +34,7 @@ public class DealLog {
 	 * 需要在调用位置同步添加javadoc同时添加日志
 	 */
 	public static void GO(RE... o) {
-		log(o);
+		log((Object) o);
 	}
 
 	/**

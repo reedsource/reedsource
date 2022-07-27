@@ -48,7 +48,8 @@
 		<com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
 		<plugins.version>3.3.0</plugins.version><!--maven-assembly-plugin-->
 		<netty.version>4.1.77.Final</netty.version><!--netty-->
-		<tomcat.jasper.version>10.0.20</tomcat.jasper.version><!--tomcat-embed-jasper-->
+		<!--2022年7月27日 从10.0.20回退 启动报错Failed to start bean 'webServerStartStop'-->
+		<tomcat.jasper.version>9.0.63</tomcat.jasper.version><!--tomcat-embed-jasper-->
 		<guava.version>31.1-jre</guava.version><!--谷歌开源工具库 Guava-->
 		<reedtools.version>1.0.0</reedtools.version><!--reedtools工具集-->
 

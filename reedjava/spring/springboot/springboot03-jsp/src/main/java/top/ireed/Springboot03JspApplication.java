@@ -19,9 +19,11 @@ public class Springboot03JspApplication {
 		DealLog.log("AJAX表达式教程 http://localhost/ajax");
 		DealLog.log("jstl表达式教程 http://localhost/jstl");
 		DealLog.log("jsp教程 http://localhost/jsp");
+		DealLog.log("JSP学习案例 http://localhost/index");
 
-		//启动调用浏览器打开界面
-		Runtime.getRuntime().exec("cmd   /c   start   http://localhost/index");
 		SpringApplication.run(Springboot03JspApplication.class, args);
+		//启动调用浏览器打开界面
+		//必须在启动类之下
+		Runtime.getRuntime().exec("cmd   /c   start   http://localhost/index");
 	}
 }
