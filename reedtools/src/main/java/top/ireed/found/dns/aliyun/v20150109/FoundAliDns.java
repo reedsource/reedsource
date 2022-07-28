@@ -30,7 +30,13 @@ public class FoundAliDns {
 
 	static IAcsClient client;
 
-
+	/**
+	 * 创建阿里云dns连接对象
+	 *
+	 * @param REGION_ID         账号
+	 * @param ACCESS_KEY_ID     key
+	 * @param ACCESS_KEY_SECRET 密钥
+	 */
 	public FoundAliDns(String REGION_ID, String ACCESS_KEY_ID, String ACCESS_KEY_SECRET) {
 		//阿里云数据组装
 		DefaultProfile profile = DefaultProfile.getProfile(REGION_ID, ACCESS_KEY_ID, ACCESS_KEY_SECRET);
@@ -41,10 +47,11 @@ public class FoundAliDns {
 	/**
 	 * 更新阿里云解析ip
 	 *
-	 * @param iP 需要更新的ip
+	 * @param iP       需要更新的ip
+	 * @param rr       域名前缀
+	 * @param recordId dns id
 	 */
 	public void updateIp(String iP, String rr, String recordId) throws TopException {
-
 		//阿里云更新子域记录请求组装
 		UpdateDomainRecordRequest request = new UpdateDomainRecordRequest();
 		//记录值 IP
@@ -85,6 +92,4 @@ public class FoundAliDns {
 			throw new TopException("获取当前阿里云配置的ip异常", e);
 		}
 	}
-
-
 }
