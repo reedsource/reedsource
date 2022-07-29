@@ -11,7 +11,7 @@ import top.ireed.general.TopException;
 
 /**
  * 功能简述:
- * 〈〉
+ * 〈日志打印工具类〉
  *
  * @author reedsource
  * @version 1.0.0
