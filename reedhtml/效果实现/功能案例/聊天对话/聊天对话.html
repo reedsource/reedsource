@@ -38,7 +38,7 @@
         .talk_word {
             width: 420px;
             height: 26px;
-            padding: 0px;
+            padding: 0;
             float: left;
             margin-left: 10px;
             outline: none;
@@ -80,21 +80,21 @@
     <script type="text/javascript">
         //
         window.onload = function () {
-            var Words = document.getElementById("words");
-            var Who = document.getElementById("who");
-            var TalkWords = document.getElementById("talkwords");
-            var TalkSub = document.getElementById("talksub");
+            const Words = document.getElementById("words");
+            const Who = document.getElementById("who");
+            const TalkWords = document.getElementById("talkwords");
+            const TalkSub = document.getElementById("talksub");
 
 
             TalkSub.onclick = function () {
                 //定义空字符串
-                var str = "";
-                if (TalkWords.value == "") {
+                let str = "";
+                if (TalkWords.value === "") {
                     // 消息为空时弹窗
                     alert("消息不能为空");
                     return;
                 }
-                if (Who.value == 0) {
+                if (Who.value === 0) {
                     //如果Who.value为0n那么是 A说
                     str = '<div class="atalk"><span>A说 :' + TalkWords.value + '</span></div>';
                 } else {
@@ -112,11 +112,11 @@
         <div class="btalk"><span id="bsay">B说：还没呢，你呢？</span></div>
     </div>
     <div class="talk_input">
-        <select class="whotalk" id="who">
-            <option value="0">A说：</option>
-            <option value="1">B说：</option>
-        </select>
-        <input type="text" class="talk_word" id="talkwords">
+        <label for="who"></label><select class="whotalk" id="who">
+        <option value="0">A说：</option>
+        <option value="1">B说：</option>
+    </select>
+        <label for="talkwords"></label><input type="text" class="talk_word" id="talkwords">
         <input type="button" value="发送" class="talk_sub" id="talksub">
     </div>
 </div>

@@ -3,7 +3,7 @@
 
     function n(o) {
         if (e[o]) return e[o].exports;
-        var r = e[o] = {i: o, l: !1, exports: {}};
+        const r = e[o] = {i: o, l: !1, exports: {}};
         return t[o].call(r.exports, r, r.exports, n), r.l = !0, r.exports
     }
 
