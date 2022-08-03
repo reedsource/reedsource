@@ -11,5 +11,12 @@
 	<artifactId>toolkit</artifactId>
 	<packaging>pom</packaging>
 	<description>开源优秀开源工具学习</description>
+	<dependencies>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
+	</dependencies>
 
 </project>
