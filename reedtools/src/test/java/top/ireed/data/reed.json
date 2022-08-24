@@ -5,5 +5,6 @@
   "AliDns": "阿里云dns相关设置",
   "REGION_ID": "",
   "ACCESS_KEY_ID": "",
-  "ACCESS_KEY_SECRET": ""
+  "ACCESS_KEY_SECRET": "",
+  "SubDomain": ""
 }

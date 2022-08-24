@@ -30,6 +30,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.7.3</version>
 			<!-- 排除spring boot默认日志logback -->
 			<exclusions>
 				<exclusion>

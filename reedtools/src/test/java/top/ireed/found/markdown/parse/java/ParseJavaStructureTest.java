@@ -24,7 +24,7 @@ import java.io.File;
 public class ParseJavaStructureTest {
 	@Test
 	public void Test() throws TopException {
-		DealLog.log(ParseJavaStructure.javaParse(new File("D:\\codes\\reedsource\\reedtools\\src\\main\\java\\top\\ireed\\found\\FoundSqlite.java")));
+		DealLog.log(ParseJavaStructure.javaParse(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\main\\java\\top\\ireed\\found\\FoundSqlite.java")));
 		Assert.assertTrue(true);
 	}
 

@@ -23,4 +23,19 @@
 			<version>${spring-webmvc.version}</version>
 		</dependency>
 	</dependencies>
+
+	<!--Spring Boot war编译依赖-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${war.version}</version>
+				<configuration>
+					<!--屏蔽web.xml-->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

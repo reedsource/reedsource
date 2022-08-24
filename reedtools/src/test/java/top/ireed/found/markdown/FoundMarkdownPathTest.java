@@ -41,7 +41,7 @@ public class FoundMarkdownPathTest {
 	@Test
 	public void test() throws TopException {
 		//要遍历的路径
-		String path = "D:\\codes\\reedsource\\reedtools\\";
+		String path = "D:\\clouds\\codes\\reedsource\\reedtools\\";
 
 		//写入的文件
 		File f = new File("D:\\cache\\reedtools");
