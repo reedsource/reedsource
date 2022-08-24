@@ -1,5 +1,5 @@
 @Echo Off
-:: æ³¨æ„ è„šæœ¬éœ€è¦è¿œç¨‹æœåŠ¡å™¨frpså¯åŠ¨æƒ…å†µä¸‹å¯åŠ¨,å¦åˆ™æŠ¥é”™
+:: ×¢Òâ ½Å±¾ÐèÒªÔ¶³Ì·þÎñÆ÷frpsÆô¶¯Çé¿öÏÂÆô¶¯,·ñÔò±¨´í
 D:
 cd D:\clouds\tools\codetools\frp_windows_amd64
 

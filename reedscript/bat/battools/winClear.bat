@@ -1,20 +1,20 @@
 @echo off
 
-::åˆ é™¤æ–‡ä»¶æ¡ˆä¾‹
+::É¾³ıÎÄ¼ş°¸Àı
 ::del /f /s /q D:\cache\1.txt
 ::del /f /s /q D:\cache\reedtools\*.*
 
-::åˆ é™¤æ–‡ä»¶å¤¹æ¡ˆä¾‹
+::É¾³ıÎÄ¼ş¼Ğ°¸Àı
 ::rd /s /q D:\cache\path
 
-::ç³»ç»Ÿæ›´æ–°å›æ¡£æ–‡ä»¶å¤¹
+::ÏµÍ³¸üĞÂ»ØµµÎÄ¼ş¼Ğ
 del /f /s /q  C:\Windows\servicing\LCU\*.*
-::ä¸‹è½½ç³»ç»Ÿè¡¥ä¸ä¹‹åçš„ç¼“å­˜æ–‡ä»¶å¤¹
+::ÏÂÔØÏµÍ³²¹¶¡Ö®ºóµÄ»º´æÎÄ¼ş¼Ğ
 del /f /s /q  C:\Windows\SoftwareDistribution\Download\*.*
-::ç³»ç»Ÿæ›´æ–°å†å²è¿›ç¨‹è®°å½•
+::ÏµÍ³¸üĞÂÀúÊ·½ø³Ì¼ÇÂ¼
 del /f /s /q  C:\Windows\Logs\CBS\*.*
 del /f /s /q  C:\Users\Public\Documents\*.*
-::å¤©ç¿¼ç½‘ç›˜
+::ÌìÒíÍøÅÌ
 del /f /s /q  C:\Users\reedbook\AppData\Roaming\eCloudUpgrade\*.*
 
 ::idea
@@ -23,7 +23,7 @@ del /f /s /q  C:\Users\reedbook\AppData\Local\JetBrains\IntelliJIdea2022.2\index
 ::edge
 del /f /s /q  "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download\*.*"
 
-::æ€æºç¬”è®°
+::Ë¼Ô´±Ê¼Ç
 del /f /s /q  C:\Users\reedbook\AppData\Local\siyuan-updater
 
 @Echo on

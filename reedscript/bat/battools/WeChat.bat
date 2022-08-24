@@ -1,4 +1,4 @@
 @echo off
-::  å¯åŠ¨å¤šä¸ªå¾®ä¿¡å®¢æˆ·ç«¯
+::  Æô¶¯¶à¸öÎ¢ĞÅ¿Í»§¶Ë
 start "" "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
 start "" "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"

@@ -1,26 +1,26 @@
 @Echo Off
-::å°†æœ¬åœ°æ–‡ä»¶ä¸Šä¼ åˆ°ftp
-::åœ°å€
+::½«±¾µØÎÄ¼şÉÏ´«µ½ftp
+::µØÖ·
 set ip=122.52.168.29
-::è´¦å·
+::ÕËºÅ
 set user=icbcmon
-::å¯†ç 
+::ÃÜÂë
 set pwd=icbcmon789#
 
-::è®¾ç½®ftpä¿¡æ¯  åˆ›å»ºftpä¸´æ—¶æ–‡ä»¶
+::ÉèÖÃftpĞÅÏ¢  ´´½¨ftpÁÙÊ±ÎÄ¼ş
 Echo open %ip%>ftp.up
 Echo %user%>>ftp.up
 Echo %pwd%>>ftp.up
 
-::è¿›å…¥ftpè·¯å¾„
+::½øÈëftpÂ·¾¶
 Echo cd /home >>ftp.up
-::ä¸Šä¼ ftpæ–‡ä»¶
+::ÉÏ´«ftpÎÄ¼ş
 Echo put "D:\ftp\1.txt" >>ftp.up
 
-::é€€å‡ºftp
+::ÍË³öftp
 Echo bye>>ftp.up
-::æ¸…é™¤ftpç¼“å­˜æ–‡ä»¶
+::Çå³ıftp»º´æÎÄ¼ş
 FTP -s:ftp.up
-::ä¿ç•™cmdçª—å£ ä¸éœ€è¦æ—¶å¯æ³¨é‡Š
+::±£Áôcmd´°¿Ú ²»ĞèÒªÊ±¿É×¢ÊÍ
 pause
 @Echo on
