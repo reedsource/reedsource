@@ -39,8 +39,8 @@
 		</dependency>
 	</dependencies>
 
-	<!--Spring Boot war编译依赖-->
 	<build>
+		<!--Spring Boot war编译依赖-->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
