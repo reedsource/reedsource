@@ -132,8 +132,12 @@ public class FoundAutomation {
 
 		//执行方法是否在方法集合中注册
 		if (modules.get(toolNme) == null) {
-			//这里是异常
-			throw new TopException("异常调用 FoundAutomation自动化工具方法", toolNme, "未查到注册信息");
+			if (aliasMap.get(toolNme) == null) {
+				//调用的功能模块根据功能名和别名都找不到时,认为异常
+				throw new TopException("异常调用 FoundAutomation自动化工具方法", toolNme, "未查到注册信息");
+			}
+			//认为使用的功能别名,将实际的功能函数名赋予
+			toolNme = aliasMap.get(toolNme);
 		}
 		//方法执行后返回的数据写入的变量名称
 		String outName = toolUnit.getOutName();
@@ -144,8 +148,6 @@ public class FoundAutomation {
 		//不可以直接传入 String... args
 		//多个参数时,方法会认为和反射方法的参数列表不一致,导致无法找到反射方法
 		//这里传入参数用List包装一层,进入反射方法后再解包使用
-
-
 		Object o = ReflectUtil.invoke(this, toolNme, toolUnit.getArgs());
 		if (debug) {
 			StringBuilder s = new StringBuilder("执行 ");
@@ -190,6 +192,11 @@ public class FoundAutomation {
 	 * 调用flow执行时会先判断调用的功能模块是否已经注册,未注册的功能调用将提示并结束流程
 	 */
 	public static final Map<String, Modle> modules = new HashMap<>();
+	/**
+	 * 功能模块与功能模块别名维护表,使用别名可以找到功能模块
+	 * <功能模块别名,功能模块>
+	 */
+	public static final Map<String, String> aliasMap = new HashMap<>();
 
 	/**
 	 * 实例FoundSpider后需要设定全局变量
@@ -201,7 +208,10 @@ public class FoundAutomation {
 	 * @param args  参数集
 	 */
 	private static void addModules(String name, String alias, String msg, String... args) {
+		//注册已有功能模块
 		modules.put(name, new Modle(name, alias, msg, args));
+		//功能模块关系注册
+		aliasMap.put(alias, name);
 	}
 
 	static {

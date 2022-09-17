@@ -61,7 +61,7 @@ public class Modle {
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder();
-		s.append("模块名称 : ").append(name).append("\r\n").append("别名 : ").append(alias).append("\r\n").append("描述 : ").append(msg).append("\r\n").append("需求参数 : ").append("\r\n");
+		s.append("模块名称 : ").append(name).append("    ").append("别名 : ").append(alias).append("\r\n").append("描述 : ").append(msg).append("\r\n").append("需求参数 : ").append("\r\n");
 
 		for (int i = 0; i < args.size(); i++) {
 			s.append("\t").append("参数").append(i).append(" ").append(args.get(i)).append("\r\n");

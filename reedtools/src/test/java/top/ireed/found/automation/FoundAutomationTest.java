@@ -33,9 +33,9 @@ public class FoundAutomationTest extends TestCase {
 		//取url全部数据
 		foundAutomation.addToolFlow("getUrlText", "urlText", "url");
 		//匹配符合的全部数据组
-		foundAutomation.addToolFlow("regularFindAll", "FindAllList", "regex", "urlText");
+		foundAutomation.addToolFlow("正则匹配字符串", "FindAllList", "regex", "urlText");
 		//取出一个数据组
-		foundAutomation.addToolFlow("getListTo", "listTo1", "FindAllList", "0");
+		foundAutomation.addToolFlow("取list的第n个值", "listTo1", "FindAllList", "0");
 		//再次匹配
 		foundAutomation.addToolFlow("regularFindAll", "FindAllList1", "regex1", "listTo1");
 		//取出想要的数据组
