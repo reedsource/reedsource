@@ -31,6 +31,10 @@ public class FoundAutomation {
 	 * 是否打印日志
 	 */
 	private boolean debug = false;
+	/**
+	 * 当前执行步数
+	 */
+	private int sum = 1;
 
 
 	/**
@@ -150,7 +154,8 @@ public class FoundAutomation {
 		//这里传入参数用List包装一层,进入反射方法后再解包使用
 		Object o = ReflectUtil.invoke(this, toolNme, toolUnit.getArgs());
 		if (debug) {
-			StringBuilder s = new StringBuilder("执行 ");
+			StringBuilder s = new StringBuilder("步骤");
+			s.append(sum).append(" 执行 ");
 			s.append(modules.get(toolNme));
 			s.append("入参列表如下\r\n");
 			List<String> list = toolUnit.getArgs();
@@ -163,6 +168,8 @@ public class FoundAutomation {
 		}
 		variable.setValue(o);
 		keyVariableMap.put(outName, variable);
+		//计数自增
+		sum++;
 	}
 
 	/**
