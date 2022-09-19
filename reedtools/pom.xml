@@ -17,7 +17,7 @@
 		<java.version>17</java.version><!--JDK版本-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!--项目编码-->
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding><!--编译编码-->
-		<hutool.version>5.8.5</hutool.version><!--hutool工具集-->
+		<hutool.version>5.8.6</hutool.version><!--hutool工具集-->
 		<junit.version>4.13.2</junit.version><!--junit测试工具类-->
 		<jackson.version>2.13.3</jackson.version><!--jackson-->
 		<sqlite.version>3.39.2.0</sqlite.version><!--sqlite-->
