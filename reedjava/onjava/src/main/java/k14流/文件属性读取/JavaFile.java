@@ -68,4 +68,12 @@ public class JavaFile {
 		//在程序退出时删除指定文件。
 		file.deleteOnExit();
 	}
+
+	@Test
+	public void m1() {
+		//路径组合
+
+		DealLog.log(new File("aaa", "bbb").toString());
+		DealLog.log(new File("aaa", "bbb").getPath());
+	}
 }
