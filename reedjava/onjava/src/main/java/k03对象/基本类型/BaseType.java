@@ -28,6 +28,10 @@ public class BaseType {
 	private static String str;
 
 	public static void main(String[] args) {
+		DealLog.log("验证java是否会将0和1自动认定为false和true");
+		DealLog.log(Boolean.valueOf("0"));
+		DealLog.log(Boolean.valueOf("1"));
+
 		DealLog.log("java基础类型的默认值");
 		DealLog.log("boolean :" + bool);
 		DealLog.log("byte :" + by);
