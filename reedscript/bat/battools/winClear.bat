@@ -14,11 +14,10 @@ del /f /s /q  C:\Windows\SoftwareDistribution\Download\*.*
 ::系统更新历史进程记录
 del /f /s /q  C:\Windows\Logs\CBS\*.*
 del /f /s /q  C:\Users\Public\Documents\*.*
-::天翼网盘
+::天翼网盘日志
 del /f /s /q  C:\Users\reedbook\AppData\Roaming\eCloudUpgrade\*.*
-
-::idea
-del /f /s /q  C:\Users\reedbook\AppData\Local\JetBrains\IntelliJIdea2022.2\index
+del /f /s /q  C:\Users\reedbook\AppData\Roaming\ecloud\logs\*.*
+del /f /s /q  C:\Users\reedbook\AppData\Roaming\ecloud\Dump\*.*
 
 ::edge
 del /f /s /q  "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download\*.*"
