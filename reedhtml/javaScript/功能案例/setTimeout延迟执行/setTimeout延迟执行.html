@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+
+        let a = 0;
+        function setTimeout1() {
+            setTimeout(function () {
+                a++;
+                console.log("s-1 当前执行 " + a)  //执行3 与 执行4 合并 执行循环次数
+                f() // 执行4
+            }, 100)
+            setTimeout(function () {
+                a++;
+                console.log("s-2 当前执行 " + a)  //执行5 与 执行6 合并 执行循环次数
+                f() // 执行6
+            }, 200)
+
+            setTimeout(function () {
+                a++;
+                console.log("s-3 当前执行 " + a)   //执行1 与 执行2 合并 执行循环次数
+                f() // 执行2
+            }, 0)
+            f() //执行0 执行循环次数
+        }
+
+        function f() {
+            console.log("完成执行 当前a " + a)
+        }
+
+        for (let i = 0; i < 10; i++) {
+            setTimeout1();
+        }
+
+        /*
+        2023年04月23日
+        论证
+        使用setTimeout实现界面功能异步
+        setTimeout后的内容会顺序执行
+        setTimeout时间短的将会被优先执行
+
+        回调函数将在setTimeout完成后成功调用
+        */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
