@@ -25,5 +25,8 @@ del /f /s /q  "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download\*.*"
 ::Ë¼Ô´±Ê¼Ç
 del /f /s /q  C:\Users\reedbook\AppData\Local\siyuan-updater
 
+::JetBrains Toolbox»º´æ
+del /f /s /q  C:\Users\reedbook\AppData\Local\JetBrains\Toolbox\download\*.*
+
 @Echo on
 pause
