@@ -27,8 +27,6 @@ import java.util.List;
  */
 public class FoundSqliteTest {
 
-	private final String dateString = "2022-02-02";
-
 	@Test
 	public void test() throws TopException {
 		//===普通模式测试====================================================================
@@ -51,6 +49,7 @@ public class FoundSqliteTest {
 
 		// 5. 更新数据
 
+		String dateString = "2022-02-02";
 		DealLog.log(foundSqlite.update(tableName, "id", new Model("2", "更新后的key", "更新后的value", DealDate.getDate(dateString))));
 		// 6. 查看更新效果
 		// 查询数据结果list

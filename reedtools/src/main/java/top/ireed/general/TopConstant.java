@@ -23,7 +23,7 @@ public class TopConstant {
 	public static final boolean FALSE = false;
 	public static final String SUCCESS = "SUCCESS";
 	public static final String FAIL = "FAIL";
-	/****************************返回信息部分*************************/
+	/* ***************************返回信息部分*************************/
 	/**
 	 * 返回错误信息
 	 */
@@ -49,7 +49,7 @@ public class TopConstant {
 	 */
 	public static final int FAIL_CODE = -1;
 
-	/****************************审核信息部分*************************/
+	/* ***************************审核信息部分*************************/
 	/**
 	 * 未审核
 	 */
@@ -63,7 +63,7 @@ public class TopConstant {
 	 */
 	public static final String STATE_REJECT = "REJECT";
 
-	/****************************时间部分*************************/
+	/* ***************************时间部分*************************/
 	/**
 	 * 毫秒
 	 */

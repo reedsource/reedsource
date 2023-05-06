@@ -158,11 +158,9 @@ public class ParseJavaStructure {
 			//3.2 方法参数数组
 			String[] methodBodyArray = methodBody.split(", ");
 			//3.3 如果有参数
-			if (methodBodyArray.length > 0) {
-				for (String s : methodBodyArray) {
-					//获取方法参数相关的标准注释
-					methodMark.append(methodBodyNote(s, methodArray));
-				}
+			for (String s : methodBodyArray) {
+				//获取方法参数相关的标准注释
+				methodMark.append(methodBodyNote(s, methodArray));
 			}
 		}
 		return methodMark.toString();

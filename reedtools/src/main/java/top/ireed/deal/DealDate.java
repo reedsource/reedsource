@@ -620,6 +620,6 @@ public class DealDate {
 	 */
 	public static int interval(Date date1, Date date2) {
 		//向上取整
-		return (int) Math.ceil((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
+		return (int) Math.ceil((double) (date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
 	}
 }

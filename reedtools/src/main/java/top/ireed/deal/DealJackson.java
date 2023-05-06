@@ -23,7 +23,7 @@ import java.util.Map;
  * reedsource@189.cn
  */
 public class DealJackson {
-	static ObjectMapper mapper = new ObjectMapper();
+	static final ObjectMapper mapper = new ObjectMapper();
 
 	private DealJackson() {
 
@@ -91,7 +91,7 @@ public class DealJackson {
 		//本处调用方法将字符串转化为List<linkHashMap>
 		List<T> persons;
 		try {
-			persons = mapper.readValue(str, new TypeReference<List<T>>() {
+			persons = mapper.readValue(str, new TypeReference<>() {
 			});
 		} catch (JsonProcessingException e) {
 			throw new TopException("json转List异常", e);
