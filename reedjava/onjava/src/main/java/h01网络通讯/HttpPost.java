@@ -38,7 +38,7 @@ public class HttpPost {
             httpConnectionManagerParams.setMaxTotalConnections(256);
             HttpClient httpClient = new HttpClient(httpConnectionManager);
             postMethod.addRequestHeader("Content-Type", "application/json");
-            postMethod.addRequestHeader("X-Request-App", "F-CBMS");
+            postMethod.addRequestHeader("X-Request-App", "F-C");
             postMethod.addRequestHeader("Connection", "Keep-Alive");
             postMethod.addRequestHeader("Cache-Control", "no-cache");
             postMethod.addRequestHeader("Accept", "text/plain");
