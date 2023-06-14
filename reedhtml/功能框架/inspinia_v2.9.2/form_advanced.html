@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 高级表单</title>
 
@@ -60,7 +60,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -294,7 +294,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -305,16 +305,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -368,7 +368,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -381,7 +381,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -390,7 +390,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -399,7 +399,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -409,7 +409,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -460,9 +460,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -480,32 +480,32 @@
                             <div class="text-center">
                                 <small>简单的旋钮示例</small><br/><br/>
                                 <div class="m-r-md inline">
-                                    <input type="text" value="75" class="dial m-r-sm" data-fgColor="#1AB394"
-                                           data-width="85" data-height="85"/>
+                                    <input class="dial m-r-sm" data-fgColor="#1AB394" data-height="85" data-width="85"
+                                           type="text" value="75"/>
                                 </div>
                                 <div class="m-r-md inline">
-                                    <input type="text" value="25" class="dial m-r" data-fgColor="#1AB394"
-                                           data-width="85" data-height="85"/>
+                                    <input class="dial m-r" data-fgColor="#1AB394" data-height="85" data-width="85"
+                                           type="text" value="25"/>
                                 </div>
                                 <div class="m-r-md inline">
-                                    <input type="text" value="50" class="dial m-r" data-fgColor="#1AB394"
-                                           data-width="85" data-height="85"/>
+                                    <input class="dial m-r" data-fgColor="#1AB394" data-height="85" data-width="85"
+                                           type="text" value="50"/>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <small>动态旋钮示例</small><br/><br/>
                                 <div class="m-r-md inline">
-                                    <input type="text" value="75" class="dial m-r-sm" data-fgColor="#ED5565"
-                                           data-width="85" data-height="85" data-cursor=true data-thickness=.3/>
+                                    <input class="dial m-r-sm" data-cursor=true data-fgColor="#ED5565" data-height="85"
+                                           data-thickness=.3/ data-width="85" type="text" value="75">
                                 </div>
                                 <div class="m-r-md inline">
-                                    <input type="text" value="25" class="dial m-r" data-fgColor="#ED5565"
-                                           data-width="85" data-height="85" data-step="1000" data-min="-15000"
-                                           data-max="15000" data-displayPrevious=true/>
+                                    <input class="dial m-r" data-displayPrevious=true/ data-fgColor="#ED5565" data-height="85"
+                                           data-max="15000" data-min="-15000" data-step="1000" data-width="85"
+                                           type="text" value="25">
                                 </div>
                                 <div class="m-r-md inline">
-                                    <input type="text" value="60" class="dial m-r" data-fgColor="#ED5565"
-                                           data-width="85" data-height="85" data-angleOffset=-125 data-angleArc=250/>
+                                    <input class="dial m-r" data-angleArc=250/ data-angleOffset=-125 data-fgColor="#ED5565"
+                                           data-height="85" data-width="85" type="text" value="60">
                                 </div>
                             </div>
                         </div>
@@ -521,9 +521,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -538,7 +538,7 @@
                             <div class="form-group">
                                 <label class="font-normal">基本例子</label>
                                 <div>
-                                    <select data-placeholder="Choose a Country..." class="chosen-select" tabindex="2">
+                                    <select class="chosen-select" data-placeholder="Choose a Country..." tabindex="2">
                                         <option value="">Select</option>
                                         <option value="United States">United States</option>
                                         <option value="United Kingdom">United Kingdom</option>
@@ -828,7 +828,7 @@
                             <div class="form-group">
                                 <label class="font-normal">多选</label>
                                 <div>
-                                    <select data-placeholder="Choose a Country..." class="chosen-select" multiple
+                                    <select class="chosen-select" data-placeholder="Choose a Country..." multiple
                                             style="width:350px;" tabindex="4">
                                         <option value="">Select</option>
                                         <option value="United States">United States</option>
@@ -1133,9 +1133,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1199,20 +1199,20 @@
                                         具有空值的基本示例
                                     </p>
 
-                                    <input class="touchspin1" type="text" value="" name="demo1">
+                                    <input class="touchspin1" name="demo1" type="text" value="">
                                 </div>
                                 <div class="col-md-4">
                                     <p class="font-bold">
                                         后缀示例
                                     </p>
-                                    <input class="touchspin2" type="text" value="55" name="demo2">
+                                    <input class="touchspin2" name="demo2" type="text" value="55">
                                 </div>
                                 <div class="col-md-4">
 
                                     <p class="font-bold">
                                         垂直按钮对齐示例：
                                     </p>
-                                    <input class="touchspin3" type="text" value="" name="demo3">
+                                    <input class="touchspin3" name="demo3" type="text" value="">
                                 </div>
                             </div>
 
@@ -1234,9 +1234,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1249,7 +1249,7 @@
                                 Bootstrap Dual Listbox是针对Twitter Bootstrap进行了优化的响应式双列表框。它适用于所有现代浏览器和触摸设备。
                             </p>
 
-                            <form id="form" action="#" class="wizard-big">
+                            <form action="#" class="wizard-big" id="form">
                                 <select class="form-control dual_select" multiple>
                                     <option value="United States">United States</option>
                                     <option value="United Kingdom">United Kingdom</option>
@@ -1359,9 +1359,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1378,7 +1378,7 @@
                             </p>
                             <div class="row m-b-lg">
                                 <div class="col-lg-12">
-                                    <div id="drag-fixed" class="slider_red"></div>
+                                    <div class="slider_red" id="drag-fixed"></div>
                                 </div>
                             </div>
                             <div class="row">
@@ -1412,9 +1412,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1434,7 +1434,7 @@
                                 <label class="font-normal">简单的数据输入格式</label>
                                 <div class="input-group date">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input
-                                        type="text" class="form-control" value="03/04/2014">
+                                        class="form-control" type="text" value="03/04/2014">
                                 </div>
                             </div>
 
@@ -1442,7 +1442,7 @@
                                 <label class="font-normal">今年</label>
                                 <div class="input-group date">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input
-                                        type="text" class="form-control" value="08/09/2014">
+                                        class="form-control" type="text" value="08/09/2014">
                                 </div>
                             </div>
 
@@ -1450,7 +1450,7 @@
                                 <label class="font-normal">十年</label>
                                 <div class="input-group date">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input
-                                        type="text" class="form-control" value="10/11/2013">
+                                        class="form-control" type="text" value="10/11/2013">
                                 </div>
                             </div>
 
@@ -1458,17 +1458,17 @@
                                 <label class="font-normal">本月</label>
                                 <div class="input-group date">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input
-                                        type="text" class="form-control" value="07/01/2014">
+                                        class="form-control" type="text" value="07/01/2014">
                                 </div>
                             </div>
 
                             <div class="form-group" id="data_5">
                                 <label class="font-normal">范围选择</label>
                                 <div class="input-daterange input-group" id="datepicker">
-                                    <input type="text" class="form-control-sm form-control" name="start"
+                                    <input class="form-control-sm form-control" name="start" type="text"
                                            value="05/14/2014"/>
                                     <span class="input-group-addon">至</span>
-                                    <input type="text" class="form-control-sm form-control" name="end"
+                                    <input class="form-control-sm form-control" name="end" type="text"
                                            value="05/22/2014"/>
                                 </div>
                             </div>
@@ -1485,9 +1485,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1504,7 +1504,7 @@
                             </p>
 
                             <div class="input-group clockpicker" data-autoclose="true">
-                                <input type="text" class="form-control" value="09:30">
+                                <input class="form-control" type="text" value="09:30">
                                 <span class="input-group-addon">
                                     <span class="fa fa-clock-o"></span>
                                 </span>
@@ -1523,9 +1523,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1542,10 +1542,10 @@
                                 旨在与Bootstrap CSS框架配合使用。
                             </p>
 
-                            <input class="form-control" type="text" name="daterange" value="01/01/2015 - 01/31/2015"/>
+                            <input class="form-control" name="daterange" type="text" value="01/01/2015 - 01/31/2015"/>
 
                             <h4>所有选项示例</h4>
-                            <div id="reportrange" class="form-control">
+                            <div class="form-control" id="reportrange">
                                 <i class="fa fa-calendar"></i>
                                 <span></span> <b class="caret"></b>
                             </div>
@@ -1563,9 +1563,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1582,10 +1582,10 @@
                             </p>
 
                             <h5>作为正常输入</h5>
-                            <input type="text" class="form-control demo1" value="#5367ce"/>
+                            <input class="form-control demo1" type="text" value="#5367ce"/>
                             <h5>作为链接</h5>
-                            <a data-color="rgb(255, 255, 255)" id="demo_apidemo"
-                               class="btn btn-white btn-block colorpicker-element" href="#">更改背景颜色</a>
+                            <a class="btn btn-white btn-block colorpicker-element" data-color="rgb(255, 255, 255)"
+                               href="#" id="demo_apidemo">更改背景颜色</a>
                             <br/>
                         </div>
                     </div>
@@ -1624,9 +1624,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1641,28 +1641,28 @@
                             <p>
                                 输入掩码允许用户更容易地输入您希望他们以特定格式输入数据的数据。
                             </p>
-                            <form class="m-t-md" action="#">
+                            <form action="#" class="m-t-md">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-sm-2 col-form-label">ISBN 1</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="999-99-999-9999-9"
-                                               placeholder="">
+                                        <input class="form-control" data-mask="999-99-999-9999-9" placeholder=""
+                                               type="text">
                                         <span class="form-text">999-99-999-9999-9</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">ISBN 2</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="999 99 999 9999 9"
-                                               placeholder="">
+                                        <input class="form-control" data-mask="999 99 999 9999 9" placeholder=""
+                                               type="text">
                                         <span class="form-text">999 99 999 9999 9</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">ISBN 3</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="999/99/999/9999/9"
-                                               placeholder="">
+                                        <input class="form-control" data-mask="999/99/999/9999/9" placeholder=""
+                                               type="text">
                                         <span class="form-text">999/99/999/9999/9</span>
                                     </div>
                                 </div>
@@ -1670,8 +1670,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">IPV4</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="999.999.999.9999"
-                                               placeholder="">
+                                        <input class="form-control" data-mask="999.999.999.9999" placeholder=""
+                                               type="text">
                                         <span class="form-text">192.168.100.200</span>
                                     </div>
                                 </div>
@@ -1679,15 +1679,15 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">税号</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="99-9999999" placeholder="">
+                                        <input class="form-control" data-mask="99-9999999" placeholder="" type="text">
                                         <span class="form-text">99-9999999</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">电话</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="(999) 999-9999"
-                                               placeholder="">
+                                        <input class="form-control" data-mask="(999) 999-9999" placeholder=""
+                                               type="text">
                                         <span class="form-text">(999) 999-9999</span>
                                     </div>
                                 </div>
@@ -1695,8 +1695,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">货币</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="$ 999,999,999.99"
-                                               placeholder="">
+                                        <input class="form-control" data-mask="$ 999,999,999.99" placeholder=""
+                                               type="text">
                                         <span class="form-text">$ 999,999,999.99</span>
                                     </div>
                                 </div>
@@ -1704,7 +1704,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">日期</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" data-mask="99/99/9999" placeholder="">
+                                        <input class="form-control" data-mask="99/99/9999" placeholder="" type="text">
                                         <span class="form-text">dd/mm/yyyy</span>
                                     </div>
                                 </div>
@@ -1723,9 +1723,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1740,12 +1740,12 @@
                             <p>
                                 您的复选框是iOS 7风格的开关。
                             </p>
-                            <input type="checkbox" class="js-switch" checked/>
-                            <input type="checkbox" class="js-switch_2" checked/>
+                            <input checked class="js-switch" type="checkbox"/>
+                            <input checked class="js-switch_2" type="checkbox"/>
                             <br/>
                             <br/>
-                            <input type="checkbox" class="js-switch_3"/>
-                            <input type="checkbox" class="js-switch_4" checked/>
+                            <input class="js-switch_3" type="checkbox"/>
+                            <input checked class="js-switch_4" type="checkbox"/>
                         </div>
                     </div>
 
@@ -1760,9 +1760,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1779,7 +1779,7 @@
                             </p>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" checked class="onoffswitch-checkbox" id="example1">
+                                    <input checked class="onoffswitch-checkbox" id="example1" type="checkbox">
                                     <label class="onoffswitch-label" for="example1">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1789,7 +1789,7 @@
 
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" class="onoffswitch-checkbox" id="example2">
+                                    <input class="onoffswitch-checkbox" id="example2" type="checkbox">
                                     <label class="onoffswitch-label" for="example2">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1799,7 +1799,7 @@
 
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" checked disabled class="onoffswitch-checkbox" id="example3">
+                                    <input checked class="onoffswitch-checkbox" disabled id="example3" type="checkbox">
                                     <label class="onoffswitch-label" for="example3">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1809,7 +1809,7 @@
 
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" disabled class="onoffswitch-checkbox" id="example4">
+                                    <input class="onoffswitch-checkbox" disabled id="example4" type="checkbox">
                                     <label class="onoffswitch-label" for="example4">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1834,9 +1834,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1862,14 +1862,14 @@
                                         您可以将新图像上传到裁剪容器，并轻松下载新的裁剪图像。
                                     </p>
                                     <div>
-                                        <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                            <input type="file" accept="image/*" name="file" id="inputImage"
-                                                   class="hide">
+                                        <label class="btn btn-primary" for="inputImage" title="Upload image file">
+                                            <input accept="image/*" class="hide" id="inputImage" name="file"
+                                                   type="file">
                                             上传新图片
                                         </label>
 
                                     </div>
-                                    <a href="" id="download" class="btn btn-primary">下载</a>
+                                    <a class="btn btn-primary" href="" id="download">下载</a>
                                     <h4>其他方法</h4>
                                     <p>
                                         您可以设置裁剪器选项 <code>$(image}).cropper(options)</code>
@@ -1900,9 +1900,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -1928,7 +1928,7 @@
                                             </label>
                                         </div>
                                         <div class="checkbox checkbox-primary">
-                                            <input id="checkbox2" type="checkbox" checked="">
+                                            <input checked="" id="checkbox2" type="checkbox">
                                             <label for="checkbox2">
                                                 主要
                                             </label>
@@ -1946,39 +1946,39 @@
                                             </label>
                                         </div>
                                         <div class="checkbox checkbox-warning">
-                                            <input id="checkbox5" type="checkbox" checked="">
+                                            <input checked="" id="checkbox5" type="checkbox">
                                             <label for="checkbox5">
                                                 警告
                                             </label>
                                         </div>
                                         <div class="checkbox checkbox-danger">
-                                            <input id="checkbox6" type="checkbox" checked="">
+                                            <input checked="" id="checkbox6" type="checkbox">
                                             <label for="checkbox6">
                                                 进行检查
                                             </label>
                                         </div>
                                         <p>没有标签文本的复选框</p>
                                         <div class="checkbox">
-                                            <input type="checkbox" id="singleCheckbox1" value="option1"
-                                                   aria-label="Single checkbox One">
+                                            <input aria-label="Single checkbox One" id="singleCheckbox1" type="checkbox"
+                                                   value="option1">
                                             <label></label>
                                         </div>
                                         <div class="checkbox checkbox-primary">
-                                            <input type="checkbox" id="singleCheckbox2" value="option2" checked=""
-                                                   aria-label="Single checkbox Two">
+                                            <input aria-label="Single checkbox Two" checked="" id="singleCheckbox2" type="checkbox"
+                                                   value="option2">
                                             <label></label>
                                         </div>
                                         <p>内联复选框</p>
                                         <div class="checkbox">
-                                            <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <input id="inlineCheckbox1" type="checkbox" value="option1">
                                             <label for="inlineCheckbox1"> 内联一 </label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input type="checkbox" id="inlineCheckbox2" value="option1" checked="">
+                                            <input checked="" id="inlineCheckbox2" type="checkbox" value="option1">
                                             <label for="inlineCheckbox2"> 内联二 </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input type="checkbox" id="inlineCheckbox3" value="option1">
+                                            <input id="inlineCheckbox3" type="checkbox" value="option1">
                                             <label for="inlineCheckbox3"> 内联三 </label>
                                         </div>
                                     </fieldset>
@@ -1998,7 +1998,7 @@
                                             </label>
                                         </div>
                                         <div class="checkbox checkbox-info checkbox-circle">
-                                            <input id="checkbox8" type="checkbox" checked="">
+                                            <input checked="" id="checkbox8" type="checkbox">
                                             <label for="checkbox8">
                                                 简单圆圆
                                             </label>
@@ -2016,14 +2016,14 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="radio">
-                                                    <input type="radio" name="radio1" id="radio1" value="option1"
-                                                           checked="">
+                                                    <input checked="" id="radio1" name="radio1" type="radio"
+                                                           value="option1">
                                                     <label for="radio1">
                                                         小
                                                     </label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" name="radio1" id="radio2" value="option2">
+                                                    <input id="radio2" name="radio1" type="radio" value="option2">
                                                     <label for="radio2">
                                                         大
                                                     </label>
@@ -2031,14 +2031,14 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="radio radio-danger">
-                                                    <input type="radio" name="radio2" id="radio3" value="option1">
+                                                    <input id="radio3" name="radio2" type="radio" value="option1">
                                                     <label for="radio3">
                                                         下一个
                                                     </label>
                                                 </div>
                                                 <div class="radio radio-danger">
-                                                    <input type="radio" name="radio2" id="radio4" value="option2"
-                                                           checked="">
+                                                    <input checked="" id="radio4" name="radio2" type="radio"
+                                                           value="option2">
                                                     <label for="radio4">
                                                         上一个
                                                     </label>
@@ -2047,23 +2047,23 @@
                                         </div>
                                         <p>Radios无标签文字</p>
                                         <div class="radio">
-                                            <input type="radio" id="singleRadio1" value="option1" name="radioSingle1"
-                                                   aria-label="Single radio One">
+                                            <input aria-label="Single radio One" id="singleRadio1" name="radioSingle1" type="radio"
+                                                   value="option1">
                                             <label></label>
                                         </div>
                                         <div class="radio radio-success">
-                                            <input type="radio" id="singleRadio2" value="option2" name="radioSingle1"
-                                                   checked="" aria-label="Single radio Two">
+                                            <input aria-label="Single radio Two" checked="" id="singleRadio2" name="radioSingle1"
+                                                   type="radio" value="option2">
                                             <label></label>
                                         </div>
                                         <p>Radios内联</p>
                                         <div class="radio radio-info radio-inline">
-                                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline"
-                                                   checked="">
+                                            <input checked="" id="inlineRadio1" name="radioInline" type="radio"
+                                                   value="option1">
                                             <label for="inlineRadio1"> 内联一 </label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                            <input id="inlineRadio2" name="radioInline" type="radio" value="option2">
                                             <label for="inlineRadio2"> 内联二 </label>
                                         </div>
                                     </fieldset>

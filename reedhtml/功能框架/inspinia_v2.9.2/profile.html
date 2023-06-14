@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 资料页</title>
 
@@ -25,7 +25,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -259,7 +259,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -270,16 +270,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -333,7 +333,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -346,7 +346,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -355,7 +355,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -364,7 +364,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -374,7 +374,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -447,12 +447,12 @@
                                 <div class="user-button">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i
+                                            <button class="btn btn-primary btn-sm btn-block" type="button"><i
                                                     class="fa fa-envelope"></i> 发送信息
                                             </button>
                                         </div>
                                         <div class="col-md-6">
-                                            <button type="button" class="btn btn-default btn-sm btn-block"><i
+                                            <button class="btn btn-default btn-sm btn-block" type="button"><i
                                                     class="fa fa-coffee"></i> 请喝咖啡
                                             </button>
                                         </div>
@@ -474,9 +474,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -490,7 +490,7 @@
                                 <div class="feed-activity-list">
 
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/a1.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -498,15 +498,15 @@
                                             <strong>小明 </strong> 时间是一切财富中最宝贵的财富 <br>
                                             <small class="text-muted">今天下午2017.12.12 4:21 </small>
                                             <div class="actions">
-                                                <a href="" class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i>
+                                                <a class="btn btn-xs btn-white" href=""><i class="fa fa-thumbs-up"></i>
                                                     赞 </a>
-                                                <a href="" class="btn btn-xs btn-danger"><i class="fa fa-heart"></i> 喜欢</a>
+                                                <a class="btn btn-xs btn-danger" href=""><i class="fa fa-heart"></i> 喜欢</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/profile.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -517,7 +517,7 @@
                                     </div>
 
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/a2.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -528,17 +528,17 @@
                                                 我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。
                                             </div>
                                             <div class="float-right">
-                                                <a href="" class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i>
+                                                <a class="btn btn-xs btn-white" href=""><i class="fa fa-thumbs-up"></i>
                                                     赞 </a>
-                                                <a href="" class="btn btn-xs btn-white"><i class="fa fa-heart"></i>
+                                                <a class="btn btn-xs btn-white" href=""><i class="fa fa-heart"></i>
                                                     喜欢</a>
-                                                <a href="" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>
+                                                <a class="btn btn-xs btn-primary" href=""><i class="fa fa-pencil"></i>
                                                     信息</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/a3.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -546,17 +546,17 @@
                                             <strong>小明 </strong> 时间是一切财富中最宝贵的财富 <br>
                                             <small class="text-muted">今天下午2017.12.12 4:21 </small>
                                             <div class="photos">
-                                                <a target="_blank"
-                                                   href="http://24.media.tumblr.com/20a9c501846f50c1271210639987000f/tumblr_n4vje69pJm1st5lhmo1_1280.jpg">
+                                                <a href="http://24.media.tumblr.com/20a9c501846f50c1271210639987000f/tumblr_n4vje69pJm1st5lhmo1_1280.jpg"
+                                                   target="_blank">
                                                     <img alt="image" class="feed-photo" src="img/p1.jpg"></a>
-                                                <a target="_blank"
-                                                   href="http://37.media.tumblr.com/9afe602b3e624aff6681b0b51f5a062b/tumblr_n4ef69szs71st5lhmo1_1280.jpg">
+                                                <a href="http://37.media.tumblr.com/9afe602b3e624aff6681b0b51f5a062b/tumblr_n4ef69szs71st5lhmo1_1280.jpg"
+                                                   target="_blank">
                                                     <img alt="image" class="feed-photo" src="img/p3.jpg"></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/a4.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -564,15 +564,15 @@
                                             <strong>小明 </strong> 时间是一切财富中最宝贵的财富 <br>
                                             <small class="text-muted">今天下午2017.12.12 4:21 </small>
                                             <div class="actions">
-                                                <a href="" class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i>
+                                                <a class="btn btn-xs btn-white" href=""><i class="fa fa-thumbs-up"></i>
                                                     赞 </a>
-                                                <a href="" class="btn btn-xs btn-white"><i class="fa fa-heart"></i>
+                                                <a class="btn btn-xs btn-white" href=""><i class="fa fa-heart"></i>
                                                     喜欢</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/a5.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -583,13 +583,13 @@
                                                 我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。
                                             </div>
                                             <div class="float-right">
-                                                <a href="" class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i>
+                                                <a class="btn btn-xs btn-white" href=""><i class="fa fa-thumbs-up"></i>
                                                     Like </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/profile.jpg">
                                         </a>
                                         <div class="media-body ">
@@ -599,7 +599,7 @@
                                         </div>
                                     </div>
                                     <div class="feed-element">
-                                        <a href="#" class="float-left">
+                                        <a class="float-left" href="#">
                                             <img alt="image" class="rounded-circle" src="img/a7.jpg">
                                         </a>
                                         <div class="media-body ">

@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 组件</title>
 
@@ -38,7 +38,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -272,7 +272,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -283,16 +283,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -346,7 +346,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -359,7 +359,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -368,7 +368,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -377,7 +377,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -387,7 +387,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -418,7 +418,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="text-center m-t-lg">
-                                        <img src="img/angular_logo.png" alt="AngularJS">
+                                        <img alt="AngularJS" src="img/angular_logo.png">
                                     </div>
                                     <div class="text-center m-t-lg">
                                         <h1>Inspinia <span class="text-navy"> <br>AngularJs</span></h1>
@@ -442,7 +442,7 @@
                                             </p>
 
                                             <p class="text-center m-t-md">
-                                                <a target="_blank" href="Angular/" class="btn btn-primary">Live
+                                                <a class="btn btn-primary" href="Angular/" target="_blank">Live
                                                     AngularJS version</a>
                                             </p>
                                         </div>
@@ -458,7 +458,7 @@
 
                                 <div class="col-md-4">
                                     <div class="text-center m-t-lg">
-                                        <img src="img/mvc_logo.png" alt="MVC" style="width: 120px">
+                                        <img alt="MVC" src="img/mvc_logo.png" style="width: 120px">
                                     </div>
                                     <div class="text-center m-t-lg">
                                         <h1>Inspinia <span class="text-success"><br>ASP.NET MVC5,.NET Core 1.0</span>
@@ -491,7 +491,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="text-center m-t-lg">
-                                        <img src="img/meteor_logo.png" alt="HTML" style="width: 200px;margin-top: 20px">
+                                        <img alt="HTML" src="img/meteor_logo.png" style="width: 200px;margin-top: 20px">
                                     </div>
 
                                     <div class="text-center m-t-lg">
@@ -532,7 +532,7 @@
 
                                 <div class="col-md-4">
                                     <div class="text-center m-t-lg">
-                                        <img src="img/html_logo.png" alt="HTML" style="width: 100px">
+                                        <img alt="HTML" src="img/html_logo.png" style="width: 100px">
                                     </div>
                                     <div class="text-center m-t-lg">
                                         <h1>Inspinia <span class="text-danger"><br>静态 HTML/JS</span></h1>
@@ -553,7 +553,7 @@
                                             </p>
 
                                             <p class="text-center m-t-md">
-                                                <a target="_blank" href="index.html" class="btn btn-danger">Live HTML /
+                                                <a class="btn btn-danger" href="index.html" target="_blank">Live HTML /
                                                     JS版本</a>
                                             </p>
                                         </div>
@@ -568,7 +568,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="text-center m-t-lg">
-                                        <img src="img/rails_logo.png" alt="HTML" style="width: 80px">
+                                        <img alt="HTML" src="img/rails_logo.png" style="width: 80px">
                                     </div>
                                     <div class="text-center m-t-lg">
                                         <h1>Inspinia <span class="text-warning"><br> Ruby on Rails</span></h1>
@@ -601,7 +601,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="text-center m-t-lg">
-                                        <img src="img/starter_logo.jpg" alt="HTML">
+                                        <img alt="HTML" src="img/starter_logo.jpg">
                                     </div>
                                     <div class="text-center m-t-lg">
                                         <h1>Inspinia <span class="text-info"><br> 启动项目</span></h1>

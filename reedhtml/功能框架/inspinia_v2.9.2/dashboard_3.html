@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>INSPINIA | 主页风格 v.3</title>
 
@@ -24,7 +24,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -258,7 +258,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -269,16 +269,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg sidebar-content">
+    <div class="gray-bg sidebar-content" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -332,7 +332,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -345,7 +345,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -354,7 +354,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -363,7 +363,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -373,7 +373,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -401,7 +401,7 @@
             <div>
                 <h4>消息 <span class="badge badge-info float-right">16</span></h4>
                 <div class="feed-element">
-                    <a href="#" class="float-left">
+                    <a class="float-left" href="#">
                         <img alt="image" class="rounded-circle" src="img/a1.jpg">
                     </a>
                     <div class="media-body">
@@ -411,7 +411,7 @@
                     </div>
                 </div>
                 <div class="feed-element">
-                    <a href="#" class="float-left">
+                    <a class="float-left" href="#">
                         <img alt="image" class="rounded-circle" src="img/a2.jpg">
                     </a>
                     <div class="media-body">
@@ -421,7 +421,7 @@
                     </div>
                 </div>
                 <div class="feed-element">
-                    <a href="#" class="float-left">
+                    <a class="float-left" href="#">
                         <img alt="image" class="rounded-circle" src="img/a3.jpg">
                     </a>
                     <div class="media-body">
@@ -431,7 +431,7 @@
                     </div>
                 </div>
                 <div class="feed-element">
-                    <a href="#" class="float-left">
+                    <a class="float-left" href="#">
                         <img alt="image" class="rounded-circle" src="img/a4.jpg">
                     </a>
                     <div class="media-body">
@@ -496,7 +496,7 @@
                             </div>
 
                             <div>
-                                <canvas id="lineChart" height="70"></canvas>
+                                <canvas height="70" id="lineChart"></canvas>
                             </div>
 
                             <div class="m-t-md">
@@ -571,9 +571,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -614,9 +614,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -660,9 +660,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -773,7 +773,7 @@
                 <div class="tab-content">
 
 
-                    <div id="tab-1" class="tab-pane active">
+                    <div class="tab-pane active" id="tab-1">
 
                         <div class="sidebar-title">
                             <h3><i class="fa fa-comments-o"></i> 最新记录</h3>
@@ -902,7 +902,7 @@
 
                     </div>
 
-                    <div id="tab-2" class="tab-pane">
+                    <div class="tab-pane" id="tab-2">
 
                         <div class="sidebar-title">
                             <h3><i class="fa fa-cube"></i> 最新项目</h3>
@@ -918,7 +918,7 @@
 
                                     <div class="small">完成度: 22%</div>
                                     <div class="progress progress-mini">
-                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                        <div class="progress-bar progress-bar-warning" style="width: 22%;"></div>
                                     </div>
                                     <div class="small text-muted m-t-xs">时间: 4:00 pm - 12.06.2014</div>
                                 </a>
@@ -931,7 +931,7 @@
 
                                     <div class="small">完成度: 48%</div>
                                     <div class="progress progress-mini">
-                                        <div style="width: 48%;" class="progress-bar"></div>
+                                        <div class="progress-bar" style="width: 48%;"></div>
                                     </div>
                                 </a>
                             </li>
@@ -943,7 +943,7 @@
 
                                     <div class="small">完成度: 14%</div>
                                     <div class="progress progress-mini">
-                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                        <div class="progress-bar progress-bar-info" style="width: 14%;"></div>
                                     </div>
                                 </a>
                             </li>
@@ -964,7 +964,7 @@
 
                                     <div class="small">完成度: 22%</div>
                                     <div class="progress progress-mini">
-                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                        <div class="progress-bar progress-bar-warning" style="width: 22%;"></div>
                                     </div>
                                     <div class="small text-muted m-t-xs">时间: 4:00 pm - 12.06.2014</div>
                                 </a>
@@ -977,7 +977,7 @@
 
                                     <div class="small">完成度: 48%</div>
                                     <div class="progress progress-mini">
-                                        <div style="width: 48%;" class="progress-bar"></div>
+                                        <div class="progress-bar" style="width: 48%;"></div>
                                     </div>
                                 </a>
                             </li>
@@ -989,7 +989,7 @@
 
                                     <div class="small">完成度: 14%</div>
                                     <div class="progress progress-mini">
-                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                        <div class="progress-bar progress-bar-info" style="width: 14%;"></div>
                                     </div>
                                 </a>
                             </li>
@@ -1008,7 +1008,7 @@
 
                     </div>
 
-                    <div id="tab-3" class="tab-pane">
+                    <div class="tab-pane" id="tab-3">
 
                         <div class="sidebar-title">
                             <h3><i class="fa fa-gears"></i> 设置</h3>
@@ -1021,8 +1021,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox"
-                                           id="example">
+                                    <input class="onoffswitch-checkbox" id="example" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1036,8 +1036,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox"
-                                           id="example2">
+                                    <input checked class="onoffswitch-checkbox" id="example2" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example2">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1051,8 +1051,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox"
-                                           id="example3">
+                                    <input class="onoffswitch-checkbox" id="example3" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example3">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1066,8 +1066,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox"
-                                           id="example4">
+                                    <input class="onoffswitch-checkbox" id="example4" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example4">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1081,8 +1081,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox"
-                                           id="example5">
+                                    <input checked class="onoffswitch-checkbox" id="example5" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example5">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1096,8 +1096,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox"
-                                           id="example6">
+                                    <input checked class="onoffswitch-checkbox" id="example6" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example6">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -1111,8 +1111,8 @@
                     </span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox"
-                                           id="example7">
+                                    <input class="onoffswitch-checkbox" id="example7" name="collapsemenu"
+                                           type="checkbox">
                                     <label class="onoffswitch-label" for="example7">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>

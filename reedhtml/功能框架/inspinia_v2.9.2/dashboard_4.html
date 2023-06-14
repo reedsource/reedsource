@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 主页风格 v.4</title>
 
@@ -18,14 +18,14 @@
 <body class="top-navigation">
 
 <div id="wrapper">
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom white-bg">
             <nav class="navbar navbar-expand-lg navbar-static-top" role="navigation">
 
 
-                <a href="#" class="navbar-brand">Inspinia</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#">Inspinia</a>
+                <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar"
+                        data-toggle="collapse" type="button">
                     <i class="fa fa-reorder"></i>
                 </button>
 
@@ -33,12 +33,12 @@
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav mr-auto">
                         <li class="active">
-                            <a aria-expanded="false" role="button" href="layouts.html"> 返回主布局页面 </a>
+                            <a aria-expanded="false" href="layouts.html" role="button"> 返回主布局页面 </a>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
-                               data-toggle="dropdown"> 菜单</a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单</a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
@@ -46,9 +46,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
-                               data-toggle="dropdown"> 菜单</a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单</a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
@@ -56,9 +56,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
-                               data-toggle="dropdown"> 菜单</a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单</a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
@@ -66,9 +66,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle"
-                               data-toggle="dropdown"> 菜单</a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单</a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
                                 <li><a href="">菜单</a></li>
@@ -180,7 +180,7 @@
                                     <div class="row">
                                         <div class="col-md-8">
                                             <div>
-                                                <canvas id="lineChart" height="114"></canvas>
+                                                <canvas height="114" id="lineChart"></canvas>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -294,9 +294,9 @@
                                         <i class="fa fa-wrench"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-user">
-                                        <li><a href="#" class="dropdown-item">选项 1</a>
+                                        <li><a class="dropdown-item" href="#">选项 1</a>
                                         </li>
-                                        <li><a href="#" class="dropdown-item">选项 2</a>
+                                        <li><a class="dropdown-item" href="#">选项 2</a>
                                         </li>
                                     </ul>
                                     <a class="close-link">
@@ -307,19 +307,19 @@
                             <div class="ibox-content">
                                 <div class="row">
                                     <div class="col-sm-9 m-b-xs">
-                                        <div data-toggle="buttons" class="btn-group btn-group-toggle">
-                                            <label class="btn btn-sm btn-white"> <input type="radio" id="option1"
-                                                                                        name="options"> 天 </label>
-                                            <label class="btn btn-sm btn-white active"> <input type="radio" id="option2"
-                                                                                               name="options"> 周
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-sm btn-white"> <input id="option1" name="options"
+                                                                                        type="radio"> 天 </label>
+                                            <label class="btn btn-sm btn-white active"> <input id="option2" name="options"
+                                                                                               type="radio"> 周
                                             </label>
-                                            <label class="btn btn-sm btn-white"> <input type="radio" id="option3"
-                                                                                        name="options"> 月 </label>
+                                            <label class="btn btn-sm btn-white"> <input id="option3" name="options"
+                                                                                        type="radio"> 月 </label>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control form-control-sm" placeholder="搜索">
+                                            <input class="form-control form-control-sm" placeholder="搜索" type="text">
                                             <div class="input-group-append">
                                                 <button class="btn btn-sm btn-primary" type="button">搜索!</button>
                                             </div>

@@ -3,8 +3,8 @@
 
 <head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 幻灯片</title>
 
@@ -19,7 +19,7 @@
 
 <body>
 
-    <div id="wrapper">
+<div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -27,7 +27,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -79,7 +79,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">指标</span>  </a>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">指标</span> </a>
                 </li>
                 <li>
                     <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">窗口小部件</span></a>
@@ -97,7 +97,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">应用</span>  <span class="float-right label label-primary">特别</span></a>
+                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">应用</span> <span class="float-right label label-primary">特别</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="contacts.html">名片</a></li>
                         <li><a href="profile.html">会员</a></li>
@@ -126,7 +126,7 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="search_results.html">搜索</a></li>
                         <li><a href="lockscreen.html">锁屏</a></li>
-                         <li><a href="invoice.html">发票</a></li>
+                        <li><a href="invoice.html">发票</a></li>
                         <li><a href="login.html">登录</a></li>
                         <li><a href="login_two_columns.html">登录 v.2</a></li>
                         <li><a href="forgot_password.html">忘记密码</a></li>
@@ -174,7 +174,8 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="typography.html">排版</a></li>
                         <li><a href="icons.html">图标</a></li>
-                        <li><a href="draggable_panels.html">拖动排序</a></li> <li><a href="resizeable_panels.html">内容缩放</a></li>
+                        <li><a href="draggable_panels.html">拖动排序</a></li>
+                        <li><a href="resizeable_panels.html">内容缩放</a></li>
                         <li><a href="buttons.html">按钮</a></li>
                         <li><a href="video.html">视频</a></li>
                         <li><a href="tabs_panels.html">面板</a></li>
@@ -247,7 +248,7 @@
                     <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS 动画 </span><span class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span> <span class="label label-warning float-right">新</span></a>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span> <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
                     <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">组件</span></a>
@@ -257,144 +258,144 @@
         </div>
     </nav>
 
-        <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
-                <div class="form-group">
-                    <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search" id="top-search">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
+                        <div class="form-group">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容" type="text">
+                        </div>
+                    </form>
                 </div>
-            </form>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">欢迎来到inspinia 2.9.2管理后台</span>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a class="dropdown-item float-left" href="profile.html">
+                                        <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        <small class="float-right">46 小时前</small>
+                                        <strong>小明</strong> 评论了 <strong>小红</strong>. <br>
+                                        <small class="text-muted">2017.10.06 7:58</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a class="dropdown-item float-left" href="profile.html">
+                                        <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="float-right text-navy">5 小时前</small>
+                                        <strong>小红</strong> 打电话给了 <strong>小黑</strong>. <br>
+                                        <small class="text-muted">2017.10.06 7:58</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a class="dropdown-item float-left" href="profile.html">
+                                        <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="float-right">23 小时前</small>
+                                        <strong>小黑</strong> 点赞了 <strong>小红</strong>. <br>
+                                        <small class="text-muted">2017.10.06 7:58</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a class="dropdown-item" href="mailbox.html">
+                                        <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a class="dropdown-item" href="mailbox.html">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> 你有16条消息
+                                        <span class="float-right text-muted small">4 分钟前</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="profile.html">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
+                                        <span class="float-right text-muted small">12 分钟前</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="grid_options.html">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> 重启服务器
+                                        <span class="float-right text-muted small">4 分钟前</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a class="dropdown-item" href="notifications.html">
+                                        <strong>查看所有信息</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 注销
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
         </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <span class="m-r-sm text-muted welcome-message">欢迎来到inspinia 2.9.2管理后台</span>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a class="dropdown-item float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/a7.jpg">
-                                </a>
-                                <div class="media-body">
-                                    <small class="float-right">46 小时前</small>
-                                    <strong>小明</strong> 评论了 <strong>小红</strong>. <br>
-                                    <small class="text-muted">2017.10.06 7:58</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a class="dropdown-item float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/a4.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="float-right text-navy">5 小时前</small>
-                                    <strong>小红</strong> 打电话给了 <strong>小黑</strong>. <br>
-                                    <small class="text-muted">2017.10.06 7:58</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a class="dropdown-item float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/profile.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="float-right">23 小时前</small>
-                                    <strong>小黑</strong> 点赞了 <strong>小红</strong>. <br>
-                                    <small class="text-muted">2017.10.06 7:58</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html" class="dropdown-item">
-                                    <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="mailbox.html" class="dropdown-item">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> 你有16条消息
-                                    <span class="float-right text-muted small">4 分钟前</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <a href="profile.html" class="dropdown-item">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
-                                    <span class="float-right text-muted small">12 分钟前</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <a href="grid_options.html" class="dropdown-item">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> 重启服务器
-                                    <span class="float-right text-muted small">4 分钟前</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="notifications.html" class="dropdown-item">
-                                    <strong>查看所有信息</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-
-
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> 注销
-                    </a>
-                </li>
-            </ul>
-
-        </nav>
-        </div>
-            <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-lg-10">
-                    <h2>幻灯片</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">主页</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Gallery</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>幻灯片</strong>
-                        </li>
-                    </ol>
-                </div>
-                
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>幻灯片</h2>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a>Gallery</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <strong>幻灯片</strong>
+                    </li>
+                </ol>
             </div>
+
+        </div>
         <div class="wrapper wrapper-content">
 
             <div class="row justify-content-md-center">
@@ -443,7 +444,6 @@
                     </h4>
 
 
-
                     <div class="slick_demo_2">
 
                         <div>
@@ -480,7 +480,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="row justify-content-md-center">
                 <div class="col-lg-10">
                     <div class="ibox">
@@ -524,89 +524,88 @@
         </div>
         <div class="footer">
             <div class="float-right">
-                 <strong>2.9.2 inspinia</strong>
+                <strong>2.9.2 inspinia</strong>
             </div>
             <div>
                 <strong>Copyright</strong> inspinia 2.9.2 &copy; 2014-2018
             </div>
         </div>
 
-        </div>
-        </div>
+    </div>
+</div>
 
 
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+<!-- slick carousel-->
+<script src="js/plugins/slick/slick.min.js"></script>
 
-    <!-- slick carousel-->
-    <script src="js/plugins/slick/slick.min.js"></script>
+<!-- Additional style only for demo purpose -->
+<style>
+    .slick_demo_2 .ibox-content {
+        margin: 0 10px;
+    }
+</style>
 
-    <!-- Additional style only for demo purpose -->
-    <style>
-        .slick_demo_2 .ibox-content {
-            margin: 0 10px;
-        }
-    </style>
-
-    <script>
-        $(document).ready(function(){
+<script>
+    $(document).ready(function () {
 
 
-            $('.slick_demo_1').slick({
-                dots: true
-            });
-
-            $('.slick_demo_2').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                centerMode: true,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-
-            $('.slick_demo_3').slick({
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                adaptiveHeight: true
-            });
+        $('.slick_demo_1').slick({
+            dots: true
         });
 
-    </script>
+        $('.slick_demo_2').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            centerMode: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+        $('.slick_demo_3').slick({
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            adaptiveHeight: true
+        });
+    });
+
+</script>
 
 </body>
 

@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | Chartist</title>
 
@@ -26,7 +26,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -260,7 +260,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -271,16 +271,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -334,7 +334,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -347,7 +347,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -356,7 +356,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -365,7 +365,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -375,7 +375,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -422,7 +422,7 @@
                             </h5>
                         </div>
                         <div class="ibox-content">
-                            <div id="ct-chart1" class="ct-perfect-fourth"></div>
+                            <div class="ct-perfect-fourth" id="ct-chart1"></div>
                         </div>
                     </div>
                 </div>
@@ -432,7 +432,7 @@
                             <h5>线散点图</h5>
                         </div>
                         <div class="ibox-content">
-                            <div id="ct-chart2" class="ct-perfect-fourth"></div>
+                            <div class="ct-perfect-fourth" id="ct-chart2"></div>
                         </div>
                     </div>
                 </div>
@@ -444,7 +444,7 @@
                             <h5>堆叠条形图</h5>
                         </div>
                         <div class="ibox-content">
-                            <div id="ct-chart3" class="ct-perfect-fourth"></div>
+                            <div class="ct-perfect-fourth" id="ct-chart3"></div>
                         </div>
                     </div>
                 </div>
@@ -454,7 +454,7 @@
                             <h5>水平条形图 </h5>
                         </div>
                         <div class="ibox-content">
-                            <div id="ct-chart4" class="ct-perfect-fourth"></div>
+                            <div class="ct-perfect-fourth" id="ct-chart4"></div>
                         </div>
                     </div>
                 </div>
@@ -466,7 +466,7 @@
                             <h5>饼图</h5>
                         </div>
                         <div class="ibox-content">
-                            <div id="ct-chart5" class="ct-perfect-fourth"></div>
+                            <div class="ct-perfect-fourth" id="ct-chart5"></div>
                         </div>
                     </div>
                 </div>
@@ -476,7 +476,7 @@
                             <h5>测量图 </h5>
                         </div>
                         <div class="ibox-content">
-                            <div id="ct-chart6" class="ct-perfect-fourth"></div>
+                            <div class="ct-perfect-fourth" id="ct-chart6"></div>
                         </div>
                     </div>
                 </div>

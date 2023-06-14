@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 按钮</title>
 
@@ -26,7 +26,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -260,7 +260,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -271,16 +271,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -334,7 +334,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -347,7 +347,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -356,7 +356,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -365,7 +365,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -375,7 +375,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -426,9 +426,9 @@
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">选项 1</a>
+                                <li><a class="dropdown-item" href="#">选项 1</a>
                                 </li>
-                                <li><a href="#" class="dropdown-item">选项 2</a>
+                                <li><a class="dropdown-item" href="#">选项 2</a>
                                 </li>
                             </ul>
                             <a class="close-link">
@@ -445,13 +445,13 @@
                             普通按钮
                         </h3>
                         <p>
-                            <button type="button" class="btn btn-w-m btn-default">默认</button>
-                            <button type="button" class="btn btn-w-m btn-primary">主要</button>
-                            <button type="button" class="btn btn-w-m btn-success">成功</button>
-                            <button type="button" class="btn btn-w-m btn-info">信息</button>
-                            <button type="button" class="btn btn-w-m btn-warning">警告</button>
-                            <button type="button" class="btn btn-w-m btn-danger">危险</button>
-                            <button type="button" class="btn btn-w-m btn-link">链接</button>
+                            <button class="btn btn-w-m btn-default" type="button">默认</button>
+                            <button class="btn btn-w-m btn-primary" type="button">主要</button>
+                            <button class="btn btn-w-m btn-success" type="button">成功</button>
+                            <button class="btn btn-w-m btn-info" type="button">信息</button>
+                            <button class="btn btn-w-m btn-warning" type="button">警告</button>
+                            <button class="btn btn-w-m btn-danger" type="button">危险</button>
+                            <button class="btn btn-w-m btn-link" type="button">链接</button>
                         </p>
                     </div>
                 </div>
@@ -468,9 +468,9 @@
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">选项 1</a>
+                                <li><a class="dropdown-item" href="#">选项 1</a>
                                 </li>
-                                <li><a href="#" class="dropdown-item">选项 2</a>
+                                <li><a class="dropdown-item" href="#">选项 2</a>
                                 </li>
                             </ul>
                             <a class="close-link">
@@ -484,17 +484,17 @@
                         </p>
                         <h3 class="font-bold">按钮尺寸</h3>
                         <p>
-                            <button type="button" class="btn btn-primary btn-lg">大按钮</button>
-                            <button type="button" class="btn btn-default btn-lg">大按钮</button>
+                            <button class="btn btn-primary btn-lg" type="button">大按钮</button>
+                            <button class="btn btn-default btn-lg" type="button">大按钮</button>
                             <br/>
-                            <button type="button" class="btn btn-primary">默认按钮</button>
-                            <button type="button" class="btn btn-default">默认按钮</button>
+                            <button class="btn btn-primary" type="button">默认按钮</button>
+                            <button class="btn btn-default" type="button">默认按钮</button>
                             <br/>
-                            <button type="button" class="btn btn-primary btn-sm">小按钮</button>
-                            <button type="button" class="btn btn-default btn-sm">小按钮</button>
+                            <button class="btn btn-primary btn-sm" type="button">小按钮</button>
+                            <button class="btn btn-default btn-sm" type="button">小按钮</button>
                             <br/>
-                            <button type="button" class="btn btn-primary btn-xs">微型按钮</button>
-                            <button type="button" class="btn btn-default btn-xs">微型按钮</button>
+                            <button class="btn btn-primary btn-xs" type="button">微型按钮</button>
+                            <button class="btn btn-default btn-xs" type="button">微型按钮</button>
                         </p>
                     </div>
                 </div>
@@ -511,9 +511,9 @@
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">选项 1</a>
+                                <li><a class="dropdown-item" href="#">选项 1</a>
                                 </li>
-                                <li><a href="#" class="dropdown-item">选项 2</a>
+                                <li><a class="dropdown-item" href="#">选项 2</a>
                                 </li>
                             </ul>
                             <a class="close-link">
@@ -528,17 +528,17 @@
 
                         <h3 class="font-bold">轮廓按钮</h3>
                         <p>
-                            <button type="button" class="btn btn-outline btn-default">默认</button>
-                            <button type="button" class="btn btn-outline btn-primary">主要</button>
-                            <button type="button" class="btn btn-outline btn-success">成功</button>
-                            <button type="button" class="btn btn-outline btn-info">信息</button>
-                            <button type="button" class="btn btn-outline btn-warning">警告</button>
-                            <button type="button" class="btn btn-outline btn-danger">危险</button>
-                            <button type="button" class="btn btn-outline btn-link">链接</button>
+                            <button class="btn btn-outline btn-default" type="button">默认</button>
+                            <button class="btn btn-outline btn-primary" type="button">主要</button>
+                            <button class="btn btn-outline btn-success" type="button">成功</button>
+                            <button class="btn btn-outline btn-info" type="button">信息</button>
+                            <button class="btn btn-outline btn-warning" type="button">警告</button>
+                            <button class="btn btn-outline btn-danger" type="button">危险</button>
+                            <button class="btn btn-outline btn-link" type="button">链接</button>
                         </p>
                         <h3 class="font-bold">阻止按钮</h3>
                         <p>
-                            <button type="button" class="btn btn-block btn-outline btn-primary">主要</button>
+                            <button class="btn btn-block btn-outline btn-primary" type="button">主要</button>
                         </p>
                     </div>
                 </div>
@@ -555,9 +555,9 @@
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">选项 1</a>
+                                <li><a class="dropdown-item" href="#">选项 1</a>
                                 </li>
-                                <li><a href="#" class="dropdown-item">选项 2</a>
+                                <li><a class="dropdown-item" href="#">选项 2</a>
                                 </li>
                             </ul>
                             <a class="close-link">
@@ -621,9 +621,9 @@
                                         <i class="fa fa-wrench"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-user">
-                                        <li><a href="#" class="dropdown-item">选项 1</a>
+                                        <li><a class="dropdown-item" href="#">选项 1</a>
                                         </li>
-                                        <li><a href="#" class="dropdown-item">选项 2</a>
+                                        <li><a class="dropdown-item" href="#">选项 2</a>
                                         </li>
                                     </ul>
                                     <a class="close-link">
@@ -640,17 +640,17 @@
 
 
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">操作</button>
+                                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">操作</button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
-                                        <li><a class="dropdown-item" href="#" class="font-bold">复制</a></li>
+                                        <li><a class="dropdown-item" class="font-bold" href="#">复制</a></li>
                                         <li><a class="dropdown-item" href="#">粘贴</a></li>
                                         <li class="dropdown-divider"></li>
                                         <li><a class="dropdown-item" href="#">分享</a></li>
                                     </ul>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-warning dropdown-toggle">操作</button>
+                                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">操作</button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
                                         <li><a class="dropdown-item" href="#">复制</a></li>
@@ -660,7 +660,7 @@
                                     </ul>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">操作</button>
+                                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">操作</button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
                                         <li><a class="dropdown-item" href="#">复制</a></li>
@@ -672,7 +672,7 @@
 
                                 <br/>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-primary btn-sm dropdown-toggle">操作
+                                    <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">操作
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
@@ -683,7 +683,7 @@
                                     </ul>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-warning btn-sm dropdown-toggle">操作
+                                    <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">操作
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
@@ -694,7 +694,7 @@
                                     </ul>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle">操作
+                                    <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">操作
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
@@ -706,7 +706,7 @@
                                 </div>
                                 <br/>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作
+                                    <button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">操作
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
@@ -717,7 +717,7 @@
                                     </ul>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-warning btn-xs dropdown-toggle">操作
+                                    <button class="btn btn-warning btn-xs dropdown-toggle" data-toggle="dropdown">操作
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
@@ -728,7 +728,7 @@
                                     </ul>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-default btn-xs dropdown-toggle">操作
+                                    <button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">操作
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">操作</a></li>
@@ -753,9 +753,9 @@
                                         <i class="fa fa-wrench"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-user">
-                                        <li><a href="#" class="dropdown-item">选项 1</a>
+                                        <li><a class="dropdown-item" href="#">选项 1</a>
                                         </li>
-                                        <li><a href="#" class="dropdown-item">选项 2</a>
+                                        <li><a class="dropdown-item" href="#">选项 2</a>
                                         </li>
                                     </ul>
                                     <a class="close-link">
@@ -777,13 +777,13 @@
                                 <br/>
                                 <br/>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i>
+                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i>
                                     </button>
                                     <button class="btn btn-white">1</button>
                                     <button class="btn btn-white  active">2</button>
                                     <button class="btn btn-white">3</button>
                                     <button class="btn btn-white">4</button>
-                                    <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i>
+                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -801,9 +801,9 @@
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">选项 1</a>
+                                <li><a class="dropdown-item" href="#">选项 1</a>
                                 </li>
-                                <li><a href="#" class="dropdown-item">选项 2</a>
+                                <li><a class="dropdown-item" href="#">选项 2</a>
                                 </li>
                             </ul>
                             <a class="close-link">
@@ -827,7 +827,7 @@
                             <button class="btn btn-default " type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;地图
                             </button>
 
-                            <a href="" class="btn btn-success btn-facebook">
+                            <a class="btn btn-success btn-facebook" href="">
                                 <i class="fa fa-facebook"> </i> Facebook登录
                             </a>
                             <a class="btn btn-success btn-facebook btn-outline">
@@ -861,9 +861,9 @@
 
                         <h3 class="font-bold">切换按钮变化</h3>
                         <p>按钮组可以充当收音机或开关，甚至可以单个切换。下面是一些例子，点击看看会发生什么</p>
-                        <button data-toggle="button" class="btn btn-primary btn-outline" type="button">单一切换</button>
-                        <button data-toggle="button" class="btn btn-primary" type="button">单一切换</button>
-                        <div data-toggle="buttons-checkbox" class="btn-group">
+                        <button class="btn btn-primary btn-outline" data-toggle="button" type="button">单一切换</button>
+                        <button class="btn btn-primary" data-toggle="button" type="button">单一切换</button>
+                        <div class="btn-group" data-toggle="buttons-checkbox">
                             <button class="btn btn-primary active" type="button"><i class="fa fa-bold"></i> 加粗</button>
                             <button class="btn btn-primary" type="button"><i class="fa fa-underline"></i> 底线</button>
                             <button class="btn btn-primary active" type="button"><i class="fa fa-italic"></i> 斜体
@@ -886,9 +886,9 @@
                                         <i class="fa fa-wrench"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-user">
-                                        <li><a href="#" class="dropdown-item">选项 1</a>
+                                        <li><a class="dropdown-item" href="#">选项 1</a>
                                         </li>
-                                        <li><a href="#" class="dropdown-item">选项 2</a>
+                                        <li><a class="dropdown-item" href="#">选项 2</a>
                                         </li>
                                     </ul>
                                     <a class="close-link">
@@ -956,9 +956,9 @@
                                         <i class="fa fa-wrench"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-user">
-                                        <li><a href="#" class="dropdown-item">选项 1</a>
+                                        <li><a class="dropdown-item" href="#">选项 1</a>
                                         </li>
-                                        <li><a href="#" class="dropdown-item">选项 2</a>
+                                        <li><a class="dropdown-item" href="#">选项 2</a>
                                         </li>
                                     </ul>
                                     <a class="close-link">

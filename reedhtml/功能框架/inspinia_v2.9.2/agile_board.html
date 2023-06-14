@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 敏捷板</title>
 
@@ -30,7 +30,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -264,7 +264,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -275,16 +275,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -338,7 +338,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -351,7 +351,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -360,7 +360,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -369,7 +369,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -379,7 +379,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -425,9 +425,9 @@
                             <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务</p>
 
                             <div class="input-group">
-                                <input type="text" placeholder="添加新任务 " class="input form-control-sm form-control">
+                                <input class="input form-control-sm form-control" placeholder="添加新任务 " type="text">
                                 <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-plus"></i> 添加任务</button>
+                                        <button class="btn btn-sm btn-white" type="button"> <i class="fa fa-plus"></i> 添加任务</button>
                                 </span>
                             </div>
 
@@ -435,56 +435,56 @@
                                 <li class="warning-element" id="task1">
                                     待完成克隆新技术,可以拖动到任意一个盒子
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="success-element" id="task2">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="info-element" id="task3">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="danger-element" id="task4">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-primary">完成</a>
+                                        <a class="float-right btn btn-xs btn-primary" href="#">完成</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task5">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task6">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-primary">完成</a>
+                                        <a class="float-right btn btn-xs btn-primary" href="#">完成</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="success-element" id="task7">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="info-element" id="task8">
                                     待完成克隆新技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
@@ -501,49 +501,49 @@
                                 <li class="success-element" id="task9">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="success-element" id="task10">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task11">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task12">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="info-element" id="task13">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-primary">完成</a>
+                                        <a class="float-right btn btn-xs btn-primary" href="#">完成</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="success-element" id="task14">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="danger-element" id="task15">
                                     进行中的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
@@ -560,56 +560,56 @@
                                 <li class="info-element" id="task16">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task17">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task18">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task19">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-primary">完成</a>
+                                        <a class="float-right btn btn-xs btn-primary" href="#">完成</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="success-element" id="task20">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="info-element" id="task21">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="warning-element" id="task22">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标签</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标签</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>
                                 <li class="success-element" id="task23">
                                     已完成的克隆技术
                                     <div class="agile-detail">
-                                        <a href="#" class="float-right btn btn-xs btn-white">标记</a>
+                                        <a class="float-right btn btn-xs btn-white" href="#">标记</a>
                                         <i class="fa fa-clock-o"></i> 2017.12.12
                                     </div>
                                 </li>

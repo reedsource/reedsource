@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 项目列表</title>
 
@@ -26,7 +26,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -260,7 +260,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -271,16 +271,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -334,7 +334,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -347,7 +347,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -356,7 +356,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -365,7 +365,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -375,7 +375,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -415,21 +415,21 @@
                         <div class="ibox-title">
                             <h5>分配给此帐户的所有项目</h5>
                             <div class="ibox-tools">
-                                <a href="" class="btn btn-primary btn-xs">创建新项目</a>
+                                <a class="btn btn-primary btn-xs" href="">创建新项目</a>
                             </div>
                         </div>
                         <div class="ibox-content">
                             <div class="row m-b-sm m-t-sm">
                                 <div class="col-md-1">
-                                    <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i
+                                    <button class="btn btn-white btn-sm" id="loading-example-btn" type="button"><i
                                             class="fa fa-refresh"></i> 刷新
                                     </button>
                                 </div>
                                 <div class="col-md-11">
                                     <div class="input-group">
-                                        <input type="text" placeholder="搜索" class="input-sm form-control"> <span
+                                        <input class="input-sm form-control" placeholder="搜索" type="text"> <span
                                             class="input-group-btn">
-                                            <button type="button" class="btn btn-sm btn-primary"> 搜索</button>
+                                            <button class="btn btn-sm btn-primary" type="button"> 搜索</button>
                                         </span>
                                     </div>
                                 </div>
@@ -451,7 +451,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 48%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 48%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 48%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -462,9 +462,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a5.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -480,7 +480,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 28%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 28%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 28%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -489,9 +489,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -507,7 +507,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 8%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 8%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -515,9 +515,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -533,7 +533,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 83%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 83%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 83%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -543,9 +543,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a7.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -561,16 +561,16 @@
                                         <td class="project-completion">
                                             <small>完成度: 97%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 97%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 97%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a4.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -586,7 +586,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 48%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 48%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 48%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -596,9 +596,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a5.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -614,7 +614,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 28%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 28%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 28%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -623,9 +623,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -641,7 +641,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 8%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 8%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -649,9 +649,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -667,7 +667,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 83%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 83%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 83%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -676,9 +676,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a1.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -694,16 +694,16 @@
                                         <td class="project-completion">
                                             <small>完成度: 97%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 97%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 97%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a4.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>
@@ -719,7 +719,7 @@
                                         <td class="project-completion">
                                             <small>完成度: 28%</small>
                                             <div class="progress progress-mini">
-                                                <div style="width: 28%;" class="progress-bar"></div>
+                                                <div class="progress-bar" style="width: 28%;"></div>
                                             </div>
                                         </td>
                                         <td class="project-people">
@@ -728,9 +728,9 @@
                                             <a href=""><img alt="image" class="rounded-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-folder"></i> 查看
                                             </a>
-                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑
+                                            <a class="btn btn-white btn-sm" href="#"><i class="fa fa-pencil"></i> 编辑
                                             </a>
                                         </td>
                                     </tr>

@@ -3,8 +3,8 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 项目详情</title>
 
@@ -26,7 +26,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -259,7 +259,7 @@
                             class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span>
                         <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
@@ -270,16 +270,16 @@
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search"
-                                   id="top-search">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容"
+                                   type="text">
                         </div>
                     </form>
                 </div>
@@ -333,7 +333,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="mailbox.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="mailbox.html">
                                         <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
                                     </a>
                                 </div>
@@ -346,7 +346,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" class="dropdown-item">
+                                <a class="dropdown-item" href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 你有16条消息
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -355,7 +355,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="profile.html" class="dropdown-item">
+                                <a class="dropdown-item" href="profile.html">
                                     <div>
                                         <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
                                         <span class="float-right text-muted small">12 分钟前</span>
@@ -364,7 +364,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li>
-                                <a href="grid_options.html" class="dropdown-item">
+                                <a class="dropdown-item" href="grid_options.html">
                                     <div>
                                         <i class="fa fa-upload fa-fw"></i> 重启服务器
                                         <span class="float-right text-muted small">4 分钟前</span>
@@ -374,7 +374,7 @@
                             <li class="dropdown-divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a href="notifications.html" class="dropdown-item">
+                                    <a class="dropdown-item" href="notifications.html">
                                         <strong>查看所有信息</strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -415,7 +415,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="m-b-md">
-                                        <a href="#" class="btn btn-white btn-xs float-right">编辑项目</a>
+                                        <a class="btn btn-white btn-xs float-right" href="#">编辑项目</a>
                                         <h2>与企鹅公司签订合同</h2>
                                     </div>
 
@@ -452,7 +452,7 @@
                                             <dt>Client:</dt>
                                         </div>
                                         <div class="col-sm-8 text-sm-left">
-                                            <dd class="mb-1"><a href="#" class="text-navy"> Zender Company</a></dd>
+                                            <dd class="mb-1"><a class="text-navy" href="#"> Zender Company</a></dd>
                                         </div>
                                     </dl>
                                     <dl class="row mb-0">
@@ -508,8 +508,8 @@
                                         <div class="col-sm-10 text-sm-left">
                                             <dd>
                                                 <div class="progress m-b-1">
-                                                    <div style="width: 60%;"
-                                                         class="progress-bar progress-bar-striped progress-bar-animated"></div>
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                         style="width: 60%;"></div>
                                                 </div>
                                                 <small>项目完成 <strong>60%</strong> 关闭项目，签订合同和发票。</small>
                                             </dd>
@@ -523,9 +523,9 @@
                                         <div class="panel-heading">
                                             <div class="panel-options">
                                                 <ul class="nav nav-tabs">
-                                                    <li><a class="nav-link active" href="#tab-1"
-                                                           data-toggle="tab">用户信息</a></li>
-                                                    <li><a class="nav-link" href="#tab-2" data-toggle="tab">最后活动</a>
+                                                    <li><a class="nav-link active" data-toggle="tab"
+                                                           href="#tab-1">用户信息</a></li>
+                                                    <li><a class="nav-link" data-toggle="tab" href="#tab-2">最后活动</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -537,7 +537,7 @@
                                                 <div class="tab-pane active" id="tab-1">
                                                     <div class="feed-activity-list">
                                                         <div class="feed-element">
-                                                            <a href="#" class="float-left">
+                                                            <a class="float-left" href="#">
                                                                 <img alt="image" class="rounded-circle"
                                                                      src="img/a2.jpg">
                                                             </a>
@@ -551,7 +551,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="feed-element">
-                                                            <a href="#" class="float-left">
+                                                            <a class="float-left" href="#">
                                                                 <img alt="image" class="rounded-circle"
                                                                      src="img/a3.jpg">
                                                             </a>
@@ -562,7 +562,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="feed-element">
-                                                            <a href="#" class="float-left">
+                                                            <a class="float-left" href="#">
                                                                 <img alt="image" class="rounded-circle"
                                                                      src="img/a4.jpg">
                                                             </a>
@@ -579,7 +579,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="feed-element">
-                                                            <a href="#" class="float-left">
+                                                            <a class="float-left" href="#">
                                                                 <img alt="image" class="rounded-circle"
                                                                      src="img/a5.jpg">
                                                             </a>
@@ -593,7 +593,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="feed-element">
-                                                            <a href="#" class="float-left">
+                                                            <a class="float-left" href="#">
                                                                 <img alt="image" class="rounded-circle"
                                                                      src="img/profile.jpg">
                                                             </a>
@@ -604,7 +604,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="feed-element">
-                                                            <a href="#" class="float-left">
+                                                            <a class="float-left" href="#">
                                                                 <img alt="image" class="rounded-circle"
                                                                      src="img/a7.jpg">
                                                             </a>
@@ -838,7 +838,7 @@
             <div class="col-lg-3">
                 <div class="wrapper wrapper-content project-manager">
                     <h4>项目介绍</h4>
-                    <img src="img/zender_logo.png" class="img-fluid">
+                    <img class="img-fluid" src="img/zender_logo.png">
                     <p class="small">
                         项目介绍还没有填写
                     </p>
@@ -861,8 +861,8 @@
                         <li><a href=""><i class="fa fa-file"></i> Contract_20_11_2014.docx</a></li>
                     </ul>
                     <div class="text-center m-t-md">
-                        <a href="#" class="btn btn-xs btn-primary">添加文件</a>
-                        <a href="#" class="btn btn-xs btn-primary">报告联系人</a>
+                        <a class="btn btn-xs btn-primary" href="#">添加文件</a>
+                        <a class="btn btn-xs btn-primary" href="#">报告联系人</a>
 
                     </div>
                 </div>

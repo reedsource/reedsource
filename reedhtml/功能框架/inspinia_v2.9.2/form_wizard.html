@@ -3,8 +3,8 @@
 
 <head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>inspinia 2.9.2 | 表单向导</title>
 
@@ -19,7 +19,7 @@
 
 <body>
 
-    <div id="wrapper">
+<div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -27,7 +27,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="block m-t-xs font-bold">王宇</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
@@ -79,7 +79,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">指标</span>  </a>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">指标</span> </a>
                 </li>
                 <li>
                     <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">窗口小部件</span></a>
@@ -97,7 +97,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">应用</span>  <span class="float-right label label-primary">特别</span></a>
+                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">应用</span> <span class="float-right label label-primary">特别</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="contacts.html">名片</a></li>
                         <li><a href="profile.html">会员</a></li>
@@ -126,7 +126,7 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="search_results.html">搜索</a></li>
                         <li><a href="lockscreen.html">锁屏</a></li>
-                         <li><a href="invoice.html">发票</a></li>
+                        <li><a href="invoice.html">发票</a></li>
                         <li><a href="login.html">登录</a></li>
                         <li><a href="login_two_columns.html">登录 v.2</a></li>
                         <li><a href="forgot_password.html">忘记密码</a></li>
@@ -174,7 +174,8 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="typography.html">排版</a></li>
                         <li><a href="icons.html">图标</a></li>
-                        <li><a href="draggable_panels.html">拖动排序</a></li> <li><a href="resizeable_panels.html">内容缩放</a></li>
+                        <li><a href="draggable_panels.html">拖动排序</a></li>
+                        <li><a href="resizeable_panels.html">内容缩放</a></li>
                         <li><a href="buttons.html">按钮</a></li>
                         <li><a href="video.html">视频</a></li>
                         <li><a href="tabs_panels.html">面板</a></li>
@@ -247,7 +248,7 @@
                     <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS 动画 </span><span class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
-                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span> <span class="label label-warning float-right">新</span></a>
+                    <a href="landing.html" target="_blank"><i class="fa fa-star"></i> <span class="nav-label">着陆页</span> <span class="label label-warning float-right">新</span></a>
                 </li>
                 <li class="special_link">
                     <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">组件</span></a>
@@ -257,215 +258,215 @@
         </div>
     </nav>
 
-        <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <div class="row border-bottom">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
-                <div class="form-group">
-                    <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search" id="top-search">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form action="search_results.html" class="navbar-form-custom" role="search">
+                        <div class="form-group">
+                            <input class="form-control" id="top-search" name="top-search" placeholder="请输入搜索内容" type="text">
+                        </div>
+                    </form>
                 </div>
-            </form>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">欢迎来到inspinia 2.9.2管理后台</span>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a class="dropdown-item float-left" href="profile.html">
+                                        <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        <small class="float-right">46 小时前</small>
+                                        <strong>小明</strong> 评论了 <strong>小红</strong>. <br>
+                                        <small class="text-muted">2017.10.06 7:58</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a class="dropdown-item float-left" href="profile.html">
+                                        <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="float-right text-navy">5 小时前</small>
+                                        <strong>小红</strong> 打电话给了 <strong>小黑</strong>. <br>
+                                        <small class="text-muted">2017.10.06 7:58</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a class="dropdown-item float-left" href="profile.html">
+                                        <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="float-right">23 小时前</small>
+                                        <strong>小黑</strong> 点赞了 <strong>小红</strong>. <br>
+                                        <small class="text-muted">2017.10.06 7:58</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a class="dropdown-item" href="mailbox.html">
+                                        <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a class="dropdown-item" href="mailbox.html">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> 你有16条消息
+                                        <span class="float-right text-muted small">4 分钟前</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="profile.html">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
+                                        <span class="float-right text-muted small">12 分钟前</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="grid_options.html">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> 重启服务器
+                                        <span class="float-right text-muted small">4 分钟前</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a class="dropdown-item" href="notifications.html">
+                                        <strong>查看所有信息</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 注销
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
         </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <span class="m-r-sm text-muted welcome-message">欢迎来到inspinia 2.9.2管理后台</span>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a class="dropdown-item float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/a7.jpg">
-                                </a>
-                                <div class="media-body">
-                                    <small class="float-right">46 小时前</small>
-                                    <strong>小明</strong> 评论了 <strong>小红</strong>. <br>
-                                    <small class="text-muted">2017.10.06 7:58</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a class="dropdown-item float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/a4.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="float-right text-navy">5 小时前</small>
-                                    <strong>小红</strong> 打电话给了 <strong>小黑</strong>. <br>
-                                    <small class="text-muted">2017.10.06 7:58</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a class="dropdown-item float-left" href="profile.html">
-                                    <img alt="image" class="rounded-circle" src="img/profile.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="float-right">23 小时前</small>
-                                    <strong>小黑</strong> 点赞了 <strong>小红</strong>. <br>
-                                    <small class="text-muted">2017.10.06 7:58</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html" class="dropdown-item">
-                                    <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="mailbox.html" class="dropdown-item">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> 你有16条消息
-                                    <span class="float-right text-muted small">4 分钟前</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <a href="profile.html" class="dropdown-item">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
-                                    <span class="float-right text-muted small">12 分钟前</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <a href="grid_options.html" class="dropdown-item">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> 重启服务器
-                                    <span class="float-right text-muted small">4 分钟前</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="notifications.html" class="dropdown-item">
-                                    <strong>查看所有信息</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-
-
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> 注销
-                    </a>
-                </li>
-            </ul>
-
-        </nav>
-        </div>
-            <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-lg-10">
-                    <h2>表单向导</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">主页</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>表单</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>表单向导</strong>
-                        </li>
-                    </ol>
-                </div>
-                
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>表单向导</h2>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a>表单</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <strong>表单向导</strong>
+                    </li>
+                </ol>
             </div>
+
+        </div>
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="jumbotron">
                         <h1>步骤</h1>
                         <p>智能UI组件，允许您轻松创建类似向导的界面。</p>
-                        <p><a href="http://www.jquery-steps.com/GettingStarted" target="_blank" class="btn btn-primary btn-lg" role="button">了解更多关于jQuery的步骤</a>
+                        <p><a class="btn btn-primary btn-lg" href="http://www.jquery-steps.com/GettingStarted" role="button" target="_blank">了解更多关于jQuery的步骤</a>
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-7">
-                <div class="ibox ">
-                    <div class="ibox-title">
-                        <h5>基本向导</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">选项 1</a>
-                                </li>
-                                <li><a href="#" class="dropdown-item">选项 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <p>
-                            这是Step的基本例子
-                        </p>
-                        <div id="wizard">
-                            <h1>第一步</h1>
-                            <div class="step-content">
-                                <div class="text-center m-t-md">
-                                <h2>这是第1步</h2>
-                                <p>
-                                    我是第一个内容
-                                </p>
-                                </div>
-                            </div>
-
-                            <h1>第二步</h1>
-                            <div class="step-content">
-                                <div class="text-center m-t-md">
-                                    <h2>这是第2步</h2>
-                                    <p>
-                                        我是第二个内容
-                                    </p>
-                                </div>
-                            </div>
-
-                            <h1>第三步</h1>
-                            <div class="step-content">
-                                <div class="text-center m-t-md">
-                                    <h2>这是第3步</h2>
-                                    <p>
-                                        我是第三个内容
-                                    </p>
-                                </div>
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>基本向导</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
                             </div>
                         </div>
+                        <div class="ibox-content">
+                            <p>
+                                这是Step的基本例子
+                            </p>
+                            <div id="wizard">
+                                <h1>第一步</h1>
+                                <div class="step-content">
+                                    <div class="text-center m-t-md">
+                                        <h2>这是第1步</h2>
+                                        <p>
+                                            我是第一个内容
+                                        </p>
+                                    </div>
+                                </div>
 
+                                <h1>第二步</h1>
+                                <div class="step-content">
+                                    <div class="text-center m-t-md">
+                                        <h2>这是第2步</h2>
+                                        <p>
+                                            我是第二个内容
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <h1>第三步</h1>
+                                <div class="step-content">
+                                    <div class="text-center m-t-md">
+                                        <h2>这是第3步</h2>
+                                        <p>
+                                            我是第三个内容
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -480,9 +481,9 @@
                                     <i class="fa fa-wrench"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    <li><a class="dropdown-item" href="#">选项 1</a>
                                     </li>
-                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    <li><a class="dropdown-item" href="#">选项 2</a>
                                     </li>
                                 </ul>
                                 <a class="close-link">
@@ -498,7 +499,7 @@
                                 这个例子展示了如何在jQuery验证插件中使用Steps。
                             </p>
 
-                            <form id="form" action="#" class="wizard-big">
+                            <form action="#" class="wizard-big" id="form">
                                 <h1>帐户</h1>
                                 <fieldset>
                                     <h2>账户信息</h2>
@@ -506,15 +507,15 @@
                                         <div class="col-lg-8">
                                             <div class="form-group">
                                                 <label>用户名 *</label>
-                                                <input id="userName" name="userName" type="text" class="form-control required">
+                                                <input class="form-control required" id="userName" name="userName" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>密码 *</label>
-                                                <input id="password" name="password" type="text" class="form-control required">
+                                                <input class="form-control required" id="password" name="password" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>确认密码 *</label>
-                                                <input id="confirm" name="confirm" type="text" class="form-control required">
+                                                <input class="form-control required" id="confirm" name="confirm" type="text">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -534,21 +535,21 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>名字 *</label>
-                                                <input id="name" name="name" type="text" class="form-control required">
+                                                <input class="form-control required" id="name" name="name" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>姓 *</label>
-                                                <input id="surname" name="surname" type="text" class="form-control required">
+                                                <input class="form-control required" id="surname" name="surname" type="text">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>电子邮件 *</label>
-                                                <input id="email" name="email" type="text" class="form-control required email">
+                                                <input class="form-control required email" id="email" name="email" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>地址 *</label>
-                                                <input id="address" name="address" type="text" class="form-control">
+                                                <input class="form-control" id="address" name="address" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -564,127 +565,116 @@
                                 <h1>结束</h1>
                                 <fieldset>
                                     <h2>条款和条件</h2>
-                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">我同意条款和条件。</label>
+                                    <input class="required" id="acceptTerms" name="acceptTerms" type="checkbox"> <label for="acceptTerms">我同意条款和条件。</label>
                                 </fieldset>
                             </form>
                         </div>
                     </div>
-                    </div>
-
                 </div>
+
             </div>
+        </div>
         <div class="footer">
             <div class="float-right">
-                 <strong>2.9.2 inspinia</strong>
+                <strong>2.9.2 inspinia</strong>
             </div>
             <div>
                 <strong>Copyright</strong> inspinia 2.9.2 &copy; 2014-2018
             </div>
         </div>
 
-        </div>
-        </div>
+    </div>
+</div>
 
 
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+<!-- Steps -->
+<script src="js/plugins/steps/jquery.steps.min.js"></script>
 
-    <!-- Steps -->
-    <script src="js/plugins/steps/jquery.steps.min.js"></script>
-
-    <!-- Jquery Validate -->
-    <script src="js/plugins/validate/jquery.validate.min.js"></script>
+<!-- Jquery Validate -->
+<script src="js/plugins/validate/jquery.validate.min.js"></script>
 
 
-    <script>
-        $(document).ready(function(){
-            $("#wizard").steps();
-            $("#form").steps({
-                bodyTag: "fieldset",
-                onStepChanging: function (event, currentIndex, newIndex)
-                {
-                    // Always allow going backward even if the current step contains invalid fields!
-                    if (currentIndex > newIndex)
-                    {
-                        return true;
-                    }
-
-                    // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 3 && Number($("#age").val()) < 18)
-                    {
-                        return false;
-                    }
-
-                    var form = $(this);
-
-                    // Clean up if user went backward before
-                    if (currentIndex < newIndex)
-                    {
-                        // To remove error styles
-                        $(".body:eq(" + newIndex + ") label.error", form).remove();
-                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
-                    }
-
-                    // Disable validation on fields that are disabled or hidden.
-                    form.validate().settings.ignore = ":disabled,:hidden";
-
-                    // Start validation; Prevent going forward if false
-                    return form.valid();
-                },
-                onStepChanged: function (event, currentIndex, priorIndex)
-                {
-                    // Suppress (skip) "Warning" step if the user is old enough.
-                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
-                    {
-                        $(this).steps("下一个");
-                    }
-
-                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-                    if (currentIndex === 2 && priorIndex === 3)
-                    {
-                        $(this).steps("上一个");
-                    }
-                },
-                onFinishing: function (event, currentIndex)
-                {
-                    var form = $(this);
-
-                    // Disable validation on fields that are disabled.
-                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
-                    form.validate().settings.ignore = ":disabled";
-
-                    // Start validation; Prevent form submission if false
-                    return form.valid();
-                },
-                onFinished: function (event, currentIndex)
-                {
-                    var form = $(this);
-
-                    // Submit form input
-                    form.submit();
+<script>
+    $(document).ready(function () {
+        $("#wizard").steps();
+        $("#form").steps({
+            bodyTag: "fieldset",
+            onStepChanging: function (event, currentIndex, newIndex) {
+                // Always allow going backward even if the current step contains invalid fields!
+                if (currentIndex > newIndex) {
+                    return true;
                 }
-            }).validate({
-                        errorPlacement: function (error, element)
-                        {
-                            element.before(error);
-                        },
-                        rules: {
-                            confirm: {
-                                equalTo: "#password"
-                            }
-                        }
-                    });
-       });
-    </script>
+
+                // Forbid suppressing "Warning" step if the user is to young
+                if (newIndex === 3 && Number($("#age").val()) < 18) {
+                    return false;
+                }
+
+                var form = $(this);
+
+                // Clean up if user went backward before
+                if (currentIndex < newIndex) {
+                    // To remove error styles
+                    $(".body:eq(" + newIndex + ") label.error", form).remove();
+                    $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                }
+
+                // Disable validation on fields that are disabled or hidden.
+                form.validate().settings.ignore = ":disabled,:hidden";
+
+                // Start validation; Prevent going forward if false
+                return form.valid();
+            },
+            onStepChanged: function (event, currentIndex, priorIndex) {
+                // Suppress (skip) "Warning" step if the user is old enough.
+                if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                    $(this).steps("下一个");
+                }
+
+                // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                if (currentIndex === 2 && priorIndex === 3) {
+                    $(this).steps("上一个");
+                }
+            },
+            onFinishing: function (event, currentIndex) {
+                var form = $(this);
+
+                // Disable validation on fields that are disabled.
+                // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                form.validate().settings.ignore = ":disabled";
+
+                // Start validation; Prevent form submission if false
+                return form.valid();
+            },
+            onFinished: function (event, currentIndex) {
+                var form = $(this);
+
+                // Submit form input
+                form.submit();
+            }
+        }).validate({
+            errorPlacement: function (error, element) {
+                element.before(error);
+            },
+            rules: {
+                confirm: {
+                    equalTo: "#password"
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 
