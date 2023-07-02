@@ -9,8 +9,8 @@ package j01枚举;
  * mail reedsource@189.cn
  */
 public enum 颜色枚举 {
-	/**
-	 * RED 红色
-	 */
-	RED, GREEN, YELLOW
+    /**
+     * RED 红色
+     */
+    RED, GREEN, YELLOW
 }

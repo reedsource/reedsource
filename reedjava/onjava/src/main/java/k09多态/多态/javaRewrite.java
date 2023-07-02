@@ -16,14 +16,14 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class javaRewrite {
-	public static void main(String[] args) {
-		Salary s = new Salary("员工 A", "北京", 3, 3600.00);
-		Employee e = new Salary("员工 B", "上海", 2, 2400.00);
-		DealLog.log("使用 Salary 的引用调用 mailCheck -- ");
-		s.mailCheck();
-		DealLog.log("\n使用 Employee 的引用调用 mailCheck--");
-		e.mailCheck();
-	}
+    public static void main(String[] args) {
+        Salary s = new Salary("员工 A", "北京", 3, 3600.00);
+        Employee e = new Salary("员工 B", "上海", 2, 2400.00);
+        DealLog.log("使用 Salary 的引用调用 mailCheck -- ");
+        s.mailCheck();
+        DealLog.log("\n使用 Employee 的引用调用 mailCheck--");
+        e.mailCheck();
+    }
 }
 
 /*

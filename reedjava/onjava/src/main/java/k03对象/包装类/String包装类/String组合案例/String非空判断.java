@@ -17,15 +17,15 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class String非空判断 {
-	public static void main(String[] args) {
-		String aaa = null;
-		if (aaa != null && aaa != "") {
-			DealLog.log(111111);
-		}
+    public static void main(String[] args) {
+        String aaa = null;
+        if (aaa != null && aaa != "") {
+            DealLog.log(111111);
+        }
 
-		if (!"".equals(aaa) && aaa != null) {
-			DealLog.log(222222);
-		}
+        if (!"".equals(aaa) && aaa != null) {
+            DealLog.log(222222);
+        }
 
-	}
+    }
 }

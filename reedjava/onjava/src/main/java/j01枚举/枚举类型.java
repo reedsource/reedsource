@@ -9,23 +9,23 @@ package j01枚举;
  * mail reedsource@189.cn
  */
 public enum 枚举类型 {
-	// 利用构造函数传参
-	RED(1), GREEN(3), YELLOW(2);
+    // 利用构造函数传参
+    RED(1), GREEN(3), YELLOW(2);
 
-	/**
-	 * 定义私有变量
-	 */
-	private final int nCode;
+    /**
+     * 定义私有变量
+     */
+    private final int nCode;
 
-	/**
-	 * 构造函数，枚举类型只能为私有
-	 */
-	枚举类型(int nCode) {
-		this.nCode = nCode;
-	}
+    /**
+     * 构造函数，枚举类型只能为私有
+     */
+    枚举类型(int nCode) {
+        this.nCode = nCode;
+    }
 
-	@Override
-	public String toString() {
-		return String.valueOf(this.nCode);
-	}
+    @Override
+    public String toString() {
+        return String.valueOf(this.nCode);
+    }
 }

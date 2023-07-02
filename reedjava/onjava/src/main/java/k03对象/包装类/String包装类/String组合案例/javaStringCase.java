@@ -16,10 +16,10 @@ import org.junit.Assert;
  * reedsource@189.cn
  */
 public class javaStringCase {
-	public static void main(String[] args) {
-		// 1. 截取字符串某字符串后面的字符串
-		String oilUrl = "/dzsd_operate_war_exploded/a/oil/order/list";
-		oilUrl = oilUrl.substring(oilUrl.indexOf("/a/") + 2, oilUrl.length());
-		Assert.assertEquals("/oil/order/list", oilUrl);
-	}
+    public static void main(String[] args) {
+        // 1. 截取字符串某字符串后面的字符串
+        String oilUrl = "/dzsd_operate_war_exploded/a/oil/order/list";
+        oilUrl = oilUrl.substring(oilUrl.indexOf("/a/") + 2, oilUrl.length());
+        Assert.assertEquals("/oil/order/list", oilUrl);
+    }
 }

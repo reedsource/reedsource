@@ -16,32 +16,32 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class 初始化顺序 {
-	@Test
-	public void 初始化顺序_Test() {
-		House h = new House();
-		h.f();
-	}
+    @Test
+    public void 初始化顺序_Test() {
+        House h = new House();
+        h.f();
+    }
 }
 
 class Window {
-	Window(String marker) {
-		DealLog.log("Window", marker);
-	}
+    Window(String marker) {
+        DealLog.log("Window", marker);
+    }
 }
 
 class House {
-	Window w1 = new Window("在构造器前");
+    Window w1 = new Window("在构造器前");
 
-	House() {
-		DealLog.log("构造器进入");
-		w3 = new Window("构造器调用1");
-	}
+    House() {
+        DealLog.log("构造器进入");
+        w3 = new Window("构造器调用1");
+    }
 
-	Window w2 = new Window("构造器调用2");
+    Window w2 = new Window("构造器调用2");
 
-	void f() {
-		DealLog.log("f()");
-	}
+    void f() {
+        DealLog.log("f()");
+    }
 
-	Window w3 = new Window("在构造器尾"); // At end
+    Window w3 = new Window("在构造器尾"); // At end
 }

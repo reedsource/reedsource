@@ -21,20 +21,20 @@ import java.util.Optional;
  */
 public class Optional对象为空抛出异常orElseThrow {
 
-	/**
-	 * orElseThrow() API —— 它会在对象为空的时候抛出异常，而不是返回备选的值
-	 * 如果 user 值为 null，会抛出 IllegalArgumentException
-	 * 可以决定抛出什么样的异常，而不总是抛出 NullPointerException
-	 */
-	@Test
-	public void whenThrowException_thenOk() {
-		User user = new User("anna@gmail.com", null);
-		try {
-			String result = Optional.of(user.getName())
-					.orElseThrow(() -> new TopException(""));
-			DealLog.log(result);
-		} catch (TopException e) {
-			DealLog.log(e);
-		}
-	}
+    /**
+     * orElseThrow() API —— 它会在对象为空的时候抛出异常，而不是返回备选的值
+     * 如果 user 值为 null，会抛出 IllegalArgumentException
+     * 可以决定抛出什么样的异常，而不总是抛出 NullPointerException
+     */
+    @Test
+    public void whenThrowException_thenOk() {
+        User user = new User("anna@gmail.com", null);
+        try {
+            String result = Optional.of(user.getName())
+                    .orElseThrow(() -> new TopException(""));
+            DealLog.log(result);
+        } catch (TopException e) {
+            DealLog.log(e);
+        }
+    }
 }

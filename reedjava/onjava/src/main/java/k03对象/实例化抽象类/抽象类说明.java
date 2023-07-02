@@ -22,13 +22,13 @@ import top.ireed.deal.DealLog;
  * 父类包含了子类集合的常见的方法，但是由于父类本身是抽象的，所以不能使用这些方法。
  */
 public class 抽象类说明 {
-	public static void main(String[] args) {
-		/* 以下是不允许的，会引发错误 */
-		//抽象基类 e = new 抽象基类("George W.", "Houston, TX", 43);
+    public static void main(String[] args) {
+        /* 以下是不允许的，会引发错误 */
+        //抽象基类 e = new 抽象基类("George W.", "Houston, TX", 43);
 
-		DealLog.log("\n Call mailCheck using 抽象基类 reference--");
-		//e.mailCheck();
-	}
+        DealLog.log("\n Call mailCheck using 抽象基类 reference--");
+        //e.mailCheck();
+    }
 }
 
 /*

@@ -23,37 +23,37 @@ import static top.ireed.general.TopConstant.INT200;
  * reedsource@189.cn
  */
 public class 多线程优先级设置 {
-	public static void main(String[] args) {
-		Thread t1 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT200; i++) {
-					DealLog.log(Thread.currentThread().getName() + "-->" + i);
-				}
-			}
-		}, "t1");
-		t1.setPriority(1);
-		t1.start();
-		DealLog.log("t1:" + t1.getPriority());
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT200; i++) {
+                    DealLog.log(Thread.currentThread().getName() + "-->" + i);
+                }
+            }
+        }, "t1");
+        t1.setPriority(1);
+        t1.start();
+        DealLog.log("t1:" + t1.getPriority());
 
-		Thread t2 = new Thread(new Runnable() {
+        Thread t2 = new Thread(new Runnable() {
 
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT200; i++) {
-					DealLog.log(Thread.currentThread().getName() + "-->" + i);
-				}
-			}
-		}, "t2");
-		t2.setPriority(10);
-		t2.start();
-		DealLog.log("t2:" + t2.getPriority());
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT200; i++) {
+                    DealLog.log(Thread.currentThread().getName() + "-->" + i);
+                }
+            }
+        }, "t2");
+        t2.setPriority(10);
+        t2.start();
+        DealLog.log("t2:" + t2.getPriority());
 
-		//main
-		for (int i = 1; i <= INT200; i++) {
-			DealLog.log(Thread.currentThread().getName() + "-->" + i);
-		}
+        //main
+        for (int i = 1; i <= INT200; i++) {
+            DealLog.log(Thread.currentThread().getName() + "-->" + i);
+        }
 
-		DealLog.log("main:" + Thread.currentThread().getPriority());
-	}
+        DealLog.log("main:" + Thread.currentThread().getPriority());
+    }
 }

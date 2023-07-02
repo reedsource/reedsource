@@ -17,15 +17,15 @@ import top.ireed.deal.DealLog;
  */
 public class return返回 {
 
-	@Test
-	public void return返回_Test() {
-		DealLog.log(返回());
-	}
+    @Test
+    public void return返回_Test() {
+        DealLog.log(返回());
+    }
 
 
-	public String 返回() {
-		//标明了返回类型 就必须返回对应的类型
-		return "返回字符串";
-		//return后面的内容不会执行了
-	}
+    public String 返回() {
+        //标明了返回类型 就必须返回对应的类型
+        return "返回字符串";
+        //return后面的内容不会执行了
+    }
 }

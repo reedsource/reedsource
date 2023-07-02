@@ -16,52 +16,52 @@ import java.util.Optional;
  * reedsource@189.cn
  */
 public class User {
-	private String email;
-	private String name;
+    private String email;
+    private String name;
 
-	/**
-	 * 添加了一个方法，用来返回 Optional
-	 */
-	private String position;
+    /**
+     * 添加了一个方法，用来返回 Optional
+     */
+    private String position;
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
-	public Optional<String> getPosition() {
-		return Optional.ofNullable(position);
-	}
+    public Optional<String> getPosition() {
+        return Optional.ofNullable(position);
+    }
 
-	public User(String email) {
-		this.email = email;
-	}
+    public User(String email) {
+        this.email = email;
+    }
 
-	public User(String email, String name) {
-		this.email = email;
-		this.name = name;
-	}
+    public User(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Override
-	public String toString() {
-		return "User{" +
-				"email='" + email + '\'' +
-				", name='" + name + '\'' +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

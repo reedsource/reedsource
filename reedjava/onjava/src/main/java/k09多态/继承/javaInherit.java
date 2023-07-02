@@ -28,12 +28,12 @@ import top.ireed.deal.DealLog;
  * 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。
  */
 public class javaInherit {
-	public static void main(String[] args) {
-		Animal a = new Animal();
-		a.eat();
-		Dog d = new Dog();
-		d.eatTest();
-	}
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        a.eat();
+        Dog d = new Dog();
+        d.eatTest();
+    }
 
 /*
 继承关键字
@@ -79,9 +79,9 @@ public class C implements A,B {
 
 
 class Animal {
-	void eat() {
-		DealLog.log("animal : eat");
-	}
+    void eat() {
+        DealLog.log("animal : eat");
+    }
 }
 
 /**
@@ -91,15 +91,15 @@ class Animal {
  * this关键字：指向自己的引用。
  */
 class Dog extends Animal {
-	@Override
-	void eat() {
-		DealLog.log("dog : eat");
-	}
+    @Override
+    void eat() {
+        DealLog.log("dog : eat");
+    }
 
-	void eatTest() {
-		this.eat();   // this 调用自己的方法
-		super.eat();  // super 调用父类方法
-	}
+    void eatTest() {
+        this.eat();   // this 调用自己的方法
+        super.eat();  // super 调用父类方法
+    }
 }
 
 /*

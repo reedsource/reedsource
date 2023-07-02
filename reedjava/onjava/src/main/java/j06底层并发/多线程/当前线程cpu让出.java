@@ -18,25 +18,25 @@ import static top.ireed.general.TopConstant.INT200;
  * reedsource@189.cn
  */
 public class 当前线程cpu让出 {
-	public static void main(String[] args) {
-		Thread t1 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT200; i++) {
-					DealLog.log(Thread.currentThread().getName() + ":" + i);
-				}
-			}
-		}, "t1");
-		t1.start();
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT200; i++) {
+                    DealLog.log(Thread.currentThread().getName() + ":" + i);
+                }
+            }
+        }, "t1");
+        t1.start();
 
-		//main线程
-		for (int i = 1; i <= INT200; i++) {
-			DealLog.log(Thread.currentThread().getName() + ":" + i);
-			//如果i除以10的余数为0
-			if (i % 10 == 0) {
-				//main线程让步
-				Thread.yield();
-			}
-		}
-	}
+        //main线程
+        for (int i = 1; i <= INT200; i++) {
+            DealLog.log(Thread.currentThread().getName() + ":" + i);
+            //如果i除以10的余数为0
+            if (i % 10 == 0) {
+                //main线程让步
+                Thread.yield();
+            }
+        }
+    }
 }

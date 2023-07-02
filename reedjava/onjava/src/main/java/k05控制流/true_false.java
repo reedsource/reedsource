@@ -17,14 +17,14 @@ import top.ireed.deal.DealLog;
  */
 public class true_false {
 
-	@Test
-	public void true_false_Test() {
-		// 真是非0值 假是0值
-		//java中不允许直接用数字来代替
-		DealLog.log(1 == 1);
-		DealLog.log(1 == 2);
+    @Test
+    public void true_false_Test() {
+        // 真是非0值 假是0值
+        //java中不允许直接用数字来代替
+        DealLog.log(1 == 1);
+        DealLog.log(1 == 2);
 
-		//true
-		//false
-	}
+        //true
+        //false
+    }
 }

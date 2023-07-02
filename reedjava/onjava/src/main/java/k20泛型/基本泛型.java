@@ -17,28 +17,28 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class 基本泛型<T> {
-	private T t;
+    private T t;
 
-	public void add(T t) {
-		this.t = t;
-	}
+    public void add(T t) {
+        this.t = t;
+    }
 
-	public T get() {
-		return t;
-	}
+    public T get() {
+        return t;
+    }
 
-	@Test
-	public void 基本泛型_Test() {
-		基本泛型<Integer> 基本泛型 = new 基本泛型<>();
-		基本泛型<String> 基本泛型1 = new 基本泛型<>();
+    @Test
+    public void 基本泛型_Test() {
+        基本泛型<Integer> 基本泛型 = new 基本泛型<>();
+        基本泛型<String> 基本泛型1 = new 基本泛型<>();
 
-		基本泛型.add(10);
-		基本泛型1.add("菜鸟教程");
+        基本泛型.add(10);
+        基本泛型1.add("菜鸟教程");
 
-		DealLog.log("整型值为 :", 基本泛型.get());
-		DealLog.log("字符串为 :", 基本泛型1.get());
+        DealLog.log("整型值为 :", 基本泛型.get());
+        DealLog.log("字符串为 :", 基本泛型1.get());
 
-		//整型值为 :10
-		//字符串为 :菜鸟教程
-	}
+        //整型值为 :10
+        //字符串为 :菜鸟教程
+    }
 }

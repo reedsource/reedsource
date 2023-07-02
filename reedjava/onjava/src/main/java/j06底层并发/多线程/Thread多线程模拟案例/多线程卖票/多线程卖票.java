@@ -20,32 +20,32 @@ import static top.ireed.general.TopConstant.INT40;
  */
 public class 多线程卖票 {
 
-	public static void main(String[] args) {
-		卖一张票 卖一张票 = new 卖一张票();
+    public static void main(String[] args) {
+        卖一张票 卖一张票 = new 卖一张票();
 
-		for (int x = 1; x <= INT3; x++) {
-			new Thread(() -> {
-				// 打印40张票
-				for (int i = 1; i <= INT40; i++) {
-					DealLog.log(Thread.currentThread().getName() + "-->" + 卖一张票);
-				}
-			}, "卖票").start();
-		}
-	}
+        for (int x = 1; x <= INT3; x++) {
+            new Thread(() -> {
+                // 打印40张票
+                for (int i = 1; i <= INT40; i++) {
+                    DealLog.log(Thread.currentThread().getName() + "-->" + 卖一张票);
+                }
+            }, "卖票").start();
+        }
+    }
 }
 
 class 卖一张票 {
-	/**
-	 * 座号
-	 */
-	int num = 0;
+    /**
+     * 座号
+     */
+    int num = 0;
 
-	@Override
-	public String toString() {
-		//使用当前对象作为锁对象, 调用toString()方法的对象
-		synchronized (this) {
-			num++;
-			return "ticket : " + num;
-		}
-	}
+    @Override
+    public String toString() {
+        //使用当前对象作为锁对象, 调用toString()方法的对象
+        synchronized (this) {
+            num++;
+            return "ticket : " + num;
+        }
+    }
 }

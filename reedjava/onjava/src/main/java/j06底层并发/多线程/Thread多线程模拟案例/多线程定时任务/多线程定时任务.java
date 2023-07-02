@@ -24,13 +24,13 @@ import java.util.concurrent.TimeUnit;
  * reedsource@189.cn
  */
 public class 多线程定时任务 {
-	@Test
-	public void scheduleThreadPool() {
-		ScheduledExecutorService pool = Executors.newScheduledThreadPool(5);
-		定时任务 t1 = new 定时任务();
-		//立即执行t1，3s后任务结束，再等待2s（间隔时间-消耗时间），如果有空余线程时，再次执行该任务
-		pool.scheduleAtFixedRate(t1, 0, 5, TimeUnit.SECONDS);
-	}
+    @Test
+    public void scheduleThreadPool() {
+        ScheduledExecutorService pool = Executors.newScheduledThreadPool(5);
+        定时任务 t1 = new 定时任务();
+        //立即执行t1，3s后任务结束，再等待2s（间隔时间-消耗时间），如果有空余线程时，再次执行该任务
+        pool.scheduleAtFixedRate(t1, 0, 5, TimeUnit.SECONDS);
+    }
 }
 
 /**
@@ -38,15 +38,15 @@ public class 多线程定时任务 {
  */
 class 定时任务 implements Runnable {
 
-	@Override
-	public void run() {
-		DealLog.log("----定时任务开始--------" + new Date().toString());
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		DealLog.log("----定时任务执行3秒, 定时任务结束--------" + new Date().toString());
-	}
+    @Override
+    public void run() {
+        DealLog.log("----定时任务开始--------" + new Date().toString());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        DealLog.log("----定时任务执行3秒, 定时任务结束--------" + new Date().toString());
+    }
 }

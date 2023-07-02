@@ -29,32 +29,32 @@ import top.ireed.deal.DealLog;
  * 无法以返回值类型作为重载函数的区分标准
  */
 public class javaOverload {
-	public static void main(String[] args) {
-		javaOverload o = new javaOverload();
-		DealLog.log(o.test());
-		o.test(1);
-		DealLog.log(o.test(1, "test3"));
-		DealLog.log(o.test("test4", 1));
-	}
+    public static void main(String[] args) {
+        javaOverload o = new javaOverload();
+        DealLog.log(o.test());
+        o.test(1);
+        DealLog.log(o.test(1, "test3"));
+        DealLog.log(o.test("test4", 1));
+    }
 
-	public int test() {
-		DealLog.log("test1");
-		return 1;
-	}
+    public int test() {
+        DealLog.log("test1");
+        return 1;
+    }
 
-	public void test(int a) {
-		DealLog.log("test2");
-	}
+    public void test(int a) {
+        DealLog.log("test2");
+    }
 
-	//以下两个参数类型顺序不同
-	public String test(int a, String s) {
-		DealLog.log("test3");
-		return "returntest3";
-	}
+    //以下两个参数类型顺序不同
+    public String test(int a, String s) {
+        DealLog.log("test3");
+        return "returntest3";
+    }
 
-	public String test(String s, int a) {
-		DealLog.log("test4");
-		return "returntest4";
-	}
+    public String test(String s, int a) {
+        DealLog.log("test4");
+        return "returntest4";
+    }
 
 }

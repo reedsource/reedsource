@@ -31,44 +31,44 @@ import static top.ireed.general.TopConstant.INT100;
  * reedsource@189.cn
  */
 public class synchronized同步锁 extends Thread {
-	public static void main(String[] args) {
-		Synchronized aSynchronized = new Synchronized();
-		//一个线程调用m1()
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				aSynchronized.m1();
-			}
-		}).start();
+    public static void main(String[] args) {
+        Synchronized aSynchronized = new Synchronized();
+        //一个线程调用m1()
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                aSynchronized.m1();
+            }
+        }).start();
 
-		//另一个线程调用m2()
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				aSynchronized.m2();
-			}
-		}).start();
-	}
+        //另一个线程调用m2()
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                aSynchronized.m2();
+            }
+        }).start();
+    }
 }
 
 class Synchronized {
-	public void m1() {
-		//使用this对象作为锁对象
-		synchronized (this) {
-			for (int i = 1; i <= INT100; i++) {
-				DealLog.log(Thread.currentThread().getName() + "-->" + i);
-			}
-		}
-	}
+    public void m1() {
+        //使用this对象作为锁对象
+        synchronized (this) {
+            for (int i = 1; i <= INT100; i++) {
+                DealLog.log(Thread.currentThread().getName() + "-->" + i);
+            }
+        }
+    }
 
-	public void m2() {
-		//使用this对象作为锁对象
-		synchronized (this) {
-			for (int i = 1; i <= INT100; i++) {
-				DealLog.log(Thread.currentThread().getName() + "-->" + i);
-			}
-		}
-	}
+    public void m2() {
+        //使用this对象作为锁对象
+        synchronized (this) {
+            for (int i = 1; i <= INT100; i++) {
+                DealLog.log(Thread.currentThread().getName() + "-->" + i);
+            }
+        }
+    }
 }
 
 

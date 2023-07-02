@@ -9,11 +9,11 @@ package j01枚举;
  * mail reedsource@189.cn
  */
 public interface 接口组织枚举基类 {
-	enum 咖啡 implements 接口组织枚举基类 {
-		BLACK_COFFEE, DECAF_COFFEE, LATTE, CAPPUCCINO
-	}
+    enum 咖啡 implements 接口组织枚举基类 {
+        BLACK_COFFEE, DECAF_COFFEE, LATTE, CAPPUCCINO
+    }
 
-	enum 甜点 implements 接口组织枚举基类 {
-		FRUIT, CAKE, GELATO
-	}
+    enum 甜点 implements 接口组织枚举基类 {
+        FRUIT, CAKE, GELATO
+    }
 }

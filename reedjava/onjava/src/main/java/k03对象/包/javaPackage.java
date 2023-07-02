@@ -78,35 +78,35 @@ package animals;
 */
 
 interface Animal {
-	public void eat();
+    public void eat();
 
-	public void travel();
+    public void travel();
 }
 
 class MammalInt implements Animal {
 
-	@Override
-	public void eat() {
-		DealLog.log("Mammal eats");
-	}
+    @Override
+    public void eat() {
+        DealLog.log("Mammal eats");
+    }
 
-	@Override
-	public void travel() {
-		DealLog.log("Mammal travels");
-	}
+    @Override
+    public void travel() {
+        DealLog.log("Mammal travels");
+    }
 
-	public int noOfLegs() {
-		return 0;
-	}
+    public int noOfLegs() {
+        return 0;
+    }
 
-	public static void main(String args[]) {
-		MammalInt m = new MammalInt();
-		m.eat();
-		m.travel();
-	}
+    public static void main(String args[]) {
+        MammalInt m = new MammalInt();
+        m.eat();
+        m.travel();
+    }
 
-	//Mammal eats
-	//Mammal travel
+    //Mammal eats
+    //Mammal travel
 }
 
 /*

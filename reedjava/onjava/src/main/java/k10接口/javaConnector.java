@@ -100,36 +100,36 @@ Animal.java 文件代码：
 }
 
 interface Animal {
-	public void eat();
+    public void eat();
 
-	public void travel();
+    public void travel();
 }
 
 
 class MammalInt implements Animal {
 
-	@Override
-	public void eat() {
-		DealLog.log("Mammal eats");
-	}
+    @Override
+    public void eat() {
+        DealLog.log("Mammal eats");
+    }
 
-	@Override
-	public void travel() {
-		DealLog.log("Mammal travels");
-	}
+    @Override
+    public void travel() {
+        DealLog.log("Mammal travels");
+    }
 
-	public int noOfLegs() {
-		return 0;
-	}
+    public int noOfLegs() {
+        return 0;
+    }
 
-	public static void main(String args[]) {
-		MammalInt m = new MammalInt();
-		m.eat();
-		m.travel();
+    public static void main(String args[]) {
+        MammalInt m = new MammalInt();
+        m.eat();
+        m.travel();
 
-		//Mammal eats
-		//Mammal travels
-	}
+        //Mammal eats
+        //Mammal travels
+    }
 }
 
 
@@ -145,27 +145,27 @@ class MammalInt implements Animal {
  * 其中两个来自于Sports接口。
  */
 interface Sports {
-	public void setHomeTeam(String name);
+    public void setHomeTeam(String name);
 
-	public void setVisitingTeam(String name);
+    public void setVisitingTeam(String name);
 }
 
 interface Football extends Sports {
-	public void homeTeamScored(int points);
+    public void homeTeamScored(int points);
 
-	public void visitingTeamScored(int points);
+    public void visitingTeamScored(int points);
 
-	public void endOfQuarter(int quarter);
+    public void endOfQuarter(int quarter);
 }
 
 interface Hockey extends Sports {
-	public void homeGoalScored();
+    public void homeGoalScored();
 
-	public void visitingGoalScored();
+    public void visitingGoalScored();
 
-	public void endOfPeriod(int period);
+    public void endOfPeriod(int period);
 
-	public void overtimePeriod(int ot);
+    public void overtimePeriod(int ot);
 }
 
 

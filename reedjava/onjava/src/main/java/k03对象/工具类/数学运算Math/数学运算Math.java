@@ -16,42 +16,42 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class 数学运算Math {
-	public static void main(String[] args) {
-		DealLog.log("90 度的正弦值：" + Math.sin(Math.PI / 2));
-		DealLog.log("0度的余弦值：" + Math.cos(0));
-		DealLog.log("60度的正切值：" + Math.tan(Math.PI / 3));
-		DealLog.log("1的反正切值： " + Math.atan(1));
-		DealLog.log("π/2的角度值：" + Math.toDegrees(Math.PI / 2));
-		DealLog.log(Math.PI);
+    public static void main(String[] args) {
+        DealLog.log("90 度的正弦值：" + Math.sin(Math.PI / 2));
+        DealLog.log("0度的余弦值：" + Math.cos(0));
+        DealLog.log("60度的正切值：" + Math.tan(Math.PI / 3));
+        DealLog.log("1的反正切值： " + Math.atan(1));
+        DealLog.log("π/2的角度值：" + Math.toDegrees(Math.PI / 2));
+        DealLog.log(Math.PI);
 
-		//90 度的正弦值：1.0
-		//0度的余弦值：1.0
-		//60度的正切值：1.7320508075688767
-		//1的反正切值： 0.7853981633974483
-		//π/2的角度值：90.0
-		//3.141592653589793
+        //90 度的正弦值：1.0
+        //0度的余弦值：1.0
+        //60度的正切值：1.7320508075688767
+        //1的反正切值： 0.7853981633974483
+        //π/2的角度值：90.0
+        //3.141592653589793
 
 
-		//向下全舍 四舍五入 向上取整数值值
-		//参数	Math.floor	Math.round	Math.ceil
-		//1.4	        1	        1	        2
-		//1.5	        1	        2	        2
-		//1.6	        1	        2	        2
-		//-1.4	        -2	        -1	        -1
-		//-1.5	        -2	        -1	        -1
-		//-1.6	        -2	        -2	        -1
+        //向下全舍 四舍五入 向上取整数值值
+        //参数	Math.floor	Math.round	Math.ceil
+        //1.4	        1	        1	        2
+        //1.5	        1	        2	        2
+        //1.6	        1	        2	        2
+        //-1.4	        -2	        -1	        -1
+        //-1.5	        -2	        -1	        -1
+        //-1.6	        -2	        -2	        -1
 
-		double[] nums = {1.4, 1.5, 1.6, -1.4, -1.5, -1.6};
-		for (double num : nums) {
-			c0(num);
-		}
-	}
+        double[] nums = {1.4, 1.5, 1.6, -1.4, -1.5, -1.6};
+        for (double num : nums) {
+            c0(num);
+        }
+    }
 
-	private static void c0(double num) {
-		DealLog.log("Math.floor(" + num + ")=" + Math.floor(num));
-		DealLog.log("Math.round(" + num + ")=" + Math.round(num));
-		DealLog.log("Math.ceil(" + num + ")=" + Math.ceil(num));
-	}
+    private static void c0(double num) {
+        DealLog.log("Math.floor(" + num + ")=" + Math.floor(num));
+        DealLog.log("Math.round(" + num + ")=" + Math.round(num));
+        DealLog.log("Math.ceil(" + num + ")=" + Math.ceil(num));
+    }
 	/*
 	Number & Math 类方法
 

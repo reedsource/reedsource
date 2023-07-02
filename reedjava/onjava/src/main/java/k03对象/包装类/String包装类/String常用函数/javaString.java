@@ -16,32 +16,32 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class javaString {
-	public static void main(String[] args) {
-		//String创建方法1
-		String greeting = "教程";
+    public static void main(String[] args) {
+        //String创建方法1
+        String greeting = "教程";
 
-		//String创建方法2
-		char[] helloArray = {'h', 'e', 'l', 'l', 'o'};
-		String helloString = new String(helloArray);
-		DealLog.log(helloString);
+        //String创建方法2
+        char[] helloArray = {'h', 'e', 'l', 'l', 'o'};
+        String helloString = new String(helloArray);
+        DealLog.log(helloString);
 
-		//字符串长度
-		DealLog.log("教程长度 : " + greeting.length());
+        //字符串长度
+        DealLog.log("教程长度 : " + greeting.length());
 
-		//连接字符串
-		DealLog.log(greeting.concat(helloString));
-		DealLog.log(greeting + helloString);
+        //连接字符串
+        DealLog.log(greeting.concat(helloString));
+        DealLog.log(greeting + helloString);
 
-		float a = 1.2325f;
-		int b = 2;
-		String c = "信息";
+        float a = 1.2325f;
+        int b = 2;
+        String c = "信息";
 
-		System.out.printf("浮点型变量的值为 " +
-				"%f, 整型变量的值为 " +
-				" %d, 字符串变量的值为 " +
+        System.out.printf("浮点型变量的值为 " +
+                "%f, 整型变量的值为 " +
+                " %d, 字符串变量的值为 " +
 
-				"is %s", a, b, c);
-	}
+                "is %s", a, b, c);
+    }
 
 	/*
 	1	char charAt(int index)

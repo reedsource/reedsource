@@ -6,7 +6,7 @@ import top.ireed.deal.DealLog;
 public class HttpPostTest extends TestCase {
 
     public void testExecute() {
-         HttpPost httpPost = new HttpPost();
-         DealLog.log(httpPost.execute("www.baidu.com","测试数据","UTF-8"));
+        HttpPost httpPost = new HttpPost();
+        DealLog.log(httpPost.execute("www.baidu.com", "测试数据", "UTF-8"));
     }
 }

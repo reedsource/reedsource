@@ -39,16 +39,16 @@ import top.ireed.deal.DealLog;
  * 如果不能继承一个方法，则不能重写这个方法。
  */
 public class javaRewrite {
-	public static void main(String[] args) {
-		// Animal 对象
-		Animal a = new Animal();
+    public static void main(String[] args) {
+        // Animal 对象
+        Animal a = new Animal();
 
-		// Dog 对象  本处只能调用子类重写的父类也拥有的方法
-		Animal b = new Dog();
-		// 执行 Animal 类的方法
-		a.move();
-		//执行 Dog 类重写的方法
-		b.move();
+        // Dog 对象  本处只能调用子类重写的父类也拥有的方法
+        Animal b = new Dog();
+        // 执行 Animal 类的方法
+        a.move();
+        //执行 Dog 类重写的方法
+        b.move();
 
 		/*
 		在上面的例子中可以看到，尽管b属于Animal类型，但是它运行的是Dog类的move方法。
@@ -56,36 +56,36 @@ public class javaRewrite {
 		然而在运行时，Java虚拟机(JVM)指定对象的类型并且运行该对象的方法。
 		因此在上面的例子中，之所以能编译成功，是因为Animal类中存在move方法，
 		然而运行时，运行的是特定对象的方法。*/
-		// Dog 对象
-		Dog c = new Dog();
-		c.bark();
-	}
+        // Dog 对象
+        Dog c = new Dog();
+        c.bark();
+    }
 
-	//父类move动物可以移动
-	//父类move动物可以移动
-	//子类move狗可以跑和走
-	//子类bark狗可以吠叫
+    //父类move动物可以移动
+    //父类move动物可以移动
+    //子类move狗可以跑和走
+    //子类bark狗可以吠叫
 }
 
 class Animal {
-	public void move() {
-		DealLog.log("父类move动物可以移动\n");
-	}
+    public void move() {
+        DealLog.log("父类move动物可以移动\n");
+    }
 }
 
 /**
  * 子类   通过super调用父类
  */
 class Dog extends Animal {
-	@Override
-	public void move() {
-		//使用用super    调用父类的方法
-		super.move();
-		DealLog.log("子类move狗可以跑和走");
+    @Override
+    public void move() {
+        //使用用super    调用父类的方法
+        super.move();
+        DealLog.log("子类move狗可以跑和走");
 
-	}
+    }
 
-	public void bark() {
-		DealLog.log("子类bark狗可以吠叫");
-	}
+    public void bark() {
+        DealLog.log("子类bark狗可以吠叫");
+    }
 }

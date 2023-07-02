@@ -17,14 +17,14 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class enumSet {
-	/**
-	 * 演示EnumSet如何使用，EnumSet是一个抽象类，获取一个类型的枚举类型内容
-	 */
-	@Test
-	public void EnumSet_Test() {
-		java.util.EnumSet<枚举类型> currEnumSet = java.util.EnumSet.allOf(枚举类型.class);
-		for (枚举类型 aLightSetElement : currEnumSet) {
-			DealLog.log("当前EnumSet中数据为", aLightSetElement);
-		}
-	}
+    /**
+     * 演示EnumSet如何使用，EnumSet是一个抽象类，获取一个类型的枚举类型内容
+     */
+    @Test
+    public void EnumSet_Test() {
+        java.util.EnumSet<枚举类型> currEnumSet = java.util.EnumSet.allOf(枚举类型.class);
+        for (枚举类型 aLightSetElement : currEnumSet) {
+            DealLog.log("当前EnumSet中数据为", aLightSetElement);
+        }
+    }
 }

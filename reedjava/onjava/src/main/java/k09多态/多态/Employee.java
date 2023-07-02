@@ -16,40 +16,40 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 class Employee {
-	private String name;
-	private String address;
-	private int number;
+    private String name;
+    private String address;
+    private int number;
 
-	public Employee(String name, String address, int number) {
-		DealLog.log("Employee 构造函数");
-		this.name = name;
-		this.address = address;
-		this.number = number;
-	}
+    public Employee(String name, String address, int number) {
+        DealLog.log("Employee 构造函数");
+        this.name = name;
+        this.address = address;
+        this.number = number;
+    }
 
-	public void mailCheck() {
-		DealLog.log("邮寄支票给： " + this.name
-				+ " " + this.address);
-	}
+    public void mailCheck() {
+        DealLog.log("邮寄支票给： " + this.name
+                + " " + this.address);
+    }
 
-	@Override
-	public String toString() {
-		return name + " " + address + " " + number;
-	}
+    @Override
+    public String toString() {
+        return name + " " + address + " " + number;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setAddress(String newAddress) {
-		address = newAddress;
-	}
+    public void setAddress(String newAddress) {
+        address = newAddress;
+    }
 
-	public int getNumber() {
-		return number;
-	}
+    public int getNumber() {
+        return number;
+    }
 }

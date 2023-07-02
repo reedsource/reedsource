@@ -21,28 +21,28 @@ import java.util.Scanner;
  * reedsource@189.cn
  */
 public class 控制台输入取回车前ScannerNextLine {
-	public static void main(String[] args) {
-		控制台输入ScannerNextLine_Test();
-	}
+    public static void main(String[] args) {
+        控制台输入ScannerNextLine_Test();
+    }
 
-	/**
-	 * 使用 nextLine 方法：
-	 */
-	private static void 控制台输入ScannerNextLine_Test() {
-		// 从键盘接收数据
-		Scanner scan = new Scanner(System.in);
+    /**
+     * 使用 nextLine 方法：
+     */
+    private static void 控制台输入ScannerNextLine_Test() {
+        // 从键盘接收数据
+        Scanner scan = new Scanner(System.in);
 
-		// nextLine方式接收字符串
-		DealLog.log("nextLine方式接收：");
-		// 判断是否还有输入
-		if (scan.hasNextLine()) {
-			String str2 = scan.nextLine();
-			DealLog.log("输入的数据为：" + str2);
-		}
-		scan.close();
+        // nextLine方式接收字符串
+        DealLog.log("nextLine方式接收：");
+        // 判断是否还有输入
+        if (scan.hasNextLine()) {
+            String str2 = scan.nextLine();
+            DealLog.log("输入的数据为：" + str2);
+        }
+        scan.close();
 
-		//nextLine方式接收：
-		//ireed com
-		//输入的数据为：ireed com
-	}
+        //nextLine方式接收：
+        //ireed com
+        //输入的数据为：ireed com
+    }
 }

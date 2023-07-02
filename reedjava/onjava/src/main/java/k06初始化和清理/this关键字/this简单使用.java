@@ -19,38 +19,38 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class this简单使用 {
-	int i;
+    int i;
 
-	private this简单使用 increment() {
-		i++;
-		//这里的this返回了当前对象的引用
-		return this;
-	}
+    private this简单使用 increment() {
+        i++;
+        //这里的this返回了当前对象的引用
+        return this;
+    }
 
-	private void print() {
-		//2.在本类的成员方法中，访问本类的另一个成员方法。
-		this.print2();
-	}
+    private void print() {
+        //2.在本类的成员方法中，访问本类的另一个成员方法。
+        this.print2();
+    }
 
-	private void print2() {
-		//1.在本类的成员方法中，访问本类的成员变量。
-		DealLog.log("i = ", this.i);
-	}
+    private void print2() {
+        //1.在本类的成员方法中，访问本类的成员变量。
+        DealLog.log("i = ", this.i);
+    }
 
-	public this简单使用() {
-		// 3.在本类的构造方法中，访问本类的另一个构造方法。
-		this(10);
-	}
+    public this简单使用() {
+        // 3.在本类的构造方法中，访问本类的另一个构造方法。
+        this(10);
+    }
 
-	public this简单使用(int i) {
-		this.i = i;
-	}
+    public this简单使用(int i) {
+        this.i = i;
+    }
 
-	public static void main(String[] args) {
-		this简单使用 x = new this简单使用();
-		x.increment().increment().increment().print();
-	}
+    public static void main(String[] args) {
+        this简单使用 x = new this简单使用();
+        x.increment().increment().increment().print();
+    }
 
 
-	//i = 3
+    //i = 3
 }

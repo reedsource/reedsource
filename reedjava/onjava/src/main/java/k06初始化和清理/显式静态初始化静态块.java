@@ -17,14 +17,14 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class 显式静态初始化静态块 {
-	static Cups cups1 = new Cups();  // [2]
+    static Cups cups1 = new Cups();  // [2]
 
-	public static void main(String[] args) {
-		DealLog.log("Inside main()");
-		Cups.cup1.f(99);     // [1]
+    public static void main(String[] args) {
+        DealLog.log("Inside main()");
+        Cups.cup1.f(99);     // [1]
 
-		DealLog.log(cups1);
-		DealLog.log(cups2);
+        DealLog.log(cups1);
+        DealLog.log(cups2);
 
 		/*
 		通过[1] 和 [2] 都会使 Cups 中的 static静态初始化发生
@@ -32,32 +32,32 @@ public class 显式静态初始化静态块 {
 
 		方式[2]无论执行几次  静态初始化都只会执行一次
 		*/
-	}
+    }
 
-	static Cups cups2 = new Cups();  // [2]
+    static Cups cups2 = new Cups();  // [2]
 
 }
 
 class Cup {
-	Cup(int marker) {
-		DealLog.log("Cup(" + marker + ")");
-	}
+    Cup(int marker) {
+        DealLog.log("Cup(" + marker + ")");
+    }
 
-	void f(int marker) {
-		DealLog.log("f(" + marker + ")");
-	}
+    void f(int marker) {
+        DealLog.log("f(" + marker + ")");
+    }
 }
 
 class Cups {
-	static Cup cup1;
-	static Cup cup2;
+    static Cup cup1;
+    static Cup cup2;
 
-	static {
-		cup1 = new Cup(1);
-		cup2 = new Cup(2);
-	}
+    static {
+        cup1 = new Cup(1);
+        cup2 = new Cup(2);
+    }
 
-	Cups() {
-		DealLog.log("Cups()");
-	}
+    Cups() {
+        DealLog.log("Cups()");
+    }
 }

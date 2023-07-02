@@ -21,40 +21,40 @@ import static top.ireed.general.TopConstant.INT100;
  * reedsource@189.cn
  */
 public class 守护线程 {
-	public static void main(String[] args) {
-		//用户线程
-		Thread t1 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT100; i++) {
-					DealLog.log(Thread.currentThread().getName() + "--> " + i);
-				}
-			}
-		}, "t1");
-		t1.start();
+    public static void main(String[] args) {
+        //用户线程
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT100; i++) {
+                    DealLog.log(Thread.currentThread().getName() + "--> " + i);
+                }
+            }
+        }, "t1");
+        t1.start();
 
-		Thread t2 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT100; i++) {
-					try {
-						Thread.sleep(5);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					DealLog.log(Thread.currentThread().getName() + "--> " + i);
-				}
-			}
-		}, "t2");
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT100; i++) {
+                    try {
+                        Thread.sleep(5);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    DealLog.log(Thread.currentThread().getName() + "--> " + i);
+                }
+            }
+        }, "t2");
 
-		//把t2线程设置为守护线程
-		t2.setDaemon(true);
+        //把t2线程设置为守护线程
+        t2.setDaemon(true);
 
-		t2.start();
+        t2.start();
 
-		//main线程
-		for (int i = 1; i <= INT100; i++) {
-			DealLog.log(Thread.currentThread().getName() + "--> " + i);
-		}
-	}
+        //main线程
+        for (int i = 1; i <= INT100; i++) {
+            DealLog.log(Thread.currentThread().getName() + "--> " + i);
+        }
+    }
 }

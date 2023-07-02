@@ -28,16 +28,16 @@ import top.ireed.deal.DealLog;
  * 4. 隐藏信息，实现细节。
  */
 public class javaPackaging {
-	public static void main(String[] args) {
-		EncapTest encap = new EncapTest();
-		encap.setName("James");
-		encap.setAge(20);
-		encap.setIdNum("12343ms");
+    public static void main(String[] args) {
+        EncapTest encap = new EncapTest();
+        encap.setName("James");
+        encap.setAge(20);
+        encap.setIdNum("12343ms");
 
-		DealLog.log("Name : " + encap.getName() + " Age : " + encap.getAge());
+        DealLog.log("Name : " + encap.getName() + " Age : " + encap.getAge());
 
-		//Name : James Age : 20
-	}
+        //Name : James Age : 20
+    }
 }
 
 
@@ -53,53 +53,53 @@ public class javaPackaging {
  * 因此，任何要访问类中私有成员变量的类都要通过这些getter和setter方法
  */
 class Person {
-	private String name;
-	private int age;
+    private String name;
+    private int age;
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
 class EncapTest {
 
-	private String name;
-	private String idNum;
-	private int age;
+    private String name;
+    private String idNum;
+    private int age;
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getIdNum() {
-		return idNum;
-	}
+    public String getIdNum() {
+        return idNum;
+    }
 
-	public void setAge(int newAge) {
-		age = newAge;
-	}
+    public void setAge(int newAge) {
+        age = newAge;
+    }
 
-	public void setName(String newName) {
-		name = newName;
-	}
+    public void setName(String newName) {
+        name = newName;
+    }
 
-	public void setIdNum(String newId) {
-		idNum = newId;
-	}
+    public void setIdNum(String newId) {
+        idNum = newId;
+    }
 }

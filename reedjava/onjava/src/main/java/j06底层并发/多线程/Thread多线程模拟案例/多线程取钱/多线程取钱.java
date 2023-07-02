@@ -16,20 +16,20 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class 多线程取钱 {
-	public static void main(String[] args) {
-		账户 n账户 = new 账户();
+    public static void main(String[] args) {
+        账户 n账户 = new 账户();
 
-		取款Thread t1 = new 取款Thread(n账户);
-		取款Thread t2 = new 取款Thread(n账户);
-		取款Thread t3 = new 取款Thread(n账户);
+        取款Thread t1 = new 取款Thread(n账户);
+        取款Thread t2 = new 取款Thread(n账户);
+        取款Thread t3 = new 取款Thread(n账户);
 
-		t1.setName("张三");
-		t2.setName("李四");
-		t3.setName("王五");
+        t1.setName("张三");
+        t2.setName("李四");
+        t3.setName("王五");
 
-		t1.start();
-		t2.start();
-		t3.start();
+        t1.start();
+        t2.start();
+        t3.start();
 		/*
 	    一次的运行结果为:
 		李四取钱前,余额为:10000
@@ -51,64 +51,64 @@ public class 多线程取钱 {
 
 			使用线程同步解决  见下方注释
 		 */
-	}
+    }
 
-	/**
-	 * 功能简述:
-	 * 〈〉
-	 *
-	 * @author reedsource
-	 * @version 1.0.0
-	 * date 2022/5/24 20:58
-	 * reedsource@189.cn
-	 */
-	static class 取款Thread extends Thread {
-		/**
-		 * 定义帐户
-		 */
-		private final 账户 n账户;
+    /**
+     * 功能简述:
+     * 〈〉
+     *
+     * @author reedsource
+     * @version 1.0.0
+     * date 2022/5/24 20:58
+     * reedsource@189.cn
+     */
+    static class 取款Thread extends Thread {
+        /**
+         * 定义帐户
+         */
+        private final 账户 n账户;
 
-		/**
-		 * 构造方法
-		 *
-		 * @param 账户to 余额对象
-		 */
-		取款Thread(账户 账户to) {
-			super();
-			this.n账户 = 账户to;
-		}
+        /**
+         * 构造方法
+         *
+         * @param 账户to 余额对象
+         */
+        取款Thread(账户 账户to) {
+            super();
+            this.n账户 = 账户to;
+        }
 
-		@Override
-		public void run() {
-			// 从帐户中取钱
-			n账户.取钱事件();
-		}
-	}
+        @Override
+        public void run() {
+            // 从帐户中取钱
+            n账户.取钱事件();
+        }
+    }
 
-	/**
-	 * 功能简述:
-	 * 〈〉
-	 *
-	 * @author reedsource
-	 * @version 1.0.0
-	 * date 2022/5/24 21:01
-	 * reedsource@189.cn
-	 */
-	static class 账户 {
-		/**
-		 * 余额
-		 */
-		private int 余额 = 10000;
+    /**
+     * 功能简述:
+     * 〈〉
+     *
+     * @author reedsource
+     * @version 1.0.0
+     * date 2022/5/24 21:01
+     * reedsource@189.cn
+     */
+    static class 账户 {
+        /**
+         * 余额
+         */
+        private int 余额 = 10000;
 
-		/**
-		 * 取钱, 约定每次取1000
-		 * ==============问题解决思路 本处添加synchronized    线程同步===============
-		 */
-		void 取钱事件() {
-			DealLog.log(Thread.currentThread().getName() + "取钱前,余额为:" + 余额);
-			余额 = 余额 - 1000;
-			DealLog.log(Thread.currentThread().getName() + "取了1000元,余额为:" + 余额);
-		}
-	}
+        /**
+         * 取钱, 约定每次取1000
+         * ==============问题解决思路 本处添加synchronized    线程同步===============
+         */
+        void 取钱事件() {
+            DealLog.log(Thread.currentThread().getName() + "取钱前,余额为:" + 余额);
+            余额 = 余额 - 1000;
+            DealLog.log(Thread.currentThread().getName() + "取了1000元,余额为:" + 余额);
+        }
+    }
 }
 

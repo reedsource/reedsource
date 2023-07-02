@@ -16,16 +16,16 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class javaCharacter {
-	public static void main(String[] args) {
-		// 原始字符 'a' 装箱到 Character 对象 ch 中
-		Character ch = 'a';
+    public static void main(String[] args) {
+        // 原始字符 'a' 装箱到 Character 对象 ch 中
+        Character ch = 'a';
 
-		// 返回拆箱的值到 'c'
-		char c = ch;
+        // 返回拆箱的值到 'c'
+        char c = ch;
 
-		c0();
-		c1();
-	}
+        c0();
+        c1();
+    }
 
 /*
 1	isLetter()      是否是一个字母
@@ -38,31 +38,31 @@ public class javaCharacter {
 8	toString()      返回字符的字符串形式，字符串的长度仅为1
 */
 
-	/**
-	 * 提取字符中的大小写字母
-	 */
-	private static void c0() {
-		String StrA = "I am Tom.I am from China.";
-		String StrB = "";
-		String StrC = "";
-		for (int i = 0; i < StrA.length(); i++) {
-			if (Character.isUpperCase(StrA.charAt(i))) {
-				StrB += StrA.charAt(i) + "  ";
-			}
-			if (Character.isLowerCase(StrA.charAt(i))) {
-				StrC += StrA.charAt(i) + "  ";
-			}
-		}
-		DealLog.log("字符串中大写字母有：" + StrB);
-		DealLog.log("字符串中小写字母有：" + StrC);
-	}
+    /**
+     * 提取字符中的大小写字母
+     */
+    private static void c0() {
+        String StrA = "I am Tom.I am from China.";
+        String StrB = "";
+        String StrC = "";
+        for (int i = 0; i < StrA.length(); i++) {
+            if (Character.isUpperCase(StrA.charAt(i))) {
+                StrB += StrA.charAt(i) + "  ";
+            }
+            if (Character.isLowerCase(StrA.charAt(i))) {
+                StrC += StrA.charAt(i) + "  ";
+            }
+        }
+        DealLog.log("字符串中大写字母有：" + StrB);
+        DealLog.log("字符串中小写字母有：" + StrC);
+    }
 
-	/**
-	 * 字母转大小写
-	 */
-	private static void c1() {
-		String str = "aaaaaBBcccc";
-		DealLog.log("全部大写 " + str.toUpperCase());
-		DealLog.log("全部小写 " + str.toLowerCase());
-	}
+    /**
+     * 字母转大小写
+     */
+    private static void c1() {
+        String str = "aaaaaBBcccc";
+        DealLog.log("全部大写 " + str.toUpperCase());
+        DealLog.log("全部小写 " + str.toLowerCase());
+    }
 }

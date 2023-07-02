@@ -27,72 +27,72 @@ import static top.ireed.general.TopConstant.INT500;
  * reedsource@189.cn
  */
 public class 线程当前状态 {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Thread t0 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT100; i++) {
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					DealLog.log(Thread.currentThread().getName() + "==>" + i);
-				}
-			}
-		}, "t0");
-		t0.start();
+        Thread t0 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT100; i++) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    DealLog.log(Thread.currentThread().getName() + "==>" + i);
+                }
+            }
+        }, "t0");
+        t0.start();
 
-		Thread t1 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				for (int i = 1; i <= INT500; i++) {
-					DealLog.log(Thread.currentThread().getName() + "-->" + i);
-					if (i == 300) {
-						try {
-							Thread.sleep(5000);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= INT500; i++) {
+                    DealLog.log(Thread.currentThread().getName() + "-->" + i);
+                    if (i == 300) {
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
-					if (i == 400) {
-						try {
-							t0.join();        //加入t0线程
-							//在t1线程中,加入了t0线程,t1线程就转为等待WAITING状态
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}
-		}, "t1");
+                    if (i == 400) {
+                        try {
+                            t0.join();        //加入t0线程
+                            //在t1线程中,加入了t0线程,t1线程就转为等待WAITING状态
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }, "t1");
 
-		//NEW
-		DealLog.log("线程未启动:" + t1.getState());
+        //NEW
+        DealLog.log("线程未启动:" + t1.getState());
 
-		t1.start();
-		//RUNNABLE
-		DealLog.log("线程启动后:" + t1.getState());
+        t1.start();
+        //RUNNABLE
+        DealLog.log("线程启动后:" + t1.getState());
 
-		try {
-			//main线程睡眠
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+        try {
+            //main线程睡眠
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-		//TIMED_WAITING
-		DealLog.log("线程睡眠中:" + t1.getState());
+        //TIMED_WAITING
+        DealLog.log("线程睡眠中:" + t1.getState());
 
-		try {
-			//main线程睡眠
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		//TERMINATED
-		DealLog.log("线程结束后:" + t1.getState());
-	}
+        try {
+            //main线程睡眠
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //TERMINATED
+        DealLog.log("线程结束后:" + t1.getState());
+    }
 }

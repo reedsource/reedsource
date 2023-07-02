@@ -9,15 +9,15 @@ package j01枚举;
  * mail reedsource@189.cn
  */
 public interface 枚举接口基类 {
-	/**
-	 * 接口方法
-	 */
-	void print();
+    /**
+     * 接口方法
+     */
+    void print();
 
-	/**
-	 * 接口方法
-	 *
-	 * @return 属性
-	 */
-	String getInfo();
+    /**
+     * 接口方法
+     *
+     * @return 属性
+     */
+    String getInfo();
 }

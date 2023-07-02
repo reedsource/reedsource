@@ -16,14 +16,14 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class JavaMain {
-	public static void main(String[] args) {
-		if (args.length != 2) {
-			DealLog.log("用法: java javaMain <host1 msg> <host2 msg>");
-			System.exit(1);
-		}
-		String host1 = args[0];
-		String host2 = args[1];
-		DealLog.log(host1);
-		DealLog.log(host2);
-	}
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            DealLog.log("用法: java javaMain <host1 msg> <host2 msg>");
+            System.exit(1);
+        }
+        String host1 = args[0];
+        String host2 = args[1];
+        DealLog.log(host1);
+        DealLog.log(host2);
+    }
 }

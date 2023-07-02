@@ -16,14 +16,14 @@ package k15异常;
  * 自定义异常类，继承Exception类
  */
 public class 自定义异常Exception extends Exception {
-	//此处的amount用来储存当出现异常（取出钱多于余额时）所缺乏的钱
-	private double amount;
+    //此处的amount用来储存当出现异常（取出钱多于余额时）所缺乏的钱
+    private double amount;
 
-	public 自定义异常Exception(double amount) {
-		this.amount = amount;
-	}
+    public 自定义异常Exception(double amount) {
+        this.amount = amount;
+    }
 
-	public double getAmount() {
-		return amount;
-	}
+    public double getAmount() {
+        return amount;
+    }
 }

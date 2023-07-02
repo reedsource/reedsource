@@ -18,30 +18,30 @@ import top.ireed.deal.DealLog;
  */
 public class 异常实现 {
 
-	/*
-	检查性异常：最具代表的检查性异常是用户错误或问题引起的异常，这是程序员无法预见的。
-	例如要打开一个不存在文件时，一个异常就发生了，这些异常在编译时不能被简单地忽略。
-	运行时异常： 运行时异常是可能被程序员避免的异常。
-	与检查性异常相反，运行时异常可以在编译时被忽略。
-	错误： 错误不是异常，而是脱离程序员控制的问题。
-	错误在代码中通常被忽略。例如，当栈溢出时，一个错误就发生了，它们在编译也检查不到的。
+    /*
+    检查性异常：最具代表的检查性异常是用户错误或问题引起的异常，这是程序员无法预见的。
+    例如要打开一个不存在文件时，一个异常就发生了，这些异常在编译时不能被简单地忽略。
+    运行时异常： 运行时异常是可能被程序员避免的异常。
+    与检查性异常相反，运行时异常可以在编译时被忽略。
+    错误： 错误不是异常，而是脱离程序员控制的问题。
+    错误在代码中通常被忽略。例如，当栈溢出时，一个错误就发生了，它们在编译也检查不到的。
 
-	Java 语言定义了一些异常类在 java.lang 标准包中。
+    Java 语言定义了一些异常类在 java.lang 标准包中。
 
-	标准运行时异常类的子类是最常见的异常类。由于 java.lang 包是默认加载到所有的 Java 程序的，所以大部分从运行时异常类继承而来的异常都可以直接使用。
-	*/
-	@Test
-	public void _Test() {
-		try {
-			// 程序代码
-			int a[] = new int[2];
-			DealLog.log("输出:" + a[3]);
-			//Catch 块
-		} catch (ArrayIndexOutOfBoundsException e) {
-			DealLog.log("异常  :" + e);
-		}
+    标准运行时异常类的子类是最常见的异常类。由于 java.lang 包是默认加载到所有的 Java 程序的，所以大部分从运行时异常类继承而来的异常都可以直接使用。
+    */
+    @Test
+    public void _Test() {
+        try {
+            // 程序代码
+            int a[] = new int[2];
+            DealLog.log("输出:" + a[3]);
+            //Catch 块
+        } catch (ArrayIndexOutOfBoundsException e) {
+            DealLog.log("异常  :" + e);
+        }
 
-		//异常  :java.lang.ArrayIndexOutOfBoundsException: 3
+        //异常  :java.lang.ArrayIndexOutOfBoundsException: 3
 
 		/*
 		try{
@@ -61,7 +61,7 @@ public class 异常实现 {
 		如果不匹配，它会被传递给第二个 catch 块。
 		如此，直到异常被捕获或者通过所有的 catch 块。
 		*/
-	}
+    }
 
 /*
 Java 的非检查性异常

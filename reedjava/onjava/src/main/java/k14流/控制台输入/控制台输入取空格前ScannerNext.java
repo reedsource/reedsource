@@ -25,28 +25,28 @@ import java.util.Scanner;
  */
 public class 控制台输入取空格前ScannerNext {
 
-	public static void main(String[] args) throws IOException {
-		控制台输入ScannerNext_Test();
-	}
+    public static void main(String[] args) throws IOException {
+        控制台输入ScannerNext_Test();
+    }
 
-	/**
-	 * 使用 next 方法：
-	 */
-	public static void 控制台输入ScannerNext_Test() {
-		Scanner scan = new Scanner(System.in);
-		// 从键盘接收数据
+    /**
+     * 使用 next 方法：
+     */
+    public static void 控制台输入ScannerNext_Test() {
+        Scanner scan = new Scanner(System.in);
+        // 从键盘接收数据
 
-		// next方式接收字符串
-		DealLog.log("next方式接收：");
-		// 判断是否还有输入
-		if (scan.hasNext()) {
-			String str1 = scan.next();
-			DealLog.log("输入的数据为：" + str1);
-		}
-		scan.close();
+        // next方式接收字符串
+        DealLog.log("next方式接收：");
+        // 判断是否还有输入
+        if (scan.hasNext()) {
+            String str1 = scan.next();
+            DealLog.log("输入的数据为：" + str1);
+        }
+        scan.close();
 
-		//next方式接收：
-		//111 222
-		//输入的数据为：111
-	}
+        //next方式接收：
+        //111 222
+        //输入的数据为：111
+    }
 }

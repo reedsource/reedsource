@@ -18,17 +18,17 @@ import java.math.BigDecimal;
  * reedsource@189.cn
  */
 public class BigDecimal比较 {
-	public static void main(String[] args) {
-		BigDecimal a = new BigDecimal("100");
-		BigDecimal b = new BigDecimal("200");
-		//-1,表示 a 小于 b
-		//0,表示 a 等于 b
-		//1,表示 a 大于 b
-		DealLog.log(a.compareTo(b));
+    public static void main(String[] args) {
+        BigDecimal a = new BigDecimal("100");
+        BigDecimal b = new BigDecimal("200");
+        //-1,表示 a 小于 b
+        //0,表示 a 等于 b
+        //1,表示 a 大于 b
+        DealLog.log(a.compareTo(b));
 
-		//判断是否为空
-		if (a != null) {
-			DealLog.log(a + "不为空");
-		}
-	}
+        //判断是否为空
+        if (a != null) {
+            DealLog.log(a + "不为空");
+        }
+    }
 }

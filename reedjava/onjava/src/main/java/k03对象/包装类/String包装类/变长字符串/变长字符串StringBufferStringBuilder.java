@@ -18,14 +18,14 @@ import top.ireed.deal.DealLog;
  * 在一般情况下使用StringBuilder,开销较低
  */
 public class 变长字符串StringBufferStringBuilder {
-	public static void main(String[] args) {
-		StringBuffer sBuffer = new StringBuffer("网站：");
-		sBuffer.append(".ireed");
-		sBuffer.append(".top");
-		DealLog.log(sBuffer);
+    public static void main(String[] args) {
+        StringBuffer sBuffer = new StringBuffer("网站：");
+        sBuffer.append(".ireed");
+        sBuffer.append(".top");
+        DealLog.log(sBuffer);
 
-		//StringBuilder用法相同
-	}
+        //StringBuilder用法相同
+    }
 /*
 1	public StringBuffer append(String s)    将指定的字符串追加到此字符序列。
 2	public StringBuffer reverse()           将此字符序列用其反转形式取代。
