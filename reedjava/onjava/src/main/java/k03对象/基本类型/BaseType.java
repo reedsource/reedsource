@@ -2,7 +2,7 @@
  * FileName: BaseType
  * Author:   reedsource
  */
-package k03对象.基本类型;
+package main.java.k03对象.基本类型;
 
 import top.ireed.deal.DealLog;
 

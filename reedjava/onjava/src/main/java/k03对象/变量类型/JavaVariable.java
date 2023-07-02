@@ -2,7 +2,7 @@
  * FileName: JavaVariable
  * Author:   reedsource
  */
-package k03对象.变量类型;
+package main.java.k03对象.变量类型;
 
 import top.ireed.deal.DealLog;
 

@@ -2,7 +2,7 @@
  * FileName: 基本泛型
  * Author:   reedsource
  */
-package k20泛型;
+package main.java.k20泛型;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

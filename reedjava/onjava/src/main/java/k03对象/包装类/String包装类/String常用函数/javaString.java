@@ -2,7 +2,7 @@
  * FileName: javaString
  * Author:   reedsource
  */
-package k03对象.包装类.String包装类.String常用函数;
+package main.java.k03对象.包装类.String包装类.String常用函数;
 
 import top.ireed.deal.DealLog;
 

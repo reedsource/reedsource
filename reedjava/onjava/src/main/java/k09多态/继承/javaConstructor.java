@@ -2,7 +2,7 @@
  * FileName: javaConstructor
  * Author:   reedsource
  */
-package k09多态.继承;
+package main.java.k09多态.继承;
 
 import top.ireed.deal.DealLog;
 

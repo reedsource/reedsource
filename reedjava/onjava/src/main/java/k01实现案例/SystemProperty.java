@@ -2,7 +2,7 @@
  * FileName: SystemProperty
  * Author:   reedsource
  */
-package k01实现案例;
+package main.java.k01实现案例;
 
 import top.ireed.deal.DealLog;
 

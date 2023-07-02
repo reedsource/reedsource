@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package j03集合;
+package main.java.j03集合;
 
 import top.ireed.deal.DealJackson;
 import top.ireed.deal.DealLog;

@@ -2,7 +2,7 @@
  * FileName: 多线程定时任务
  * Author:   reedsource
  */
-package j06底层并发.多线程.Thread多线程模拟案例.多线程定时任务;
+package main.java.j06底层并发.多线程.Thread多线程模拟案例.多线程定时任务;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

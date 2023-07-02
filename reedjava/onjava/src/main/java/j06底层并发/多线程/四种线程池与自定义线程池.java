@@ -2,7 +2,7 @@
  * FileName: 四种线程池与自定义线程池
  * Author:   reedsource
  */
-package j06底层并发.多线程;
+package main.java.j06底层并发.多线程;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.Test;

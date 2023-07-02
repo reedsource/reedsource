@@ -2,7 +2,7 @@
  * FileName: 自定义异常实现
  * Author:   reedsource
  */
-package k15异常;
+package main.java.k15异常;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

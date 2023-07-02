@@ -2,7 +2,7 @@
  * FileName: JavaFinal
  * Author:   reedsource
  */
-package k03对象.final常量;
+package main.java.k03对象.final常量;
 
 import top.ireed.deal.DealLog;
 

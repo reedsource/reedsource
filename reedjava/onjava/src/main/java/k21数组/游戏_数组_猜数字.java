@@ -2,7 +2,7 @@
  * FileName: guessCase
  * Author:   reedsource
  */
-package k21数组;
+package main.java.k21数组;
 
 import top.ireed.deal.DealLog;
 

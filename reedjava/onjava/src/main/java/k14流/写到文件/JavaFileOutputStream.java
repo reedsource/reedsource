@@ -2,7 +2,7 @@
  * FileName: JavaFileOutputStream
  * Author:   reedsource
  */
-package k14流.写到文件;
+package main.java.k14流.写到文件;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

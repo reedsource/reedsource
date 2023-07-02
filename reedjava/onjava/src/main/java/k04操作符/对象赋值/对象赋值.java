@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package k04操作符.对象赋值;
+package main.java.k04操作符.对象赋值;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

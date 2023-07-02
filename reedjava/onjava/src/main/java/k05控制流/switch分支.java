@@ -2,7 +2,7 @@
  * FileName: switch分支
  * Author:   reedsource
  */
-package k05控制流;
+package main.java.k05控制流;
 
 import top.ireed.deal.DealLog;
 

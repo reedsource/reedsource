@@ -2,7 +2,7 @@
  * FileName: 线程加入
  * Author:   reedsource
  */
-package j06底层并发.多线程;
+package main.java.j06底层并发.多线程;
 
 import top.ireed.deal.DealLog;
 

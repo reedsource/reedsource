@@ -2,7 +2,7 @@
  * FileName: javaStringCase
  * Author:   reedsource
  */
-package k03对象.包装类.String包装类.String组合案例;
+package main.java.k03对象.包装类.String包装类.String组合案例;
 
 import org.junit.Assert;
 

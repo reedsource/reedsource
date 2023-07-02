@@ -2,7 +2,7 @@
  * FileName: JavaFile
  * Author:   reedsource
  */
-package k14流.文件属性读取;
+package main.java.k14流.文件属性读取;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

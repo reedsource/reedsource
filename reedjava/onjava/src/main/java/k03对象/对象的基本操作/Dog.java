@@ -2,7 +2,7 @@
  * FileName: Dog
  * Author:   reedsource
  */
-package k03对象.对象的基本操作;
+package main.java.k03对象.对象的基本操作;
 
 import top.ireed.deal.DealLog;
 

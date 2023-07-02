@@ -2,7 +2,7 @@
  * FileName: javaPackage
  * Author:   reedsource
  */
-package k03对象.包;
+package main.java.k03对象.包;
 
 import top.ireed.deal.DealLog;
 

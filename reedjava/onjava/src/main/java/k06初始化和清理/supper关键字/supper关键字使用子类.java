@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package k06初始化和清理.supper关键字;
+package main.java.k06初始化和清理.supper关键字;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

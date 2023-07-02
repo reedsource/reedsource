@@ -2,7 +2,7 @@
  * FileName: JavaReferenceNew
  * Author:   reedsource
  */
-package k03对象.引用类型;
+package main.java.k03对象.引用类型;
 
 import k03对象.对象的基本操作.Dog;
 import org.junit.Test;

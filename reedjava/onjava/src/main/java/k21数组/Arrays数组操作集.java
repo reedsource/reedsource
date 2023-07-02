@@ -2,7 +2,7 @@
  * FileName: Arrays数组操作集
  * Author:   reedsource
  */
-package k21数组;
+package main.java.k21数组;
 
 import org.junit.Assert;
 import org.junit.Test;

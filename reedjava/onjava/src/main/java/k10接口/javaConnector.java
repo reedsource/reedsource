@@ -2,7 +2,7 @@
  * FileName: javaConnector
  * Author:   reedsource
  */
-package k10接口;
+package main.java.k10接口;
 
 import top.ireed.deal.DealLog;
 

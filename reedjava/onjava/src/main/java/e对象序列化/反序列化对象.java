@@ -2,7 +2,7 @@
  * FileName: 反序列化对象
  * Author:   reedsource
  */
-package e对象序列化;
+package main.java.e对象序列化;
 
 import top.ireed.deal.DealLog;
 

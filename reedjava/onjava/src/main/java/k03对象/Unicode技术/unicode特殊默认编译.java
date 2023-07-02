@@ -2,7 +2,7 @@
  * FileName: unicode特殊默认编译
  * Author:   reedsource
  */
-package k03对象.Unicode技术;
+package main.java.k03对象.Unicode技术;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

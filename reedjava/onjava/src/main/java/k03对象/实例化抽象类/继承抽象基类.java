@@ -2,7 +2,7 @@
  * FileName: 继承抽象基类
  * Author:   reedsource
  */
-package k03对象.实例化抽象类;
+package main.java.k03对象.实例化抽象类;
 
 import top.ireed.deal.DealLog;
 

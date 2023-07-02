@@ -2,7 +2,7 @@
  * FileName: Synchronized同锁对象实现同步
  * Author:   reedsource
  */
-package j06底层并发.多线程;
+package main.java.j06底层并发.多线程;
 
 import top.ireed.deal.DealLog;
 

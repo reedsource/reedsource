@@ -2,7 +2,7 @@
  * FileName: javaCharacter
  * Author:   reedsource
  */
-package k03对象.包装类.String包装类;
+package main.java.k03对象.包装类.String包装类;
 
 import top.ireed.deal.DealLog;
 

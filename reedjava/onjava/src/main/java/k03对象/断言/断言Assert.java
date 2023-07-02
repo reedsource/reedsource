@@ -2,7 +2,7 @@
  * FileName: 断言Assert
  * Author:   reedsource
  */
-package k03对象.断言;
+package main.java.k03对象.断言;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

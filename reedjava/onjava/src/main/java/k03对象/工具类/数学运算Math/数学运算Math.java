@@ -2,7 +2,7 @@
  * FileName: 数学运算Math
  * Author:   reedsource
  */
-package k03对象.工具类.数学运算Math;
+package main.java.k03对象.工具类.数学运算Math;
 
 import top.ireed.deal.DealLog;
 

@@ -2,7 +2,7 @@
  * FileName: JavaFileInputStream
  * Author:   reedsource
  */
-package k14流.流文件读取;
+package main.java.k14流.流文件读取;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

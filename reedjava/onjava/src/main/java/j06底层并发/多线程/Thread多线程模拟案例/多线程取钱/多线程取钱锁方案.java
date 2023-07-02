@@ -2,7 +2,7 @@
  * FileName: 多线程取钱锁方案
  * Author:   reedsource
  */
-package j06底层并发.多线程.Thread多线程模拟案例.多线程取钱;
+package main.java.j06底层并发.多线程.Thread多线程模拟案例.多线程取钱;
 
 import top.ireed.deal.DealLog;
 

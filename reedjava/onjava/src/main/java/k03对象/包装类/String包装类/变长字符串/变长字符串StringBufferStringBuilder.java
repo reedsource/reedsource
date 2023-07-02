@@ -2,7 +2,7 @@
  * FileName: 变长字符串StringBufferStringBuilder
  * Author:   reedsource
  */
-package k03对象.包装类.String包装类.变长字符串;
+package main.java.k03对象.包装类.String包装类.变长字符串;
 
 import top.ireed.deal.DealLog;
 

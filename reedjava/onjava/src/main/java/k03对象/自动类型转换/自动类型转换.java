@@ -2,7 +2,7 @@
  * FileName: 自动类型转换
  * Author:   reedsource
  */
-package k03对象.自动类型转换;
+package main.java.k03对象.自动类型转换;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

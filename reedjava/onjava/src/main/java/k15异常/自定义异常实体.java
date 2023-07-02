@@ -2,7 +2,7 @@
  * FileName: 自定义异常实体
  * Author:   reedsource
  */
-package k15异常;
+package main.java.k15异常;
 
 /**
  * 功能简述:

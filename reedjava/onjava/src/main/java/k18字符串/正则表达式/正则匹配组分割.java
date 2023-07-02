@@ -2,7 +2,7 @@
  * FileName: 正则匹配组分割
  * Author:   reedsource
  */
-package k18字符串.正则表达式;
+package main.java.k18字符串.正则表达式;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

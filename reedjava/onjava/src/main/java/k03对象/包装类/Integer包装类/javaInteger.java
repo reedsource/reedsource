@@ -2,7 +2,7 @@
  * FileName: javaInteger
  * Author:   reedsource
  */
-package k03对象.包装类.Integer包装类;
+package main.java.k03对象.包装类.Integer包装类;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

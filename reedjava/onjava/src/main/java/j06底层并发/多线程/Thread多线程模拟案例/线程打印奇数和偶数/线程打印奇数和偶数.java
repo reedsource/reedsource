@@ -2,7 +2,7 @@
  * FileName: 线程打印奇数和偶数
  * Author:   reedsource
  */
-package j06底层并发.多线程.Thread多线程模拟案例.线程打印奇数和偶数;
+package main.java.j06底层并发.多线程.Thread多线程模拟案例.线程打印奇数和偶数;
 
 import top.ireed.deal.DealLog;
 

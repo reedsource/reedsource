@@ -2,7 +2,7 @@
  * FileName: javaRewrite
  * Author:   reedsource
  */
-package k09多态.多态;
+package main.java.k09多态.多态;
 
 import top.ireed.deal.DealLog;
 

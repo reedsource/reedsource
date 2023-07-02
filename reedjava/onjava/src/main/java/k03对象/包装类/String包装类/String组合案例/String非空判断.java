@@ -2,7 +2,7 @@
  * FileName: String非空判断
  * Author:   reedsource
  */
-package k03对象.包装类.String包装类.String组合案例;
+package main.java.k03对象.包装类.String包装类.String组合案例;
 
 
 import top.ireed.deal.DealLog;

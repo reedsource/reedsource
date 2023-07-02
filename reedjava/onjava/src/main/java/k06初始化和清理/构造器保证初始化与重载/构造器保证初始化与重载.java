@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package k06初始化和清理.构造器保证初始化与重载;
+package main.java.k06初始化和清理.构造器保证初始化与重载;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

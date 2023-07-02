@@ -2,7 +2,7 @@
  * FileName: javaVisit
  * Author:   reedsource
  */
-package k07访问控制;
+package main.java.k07访问控制;
 
 /**
  * 功能简述:

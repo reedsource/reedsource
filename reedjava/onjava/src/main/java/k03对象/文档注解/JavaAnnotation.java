@@ -2,7 +2,7 @@
  * FileName: JavaAnnotation
  * Author:   reedsource
  */
-package k03对象.文档注解;
+package main.java.k03对象.文档注解;
 
 /**
  * 功能简述:

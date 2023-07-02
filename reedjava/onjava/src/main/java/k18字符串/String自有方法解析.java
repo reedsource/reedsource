@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package k18字符串;
+package main.java.k18字符串;
 
 import top.ireed.deal.DealLog;
 

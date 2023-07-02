@@ -2,7 +2,7 @@
  * FileName: 类型通配符
  * Author:   reedsource
  */
-package k20泛型;
+package main.java.k20泛型;
 
 import top.ireed.deal.DealLog;
 

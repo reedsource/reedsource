@@ -2,7 +2,7 @@
  * FileName: 退出虚拟机exit
  * Author:   reedsource
  */
-package k06初始化和清理;
+package main.java.k06初始化和清理;
 
 import top.ireed.deal.DealLog;
 

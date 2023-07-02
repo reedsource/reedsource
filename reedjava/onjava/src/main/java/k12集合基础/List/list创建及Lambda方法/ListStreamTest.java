@@ -2,7 +2,7 @@
  * FileName: ListStreamTest
  * Author:   reedsource
  */
-package k12集合基础.List.list创建及Lambda方法;
+package main.java.k12集合基础.List.list创建及Lambda方法;
 
 
 import top.ireed.deal.DealLog;

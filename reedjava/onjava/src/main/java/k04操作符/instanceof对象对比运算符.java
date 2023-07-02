@@ -2,7 +2,7 @@
  * FileName: 运算符优先级
  * Author:   reedsource
  */
-package k04操作符;
+package main.java.k04操作符;
 
 /**
  * 功能简述:

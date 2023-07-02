@@ -2,7 +2,7 @@
  * FileName: 创建_数组
  * Author:   reedsource
  */
-package k21数组;
+package main.java.k21数组;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -2,7 +2,7 @@
  * FileName: java8lambdaAttention
  * Author:   reedsource
  */
-package k13函数式编程.lambda表达式;
+package main.java.k13函数式编程.lambda表达式;
 
 import top.ireed.deal.DealLog;
 

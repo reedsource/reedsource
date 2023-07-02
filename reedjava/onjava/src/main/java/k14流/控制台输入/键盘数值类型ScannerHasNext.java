@@ -2,7 +2,7 @@
  * FileName: 键盘数值类型ScannerHasNext
  * Author:   reedsource
  */
-package k14流.控制台输入;
+package main.java.k14流.控制台输入;
 
 import top.ireed.deal.DealLog;
 

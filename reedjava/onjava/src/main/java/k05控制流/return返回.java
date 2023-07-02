@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package k05控制流;
+package main.java.k05控制流;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

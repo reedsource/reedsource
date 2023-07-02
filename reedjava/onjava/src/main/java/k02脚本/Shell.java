@@ -2,7 +2,7 @@
  * FileName: Shell
  * Author:   reedsource
  */
-package k02脚本;
+package main.java.k02脚本;
 
 import top.ireed.deal.DealLog;
 

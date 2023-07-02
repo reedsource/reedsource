@@ -1,4 +1,4 @@
-package j01枚举;
+package main.java.j01枚举;
 
 /**
  * 功能简述:

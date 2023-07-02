@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package k06初始化和清理;
+package main.java.k06初始化和清理;
 
 /**
  * 功能简述:

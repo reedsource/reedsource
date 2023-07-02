@@ -2,7 +2,7 @@
  * FileName: 转义字符
  * Author:   reedsource
  */
-package k03对象.转义字符;
+package main.java.k03对象.转义字符;
 
 /**
  * 功能简述:

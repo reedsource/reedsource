@@ -2,7 +2,7 @@
  * FileName: javaPackaging
  * Author:   reedsource
  */
-package k13函数式编程.封装;
+package main.java.k13函数式编程.封装;
 
 import top.ireed.deal.DealLog;
 

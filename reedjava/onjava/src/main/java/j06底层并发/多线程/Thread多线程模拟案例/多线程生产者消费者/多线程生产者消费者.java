@@ -2,7 +2,7 @@
  * FileName: 多线程生产者消费者
  * Author:   reedsource
  */
-package j06底层并发.多线程.Thread多线程模拟案例.多线程生产者消费者;
+package main.java.j06底层并发.多线程.Thread多线程模拟案例.多线程生产者消费者;
 
 import top.ireed.deal.DealLog;
 

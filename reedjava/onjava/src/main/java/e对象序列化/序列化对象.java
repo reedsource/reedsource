@@ -2,7 +2,7 @@
  * FileName: 序列化对象
  * Author:   reedsource
  */
-package e对象序列化;
+package main.java.e对象序列化;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

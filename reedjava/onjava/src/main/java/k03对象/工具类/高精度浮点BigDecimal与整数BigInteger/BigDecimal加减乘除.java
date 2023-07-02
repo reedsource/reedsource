@@ -2,7 +2,7 @@
  * FileName: BigDecimal加减乘除
  * Author:   reedsource
  */
-package k03对象.工具类.高精度浮点BigDecimal与整数BigInteger;
+package main.java.k03对象.工具类.高精度浮点BigDecimal与整数BigInteger;
 
 import top.ireed.deal.DealLog;
 

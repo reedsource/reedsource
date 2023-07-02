@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package j04注解;
+package main.java.j04注解;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
