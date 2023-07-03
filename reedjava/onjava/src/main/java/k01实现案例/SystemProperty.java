@@ -20,7 +20,7 @@ import java.net.URISyntaxException;
  */
 public class SystemProperty {
 
-    public static void main(String[] args) throws MalformedURLException, URISyntaxException {
+    public static void main(String[] args) {
 
         DealLog.log("os.name 当前系统 : " + System.getProperty("os.name"));
 
