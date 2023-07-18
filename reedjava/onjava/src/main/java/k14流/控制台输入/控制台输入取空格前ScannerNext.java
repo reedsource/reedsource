@@ -25,7 +25,7 @@ import java.util.Scanner;
  */
 public class 控制台输入取空格前ScannerNext {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         控制台输入ScannerNext_Test();
     }
 

@@ -22,7 +22,7 @@ import java.util.Scanner;
  */
 public class 键盘数值类型ScannerHasNext {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         键盘数值类型ScannerHasNext_Test();
     }
 
