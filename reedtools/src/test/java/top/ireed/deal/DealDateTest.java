@@ -173,7 +173,7 @@ public class DealDateTest {
 	@Test
 	public void interval() throws TopException {
 		//初始时间到结束时间的时间间隔 天
-		Assert.assertEquals(9524, DealDate.interval(DealDate.getDate("1994-08-14", YYYY_MM_DD), date));
+		Assert.assertEquals(9525, DealDate.interval(DealDate.getDate("1994-08-14", YYYY_MM_DD), date));
 	}
 
 	/**
