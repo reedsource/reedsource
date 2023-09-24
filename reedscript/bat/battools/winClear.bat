@@ -15,18 +15,18 @@ del /f /s /q  C:\Windows\SoftwareDistribution\Download\*.*
 del /f /s /q  C:\Windows\Logs\CBS\*.*
 del /f /s /q  C:\Users\Public\Documents\*.*
 ::天翼网盘日志
-del /f /s /q  C:\Users\reedbook\AppData\Roaming\eCloudUpgrade\*.*
-del /f /s /q  C:\Users\reedbook\AppData\Roaming\ecloud\logs\*.*
-del /f /s /q  C:\Users\reedbook\AppData\Roaming\ecloud\Dump\*.*
+del /f /s /q  C:\Users\reeds\AppData\Roaming\eCloudUpgrade\*.*
+del /f /s /q  C:\Users\reeds\AppData\Roaming\ecloud\logs\*.*
+del /f /s /q  C:\Users\reeds\AppData\Roaming\ecloud\Dump\*.*
 
-::edge
+::edge  中间有空格,所以需要用""包围
 del /f /s /q  "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download\*.*"
 
 ::思源笔记
-del /f /s /q  C:\Users\reedbook\AppData\Local\siyuan-updater
+del /f /s /q  C:\Users\reeds\AppData\Local\siyuan-updater
 
-::JetBrains Toolbox缓存
-del /f /s /q  C:\Users\reedbook\AppData\Local\JetBrains\Toolbox\download\*.*
+::JetBrains Toolbox缓存 20230924已经去除
+::del /f /s /q  C:\Users\reeds\AppData\Local\JetBrains\Toolbox\download\*.*
 
 @Echo on
 pause
