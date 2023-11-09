@@ -25,7 +25,10 @@
 		<module>springboot09-filter-Listener</module>
 		<module>springboot10-thymeleaf</module>
 		<module>springboot11-log4j2</module>
+		<!--springboot自定义注解-->
 		<module>springboot12-annotation</module>
+		<!--springboot使用mybatis-plus-->
+		<module>springboot13-mybatis-plus</module>
 	</modules>
 
 	<properties>

@@ -1,0 +1,39 @@
+#常用配置方式演示  使用本配置时,需要注释application.properties
+#注意 新添加配置需要注意缩进
+server:
+  #端口号,一般需要设置在最前面
+  port: 80
+  servlet:
+    #项目名，如果不设定，默认是 /
+    context-path: /
+
+spring:
+  datasource:
+    username: mysql
+    password: ReedOSMysql07.!#
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.200.7:3306/reedsource?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    #实体扫描，多个package用逗号或者分号分隔
+    #mapper-locations: classpath:top/mapper/*.xml
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+# 配置打印sql  logging必须在顶级
+
+# 方案一
+# 本方式打印log 只包含sql 参数 返回数量
+# 如果需要也打印查询结果 将 DEBUG 修改为 TRACE
+#logging:
+#  level:
+#    top.ireed.mapper: DEBUG
+
+# 方案二
+# spring boot集成mybatis的方式打印sql 打印的sql是拼装好的sql 即将查询参数组合到mybatis中的sql
+# 会打印sql运行结果
+mybatis:
+  configuration:
+    # log-impl指定的值为org.apache.ibatis.logging.Log接口的某个实现类
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

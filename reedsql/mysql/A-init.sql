@@ -1,3 +1,13 @@
+-- 项目数据库初始化
+-- 删除数据库
+DROP
+    DATABASE IF EXISTS reedsource;
+-- 创建数据库
+create schema reedsource collate utf8mb4_bin;
+-- 切换到数据库
+USE
+    reedsource;
+
 DROP TABLE IF EXISTS 员工表;
 DROP TABLE IF EXISTS 部门表;
 DROP TABLE IF EXISTS 工资级别表;
@@ -13,11 +23,11 @@ CREATE TABLE 员工表
 (
     员工编号 int(4) not null,
     员工姓名 VARCHAR(10),
-    工作   VARCHAR(9),
+    工作     VARCHAR(9),
     领导编号 INT(4),
     受雇日期 DATE DEFAULT NULL,
-    月薪   DOUBLE(7, 2),
-    津贴   DOUBLE(7, 2),
+    月薪     DOUBLE(7, 2),
+    津贴     DOUBLE(7, 2),
     部门编号 INT(2),
     primary key (员工编号)
 )
@@ -25,7 +35,7 @@ CREATE TABLE 员工表
 
 CREATE TABLE 工资级别表
 (
-    等级   INT,
+    等级     INT,
     最低工资 INT,
     最高工资 INT
 );
