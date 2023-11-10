@@ -11,7 +11,11 @@
     <artifactId>springboot13-mybatis-plus</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot13-mybatis-plus</name>
-    <description>springboot13-mybatis-plus</description>
+    <description>springboot13-mybatis-plus 示例 sql实践示例</description>
+    <!--======================================================================-->
+    <!--注意 本案例主要存在于test目录-->
+    <!--======================================================================-->
+
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -40,6 +44,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- 引入, 注意springboot需要引入带boot的mybatis-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
