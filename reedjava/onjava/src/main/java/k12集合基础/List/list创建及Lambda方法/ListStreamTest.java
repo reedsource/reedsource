@@ -89,7 +89,7 @@ public class ListStreamTest {
 
         Model model7 = new Model();
         model7.setId(6);
-        model7.setName("小白");
+        model7.setName("重复小白");
         model7.setClasses(1);
         model7.setGrade(2);
         model7.setScore(88.8);
@@ -110,7 +110,7 @@ public class ListStreamTest {
 
         Model model8 = new Model();
         model8.setId(6);
-        model8.setName("小白");
+        model8.setName("重复小白");
         model8.setClasses(1);
         model8.setGrade(2);
         model8.setScore(88.8);
@@ -139,7 +139,7 @@ public class ListStreamTest {
 
         /*过滤，按照自己的需求来筛选list中的数据，比如我筛选出名称等于小白的数据,t为实例*/
         DealLog.log("过滤前：" + list);
-        List<Model> filterList1 = list.stream().filter(t -> "小白".equals(t.getName())).collect(Collectors.toList());
+        List<Model> filterList1 = list.stream().filter(t -> "重复小白".equals(t.getName())).collect(Collectors.toList());
         DealLog.log("字符串筛选过滤后" + filterList1);
 
         /*map, 提取对象中的某一元素，例子中我取的是每个人的name，注意list中类型对应，如果取的是id或者班级，就应该是integer类型*/

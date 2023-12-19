@@ -4,7 +4,8 @@
  */
 package main.java.k03对象.引用类型;
 
-import k03对象.对象的基本操作.Dog;
+
+import main.java.k03对象.对象的基本操作.Dog;
 import org.junit.Test;
 import top.ireed.deal.DealLog;
 
