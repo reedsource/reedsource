@@ -96,3 +96,19 @@ UNION
 SELECT *
 FROM 员工表
 WHERE 工作 = "销售经理";
+
+-- 不完全一致补齐
+
+SELECT *
+FROM 员工表
+WHERE 工作 = "经理"
+UNION
+SELECT 员工编号,
+       员工姓名,
+       工作,
+       领导编号,
+       受雇日期,
+       月薪,
+       津贴,''
+FROM 员工表
+WHERE 工作 = "销售经理";
