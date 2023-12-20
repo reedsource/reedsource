@@ -98,7 +98,7 @@ SELECT E.员工编号,
 FROM 员工表 E,
      部门表 D
 WHERE E.部门编号 = D.部门编号
-  AND E.员工编号 = 7369;
+  AND E.员工编号 = 0001;
 
 -- ---------------------------------------------------------
 -- (2)SQL1999标准,FROM后面是一个表,通过JOIN连接其它的表
@@ -123,7 +123,7 @@ SELECT E.员工编号,
        D.部门名称,
        D.部门位置
 FROM 员工表 E
-         INNER JOIN 部门表 D ON (E.部门编号 = D.部门编号) AND E.员工编号 = 7369;
+         INNER JOIN 部门表 D ON (E.部门编号 = D.部门编号) AND E.员工编号 = 0001;
 
 -- 也可以使用WHERE加入其它的查询条件,这是首先方式
 SELECT E.员工编号,
@@ -136,7 +136,7 @@ SELECT E.员工编号,
        D.部门位置
 FROM 员工表 E
          INNER JOIN 部门表 D ON (E.部门编号 = D.部门编号)
-WHERE E.员工编号 = 7369;
+WHERE E.员工编号 = 0001;
 
 -- 使用INNER JOIN的时候,INNER可以忽略
 SELECT E.员工编号,
@@ -149,7 +149,7 @@ SELECT E.员工编号,
        D.部门位置
 FROM 员工表 E
          JOIN 部门表 D ON (E.部门编号 = D.部门编号)
-WHERE E.员工编号 = 7369;
+WHERE E.员工编号 = 0001;
 
 
 -- 查询部门编号是20的员工信息及其部门信息
@@ -186,7 +186,7 @@ SELECT E.员工编号, E.员工姓名, E.月薪, S.等级, S.最低工资, S.最
 FROM 员工表 E,
      工资级别表 S
 WHERE E.月薪 BETWEEN S.最低工资 AND S.最高工资
-  AND E.员工编号 = 7369;
+  AND E.员工编号 = 0001;
 
 
 -- SQL1999标准
@@ -208,10 +208,10 @@ SELECT E.员工编号 "员工编号", E.员工姓名 "员工姓名", M.员工编
 FROM 员工表 E,
      员工表 M
 WHERE E.领导编号 = M.员工编号
-  AND E.员工编号 = 7369;
+  AND E.员工编号 = 0001;
 
 -- SQL1999标准
 SELECT E.员工编号 "员工编号", E.员工姓名 "员工姓名", M.员工编号 "经理编号", M.员工姓名 "经理姓名"
 FROM 员工表 E
          INNER JOIN 员工表 M ON (E.领导编号 = M.员工编号)
-WHERE E.员工编号 = 7369;
+WHERE E.员工编号 = 0001;

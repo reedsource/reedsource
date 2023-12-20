@@ -3,7 +3,7 @@
 -- 更新数据
 UPDATE 员工表
 SET 月薪 = 5000
-WHERE 员工编号 = 7369;
+WHERE 员工编号 = 0001;
 SELECT *
 FROM 员工表
 ORDER BY 月薪 ASC;
@@ -31,4 +31,4 @@ FROM 员工表;
 
 UPDATE 员工表
 SET 月薪 = 800
-WHERE 员工编号 = 7369;
+WHERE 员工编号 = 0001;
