@@ -25,6 +25,10 @@ del /f /s /q  "C:\Program Files (x86)\Microsoft\EdgeUpdate\Download\*.*"
 ::思源笔记
 del /f /s /q  C:\Users\reeds\AppData\Local\siyuan-updater
 
+::67tool
+del /f /s /q  C:\Users\reeds\AppData\Local\67tool-updater
+del /f /s /q  C:\Users\reeds\AppData\Local\he3-updater
+del /f /s /q  C:\Users\reeds\AppData\Local\Tencent\QQGuild
 ::JetBrains Toolbox缓存 20230924已经去除
 ::del /f /s /q  C:\Users\reeds\AppData\Local\JetBrains\Toolbox\download\*.*
 
