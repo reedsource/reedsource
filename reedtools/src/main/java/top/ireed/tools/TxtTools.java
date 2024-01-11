@@ -5,12 +5,14 @@ import java.util.ArrayList;
 
 /**
  * txt工具集
- * 2023年07月20日 首次提交, 用于pdf转文本后的内容整理
+ * 20240111 用于遍历查询文本行
+ * 当文本行符合规则时,屏蔽
+ * 将屏蔽处理后的内容写到新文件
  */
 public class TxtTools {
     public static void main(String[] args) {
-        String file = "D:\\reed\\Downloads\\开窍开悟开智.md";
-        String fileName = "D:\\reed\\Downloads\\开窍开悟开智-1.md";
+        String file = "D:\\reed\\Downloads\\超级异性吸引术.md";
+        String fileName = "D:\\reed\\Downloads\\超级异性吸引术-1.md";
         try {
             ArrayList<String> lines = GetTxtReader(file);
             ArrayList<String> result = rule(lines);
@@ -29,40 +31,24 @@ public class TxtTools {
     }
 
     /**
-     * 规则处理 * @param lines 行 * @return
+     * 规则处理 行
      */
     private static ArrayList<String> rule(ArrayList<String> lines) {
         ArrayList<String> result = new ArrayList<>();
         StringBuilder res = new StringBuilder();
+        //当开头为  ![](assets/   md文件图片链接
         for (String line : lines) {
-            //0 ##开头不做操作 添加换行符
-            if (line.length()>2 && "##".equals(line.substring(0, 2))) {
-                //1遇到。句号换行
-                String mm = res.toString();
-                if (!"".equals(mm)) {
-                    String[] ms = mm.split("。");
-                    for (String m : ms) {
-                        result.add(m + "。");
-                    }
-                }
-                res.delete(0, res.length());
+            if (!line.startsWith("![](assets/")) {
                 result.add(line);
-            } else {
-                res.append(line);
-            }
-        }
-        String mm = res.toString();
-        if (!"".equals(mm)) {
-            String[] ms = mm.split("。");
-            for (String m : ms) {
-                result.add(m + "。");
             }
         }
         return result;
     }
 
     /**
-     * @param file txt文本路径 * @return 按行读取的txt文本内容 * @throws IOException 异常
+     * 读取文本的内容,返回一个文本行的数组
+     *
+     * @param file txt文本路径
      */
     private static ArrayList<String> GetTxtReader(String file) throws IOException {
         ArrayList<String> lines = new ArrayList<>();
