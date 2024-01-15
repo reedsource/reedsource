@@ -6,6 +6,9 @@ package top.ireed.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
+import top.ireed.aop.AbstractTaskHandler;
+import top.ireed.aop.TaskHandlerRegister;
+import top.ireed.deal.DealLog;
 import top.ireed.note.MonRequestMapping;
 
 /**
@@ -21,14 +24,32 @@ import top.ireed.note.MonRequestMapping;
  */
 @Controller
 public class HelloController {
-	/**
-	 * @return 处理请求地址映射的注解, 表示类中的所有响应请求的方法都是以该地址作为父路径
-	 * 将 HTTP 请求正文插入方法中,使浏览器界面可以识别
-	 */
-	@MonRequestMapping("/boot/hello")
-	public @ResponseBody
-	String hello() {
-		return "Hello SpringBoot!";
-	}
+    /**
+     * @return 处理请求地址映射的注解, 表示类中的所有响应请求的方法都是以该地址作为父路径
+     * 将 HTTP 请求正文插入方法中,使浏览器界面可以识别
+     */
+    @MonRequestMapping("/boot/hello")
+    public @ResponseBody
+    String hello(String type) {
+
+        DealLog.log("默认进入type", type);
+        if (TaskHandlerRegister.getTaskHandler(type) == null) {
+            throw new RuntimeException("没找到对应的任务执行器 type=" + type);
+        }
+        AbstractTaskHandler abstractHandler = TaskHandlerRegister.getTaskHandler(type);
+        String mm = abstractHandler.execute(type);
+
+        DealLog.log("变更type为1");
+        type="type1";
+        abstractHandler = TaskHandlerRegister.getTaskHandler(type);
+        mm = abstractHandler.execute(type);
+
+        DealLog.log("变更type为2");
+        type="type2";
+        abstractHandler = TaskHandlerRegister.getTaskHandler(type);
+        mm = abstractHandler.execute(type);
+
+        return "Hello SpringBoot!" + mm;
+    }
 
 }
