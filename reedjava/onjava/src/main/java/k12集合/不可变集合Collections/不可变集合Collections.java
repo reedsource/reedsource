@@ -1,7 +1,7 @@
 /*
  * Author:   reedsource
  */
-package main.java.j03集合.不可变集合Collections;
+package main.java.k12集合.不可变集合Collections;
 
 import top.ireed.deal.DealLog;
 

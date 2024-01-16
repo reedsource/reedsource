@@ -2,7 +2,7 @@
  * FileName: L1
  * Author:   reedsource
  */
-package main.java.k12集合基础.List.list遍历;
+package main.java.k12集合.List.list遍历;
 
 import org.junit.Test;
 import top.ireed.deal.DealLog;

@@ -1,4 +1,4 @@
-package main.java.k12集合基础.List.list创建及Lambda方法;
+package main.java.k12集合.List.list创建及Lambda方法;
 
 import java.util.ArrayList;
 import java.util.List;

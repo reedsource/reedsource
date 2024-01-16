@@ -2,7 +2,7 @@
  * FileName: javaIterator
  * Author:   reedsource
  */
-package main.java.k12集合基础;
+package main.java.k12集合;
 
 import top.ireed.deal.DealLog;
 
