@@ -1,6 +1,6 @@
 package top.ireed.aop;
 
-public abstract class AbstractTaskHandler {
+public abstract class AbstractHandler {
 
     /**
      * 任务执行器

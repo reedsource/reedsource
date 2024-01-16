@@ -13,6 +13,7 @@ public class Springboot12AnnotationApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(Springboot12AnnotationApplication.class, args);
 		DealLog.log("测试路径 http://localhost/boot/hello?type=type3");
+		DealLog.log("测试路径 http://localhost/enumhandler?type=type03");
 	}
 
 

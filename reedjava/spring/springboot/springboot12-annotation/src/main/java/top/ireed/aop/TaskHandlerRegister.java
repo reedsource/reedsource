@@ -14,7 +14,7 @@ import java.util.Map;
 @Component /*组件类，并告知Spring要为这个类创建bean*/
 public class TaskHandlerRegister extends ApplicationObjectSupport {
 
-    private final static Map<String, AbstractTaskHandler> TASK_HANDLERS_MAP = new HashMap<>();
+    private final static Map<String, AbstractHandler> TASK_HANDLERS_MAP = new HashMap<>();
 
 
     @Override
@@ -24,18 +24,18 @@ public class TaskHandlerRegister extends ApplicationObjectSupport {
         taskBeanMap.keySet().forEach(beanName -> {
             Object bean = taskBeanMap.get(beanName);
             Class<?> clazz = bean.getClass();
-            if (bean instanceof AbstractTaskHandler && clazz.getAnnotation(TypeHandler.class) != null) {
+            if (bean instanceof AbstractHandler && clazz.getAnnotation(TypeHandler.class) != null) {
                 TypeHandler TypeHandler = clazz.getAnnotation(TypeHandler.class);
                 String taskType = TypeHandler.type();
                 if (TASK_HANDLERS_MAP.containsKey(taskType)) {
                     throw new RuntimeException("TaskType has Exits. TaskType=" + taskType);
                 }
-                TASK_HANDLERS_MAP.put(TypeHandler.type(), (AbstractTaskHandler) taskBeanMap.get(beanName));
+                TASK_HANDLERS_MAP.put(TypeHandler.type(), (AbstractHandler) taskBeanMap.get(beanName));
             }
         });
     }
 
-    public static AbstractTaskHandler getTaskHandler(String taskType) {
+    public static AbstractHandler getTaskHandler(String taskType) {
         return TASK_HANDLERS_MAP.get(taskType);
     }
 }
