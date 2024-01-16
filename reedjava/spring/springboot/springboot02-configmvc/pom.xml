@@ -9,8 +9,14 @@
 	</parent>
 	<!--表示将要编译为jar包-->
 	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
 	<artifactId>springboot02-configMvc</artifactId>
 	<version>1.0.0</version>
 	<name>springboot02-configMvc</name>
-	<description>springboot实现配置读取及简易mvc实现</description>
+	<description>springboot实现配置读取及mvc实现参数传递</description>
 </project>

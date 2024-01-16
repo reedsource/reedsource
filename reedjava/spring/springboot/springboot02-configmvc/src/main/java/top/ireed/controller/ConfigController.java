@@ -9,7 +9,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import top.ireed.deal.DealLog;
 import top.ireed.model.User;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 功能简述:
@@ -22,26 +26,41 @@ import top.ireed.model.User;
  */
 @Controller
 public class ConfigController {
-	@Value("${ireed.name}")
-	private String name;
+    @Value("${ireed.name}")
+    private String name;
 
-	/**
-	 * 如果这里的参数add和抽象类user的内容不符,将返回 null/0/false...等
-	 */
-	@Value("${ireed.add}")
-	private String add;
+    /**
+     * 如果这里的参数add和抽象类user的内容不符,将返回 null/0/false...等
+     */
+    @Value("${ireed.add}")
+    private String add;
 
-	@Autowired
-	private User user;
+    @Autowired
+    private User user;
 
-	/**
-	 * 读取配置文件 及映射的文件对象
-	 *
-	 * @return msg
-	 */
-	@GetMapping("/boot/test")
-	public @ResponseBody
-	String test() {
-		return "name:" + name + "  address:" + add + "    " + user;
-	}
+    /**
+     * 读取配置文件 及映射的文件对象
+     *
+     * @return msg
+     */
+    @GetMapping("/test")
+    @ResponseBody
+    public String test() {
+        return "name:" + name + "  address:" + add + "    " + user;
+    }
+
+    @GetMapping("/body")
+    @ResponseBody
+    public String body(User user) {
+        DealLog.log("springboot接收实体对象数据", user);
+        return user.toString();
+    }
+
+    @GetMapping("/msg")
+    @ResponseBody
+    public String msg(String name) {
+        DealLog.log("springboot接收单参数", name);
+        return name;
+    }
+
 }
