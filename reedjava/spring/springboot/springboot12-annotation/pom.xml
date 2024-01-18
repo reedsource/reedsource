@@ -21,5 +21,8 @@
 	package-info.java实现目录级别注释增强
 	package-info.java一般建议直接拷贝或新建一个其他类型文件再改名
 
+	按双shift后,输入package后,有个package-info.java选项
+	选择后会在当前选中目录自动创建一个package-info.java文件
+
 	-->
 </project>
