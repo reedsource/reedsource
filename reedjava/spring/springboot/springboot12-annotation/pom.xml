@@ -11,5 +11,15 @@
 	<artifactId>springboot12-annotation</artifactId>
 	<version>1.0.0</version>
 	<name>springboot12-annotation</name>
-	<description>springboot自定义注解</description>
+	<description>springboot自定义注解及注释增强方案</description>
+
+	<!--通过插件
+	show-comment 插件
+	注释show-comment 需要奇怪的空格,需要从案例里面拷贝
+
+	和
+	package-info.java实现目录级别注释增强
+	package-info.java一般建议直接拷贝或新建一个其他类型文件再改名
+
+	-->
 </project>
