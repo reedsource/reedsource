@@ -3,6 +3,7 @@ package main;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import top.ireed.deal.DealDate;
 
 import java.util.Date;
 import java.util.List;
@@ -48,5 +49,19 @@ public class OnJava {
         this.num = num;
         this.state = state;
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "OnJava{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cName='" + cName + '\'' +
+                ", num=" + num +
+                ", state=" + state +
+                ", infoList=" + infoList +
+                ", infoMap=" + infoMap +
+                ", date=" + DealDate.formatDateString(date) +
+                '}';
     }
 }

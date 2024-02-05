@@ -2,7 +2,9 @@ package main.集合;
 
 import main.OnJava;
 import org.junit.Test;
+import top.ireed.deal.DealDate;
 import top.ireed.deal.DealLog;
+import top.ireed.general.TopException;
 
 import java.text.Collator;
 import java.util.*;
@@ -20,13 +22,17 @@ public class list常见方法及stream操作 {
     Date date = new Date();
 
     List<OnJava> list = new ArrayList<>() {{
-        add(new OnJava(1L, "onJava1", "一", 10, false, date));
-        add(new OnJava(3L, "onJava3", "三", 30, false, date));
-        add(new OnJava(2L, "onJava2", "二", 20, false, date));
-        add(new OnJava(5L, "onJava5", "五", 50, false, date));
-        add(new OnJava(4L, "onJava4", "六", 50, false, date));
-        add(new OnJava(6L, "onJava6", "六", 60, true, date));
-        add(new OnJava(7L, "onJava7", "七", 70, true, date));
+        try {
+            add(new OnJava(1L, "onJava1", "一", 10, false, DealDate.getDate("2024-01-01")));
+            add(new OnJava(3L, "onJava3", "三", 30, false, DealDate.getDate("2024-01-03")));
+            add(new OnJava(2L, "onJava2", "二", 20, false, DealDate.getDate("2024-01-02")));
+            add(new OnJava(5L, "onJava5", "五", 50, false, DealDate.getDate("2024-01-05")));
+            add(new OnJava(4L, "onJava4", "六", 50, false, DealDate.getDate("2024-01-04")));
+            add(new OnJava(6L, "onJava6", "六", 60, true, DealDate.getDate("2024-01-06")));
+            add(new OnJava(7L, "onJava7", "七", 70, true, DealDate.getDate("2024-01-07")));
+        } catch (TopException e) {
+            throw new RuntimeException(e);
+        }
     }};
 
 
@@ -107,7 +113,7 @@ public class list常见方法及stream操作 {
     }
 
     @Test
-    public void listStream_Test() {
+    public void listStream_Test() throws TopException {
         List<OnJava> onJavas;
 
         onJavas = list.stream().filter(t -> t.getNum() <= 30).collect(Collectors.toList());
@@ -119,7 +125,7 @@ public class list常见方法及stream操作 {
         onJavas = list.stream().filter(t -> "onJava7".equals(t.getName())).collect(Collectors.toList());
         DealLog.logListGo("筛选  字符串匹配", onJavas);
 
-        list.add(new OnJava(7L, "onJava7", "七", 70, false, date));
+        list.add(new OnJava(7L, "onJava7", "七", 70, false, DealDate.getDate("2024-01-07")));
         DealLog.logListGo("去重  将list中的重复数据去除前", list);
         onJavas = list.stream().distinct().collect(Collectors.toList());
         DealLog.logListGo("去重  将list中的重复数据去除后", onJavas);
@@ -132,6 +138,9 @@ public class list常见方法及stream操作 {
 
         onJavas = list.stream().sorted(Comparator.comparing(OnJava::getName)).collect(Collectors.toList());
         DealLog.logListGo("排序  对英文字符进行升序排序", onJavas);
+
+        onJavas = list.stream().sorted(Comparator.comparing(OnJava::getDate)).collect(Collectors.toList());
+        DealLog.logListGo("排序  对时间进行升序排序", onJavas);
 
         Collator collator = Collator.getInstance(); // 获取默认的Collator对象
         list.sort((s1, s2) -> collator.compare(s2.getName(), s1.getName())); // 根据Collator对象比较字符串并排序
