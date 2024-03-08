@@ -20,18 +20,19 @@ import static top.ireed.deal.DealIo.stringToFile;
 public class DealIoTest extends TestCase {
 
     public void testToFile() throws TopException {
-        DealIo.toFileIo(new File("D:\\cache\\io\\io测试数据.txt"), "测试内容111");
+        DealIo.toFileIo(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\io测试数据.txt"), "测试内容111");
         Assert.assertTrue(true);
     }
 
 
-    public void testStringToFile() {
+    public void testStringToFile() throws TopException {
 
-        String filePath = "D:\\cache\\io\\ioFile测试数据.docx";
+        String filePath = "D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\io测试数据.txt";
 
         String fileContent = fileToString(filePath);
+        DealIo.toFileIo(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\io加密后测试数据.txt"), fileContent);
 
-        String outFilePath = "D:\\cache\\io\\" + System.currentTimeMillis() + File.separator + "ioFile测试数据.docx";
+        String outFilePath = "D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\" + "io加密后解密测试数据.txt";
         Boolean is = stringToFile(fileContent, outFilePath);
 
     }

@@ -1,9 +1,9 @@
 package main.集合;
 
-import main.OnJava;
 import org.junit.Test;
 import top.ireed.deal.DealDate;
 import top.ireed.deal.DealLog;
+import top.ireed.entity.OnJava;
 import top.ireed.general.TopException;
 
 import java.text.Collator;
@@ -158,7 +158,7 @@ public class list常见方法及stream操作 {
         Map<Integer, List<OnJava>> intMap = list.stream().collect(Collectors.groupingBy(t -> t.getNum()));
         DealLog.logMapGo("分组 list数值分组", intMap);
 
-        Map<String, List<OnJava>> stringMap = list.stream().collect(Collectors.groupingBy(t -> t.getCName()));
+        Map<String, List<OnJava>> stringMap = list.stream().collect(Collectors.groupingBy(t -> t.getcName()));
         DealLog.logMapGo("分组 list字符串分组", stringMap);
 
         Map<Boolean, List<OnJava>> boMap = list.stream().collect(Collectors.groupingBy(t -> t.isState()));

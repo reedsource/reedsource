@@ -19,18 +19,18 @@ import java.util.Map;
  */
 public class FoundHtmlTranslateTest extends TestCase {
 
-	public void testName() throws TopException {
-		//文件路径
-		String file = "D:\\cache\\html\\";
-		//翻译后的文件路径
-		String backupFile = "D:\\cache\\html2\\";
+    public void testName() throws TopException {
+        //文件路径
+        String file = "D:\\cache\\html\\";
+        //翻译后的文件路径
+        String backupFile = "D:\\cache\\html2\\";
 
-		//配置文件位置可以自定义修改
-		Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\reed\\reed.json")));
-		FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:D:\\cache\\data\\FoundDict.db");
+        //配置文件位置可以自定义修改
+        Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\reed.json")));
+        FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:D:\\cache\\data\\FoundDict.db");
 
-		FoundHtmlTranslate foundHtmlTranslate = new FoundHtmlTranslate(file, backupFile, foundDict);
-		foundHtmlTranslate.dictHtml();
+        FoundHtmlTranslate foundHtmlTranslate = new FoundHtmlTranslate(file, backupFile, foundDict);
+        foundHtmlTranslate.dictHtml();
 
-	}
+    }
 }

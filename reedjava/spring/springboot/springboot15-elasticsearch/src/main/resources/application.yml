@@ -1,0 +1,15 @@
+#常用配置方式演示  使用本配置时,需要注释application.properties
+#注意 新添加配置需要注意缩进
+server:
+  #端口号,一般需要设置在最前面
+  port: 80
+  servlet:
+    #项目名，如果不设定，默认是 /
+    context-path: /
+
+elasticsearch:
+  host: 192.168.200.7
+  port: 9200
+  connTimeout: 3000
+  socketTimeout: 5000
+  connectionRequestTimeout: 500

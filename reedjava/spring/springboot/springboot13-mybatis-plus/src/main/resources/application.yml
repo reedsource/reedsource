@@ -10,7 +10,7 @@ server:
 spring:
   datasource:
     username: mysql
-    password: ReedOSMysql07.!#
+    password: reedtools
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.200.7:3306/reedsource?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     #实体扫描，多个package用逗号或者分号分隔

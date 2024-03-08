@@ -112,7 +112,7 @@ public class DealIo {
     /**
      * @param fileContent base64加密后的文件流
      * @param filePath    文件写入位置
-     * @return 写入文件
+     * @return 文件base64解密后的流
      */
     public static boolean stringToFile(String fileContent, String filePath) {
         byte[] bytes = Base64.getDecoder().decode(fileContent);
