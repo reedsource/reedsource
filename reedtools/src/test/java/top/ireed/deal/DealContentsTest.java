@@ -13,7 +13,7 @@ import org.junit.Test;
  */
 public class DealContentsTest {
 
-	private static final String D_CACHE_PATH = "D:\\cache\\path\\";
+	private static final String D_CACHE_PATH = DealFile.getUserTestFile();
 
 	@Test
 	public void getDealContents() {
