@@ -10,14 +10,15 @@ import org.junit.Test;
  * date 2024/3/8 20:31
  * reedsource@189.cn
  */
-public class DealFileTest{
+public class DealFileTest {
 
     @Test
-    public void DealFileTest(){
+    public void DealFile_Test() {
         DealLog.log(DealFile.getUserFile());
+        DealLog.log(DealFile.getUserTestDataFile());
+        DealLog.log(DealFile.getUserTestCacheFile());
         Assert.assertTrue(true);
     }
-
 
 
 }

@@ -1,6 +1,7 @@
 package top.ireed.found.html;
 
 import junit.framework.TestCase;
+import top.ireed.deal.DealFile;
 import top.ireed.deal.DealIo;
 import top.ireed.deal.DealJackson;
 import top.ireed.found.dict.FoundDict;
@@ -21,14 +22,13 @@ public class FoundHtmlTranslateTest extends TestCase {
 
     public void testName() throws TopException {
         //文件路径
-        String file = "D:\\cache\\html\\";
+        String file = DealFile.getUserTestCacheFile() + "\\html\\";
         //翻译后的文件路径
-        String backupFile = "D:\\cache\\html2\\";
+        String backupFile = DealFile.getUserTestCacheFile() + "\\html1\\";
 
         //配置文件位置可以自定义修改
-        Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\reed.json")));
-        FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:D:\\cache\\data\\FoundDict.db");
-
+        Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File(DealFile.getUserTestDataFile() + "\\reed.json")));
+        FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:" + DealFile.getUserTestCacheFile() + "\\FoundDict.db");
         FoundHtmlTranslate foundHtmlTranslate = new FoundHtmlTranslate(file, backupFile, foundDict);
         foundHtmlTranslate.dictHtml();
 

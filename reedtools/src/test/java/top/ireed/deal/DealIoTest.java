@@ -1,7 +1,6 @@
 package top.ireed.deal;
 
 import junit.framework.TestCase;
-import org.junit.Assert;
 import top.ireed.general.TopException;
 
 import java.io.File;
@@ -19,20 +18,18 @@ import static top.ireed.deal.DealIo.stringToFile;
  */
 public class DealIoTest extends TestCase {
 
-    public void testToFile() throws TopException {
-        DealIo.toFileIo(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\io测试数据.txt"), "测试内容111");
-        Assert.assertTrue(true);
-    }
-
-
     public void testStringToFile() throws TopException {
+        String filePath = DealFile.getUserTestCacheFile() + "\\io测试数据.txt";
 
-        String filePath = "D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\io测试数据.txt";
+        //写入一个数据到测试文件
+        DealIo.toFileIo(new File(filePath), "测试内容111");
 
+        //读取测试文件写入到加密文件
         String fileContent = fileToString(filePath);
-        DealIo.toFileIo(new File("D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\io加密后测试数据.txt"), fileContent);
+        DealIo.toFileIo(new File(DealFile.getUserTestCacheFile() + "\\io加密后测试数据.txt"), fileContent);
 
-        String outFilePath = "D:\\clouds\\codes\\reedsource\\reedtools\\src\\test\\java\\top\\ireed\\data\\" + "io加密后解密测试数据.txt";
+        //将加密文件解密,写入新文件
+        String outFilePath = DealFile.getUserTestCacheFile() + "\\io加密后解密测试数据.txt";
         Boolean is = stringToFile(fileContent, outFilePath);
 
     }
