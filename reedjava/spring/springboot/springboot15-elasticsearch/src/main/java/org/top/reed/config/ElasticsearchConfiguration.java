@@ -24,12 +24,21 @@ public class ElasticsearchConfiguration {
     @Value("${elasticsearch.port}")
     private int port;
 
+    /**
+     * 连接超时
+     */
     @Value("${elasticsearch.connTimeout}")
     private int connTimeout;
 
+    /**
+     * 套接字超时
+     */
     @Value("${elasticsearch.socketTimeout}")
     private int socketTimeout;
 
+    /**
+     * 连接请求超时
+     */
     @Value("${elasticsearch.connectionRequestTimeout}")
     private int connectionRequestTimeout;
 

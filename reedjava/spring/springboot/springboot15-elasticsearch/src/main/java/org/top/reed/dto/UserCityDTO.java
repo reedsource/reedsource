@@ -3,7 +3,7 @@ package org.top.reed.dto;
 import lombok.Data;
 
 /**
- * 功能简述:〈es 实体〉
+ * 功能简述:〈数据汇总实体〉
  *
  * @author reedsource
  * date 2024/3/8 16:58

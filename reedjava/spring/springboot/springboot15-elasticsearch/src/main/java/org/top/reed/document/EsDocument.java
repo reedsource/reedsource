@@ -3,8 +3,11 @@ package org.top.reed.document;
 
 import lombok.Data;
 
+/**
+ * es文档
+ */
 @Data
-public class UserDocument {
+public class EsDocument {
     private String id;
     /**
      * 姓名

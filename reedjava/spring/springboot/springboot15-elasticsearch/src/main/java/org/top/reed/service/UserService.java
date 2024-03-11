@@ -34,16 +34,15 @@ import org.elasticsearch.search.aggregations.metrics.Avg;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.top.reed.constant.Constant;
-import org.top.reed.document.UserDocument;
+import org.top.reed.document.EsDocument;
 import org.top.reed.dto.UserCityDTO;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * 功能简述:〈es Service〉
@@ -57,12 +56,10 @@ public class UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    @Autowired
+    @Resource
     private RestHighLevelClient client;
 
-    public Boolean createUserDocument(UserDocument document) throws Exception {
-        UUID uuid = UUID.randomUUID();
-        document.setId(uuid.toString());
+    public Boolean createUserDocument(EsDocument document) throws Exception {
         IndexRequest indexRequest = new IndexRequest(Constant.INDEX)
                 .id(document.getId())
                 .source(JSON.toJSONString(document), XContentType.JSON);
@@ -70,42 +67,40 @@ public class UserService {
         return indexResponse.status().equals(RestStatus.CREATED);
     }
 
-    public Boolean bulkCreateUserDocument(List<UserDocument> documents) throws IOException {
+    public Boolean bulkCreateUserDocument(List<EsDocument> documents) throws IOException {
         BulkRequest bulkRequest = new BulkRequest();
-        for (UserDocument document : documents) {
-            String id = UUID.randomUUID().toString();
-            document.setId(id);
+        for (EsDocument document : documents) {
             IndexRequest indexRequest = new IndexRequest(Constant.INDEX)
-                    .id(id)
+                    .id(document.getId())
                     .source(JSON.toJSONString(document), XContentType.JSON);
             bulkRequest.add(indexRequest);
         }
         BulkResponse bulkResponse = client.bulk(bulkRequest, RequestOptions.DEFAULT);
-        return bulkResponse.status().equals(RestStatus.CREATED);
+        return bulkResponse.status().equals(RestStatus.OK);
     }
 
-    public UserDocument getUserDocument(String id) throws IOException {
+    public EsDocument getUserDocument(String id) throws IOException {
         GetRequest getRequest = new GetRequest(Constant.INDEX, id);
         GetResponse getResponse = client.get(getRequest, RequestOptions.DEFAULT);
-        UserDocument result = new UserDocument();
+        EsDocument result = new EsDocument();
         if (getResponse.isExists()) {
             String sourceAsString = getResponse.getSourceAsString();
-            result = JSON.parseObject(sourceAsString, UserDocument.class);
+            result = JSON.parseObject(sourceAsString, EsDocument.class);
         } else {
             logger.error("没有找到该 id 的文档");
         }
         return result;
     }
 
-    public Boolean updateUserDocument(UserDocument document) throws Exception {
-        UserDocument resultDocument = getUserDocument(document.getId());
+    public Boolean updateUserDocument(EsDocument document) throws Exception {
+        EsDocument resultDocument = getUserDocument(document.getId());
         UpdateRequest updateRequest = new UpdateRequest(Constant.INDEX, resultDocument.getId());
         updateRequest.doc(JSON.toJSONString(document), XContentType.JSON);
         UpdateResponse updateResponse = client.update(updateRequest, RequestOptions.DEFAULT);
         return updateResponse.status().equals(RestStatus.OK);
     }
 
-    public List<UserDocument> getUserList() throws Exception {
+    public List<EsDocument> getUserList() throws Exception {
         SearchRequest searchRequest = new SearchRequest(Constant.INDEX);
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         searchSourceBuilder.query(QueryBuilders.matchAllQuery());
@@ -114,7 +109,7 @@ public class UserService {
         return getSearchResult(searchResponse);
     }
 
-    public List<UserDocument> searchUserByCity(String city) throws Exception {
+    public List<EsDocument> searchUserByCity(String city) throws Exception {
         SearchRequest searchRequest = new SearchRequest();
         searchRequest.indices(Constant.INDEX);
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -157,13 +152,13 @@ public class UserService {
         return userCityList;
     }
 
-    private List<UserDocument> getSearchResult(SearchResponse response) {
+    private List<EsDocument> getSearchResult(SearchResponse response) {
         SearchHit[] searchHit = response.getHits().getHits();
-        List<UserDocument> userDocuments = new ArrayList<>();
+        List<EsDocument> esDocuments = new ArrayList<>();
         for (SearchHit hit : searchHit) {
-            userDocuments.add(JSON.parseObject(hit.getSourceAsString(), UserDocument.class));
+            esDocuments.add(JSON.parseObject(hit.getSourceAsString(), EsDocument.class));
         }
-        return userDocuments;
+        return esDocuments;
     }
 
     public boolean createUserIndex(String index) throws IOException {
@@ -172,25 +167,26 @@ public class UserService {
                 .put("index.number_of_shards", 1)
                 .put("index.number_of_replicas", 0)
         );
-        createIndexRequest.mapping("{\n" +
-                "  \"properties\": {\n" +
-                "    \"city\": {\n" +
-                "      \"type\": \"keyword\"\n" +
-                "    },\n" +
-                "    \"sex\": {\n" +
-                "      \"type\": \"keyword\"\n" +
-                "    },\n" +
-                "    \"name\": {\n" +
-                "      \"type\": \"keyword\"\n" +
-                "    },\n" +
-                "    \"id\": {\n" +
-                "      \"type\": \"keyword\"\n" +
-                "    },\n" +
-                "    \"age\": {\n" +
-                "      \"type\": \"integer\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "}", XContentType.JSON);
+        createIndexRequest.mapping("""
+                {
+                  "properties": {
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "sex": {
+                      "type": "keyword"
+                    },
+                    "name": {
+                      "type": "keyword"
+                    },
+                    "id": {
+                      "type": "keyword"
+                    },
+                    "age": {
+                      "type": "integer"
+                    }
+                  }
+                }""", XContentType.JSON);
         CreateIndexResponse createIndexResponse = client.indices().create(createIndexRequest, RequestOptions.DEFAULT);
         return createIndexResponse.isAcknowledged();
     }

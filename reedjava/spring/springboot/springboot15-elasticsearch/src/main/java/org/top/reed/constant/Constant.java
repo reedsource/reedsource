@@ -8,5 +8,8 @@ package org.top.reed.constant;
  * reedsource@189.cn
  */
 public interface Constant {
-    String INDEX = "user";
+    /**
+     * 默认的es 索引集合
+     */
+    String INDEX = "reed";
 }

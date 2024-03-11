@@ -1,14 +1,19 @@
 package org.top.reed.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.top.reed.document.UserDocument;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.top.reed.constant.Constant;
+import org.top.reed.document.EsDocument;
 import org.top.reed.dto.UserCityDTO;
 import org.top.reed.service.UserService;
 
+import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,97 +27,101 @@ import java.util.List;
 @RequestMapping("/es")
 public class UserController {
 
-    @Autowired
+    @Resource
     private UserService userService;
 
     /**
      * 创建索引
      */
-    @GetMapping("/createUserIndex")
-    public ResponseEntity<Boolean> createUserIndex(@RequestParam(value = "index", defaultValue = "ReedOS") String index) throws Exception {
+    @GetMapping("/createIndex")
+    public ResponseEntity<Boolean> createIndex(@RequestParam(value = "index", defaultValue = Constant.INDEX) String index) throws Exception {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUserIndex(index));
     }
 
     /**
      * 删除索引
      */
-    @GetMapping("/deleteUserIndex")
-    public ResponseEntity<Boolean> deleteUserIndex(@RequestParam(value = "index", defaultValue = "ReedOS") String index) throws Exception {
+    @GetMapping("/deleteIndex")
+    public ResponseEntity<Boolean> deleteIndex(@RequestParam(value = "index", defaultValue = Constant.INDEX) String index) throws Exception {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.deleteUserIndex(index));
     }
 
     /**
      * 新增文档
      */
-    @GetMapping("/createUserDocument")
-    public ResponseEntity<Boolean> createUserDocument(@RequestBody UserDocument document) throws Exception {
+    @GetMapping("/addDocument")
+    public ResponseEntity<Boolean> addDocument() throws Exception {
+        EsDocument document = new EsDocument();
+        document.setId("20001");
+        document.setName("姓名1");
+        document.setSex("性别1");
+        document.setAge(20);
+        document.setCity("北京");
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUserDocument(document));
     }
 
     /**
      * 批量新增文档
-     *
-     * @param document
-     * @return
-     * @throws Exception
      */
-    @GetMapping("/bulkCreateUserDocument")
-    public ResponseEntity<Boolean> bulkCreateUserDocument(@RequestBody List<UserDocument> document) throws Exception {
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.bulkCreateUserDocument(document));
+    @GetMapping("/addDocumentList")
+    public ResponseEntity<Boolean> addDocumentList() throws Exception {
+        List<EsDocument> documentList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            EsDocument document = new EsDocument();
+            document.setId(String.valueOf(10000 + i));
+            document.setName("批量姓名" + i);
+            document.setSex("批量性别" + i);
+            document.setAge(200 + i);
+            document.setCity("北京");
+            documentList.add(document);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.bulkCreateUserDocument(documentList));
     }
 
     /**
      * 删除文档
      *
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id id
      */
-    @GetMapping("/deleteUserDocument")
-    public String deleteUserDocument(@RequestParam String id) throws Exception {
+    @GetMapping("/deleteDocument")
+    public String deleteDocument(@RequestParam String id) throws Exception {
         return userService.deleteUserDocument(id);
     }
 
     /**
      * 更新文档
-     *
-     * @param document
-     * @return
-     * @throws Exception
      */
-    @GetMapping("/updateUserDocument")
-    public ResponseEntity<Boolean> updateUserDocument(@RequestBody UserDocument document) throws Exception {
+    @GetMapping("/updateDocument")
+    public ResponseEntity<Boolean> updateDocument(@RequestParam String id) throws Exception {
+        EsDocument document = new EsDocument();
+        document.setId(id);
+        document.setName("更新后姓名");
+        document.setSex("更新后性别");
+        document.setAge(20);
+        document.setCity("北京");
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.updateUserDocument(document));
     }
 
     /**
      * 获取文档
      *
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id id
      */
     @GetMapping("/getUserDocument")
-    public UserDocument getUserDocument(@RequestParam String id) throws Exception {
+    public EsDocument getUserDocument(@RequestParam String id) throws Exception {
         return userService.getUserDocument(id);
     }
 
     /**
-     * 用户列表
-     *
-     * @return
-     * @throws Exception
+     * 查询列表
      */
     @GetMapping("/getUserList")
-    public List<UserDocument> getUserList() throws Exception {
+    public List<EsDocument> getUserList() throws Exception {
         return userService.getUserList();
     }
 
     /**
      * 城市聚合
-     *
-     * @return
-     * @throws Exception
      */
     @GetMapping("/aggregationsSearchUser")
     public List<UserCityDTO> aggregationsSearchUser() throws Exception {
@@ -120,14 +129,12 @@ public class UserController {
     }
 
     /**
-     * 根据姓名搜索用户
+     * 根据搜索条件
      *
-     * @param city
-     * @return
-     * @throws Exception
+     * @param city 城市 条件
      */
     @GetMapping("/searchUserByCity")
-    public List<UserDocument> searchUserByCity(@RequestParam(value = "city") String city) throws Exception {
+    public List<EsDocument> searchUserByCity(@RequestParam(value = "city") String city) throws Exception {
         return userService.searchUserByCity(city);
     }
 }
