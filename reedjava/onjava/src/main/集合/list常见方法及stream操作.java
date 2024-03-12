@@ -30,6 +30,9 @@ public class list常见方法及stream操作 {
             add(new OnJava(4L, "onJava4", "六", 50, false, DealDate.getDate("2024-01-04")));
             add(new OnJava(6L, "onJava6", "六", 60, true, DealDate.getDate("2024-01-06")));
             add(new OnJava(7L, "onJava7", "七", 70, true, DealDate.getDate("2024-01-07")));
+            add(new OnJava(7L, "onJava7", "bay", 70, true, DealDate.getDate("2024-01-07")));
+            add(new OnJava(7L, "onJava7", "co", 70, true, DealDate.getDate("2024-01-07")));
+            add(new OnJava(7L, "onJava7", "and", 70, true, DealDate.getDate("2024-01-07")));
         } catch (TopException e) {
             throw new RuntimeException(e);
         }
@@ -138,6 +141,13 @@ public class list常见方法及stream操作 {
 
         onJavas = list.stream().sorted(Comparator.comparing(OnJava::getName)).collect(Collectors.toList());
         DealLog.logListGo("排序  对英文字符进行升序排序", onJavas);
+
+        //中文排序,如果中间有英文,英文会按英文顺序排序到最前面
+        list.sort((x, y) -> {
+            Collator instance = Collator.getInstance(Locale.CHINA);
+            return instance.compare(x.getcName(), y.getcName());
+        });
+        DealLog.logListGo("排序  对中文字符进行升序排序", list);
 
         onJavas = list.stream().sorted(Comparator.comparing(OnJava::getDate)).collect(Collectors.toList());
         DealLog.logListGo("排序  对时间进行升序排序", onJavas);
