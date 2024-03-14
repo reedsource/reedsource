@@ -24,20 +24,21 @@ import java.util.Map;
  */
 public class DealObjectTest {
 
-	@Test
-	public void test() throws TopException {
-		Map<String, Object> hashMap = new HashMap<>();
-		hashMap.put("key", "key");
-		hashMap.put("value", "value");
-		hashMap.put("date", "20220202");
-		DealLog.log(DealObject.transMapBean(hashMap, Model.class));
+    @Test
+    public void test() throws TopException {
+        Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("key", "key");
+        hashMap.put("value", "value");
+        hashMap.put("date", "20220202");
+        DealLog.log(DealObject.transMapBean(hashMap, Model.class));
+        DealLog.log(DealObject.getStringObjectValue(null));
 
-		Model model = new Model("10000", "key的值", "value的值", DealDate.getDate("2022-04-05"), "super的值");
-		//通过本方法可以获取继承的父类的数据
-		Assert.assertEquals("super的值", DealObject.getSuperMember(model, "suS"));
-		//测试getMember 只能获取类本身的参数数据
-		Assert.assertEquals("key的值", DealObject.getMember(model, "key"));
-		//测试isExistFieldName
-		Assert.assertEquals(true, DealObject.isExistFieldName(model, "key"));
-	}
+        Model model = new Model("10000", "key的值", "value的值", DealDate.getDate("2022-04-05"), "super的值");
+        //通过本方法可以获取继承的父类的数据
+        Assert.assertEquals("super的值", DealObject.getSuperMember(model, "suS"));
+        //测试getMember 只能获取类本身的参数数据
+        Assert.assertEquals("key的值", DealObject.getMember(model, "key"));
+        //测试isExistFieldName
+        Assert.assertEquals(true, DealObject.isExistFieldName(model, "key"));
+    }
 }
