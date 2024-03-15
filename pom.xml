@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <!--pom遵循版本-->
+    <modelVersion>4.0.0</modelVersion>
+    <!--Maven项目隶属的实际项目-->
+    <groupId>top.ireed</groupId>
+    <!--项目工程名-->
+    <artifactId>reedsource</artifactId>
+    <!--打包类型pom jar war-->
+    <packaging>pom</packaging>
+    <!--版本号-->
+    <version>1.0.0</version>
+    <modules>
+        <module>reedjava</module>
+        <module>reedtools</module>
+    </modules>
+    <!--名称-->
+    <name>reedsource</name>
+    <!--项目描述-->
+    <description>reedsource综合版本管理</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.version>3.8.1</maven.version><!--maven版本-->
+        <java.version>17</java.version><!--JDK版本-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!--项目编码-->
+        <hutool.version>5.8.25</hutool.version><!--hutool工具集-->
+        <junit.version>4.13.2</junit.version><!--junit测试工具类-->
+        <servlet.api.version>4.0.1</servlet.api.version><!--servlet.api-->
+        <jsp.version>2.3.3</jsp.version><!--jsp依赖-->
+        <jsp.jstl.version>1.2</jsp.jstl.version><!--jsp jstl依赖-->
+        <jsp.taglibs.version>1.2.5</jsp.taglibs.version><!--jsp taglibs依赖-->
+        <jackson.version>2.13.3</jackson.version><!--jackson-->
+        <mybatis.version>2.2.2</mybatis.version><!--mybatis-->
+        <lombok.version>1.18.10</lombok.version><!--lombok-->
+        <sqlite.version>3.21.0.1</sqlite.version><!--sqlite-->
+        <mysql.version>8.0.13</mysql.version><!--mysql-->
+        <mybatis.generator.version>1.3.6</mybatis.generator.version><!--mybatis自动生成插件-->
+        <war.version>3.2.0</war.version><!--打包为war包依赖-->
+        <log4j.version>2.18.0</log4j.version><!--log4j依赖-->
+        <alipay.sdk.version>3.3.87.ALL</alipay.sdk.version><!--支付宝sdk依赖-->
+        <com.aliyun.core>4.3.2</com.aliyun.core><!--阿里云核心-->
+        <com.aliyun.alidns>2.0.10</com.aliyun.alidns><!--阿里云dns-->
+        <plugins.version>3.3.0</plugins.version><!--maven-assembly-plugin-->
+        <netty.version>4.1.79.Final</netty.version><!--netty-->
+        <!--2022年7月27日 从10.0.20回退 启动报错Failed to start bean 'webServerStartStop'-->
+        <tomcat.jasper.version>9.0.63</tomcat.jasper.version><!--tomcat-embed-jasper-->
+        <guava.version>31.1-jre</guava.version><!--谷歌开源工具库 Guava-->
+        <reedtools.version>1.0.0</reedtools.version><!--reedtools工具集-->
+
+        <spring-boot.version>2.7.0</spring-boot.version><!--springboot依赖版本-->
+        <spring-webmvc.version>5.3.22</spring-webmvc.version><!--Spring Web MVC-->
+
+        <lombok.version>1.18.26</lombok.version>
+
+    </properties>
+    <!--全局子项目引用包，子项目自动继承-->
+    <dependencies>
+
+
+    </dependencies>
+    <!--pom不会自动继承父pom的依赖，除非子pom中声明，声明需要groupId和artifactId，无需给到version-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>top.ireed</groupId>
+                <artifactId>reedtools</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <!--lombok  注意jdk17需要最低1.18.22  见 https://projectlombok.org/changelog -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.22</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--糊涂工具-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.8.6</version>
+            </dependency>
+            <!--junit测试工具类-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13.2</version>
+            </dependency>
+
+            <!--jackson -->
+            <!--定义了底层的streaming API和实现了Json特性 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>2.13.3</version>
+            </dependency>
+            <!-- 实现了数据绑定和对象序列化，它依赖于streaming和annotations的包  -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.13.3</version>
+            </dependency>
+            <!-- 包含了标准的Jackson注解 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>2.13.3</version>
+            </dependency>
+
+            <!--sqlite-->
+            <dependency>
+                <groupId>org.xerial</groupId>
+                <artifactId>sqlite-jdbc</artifactId>
+                <version>3.39.2.0</version>
+            </dependency>
+
+            <!--谷歌开源工具库 Guava-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>31.1-jre</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>3.1</version>
+            </dependency>
+
+            <!--JSP 标准标签库-->
+            <dependency>
+                <groupId>jstl</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <!--JSP 标签库集合-->
+            <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+            <dependency>
+                <groupId>org.apache.taglibs</groupId>
+                <artifactId>taglibs-standard-impl</artifactId>
+                <version>1.2.5</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>7.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>7.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.71</version>
+            </dependency>
+
+            <!--log4j2依赖-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.18.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.18.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+
+            <!-- jsp依赖jar包start -->
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>${jsp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jsp-api</artifactId>
+                <version>${tomcat.jasper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.7.3</version>
+                <exclusions>
+                    <!--排除 spring-boot-starter-web 中的 Tomcat-->
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                    <!--重要 不排除较新的log4j2 将不会把日志打印到文件-->
+                    <!-- 排除spring boot默认日志logback -->
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-tomcat</artifactId>
+                <version>2.7.3</version>
+                <!--打包的时候可以不用包进去，别的设施会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。
+                    相当于compile，但是打包阶段做了exclude操作-->
+                <scope>provided</scope>
+            </dependency>
+            <!--redis-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>2.7.3</version>
+            </dependency>
+            <!--引入Spring Boot内嵌的Tomcat对JSP的解析包-->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-jasper</artifactId>
+                <version>10.0.23</version>
+            </dependency>
+            <!--springboot thymeleaf-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>2.7.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.22</version>
+            </dependency>
+
+            <!-- 引入, 注意springboot需要引入带boot的mybatis-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.5.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-core</artifactId>
+                <version>2.0.9</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito2</artifactId>
+                <version>2.0.2</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--编译设置-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--存储库-->
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <!--插件存储库-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/apache-snapshots/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
