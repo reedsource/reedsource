@@ -20,29 +20,6 @@ import java.util.regex.Pattern;
  */
 public class 正则匹配 {
     /**
-     * PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误
-     * 1	public String getDescription()  获取错误的描述。
-     * 2	public int getIndex()           获取错误的索引。
-     * 3	public String getPattern()      获取错误的正则表达式模式。
-     * 4	public String getMessage()      返回多行字符串，包含语法错误及其索引的描述、错误的正则表达式模式和模式中错误索引的可视化指示。
-     */
-    @Test
-    public void 正则匹配_Test() {
-        //查找字符串中是否包了子串
-        DealLog.log(c0("I am reed.top", ".*.top*"));
-
-        //配置字符串  this is text   正则 this\s+is\s+text
-        DealLog.log(c0("this is text", "this\\s+is\\s+text"));
-
-        //匹配的实例："5", "1.5" 和 "2.21"
-        //^ 定义了以什么开始
-        //\d+ 匹配一个或多个数字
-        //? 设置括号内的选项是可选的
-        //\. 匹配 "."
-        DealLog.log(c0("1.5", "^\\d+(\\.\\d+)?"));
-    }
-
-    /**
      * 正则匹配
      *
      * @param content 文本
@@ -109,6 +86,29 @@ public class 正则匹配 {
         // Pattern 类没有公共构造方法。要创建一个 Pattern 对象，你必须首先调用其公共静态编译方法，它返回一个 Pattern 对象。
         // 该方法接受一个正则表达式作为它的第一个参数
         return Pattern.matches(pattern, content);
+    }
+
+    /**
+     * PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误
+     * 1	public String getDescription()  获取错误的描述。
+     * 2	public int getIndex()           获取错误的索引。
+     * 3	public String getPattern()      获取错误的正则表达式模式。
+     * 4	public String getMessage()      返回多行字符串，包含语法错误及其索引的描述、错误的正则表达式模式和模式中错误索引的可视化指示。
+     */
+    @Test
+    public void 正则匹配_Test() {
+        //查找字符串中是否包了子串
+        DealLog.log(c0("I am ireed.top", ".*.top*"));
+
+        //配置字符串  this is text   正则 this\s+is\s+text
+        DealLog.log(c0("this is text", "this\\s+is\\s+text"));
+
+        //匹配的实例："5", "1.5" 和 "2.21"
+        //^ 定义了以什么开始
+        //\d+ 匹配一个或多个数字
+        //? 设置括号内的选项是可选的
+        //\. 匹配 "."
+        DealLog.log(c0("1.5", "^\\d+(\\.\\d+)?"));
     }
 
 }

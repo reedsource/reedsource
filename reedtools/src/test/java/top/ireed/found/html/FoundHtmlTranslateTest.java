@@ -27,7 +27,7 @@ public class FoundHtmlTranslateTest extends TestCase {
         String backupFile = DealFile.getUserTestCacheFile() + "\\html1\\";
 
         //配置文件位置可以自定义修改
-        Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File(DealFile.getUserTestDataFile() + "\\reed.json")));
+        Map<Object, Object> map = DealJackson.toMap(DealIo.getFileIo(new File(DealFile.getUserTestDataFile() + "\\ireed.json")));
         FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:" + DealFile.getUserTestCacheFile() + "\\FoundDict.db");
         FoundHtmlTranslate foundHtmlTranslate = new FoundHtmlTranslate(file, backupFile, foundDict);
         foundHtmlTranslate.dictHtml();

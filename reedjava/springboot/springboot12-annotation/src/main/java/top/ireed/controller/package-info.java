@@ -1,7 +1,6 @@
 /**
  * 通过package-info.java实现  控制器
  *
- * @author reed
- *
+ * @author ireed
  */
 package top.ireed.controller;
