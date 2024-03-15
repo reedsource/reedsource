@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>top.ireed</groupId>
-        <artifactId>spring</artifactId>
+        <artifactId>reedjava</artifactId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -41,6 +41,7 @@
     </properties>
 
     <dependencies>
+
         <!-- 配置文件自动映射 SpringBoot配置注释处理器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -73,6 +74,10 @@
     <!--Spring Boot 的父级依赖-->
     <dependencyManagement>
         <dependencies>
+            <!--            <dependency>-->
+            <!--                <groupId>top.ireed</groupId>-->
+            <!--                <artifactId>reedtools</artifactId>-->
+            <!--            </dependency>-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

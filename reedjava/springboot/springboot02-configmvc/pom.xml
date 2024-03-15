@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>top.ireed</groupId>
+        <artifactId>springboot</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <!--表示将要编译为jar包-->
+    <packaging>jar</packaging>
+    <artifactId>springboot02-configMvc</artifactId>
+    <version>1.0.0</version>
+    <name>springboot02-configMvc</name>
+    <description>springboot实现配置读取及mvc实现参数传递</description>
+</project>
