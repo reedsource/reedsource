@@ -28,7 +28,7 @@
         <java.version>17</java.version><!--JDK版本-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!--项目编码-->
 
-        <spring-boot.version>2.7.0</spring-boot.version><!--springboot依赖版本-->
+        <spring-boot.version>2.7.3</spring-boot.version><!--springboot依赖版本-->
         <spring-webmvc.version>5.3.22</spring-webmvc.version><!--Spring Web MVC-->
         <plugins.version>3.3.0</plugins.version><!--maven-assembly-plugin-->
 
