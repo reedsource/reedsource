@@ -1,9 +1,6 @@
 package top.ireed.deal;
 
 
-import cn.hutool.json.JSONUtil;
-import top.ireed.general.TopException;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -14,6 +11,8 @@ import java.util.Locale;
  * @author ireed
  */
 public class DealString {
+
+    private static final char[] SS = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
     private DealString() {
     }
@@ -31,7 +30,7 @@ public class DealString {
         //删除首尾空
         return inputString.trim();
     }
-
+//======================================================================================================
 
     /**
      * 转换编码
@@ -51,8 +50,6 @@ public class DealString {
         }
         return returnString;
     }
-//======================================================================================================
-
 
     /**
      * 替换Html非法字符，字符串中的字符替换为转译字符
@@ -88,6 +85,7 @@ public class DealString {
         return returnString.toString();
     }
 
+//======================================================================================================
 
     /**
      * 替换字符串中的单引号为其它字符串
@@ -112,8 +110,6 @@ public class DealString {
         return returnString.toString();
     }
 
-//======================================================================================================
-
     /**
      * 数字金额格式化表达式
      *
@@ -126,6 +122,7 @@ public class DealString {
         return formatc.format(num);
     }
 
+    //======================================================================================================
 
     /**
      * 格式化数值
@@ -137,8 +134,6 @@ public class DealString {
         DecimalFormat decimalFormat = new DecimalFormat("###,###.0000");
         return decimalFormat.format(num);
     }
-
-    //======================================================================================================
 
     /**
      * 倒找字符出现的位置
@@ -157,8 +152,6 @@ public class DealString {
         }
         return -1;
     }
-
-    private static final char[] SS = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
     /**
      * 数值字符串解压

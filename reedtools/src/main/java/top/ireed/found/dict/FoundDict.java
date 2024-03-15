@@ -102,7 +102,7 @@ public class FoundDict {
             }
             // 无缓存 调用翻译api
             TransApi api = new TransApi(appId, securityKey);
-            //注意 这里百度返回的是 {"from":"en","to":"zh","trans_result":[{"src":"reed","dst":"\u82a6\u82c7"}]}
+            //注意 这里百度返回的是 {"from":"en","to":"zh","trans_result":[{"src":"reed","dst":"芦苇"}]}
             //注意 trans_result是数组
             DictReturn dictReturn = DealJackson.toObject(api.getTransResult(query, from, to), DictReturn.class);
             TransResult[] transResults = dictReturn.getTrans_result();
