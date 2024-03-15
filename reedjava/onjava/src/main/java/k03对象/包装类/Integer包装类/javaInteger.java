@@ -27,12 +27,11 @@ import top.ireed.deal.DealLog;
 public class javaInteger {
     @Test
     public void javaInteger_Test() {
-        //创建方法1 java9后移除
-        Integer x = new Integer("20");
+
         //创建方式2 比方式1高效  其他包装类也推荐这种方式
         Integer y = Integer.valueOf("20");
 
-        DealLog.log(x, y);
-        //20 20
+        DealLog.log(y);
+        //20
     }
 }

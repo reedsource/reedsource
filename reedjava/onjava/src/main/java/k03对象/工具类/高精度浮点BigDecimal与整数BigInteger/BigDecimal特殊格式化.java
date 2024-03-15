@@ -64,7 +64,7 @@ public class BigDecimal特殊格式化 {
         if (obj.compareTo(BigDecimal.ZERO) == 0) {
             return "0.00";
         } else if (obj.compareTo(BigDecimal.ZERO) > 0 && obj.compareTo(new BigDecimal(1)) < 0) {
-            return "0" + df.format(obj).toString();
+            return "0" + df.format(obj);
         } else {
             return df.format(obj).toString();
         }

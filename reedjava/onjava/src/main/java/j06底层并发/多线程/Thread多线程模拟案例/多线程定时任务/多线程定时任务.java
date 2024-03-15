@@ -40,13 +40,13 @@ class 定时任务 implements Runnable {
 
     @Override
     public void run() {
-        DealLog.log("----定时任务开始--------" + new Date().toString());
+        DealLog.log("----定时任务开始--------" + new Date());
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        DealLog.log("----定时任务执行3秒, 定时任务结束--------" + new Date().toString());
+        DealLog.log("----定时任务执行3秒, 定时任务结束--------" + new Date());
     }
 }

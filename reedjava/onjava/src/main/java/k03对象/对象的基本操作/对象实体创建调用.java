@@ -35,10 +35,8 @@ public class 对象实体创建调用 {
         //也可以
         DealLog.log("变量值 : ", dog.getDogAge());
 
-        /**
-         * 错误写法
-         * Dog dog = null;
-         * dog.setDogAge(111);
-         * */
+        // 错误写法
+        // Dog dog = null;
+        // dog.setDogAge(111);
     }
 }

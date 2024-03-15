@@ -105,7 +105,6 @@ public class javaMethod {
      *
      * @param n1 参数1
      * @param n2 参数2
-     * @return
      */
     private static void c1(int n1, int n2) {
         DealLog.log("\t进入 swap 桌子方法");
@@ -134,7 +133,7 @@ public class javaMethod {
      *
      * @param num1 参数1
      * @param num2 参数2
-     * @return
+     * @return num
      */
     private static double c1(double num1, double num2) {
         if (num1 > num2) {
@@ -245,7 +244,7 @@ class Cake extends Object {
      * Java 允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，
      * 这个方法叫做 finalize( )，它用来清除回收对象
      *
-     * @throws Throwable
+     * @throws Throwable Throwable
      */
     @Override
     protected void finalize() throws Throwable {

@@ -45,7 +45,7 @@ class Book {
     //垃圾回收时已经回收了
     @SuppressWarnings("deprecation")
     @Override
-    public void finalize() {
+    protected void finalize() {
         if (checkedOut) {
             DealLog.log("错误,已签出");
             //通常情况下,你需要这样做
