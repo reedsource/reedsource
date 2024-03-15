@@ -85,11 +85,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <!--jacoco插件 sonar单元测试-->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            </plugin>
         </plugins>
     </build>
 </project>
