@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class TxtTools {
     public static void main(String[] args) {
-        String file = "D:\\reed\\Downloads\\超级异性吸引术.md";
-        String fileName = "D:\\reed\\Downloads\\超级异性吸引术-1.md";
+        String file = "D:\\ireed\\Downloads\\超级异性吸引术.md";
+        String fileName = "D:\\ireed\\Downloads\\超级异性吸引术-1.md";
         try {
             ArrayList<String> lines = GetTxtReader(file);
             ArrayList<String> result = rule(lines);

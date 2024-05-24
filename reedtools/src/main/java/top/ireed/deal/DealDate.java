@@ -18,7 +18,7 @@ import static top.ireed.general.TopConstant.*;
  * 功能简述:
  * 〈时间处理工具类〉
  *
- * @author ireed
+ * @author reedsource
  * @version 1.0.0
  * date 2018/8/17 12:01
  * reedsource@189.cn

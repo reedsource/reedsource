@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * 功能简述:
  * 〈百度词典返回实体类〉
- * {"from":"en","to":"zh","trans_result":[{"src":"Height 600m","dst":"\u9ad8600\u7c73"}]}
+ * {"from":"en","to":"zh","trans_result":[{"src":"Height 600m","dst":"高600米"}]}
  *
  * @author reedsource
  * @version 1.0.0

@@ -28,8 +28,8 @@ public class FoundDictTest extends TestCase {
 
         FoundDict foundDict = new FoundDict(map.get("found_dict_baidu_FoundDictId").toString(), map.get("found_dict_baidu_FoundDictKey").toString(), "jdbc:sqLite:" + DealFile.getUserTestCacheFile() + "\\data\\FoundDict.db");
         DealLog.log(foundDict.dict("reed"));
-        //Assert.assertEquals("芦苇", foundDict.dict("reed"));
-        //Assert.assertEquals("芦苇", foundDict.dict("reed", "en", "zh"));
+        //Assert.assertEquals("芦苇", foundDict.dict("ireed"));
+        //Assert.assertEquals("芦苇", foundDict.dict("ireed", "en", "zh"));
     }
 
 }

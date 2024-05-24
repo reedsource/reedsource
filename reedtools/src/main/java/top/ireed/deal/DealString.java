@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * 字符串处理工具类
  *
- * @author ireed
+ * @author reedsource
  */
 public class DealString {
 

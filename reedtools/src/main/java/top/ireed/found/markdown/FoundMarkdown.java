@@ -275,9 +275,7 @@ public class FoundMarkdown {
             , File toFile
     ) throws TopException {
         //基础处理 将相对路径专为绝对路径
-        for (int i = 0; i < shieldingPathList.size(); i++) {
-            shieldingPathList.set(i, new File(file, shieldingPathList.get(i)).getPath());
-        }
+        shieldingPathList.replaceAll(child -> new File(file, child).getPath());
 
         //如果 文件夹 子文件/文件夹 单独 解析
         if (isSon) {

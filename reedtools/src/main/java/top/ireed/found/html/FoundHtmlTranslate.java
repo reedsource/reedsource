@@ -172,7 +172,7 @@ public class FoundHtmlTranslate {
             //单个字母
             return !m.matches("[^a-zA-Z]+");
             //===================内容判断=================
-        } else if ("".equals(m)) {
+        } else if (m.isEmpty()) {
             return false;
             //是否为数值
         } else if (m.matches("\\d+")) {
