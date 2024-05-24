@@ -21,24 +21,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("basics")
 public class JspBasicsController {
 
-	/**
-	 * jsp 基本语法原理
-	 *
-	 * @return vita
-	 */
-	@GetMapping("vita")
-	public String vita() {
-		return "basics/basics/vita";
-	}
+    /**
+     * jsp 基本语法原理
+     *
+     * @return vita
+     */
+    @GetMapping("vita")
+    public String vita() {
+        return "basics/basics/vita";
+    }
 
-	/**
-	 * jsp 基本语法原理
-	 *
-	 * @return vita
-	 */
-	@GetMapping("jspAutoFlush")
-	public String jspAutoFlush() {
-		return "basics/basics/jspAutoFlush";
-	}
+    /**
+     * jsp 基本语法原理
+     *
+     * @return vita
+     */
+    @GetMapping("jspAutoFlush")
+    public String jspAutoFlush() {
+        return "basics/basics/jspAutoFlush";
+    }
 
 }

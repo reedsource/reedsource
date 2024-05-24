@@ -20,10 +20,7 @@ public class IntChar {
         System.out.println(s);
 
 
-
-
     }
-
 
 
 }

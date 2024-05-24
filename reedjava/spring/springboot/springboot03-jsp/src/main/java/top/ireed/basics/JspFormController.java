@@ -21,13 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("basics/from")
 public class JspFormController {
 
-	/**
-	 * 查看简单表单提交等
-	 *
-	 * @return form
-	 */
-	@GetMapping("form")
-	public String getForm() {
-		return "basics/form/form";
-	}
+    /**
+     * 查看简单表单提交等
+     *
+     * @return form
+     */
+    @GetMapping("form")
+    public String getForm() {
+        return "basics/form/form";
+    }
 }

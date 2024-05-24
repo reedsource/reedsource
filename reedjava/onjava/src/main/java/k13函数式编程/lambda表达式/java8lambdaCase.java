@@ -65,6 +65,9 @@ public class java8lambdaCase {
 
     }
 
+    private static int operate(int a, int b, MathOperation mathOperation) {
+        return mathOperation.operation(a, b);
+    }
 
     interface GreetingService {
         void sayMessage(String message);
@@ -72,9 +75,5 @@ public class java8lambdaCase {
 
     interface MathOperation {
         int operation(int a, int b);
-    }
-
-    private static int operate(int a, int b, MathOperation mathOperation) {
-        return mathOperation.operation(a, b);
     }
 }

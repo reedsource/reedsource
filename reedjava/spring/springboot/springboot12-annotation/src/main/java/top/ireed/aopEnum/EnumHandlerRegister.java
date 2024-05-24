@@ -16,6 +16,10 @@ public class EnumHandlerRegister extends ApplicationObjectSupport {
 
     private final static Map<TypeEnum, AbstractEnumHandler> ENUM_HANDLERS_MAP = new HashMap<>();
 
+    public static AbstractEnumHandler getTaskHandler(TypeEnum type) {
+        return ENUM_HANDLERS_MAP.get(type);
+    }
+
     @Override
     protected void initApplicationContext(ApplicationContext context) throws BeansException {
         super.initApplicationContext(context);
@@ -32,9 +36,5 @@ public class EnumHandlerRegister extends ApplicationObjectSupport {
                 ENUM_HANDLERS_MAP.put(TypeEnumHandler.value(), (AbstractEnumHandler) taskBeanMap.get(beanName));
             }
         });
-    }
-
-    public static AbstractEnumHandler getTaskHandler(TypeEnum type) {
-        return ENUM_HANDLERS_MAP.get(type);
     }
 }

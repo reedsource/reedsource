@@ -14,55 +14,55 @@ package top.ireed.found.automation.entity;
  */
 public class Variable {
 
-	/**
-	 * 变量名称
-	 */
-	private String key;
-	/**
-	 * 变量值
-	 */
-	private Object value;
-	/**
-	 * 变量描述
-	 */
-	private String msg;
+    /**
+     * 变量名称
+     */
+    private String key;
+    /**
+     * 变量值
+     */
+    private Object value;
+    /**
+     * 变量描述
+     */
+    private String msg;
 
-	public Variable() {
-	}
+    public Variable() {
+    }
 
-	public Variable(String key, Object value, String msg) {
-		this.key = key;
-		this.value = value;
-		this.msg = msg;
-	}
+    public Variable(String key, Object value, String msg) {
+        this.key = key;
+        this.value = value;
+        this.msg = msg;
+    }
 
 
-	public String getKey() {
-		return key;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	public void setKey(String key) {
-		this.key = key;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	public Object getValue() {
-		return value;
-	}
+    public Object getValue() {
+        return value;
+    }
 
-	public void setValue(Object value) {
-		this.value = value;
-	}
+    public void setValue(Object value) {
+        this.value = value;
+    }
 
-	public String getMsg() {
-		return msg;
-	}
+    public String getMsg() {
+        return msg;
+    }
 
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-	@Override
-	public String toString() {
-		return "\t变量名称 : " + key + "\r\n" + "\t变量描述 : " + msg + "\r\n" + "\t变量值   : " + value + "\r\n";
-	}
+    @Override
+    public String toString() {
+        return "\t变量名称 : " + key + "\r\n" + "\t变量描述 : " + msg + "\r\n" + "\t变量值   : " + value + "\r\n";
+    }
 }

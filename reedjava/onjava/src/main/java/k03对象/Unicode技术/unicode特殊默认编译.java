@@ -19,6 +19,10 @@ import top.ireed.deal.DealLog;
  * reedsource@189.cn
  */
 public class unicode特殊默认编译 {
+    public static String c(String m) {
+        return "我是异常的目标输入";
+    }
+
     /**
      * \u000d Unicode换行符
      * jvm编译器会编译Unicode字符
@@ -33,9 +37,5 @@ public class unicode特殊默认编译 {
         //
         a = c(a);
         DealLog.log(a);
-    }
-
-    public static String c(String m) {
-        return "我是异常的目标输入";
     }
 }

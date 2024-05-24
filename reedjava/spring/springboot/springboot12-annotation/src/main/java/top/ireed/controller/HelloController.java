@@ -40,12 +40,12 @@ public class HelloController {
         DealLog.log(abstractHandler.execute(type));
         DealLog.log("变更type为1");
 
-        type="type1";
+        type = "type1";
         abstractHandler = TaskHandlerRegister.getTaskHandler(type);
         DealLog.log(abstractHandler.execute(type));
         DealLog.log("变更type为2");
 
-        type="type2";
+        type = "type2";
         abstractHandler = TaskHandlerRegister.getTaskHandler(type);
         DealLog.log(abstractHandler.execute(type));
 

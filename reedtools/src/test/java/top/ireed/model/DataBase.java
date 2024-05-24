@@ -14,13 +14,13 @@ package top.ireed.model;
  * reedsource@189.cn
  */
 public class DataBase {
-	private String suS;
+    private String suS;
 
-	public String getSuS() {
-		return suS;
-	}
+    public String getSuS() {
+        return suS;
+    }
 
-	public void setSuS(String suS) {
-		this.suS = suS;
-	}
+    public void setSuS(String suS) {
+        this.suS = suS;
+    }
 }

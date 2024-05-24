@@ -21,9 +21,9 @@ import javax.servlet.http.HttpSession;
  */
 @RestController
 public class SessionController {
-	@GetMapping("/boot/session/{key}/{value}")
-	public String test(@PathVariable String key, @PathVariable String value, HttpSession session) {
-		session.setAttribute(key, value);
-		return "设置session数据成功  key=" + key + "  value= " + session.getAttribute(key);
-	}
+    @GetMapping("/boot/session/{key}/{value}")
+    public String test(@PathVariable String key, @PathVariable String value, HttpSession session) {
+        session.setAttribute(key, value);
+        return "设置session数据成功  key=" + key + "  value= " + session.getAttribute(key);
+    }
 }

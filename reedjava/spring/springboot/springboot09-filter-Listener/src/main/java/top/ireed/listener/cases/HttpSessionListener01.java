@@ -19,19 +19,19 @@ import javax.servlet.http.HttpSessionListener;
  * reedsource@189.cn
  */
 public class HttpSessionListener01 implements HttpSessionListener {
-	static int onlineNum = 0;
+    static int onlineNum = 0;
 
-	@Override
-	public synchronized void sessionCreated(HttpSessionEvent se) {
-		onlineNum++;
-	}
+    public static int getOnlineNum() {
+        return onlineNum;
+    }
 
-	@Override
-	public synchronized void sessionDestroyed(HttpSessionEvent se) {
-		onlineNum--;
-	}
+    @Override
+    public synchronized void sessionCreated(HttpSessionEvent se) {
+        onlineNum++;
+    }
 
-	public static int getOnlineNum() {
-		return onlineNum;
-	}
+    @Override
+    public synchronized void sessionDestroyed(HttpSessionEvent se) {
+        onlineNum--;
+    }
 }

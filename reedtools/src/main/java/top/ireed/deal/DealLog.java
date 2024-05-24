@@ -21,13 +21,13 @@ import java.util.Map;
  * reedsource@189.cn
  */
 public class DealLog {
-    private DealLog() {
-    }
-
     /**
      * 替代打印到控制台的日志,和打印到控制台效果一致
      */
     private static final Logger logger = LogManager.getLogger("SYSTEM_OUT");
+
+    private DealLog() {
+    }
 
     /**
      * 打印

@@ -17,50 +17,50 @@ import java.util.Arrays;
  * reedsource@189.cn
  */
 public class DictReturn {
-	/**
-	 * 源文件格式
-	 */
-	private String from;
-	/**
-	 * 目标文件格式
-	 */
-	private String to;
-	/**
-	 * 翻译文件
-	 */
-	private TransResult[] trans_result;
+    /**
+     * 源文件格式
+     */
+    private String from;
+    /**
+     * 目标文件格式
+     */
+    private String to;
+    /**
+     * 翻译文件
+     */
+    private TransResult[] trans_result;
 
-	public String getFrom() {
-		return from;
-	}
+    public String getFrom() {
+        return from;
+    }
 
-	public void setFrom(String from) {
-		this.from = from;
-	}
+    public void setFrom(String from) {
+        this.from = from;
+    }
 
-	public String getTo() {
-		return to;
-	}
+    public String getTo() {
+        return to;
+    }
 
-	public void setTo(String to) {
-		this.to = to;
-	}
+    public void setTo(String to) {
+        this.to = to;
+    }
 
-	public TransResult[] getTrans_result() {
-		return trans_result;
-	}
+    public TransResult[] getTrans_result() {
+        return trans_result;
+    }
 
-	public void setTrans_result(TransResult[] trans_result) {
-		this.trans_result = trans_result;
-	}
+    public void setTrans_result(TransResult[] trans_result) {
+        this.trans_result = trans_result;
+    }
 
-	@Override
-	public String toString() {
-		return "DictReturn{" +
-				"from='" + from + '\'' +
-				", to='" + to + '\'' +
-				", trans_result=" + Arrays.toString(trans_result) +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "DictReturn{" +
+                "from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", trans_result=" + Arrays.toString(trans_result) +
+                '}';
+    }
 }
 

@@ -21,11 +21,6 @@ import java.util.Map;
  * reedsource@189.cn
  */
 public class 注解异常抑制 {
-    @Test
-    public void 注解异常抑制_Test() throws TopException {
-        DealLog.log(toMap(""));
-    }
-
     /**
      * @ SuppressWarnings该批注的作用是给编译器一条指令，告诉它对被批注的代码元素内部的某些警告保持静默
      * @ SuppressWarnings(“unchecked”) 告诉编译器忽略 unchecked 警告信息，如使用List，ArrayList等未进行参数化产生的警告信息
@@ -40,6 +35,11 @@ public class 注解异常抑制 {
         } catch (JsonProcessingException e) {
             throw new TopException("json转Map异常", e);
         }
+    }
+
+    @Test
+    public void 注解异常抑制_Test() throws TopException {
+        DealLog.log(toMap(""));
     }
 
 }

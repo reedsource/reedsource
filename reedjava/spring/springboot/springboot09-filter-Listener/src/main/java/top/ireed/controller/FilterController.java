@@ -22,22 +22,22 @@ import top.ireed.deal.DealLog;
 @RestController
 public class FilterController {
 
-	@GetMapping("/boot/filter")
-	public String bootFilter() {
-		DealLog.log("执行了过滤器filter,本请求将被拦截,会进入过滤器");
-		return "执行了过滤器filter,本请求将被拦截,会进入过滤器";
-	}
+    @GetMapping("/boot/filter")
+    public String bootFilter() {
+        DealLog.log("执行了过滤器filter,本请求将被拦截,会进入过滤器");
+        return "执行了过滤器filter,本请求将被拦截,会进入过滤器";
+    }
 
-	@GetMapping("/filter")
-	public String filter() {
-		DealLog.log("执行了过滤器filter,本请求不被拦截");
-		return "执行了过滤器filter,本请求不被拦截,不会进入过滤器";
-	}
+    @GetMapping("/filter")
+    public String filter() {
+        DealLog.log("执行了过滤器filter,本请求不被拦截");
+        return "执行了过滤器filter,本请求不被拦截,不会进入过滤器";
+    }
 
 
-	@GetMapping("/boot2/filter")
-	public String boot2Filter() {
-		DealLog.log("执行了注解方法2过滤器filter,本请求将被拦截,会进入过滤器");
-		return "执行了注解方法2过滤器filter,本请求将被拦截,会进入过滤器";
-	}
+    @GetMapping("/boot2/filter")
+    public String boot2Filter() {
+        DealLog.log("执行了注解方法2过滤器filter,本请求将被拦截,会进入过滤器");
+        return "执行了注解方法2过滤器filter,本请求将被拦截,会进入过滤器";
+    }
 }

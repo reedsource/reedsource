@@ -21,17 +21,17 @@ import top.ireed.deal.DealLog;
 @Component("InitService")
 public class InitService {
 
-	/**
-	 * 创建日志记录对象  打印时的名称
-	 */
-	private static Logger logger = LogManager.getLogger("top_xx");
+    /**
+     * 创建日志记录对象  打印时的名称
+     */
+    private static Logger logger = LogManager.getLogger("top_xx");
 
-	/**
-	 * 方法1.1创建类
-	 */
-	public void show(String msg) {
-		logger.warn("warn级别日志信息 : warn日志");
-		DealLog.log("这是InitService中的show" + msg);
-		logger.error("error级别日志信息 : error日志");
-	}
+    /**
+     * 方法1.1创建类
+     */
+    public void show(String msg) {
+        logger.warn("warn级别日志信息 : warn日志");
+        DealLog.log("这是InitService中的show" + msg);
+        logger.error("error级别日志信息 : error日志");
+    }
 }

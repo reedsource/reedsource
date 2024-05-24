@@ -54,7 +54,7 @@ class MyPrintM {
      */
     static final Object OBJ = new Object();
 
-    void m1() {
+    static void m2() {
         //使用常量作为锁对象
         synchronized (OBJ) {
             for (int i = 1; i <= INT100; i++) {
@@ -63,7 +63,7 @@ class MyPrintM {
         }
     }
 
-    static void m2() {
+    void m1() {
         //使用常量作为锁对象
         synchronized (OBJ) {
             for (int i = 1; i <= INT100; i++) {

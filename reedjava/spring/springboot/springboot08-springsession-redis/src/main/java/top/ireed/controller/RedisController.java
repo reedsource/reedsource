@@ -23,25 +23,25 @@ import top.ireed.utils.InjectRedis;
 @RestController
 public class RedisController {
 
-	@Autowired
-	private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
-	@Autowired
-	private InjectRedis injectRedis;
+    @Autowired
+    private InjectRedis injectRedis;
 
-	@GetMapping("/boot/redis/{key}/{value}")
-	public String setRedis(@PathVariable String key, @PathVariable String value) {
-		stringRedisTemplate.opsForValue().set(key, value);
-		return "设置redis数据成功  key=" + key + "  value= " + value;
-	}
+    @GetMapping("/boot/redis/{key}/{value}")
+    public String setRedis(@PathVariable String key, @PathVariable String value) {
+        stringRedisTemplate.opsForValue().set(key, value);
+        return "设置redis数据成功  key=" + key + "  value= " + value;
+    }
 
-	@GetMapping("/boot/redis/{key}")
-	public String getRedis(@PathVariable String key) {
-		return "取值redis数据成功  key=" + key + "  value= " + stringRedisTemplate.opsForValue().get(key);
-	}
+    @GetMapping("/boot/redis/{key}")
+    public String getRedis(@PathVariable String key) {
+        return "取值redis数据成功  key=" + key + "  value= " + stringRedisTemplate.opsForValue().get(key);
+    }
 
-	@GetMapping("/boot/redisId")
-	public String getRedisId() {
-		return "基于redis的永久自增长id " + injectRedis.getRedisId();
-	}
+    @GetMapping("/boot/redisId")
+    public String getRedisId() {
+        return "基于redis的永久自增长id " + injectRedis.getRedisId();
+    }
 }

@@ -15,10 +15,10 @@ package top.ireed.netty01basics;
  */
 public class TestClient {
 
-	public static void main(String[] args) {
-		String host = "127.0.0.1";
-		int port = 16807;
-		new EchoClient(host, port).run();
-	}
+    public static void main(String[] args) {
+        String host = "127.0.0.1";
+        int port = 16807;
+        new EchoClient(host, port).run();
+    }
 }
 

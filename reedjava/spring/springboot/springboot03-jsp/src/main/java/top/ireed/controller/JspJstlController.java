@@ -24,19 +24,19 @@ import java.util.List;
 @Controller
 public class JspJstlController {
 
-	@GetMapping("/jstl")
-	public String jstl(HttpServletRequest request) {
-		DealLog.log("进入jstl学习");
-		List<String> sList = new ArrayList<>();
-		sList.add("aaa");
-		sList.add("bbb");
-		sList.add("ccc");
-		sList.add("ddd");
-		sList.add("eee");
-		sList.add("fff");
-		request.setAttribute("sList", sList);
-		return "jstl/jstl00theory";
-	}
+    @GetMapping("/jstl")
+    public String jstl(HttpServletRequest request) {
+        DealLog.log("进入jstl学习");
+        List<String> sList = new ArrayList<>();
+        sList.add("aaa");
+        sList.add("bbb");
+        sList.add("ccc");
+        sList.add("ddd");
+        sList.add("eee");
+        sList.add("fff");
+        request.setAttribute("sList", sList);
+        return "jstl/jstl00theory";
+    }
 
 
 }

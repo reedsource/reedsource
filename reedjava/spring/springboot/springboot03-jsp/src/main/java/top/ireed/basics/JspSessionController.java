@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("basics/session")
 public class JspSessionController {
 
-	/**
-	 * 查看简单session
-	 *
-	 * @return 界面
-	 */
-	@GetMapping("/sessionForm")
-	public String sessionForm() {
-		return "basics/session/sessionForm";
-	}
+    /**
+     * 查看简单session
+     *
+     * @return 界面
+     */
+    @GetMapping("/sessionForm")
+    public String sessionForm() {
+        return "basics/session/sessionForm";
+    }
 
 }

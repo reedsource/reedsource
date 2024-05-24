@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import top.ireed.deal.DealLog;
 import top.ireed.model.User;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * 功能简述:
  * 〈config控制器〉

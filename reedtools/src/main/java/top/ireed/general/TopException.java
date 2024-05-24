@@ -17,12 +17,12 @@ import top.ireed.deal.DealString;
  */
 public class TopException extends Exception {
 
-	/**
-	 * 自定义抛出异常
-	 *
-	 * @param o 异常信息组 打印结果多个异常将空格划分
-	 */
-	public TopException(Object... o) {
-		super(DealString.objectToString(o));
-	}
+    /**
+     * 自定义抛出异常
+     *
+     * @param o 异常信息组 打印结果多个异常将空格划分
+     */
+    public TopException(Object... o) {
+        super(DealString.objectToString(o));
+    }
 }

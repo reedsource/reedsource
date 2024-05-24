@@ -13,17 +13,17 @@ import java.io.IOException;
 @SpringBootApplication
 public class Springboot03JspApplication {
 
-	public static void main(String[] args) throws IOException {
-		DealLog.log("springboot03-jsp学习项目启动");
-		DealLog.log("EL表达式教程 http://localhost/EL01");
-		DealLog.log("AJAX表达式教程 http://localhost/ajax");
-		DealLog.log("jstl表达式教程 http://localhost/jstl");
-		DealLog.log("jsp教程 http://localhost/jsp");
-		DealLog.log("JSP学习案例 http://localhost/index");
+    public static void main(String[] args) throws IOException {
+        DealLog.log("springboot03-jsp学习项目启动");
+        DealLog.log("EL表达式教程 http://localhost/EL01");
+        DealLog.log("AJAX表达式教程 http://localhost/ajax");
+        DealLog.log("jstl表达式教程 http://localhost/jstl");
+        DealLog.log("jsp教程 http://localhost/jsp");
+        DealLog.log("JSP学习案例 http://localhost/index");
 
-		SpringApplication.run(Springboot03JspApplication.class, args);
-		//启动调用浏览器打开界面
-		//必须在启动类之下
-		Runtime.getRuntime().exec("cmd   /c   start   http://localhost/index");
-	}
+        SpringApplication.run(Springboot03JspApplication.class, args);
+        //启动调用浏览器打开界面
+        //必须在启动类之下
+        Runtime.getRuntime().exec("cmd   /c   start   http://localhost/index");
+    }
 }

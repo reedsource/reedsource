@@ -16,130 +16,129 @@ import java.security.cert.X509Certificate;
 import java.util.Map;
 
 class HttpGet {
-	protected static final int SOCKET_TIMEOUT = 10000; // 10S
-	protected static final String GET = "GET";
+    protected static final int SOCKET_TIMEOUT = 10000; // 10S
+    protected static final String GET = "GET";
+    private static final TrustManager myX509TrustManager = new X509TrustManager() {
 
-	public static String get(String host, Map<String, Object> params) {
-		try {
-			// 设置SSLContext
-			SSLContext sslcontext = SSLContext.getInstance("TLS");
-			sslcontext.init(null, new TrustManager[]{myX509TrustManager}, null);
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {
+            return null;
+        }
 
-			String sendUrl = getUrlWithQueryString(host, params);
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) {
+        }
 
-			URL uri = new URL(sendUrl); // 创建URL对象
-			HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
-			if (conn instanceof HttpsURLConnection) {
-				((HttpsURLConnection) conn).setSSLSocketFactory(sslcontext.getSocketFactory());
-			}
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) {
+        }
+    };
 
-			conn.setConnectTimeout(SOCKET_TIMEOUT); // 设置相应超时
-			conn.setRequestMethod(GET);
-			int statusCode = conn.getResponseCode();
-			if (statusCode != HttpURLConnection.HTTP_OK) {
-				DealLog.log("Http错误码：", statusCode);
-			}
+    public static String get(String host, Map<String, Object> params) {
+        try {
+            // 设置SSLContext
+            SSLContext sslcontext = SSLContext.getInstance("TLS");
+            sslcontext.init(null, new TrustManager[]{myX509TrustManager}, null);
 
-			// 读取服务器的数据
-			InputStream is = conn.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			StringBuilder builder = new StringBuilder();
-			String line;
-			while ((line = br.readLine()) != null) {
-				builder.append(line);
-			}
+            String sendUrl = getUrlWithQueryString(host, params);
 
-			String text = builder.toString();
+            URL uri = new URL(sendUrl); // 创建URL对象
+            HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
+            if (conn instanceof HttpsURLConnection) {
+                ((HttpsURLConnection) conn).setSSLSocketFactory(sslcontext.getSocketFactory());
+            }
 
-			close(br); // 关闭数据流
-			close(is); // 关闭数据流
-			conn.disconnect(); // 断开连接
+            conn.setConnectTimeout(SOCKET_TIMEOUT); // 设置相应超时
+            conn.setRequestMethod(GET);
+            int statusCode = conn.getResponseCode();
+            if (statusCode != HttpURLConnection.HTTP_OK) {
+                DealLog.log("Http错误码：", statusCode);
+            }
 
-			return text;
-		} catch (IOException | KeyManagementException | NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+            // 读取服务器的数据
+            InputStream is = conn.getInputStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            StringBuilder builder = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                builder.append(line);
+            }
 
-		return null;
-	}
+            String text = builder.toString();
 
-	public static String getUrlWithQueryString(String url, Map<String, Object> params) {
-		if (params == null) {
-			return url;
-		}
+            close(br); // 关闭数据流
+            close(is); // 关闭数据流
+            conn.disconnect(); // 断开连接
 
-		StringBuilder builder = new StringBuilder(url);
-		if (url.contains("?")) {
-			builder.append("&");
-		} else {
-			builder.append("?");
-		}
+            return text;
+        } catch (IOException | KeyManagementException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
-		int i = 0;
-		for (String key : params.keySet()) {
-			Object value = params.get(key);
-			if (value == null) { // 过滤空的key
-				continue;
-			}
+        return null;
+    }
 
-			if (i != 0) {
-				builder.append('&');
-			}
+    public static String getUrlWithQueryString(String url, Map<String, Object> params) {
+        if (params == null) {
+            return url;
+        }
 
-			builder.append(key);
-			builder.append('=');
-			builder.append(encode(value));
+        StringBuilder builder = new StringBuilder(url);
+        if (url.contains("?")) {
+            builder.append("&");
+        } else {
+            builder.append("?");
+        }
 
-			i++;
-		}
+        int i = 0;
+        for (String key : params.keySet()) {
+            Object value = params.get(key);
+            if (value == null) { // 过滤空的key
+                continue;
+            }
 
-		return builder.toString();
-	}
+            if (i != 0) {
+                builder.append('&');
+            }
 
-	protected static void close(Closeable closeable) {
-		if (closeable != null) {
-			try {
-				closeable.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+            builder.append(key);
+            builder.append('=');
+            builder.append(encode(value));
 
-	/**
-	 * 对输入的字符串进行URL编码, 即转换为%20这种形式
-	 *
-	 * @param input 原文
-	 * @return URL编码. 如果编码失败, 则返回原文
-	 */
-	public static Object encode(Object input) {
-		if (input == null) {
-			return "";
-		}
+            i++;
+        }
 
-		try {
-			return URLEncoder.encode(input.toString(), "utf-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+        return builder.toString();
+    }
 
-		return input;
-	}
+    protected static void close(Closeable closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	private static final TrustManager myX509TrustManager = new X509TrustManager() {
+    /**
+     * 对输入的字符串进行URL编码, 即转换为%20这种形式
+     *
+     * @param input 原文
+     * @return URL编码. 如果编码失败, 则返回原文
+     */
+    public static Object encode(Object input) {
+        if (input == null) {
+            return "";
+        }
 
-		@Override
-		public X509Certificate[] getAcceptedIssuers() {
-			return null;
-		}
+        try {
+            return URLEncoder.encode(input.toString(), "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
-		@Override
-		public void checkServerTrusted(X509Certificate[] chain, String authType) {
-		}
-
-		@Override
-		public void checkClientTrusted(X509Certificate[] chain, String authType) {
-		}
-	};
+        return input;
+    }
 
 }

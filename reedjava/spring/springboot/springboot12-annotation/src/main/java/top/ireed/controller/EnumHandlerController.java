@@ -41,12 +41,12 @@ public class EnumHandlerController {
         DealLog.log(abstractEnumHandler.execute(type));
 
         DealLog.log("变更type为1");
-        type="type01";
+        type = "type01";
         AbstractEnumHandler abstractEnumHandler1 = EnumHandlerRegister.getTaskHandler(TypeEnum.getNameEnum(type));
         DealLog.log(abstractEnumHandler1.execute(type));
 
         DealLog.log("变更type为2");
-        type="type02";
+        type = "type02";
         AbstractEnumHandler abstractEnumHandler2 = EnumHandlerRegister.getTaskHandler(TypeEnum.getNameEnum(type));
         DealLog.log(abstractEnumHandler2.execute(type));
 

@@ -27,52 +27,52 @@ import java.util.Map;
  */
 @Controller
 public class JspElController {
-	@GetMapping("/EL01")
-	public String el01(HttpServletRequest request) {
-		DealLog.log("e0010el代码初识及取值");
-		request.setAttribute("str1", "a111");
+    @GetMapping("/EL01")
+    public String el01(HttpServletRequest request) {
+        DealLog.log("e0010el代码初识及取值");
+        request.setAttribute("str1", "a111");
 
-		DealLog.log("el表达式接收不同类型数据测试");
+        DealLog.log("el表达式接收不同类型数据测试");
 
-		String[] strArr = {"aaa", "bbb", "ccc"};
-		request.setAttribute("strArr", strArr);
+        String[] strArr = {"aaa", "bbb", "ccc"};
+        request.setAttribute("strArr", strArr);
 
-		List<String> sList = new ArrayList<>();
-		sList.add("abc");
-		sList.add("bcd");
-		sList.add("cde");
-		request.setAttribute("sList", sList);
+        List<String> sList = new ArrayList<>();
+        sList.add("abc");
+        sList.add("bcd");
+        sList.add("cde");
+        request.setAttribute("sList", sList);
 
-		Map<String, String> map = new HashMap<>(16);
-		map.put("str1", "aaa");
-		map.put("str2", "bbb");
-		request.setAttribute("myMap", map);
+        Map<String, String> map = new HashMap<>(16);
+        map.put("str1", "aaa");
+        map.put("str2", "bbb");
+        request.setAttribute("myMap", map);
 
 
-		Student s = new Student("A0001", "zs", 23);
-		request.setAttribute("s", s);
+        Student s = new Student("A0001", "zs", 23);
+        request.setAttribute("s", s);
 
-		DealLog.log("servlet3");
+        DealLog.log("servlet3");
 
-		request.setAttribute("a", "50");
-		request.setAttribute("b", 20);
+        request.setAttribute("a", "50");
+        request.setAttribute("b", 20);
 
-		//EL获取拼接的el表达式的值
-		request.setAttribute("ELis", "我获取的是 EL 拼接 me(is) 之后的 ELis 的 EL表达式的值");
-		request.setAttribute("me", "is");
+        //EL获取拼接的el表达式的值
+        request.setAttribute("ELis", "我获取的是 EL 拼接 me(is) 之后的 ELis 的 EL表达式的值");
+        request.setAttribute("me", "is");
 
-		return "el/el01";
-	}
+        return "el/el01";
+    }
 
-	/**
-	 * 返回一个字符串到界面
-	 *
-	 * @return 字符串
-	 */
-	@GetMapping("/EL02")
-	public @ResponseBody
-	String el02() {
-		return "简单字符串回复 <br><a href=\"/EL01\"> el表达式主界面 </a>";
-	}
+    /**
+     * 返回一个字符串到界面
+     *
+     * @return 字符串
+     */
+    @GetMapping("/EL02")
+    public @ResponseBody
+    String el02() {
+        return "简单字符串回复 <br><a href=\"/EL01\"> el表达式主界面 </a>";
+    }
 
 }

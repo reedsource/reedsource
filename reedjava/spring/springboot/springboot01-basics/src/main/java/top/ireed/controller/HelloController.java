@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class HelloController {
-	/**
-	 * @return 处理请求地址映射的注解, 表示类中的所有响应请求的方法都是以该地址作为父路径
-	 * 将 HTTP 请求正文插入方法中,使浏览器界面可以识别
-	 */
-	@GetMapping("/boot/hello")
-	public @ResponseBody
-	String hello() {
-		return "Hello SpringBoot!";
-	}
+    /**
+     * @return 处理请求地址映射的注解, 表示类中的所有响应请求的方法都是以该地址作为父路径
+     * 将 HTTP 请求正文插入方法中,使浏览器界面可以识别
+     */
+    @GetMapping("/boot/hello")
+    public @ResponseBody
+    String hello() {
+        return "Hello SpringBoot!";
+    }
 }

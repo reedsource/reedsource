@@ -31,17 +31,15 @@ class Window {
 
 class House {
     Window w1 = new Window("在构造器前");
+    Window w2 = new Window("构造器调用2");
+    Window w3 = new Window("在构造器尾"); // At end
 
     House() {
         DealLog.log("构造器进入");
         w3 = new Window("构造器调用1");
     }
 
-    Window w2 = new Window("构造器调用2");
-
     void f() {
         DealLog.log("f()");
     }
-
-    Window w3 = new Window("在构造器尾"); // At end
 }

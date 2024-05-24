@@ -6,17 +6,10 @@ package main.java.k03对象.包;
 
 import top.ireed.deal.DealLog;
 
-/**
- * 功能简述:
- * 〈包〉
- *
- * @author reedsource
- * @version 1.0.0
- * date 2022/5/11 22:48
- * reedsource@189.cn
- */
-public class javaPackage {
+interface Animal {
+    public void eat();
 
+    public void travel();
 }
 
 
@@ -77,13 +70,26 @@ package animals;
 
 */
 
-interface Animal {
-    public void eat();
+/**
+ * 功能简述:
+ * 〈包〉
+ *
+ * @author reedsource
+ * @version 1.0.0
+ * date 2022/5/11 22:48
+ * reedsource@189.cn
+ */
+public class javaPackage {
 
-    public void travel();
 }
 
 class MammalInt implements Animal {
+
+    public static void main(String args[]) {
+        MammalInt m = new MammalInt();
+        m.eat();
+        m.travel();
+    }
 
     @Override
     public void eat() {
@@ -97,12 +103,6 @@ class MammalInt implements Animal {
 
     public int noOfLegs() {
         return 0;
-    }
-
-    public static void main(String args[]) {
-        MammalInt m = new MammalInt();
-        m.eat();
-        m.travel();
     }
 
     //Mammal eats

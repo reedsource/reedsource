@@ -24,14 +24,6 @@ public class User {
      */
     private String position;
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public Optional<String> getPosition() {
-        return Optional.ofNullable(position);
-    }
-
     public User(String email) {
         this.email = email;
     }
@@ -39,6 +31,14 @@ public class User {
     public User(String email, String name) {
         this.email = email;
         this.name = name;
+    }
+
+    public Optional<String> getPosition() {
+        return Optional.ofNullable(position);
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getEmail() {

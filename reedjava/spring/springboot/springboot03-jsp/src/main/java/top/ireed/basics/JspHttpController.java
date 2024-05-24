@@ -21,23 +21,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("basics/http")
 public class JspHttpController {
 
-	/**
-	 * http消息头信息
-	 *
-	 * @return httpHeader
-	 */
-	@GetMapping("httpRequestHeader")
-	public String httpRequestHeader() {
-		return "basics/http/httpRequestHeader";
-	}
+    /**
+     * http消息头信息
+     *
+     * @return httpHeader
+     */
+    @GetMapping("httpRequestHeader")
+    public String httpRequestHeader() {
+        return "basics/http/httpRequestHeader";
+    }
 
-	/**
-	 * http响应头信息
-	 *
-	 * @return httpHeader
-	 */
-	@GetMapping("httpResponseSendError")
-	public String httpResponseSendError() {
-		return "basics/http/httpResponseSendError";
-	}
+    /**
+     * http响应头信息
+     *
+     * @return httpHeader
+     */
+    @GetMapping("httpResponseSendError")
+    public String httpResponseSendError() {
+        return "basics/http/httpResponseSendError";
+    }
 }

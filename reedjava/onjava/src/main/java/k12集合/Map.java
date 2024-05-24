@@ -1,8 +1,6 @@
 package main.java.k12集合;
 
-import main.java.j01枚举.颜色枚举;
 import org.junit.Test;
-import top.ireed.deal.DealLog;
 
 import java.util.HashMap;
 

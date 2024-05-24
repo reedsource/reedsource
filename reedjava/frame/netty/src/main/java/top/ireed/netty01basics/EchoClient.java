@@ -18,56 +18,56 @@ import java.nio.ByteBuffer;
 
 final class EchoClient {
 
-	private final String host;
-	private final int port;
+    private final String host;
+    private final int port;
 
-	EchoClient(String host, int port) {
-		this.host = host;
-		this.port = port;
-	}
+    EchoClient(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
 
-	/**
-	 * 客户端启动类
-	 */
-	void run() {
-		EventLoopGroup group = new NioEventLoopGroup();
-		try (BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
-			Bootstrap b = new Bootstrap();
-			b.group(group)
-					.channel(NioSocketChannel.class)
-					.option(ChannelOption.TCP_NODELAY, true)
-					.handler(new EchoClientHandler());
+    /**
+     * 客户端启动类
+     */
+    void run() {
+        EventLoopGroup group = new NioEventLoopGroup();
+        try (BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
+            Bootstrap b = new Bootstrap();
+            b.group(group)
+                    .channel(NioSocketChannel.class)
+                    .option(ChannelOption.TCP_NODELAY, true)
+                    .handler(new EchoClientHandler());
 
-			// 连接到服务器
-			ChannelFuture f = b.connect(host, port).sync();
+            // 连接到服务器
+            ChannelFuture f = b.connect(host, port).sync();
 
-			Channel channel = f.channel();
-			ByteBuffer writeBuffer = ByteBuffer.allocate(32);
+            Channel channel = f.channel();
+            ByteBuffer writeBuffer = ByteBuffer.allocate(32);
 
-			String userInput;
-			while ((userInput = stdIn.readLine()) != null) {
-				writeBuffer.put(userInput.getBytes());
-				writeBuffer.flip();
-				writeBuffer.rewind();
+            String userInput;
+            while ((userInput = stdIn.readLine()) != null) {
+                writeBuffer.put(userInput.getBytes());
+                writeBuffer.flip();
+                writeBuffer.rewind();
 
-				// 转为ByteBuf
-				ByteBuf buf = Unpooled.copiedBuffer(writeBuffer);
+                // 转为ByteBuf
+                ByteBuf buf = Unpooled.copiedBuffer(writeBuffer);
 
-				// 写消息到管道
-				channel.writeAndFlush(buf);
+                // 写消息到管道
+                channel.writeAndFlush(buf);
 
-				// 清理缓冲区
-				writeBuffer.clear();
-			}
-		} catch (IOException e) {
-			DealLog.log("不能从主机中获取I/O，主机名为：", host, e);
-		} catch (InterruptedException e) {
-			DealLog.log("推送任务异常", e);
-			Thread.currentThread().interrupt();
-		} finally {
-			// 优雅的关闭
-			group.shutdownGracefully();
-		}
-	}
+                // 清理缓冲区
+                writeBuffer.clear();
+            }
+        } catch (IOException e) {
+            DealLog.log("不能从主机中获取I/O，主机名为：", host, e);
+        } catch (InterruptedException e) {
+            DealLog.log("推送任务异常", e);
+            Thread.currentThread().interrupt();
+        } finally {
+            // 优雅的关闭
+            group.shutdownGracefully();
+        }
+    }
 
 }

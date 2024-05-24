@@ -19,9 +19,9 @@ import top.ireed.deal.DealLog;
  */
 @Controller
 public class JspController {
-	@GetMapping("/jsp")
-	public String jsp() {
-		DealLog.log("进入jsp学习");
-		return "jsp/j00jsp";
-	}
+    @GetMapping("/jsp")
+    public String jsp() {
+        DealLog.log("进入jsp学习");
+        return "jsp/j00jsp";
+    }
 }

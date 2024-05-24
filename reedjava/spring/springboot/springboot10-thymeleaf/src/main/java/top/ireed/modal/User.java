@@ -2,61 +2,61 @@ package top.ireed.modal;
 
 
 public class User {
-	private String name;
-	private String address;
-	private Integer age;
-	private Integer sex;
+    private String name;
+    private String address;
+    private Integer age;
+    private Integer sex;
 
-	public Integer getSex() {
-		return sex;
-	}
+    public User() {
+    }
 
-	public void setSex(Integer sex) {
-		this.sex = sex;
-	}
+    public User(String name, String address, Integer age, Integer sex) {
 
-	public String getName() {
-		return name;
-	}
+        this.name = name;
+        this.address = address;
+        this.age = age;
+        this.sex = sex;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Integer getSex() {
+        return sex;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Integer getAge() {
-		return age;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public User() {
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public User(String name, String address, Integer age, Integer sex) {
+    public Integer getAge() {
+        return age;
+    }
 
-		this.name = name;
-		this.address = address;
-		this.age = age;
-		this.sex = sex;
-	}
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	@Override
-	public String toString() {
-		return "User{" +
-				"name='" + name + '\'' +
-				", address='" + address + '\'' +
-				", age=" + age +
-				", sex=" + sex +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", age=" + age +
+                ", sex=" + sex +
+                '}';
+    }
 }

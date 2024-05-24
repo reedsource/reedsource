@@ -14,51 +14,51 @@ package top.ireed.found.dict.entity;
  */
 public class DictTable {
 
-	private String id;
+    private String id;
 
-	/**
-	 * 源文本
-	 */
-	private String msg;
+    /**
+     * 源文本
+     */
+    private String msg;
 
-	/**
-	 * 翻译后文本
-	 */
-	private String toMsg;
+    /**
+     * 翻译后文本
+     */
+    private String toMsg;
 
-	public DictTable() {
-	}
+    public DictTable() {
+    }
 
-	public DictTable(String msg) {
-		this.msg = msg;
-	}
+    public DictTable(String msg) {
+        this.msg = msg;
+    }
 
-	public DictTable(String msg, String toMsg) {
-		this.msg = msg;
-		this.toMsg = toMsg;
-	}
+    public DictTable(String msg, String toMsg) {
+        this.msg = msg;
+        this.toMsg = toMsg;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getMsg() {
-		return msg;
-	}
+    public String getMsg() {
+        return msg;
+    }
 
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-	public String getToMsg() {
-		return toMsg;
-	}
+    public String getToMsg() {
+        return toMsg;
+    }
 
-	public void setToMsg(String toMsg) {
-		this.toMsg = toMsg;
-	}
+    public void setToMsg(String toMsg) {
+        this.toMsg = toMsg;
+    }
 }

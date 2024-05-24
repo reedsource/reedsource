@@ -24,36 +24,36 @@ import java.util.concurrent.TimeUnit;
  */
 public class Task implements Runnable {
 
-	private final int time;
+    private final int time;
 
-	Task(int time) {
-		this.time = time;
-	}
+    Task(int time) {
+        this.time = time;
+    }
 
-	@Override
-	public void run() {
+    @Override
+    public void run() {
 
-		try {
-			TimeUnit.SECONDS.sleep(time);
-		} catch (InterruptedException e) {
-			DealLog.log("推送任务异常", e);
-			Thread.currentThread().interrupt();
-		}
-		to();
-	}
+        try {
+            TimeUnit.SECONDS.sleep(time);
+        } catch (InterruptedException e) {
+            DealLog.log("推送任务异常", e);
+            Thread.currentThread().interrupt();
+        }
+        to();
+    }
 
-	private void to() {
-		Map<String, Channel> map = ChannelMap.getAllChannels();
-		DealLog.log(time + "推送任务 map数量 " + map.size());
-		if (map.size() > 0) {
-			for (Map.Entry<String, Channel> stringChannelEntry : map.entrySet()) {
-				Channel ch = map.get(stringChannelEntry.getKey());
-				String msg = time + "秒定时推送任务 连接id" + stringChannelEntry.getKey();
-				//写消息
-				ch.write(Unpooled.copiedBuffer(msg, CharsetUtil.UTF_8));
-				//冲刷消息
-				ch.flush();
-			}
-		}
-	}
+    private void to() {
+        Map<String, Channel> map = ChannelMap.getAllChannels();
+        DealLog.log(time + "推送任务 map数量 " + map.size());
+        if (map.size() > 0) {
+            for (Map.Entry<String, Channel> stringChannelEntry : map.entrySet()) {
+                Channel ch = map.get(stringChannelEntry.getKey());
+                String msg = time + "秒定时推送任务 连接id" + stringChannelEntry.getKey();
+                //写消息
+                ch.write(Unpooled.copiedBuffer(msg, CharsetUtil.UTF_8));
+                //冲刷消息
+                ch.flush();
+            }
+        }
+    }
 }

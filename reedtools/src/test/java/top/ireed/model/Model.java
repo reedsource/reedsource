@@ -11,84 +11,84 @@ import java.util.Date;
  */
 public class Model extends DataBase {
 
-	private String id;
-	private String key;
-	private String value;
-	private Date date;
+    private String id;
+    private String key;
+    private String value;
+    private Date date;
 
 
-	public Model() {
-	}
+    public Model() {
+    }
 
-	public Model(String key, String value, Date date) {
-		this.key = key;
-		this.value = value;
-		this.date = date;
-	}
+    public Model(String key, String value, Date date) {
+        this.key = key;
+        this.value = value;
+        this.date = date;
+    }
 
-	public Model(String id, String key, String value, Date date) {
-		this.id = id;
-		this.key = key;
-		this.value = value;
-		this.date = date;
-	}
+    public Model(String id, String key, String value, Date date) {
+        this.id = id;
+        this.key = key;
+        this.value = value;
+        this.date = date;
+    }
 
-	public Model(String id, String key, String value, Date date, String suS) {
-		this.id = id;
-		this.key = key;
-		this.value = value;
-		this.date = date;
-		super.setSuS(suS);
-	}
+    public Model(String id, String key, String value, Date date, String suS) {
+        this.id = id;
+        this.key = key;
+        this.value = value;
+        this.date = date;
+        super.setSuS(suS);
+    }
 
-	public Model(String key, String value) {
-		this.key = key;
-		this.value = value;
-	}
+    public Model(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
 
-	public Model(String id) {
-		this.id = id;
-	}
+    public Model(String id) {
+        this.id = id;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getKey() {
-		return key;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	public void setKey(String key) {
-		this.key = key;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	@Override
-	public String toString() {
-		return "Model{" +
-				"id='" + id + '\'' +
-				", key='" + key + '\'' +
-				", value='" + value + '\'' +
-				", date='" + date + '\'' +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "Model{" +
+                "id='" + id + '\'' +
+                ", key='" + key + '\'' +
+                ", value='" + value + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }

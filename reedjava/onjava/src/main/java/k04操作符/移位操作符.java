@@ -23,6 +23,16 @@ import java.util.Random;
  */
 public class 移位操作符 {
 
+    static void printBinaryInt(String s, int i) {
+        //输出二进制
+        DealLog.log(s + ", int: " + i + ", binary:\n   " + Integer.toBinaryString(i));
+    }
+
+    static void printBinaryLong(String s, long l) {
+        //输出二进制
+        DealLog.log(s + ", long: " + l + ", binary:\n    " + Long.toBinaryString(l));
+    }
+
     @Test
     public void 移位操作符_Test() {
         //无符合右移测试
@@ -57,7 +67,6 @@ public class 移位操作符 {
         //11111111111111111111111111111111
         //1111111111111111111111
     }
-
 
     @Test
     public void 位操作_Test() {
@@ -103,15 +112,5 @@ public class 移位操作符 {
         printBinaryLong("(~l) >> 5", (~l) >> 5);
         printBinaryLong("l >>> 5", l >>> 5);
         printBinaryLong("(~l) >>> 5", (~l) >>> 5);
-    }
-
-    static void printBinaryInt(String s, int i) {
-        //输出二进制
-        DealLog.log(s + ", int: " + i + ", binary:\n   " + Integer.toBinaryString(i));
-    }
-
-    static void printBinaryLong(String s, long l) {
-        //输出二进制
-        DealLog.log(s + ", long: " + l + ", binary:\n    " + Long.toBinaryString(l));
     }
 }

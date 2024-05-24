@@ -15,18 +15,18 @@ import java.util.List;
  */
 public interface MybatisService {
 
-	/**
-	 * 查询
-	 *
-	 * @return 全部数据
-	 */
-	List<OneTable> all();
+    /**
+     * 查询
+     *
+     * @return 全部数据
+     */
+    List<OneTable> all();
 
-	/**
-	 * 多条件查询数据
-	 *
-	 * @param oneTable 实体
-	 * @return data
-	 */
-	List<OneTable> inAll(OneTable oneTable);
+    /**
+     * 多条件查询数据
+     *
+     * @param oneTable 实体
+     * @return data
+     */
+    List<OneTable> inAll(OneTable oneTable);
 }

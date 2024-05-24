@@ -31,56 +31,56 @@ import top.ireed.deal.DealLog;
  * SecurityUtils.setSecurityManager(manager);
  */
 public class Shiro {
-	public static void main(String[] args) {
-		//替代方案
-		//1.由工厂对象负责创建一个DefaultSecurityManager对象[shiro框架核心功能对象]
-		DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
-		//2.加载shiro.ini文件内容
-		IniRealm iniRealm = new IniRealm("classpath:shiro.ini");
-		defaultSecurityManager.setRealm(iniRealm);
-		//3.降低DefaultSecurityManager对象使用难度，将DefaultSecurityManager对象委托给SecuriyUtils
-		SecurityUtils.setSecurityManager(defaultSecurityManager);
-		//4.SecuriyUtils提供给开发人员一个Subject对象
-		Subject currentUser = SecurityUtils.getSubject();
+    public static void main(String[] args) {
+        //替代方案
+        //1.由工厂对象负责创建一个DefaultSecurityManager对象[shiro框架核心功能对象]
+        DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
+        //2.加载shiro.ini文件内容
+        IniRealm iniRealm = new IniRealm("classpath:shiro.ini");
+        defaultSecurityManager.setRealm(iniRealm);
+        //3.降低DefaultSecurityManager对象使用难度，将DefaultSecurityManager对象委托给SecuriyUtils
+        SecurityUtils.setSecurityManager(defaultSecurityManager);
+        //4.SecuriyUtils提供给开发人员一个Subject对象
+        Subject currentUser = SecurityUtils.getSubject();
 
-		//5.检测 currentUser 是否已经登陆
-		if (!currentUser.isAuthenticated()) {
-			//6 如果没有登陆，进行登陆操作
-			UsernamePasswordToken token = new UsernamePasswordToken("zs", "123");
-			//7.进行登陆验证
-			try {
-				currentUser.login(token);
-			} catch (UnknownAccountException e) {
-				DealLog.log("登陆验证失败,输入的用户名是不存在的", e);
-			} catch (IncorrectCredentialsException e) {
-				DealLog.log("登陆验证失败,输入的密码是不存在", e);
-			}
+        //5.检测 currentUser 是否已经登陆
+        if (!currentUser.isAuthenticated()) {
+            //6 如果没有登陆，进行登陆操作
+            UsernamePasswordToken token = new UsernamePasswordToken("zs", "123");
+            //7.进行登陆验证
+            try {
+                currentUser.login(token);
+            } catch (UnknownAccountException e) {
+                DealLog.log("登陆验证失败,输入的用户名是不存在的", e);
+            } catch (IncorrectCredentialsException e) {
+                DealLog.log("登陆验证失败,输入的密码是不存在", e);
+            }
 
-			/*
-			 *  login方法判断登时使用信息是否真实的.
-			 *  如果真实，则login方法不会有任何返回值。
-			 *  此时调用isAuthenticated()时，其返回值是true
-			 *
-			 *  如果用户名或则密码不正确，则login方法将抛出对应异常
-			 *  此时调用isAuthenticated()时，其返回值false
-			 *
-			 *  如果输出的密码是不正确的，此时login会向上抛出 IncorrectCredentialsException
-			 *  如果输入的登陆名是不正确的，此时login会向上抛出 UnknownAccountException
-			 */
+            /*
+             *  login方法判断登时使用信息是否真实的.
+             *  如果真实，则login方法不会有任何返回值。
+             *  此时调用isAuthenticated()时，其返回值是true
+             *
+             *  如果用户名或则密码不正确，则login方法将抛出对应异常
+             *  此时调用isAuthenticated()时，其返回值false
+             *
+             *  如果输出的密码是不正确的，此时login会向上抛出 IncorrectCredentialsException
+             *  如果输入的登陆名是不正确的，此时login会向上抛出 UnknownAccountException
+             */
 
-			//8.获得当前用户的用户名
-			DealLog.log("登陆时使用用户名 ", currentUser.getPrincipal());
-			//9.判断用户是否拥有指定角色
-			DealLog.log("是否拥有admin角色 ", currentUser.hasRole("admin"));
-			DealLog.log("是否拥有user:*角色 ", currentUser.isPermitted("user:*"));
-			//10.判断用户是否登陆
-			DealLog.log("是否已经登陆 : ", currentUser.isAuthenticated());
-		} else {
-			DealLog.log("已经登陆了");
-		}
-		//清除当前用户登陆信息
-		currentUser.logout();
-	}
+            //8.获得当前用户的用户名
+            DealLog.log("登陆时使用用户名 ", currentUser.getPrincipal());
+            //9.判断用户是否拥有指定角色
+            DealLog.log("是否拥有admin角色 ", currentUser.hasRole("admin"));
+            DealLog.log("是否拥有user:*角色 ", currentUser.isPermitted("user:*"));
+            //10.判断用户是否登陆
+            DealLog.log("是否已经登陆 : ", currentUser.isAuthenticated());
+        } else {
+            DealLog.log("已经登陆了");
+        }
+        //清除当前用户登陆信息
+        currentUser.logout();
+    }
 }
 /*
 1.user:query,user:insert,user:update,menu:show

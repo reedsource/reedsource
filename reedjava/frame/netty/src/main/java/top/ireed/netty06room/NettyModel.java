@@ -16,40 +16,40 @@ import io.netty.channel.Channel;
  * reedsource@189.cn
  */
 public class NettyModel {
-	private String id;
-	private String type;
-	private Channel c;
+    private String id;
+    private String type;
+    private Channel c;
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public Channel getC() {
-		return c;
-	}
+    public Channel getC() {
+        return c;
+    }
 
-	public void setC(Channel c) {
-		this.c = c;
-	}
+    public void setC(Channel c) {
+        this.c = c;
+    }
 
-	@Override
-	public String toString() {
-		return "NettyModel{" +
-				"id='" + id + '\'' +
-				", type='" + type + '\'' +
-				", c=" + c +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "NettyModel{" +
+                "id='" + id + '\'' +
+                ", type='" + type + '\'' +
+                ", c=" + c +
+                '}';
+    }
 }

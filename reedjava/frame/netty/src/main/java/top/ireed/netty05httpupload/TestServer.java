@@ -15,7 +15,7 @@ package top.ireed.netty05httpupload;
  * reedsource@189.cn
  */
 public class TestServer {
-	public static void main(String[] args) {
-		new HttpUploadServer().run();
-	}
+    public static void main(String[] args) {
+        new HttpUploadServer().run();
+    }
 }

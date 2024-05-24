@@ -6,9 +6,6 @@ package main.java.k01实现案例;
 
 import top.ireed.deal.DealLog;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-
 /**
  * 功能简述:
  * 〈当前系统信息类〉

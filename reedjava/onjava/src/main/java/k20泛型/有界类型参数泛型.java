@@ -38,41 +38,6 @@ import top.ireed.deal.DealLog;
 public class 有界类型参数泛型 {
 
 
-    @Test
-    public void 有界类型参数泛型_Test() {
-        // 创建不同类型数组： Integer, Double 和 Character
-        Integer[] intArray = {1, 2, 3, 4, 5};
-        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
-        Character[] charArray = {'H', 'E', 'L', 'L', 'O'};
-
-        DealLog.log("整型数组元素为:");
-        c0(intArray); // 传递一个整型数组
-
-        DealLog.log("\n双精度型数组元素为:");
-        c0(doubleArray); // 传递一个双精度型数组
-
-        DealLog.log("\n字符型数组元素为:");
-        c0(charArray); // 传递一个字符型数组
-
-        //整型数组元素为:
-        //1 2 3 4 5
-
-        //双精度型数组元素为:
-        //1.1 2.2 3.3 4.4
-
-        //字符型数组元素为:
-        //H E L L O
-
-        DealLog.log();
-        DealLog.log(6.6, 8.8, 7.7, "中最大的数为", c1(6.6, 8.8, 7.7));
-        DealLog.log(3, 4, 5, "中最大的数为", c1(6.6, 8.8, 7.7));
-        DealLog.log("pear", "apple", "orange", "中最大的数为", c1("pear", "apple", "orange"));
-
-        //3, 4 和 5 中最大的数为 5
-        //6.6, 8.8 和 7.7 中最大的数为 8.8
-        //pear, apple 和 orange 中最大的数为 pear
-    }
-
     /*
     有界的类型参数:
     可能有时候，你会想限制那些被允许传递到一个类型参数的类型种类范围。
@@ -114,6 +79,41 @@ public class 有界类型参数泛型 {
             max = z; // 现在 z 更大
         }
         return max; // 返回最大对象
+    }
+
+    @Test
+    public void 有界类型参数泛型_Test() {
+        // 创建不同类型数组： Integer, Double 和 Character
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
+        Character[] charArray = {'H', 'E', 'L', 'L', 'O'};
+
+        DealLog.log("整型数组元素为:");
+        c0(intArray); // 传递一个整型数组
+
+        DealLog.log("\n双精度型数组元素为:");
+        c0(doubleArray); // 传递一个双精度型数组
+
+        DealLog.log("\n字符型数组元素为:");
+        c0(charArray); // 传递一个字符型数组
+
+        //整型数组元素为:
+        //1 2 3 4 5
+
+        //双精度型数组元素为:
+        //1.1 2.2 3.3 4.4
+
+        //字符型数组元素为:
+        //H E L L O
+
+        DealLog.log();
+        DealLog.log(6.6, 8.8, 7.7, "中最大的数为", c1(6.6, 8.8, 7.7));
+        DealLog.log(3, 4, 5, "中最大的数为", c1(6.6, 8.8, 7.7));
+        DealLog.log("pear", "apple", "orange", "中最大的数为", c1("pear", "apple", "orange"));
+
+        //3, 4 和 5 中最大的数为 5
+        //6.6, 8.8 和 7.7 中最大的数为 8.8
+        //pear, apple 和 orange 中最大的数为 pear
     }
 }
 

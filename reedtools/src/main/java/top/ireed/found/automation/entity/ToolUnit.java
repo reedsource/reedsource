@@ -18,47 +18,47 @@ import java.util.List;
  */
 public class ToolUnit {
 
-	/**
-	 * 工具单元名称
-	 */
-	private String toolName;
-	/**
-	 * 工具单元返回参数名称
-	 */
-	private String outName;
-	/**
-	 * 入参数组
-	 */
-	private final List<String> args;
+    /**
+     * 入参数组
+     */
+    private final List<String> args;
+    /**
+     * 工具单元名称
+     */
+    private String toolName;
+    /**
+     * 工具单元返回参数名称
+     */
+    private String outName;
 
-	public ToolUnit(String toolName, String outName, String... args) {
-		this.toolName = toolName;
-		this.outName = outName;
-		List<String> list = new ArrayList<>();
-		if (args.length != 0) {
-			list.addAll(Arrays.asList(args));
-		}
-		this.args = list;
+    public ToolUnit(String toolName, String outName, String... args) {
+        this.toolName = toolName;
+        this.outName = outName;
+        List<String> list = new ArrayList<>();
+        if (args.length != 0) {
+            list.addAll(Arrays.asList(args));
+        }
+        this.args = list;
 
-	}
+    }
 
-	public String getToolName() {
-		return toolName;
-	}
+    public String getToolName() {
+        return toolName;
+    }
 
-	public void setToolName(String toolName) {
-		this.toolName = toolName;
-	}
+    public void setToolName(String toolName) {
+        this.toolName = toolName;
+    }
 
-	public String getOutName() {
-		return outName;
-	}
+    public String getOutName() {
+        return outName;
+    }
 
-	public void setOutName(String outName) {
-		this.outName = outName;
-	}
+    public void setOutName(String outName) {
+        this.outName = outName;
+    }
 
-	public List<String> getArgs() {
-		return args;
-	}
+    public List<String> getArgs() {
+        return args;
+    }
 }

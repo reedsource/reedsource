@@ -32,57 +32,57 @@ import java.util.List;
 @RequestMapping("cases/linkage")
 public class LinkageController {
 
-	/**
-	 * 初始进入界面 只初始化 一般添加界面 下拉框能展示全部省市数据
-	 *
-	 * @return 联动界面
-	 */
-	@GetMapping("form")
-	public String form(Model model) {
-		//设置数据
-		model.addAttribute("linkage", new Linkage());
-		return "cases/linkage/linkage";
-	}
+    /**
+     * 初始进入界面 只初始化 一般添加界面 下拉框能展示全部省市数据
+     *
+     * @return 联动界面
+     */
+    @GetMapping("form")
+    public String form(Model model) {
+        //设置数据
+        model.addAttribute("linkage", new Linkage());
+        return "cases/linkage/linkage";
+    }
 
-	/**
-	 * 本处场景 省市修改界面 进入时省市数据已经展示,同时下拉框能展示全部省市数据
-	 *
-	 * @return 联动界面
-	 */
-	@GetMapping("edit")
-	public String edit(Model model) {
-		//设置数据
-		model.addAttribute("linkage", new Linkage("湖北省", "十堰市"));
-		return "cases/linkage/linkage";
-	}
+    /**
+     * 本处场景 省市修改界面 进入时省市数据已经展示,同时下拉框能展示全部省市数据
+     *
+     * @return 联动界面
+     */
+    @GetMapping("edit")
+    public String edit(Model model) {
+        //设置数据
+        model.addAttribute("linkage", new Linkage("湖北省", "十堰市"));
+        return "cases/linkage/linkage";
+    }
 
-	/**
-	 * @return 省列表
-	 */
-	@PostMapping("province")
-	@ResponseBody
-	public String province() throws TopException {
-		// 返回省数组列表数据
-		return DealJackson.getJson(LinkageUtil.getProvinces());
-	}
+    /**
+     * @return 省列表
+     */
+    @PostMapping("province")
+    @ResponseBody
+    public String province() throws TopException {
+        // 返回省数组列表数据
+        return DealJackson.getJson(LinkageUtil.getProvinces());
+    }
 
-	/**
-	 * @return 市列表
-	 */
-	@PostMapping("city")
-	@ResponseBody
-	public String city(String provinceId) throws TopException {
-		//数据list
-		List<City> list = new ArrayList<>();
-		// 遍历省列表
-		for (City city : LinkageUtil.getCitys()) {
-			//省id等于市中的省id
-			if (provinceId.equals(city.getProvinceId())) {
-				//加入数据list
-				list.add(city);
-			}
-		}
-		//json格式化
-		return DealJackson.getJson(list);
-	}
+    /**
+     * @return 市列表
+     */
+    @PostMapping("city")
+    @ResponseBody
+    public String city(String provinceId) throws TopException {
+        //数据list
+        List<City> list = new ArrayList<>();
+        // 遍历省列表
+        for (City city : LinkageUtil.getCitys()) {
+            //省id等于市中的省id
+            if (provinceId.equals(city.getProvinceId())) {
+                //加入数据list
+                list.add(city);
+            }
+        }
+        //json格式化
+        return DealJackson.getJson(list);
+    }
 }

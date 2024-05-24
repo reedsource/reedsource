@@ -23,11 +23,11 @@ import javax.servlet.Filter;
  */
 @Configuration
 public class MyConfig {
-	@Bean
-	public FilterRegistrationBean<Filter> filterRegistrationBean() {
-		FilterRegistrationBean<Filter> frb = new FilterRegistrationBean<>(new MyFilter());
-		//可以设置多个
-		frb.addUrlPatterns("/boot/*");
-		return frb;
-	}
+    @Bean
+    public FilterRegistrationBean<Filter> filterRegistrationBean() {
+        FilterRegistrationBean<Filter> frb = new FilterRegistrationBean<>(new MyFilter());
+        //可以设置多个
+        frb.addUrlPatterns("/boot/*");
+        return frb;
+    }
 }

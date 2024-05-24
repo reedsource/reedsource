@@ -20,10 +20,10 @@ import top.ireed.deal.DealLog;
  */
 @Component("initService")
 public class InitService {
-	/**
-	 * 方法1.1创建类
-	 */
-	public void show(String msg) {
-		DealLog.log("这是InitService中的show" + msg);
-	}
+    /**
+     * 方法1.1创建类
+     */
+    public void show(String msg) {
+        DealLog.log("这是InitService中的show" + msg);
+    }
 }

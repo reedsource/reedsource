@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TopController {
 
-	@GetMapping("boot")
-	public String jarTest() {
-		return "打包项目";
-	}
+    @GetMapping("boot")
+    public String jarTest() {
+        return "打包项目";
+    }
 }

@@ -17,48 +17,48 @@ import java.util.Date;
  */
 public class PageTime {
 
-	/**
-	 * 查询时间 实体字段名称
-	 */
-	private String dateName;
+    /**
+     * 查询时间 实体字段名称
+     */
+    private String dateName;
 
-	/**
-	 * 开始时间
-	 */
-	private Date beginDate;
+    /**
+     * 开始时间
+     */
+    private Date beginDate;
 
-	/**
-	 * 结束时间
-	 */
-	private Date endDate;
+    /**
+     * 结束时间
+     */
+    private Date endDate;
 
-	public PageTime(String dateName, Date beginDate, Date endDate) {
-		this.dateName = dateName;
-		this.beginDate = beginDate;
-		this.endDate = endDate;
-	}
+    public PageTime(String dateName, Date beginDate, Date endDate) {
+        this.dateName = dateName;
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+    }
 
-	public String getDateName() {
-		return dateName;
-	}
+    public String getDateName() {
+        return dateName;
+    }
 
-	public void setDateName(String dateName) {
-		this.dateName = dateName;
-	}
+    public void setDateName(String dateName) {
+        this.dateName = dateName;
+    }
 
-	public Date getBeginDate() {
-		return beginDate;
-	}
+    public Date getBeginDate() {
+        return beginDate;
+    }
 
-	public void setBeginDate(Date beginDate) {
-		this.beginDate = beginDate;
-	}
+    public void setBeginDate(Date beginDate) {
+        this.beginDate = beginDate;
+    }
 
-	public Date getEndDate() {
-		return endDate;
-	}
+    public Date getEndDate() {
+        return endDate;
+    }
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
 }

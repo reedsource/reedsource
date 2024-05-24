@@ -6,6 +6,49 @@ package main.java.k10接口;
 
 import top.ireed.deal.DealLog;
 
+interface Animal {
+    public void eat();
+
+    public void travel();
+}
+
+/**
+ * 接口的继承
+ * 一个接口能继承另一个接口，和类之间的继承方式比较相似。
+ * 接口的继承使用extends关键字，子接口继承父接口的方法。
+ * 下面的Sports接口被Hockey和Football接口继承：
+ * <p>
+ * Hockey接口自己声明了四个方法，从Sports接口继承了两个方法，
+ * 这样，实现Hockey接口的类需要实现六个方法。
+ * 相似的，实现Football接口的类需要实现五个方法，
+ * 其中两个来自于Sports接口。
+ */
+interface Sports {
+    public void setHomeTeam(String name);
+
+    public void setVisitingTeam(String name);
+}
+
+
+interface Football extends Sports {
+    public void homeTeamScored(int points);
+
+    public void visitingTeamScored(int points);
+
+    public void endOfQuarter(int quarter);
+}
+
+
+interface Hockey extends Sports {
+    public void homeGoalScored();
+
+    public void visitingGoalScored();
+
+    public void endOfPeriod(int period);
+
+    public void overtimePeriod(int ot);
+}
+
 /**
  * 功能简述:
  * 〈java接口〉
@@ -99,14 +142,16 @@ Animal.java 文件代码：
 
 }
 
-interface Animal {
-    public void eat();
-
-    public void travel();
-}
-
-
 class MammalInt implements Animal {
+
+    public static void main(String args[]) {
+        MammalInt m = new MammalInt();
+        m.eat();
+        m.travel();
+
+        //Mammal eats
+        //Mammal travels
+    }
 
     @Override
     public void eat() {
@@ -121,51 +166,6 @@ class MammalInt implements Animal {
     public int noOfLegs() {
         return 0;
     }
-
-    public static void main(String args[]) {
-        MammalInt m = new MammalInt();
-        m.eat();
-        m.travel();
-
-        //Mammal eats
-        //Mammal travels
-    }
-}
-
-
-/**
- * 接口的继承
- * 一个接口能继承另一个接口，和类之间的继承方式比较相似。
- * 接口的继承使用extends关键字，子接口继承父接口的方法。
- * 下面的Sports接口被Hockey和Football接口继承：
- * <p>
- * Hockey接口自己声明了四个方法，从Sports接口继承了两个方法，
- * 这样，实现Hockey接口的类需要实现六个方法。
- * 相似的，实现Football接口的类需要实现五个方法，
- * 其中两个来自于Sports接口。
- */
-interface Sports {
-    public void setHomeTeam(String name);
-
-    public void setVisitingTeam(String name);
-}
-
-interface Football extends Sports {
-    public void homeTeamScored(int points);
-
-    public void visitingTeamScored(int points);
-
-    public void endOfQuarter(int quarter);
-}
-
-interface Hockey extends Sports {
-    public void homeGoalScored();
-
-    public void visitingGoalScored();
-
-    public void endOfPeriod(int period);
-
-    public void overtimePeriod(int ot);
 }
 
 

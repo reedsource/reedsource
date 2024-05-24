@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("basics/cookie")
 public class JspCookieController {
 
-	/**
-	 * 查看cookie教程
-	 *
-	 * @return form
-	 */
-	@GetMapping("cookieForm")
-	public String cookieForm() {
-		return "basics/cookie/cookieForm";
-	}
+    /**
+     * 查看cookie教程
+     *
+     * @return form
+     */
+    @GetMapping("cookieForm")
+    public String cookieForm() {
+        return "basics/cookie/cookieForm";
+    }
 
 }

@@ -18,6 +18,7 @@ import top.ireed.deal.DealLog;
  */
 public class 显式静态初始化静态块 {
     static Cups cups1 = new Cups();  // [2]
+    static Cups cups2 = new Cups();  // [2]
 
     public static void main(String[] args) {
         DealLog.log("Inside main()");
@@ -33,8 +34,6 @@ public class 显式静态初始化静态块 {
 		方式[2]无论执行几次  静态初始化都只会执行一次
 		*/
     }
-
-    static Cups cups2 = new Cups();  // [2]
 
 }
 

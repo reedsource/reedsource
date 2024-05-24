@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("analysis")
 public class JspAnalysisController {
 
-	/**
-	 * 查看jsp Servlet生命周期
-	 *
-	 * @return 进入
-	 */
-	@GetMapping("vita")
-	public String vita() {
-		return "analysis/jspVita";
-	}
+    /**
+     * 查看jsp Servlet生命周期
+     *
+     * @return 进入
+     */
+    @GetMapping("vita")
+    public String vita() {
+        return "analysis/jspVita";
+    }
 
 }

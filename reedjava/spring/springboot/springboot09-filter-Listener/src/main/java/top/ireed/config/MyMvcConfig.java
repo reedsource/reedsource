@@ -25,15 +25,15 @@ import javax.servlet.http.HttpSessionListener;
  */
 @Configuration
 public class MyMvcConfig {
-	/**
-	 * @return
-	 * @ Bean的意思就是，我要获取这个bean的时候，你spring要按照这种方式去帮我获取到这个bean。
-	 * @ Bean注解的方法会实例化、配置并初始化一个新的对象，这个对象会由spring IoC 容器管理。
-	 */
-	@Bean
-	public ServletListenerRegistrationBean<HttpSessionListener> listenerRegist() {
-		ServletListenerRegistrationBean<HttpSessionListener> srb = new ServletListenerRegistrationBean<>();
-		srb.setListener(new HttpSessionListener01());
-		return srb;
-	}
+    /**
+     * @return
+     * @ Bean的意思就是，我要获取这个bean的时候，你spring要按照这种方式去帮我获取到这个bean。
+     * @ Bean注解的方法会实例化、配置并初始化一个新的对象，这个对象会由spring IoC 容器管理。
+     */
+    @Bean
+    public ServletListenerRegistrationBean<HttpSessionListener> listenerRegist() {
+        ServletListenerRegistrationBean<HttpSessionListener> srb = new ServletListenerRegistrationBean<>();
+        srb.setListener(new HttpSessionListener01());
+        return srb;
+    }
 }

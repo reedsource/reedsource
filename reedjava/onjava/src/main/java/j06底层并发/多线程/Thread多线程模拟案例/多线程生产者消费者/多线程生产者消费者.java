@@ -42,13 +42,13 @@ public class 多线程生产者消费者 {
  */
 class 仓库 {
     /**
-     * 仓库产品
-     */
-    private LinkedList<Object> list = new LinkedList<>();
-    /**
      * 仓库最大值
      */
     private static final int MAX = 100;
+    /**
+     * 仓库产品
+     */
+    private LinkedList<Object> list = new LinkedList<>();
 
     /**
      * 存入, 约定每次存10个产品

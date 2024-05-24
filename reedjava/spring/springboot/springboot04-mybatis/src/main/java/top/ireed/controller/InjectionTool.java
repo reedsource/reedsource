@@ -27,16 +27,16 @@ import java.util.List;
 
 @Component
 public class InjectionTool {
-	@Autowired
-	private OneTableMapper oneTableMapper;
+    @Autowired
+    private OneTableMapper oneTableMapper;
 
-	/**
-	 * 添加事务
-	 *
-	 * @return 全部数据
-	 */
-	@Transactional(rollbackFor = Exception.class)
-	public List<OneTable> all() {
-		return oneTableMapper.all();
-	}
+    /**
+     * 添加事务
+     *
+     * @return 全部数据
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public List<OneTable> all() {
+        return oneTableMapper.all();
+    }
 }

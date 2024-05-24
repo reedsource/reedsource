@@ -66,6 +66,7 @@ class 碗 {
 
 class 桌子 {
     static 碗 碗1 = new 碗("桌子1 默认初始化一个碗");
+    static 碗 碗2 = new 碗("桌子 尾 初始化一个碗");
 
     桌子() {
         DealLog.log("桌子()");
@@ -75,13 +76,12 @@ class 桌子 {
     void 桌子方法(String marker) {
         DealLog.log("桌子方法(" + marker + ")");
     }
-
-    static 碗 碗2 = new 碗("桌子 尾 初始化一个碗");
 }
 
 class 柜橱 {
-    碗 碗3 = new 碗("橱柜1 默认初始化一个碗");
     static 碗 碗4 = new 碗("橱柜2 static 默认初始化一个碗");
+    static 碗 碗5 = new 碗("橱柜 尾 初始化一个碗");
+    碗 碗3 = new 碗("橱柜1 默认初始化一个碗");
 
     柜橱() {
         DealLog.log("柜橱()3 被调用");
@@ -91,6 +91,4 @@ class 柜橱 {
     void 橱柜方法(String marker) {
         DealLog.log("橱柜方法(" + marker + ")");
     }
-
-    static 碗 碗5 = new 碗("橱柜 尾 初始化一个碗");
 }

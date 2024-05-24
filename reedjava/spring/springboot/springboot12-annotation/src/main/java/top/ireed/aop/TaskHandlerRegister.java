@@ -16,6 +16,9 @@ public class TaskHandlerRegister extends ApplicationObjectSupport {
 
     private final static Map<String, AbstractHandler> TASK_HANDLERS_MAP = new HashMap<>();
 
+    public static AbstractHandler getTaskHandler(String taskType) {
+        return TASK_HANDLERS_MAP.get(taskType);
+    }
 
     @Override
     protected void initApplicationContext(ApplicationContext context) throws BeansException {
@@ -33,9 +36,5 @@ public class TaskHandlerRegister extends ApplicationObjectSupport {
                 TASK_HANDLERS_MAP.put(TypeHandler.type(), (AbstractHandler) taskBeanMap.get(beanName));
             }
         });
-    }
-
-    public static AbstractHandler getTaskHandler(String taskType) {
-        return TASK_HANDLERS_MAP.get(taskType);
     }
 }

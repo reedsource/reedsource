@@ -14,8 +14,8 @@ package top.ireed.netty03html;
  * reedsource@189.cn
  */
 public class TestServer {
-	public static void main(String[] args) {
-		int port = 16807;
-		new HtmlServer(port).run();
-	}
+    public static void main(String[] args) {
+        int port = 16807;
+        new HtmlServer(port).run();
+    }
 }

@@ -25,29 +25,29 @@ import java.util.List;
 @Service("MybatisService")
 public class MybatisServiceImpl implements MybatisService {
 
-	@Autowired
-	private OneTableMapper oneTableMapper;
+    @Autowired
+    private OneTableMapper oneTableMapper;
 
-	/**
-	 * 添加事务
-	 *
-	 * @return 全部数据
-	 */
-	@Override
-	@Transactional(rollbackFor = Exception.class)
-	public List<OneTable> all() {
-		return oneTableMapper.all();
-	}
+    /**
+     * 添加事务
+     *
+     * @return 全部数据
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public List<OneTable> all() {
+        return oneTableMapper.all();
+    }
 
-	/**
-	 * 多条件查询数据
-	 * 1. 实现in动态拼接
-	 *
-	 * @param oneTable 查询实体
-	 * @return date
-	 */
-	@Override
-	public List<OneTable> inAll(OneTable oneTable) {
-		return oneTableMapper.inAll(oneTable);
-	}
+    /**
+     * 多条件查询数据
+     * 1. 实现in动态拼接
+     *
+     * @param oneTable 查询实体
+     * @return date
+     */
+    @Override
+    public List<OneTable> inAll(OneTable oneTable) {
+        return oneTableMapper.inAll(oneTable);
+    }
 }

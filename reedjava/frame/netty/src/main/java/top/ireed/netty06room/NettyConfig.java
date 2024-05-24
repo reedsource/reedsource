@@ -9,23 +9,20 @@ import io.netty.channel.nio.NioEventLoopGroup;
  * @author reedsource
  */
 class NettyConfig {
-	private NettyConfig() {
-	}
+    public static final String WEBSOCKET = "WEBSOCKET";
+    public static final String UPGRADE = "UPGRADE";
+    public static final int T200 = 200;
+    static EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+    static EventLoopGroup workGroup = new NioEventLoopGroup();
+    private static String webSocketUrl = "";
+    private NettyConfig() {
+    }
 
-	static EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+    public static String getWebSocketUrl() {
+        return webSocketUrl;
+    }
 
-	static EventLoopGroup workGroup = new NioEventLoopGroup();
-
-	public static final String WEBSOCKET = "WEBSOCKET";
-	public static final String UPGRADE = "UPGRADE";
-	public static final int T200 = 200;
-	private static String webSocketUrl = "";
-
-	public static String getWebSocketUrl() {
-		return webSocketUrl;
-	}
-
-	public static void setWebSocketUrl(String webSocketUrl) {
-		NettyConfig.webSocketUrl = webSocketUrl;
-	}
+    public static void setWebSocketUrl(String webSocketUrl) {
+        NettyConfig.webSocketUrl = webSocketUrl;
+    }
 }

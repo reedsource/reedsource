@@ -55,14 +55,14 @@ public class MyBatisPlusTest {
         user.setAge(333);
         user.setEmail("张三创建User对象修改@qq.com");
 
-        userMapper.update(user,new UpdateWrapper<User>().eq("name","张三"));
+        userMapper.update(user, new UpdateWrapper<User>().eq("name", "张三"));
 
         testSelectAll();
 
         //方式二：
         //不创建User对象
-        userMapper.update(null,new UpdateWrapper<User>()
-                .set("age",3333).set("email","不创建User对象@qq.com").eq("name","张三"));
+        userMapper.update(null, new UpdateWrapper<User>()
+                .set("age", 3333).set("email", "不创建User对象@qq.com").eq("name", "张三"));
 
         testSelectAll();
 
@@ -72,14 +72,14 @@ public class MyBatisPlusTest {
         user1.setAge(33333);
         user1.setEmail("lambda条件构造器 创建User对象@qq.com");
 
-        userMapper.update(user1,new LambdaUpdateWrapper<User>().eq(User::getName,"张三"));
+        userMapper.update(user1, new LambdaUpdateWrapper<User>().eq(User::getName, "张三"));
 
         testSelectAll();
 
         //方式四：
         //lambda条件构造器 不创建User对象
-        userMapper.update(null,new LambdaUpdateWrapper<User>()
-                .set(User::getAge,333333).set(User::getEmail,"lambda条件构造器 不创建User对象@qq.com").eq(User::getName,"张三"));
+        userMapper.update(null, new LambdaUpdateWrapper<User>()
+                .set(User::getAge, 333333).set(User::getEmail, "lambda条件构造器 不创建User对象@qq.com").eq(User::getName, "张三"));
 
         testSelectAll();
 

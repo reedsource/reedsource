@@ -21,13 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestFullController {
 
-	/**
-	 * @param id   id
-	 * @param name name
-	 * @return 注意 本地属性之间需要有/分隔
-	 */
-	@GetMapping("/boot/test/{id}/{name}")
-	public String test(@PathVariable Long id, @PathVariable String name) {
-		return "id=" + id + "  name= " + name;
-	}
+    /**
+     * @param id   id
+     * @param name name
+     * @return 注意 本地属性之间需要有/分隔
+     */
+    @GetMapping("/boot/test/{id}/{name}")
+    public String test(@PathVariable Long id, @PathVariable String name) {
+        return "id=" + id + "  name= " + name;
+    }
 }

@@ -19,15 +19,6 @@ public class Dog {
 
     int dogAge;
 
-    /*通过重写get set方法使类的属性暴露出来*/
-    public int getDogAge() {
-        return dogAge;
-    }
-
-    public void setDogAge(int dogAge) {
-        this.dogAge = dogAge;
-    }
-
     //Java编译器将会为该类提供一个默认构造方法
     public Dog() {
     }
@@ -36,6 +27,15 @@ public class Dog {
     public Dog(String name) {
         //这个构造器仅有一个参数：name
         DealLog.log("小狗的名字是 : " + name);
+    }
+
+    /*通过重写get set方法使类的属性暴露出来*/
+    public int getDogAge() {
+        return dogAge;
+    }
+
+    public void setDogAge(int dogAge) {
+        this.dogAge = dogAge;
     }
 }
 /*

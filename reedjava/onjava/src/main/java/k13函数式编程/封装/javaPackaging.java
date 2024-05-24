@@ -60,12 +60,12 @@ class Person {
         return age;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
@@ -83,20 +83,20 @@ class EncapTest {
         return age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getIdNum() {
-        return idNum;
-    }
-
     public void setAge(int newAge) {
         age = newAge;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String newName) {
         name = newName;
+    }
+
+    public String getIdNum() {
+        return idNum;
     }
 
     public void setIdNum(String newId) {

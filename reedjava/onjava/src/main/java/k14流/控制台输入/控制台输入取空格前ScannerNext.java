@@ -6,7 +6,6 @@ package main.java.k14流.控制台输入;
 
 import top.ireed.deal.DealLog;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**

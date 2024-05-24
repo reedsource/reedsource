@@ -23,6 +23,6 @@ import org.springframework.stereotype.Component;
 @Component("user")
 @Data
 public class User {
-	private String name;
-	private String add;
+    private String name;
+    private String add;
 }

@@ -20,30 +20,30 @@ import java.util.concurrent.ConcurrentHashMap;
  * reedsource@189.cn
  */
 class ChannelMap {
-	private ChannelMap() {
-	}
+    /**
+     * 连接对象组
+     */
+    private static Map<String, Channel> channelSumMap = new ConcurrentHashMap<>();
 
-	/**
-	 * 连接对象组
-	 */
-	private static Map<String, Channel> channelSumMap = new ConcurrentHashMap<>();
+    private ChannelMap() {
+    }
 
-	static void addTimeServerChannel(String id, Channel sc) {
-		channelSumMap.put(id, sc);
-		DealLog.log("连接对象数量增加 当前为 :", channelSumMap.size());
-	}
+    static void addTimeServerChannel(String id, Channel sc) {
+        channelSumMap.put(id, sc);
+        DealLog.log("连接对象数量增加 当前为 :", channelSumMap.size());
+    }
 
-	static Map<String, Channel> getAllChannels() {
-		return channelSumMap;
-	}
+    static Map<String, Channel> getAllChannels() {
+        return channelSumMap;
+    }
 
-	static Channel getTimeServerChannel(String id) {
-		return channelSumMap.get(id);
-	}
+    static Channel getTimeServerChannel(String id) {
+        return channelSumMap.get(id);
+    }
 
-	static void removeTimeServerChannel(String id) {
-		channelSumMap.remove(id);
-	}
+    static void removeTimeServerChannel(String id) {
+        channelSumMap.remove(id);
+    }
 
 
 }

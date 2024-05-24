@@ -24,6 +24,9 @@ public class 不可变集合Collections {
      * 数据库字符串类型
      */
     public static final List<String> COLUMN_TYPE_STR;
+    public static final List<String> COLUMN_TYPE_STR1;
+
+    // 以上为原始写法
 
     //创建不可变的list
     static {
@@ -35,10 +38,6 @@ public class 不可变集合Collections {
 
         COLUMN_TYPE_STR = Collections.unmodifiableList(list);
     }
-
-    // 以上为原始写法
-
-    public static final List<String> COLUMN_TYPE_STR1;
 
     //创建不可变的list
     static {

@@ -25,14 +25,14 @@ import javax.servlet.http.HttpServletResponse;
 
 @Component
 public class FirstExceptionHandler implements HandlerExceptionResolver {
-	@Override
-	public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-		ModelAndView mv = new ModelAndView();
-		//如果异常等于shiro登陆异常
-		if (e instanceof IncorrectCredentialsException || e instanceof UnknownAccountException) {
-			//转发请求到错误页面
-			mv.setViewName("redirect:/user/error.do");
-		}
-		return mv;
-	}
+    @Override
+    public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
+        ModelAndView mv = new ModelAndView();
+        //如果异常等于shiro登陆异常
+        if (e instanceof IncorrectCredentialsException || e instanceof UnknownAccountException) {
+            //转发请求到错误页面
+            mv.setViewName("redirect:/user/error.do");
+        }
+        return mv;
+    }
 }

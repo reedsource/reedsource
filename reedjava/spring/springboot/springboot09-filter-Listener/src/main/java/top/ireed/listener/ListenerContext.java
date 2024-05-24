@@ -22,27 +22,27 @@ import javax.servlet.annotation.WebListener;
 @WebListener
 public class ListenerContext implements ServletContextListener {
 
-	/**
-	 * 用来监听上下文对象创建的方法
-	 * 当上下文对象创建,则马上执行该方法
-	 *
-	 * @param event
-	 */
-	@Override
-	public void contextInitialized(ServletContextEvent event) {
-		DealLog.log("上下文context对象创建了");
-	}
+    /**
+     * 用来监听上下文对象创建的方法
+     * 当上下文对象创建,则马上执行该方法
+     *
+     * @param event
+     */
+    @Override
+    public void contextInitialized(ServletContextEvent event) {
+        DealLog.log("上下文context对象创建了");
+    }
 
-	/**
-	 * 用来监听上下文对象销毁的方法
-	 * 当上下文对象销毁,则马上执行该方法
-	 *
-	 * @param event
-	 */
-	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		DealLog.log("上下文context对象销毁了");
-	}
+    /**
+     * 用来监听上下文对象销毁的方法
+     * 当上下文对象销毁,则马上执行该方法
+     *
+     * @param event
+     */
+    @Override
+    public void contextDestroyed(ServletContextEvent event) {
+        DealLog.log("上下文context对象销毁了");
+    }
 }
 
 

@@ -23,19 +23,19 @@ import java.io.IOException;
  */
 @WebFilter(urlPatterns = "/boot2/*")
 public class MyFilter implements Filter {
-	@Override
-	public void init(FilterConfig filterConfig) {
-		DealLog.log("filter init 我将在项目启动同时启动");
-	}
+    @Override
+    public void init(FilterConfig filterConfig) {
+        DealLog.log("filter init 我将在项目启动同时启动");
+    }
 
-	@Override
-	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-		DealLog.log("进入filter过滤器");
-		filterChain.doFilter(servletRequest, servletResponse);
-	}
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        DealLog.log("进入filter过滤器");
+        filterChain.doFilter(servletRequest, servletResponse);
+    }
 
-	@Override
-	public void destroy() {
-		DealLog.log("filter1对象随着服务器关闭销毁了");
-	}
+    @Override
+    public void destroy() {
+        DealLog.log("filter1对象随着服务器关闭销毁了");
+    }
 }

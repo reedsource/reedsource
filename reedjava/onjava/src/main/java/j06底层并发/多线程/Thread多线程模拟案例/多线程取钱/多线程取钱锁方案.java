@@ -59,14 +59,13 @@ class 取款锁Thread extends Thread {
 
 class 锁账户 {
     /**
-     * 余额
-     */
-    private int 余额 = 10000;
-
-    /**
      * 定义常量, 作为锁对象
      */
     private static final Object LOCK = new Object();
+    /**
+     * 余额
+     */
+    private int 余额 = 10000;
 
     /**
      * 取钱, 约定每次取1000

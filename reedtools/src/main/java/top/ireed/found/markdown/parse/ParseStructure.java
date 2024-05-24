@@ -24,19 +24,19 @@ import java.util.List;
  */
 public class ParseStructure {
 
-	private ParseStructure() {
-	}
+    //当前解析器支持java
+    public static final String JAVA = "java";
 
-	//当前解析器支持java
-	public static final String JAVA = "java";
+    private ParseStructure() {
+    }
 
-	public static String parse(MdEntity mdEntity, List<String> parseSuffixList) throws TopException {
+    public static String parse(MdEntity mdEntity, List<String> parseSuffixList) throws TopException {
 
-		if (parseSuffixList.contains(JAVA) && JAVA.equals(mdEntity.getSuffix())) {
-			return ParseJavaStructure.javaParse(mdEntity.getMdPath());
-		}
+        if (parseSuffixList.contains(JAVA) && JAVA.equals(mdEntity.getSuffix())) {
+            return ParseJavaStructure.javaParse(mdEntity.getMdPath());
+        }
 
-		return "";
-	}
+        return "";
+    }
 
 }

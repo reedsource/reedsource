@@ -45,12 +45,6 @@ public class 在构造器中调用构造器 {
         DealLog.log("由无参数构造器输出");
     }
 
-    void printPetalCount() {
-        //3. 不能在非构造器里调用构造器 ,编译器报错
-        // this(11);
-        DealLog.log("构造器int = " + 构造器int + " s = " + s);
-    }
-
     public static void main(String[] args) {
         在构造器中调用构造器 x = new 在构造器中调用构造器();
         x.printPetalCount();
@@ -59,6 +53,12 @@ public class 在构造器中调用构造器 {
         //由构造器String + int 双参数构造器输出
         //由无参数构造器输出
         //构造器int = 47 s = 构造器String变更值
+    }
+
+    void printPetalCount() {
+        //3. 不能在非构造器里调用构造器 ,编译器报错
+        // this(11);
+        DealLog.log("构造器int = " + 构造器int + " s = " + s);
     }
 
 }
