@@ -44,7 +44,7 @@ public class javaPolymorphic {
         c.work();        // 调用的是 Cat 的 work
     }
 
-    public static void show(Animal a) {
+    private static void show(Animal a) {
         a.eat();
         // 类型判断
         if (a instanceof Cat) {  // 猫做的事情

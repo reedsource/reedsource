@@ -81,7 +81,7 @@ public class JavaFileOutputStream {
      * 有两个构造方法可以用来创建 FileOutputStream 对象。
      * 使用字符串类型的文件名来创建一个输出流对象
      *
-     * @throws IOException
+     * @throws IOException IOException
      */
     @Test
     public void c1() throws IOException {

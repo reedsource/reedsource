@@ -33,7 +33,7 @@ public class BigDecimal加减乘除 {
 		no exact representable decimal result.
 		解决方法 divide方法设置精确的小数点，如：divide(xxxxx,2)*/
 
-        DealLog.log("将BigDecimal对象中的值转换成字符串 " + a.toString());
+        DealLog.log("将BigDecimal对象中的值转换成字符串 " + a);
         DealLog.log("将BigDecimal对象中的值转换成双精度数 " + a.doubleValue());
         DealLog.log("将BigDecimal对象中的值转换成单精度数 " + a.floatValue());
         DealLog.log("将BigDecimal对象中的值转换成长整数 " + a.longValue());

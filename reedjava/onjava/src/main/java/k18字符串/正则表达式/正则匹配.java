@@ -98,7 +98,7 @@ public class 正则匹配 {
     @Test
     public void 正则匹配_Test() {
         //查找字符串中是否包了子串
-        DealLog.log(c0("I am reed.top", ".*.top*"));
+        DealLog.log(c0("I am ireed.top", ".*.top*"));
 
         //配置字符串  this is text   正则 this\s+is\s+text
         DealLog.log(c0("this is text", "this\\s+is\\s+text"));

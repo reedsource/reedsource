@@ -1,5 +1,7 @@
 package main.java.j01枚举;
 
+import lombok.Getter;
+
 /**
  * 功能简述:
  * 〈〉
@@ -8,6 +10,7 @@ package main.java.j01枚举;
  * date 2022/5/21 23:26
  * mail reedsource@189.cn
  */
+@Getter
 public enum 颜色构造枚举 {
 
     /**
@@ -38,18 +41,6 @@ public enum 颜色构造枚举 {
             }
         }
         return null;
-    }
-
-    /**
-     * get set 方法
-     */
-    public String getName() {
-        return name;
-    }
-
-
-    public int getIndex() {
-        return index;
     }
 
     /**
