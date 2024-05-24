@@ -1,4 +1,4 @@
-package org.top.reed.config;
+package top.ireed.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;

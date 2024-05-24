@@ -1,4 +1,4 @@
-package org.top.reed.controller;
+package top.ireed.controller;
 
 
 import org.springframework.http.HttpStatus;
@@ -7,14 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.top.reed.constant.Constant;
-import org.top.reed.document.EsDocument;
-import org.top.reed.dto.UserCityDTO;
-import org.top.reed.service.UserService;
+import top.ireed.constant.Constant;
+import top.ireed.document.EsDocument;
+import top.ireed.dto.UserCityDTO;
+import top.ireed.service.UserService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 功能简述:〈es Controller〉
@@ -57,6 +59,20 @@ public class UserController {
         document.setSex("性别1");
         document.setAge(20);
         document.setCity("北京");
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("测试1", "1111");
+        map.put("测试2", "2222");
+        map.put("测试3", "3333");
+
+        List<String> list = new ArrayList<>();
+        list.add("6666");
+        list.add("7777");
+        list.add("8888");
+        map.put("list", list);
+
+        document.setAttrs(map);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUserDocument(document));
     }
 
@@ -66,6 +82,19 @@ public class UserController {
     @GetMapping("/addDocumentList")
     public ResponseEntity<Boolean> addDocumentList() throws Exception {
         List<EsDocument> documentList = new ArrayList<>();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("测试1", "1111");
+        map.put("测试2", "2222");
+        map.put("测试3", "3333");
+
+        List<String> list = new ArrayList<>();
+        list.add("6666");
+        list.add("7777");
+        list.add("8888");
+        map.put("list", list);
+
+
         for (int i = 0; i < 10; i++) {
             EsDocument document = new EsDocument();
             document.setId(String.valueOf(10000 + i));
@@ -73,6 +102,9 @@ public class UserController {
             document.setSex("批量性别" + i);
             document.setAge(200 + i);
             document.setCity("北京");
+            
+            document.setAttrs(map);
+
             documentList.add(document);
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.bulkCreateUserDocument(documentList));

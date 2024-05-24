@@ -1,4 +1,4 @@
-package org.top.reed.constant;
+package top.ireed.constant;
 
 /**
  * 功能简述:〈es 常量〉
@@ -11,5 +11,5 @@ public interface Constant {
     /**
      * 默认的es 索引集合
      */
-    String INDEX = "reed";
+    String INDEX = "ireed";
 }

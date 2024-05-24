@@ -1,7 +1,9 @@
-package org.top.reed.document;
+package top.ireed.document;
 
 
 import lombok.Data;
+
+import java.util.Map;
 
 /**
  * es文档
@@ -25,5 +27,7 @@ public class EsDocument {
      * 城市
      */
     private String city;
+
+    private Map<String, Object> attrs;
 
 }

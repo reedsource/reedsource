@@ -1,4 +1,4 @@
-package org.top.reed.service;
+package top.ireed.service;
 
 
 import com.alibaba.fastjson.JSON;
@@ -35,9 +35,9 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.top.reed.constant.Constant;
-import org.top.reed.document.EsDocument;
-import org.top.reed.dto.UserCityDTO;
+import top.ireed.constant.Constant;
+import top.ireed.document.EsDocument;
+import top.ireed.dto.UserCityDTO;
 
 import javax.annotation.Resource;
 import java.io.IOException;

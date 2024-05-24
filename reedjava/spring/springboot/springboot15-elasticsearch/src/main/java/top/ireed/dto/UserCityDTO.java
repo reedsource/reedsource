@@ -1,4 +1,4 @@
-package org.top.reed.dto;
+package top.ireed.dto;
 
 import lombok.Data;
 
