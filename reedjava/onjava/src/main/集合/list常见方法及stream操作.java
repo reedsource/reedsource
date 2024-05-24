@@ -101,7 +101,7 @@ public class list常见方法及stream操作 {
         }
 
         //Lambda表达式
-        list.forEach(onJava -> DealLog.log(onJava));
+        list.forEach(DealLog::log);
 
     }
 
@@ -152,37 +152,42 @@ public class list常见方法及stream操作 {
         onJavas = list.stream().sorted(Comparator.comparing(OnJava::getDate)).collect(Collectors.toList());
         DealLog.logListGo("排序  对时间进行升序排序", onJavas);
 
+        onJavas = list.stream().sorted(Comparator.comparing(OnJava::getDate).reversed()).collect(Collectors.toList());
+        DealLog.logListGo("排序  对时间进行降排序", onJavas);
+
         Collator collator = Collator.getInstance(); // 获取默认的Collator对象
         list.sort((s1, s2) -> collator.compare(s2.getName(), s1.getName())); // 根据Collator对象比较字符串并排序
         DealLog.logListGo("排序  对英文字符进行降序排序", list);
 
-        List<String> sList = list.stream().map(t -> t.getName()).collect(Collectors.toList());
+        List<String> sList = list.stream().map(OnJava::getName).collect(Collectors.toList());
         DealLog.logListGo("提取  list字段list", sList);
 
-        int sum = list.stream().mapToInt(t -> t.getNum()).sum();
+        int sum = list.stream().mapToInt(OnJava::getNum).sum();
         DealLog.log("统计list int类型数据和", sum);
 
-        sum = list.stream().filter(t -> t.getNum() <= 30).toList().stream().mapToInt(t -> t.getNum()).sum();
+        sum = list.stream().filter(t -> t.getNum() <= 30).toList().stream().mapToInt(OnJava::getNum).sum();
         DealLog.log("统计list 筛选 数值小于等于30 int类型数据和", sum);
 
-        Map<Integer, List<OnJava>> intMap = list.stream().collect(Collectors.groupingBy(t -> t.getNum()));
+        Map<Integer, List<OnJava>> intMap = list.stream().collect(Collectors.groupingBy(OnJava::getNum));
         DealLog.logMapGo("分组 list数值分组", intMap);
 
-        Map<String, List<OnJava>> stringMap = list.stream().collect(Collectors.groupingBy(t -> t.getcName()));
+        Map<String, List<OnJava>> stringMap = list.stream().collect(Collectors.groupingBy(OnJava::getcName));
         DealLog.logMapGo("分组 list字符串分组", stringMap);
 
-        Map<Boolean, List<OnJava>> boMap = list.stream().collect(Collectors.groupingBy(t -> t.isState()));
+        Map<Boolean, List<OnJava>> boMap = list.stream().collect(Collectors.groupingBy(OnJava::isState));
         DealLog.logMapGo("分组 list Boolean分组", boMap);
 
-        Map<Boolean, Map<Integer, List<OnJava>>> groupMap = list.stream().collect(Collectors.groupingBy(t -> t.isState(), Collectors.groupingBy(t -> t.getNum())));
+        Map<Boolean, Map<Integer, List<OnJava>>> groupMap = list.stream().collect(Collectors.groupingBy(OnJava::isState, Collectors.groupingBy(OnJava::getNum)));
         DealLog.logMapGo("多重分组 list Boolean 数值 分组", groupMap);
 
 
-        Map<Boolean, Integer> groupSumMap = list.stream().collect(Collectors.groupingBy(t -> t.isState(), Collectors.summingInt(t -> t.getNum())));
+        Map<Boolean, Integer> groupSumMap = list.stream().collect(Collectors.groupingBy(OnJava::isState, Collectors.summingInt(OnJava::getNum)));
         DealLog.logMapGo("多重分组 list Boolean 分组 数值求和", groupSumMap);
 
-        Map<Boolean, Map<Integer, Long>> groupSuMap = list.stream().collect(Collectors.groupingBy(t -> t.isState(), Collectors.groupingBy(t -> t.getNum(), Collectors.counting())));
+        Map<Boolean, Map<Integer, Long>> groupSuMap = list.stream().collect(Collectors.groupingBy(OnJava::isState, Collectors.groupingBy(OnJava::getNum, Collectors.counting())));
         DealLog.logMapGo("多重分组 list Boolean 分组 分值数量分组", groupSuMap);
+
+
     }
 
 }
