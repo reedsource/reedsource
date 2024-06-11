@@ -8,6 +8,7 @@ import top.ireed.general.TopException;
 
 import java.text.Collator;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -174,6 +175,9 @@ public class list常见方法及stream操作 {
         Map<String, List<OnJava>> stringMap = list.stream().collect(Collectors.groupingBy(OnJava::getcName));
         DealLog.logMapGo("分组 list字符串分组", stringMap);
 
+        Map<Long, OnJava> toMap = list.stream().collect(Collectors.toMap(OnJava::getId, Function.identity(), (key1, key2) -> key2));
+        DealLog.logMapGo("分组 list转map", toMap);
+
         Map<Boolean, List<OnJava>> boMap = list.stream().collect(Collectors.groupingBy(OnJava::isState));
         DealLog.logMapGo("分组 list Boolean分组", boMap);
 
@@ -186,7 +190,6 @@ public class list常见方法及stream操作 {
 
         Map<Boolean, Map<Integer, Long>> groupSuMap = list.stream().collect(Collectors.groupingBy(OnJava::isState, Collectors.groupingBy(OnJava::getNum, Collectors.counting())));
         DealLog.logMapGo("多重分组 list Boolean 分组 分值数量分组", groupSuMap);
-
 
     }
 
