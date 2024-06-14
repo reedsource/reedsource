@@ -5,13 +5,6 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * 功能简述:〈〉
- *
- * @author reedsource
- * date 2024/5/24 15:24
- * reedsource@189.cn
- */
 public class Set交集差集 {
 
 

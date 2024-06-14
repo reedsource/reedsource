@@ -4,13 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * 功能简述:〈〉
- *
- * @author reedsource
- * date 2024/4/18 15:30
- * reedsource@189.cn
- */
 public class List交集 {
 
     public static void main(String[] args) {

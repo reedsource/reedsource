@@ -7,13 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * 功能简述:〈〉
- *
- * @author reedsource
- * date 2024/4/16 17:10
- * reedsource@189.cn
- */
 public class Map常见方法及stream操作 {
 
     @Test
