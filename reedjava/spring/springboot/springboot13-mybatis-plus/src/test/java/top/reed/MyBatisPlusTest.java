@@ -3,12 +3,12 @@ package top.reed;
 import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.reed.Mapper.UserMapper;
 import top.reed.model.User;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @SpringBootTest

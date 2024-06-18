@@ -2,6 +2,7 @@ package top.ireed.service;
 
 
 import com.alibaba.fastjson.JSON;
+import jakarta.annotation.Resource;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -39,7 +40,6 @@ import top.ireed.constant.Constant;
 import top.ireed.document.EsDocument;
 import top.ireed.dto.UserCityDTO;
 
-import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

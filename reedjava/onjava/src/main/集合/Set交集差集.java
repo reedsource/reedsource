@@ -12,16 +12,16 @@ public class Set交集差集 {
     public void set合并() {
         // 创建两个集合
         Set<Integer> setA = new HashSet<>();
-        Set<Integer> setB = new HashSet<>();
-
         // 向集合中添加元素
         setA.add(1);
         setA.add(2);
         setA.add(3);
 
+        Set<Integer> setB = new HashSet<>();
         setB.add(2);
         setB.add(3);
         setB.add(4);
+
 
         setA.addAll(setB);
 

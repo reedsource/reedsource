@@ -38,7 +38,7 @@
         <jsp.taglibs.version>1.2.5</jsp.taglibs.version><!--jsp taglibs依赖-->
         <jackson.version>2.13.3</jackson.version><!--jackson-->
         <mybatis.version>2.2.2</mybatis.version><!--mybatis-->
-        <lombok.version>1.18.10</lombok.version><!--lombok-->
+        <lombok.version>1.18.30</lombok.version><!--lombok-->
         <sqlite.version>3.21.0.1</sqlite.version><!--sqlite-->
         <mysql.version>8.0.13</mysql.version><!--mysql-->
         <mybatis.generator.version>1.3.6</mybatis.generator.version><!--mybatis自动生成插件-->
@@ -54,7 +54,7 @@
         <guava.version>31.1-jre</guava.version><!--谷歌开源工具库 Guava-->
         <reedtools.version>1.0.0</reedtools.version><!--reedtools工具集-->
 
-        <spring-boot.version>2.7.0</spring-boot.version><!--springboot依赖版本-->
+        <spring-boot.version>3.3.0</spring-boot.version><!--springboot依赖版本-->
         <spring-webmvc.version>5.3.22</spring-webmvc.version><!--Spring Web MVC-->
     </properties>
     <!--引用包-->
@@ -107,7 +107,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
+            <version>${lombok.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

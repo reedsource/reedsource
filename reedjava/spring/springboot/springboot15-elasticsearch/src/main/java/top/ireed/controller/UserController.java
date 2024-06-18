@@ -1,6 +1,7 @@
 package top.ireed.controller;
 
 
+import jakarta.annotation.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,6 @@ import top.ireed.document.EsDocument;
 import top.ireed.dto.UserCityDTO;
 import top.ireed.service.UserService;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -102,7 +102,7 @@ public class UserController {
             document.setSex("批量性别" + i);
             document.setAge(200 + i);
             document.setCity("北京");
-            
+
             document.setAttrs(map);
 
             documentList.add(document);

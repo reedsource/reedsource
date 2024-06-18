@@ -5,12 +5,11 @@
 package top.ireed.config;
 
 
+import jakarta.servlet.Filter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import top.ireed.filter.MyFilter;
-
-import javax.servlet.Filter;
 
 /**
  * 功能简述:
