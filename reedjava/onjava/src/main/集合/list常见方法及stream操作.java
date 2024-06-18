@@ -191,6 +191,13 @@ public class list常见方法及stream操作 {
         Map<Boolean, Map<Integer, Long>> groupSuMap = list.stream().collect(Collectors.groupingBy(OnJava::isState, Collectors.groupingBy(OnJava::getNum, Collectors.counting())));
         DealLog.logMapGo("多重分组 list Boolean 分组 分值数量分组", groupSuMap);
 
+
+        Set<Long> toSet = list.stream().collect(Collectors.toMap(OnJava::getId, Function.identity(), (key1, key2) -> key2)).keySet();
+        DealLog.logToAll("提取  list字段提取字段到Set", toSet);
+
+        Set<Long> toSet1 = list.stream().map(OnJava::getId).collect(Collectors.toSet());
+        DealLog.logToAll("提取  list字段提取字段到Set1", toSet1);
+
     }
 
 }
