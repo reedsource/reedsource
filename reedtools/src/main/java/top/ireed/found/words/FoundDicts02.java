@@ -1,7 +1,5 @@
 package top.ireed.found.words;
 
-import top.ireed.deal.DealFile;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -19,10 +17,10 @@ public class FoundDicts02 {
     Set<String> dict = new HashSet<>();
 
     /**
-     *
+     * 构造函数
      */
-    public FoundDicts02() {
-        initDict();
+    public FoundDicts02(File file) {
+        initDict(file);
     }
 
     /**
@@ -52,9 +50,8 @@ public class FoundDicts02 {
     /**
      * 初始化词典
      */
-    public void initDict() {
+    public void initDict(File file) {
         try {
-            File file = new File(DealFile.getUserTestDataFile() + "\\词库.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
             String line;
             while ((line = br.readLine()) != null) {

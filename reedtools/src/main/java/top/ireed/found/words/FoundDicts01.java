@@ -1,7 +1,5 @@
 package top.ireed.found.words;
 
-import top.ireed.deal.DealFile;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -46,9 +44,9 @@ public class FoundDicts01 {
      * @param inputstr 需要分词的句子
      * @param maxlen   最大分词 词长度
      */
-    public FoundDicts01(String inputstr, int maxlen) {
+    public FoundDicts01(String inputstr, int maxlen, File file) {
 
-        initDict();
+        initDict(file);
 
         sentence = inputstr;
         maxLen = maxlen;
@@ -83,9 +81,8 @@ public class FoundDicts01 {
     /**
      * 初始化词典
      */
-    public void initDict() {
+    public void initDict(File file) {
         try {
-            File file = new File(DealFile.getUserTestDataFile() + "\\词库.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
             String line;
             while ((line = br.readLine()) != null) {

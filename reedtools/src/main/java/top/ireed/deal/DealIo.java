@@ -8,6 +8,7 @@ import cn.hutool.core.io.IoUtil;
 import top.ireed.general.TopException;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Base64;
@@ -60,9 +61,19 @@ public class DealIo {
      * @return 文件字符串
      */
     public static String getFileIo(File path) throws TopException {
+        return getFileIo(path, StandardCharsets.UTF_8);
+    }
+
+    /**
+     * 读取文件内容到字符串
+     *
+     * @param path 文件路径
+     * @return 文件字符串
+     */
+    public static String getFileIo(File path, Charset cs) throws TopException {
         StringBuilder sb = new StringBuilder();
         //读取文件的内容
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(Files.newInputStream(path.toPath()), StandardCharsets.UTF_8), 512 * 1024)) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(Files.newInputStream(path.toPath()), cs), 512 * 1024)) {
             String line;
 
             while ((line = bufferedReader.readLine()) != null) {
