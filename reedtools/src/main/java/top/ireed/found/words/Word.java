@@ -8,6 +8,19 @@ import java.util.Set;
  */
 public class Word {
 
+    /**
+     * id 词本身
+     */
+    private String id;
+    private String name;
+    private Set<String> lift = new HashSet<>();
+    //后字数组
+    private Set<String> right = new HashSet<>();
+    //前后-前数组
+    private Set<String> liftOr = new HashSet<>();
+    //前后-后数组
+    private Set<String> rightOr = new HashSet<>();
+
     public Word() {
     }
 
@@ -15,55 +28,12 @@ public class Word {
         this.name = name;
     }
 
-    private String id;
-    private String name;
-
-    private String lifts;
-    //后字数组
-    private String rights;
-    //前后-前数组
-    private String liftOrs;
-    //前后-后数组
-    private String rightOrs;
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLifts() {
-        return lifts;
-    }
-
-    public void setLifts(String lifts) {
-        this.lifts = lifts;
-    }
-
-    public String getRights() {
-        return rights;
-    }
-
-    public void setRights(String rights) {
-        this.rights = rights;
-    }
-
-    public String getLiftOrs() {
-        return liftOrs;
-    }
-
-    public void setLiftOrs(String liftOrs) {
-        this.liftOrs = liftOrs;
-    }
-
-    public String getRightOrs() {
-        return rightOrs;
-    }
-
-    public void setRightOrs(String rightOrs) {
-        this.rightOrs = rightOrs;
     }
 
     public Set<String> getLift() {
@@ -97,12 +67,4 @@ public class Word {
     public void setRightOr(Set<String> rightOr) {
         this.rightOr = rightOr;
     }
-
-    private Set<String> lift = new HashSet<>();
-    //后字数组
-    private Set<String> right = new HashSet<>();
-    //前后-前数组
-    private Set<String> liftOr = new HashSet<>();
-    //前后-后数组
-    private Set<String> rightOr = new HashSet<>();
 }
