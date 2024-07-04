@@ -1,6 +1,7 @@
 package main.集合;
 
 import org.junit.Test;
+import top.ireed.entity.OnJava;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -72,5 +73,23 @@ public class Set交集差集 {
 
         // 打印结果 [1]  忽略 setB存在而setA不存在的数据 4
         System.out.println("Set A - Set B: " + setA);
+    }
+
+    @Test
+    public void set重复插入() {
+        OnJava s = new OnJava();
+        s.setId(0L);
+        Set<OnJava> setA = new HashSet<>();
+        setA.add(s);
+        s.setId(1L);
+        setA.add(s);
+        s.setId(2L);
+        setA.add(s);
+        for (OnJava onJava : setA) {
+            System.out.println(onJava);
+        }
+
+        //最后的结果是2
+
     }
 }
