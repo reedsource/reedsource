@@ -38,22 +38,15 @@ public class 词库解析工具Test extends TestCase {
 
     public void testDictAll() throws TopException {
 
-        File goFile = new File(DealFile.getUserTestDataFile() + "\\分词\\语料库\\搜狗标准词库.txt");
         File goFile1 = new File(DealFile.getUserTestDataFile() + "\\分词\\语料库\\现代汉语词典词库.txt");
         File toFile = new File(DealFile.getUserTestDataFile() + "\\分词\\词库.txt");
         StringBuilder stringBuilder = new StringBuilder();
         //读取文件的内容
 
 
-        String txt1 = DealIo.getFileIo(goFile);
-
-        String[] txt1s = txt1.split("\r\n");
-        Set<String> dict = new HashSet<>(Arrays.asList(txt1s));
-
         String txt2 = DealIo.getFileIo(goFile1);
-
         String[] txt2s = txt2.split("\r\n");
-        dict.addAll(Arrays.asList(txt2s));
+        Set<String> dict = new HashSet<>(Arrays.asList(txt2s));
         int n;
         for (String s : dict) {
             if (s.length() > 1) {
