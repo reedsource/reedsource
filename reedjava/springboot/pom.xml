@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>top.ireed</groupId>
-        <artifactId>spring</artifactId>
+        <artifactId>reedjava</artifactId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -45,21 +45,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>2.7.3</version>
+            <version>${spring-boot.version}</version>
             <optional>true</optional>
         </dependency>
         <!--springboot web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
-            <version>2.7.3</version>
+            <version>${spring-boot.version}</version>
         </dependency>
         <!--springboot 测试-->
         <dependency>
             <!--测试模块，包括JUnit、Hamcrest、Mockito-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.7.3</version>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>

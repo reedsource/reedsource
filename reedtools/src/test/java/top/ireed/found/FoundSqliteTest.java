@@ -139,7 +139,7 @@ public class FoundSqliteTest {
         List<PageTime> list = new ArrayList<>();
         list.add(new PageTime("date", DealDate.getDate("2020-01-01"), DealDate.getDate("2022-04-05")));
 
-        PageData pageData = new PageData(3, 2, new Model(), "id", list);
+        PageData<Model> pageData = new PageData<>(3, 2, new Model(), "id", list);
         pageData = fSqlite.getPage(pageData);
         if (pageData.getList() != null) {
             for (Object o : pageData.getList()) {

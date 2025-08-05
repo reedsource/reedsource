@@ -16,7 +16,7 @@ package top.ireed.netty04download;
  */
 public class TestServer {
 
-    private static final String D_TOP = "D:\\top";
+    private static final String D_TOP = "D:\\home";
 
     public static void main(String[] args) {
         int port = 16807;

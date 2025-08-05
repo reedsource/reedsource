@@ -15,9 +15,9 @@
     <version>1.0.0</version>
     <modules>
         <module>onjava</module>
-        <module>spring</module>
         <module>frame</module>
         <module>toolkit</module>
+        <module>springboot</module>
     </modules>
     <!--名称-->
     <name>reedjava</name>
@@ -36,7 +36,7 @@
         <jsp.version>2.3.3</jsp.version><!--jsp依赖-->
         <jsp.jstl.version>1.2</jsp.jstl.version><!--jsp jstl依赖-->
         <jsp.taglibs.version>1.2.5</jsp.taglibs.version><!--jsp taglibs依赖-->
-        <jackson.version>2.13.3</jackson.version><!--jackson-->
+        <jackson.version>2.15.3</jackson.version><!--jackson-->
         <mybatis.version>2.2.2</mybatis.version><!--mybatis-->
         <lombok.version>1.18.30</lombok.version><!--lombok-->
         <sqlite.version>3.21.0.1</sqlite.version><!--sqlite-->
