@@ -25,19 +25,19 @@ public class FoundDicts02 {
         {
             List<Set<String>> list = new ArrayList<>();
             //前字数组
-            Set<String> lift = new HashSet<>() {{
+            Set<String> lift = new HashSet<String>() {{
                 add("");
             }};
             //后字数组
-            Set<String> right = new HashSet<>() {{
+            Set<String> right = new HashSet<String>() {{
                 add("成");
             }};
             //前后-前数组
-            Set<String> liftOr = new HashSet<>() {{
+            Set<String> liftOr = new HashSet<String>() {{
                 add("");
             }};
             //前后-后数组
-            Set<String> rightOr = new HashSet<>() {{
+            Set<String> rightOr = new HashSet<String>() {{
                 add("");
             }};
             list.add(lift);
@@ -49,19 +49,19 @@ public class FoundDicts02 {
         {
             List<Set<String>> list = new ArrayList<>();
             //前字数组
-            Set<String> lift = new HashSet<>() {{
+            Set<String> lift = new HashSet<String>() {{
                 add("");
             }};
             //后字数组
-            Set<String> right = new HashSet<>() {{
+            Set<String> right = new HashSet<String>() {{
                 add("意义");
             }};
             //前后-前数组
-            Set<String> liftOr = new HashSet<>() {{
+            Set<String> liftOr = new HashSet<String>() {{
                 add("");
             }};
             //前后-后数组
-            Set<String> rightOr = new HashSet<>() {{
+            Set<String> rightOr = new HashSet<String>() {{
                 add("");
             }};
             list.add(lift);
@@ -73,19 +73,19 @@ public class FoundDicts02 {
         {
             List<Set<String>> list = new ArrayList<>();
             //前字数组
-            Set<String> lift = new HashSet<>() {{
+            Set<String> lift = new HashSet<String>() {{
                 add("");
             }};
             //后字数组
-            Set<String> right = new HashSet<>() {{
+            Set<String> right = new HashSet<String>() {{
                 add("卖");
             }};
             //前后-前数组
-            Set<String> liftOr = new HashSet<>() {{
+            Set<String> liftOr = new HashSet<String>() {{
                 add("");
             }};
             //前后-后数组
-            Set<String> rightOr = new HashSet<>() {{
+            Set<String> rightOr = new HashSet<String>() {{
                 add("");
             }};
             list.add(lift);

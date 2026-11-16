@@ -53,7 +53,7 @@ public class 词库解析工具Test extends TestCase {
                 n = s.charAt(0);
                 //字符不在汉字范围
                 if (19968 <= n && n < 40869) {
-                    if (!stringBuilder.isEmpty()) {
+                    if (stringBuilder.length() > 0) {
                         stringBuilder.append("\r\n");
                     }
                     stringBuilder.append(s);

@@ -22,7 +22,7 @@ public class list常见方法及stream操作 {
 
     Date date = new Date();
 
-    List<OnJava> list = new ArrayList<>() {{
+    List<OnJava> list = new ArrayList<OnJava>() {{
         try {
             add(new OnJava(1L, "onJava1", "一", 10, false, DealDate.getDate("2024-01-01")));
             add(new OnJava(3L, "onJava3", "三", 30, false, DealDate.getDate("2024-01-03")));
@@ -166,7 +166,7 @@ public class list常见方法及stream操作 {
         int sum = list.stream().mapToInt(OnJava::getNum).sum();
         DealLog.log("统计list int类型数据和", sum);
 
-        sum = list.stream().filter(t -> t.getNum() <= 30).toList().stream().mapToInt(OnJava::getNum).sum();
+        sum = list.stream().filter(t -> t.getNum() <= 30).collect(Collectors.toList()).stream().mapToInt(OnJava::getNum).sum();
         DealLog.log("统计list 筛选 数值小于等于30 int类型数据和", sum);
 
         Map<Integer, List<OnJava>> intMap = list.stream().collect(Collectors.groupingBy(OnJava::getNum));

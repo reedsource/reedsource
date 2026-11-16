@@ -1,6 +1,6 @@
 package top.reed.springboottest;
 
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 
 public class 单元测试实现类 implements 单元测试接口 {
 

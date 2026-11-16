@@ -6,6 +6,7 @@ package main.java.k12集合.不可变集合Collections;
 import top.ireed.deal.DealLog;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class 不可变集合Collections {
 
     //创建不可变的list
     static {
-        COLUMN_TYPE_STR1 = List.of("char", "varchar", "nvarchar", "varchar2");
+        COLUMN_TYPE_STR1 = Collections.unmodifiableList(Arrays.asList("char", "varchar", "nvarchar", "varchar2"));
     }
 
 

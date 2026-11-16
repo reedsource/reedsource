@@ -31,7 +31,7 @@ public class DealLogTest {
 
         DealLog.logToAll("测试打印logToAll", new Model("6", "key"), new Model("7", "key"));
 
-        List<String> list = new ArrayList<>() {{
+        List<String> list = new ArrayList<String>() {{
             add("1");
             add("2");
             add("3");
@@ -41,7 +41,7 @@ public class DealLogTest {
         DealLog.logList(list);
         DealLog.logListGo("list打印后换行", list);
 
-        Map<String, String> map = new HashMap<>() {{
+        Map<String, String> map = new HashMap<String, String>() {{
             put("1", "1");
             put("2", "2");
             put("3", "3");

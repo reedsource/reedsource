@@ -91,7 +91,8 @@ public class DealJackson {
         //本处调用方法将字符串转化为List<linkHashMap>
         List<T> persons;
         try {
-            persons = mapper.readValue(str, new TypeReference<>() {
+            //TypeReference 的类型参数必须显式给出, JDK8 不支持匿名类的菱形推断(Java9+)
+            persons = mapper.readValue(str, new TypeReference<List<T>>() {
             });
         } catch (JsonProcessingException e) {
             throw new TopException("json转List异常", e);

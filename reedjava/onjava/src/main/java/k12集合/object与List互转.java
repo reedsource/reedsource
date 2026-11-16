@@ -9,6 +9,7 @@ import top.ireed.general.TopException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ public class object与List互转 {
         //注意 Arrays.asList(m).get(0)取得的是一个ArrayList对象,并不是需要的字符串
         String a = Arrays.asList(m).get(0).toString();
         String a1 = ((ArrayList) Arrays.asList(m).get(0)).get(0).toString();
-        String a2 = List.of(m).get(0).toString();
+        String a2 = Collections.singletonList(m).get(0).toString();
         //String某些情况下可为?
         String b = ((ArrayList<String>) m).get(0);
 

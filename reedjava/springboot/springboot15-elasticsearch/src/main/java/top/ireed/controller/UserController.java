@@ -1,7 +1,7 @@
 package top.ireed.controller;
 
 
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

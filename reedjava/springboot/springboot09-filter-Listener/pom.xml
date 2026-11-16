@@ -19,12 +19,14 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <version>10.0.23</version>
+            <!--Spring Boot 2.7 对应 Tomcat 9(javax 体系), Tomcat 10 为 jakarta 体系且字节码为 JDK11-->
+            <version>${tomcat.jasper.version}</version>
         </dependency>
         <!-- servlet依赖的jar包start -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.api.version}</version>
         </dependency>
     </dependencies>
 </project>

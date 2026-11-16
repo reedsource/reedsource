@@ -3,6 +3,7 @@ package main.集合;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class List交集 {
 
@@ -13,7 +14,7 @@ public class List交集 {
         List<Integer> list2 = Arrays.asList(4, 5, 6, 7, 8);
 
 
-        List<Integer> intersection0 = list1.stream().filter(list2::contains).toList();
+        List<Integer> intersection0 = list1.stream().filter(list2::contains).collect(Collectors.toList());
         System.out.println(intersection0);
 
 

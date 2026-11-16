@@ -2,7 +2,7 @@ package top.ireed.service;
 
 
 import com.alibaba.fastjson.JSON;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -167,26 +167,28 @@ public class UserService {
                 .put("index.number_of_shards", 1)
                 .put("index.number_of_replicas", 0)
         );
-        createIndexRequest.mapping("""
-                {
-                  "properties": {
-                    "city": {
-                      "type": "keyword"
-                    },
-                    "sex": {
-                      "type": "keyword"
-                    },
-                    "name": {
-                      "type": "keyword"
-                    },
-                    "id": {
-                      "type": "keyword"
-                    },
-                    "age": {
-                      "type": "integer"
-                    }
-                  }
-                }""", XContentType.JSON);
+        //JDK8 不支持文本块(Java15+), 改用 String.join 拼接
+        String mapping = String.join("\n",
+                "{",
+                "  \"properties\": {",
+                "    \"city\": {",
+                "      \"type\": \"keyword\"",
+                "    },",
+                "    \"sex\": {",
+                "      \"type\": \"keyword\"",
+                "    },",
+                "    \"name\": {",
+                "      \"type\": \"keyword\"",
+                "    },",
+                "    \"id\": {",
+                "      \"type\": \"keyword\"",
+                "    },",
+                "    \"age\": {",
+                "      \"type\": \"integer\"",
+                "    }",
+                "  }",
+                "}");
+        createIndexRequest.mapping(mapping, XContentType.JSON);
         CreateIndexResponse createIndexResponse = client.indices().create(createIndexRequest, RequestOptions.DEFAULT);
         return createIndexResponse.isAcknowledged();
     }
