@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>top.ireed</groupId>
+        <artifactId>scene</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>scene02-cert-exchange</artifactId>
+    <packaging>pom</packaging>
+    <description>场景02 证书交换与网关加解密:平台方(京东方)与资方方(中信)两个独立SpringBoot工程 + 一个公共工具类模块</description>
+    <name>scene02-cert-exchange</name>
+
+    <!--场景02由三个子模块组成-->
+    <modules>
+        <!--公共工具类模块 双方共用-->
+        <module>scene02-common</module>
+        <!--平台方(京东方) 独立SpringBoot工程-->
+        <module>scene02-platform</module>
+        <!--资方方(中信) 独立SpringBoot工程-->
+        <module>scene02-fund</module>
+    </modules>
+</project>

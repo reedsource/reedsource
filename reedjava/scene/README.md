@@ -29,10 +29,29 @@ reedjava/scene/
 │       │   │   └── exception/SceneExceptionHandler.java 全局异常处理
 │       │   └── resources/application.properties      场景配置
 │       └── test/java/top/ireed/scene01template/       上下文加载测试
-└── scene02-xxx/                (待新增)
+└── scene02-cert-exchange/      场景02 证书交换与网关加解密验证
+    ├── pom.xml                 场景聚合 pom
+    ├── 场景02-证书交换与加解密验证说明.md
+    ├── start-all.ps1           双端同时启动脚本
+    ├── scene02-common/         公共工具类模块(普通jar)
+    ├── scene02-platform/       平台方(京东方) 独立SpringBoot工程 端口8082
+    │   └── src/main/resources/application-platform.properties
+    └── scene02-fund/           资方方(中信) 独立SpringBoot工程 端口8083
+        └── src/main/resources/application-fund.properties
 ```
 
 每个场景与 `springboot` 子模块保持一致的 Maven 布局:`src/main/java`、`src/main/resources`、`src/test/java`。
+
+### 场景的组织形式
+
+场景有两种组织形式,按业务实际形态选择:
+
+| 形式 | 适用 | 示例 |
+|---|---|---|
+| 单模块 | 一个场景就是一个独立 SpringBoot 工程 | `scene01-template` |
+| 多模块 | 场景由多方或公共代码组成 | `scene02-cert-exchange` → `scene02-common` + `scene02-platform` + `scene02-fund` |
+
+多模块场景下,**每个可独立部署的角色是一个独立 SpringBoot 工程**,公共部分单独抽成普通 jar 模块,公共模块不做组件扫描,由各端通过 `@Import` 显式装配。
 
 ## 3. 命名规范
 

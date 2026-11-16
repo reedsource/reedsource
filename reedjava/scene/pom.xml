@@ -18,12 +18,16 @@
     <modules>
         <!--场景模板:新增场景时复制此目录改造-->
         <module>scene01-template</module>
+        <!--场景02 证书交换与网关加解密验证-->
+        <module>scene02-cert-exchange</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--BouncyCastle 版本 用于运行时生成X509证书-->
+        <bouncycastle.version>1.78.1</bouncycastle.version>
     </properties>
 
     <dependencies>
